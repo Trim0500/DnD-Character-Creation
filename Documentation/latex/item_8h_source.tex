@@ -1,0 +1,46 @@
+\doxysection{item.\+h}
+\hypertarget{item_8h_source}{}\label{item_8h_source}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/item.h@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/item.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{namespace\ }item\ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \textcolor{keyword}{enum}\ ItemType\ \{}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ Hemlet\ =\ 1,}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ Armor,}
+\DoxyCodeLine{00007\ \ \ \ \ \ \ \ \ Shield,}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ Ring,}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ Belt,}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ Boots,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ Weapon}
+\DoxyCodeLine{00012\ \ \ \ \ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{enum}\ CharacterStats\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Strength\ =\ 1,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Dexterity,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Constitution,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ Intelligence,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ Wisdom,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ Charisma,}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ ArmorClass,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ AttackBonus,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ DamageBonus}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ Class\ that\ abstracts\ the\ Items\ available\ to\ a\ character\ that\ are\ put\ into\ a\ container\ or\ worn.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}();}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ GetEnchantmentBonus();}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ CharacterStats\ GetEnchantmentType();}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ enchantmentBonus;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ ItemType\ itemType;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ CharacterStats\ enchantmentType;}
+\DoxyCodeLine{00039\ \ \ \ \ \};}
+\DoxyCodeLine{00040\ \}}
+
+\end{DoxyCode}

@@ -23,6 +23,9 @@ namespace item {
 		DamageBonus
 	};
 
+	/*
+	Class that abstracts the Items available to a character that are put into a container or worn.
+	*/
 	class Item {
 		public:
 			Item();
