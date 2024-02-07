@@ -1,3 +1,10 @@
+/*
+* \file item.cpp
+* \brief Implementation file for the Item class
+*
+* This file puts in the function implementations for the Item class
+*/
+
 #include <iostream>
 #include <random>
 
@@ -84,7 +91,8 @@ namespace item {
 		}
 	}
 
-	Item::Item(const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType) {
+	Item::Item(const string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType) {
+		itemName = _itemName;
 		enchantmentBonus = _enchantmentBonus;
 		itemType = (ItemType)_itemType;
 		enchantmentType = (CharacterStats)_enchantmentType;

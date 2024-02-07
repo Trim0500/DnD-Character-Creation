@@ -1,11 +1,16 @@
-#pragma once 
-
 /*
 * \file item.h
 * \brief Header file for the Item class
 *
 * This file puts in the forwrad declarations for the Item class and it's member fields and functions.
 */
+
+#pragma once 
+
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 /*
 * \namespace item
@@ -56,6 +61,22 @@ namespace item {
 	class Item {
 		public:
 			/*
+			* A variable
+			*/
+			string itemName;
+			/*
+			* A variable
+			*/
+			int enchantmentBonus;
+			/*
+			* A variable
+			*/
+			ItemType itemType;
+			/*
+			* A variable
+			*/
+			CharacterStats enchantmentType;
+			/*
 			* \fn Item
 			* \brief No-args constructor for Item
 			*
@@ -71,25 +92,13 @@ namespace item {
 			* Note that enchantment bonus ranges from 1-5, item type ranges from 1-7 and enchantment type ranges from 1-9.
 			* Implemented by item.cpp.
 			*
+			* @param _itemName The reference to the name given to the item.
 			* @param _enchantmentBonus The reference to a constant integer representing the chosen enchantment bonus value. (1-5)
 			* @param _itemType The reference to a constant integer representing the chosen item type. (1-7)
 			* @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (1-9)
 			*/
-			Item(const int&, const int&, const int&);
+			Item(const string&, const int&, const int&, const int&);
 			int GetEnchantmentBonus() { return enchantmentBonus; };
 			CharacterStats GetEnchantmentType() { return enchantmentType; };
-		private:
-			/* 
-			* A variable
-			*/
-			int enchantmentBonus;
-			/*
-			* A variable
-			*/
-			ItemType itemType;
-			/*
-			* A variable
-			*/
-			CharacterStats enchantmentType;
 	};
 }
