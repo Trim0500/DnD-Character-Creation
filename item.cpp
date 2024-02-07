@@ -6,14 +6,36 @@
 using namespace std;
 
 namespace {
+	/*
+	* \fn GenerateRandomInt
+	* \brief RNG index helper function for Item
+	*
+	* Helper function to the Item class to generate an int corresponding to the index of an enchantment bonus or item type.
+	*
+	* @param min The minimum index in the range to pick from
+	* @param max The maximum index in the range to pick from
+	*
+	* @returns Integer that represents the index that was randomly generated from the specified range
+	*/
 	int GenerateRandomInt(int min, int max) {
 		random_device seed;
 		mt19937 gen(seed);
-		uniform_int_distribution<int> distrib(1, 5);
+		uniform_int_distribution<int> distrib(min, max);
 
 		return distrib(gen);
 	}
 
+	/*
+	* \fn PickEnchantmentType
+	* \brief RNG index helper function for Item's item types 
+	*
+	* Helper function to the Item class to generate an int corresponding to the index of an enchantment type.
+	* Uses the array to specify the index range.
+	*
+	* @param allowedTypesArray An address pointing to a constant array to extract a type via a randomly generated index
+	*
+	* @returns Enum index that represents the assigned enchantment type for the item.
+	*/
 	item::CharacterStats PickEnchantmentType(const item::CharacterStats *allowedTypesArray) {
 		random_device seed;
 		mt19937 gen(seed);
@@ -66,13 +88,5 @@ namespace item {
 		enchantmentBonus = _enchantmentBonus;
 		itemType = (ItemType)_itemType;
 		enchantmentType = (CharacterStats)_enchantmentType;
-	}
-
-	int Item::GetEnchantmentBonus() {
-		return enchantmentBonus;
-	}
-
-	CharacterStats Item::GetEnchantmentType() {
-		return enchantmentType;
 	}
 }
