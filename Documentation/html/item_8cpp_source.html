@@ -80,118 +80,130 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/item.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="item_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;random&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="item_8h.html">item.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span>std;</div>
+<a href="item_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">* \file item.cpp</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">* \brief Implementation file for the Item class</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">*</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">* This file puts in the function implementations for the Item class</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">    * \fn GenerateRandomInt</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">    * \brief RNG index helper function for Item</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">    *</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">    * Helper function to the Item class to generate an int corresponding to the index of an enchantment bonus or item type.</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">    *</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">    * @param min The minimum index in the range to pick from</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">    * @param max The maximum index in the range to pick from</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">    *</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">    * @returns Integer that represents the index that was randomly generated from the specified range</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> GenerateRandomInt(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max) {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        random_device seed;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        mt19937 gen(seed);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        uniform_int_distribution&lt;int&gt; distrib(min, max);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordflow">return</span> distrib(gen);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">/*</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">    * \fn PickEnchantmentType</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">    * \brief RNG index helper function for Item&#39;s item types </span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">    *</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">    * Helper function to the Item class to generate an int corresponding to the index of an enchantment type.</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">    * Uses the array to specify the index range.</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">    *</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">    * @param allowedTypesArray An address pointing to a constant array to extract a type via a randomly generated index</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">    *</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    * @returns Enum index that represents the assigned enchantment type for the item.</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">item::CharacterStats</a> PickEnchantmentType(<span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">item::CharacterStats</a> *allowedTypesArray) {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        random_device seed;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        mt19937 gen(seed);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        uniform_int_distribution&lt;int&gt; distrib(0, <span class="keyword">sizeof</span>(allowedTypesArray) - 1);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">int</span> indexChosen = distrib(gen);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keywordflow">return</span> allowedTypesArray[indexChosen];</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespaceitem.html">   49</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceitem.html">item</a> {</div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">   50</a></span>    <a class="code hl_function" href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">Item::Item</a>() {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        enchantmentBonus = GenerateRandomInt(1, 5);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        itemType = (<a class="code hl_enumeration" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">ItemType</a>)GenerateRandomInt(1, 7);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">switch</span> (itemType) {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> helmetEnchantmentTypes[3] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a">Intelligence</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">Wisdom</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a> };</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                enchantmentType = PickEnchantmentType(helmetEnchantmentTypes);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">case</span> 3:</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                enchantmentType = <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            <span class="keywordflow">case</span> 4:</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> ringEnchantmentTypes[5] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9">Strength</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3">Constitution</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">Wisdom</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6">Charisma</a> };</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                enchantmentType = PickEnchantmentType(ringEnchantmentTypes);</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">case</span> 5:</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> beltEnchantmentTypes[2] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3">Constitution</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9">Strength</a> };</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                enchantmentType = PickEnchantmentType(beltEnchantmentTypes);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            <span class="keywordflow">case</span> 6:</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> bootsEnchantmentTypes[2] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69">Dexterity</a> };</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                enchantmentType = PickEnchantmentType(bootsEnchantmentTypes);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keywordflow">case</span> 7:</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> weaponEnchantmentTypes[2] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c">AttackBonus</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6">DamageBonus</a> };</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                enchantmentType = PickEnchantmentType(weaponEnchantmentTypes);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="item_8h.html">item.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">    * \fn GenerateRandomInt</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">    * \brief RNG index helper function for Item</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">    *</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">    * Helper function to the Item class to generate an int corresponding to the index of an enchantment bonus or item type.</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">    *</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">    * @param min The minimum index in the range to pick from</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">    * @param max The maximum index in the range to pick from</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">    *</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">    * @returns Integer that represents the index that was randomly generated from the specified range</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">int</span> GenerateRandomInt(<span class="keywordtype">int</span> min, <span class="keywordtype">int</span> max) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        random_device seed;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        mt19937 gen(seed);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        uniform_int_distribution&lt;int&gt; distrib(min, max);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordflow">return</span> distrib(gen);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">/*</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">    * \fn PickEnchantmentType</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    * \brief RNG index helper function for Item&#39;s item types </span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">    *</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    * Helper function to the Item class to generate an int corresponding to the index of an enchantment type.</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    * Uses the array to specify the index range.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">    *</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">    * @param allowedTypesArray An address pointing to a constant array to extract a type via a randomly generated index</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">    *</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">    * @returns Enum index that represents the assigned enchantment type for the item.</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">    */</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">item::CharacterStats</a> PickEnchantmentType(<span class="keyword">const</span> <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">item::CharacterStats</a> *allowedTypesArray) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        random_device seed;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        mt19937 gen(seed);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        uniform_int_distribution&lt;int&gt; distrib(0, <span class="keyword">sizeof</span>(allowedTypesArray) - 1);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordtype">int</span> indexChosen = distrib(gen);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> allowedTypesArray[indexChosen];</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespaceitem.html">   56</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceitem.html">item</a> {</div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">   57</a></span>    <a class="code hl_function" href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">Item::Item</a>() {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <a class="code hl_variable" href="classitem_1_1_item.html#a2c38b019e96d4438dcd28714787e52f0">enchantmentBonus</a> = GenerateRandomInt(1, 5);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <a class="code hl_variable" href="classitem_1_1_item.html#a1bee69a58c1a940103bad5bfd2c392d6">itemType</a> = (<a class="code hl_enumeration" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">ItemType</a>)GenerateRandomInt(1, 7);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classitem_1_1_item.html#a1bee69a58c1a940103bad5bfd2c392d6">itemType</a>) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> helmetEnchantmentTypes[3] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a">Intelligence</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">Wisdom</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a> };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <a class="code hl_variable" href="classitem_1_1_item.html#ad974f1726723a59aa5c3a4638802a779">enchantmentType</a> = PickEnchantmentType(helmetEnchantmentTypes);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <a class="code hl_variable" href="classitem_1_1_item.html#ad974f1726723a59aa5c3a4638802a779">enchantmentType</a> = <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> ringEnchantmentTypes[5] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9">Strength</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3">Constitution</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">Wisdom</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6">Charisma</a> };</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <a class="code hl_variable" href="classitem_1_1_item.html#ad974f1726723a59aa5c3a4638802a779">enchantmentType</a> = PickEnchantmentType(ringEnchantmentTypes);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> beltEnchantmentTypes[2] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3">Constitution</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9">Strength</a> };</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <a class="code hl_variable" href="classitem_1_1_item.html#ad974f1726723a59aa5c3a4638802a779">enchantmentType</a> = PickEnchantmentType(beltEnchantmentTypes);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keywordflow">case</span> 6:</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> bootsEnchantmentTypes[2] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69">Dexterity</a> };</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <a class="code hl_variable" href="classitem_1_1_item.html#ad974f1726723a59aa5c3a4638802a779">enchantmentType</a> = PickEnchantmentType(bootsEnchantmentTypes);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            <span class="keywordflow">case</span> 7:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                <a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> weaponEnchantmentTypes[2] = { <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c">AttackBonus</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6">DamageBonus</a> };</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                <a class="code hl_variable" href="classitem_1_1_item.html#ad974f1726723a59aa5c3a4638802a779">enchantmentType</a> = PickEnchantmentType(weaponEnchantmentTypes);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
 </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classitem_1_1_item.html#ae9d7471642643b826043be6e5980e9c4">   87</a></span>    <a class="code hl_function" href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">Item::Item</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _enchantmentBonus, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _itemType, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _enchantmentType) {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        enchantmentBonus = _enchantmentBonus;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        itemType = (<a class="code hl_enumeration" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">ItemType</a>)_itemType;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        enchantmentType = (<a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a>)_enchantmentType;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classitem_1_1_item.html#a3cb35a0e23b7770d5b105679ff6f9928">   94</a></span>    <a class="code hl_function" href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">Item::Item</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; _itemName, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _enchantmentBonus, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _itemType, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _enchantmentType) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_variable" href="classitem_1_1_item.html#ab62707d451ed93dafbb4802f5bb22d63">itemName</a> = _itemName;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <a class="code hl_variable" href="classitem_1_1_item.html#a2c38b019e96d4438dcd28714787e52f0">enchantmentBonus</a> = _enchantmentBonus;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_variable" href="classitem_1_1_item.html#a1bee69a58c1a940103bad5bfd2c392d6">itemType</a> = (<a class="code hl_enumeration" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">ItemType</a>)_itemType;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_variable" href="classitem_1_1_item.html#ad974f1726723a59aa5c3a4638802a779">enchantmentType</a> = (<a class="code hl_enumeration" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a>)_enchantmentType;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
 </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
 </div>
-<div class="ttc" id="aclassitem_1_1_item_html_a7e7998679cac37adb8124f012d5dd39e"><div class="ttname"><a href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">item::Item::Item</a></div><div class="ttdeci">Item()</div><div class="ttdef"><b>Definition</b> <a href="#l00050">item.cpp:50</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html_a1bee69a58c1a940103bad5bfd2c392d6"><div class="ttname"><a href="classitem_1_1_item.html#a1bee69a58c1a940103bad5bfd2c392d6">item::Item::itemType</a></div><div class="ttdeci">ItemType itemType</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00074">item.h:74</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html_a2c38b019e96d4438dcd28714787e52f0"><div class="ttname"><a href="classitem_1_1_item.html#a2c38b019e96d4438dcd28714787e52f0">item::Item::enchantmentBonus</a></div><div class="ttdeci">int enchantmentBonus</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00070">item.h:70</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html_a7e7998679cac37adb8124f012d5dd39e"><div class="ttname"><a href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">item::Item::Item</a></div><div class="ttdeci">Item()</div><div class="ttdef"><b>Definition</b> <a href="#l00057">item.cpp:57</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html_ab62707d451ed93dafbb4802f5bb22d63"><div class="ttname"><a href="classitem_1_1_item.html#ab62707d451ed93dafbb4802f5bb22d63">item::Item::itemName</a></div><div class="ttdeci">string itemName</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00066">item.h:66</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html_ad974f1726723a59aa5c3a4638802a779"><div class="ttname"><a href="classitem_1_1_item.html#ad974f1726723a59aa5c3a4638802a779">item::Item::enchantmentType</a></div><div class="ttdeci">CharacterStats enchantmentType</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00078">item.h:78</a></div></div>
 <div class="ttc" id="aitem_8h_html"><div class="ttname"><a href="item_8h.html">item.h</a></div></div>
-<div class="ttc" id="anamespaceitem_html"><div class="ttname"><a href="namespaceitem.html">item</a></div><div class="ttdef"><b>Definition</b> <a href="#l00049">item.cpp:49</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51c"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">item::CharacterStats</a></div><div class="ttdeci">CharacterStats</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00038">item.h:38</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">item::Wisdom</a></div><div class="ttdeci">@ Wisdom</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00043">item.h:43</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">item::ArmorClass</a></div><div class="ttdeci">@ ArmorClass</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00045">item.h:45</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69">item::Dexterity</a></div><div class="ttdeci">@ Dexterity</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00040">item.h:40</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9">item::Strength</a></div><div class="ttdeci">@ Strength</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00039">item.h:39</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3">item::Constitution</a></div><div class="ttdeci">@ Constitution</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00041">item.h:41</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a">item::Intelligence</a></div><div class="ttdeci">@ Intelligence</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00042">item.h:42</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6">item::DamageBonus</a></div><div class="ttdeci">@ DamageBonus</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00048">item.h:47</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c">item::AttackBonus</a></div><div class="ttdeci">@ AttackBonus</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00046">item.h:46</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6">item::Charisma</a></div><div class="ttdeci">@ Charisma</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00044">item.h:44</a></div></div>
-<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">item::ItemType</a></div><div class="ttdeci">ItemType</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00022">item.h:22</a></div></div>
+<div class="ttc" id="anamespaceitem_html"><div class="ttname"><a href="namespaceitem.html">item</a></div><div class="ttdef"><b>Definition</b> <a href="#l00056">item.cpp:56</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51c"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">item::CharacterStats</a></div><div class="ttdeci">CharacterStats</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00043">item.h:43</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">item::Wisdom</a></div><div class="ttdeci">@ Wisdom</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00048">item.h:48</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">item::ArmorClass</a></div><div class="ttdeci">@ ArmorClass</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00050">item.h:50</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69">item::Dexterity</a></div><div class="ttdeci">@ Dexterity</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00045">item.h:45</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9">item::Strength</a></div><div class="ttdeci">@ Strength</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00044">item.h:44</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3">item::Constitution</a></div><div class="ttdeci">@ Constitution</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00046">item.h:46</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a">item::Intelligence</a></div><div class="ttdeci">@ Intelligence</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00047">item.h:47</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6">item::DamageBonus</a></div><div class="ttdeci">@ DamageBonus</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00053">item.h:52</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c">item::AttackBonus</a></div><div class="ttdeci">@ AttackBonus</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00051">item.h:51</a></div></div>
+<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6">item::Charisma</a></div><div class="ttdeci">@ Charisma</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00049">item.h:49</a></div></div>
+<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">item::ItemType</a></div><div class="ttdeci">ItemType</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00027">item.h:27</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

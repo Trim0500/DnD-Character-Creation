@@ -1,0 +1,108 @@
+\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/itemcontainer.h}
+\hypertarget{itemcontainer_8h_source}{}\label{itemcontainer_8h_source}\mbox{\hyperlink{itemcontainer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00002}00002\ \textcolor{comment}{*\ \(\backslash\)file\ itemcontainer.h}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00003}00003\ \textcolor{comment}{*\ \(\backslash\)brief\ Header\ file\ for\ the\ ItemContainer\ class}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00004}00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00005}00005\ \textcolor{comment}{*\ This\ file\ puts\ in\ the\ forwrad\ declarations\ for\ the\ ItemContainer\ class}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{item.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00017}00017\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitem}{item}};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00019}00019\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00020}00020\ \textcolor{comment}{*\ \(\backslash\)namespace\ itemcontainer}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00021}00021\ \textcolor{comment}{*\ \(\backslash\)brief\ Namespace\ for\ the\ character\ item\ containers}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00022}00022\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00023}00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}}\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00024}00024\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00025}00025\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)enum\ ItemContainerType}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00026}00026\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Enum\ that\ represents\ the\ different\ item\ containers}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00027}00027\ \textcolor{comment}{\ \ \ \ *\ }}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00028}00028\ \textcolor{comment}{\ \ \ \ *\ An\ enum\ that\ identifies\ the\ different\ character\ or\ map\ item\ containers.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00029}00029\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00030}\mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073b}{00030}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073b}{ItemContainerType}}\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00031}\mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073ba405726aaa597fdf99d5694eb2078ccf6}{00031}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073ba405726aaa597fdf99d5694eb2078ccf6}{Backback}}\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00032}\mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073bae9355d55262e6c30eca66544df50afae}{00032}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073bae9355d55262e6c30eca66544df50afae}{WornItems}},}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073baab78c32ed4c79304caf580bb6b70f34b}{TreasureChest}}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00034}\mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073baab78c32ed4c79304caf580bb6b70f34b}{00034}}\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00037}00037\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)class\ ItemContainer}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00038}00038\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Class\ to\ abstract\ the\ different\ item\ containers}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00039}00039\ \textcolor{comment}{\ \ \ \ *\ }}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00040}00040\ \textcolor{comment}{\ \ \ \ *\ Class\ that\ is\ meant\ to\ abstract\ various\ kinds\ of\ item\ containers\ for\ a\ character.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00041}00041\ \textcolor{comment}{\ \ \ \ *\ These\ containers\ use\ a\ list\ from\ the\ std\ library\ to\ allow\ for\ any\ number\ of\ items\ to\ be\ added\ to\ a\ container.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00042}00042\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00043}\mbox{\hyperlink{classitemcontainer_1_1_item_container}{00043}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00046}00046\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)fn\ ItemContainer}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00047}00047\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ Overloaded\ constructior\ for\ ItemContainer}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00048}00048\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container_abf62a719b9d1c29442f9ec1aa734f096}{ItemContainer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00050}\mbox{\hyperlink{classitemcontainer_1_1_item_container_aa15293e4cfc9acbe2a051943a43981b8}{00050}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_aa15293e4cfc9acbe2a051943a43981b8}{GetName}}()\ \{\ \textcolor{keywordflow}{return}\ name;\ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00051}\mbox{\hyperlink{classitemcontainer_1_1_item_container_af654d2f0331d00b398cc977e8ed7dc39}{00051}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073b}{ItemContainerType}}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_af654d2f0331d00b398cc977e8ed7dc39}{GetItemContainerType}}()\ \{\ \textcolor{keywordflow}{return}\ containerType;\ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00052}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a2f7894e867c8a7f27d11bd510ff1c2f0}{00052}}\ \ \ \ \ \ \ \ \ \ \ \ \ list<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a2f7894e867c8a7f27d11bd510ff1c2f0}{GetAllItems}}()\ \{\ \textcolor{keywordflow}{return}\ items;\ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00054}00054\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)fn\ GetItem}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00055}00055\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ Overloaded\ method\ to\ find\ an\ item\ by\ name}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00056}00056\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ }}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00057}00057\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Overloaded\ method\ that\ uses\ an\ item\ name\ to\ find\ the\ specific\ item\ in\ the\ list\ and\ return\ it.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00058}00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_aadfad2ce5f3792455c695fe780c1ccbc}{GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00061}00061\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)fn\ GetItem}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00062}00062\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ Overloaded\ method\ to\ find\ an\ item\ by\ item\ type}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00063}00063\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00064}00064\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Overloaded\ method\ that\ uses\ an\ item\ type\ value\ (1-\/7)\ to\ find\ the\ specific\ item\ in\ the\ list\ and\ return\ it.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00065}00065\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_aadfad2ce5f3792455c695fe780c1ccbc}{GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00068}00068\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)fn\ GetItems}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00069}00069\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ Overloaded\ method\ to\ find\ a\ list\ of\ items\ via\ enchantment\ bonus}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00070}00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ }}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Overloaded\ member\ function\ that\ will\ use\ an\ enchantment\ bonus\ (1-\/5)\ to\ find\ the\ items\ that\ have\ that\ bonus.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ list<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{GetItems}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00075}00075\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)fn\ GetItems}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00076}00076\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ Overloaded\ method\ to\ find\ a\ list\ of\ items\ via\ item\ type}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00077}00077\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00078}00078\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Overloaded\ member\ function\ that\ will\ use\ an\ item\ type\ enum\ value\ (1-\/7)\ to\ find\ the\ items\ that\ have\ that\ type.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00079}00079\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00080}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{00080}}\ \ \ \ \ \ \ \ \ \ \ \ \ list<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{GetItems}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00082}00082\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)fn\ GetItems}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00083}00083\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ Overloaded\ method\ to\ find\ a\ list\ of\ items\ via\ character\ stat}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00084}00084\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00085}00085\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Overloaded\ member\ function\ that\ will\ use\ a\ character\ stat\ enum\ value\ (1-\/9)\ to\ find\ the\ items\ that\ have\ that\ type.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00086}00086\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00087}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{00087}}\ \ \ \ \ \ \ \ \ \ \ \ \ list<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{GetItems}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00088}\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{00088}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}\&\ newItem)\ \{\ items.push\_back(newItem);\ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00091}00091\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ A\ variable}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00092}00092\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ name;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00095}00095\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ A\ variable}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00096}00096\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073b}{ItemContainerType}}\ containerType;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00099}00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ A\ variable}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00100}00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ list<Item>\ items;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00102}00102\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00103}00103\ \}}
+
+\end{DoxyCode}

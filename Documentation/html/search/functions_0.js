@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['getenchantmentbonus_0',['GetEnchantmentBonus',['../classitem_1_1_item.html#a4ba1d561d9bc83cecb5786916667a675',1,'item::Item']]],
-  ['getenchantmenttype_1',['GetEnchantmentType',['../classitem_1_1_item.html#a74ebf5073f51301db65ddf10a07aaa25',1,'item::Item']]]
+  ['addnewitem_0',['AddNewItem',['../classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d',1,'itemcontainer::ItemContainer']]]
 ];
