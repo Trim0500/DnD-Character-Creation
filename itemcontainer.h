@@ -56,35 +56,35 @@ namespace itemcontainer {
 			* 
 			* Overloaded method that uses an item name to find the specific item in the list and return it.
 			*/
-			Item GetItem(const string&);
+			Item GetItem(string);
 			/*
 			* \fn GetItem
 			* \brief Overloaded method to find an item by item type
 			*
 			* Overloaded method that uses an item type value (1-7) to find the specific item in the list and return it.
 			*/
-			Item GetItem(const int&);
+			Item GetItem(int);
 			/*
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via enchantment bonus
 			* 
 			* Overloaded member function that will use an enchantment bonus (1-5) to find the items that have that bonus.
 			*/
-			list<Item> GetItems(const int&);
+			list<Item> GetItemsByEnchantmentBonus(int);
 			/*
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via item type
 			*
 			* Overloaded member function that will use an item type enum value (1-7) to find the items that have that type.
 			*/
-			list<Item> GetItems(const int&);
+			list<Item> GetItemsByItemType(int);
 			/*
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via character stat
 			*
 			* Overloaded member function that will use a character stat enum value (1-9) to find the items that have that type.
 			*/
-			list<Item> GetItems(const int&);
+			list<Item> GetItemsByStat(int);
 			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
 		private:
 			/*

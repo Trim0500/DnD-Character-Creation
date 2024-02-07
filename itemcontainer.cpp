@@ -27,30 +27,41 @@ namespace itemcontainer {
 		items = _items;
 	}
 
-	Item ItemContainer::GetItem(const string& nameKey) {
-		auto it = find_if(items.begin(), items.end(), [nameKey](const Item& item) { return item.itemName == nameKey; });
-
+	Item ItemContainer::GetItem(string nameKey) {
+		list<Item>::iterator it = find_if(items.begin(),
+											items.end(),
+											[nameKey](Item item)
+											{
+												return item.itemName == nameKey;
+											});
 		if (it != items.end()) {
 			return *it;
 		}
 	}
 
-	Item ItemContainer::GetItem(const int& itemType) {
-		auto it = find_if(items.begin(), items.end(), [itemType](const Item& item) { return item.itemType == itemType; });
-
+	Item ItemContainer::GetItem(int itemType) {
+		list<Item>::iterator it = find_if(items.begin(),
+											items.end(),
+											[itemType](Item item)
+											{
+												return item.itemType == itemType; 
+											});
 		if (it != items.end()) {
 			return *it;
 		}
 	}
 
-	list<Item> ItemContainer::GetItems(const int& enchantmentBonus) {
+	list<Item> ItemContainer::GetItemsByEnchantmentBonus(int enchantmentBonus) {
 		list<Item> resultList(items);
 
 		for (int i = 0; i < items.size(); i++)
 		{
-			auto it = find_if(resultList.begin(),
-								resultList.end(),
-								[enchantmentBonus](const Item& item) { return item.enchantmentBonus != enchantmentBonus; });
+			list<Item>::iterator it = find_if(resultList.begin(),
+												resultList.end(),
+												[enchantmentBonus](Item item)
+												{
+													return item.enchantmentBonus != enchantmentBonus;
+												});
 			if (it != resultList.end()) {
 				resultList.remove(*it);
 			}
@@ -59,14 +70,17 @@ namespace itemcontainer {
 		return resultList;
 	}
 
-	list<Item> ItemContainer::GetItems(const int& itemType) {
+	list<Item> ItemContainer::GetItemsByItemType(int itemType) {
 		list<Item> resultList(items);
 
 		for (int i = 0; i < items.size(); i++)
 		{
-			auto it = find_if(resultList.begin(),
-								resultList.end(),
-								[itemType](const Item& item) { return item.itemType != itemType; });
+			list<Item>::iterator it = find_if(resultList.begin(),
+												resultList.end(),
+												[itemType](Item item)
+												{
+													return item.itemType != itemType;
+												});
 			if (it != resultList.end()) {
 				resultList.remove(*it);
 			}
@@ -75,14 +89,17 @@ namespace itemcontainer {
 		return resultList;
 	}
 
-	list<Item> ItemContainer::GetItems(const int& enchantmentType) {
+	list<Item> ItemContainer::GetItemsByStat(int enchantmentType) {
 		list<Item> resultList(items);
 
 		for (int i = 0; i < items.size(); i++)
 		{
-			auto it = find_if(resultList.begin(),
-								resultList.end(),
-								[enchantmentType](const Item& item) { return item.enchantmentType != enchantmentType; });
+			list<Item>::iterator it = find_if(resultList.begin(),
+												resultList.end(),
+												[enchantmentType](Item item)
+												{
+													return item.enchantmentType != enchantmentType;
+												});		
 			if (it != resultList.end()) {
 				resultList.remove(*it);
 			}
