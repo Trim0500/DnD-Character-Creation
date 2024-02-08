@@ -29,7 +29,7 @@ Character::Character::Character(){
 	proficiency_bonus = std::lround((double)(level / 5.0)) + 2;
 	//Generate attack_bonus (assume unarmed so use STRENGTH mod)
 	attack_bonus = ability_modifiers[STRENGTH] + proficiency_bonus;
-	//Generate damage_bonus(assume_unarmed at start so 0)
+	//Generate damage_bonus(assume_unarmed by default therefor 0)
 	damage_bonus = 0;
 }
 
