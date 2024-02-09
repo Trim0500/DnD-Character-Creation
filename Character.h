@@ -5,10 +5,8 @@
 #include <chrono>
 #include <vector>
 #include <bitset>
-
-class Item {
-
-};
+#include "item.h"
+#include "itemcontainer.h"
 
 namespace Character {
 
@@ -36,16 +34,6 @@ namespace Character {
 		CHARISMA
 	};
 
-	struct EquipmentSlots {
-		// Equiped items must be changed to pointers to item data type
-		int armor{};
-		int shield{};
-		int weapon{};
-		int boots{};
-		int ring{};
-		int helmet{};
-	};
-
 	class Character {
 	public:
 		Character();
@@ -57,19 +45,21 @@ namespace Character {
 		const int Sum_Levels();
 		const std::bitset<11> Get_Class() { return character_class; };
 		bool Levelup(Character_Class t_class);
-		bool Equipe_Item(Item* t_item);
+		bool Equipe_Item(item::Item* t_item);
 
 	private:
 		//Default name
 		std::string name{ "Cirian" };
 		struct EquipmentSlots {
 			// Equiped items must be changed to the item data type
-			Item* armor{};
-			Item* shield{};
-			Item* weapon{};
-			Item* boots{};
-			Item* ring{};
-			Item* helmet{};
+			item::Item* armor{};
+			item::Item* shield{};
+			item::Item* weapon{};
+			item::Item* boots{};
+			item::Item* ring{};
+			item::Item* helmet{};
+			item::Item* belt{};
+			item::Item* bag{};
 		};
 
 		std::bitset<11> character_class;
@@ -85,6 +75,7 @@ namespace Character {
 		int proficiency_bonus{};
 
 		EquipmentSlots equipment_slots{};
+		itemcontainer::ItemContainer inventory = itemcontainer::ItemContainer("Inventory", Backpack);
 		std::string Get_Class_Name(Character_Class t_class);
 		std::string Get_Class_Name(int t_class);
 

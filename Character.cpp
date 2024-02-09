@@ -113,6 +113,46 @@ bool Character::Character::Levelup(Character_Class t_class)
 	}
 }
 
+bool Character::Character::Equipe_Item(item::Item* t_item) {
+
+	//std::vector<item::Item>::iterator equipping = inventory.GetItem(t_item->GetItemName());
+	if (true) {
+		std::cerr << "Could not find '" << t_item->GetItemName() << "' in inventory" << std::endl;
+		return false;
+	}
+	switch (t_item->GetItemType())
+	{
+	case Hemlet:
+		equipment_slots.helmet = t_item;
+		break;
+	case Armor:
+		equipment_slots.armor = t_item;
+		break;
+	case Shield:
+		equipment_slots.shield = t_item;
+		break;
+	case Ring:
+		equipment_slots.ring = t_item;
+		break;
+	case Belt:
+		equipment_slots.belt = t_item;
+		break;
+	case Boots:
+		equipment_slots.boots = t_item;
+		break;
+	case Weapon:
+		equipment_slots.weapon = t_item;
+		break;
+	case Backpack:
+		equipment_slots.bag = t_item;
+		break;
+	default:
+		std::cerr << "Could not equipe '" << t_item->GetItemName() << "'. No corresponding equipment slot" << std::endl;
+		return false;
+	}
+	return true;
+}
+
 std::string Character::Character::Get_Class_Name(Character_Class t_class)
 {
 	switch (t_class)
