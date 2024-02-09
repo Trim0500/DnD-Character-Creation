@@ -53,16 +53,16 @@ namespace itemcontainer {
 		items = _items;
 	}
 
-	Item ItemContainer::GetItem(const string& nameKey) {
+	vector<Item>::iterator ItemContainer::GetItem(const string& nameKey) {
 		vector<Item>::iterator it = FindItemByName(items, nameKey);
 
-		return *it;
+		return it;
 	}
 
-	Item ItemContainer::GetItem(const int& itemType) {
+	vector<Item>::iterator ItemContainer::GetItem(const int& itemType) {
 		vector<Item>::iterator it = FindItemByItemType(items, itemType);
 
-		return *it;
+		return it;
 	}
 
 	vector<Item> ItemContainer::GetItemsByEnchantmentBonus(const int& enchantmentBonus) {
