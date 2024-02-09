@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include <string>
-#include <list>
+#include <vector>
 
 #include "item.h"
 
@@ -49,42 +49,42 @@ namespace itemcontainer {
 			ItemContainer(const string&, const int&);
 			string GetName() { return name; };
 			ItemContainerType GetItemContainerType() { return containerType; };
-			list<Item> GetAllItems() { return items; };
+			vector<Item> GetAllItems() { return items; };
 			/*
 			* \fn GetItem
 			* \brief Overloaded method to find an item by name
 			* 
 			* Overloaded method that uses an item name to find the specific item in the list and return it.
 			*/
-			Item GetItem(string);
+			Item GetItem(const string&);
 			/*
 			* \fn GetItem
 			* \brief Overloaded method to find an item by item type
 			*
 			* Overloaded method that uses an item type value (1-7) to find the specific item in the list and return it.
 			*/
-			Item GetItem(int);
+			Item GetItem(const int&);
 			/*
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via enchantment bonus
 			* 
 			* Overloaded member function that will use an enchantment bonus (1-5) to find the items that have that bonus.
 			*/
-			list<Item> GetItemsByEnchantmentBonus(int);
+			vector<Item> GetItemsByEnchantmentBonus(const int&);
 			/*
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via item type
 			*
 			* Overloaded member function that will use an item type enum value (1-7) to find the items that have that type.
 			*/
-			list<Item> GetItemsByItemType(int);
+			vector<Item> GetItemsByItemType(const int&);
 			/*
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via character stat
 			*
 			* Overloaded member function that will use a character stat enum value (1-9) to find the items that have that type.
 			*/
-			list<Item> GetItemsByStat(int);
+			vector<Item> GetItemsByStat(const int&);
 			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
 		private:
 			/*
@@ -98,6 +98,6 @@ namespace itemcontainer {
 			/*
 			* A variable
 			*/
-			list<Item> items;
+			vector<Item> items;
 	};
 }
