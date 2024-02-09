@@ -1,0 +1,36 @@
+\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/\+Character.cpp}
+\hypertarget{_character_8cpp_source}{}\label{_character_8cpp_source}\mbox{\hyperlink{_character_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{Character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00005}\mbox{\hyperlink{class_character_a2e22068c6caf3cb2dc49dd633f874f21}{00005}}\ \mbox{\hyperlink{class_character_a2e22068c6caf3cb2dc49dd633f874f21}{Character::Character}}(\textcolor{keywordtype}{int}\ t\_level,\ \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7}{CharacterClass}}\ t\_class)\{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{int}\ skill\_points\ =\ (2\ +\ ability\_modifiers[\mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778a669e2c9b9438baad4cb397a2ac42b9f1}{intelligence}}])\ *\ 4;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//-\/add\ exception\ handeling\ for\ level\ \&\&\ class}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00008}00008\ \ \ \ \ character\_class\ =\ t\_class;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00009}00009\ \ \ \ \ level\ =\ t\_level;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//Generate\ ability\ scores}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ability\ scores\ randomly\ generated\ between\ 1\ \&\ 18}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ ability\_scores[i]\ =\ rand()\ \%\ 18\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//Calculate\ ability\ modifiers}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ ability\_modifiers[i]\ =\ std::floor((ability\_scores[i]\ -\/\ 10)\ /\ 2);}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//Calculate\ hit\ points}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//Character\ creation\ based\ on\ class\ }}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{switch}\ (character\_class)\{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a670cad2a659c59eba108ca847faebebf}{fighter}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Fighter\ class\ case\ }}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}is\ fighter"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}INVALID\ CLASS"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00031}00031\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,116 @@
+\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/item.h}
+\hypertarget{item_8h_source}{}\label{item_8h_source}\mbox{\hyperlink{item_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00002}00002\ \textcolor{comment}{*\ \(\backslash\)file\ item.h}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00003}00003\ \textcolor{comment}{*\ \(\backslash\)brief\ Header\ file\ for\ the\ Item\ class}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00004}00004\ \textcolor{comment}{*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00005}00005\ \textcolor{comment}{*\ This\ file\ puts\ in\ the\ forwrad\ declarations\ for\ the\ Item\ class\ and\ it's\ member\ fields\ and\ functions.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00006}00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00013}00013\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00015}00015\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00016}00016\ \textcolor{comment}{*\ \(\backslash\)namespace\ item}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00017}00017\ \textcolor{comment}{*\ \(\backslash\)brief\ namespace\ to\ encapsulate\ character\ items}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00018}00018\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00019}00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceitem}{item}}\ \{}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00020}00020\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00021}00021\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)enum\ Itemtype}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00022}00022\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Enum\ for\ the\ character\ item\ types}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00023}00023\ \textcolor{comment}{\ \ \ \ *\ }}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00024}00024\ \textcolor{comment}{\ \ \ \ *\ Enum\ in\ the\ item\ namespace\ that\ represents\ the\ various\ types\ of\ items\ that\ can\ exist\ for\ a\ character\ to\ wear.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00025}00025\ \textcolor{comment}{\ \ \ \ *\ Each\ have\ a\ set\ amount\ of\ enchantment\ types\ they\ can\ imbue.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00026}00026\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00027}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{00027}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}}\ \{}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00028}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a95003f6738d8a3225ec67ac59a1c1e8f}{00028}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a95003f6738d8a3225ec67ac59a1c1e8f}{Hemlet}}\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00029}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03accbeb800ab9169831734326a5b38cb4d}{00029}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03accbeb800ab9169831734326a5b38cb4d}{Armor}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00030}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9}{00030}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9}{Shield}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00031}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{00031}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{Ring}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00032}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a1ec13bc0551b0b9b015ba22b6ff865d5}{00032}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a1ec13bc0551b0b9b015ba22b6ff865d5}{Belt}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00033}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d}{00033}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d}{Boots}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00034}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158}{00034}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158}{Weapon}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00035}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae59effc574d9bec278c1ee0b976df884}{00035}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae59effc574d9bec278c1ee0b976df884}{Backpack}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00036}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a5e5187a25bcb572f9755b15cb9e0d8b5}{00036}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a5e5187a25bcb572f9755b15cb9e0d8b5}{WornItems}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a2e431dccf0d1c3dda6e00d7841e73248}{TreasureChest}}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00038}\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a2e431dccf0d1c3dda6e00d7841e73248}{00038}}\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00041}00041\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)enum\ CharacterStats}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00042}00042\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Enum\ for\ the\ character\ stats}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00043}00043\ \textcolor{comment}{\ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00044}00044\ \textcolor{comment}{\ \ \ \ *\ Enum\ in\ the\ item\ namespace\ that\ represents\ the\ possible\ stats\ that\ an\ item\ can\ increase\ when\ worn\ by\ a\ character.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00045}00045\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00046}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{00046}}\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ \{}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00047}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{00047}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}}\ =\ 1,}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00048}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69}{00048}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69}{Dexterity}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00049}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3}{00049}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3}{Constitution}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00050}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a}{00050}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a}{Intelligence}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00051}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383}{00051}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383}{Wisdom}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00052}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6}{00052}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6}{Charisma}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00053}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{00053}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00054}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c}{00054}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c}{AttackBonus}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00055}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{00055}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{DamageBonus}},}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca44125f26a1f7fbb82e6756ddd5e5bfce}{NA}}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00057}\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca44125f26a1f7fbb82e6756ddd5e5bfce}{00057}}\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00059}00059\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00060}00060\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)class\ Item}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00061}00061\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Class\ for\ the\ character\ items}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00062}00062\ \textcolor{comment}{\ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00063}00063\ \textcolor{comment}{\ \ \ \ *\ Class\ that\ abstracts\ the\ Items\ available\ to\ a\ character\ that\ are\ put\ into\ a\ container\ or\ worn.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00064}00064\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00065}\mbox{\hyperlink{classitem_1_1_item}{00065}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \{}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00068}00068\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)fn\ Item}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00069}00069\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ No-\/args\ constructor\ for\ Item}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00070}00070\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ No-\/args\ constructor\ that\ will\ randomly\ generate\ an\ item\ in\ terms\ of\ enchantment\ count,\ item\ type\ and\ enchantment\ type.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Implemented\ in\ item.cpp.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00073}00073\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a7e7998679cac37adb8124f012d5dd39e}{Item}}();}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00076}00076\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)fn\ Item}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00077}00077\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ \(\backslash\)brief\ Overloaded\ constructor\ for\ Item}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00078}00078\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00079}00079\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Custom\ constructor\ that\ will\ take\ in\ specified\ arguments\ to\ make\ an\ instance\ of\ the\ Item\ class.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00080}00080\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Note\ that\ enchantment\ bonus\ ranges\ from\ 1-\/5,\ item\ type\ ranges\ from\ 1-\/7\ and\ enchantment\ type\ ranges\ from\ 1-\/9.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00081}00081\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ Implemented\ by\ item.cpp.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00082}00082\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00083}00083\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ @param\ \_itemName\ The\ reference\ to\ the\ name\ given\ to\ the\ item.}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00084}00084\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ @param\ \_enchantmentBonus\ The\ reference\ to\ a\ constant\ integer\ representing\ the\ chosen\ enchantment\ bonus\ value.\ (0-\/5)}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00085}00085\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ @param\ \_itemType\ The\ reference\ to\ a\ constant\ integer\ representing\ the\ chosen\ item\ type.\ (1-\/10)}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00086}00086\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ @param\ \_enchantmentType\ The\ reference\ to\ a\ constant\ integer\ representing\ the\ chosen\ enchantment\ type\ value.\ (1-\/10)}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00087}00087\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a7e7998679cac37adb8124f012d5dd39e}{Item}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00089}\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{00089}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ \{\ \textcolor{keywordflow}{return}\ itemName;\ \};}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00090}\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{00090}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ \{\ \textcolor{keywordflow}{return}\ enchantmentBonus;\ \};}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00091}\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{00091}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}}\ \mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ \{\ \textcolor{keywordflow}{return}\ itemType;\ \}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00092}\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{00092}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ \mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ \{\ \textcolor{keywordflow}{return}\ enchantmentType;\ \};}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00095}00095\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ A\ variable}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00096}00096\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ itemName;}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00099}00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ A\ variable}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00100}00100\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ enchantmentBonus;}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00103}00103\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ A\ variable}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00104}00104\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}}\ itemType;}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00107}00107\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ *\ A\ variable}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00108}00108\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ enchantmentType;}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00110}00110\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{item_8h_source_l00111}00111\ \}}
+
+\end{DoxyCode}
