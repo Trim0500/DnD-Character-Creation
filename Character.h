@@ -3,7 +3,12 @@
 #include <iomanip>
 #include <random>
 #include <chrono>
-//#include <time.h>
+#include <vector>
+#include <bitset>
+
+class Item {
+
+};
 
 namespace Character {
 
@@ -39,34 +44,44 @@ namespace Character {
 		const int Attack_Bonus() { return attack_bonus; };
 		const int Modifier(Abilities t_ability) { return ability_modifiers[t_ability]; };
 		const int Proficiency_Bonus() { return proficiency_bonus; };
-
+		const int Sum_Levels();
+		const std::bitset<11> Get_Class() { return character_class; };
+		bool Levelup(Character_Class t_class);
+		bool Equipe_Item(Item* t_item);
 
 	private:
 		//Default name
 		std::string name{ "Cirian" };
 		struct EquipmentSlots {
 			// Equiped items must be changed to the item data type
-			int armor{};
-			int shield{};
-			int weapon{};
-			int boots{};
-			int ring{};
-			int helmet{};
+			Item* armor{};
+			Item* shield{};
+			Item* weapon{};
+			Item* boots{};
+			Item* ring{};
+			Item* helmet{};
 		};
 
-		Character_Class character_class{};
-		int level;
-		//Can use 'Ability' enum to index to the right ability score
+		std::bitset<11> character_class;
+		std::vector<int> level = std::vector<int> (11,0);
+		//Use 'Ability' enum to index to the right ability score
 		int ability_scores[6]{};
 		int ability_modifiers[6]{};
-		EquipmentSlots equipment_slots{};
 		int hit_points{};
-		int natural_armour_class{};
 		int armour_class{};
 		int attack_bonus{};
 		int damage_bonus{};
 		int proficiency_bonus{};
 
-		std::string get_class_name();
+		EquipmentSlots equipment_slots{};
+		std::string Get_Class_Name(Character_Class t_class);
+		std::string Get_Class_Name(int t_class);
+
+		/*
+		int calculate_armour_class();
+		int calculate_proficiency();
+		int calculate_attack_bonus();
+		*/
+
 	};
 }
