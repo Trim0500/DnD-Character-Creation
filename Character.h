@@ -13,7 +13,7 @@ class Item {
 namespace Character {
 
 	enum Character_Class {
-		BARBARIAN,
+		BARBARIAN = 0,
 		BARD,
 		CLERIC,
 		DRUID,
@@ -29,11 +29,21 @@ namespace Character {
 	enum Abilities {
 
 		STRENGTH = 0,
-		DEXTERITY = 1,
-		CONSTITUTION = 2,
-		INTELLIGENCE = 3,
-		WISDOM = 4,
-		CHARISMA = 5,
+		DEXTERITY,
+		CONSTITUTION,
+		INTELLIGENCE,
+		WISDOM,
+		CHARISMA
+	};
+
+	struct EquipmentSlots {
+		// Equiped items must be changed to pointers to item data type
+		int armor{};
+		int shield{};
+		int weapon{};
+		int boots{};
+		int ring{};
+		int helmet{};
 	};
 
 	class Character {
@@ -42,7 +52,7 @@ namespace Character {
 		void Print_Character_Sheet();
 		const int Hit_Points() { return hit_points; };
 		const int Attack_Bonus() { return attack_bonus; };
-		const int Modifier(Abilities t_ability) { return ability_modifiers[t_ability]; };
+		const int Modifier(int t_ability) { return ability_modifiers[t_ability]; };
 		const int Proficiency_Bonus() { return proficiency_bonus; };
 		const int Sum_Levels();
 		const std::bitset<11> Get_Class() { return character_class; };
@@ -66,6 +76,7 @@ namespace Character {
 		std::vector<int> level = std::vector<int> (11,0);
 		//Use 'Ability' enum to index to the right ability score
 		int ability_scores[6]{};
+		//Use 'Ability' enum to index to desired ability score
 		int ability_modifiers[6]{};
 		int hit_points{};
 		int armour_class{};
