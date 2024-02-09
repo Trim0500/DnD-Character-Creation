@@ -22,33 +22,19 @@ using namespace item;
 */
 namespace itemcontainer {
 	/*
-	* \enum ItemContainerType
-	* \brief Enum that represents the different item containers
-	* 
-	* An enum that identifies the different character or map item containers.
-	*/
-	enum ItemContainerType {
-		Backback = 1,
-		WornItems,
-		TreasureChest
-	};
-
-	/*
 	* \class ItemContainer
 	* \brief Class to abstract the different item containers
 	* 
 	* Class that is meant to abstract various kinds of item containers for a character.
 	* These containers use a list from the std library to allow for any number of items to be added to a container.
 	*/
-	class ItemContainer {
+	class ItemContainer : public Item {
 		public:
 			/*
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer
 			*/
 			ItemContainer(const string&, const int&);
-			string GetName() { return name; };
-			ItemContainerType GetItemContainerType() { return containerType; };
 			vector<Item> GetAllItems() { return items; };
 			/*
 			* \fn GetItem
@@ -87,14 +73,6 @@ namespace itemcontainer {
 			vector<Item> GetItemsByStat(const int&);
 			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
 		private:
-			/*
-			* A variable
-			*/
-			string name;
-			/*
-			* A variable
-			*/
-			ItemContainerType containerType;
 			/*
 			* A variable
 			*/

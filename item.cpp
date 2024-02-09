@@ -94,6 +94,11 @@ namespace item {
 				enchantmentType = PickEnchantmentType(weaponEnchantmentTypes);
 			}
 				break;
+			default:
+			{
+				enchantmentType = (CharacterStats)1;
+			}
+				break;
 		}
 	}
 

@@ -28,7 +28,7 @@ namespace {
 	* @returns An iterator pointing to the item instance in the vector
 	*/
 	vector<Item>::iterator FindItemByName(vector<Item> _itemVector, const string& _nameKey) {
-		return find_if(_itemVector.begin(), _itemVector.end(), [_nameKey](Item item) { return item.itemName == _nameKey; });
+		return find_if(_itemVector.begin(), _itemVector.end(), [_nameKey](Item item) { return item.GetItemName() == _nameKey; });
 	}
 
 	/*
@@ -43,14 +43,12 @@ namespace {
 	* @returns An iterator pointing to the item instance in the vector
 	*/
 	vector<Item>::iterator FindItemByItemType(vector<Item> _itemVector, const int& _itemTypeKey) {
-		return find_if(_itemVector.begin(), _itemVector.end(), [_itemTypeKey](Item item) { return item.itemType == _itemTypeKey; });
+		return find_if(_itemVector.begin(), _itemVector.end(), [_itemTypeKey](Item item) { return item.GetItemType() == (ItemType)_itemTypeKey; });
 	}
 }
 
 namespace itemcontainer {
-	ItemContainer::ItemContainer(const string& _containerName, const int& _containerType) {
-		name = _containerName;
-		containerType = (ItemContainerType)_containerType;
+	ItemContainer::ItemContainer(const string& _containerName, const int& _containerType) : Item(_containerName, 0, _containerType, 10) {
 		vector<Item> _items;
 		items = _items;
 	}
@@ -74,7 +72,7 @@ namespace itemcontainer {
 		copy_if(items.begin(),
 				items.end(),
 				back_inserter(resultVect), 
-			[enchantmentBonus](Item item) { return item.enchantmentBonus == enchantmentBonus; });
+			[enchantmentBonus](Item item) { return item.GetEnchantmentBonus() == enchantmentBonus; });
 
 		return resultVect;
 	}
@@ -84,7 +82,7 @@ namespace itemcontainer {
 		copy_if(items.begin(),
 			items.end(),
 			back_inserter(resultVect),
-			[itemType](Item item) { return item.enchantmentBonus == itemType; });
+			[itemType](Item item) { return item.GetItemType() == (ItemType)itemType; });
 
 		return resultVect;
 	}
@@ -94,7 +92,7 @@ namespace itemcontainer {
 		copy_if(items.begin(),
 			items.end(),
 			back_inserter(resultVect),
-			[enchantmentType](Item item) { return item.enchantmentBonus == enchantmentType; });
+			[enchantmentType](Item item) { return item.GetEnchantmentType() == (CharacterStats)enchantmentType; });
 
 		return resultVect;
 	}
