@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['shield_0',['Shield',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9',1,'item']]],
-  ['strength_1',['Strength',['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9',1,'item']]]
+  ['monk_0',['monk',['../_character_8h.html#a85302146612e6b98c2845c25d5b0daf7aabe63a965379051f9f84d6e9dc418f1b',1,'Character.h']]]
 ];

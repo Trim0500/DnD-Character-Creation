@@ -29,7 +29,7 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ */}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordtype}{int}\ GenerateRandomInt(\textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)\ \{}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ random\_device\ seed;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ mt19937\ gen(seed);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ mt19937\ gen(seed());}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ uniform\_int\_distribution<int>\ distrib(min,\ max);}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00031}00031\ }
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ distrib(gen);}
@@ -48,7 +48,7 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00045}00045\ \textcolor{comment}{\ \ \ \ */}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item::CharacterStats}}\ PickEnchantmentType(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item::CharacterStats}}\ *allowedTypesArray)\ \{}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ random\_device\ seed;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ mt19937\ gen(seed);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ mt19937\ gen(seed());}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ uniform\_int\_distribution<int>\ distrib(0,\ \textcolor{keyword}{sizeof}(allowedTypesArray)\ -\/\ 1);}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indexChosen\ =\ distrib(gen);}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00051}00051\ }
@@ -58,48 +58,59 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00055}00055\ }
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00056}\mbox{\hyperlink{namespaceitem}{00056}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceitem}{item}}\ \{}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00057}\mbox{\hyperlink{classitem_1_1_item_a7e7998679cac37adb8124f012d5dd39e}{00057}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a7e7998679cac37adb8124f012d5dd39e}{Item::Item}}()\ \{}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a2c38b019e96d4438dcd28714787e52f0}{enchantmentBonus}}\ =\ GenerateRandomInt(1,\ 5);}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a1bee69a58c1a940103bad5bfd2c392d6}{itemType}}\ =\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})GenerateRandomInt(1,\ 7);}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\mbox{\hyperlink{classitem_1_1_item_a1bee69a58c1a940103bad5bfd2c392d6}{itemType}})\ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ enchantmentBonus\ =\ GenerateRandomInt(1,\ 5);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ itemType\ =\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})GenerateRandomInt(1,\ 7);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (itemType)\ \{}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ helmetEnchantmentTypes[3]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a}{Intelligence}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383}{Wisdom}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}}\ \};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_ad974f1726723a59aa5c3a4638802a779}{enchantmentType}}\ =\ PickEnchantmentType(helmetEnchantmentTypes);}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_ad974f1726723a59aa5c3a4638802a779}{enchantmentType}}\ =\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ ringEnchantmentTypes[5]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3}{Constitution}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383}{Wisdom}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6}{Charisma}}\ \};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_ad974f1726723a59aa5c3a4638802a779}{enchantmentType}}\ =\ PickEnchantmentType(ringEnchantmentTypes);}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ beltEnchantmentTypes[2]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3}{Constitution}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}}\ \};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_ad974f1726723a59aa5c3a4638802a779}{enchantmentType}}\ =\ PickEnchantmentType(beltEnchantmentTypes);}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ bootsEnchantmentTypes[2]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69}{Dexterity}}\ \};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_ad974f1726723a59aa5c3a4638802a779}{enchantmentType}}\ =\ PickEnchantmentType(bootsEnchantmentTypes);}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ weaponEnchantmentTypes[2]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c}{AttackBonus}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{DamageBonus}}\ \};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_ad974f1726723a59aa5c3a4638802a779}{enchantmentType}}\ =\ PickEnchantmentType(weaponEnchantmentTypes);}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ helmetEnchantmentTypes[3]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a}{Intelligence}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383}{Wisdom}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}}\ \};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enchantmentType\ =\ PickEnchantmentType(helmetEnchantmentTypes);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enchantmentType\ =\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ ringEnchantmentTypes[5]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3}{Constitution}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383}{Wisdom}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6}{Charisma}}\ \};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enchantmentType\ =\ PickEnchantmentType(ringEnchantmentTypes);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ beltEnchantmentTypes[2]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3}{Constitution}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}}\ \};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enchantmentType\ =\ PickEnchantmentType(beltEnchantmentTypes);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ bootsEnchantmentTypes[2]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69}{Dexterity}}\ \};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enchantmentType\ =\ PickEnchantmentType(bootsEnchantmentTypes);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00092}00092\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00094}\mbox{\hyperlink{classitem_1_1_item_a3cb35a0e23b7770d5b105679ff6f9928}{00094}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a7e7998679cac37adb8124f012d5dd39e}{Item::Item}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \_itemName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_enchantmentBonus,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_itemType,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_enchantmentType)\ \{}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_ab62707d451ed93dafbb4802f5bb22d63}{itemName}}\ =\ \_itemName;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a2c38b019e96d4438dcd28714787e52f0}{enchantmentBonus}}\ =\ \_enchantmentBonus;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a1bee69a58c1a940103bad5bfd2c392d6}{itemType}}\ =\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})\_itemType;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_ad974f1726723a59aa5c3a4638802a779}{enchantmentType}}\ =\ (\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}})\_enchantmentType;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00099}00099\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ weaponEnchantmentTypes[2]\ =\ \{\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c}{AttackBonus}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{DamageBonus}}\ \};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enchantmentType\ =\ PickEnchantmentType(weaponEnchantmentTypes);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enchantmentType\ =\ (\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}})1;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00105}\mbox{\hyperlink{classitem_1_1_item_a3cb35a0e23b7770d5b105679ff6f9928}{00105}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item_a7e7998679cac37adb8124f012d5dd39e}{Item::Item}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \_itemName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_enchantmentBonus,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_itemType,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_enchantmentType)\ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ itemName\ =\ \_itemName;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ enchantmentBonus\ =\ \_enchantmentBonus;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ itemType\ =\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})\_itemType;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ enchantmentType\ =\ (\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}})\_enchantmentType;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00110}00110\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00111}00111\ \}}
 
 \end{DoxyCode}

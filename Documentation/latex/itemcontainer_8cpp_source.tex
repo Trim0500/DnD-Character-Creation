@@ -9,8 +9,8 @@
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00007}00007\ }
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <list>}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00011}00011\ }
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{item.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{itemcontainer_8h}{itemcontainer.h}}"{}}}
@@ -19,80 +19,84 @@
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitem}{item}};}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00018}00018\ \textcolor{keyword}{namespace\ }\{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00020}00020\ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00022}\mbox{\hyperlink{namespaceitemcontainer}{00022}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}}\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00023}\mbox{\hyperlink{classitemcontainer_1_1_item_container_abf62a719b9d1c29442f9ec1aa734f096}{00023}}\ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container_abf62a719b9d1c29442f9ec1aa734f096}{ItemContainer::ItemContainer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \_containerName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_containerType)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ name\ =\ \_containerName;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ containerType\ =\ (\mbox{\hyperlink{namespaceitemcontainer_ab16677fdf46093c7d04b7f622562073b}{ItemContainerType}})\_containerType;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ list<Item>\ \_items;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ items\ =\ \_items;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00028}00028\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00030}\mbox{\hyperlink{classitemcontainer_1_1_item_container_aadfad2ce5f3792455c695fe780c1ccbc}{00030}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_aadfad2ce5f3792455c695fe780c1ccbc}{ItemContainer::GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ nameKey)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ find\_if(items.begin(),\ items.end(),\ [nameKey](\textcolor{keyword}{const}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}\&\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item.itemName\ ==\ nameKey;\ \});}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ items.end())\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *it;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00036}00036\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00037}00037\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00038}\mbox{\hyperlink{classitemcontainer_1_1_item_container_af65b6ea640384871a2e1abe03f284d7f}{00038}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_aadfad2ce5f3792455c695fe780c1ccbc}{ItemContainer::GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ itemType)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ find\_if(items.begin(),\ items.end(),\ [itemType](\textcolor{keyword}{const}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}\&\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item.itemType\ ==\ itemType;\ \});}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ items.end())\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *it;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00044}00044\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00046}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{00046}}\ \ \ \ \ list<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{ItemContainer::GetItems}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ enchantmentBonus)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ list<Item>\ resultList(items);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ find\_if(resultList.begin(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultList.end(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [enchantmentBonus](\textcolor{keyword}{const}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}\&\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item.enchantmentBonus\ !=\ enchantmentBonus;\ \});}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ resultList.end())\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultList.remove(*it);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00020}00020\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)fn\ FindItemByName}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00021}00021\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Get\ an\ item\ from\ the\ item\ container\ via\ name}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00022}00022\ \textcolor{comment}{\ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00023}00023\ \textcolor{comment}{\ \ \ \ *\ Helper\ function\ to\ the\ ItemContainer\ class\ to\ find\ an\ item\ from\ an\ instance\ vector\ by\ item\ name.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00024}00024\ \textcolor{comment}{\ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00025}00025\ \textcolor{comment}{\ \ \ \ *\ @param\ \_itemVector\ The\ item\ instance\ vector\ to\ search\ from}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ *\ @param\ \_nameKey\ The\ name\ of\ the\ item\ to\ search\ against\ in\ the\ list}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00027}00027\ \textcolor{comment}{\ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00028}00028\ \textcolor{comment}{\ \ \ \ *\ @returns\ An\ iterator\ pointing\ to\ the\ item\ instance\ in\ the\ vector}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00029}00029\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00030}00030\ \ \ \ \ vector<Item>::iterator\ FindItemByName(vector<Item>\ \_itemVector,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \_nameKey)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ find\_if(\_itemVector.begin(),\ \_itemVector.end(),\ [\_nameKey](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item.GetItemName()\ ==\ \_nameKey;\ \});}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00035}00035\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)fn\ FindItemByItemType}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00036}00036\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ Get\ an\ item\ from\ the\ item\ container\ via\ item\ type}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00037}00037\ \textcolor{comment}{\ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00038}00038\ \textcolor{comment}{\ \ \ \ *\ Helper\ function\ to\ the\ ItemContainer\ class\ to\ find\ an\ item\ from\ an\ instance\ vector\ by\ item\ type.}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00039}00039\ \textcolor{comment}{\ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00040}00040\ \textcolor{comment}{\ \ \ \ *\ @param\ \_itemVector\ The\ item\ instance\ vector\ to\ search\ from}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00041}00041\ \textcolor{comment}{\ \ \ \ *\ @param\ \_itemTypeKey\ The\ item\ type\ value\ of\ the\ item\ to\ search\ against\ in\ the\ list}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00042}00042\ \textcolor{comment}{\ \ \ \ *}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00043}00043\ \textcolor{comment}{\ \ \ \ *\ @returns\ An\ iterator\ pointing\ to\ the\ item\ instance\ in\ the\ vector}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00044}00044\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00045}00045\ \ \ \ \ vector<Item>::iterator\ FindItemByItemType(vector<Item>\ \_itemVector,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_itemTypeKey)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ find\_if(\_itemVector.begin(),\ \_itemVector.end(),\ [\_itemTypeKey](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item.GetItemType()\ ==\ (ItemType)\_itemTypeKey;\ \});}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00050}\mbox{\hyperlink{namespaceitemcontainer}{00050}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}}\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00051}\mbox{\hyperlink{classitemcontainer_1_1_item_container_abf62a719b9d1c29442f9ec1aa734f096}{00051}}\ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container_abf62a719b9d1c29442f9ec1aa734f096}{ItemContainer::ItemContainer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \_containerName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_containerType)\ :\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\_containerName,\ 0,\ \_containerType,\ 10)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ vector<Item>\ \_items;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ items\ =\ \_items;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00056}\mbox{\hyperlink{classitemcontainer_1_1_item_container_aadfad2ce5f3792455c695fe780c1ccbc}{00056}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_aadfad2ce5f3792455c695fe780c1ccbc}{ItemContainer::GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ nameKey)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ vector<Item>::iterator\ it\ =\ FindItemByName(items,\ nameKey);}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultList;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *it;}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00060}00060\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00062}00062\ \ \ \ \ list<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{ItemContainer::GetItems}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ itemType)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ list<Item>\ resultList(items);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00062}\mbox{\hyperlink{classitemcontainer_1_1_item_container_af65b6ea640384871a2e1abe03f284d7f}{00062}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_aadfad2ce5f3792455c695fe780c1ccbc}{ItemContainer::GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ itemType)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ vector<Item>::iterator\ it\ =\ FindItemByItemType(items,\ itemType);}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ find\_if(resultList.begin(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultList.end(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [itemType](\textcolor{keyword}{const}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}\&\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item.itemType\ !=\ itemType;\ \});}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ resultList.end())\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultList.remove(*it);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *it;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00068}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}{00068}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}{ItemContainer::GetItemsByEnchantmentBonus}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ enchantmentBonus)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ [enchantmentBonus](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetEnchantmentBonus()\ ==\ enchantmentBonus;\ \});}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultList;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00076}00076\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00078}00078\ \ \ \ \ list<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a4605691bb63a1981aefd7f36759f4e5a}{ItemContainer::GetItems}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ enchantmentType)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ list<Item>\ resultList(items);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ find\_if(resultList.begin(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultList.end(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [enchantmentType](\textcolor{keyword}{const}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}\&\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item.enchantmentType\ !=\ enchantmentType;\ \});}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ resultList.end())\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultList.remove(*it);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultList;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00092}00092\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00078}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}{00078}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}{ItemContainer::GetItemsByItemType}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ itemType)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ [itemType](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetItemType()\ ==\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})itemType;\ \});}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00088}\mbox{\hyperlink{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}{00088}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}{ItemContainer::GetItemsByStat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ enchantmentType)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ [enchantmentType](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetEnchantmentType()\ ==\ (\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}})enchantmentType;\ \});}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00097}00097\ \}}
 
 \end{DoxyCode}

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['itemcontainertype_0',['ItemContainerType',['../namespaceitemcontainer.html#ab16677fdf46093c7d04b7f622562073b',1,'itemcontainer']]],
-  ['itemtype_1',['ItemType',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03',1,'item']]]
+  ['characterclass_0',['CharacterClass',['../_character_8h.html#a85302146612e6b98c2845c25d5b0daf7',1,'Character.h']]],
+  ['characterstats_1',['CharacterStats',['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c',1,'item']]]
 ];

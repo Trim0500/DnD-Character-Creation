@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['itemname_0',['itemName',['../classitem_1_1_item.html#ab62707d451ed93dafbb4802f5bb22d63',1,'item::Item']]],
-  ['itemtype_1',['itemType',['../classitem_1_1_item.html#a1bee69a58c1a940103bad5bfd2c392d6',1,'item::Item']]]
+  ['boots_0',['boots',['../struct_equipment_slots.html#a7ccc751f73369b0bcc89a2522f6c6a47',1,'EquipmentSlots']]]
 ];
