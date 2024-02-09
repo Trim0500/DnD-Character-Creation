@@ -25,6 +25,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="testitem.cpp">
+	  <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -38,6 +40,7 @@
     </ClInclude>
     <ClInclude Include="testitem.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Source Files</Filter>
     </ClInclude>
