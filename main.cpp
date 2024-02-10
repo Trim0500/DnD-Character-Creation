@@ -2,10 +2,14 @@
 //
 
 #include <iostream>
+#include "Character.h"
 
 int main()
 {
     std::cout << "Hello World!\n";
+    Character::Character k;
+    item::Item sword("sword",1,item::Weapon,item::Strength);
+    std::cout<<k.Equipe_Item(&sword);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

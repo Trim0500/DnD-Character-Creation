@@ -28,12 +28,8 @@ Character::Character::Character(){
 	for (int i{ 0 }; i < Sum_Levels(); i++) {
 		hit_points += (rd() % 10 + 1)+ability_modifiers[CONSTITUTION];
 	}
-	//Generate base_armour_class
-	armour_class = (10 + ability_modifiers[DEXTERITY]);
 	//Generate proficiency_bonus
 	proficiency_bonus = std::ceil((double)(Sum_Levels() / 4.0)) + 1;
-	//Generate attack_bonus (assume unarmed so use STRENGTH mod)
-	attack_bonus = ability_modifiers[STRENGTH] + proficiency_bonus;
 	//Generate damage_bonus(assume_unarmed by default therefor 0)
 	damage_bonus = 0;
 }
@@ -50,7 +46,7 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::endl;
 	std::cout << std::right << std::setw(25) << "Level: " << Sum_Levels() << std::endl;
 	std::cout << std::right << std::setw(25) << "Proficiency Bonus : " << proficiency_bonus << std::endl;
-	std::cout << std::right << std::setw(25) << "Attack Bonus (Unarmed) : " << attack_bonus << std::endl;
+	std::cout << std::right << std::setw(25) << "Attack Bonus : " << Get_Attack_Bonus() << std::endl;
 	std::cout << std::endl << std::right << std::setw(20) << "Ability Scores: " << std::endl << std::endl;
 	std::cout << std::right << std::setw(20) << "Strength: " << std::left << std::setw(8) <<ability_scores[STRENGTH] << std::left << std::setw(1) << "Modifier: " << ability_modifiers[STRENGTH] << std::endl;
 	std::cout << std::right << std::setw(20) << "Dexterity: " << std::left << std::setw(8) << ability_scores[DEXTERITY] << std::left << std::setw(1) << "Modifier: " << ability_modifiers[DEXTERITY] << std::endl;
@@ -115,42 +111,78 @@ bool Character::Character::Levelup(Character_Class t_class)
 
 bool Character::Character::Equipe_Item(item::Item* t_item) {
 
-	//std::vector<item::Item>::iterator equipping = inventory.GetItem(t_item->GetItemName());
-	if (true) {
+	if (inventory.GetItem(t_item->GetItemName()) == inventory.GetAllItems().end()) {
 		std::cerr << "Could not find '" << t_item->GetItemName() << "' in inventory" << std::endl;
 		return false;
 	}
 	switch (t_item->GetItemType())
 	{
 	case Hemlet:
-		equipment_slots.helmet = t_item;
+		equipment_slots[helmet] = t_item;
 		break;
 	case Armor:
-		equipment_slots.armor = t_item;
+		equipment_slots[armor] = t_item;
 		break;
 	case Shield:
-		equipment_slots.shield = t_item;
+		equipment_slots[shield] = t_item;
 		break;
 	case Ring:
-		equipment_slots.ring = t_item;
+		equipment_slots[ring] = t_item;
 		break;
 	case Belt:
-		equipment_slots.belt = t_item;
+		equipment_slots[belt] = t_item;
 		break;
 	case Boots:
-		equipment_slots.boots = t_item;
+		equipment_slots[boots] = t_item;
 		break;
 	case Weapon:
-		equipment_slots.weapon = t_item;
+		equipment_slots[weapon] = t_item;
 		break;
 	case Backpack:
-		equipment_slots.bag = t_item;
+		equipment_slots[bag] = t_item;
 		break;
 	default:
 		std::cerr << "Could not equipe '" << t_item->GetItemName() << "'. No corresponding equipment slot" << std::endl;
 		return false;
 	}
 	return true;
+}
+
+const int Character::Character::Get_Armour_Class()
+{
+	int nat_AC{ 0 };
+	if (equipment_slots[Character::armor] == nullptr) {
+		// if no armour is equipped
+		nat_AC = 10 + ability_modifiers[DEXTERITY];
+	}
+	else{
+		// get equipped armour AC
+		nat_AC = equipment_slots[Character::armor]->GetEnchantmentBonus() + ability_modifiers[DEXTERITY];
+	}
+	for (auto &i : equipment_slots) {
+		// add any AC enchantments from other equipped items
+		if (i != nullptr && i->GetEnchantmentType() == ArmorClass && i->GetEnchantmentType() != ArmorClass) {
+			nat_AC += i->GetEnchantmentBonus();
+		}
+	}
+	return nat_AC;
+}
+
+const int Character::Character::calculate_proficiency()
+{
+	return proficiency_bonus = std::ceil((double)(Sum_Levels() / 4.0)) + 1;;
+}
+
+const int Character::Character::Get_Attack_Bonus()
+{
+	int attack_bonus = ability_modifiers[STRENGTH] + proficiency_bonus;;
+	for (auto& i : equipment_slots) {
+		// add any attack_bonus enchantments from other equipped items
+		if (i != nullptr && i->GetEnchantmentType() == item::Weapon && i->GetEnchantmentType() != item::Weapon) {
+			attack_bonus += i->GetEnchantmentBonus();
+		}
+	}
+	return attack_bonus;
 }
 
 std::string Character::Character::Get_Class_Name(Character_Class t_class)
