@@ -46,7 +46,7 @@ namespace {
 	item::CharacterStats PickEnchantmentType(const item::CharacterStats *allowedTypesArray) {
 		random_device seed;
 		mt19937 gen(seed());
-		uniform_int_distribution<int> distrib(0, sizeof(allowedTypesArray) - 1);
+		uniform_int_distribution<int> distrib(0, (sizeof(*allowedTypesArray) / sizeof(item::CharacterStats)) - 1);
 		int indexChosen = distrib(gen);
 
 		return allowedTypesArray[indexChosen];
