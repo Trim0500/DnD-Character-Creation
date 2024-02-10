@@ -2,11 +2,38 @@
 //
 
 #include <iostream>
+#include <cppunit/CompilerOutputter.h>
+#include <cppunit/extensions/TestFactoryRegistry.h>
+#include <cppunit/ui/text/TestRunner.h>
+
 #include "Character.h"
+
+using namespace CppUnit;
 
 int main()
 {
     std::cout << "Hello World!\n";
+    Character::Character k;
+    item::Item sword("sword", 1, item::Weapon, item::Strength);
+    std::cout << k.Equipe_Item(&sword);
+
+    // Get the top level suite from the registry
+    //Test* suite = TestFactoryRegistry::getRegistry().makeTest();
+
+    //// Adds the test to the list of test to run
+    //TextUi::TestRunner runner;
+    //runner.addTest(suite);
+
+    //// Change the default outputter to a compiler error format outputter
+    //runner.setOutputter(new CompilerOutputter(&runner.result(),
+    //    std::cerr));
+    //// Run the tests.
+    //bool wasSucessful = runner.run();
+
+    //getchar();
+
+    //// Return error code 1 if the one of test failed.
+    //return wasSucessful ? 0 : 1;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

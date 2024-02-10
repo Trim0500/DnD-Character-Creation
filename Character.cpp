@@ -111,10 +111,18 @@ bool Character::Character::Levelup(Character_Class t_class)
 
 bool Character::Character::Equipe_Item(item::Item* t_item) {
 
-	if (inventory.GetItem(t_item->GetItemName()) == inventory.GetAllItems().end()) {
+	/*if (inventory.GetItem(t_item->GetItemName()) == inventory.GetAllItems().end()) {
 		std::cerr << "Could not find '" << t_item->GetItemName() << "' in inventory" << std::endl;
 		return false;
+	}*/
+
+	item::Item* test = inventory.GetItem(t_item->GetItemName());
+	if (test == nullptr) {
+		cout << "Failed to find the item with name: " << t_item->GetItemName() << endl;
+		
+		return false;
 	}
+
 	switch (t_item->GetItemType())
 	{
 	case Hemlet:
