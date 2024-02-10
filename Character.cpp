@@ -28,8 +28,6 @@ Character::Character::Character(){
 	for (int i{ 0 }; i < Sum_Levels(); i++) {
 		hit_points += (rd() % 10 + 1)+ability_modifiers[CONSTITUTION];
 	}
-	//Generate proficiency_bonus
-	proficiency_bonus = std::ceil((double)(Sum_Levels() / 4.0)) + 1;
 	//Generate damage_bonus(assume_unarmed by default therefor 0)
 	damage_bonus = 0;
 }
@@ -40,12 +38,12 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(25) << "Class: ";
 	for (int i = 0; i < 11; i++) {
 		if (character_class.test(i)) {
-			std::cout << Get_Class_Name(i) << ", ";
+			std::cout << Get_Class_Name(i) <<"("<<level[i]<< "), ";
 		}
 	}
 	std::cout << std::endl;
 	std::cout << std::right << std::setw(25) << "Level: " << Sum_Levels() << std::endl;
-	std::cout << std::right << std::setw(25) << "Proficiency Bonus : " << proficiency_bonus << std::endl;
+	std::cout << std::right << std::setw(25) << "Proficiency Bonus : " << Get_Proficiency_Bonus() << std::endl;
 	std::cout << std::right << std::setw(25) << "Attack Bonus : " << Get_Attack_Bonus() << std::endl;
 	std::cout << std::endl << std::right << std::setw(20) << "Ability Scores: " << std::endl << std::endl;
 	std::cout << std::right << std::setw(20) << "Strength: " << std::left << std::setw(8) <<ability_scores[STRENGTH] << std::left << std::setw(1) << "Modifier: " << ability_modifiers[STRENGTH] << std::endl;
@@ -54,6 +52,12 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(20) << "Intelligence: " << std::left << std::setw(8) << ability_scores[INTELLIGENCE] << std::left << std::setw(1) << "Modifier: " << ability_modifiers[INTELLIGENCE] << std::endl;
 	std::cout << std::right << std::setw(20) << "Wisdom: " << std::left << std::setw(8) << ability_scores[WISDOM] << std::left << std::setw(1) << "Modifier: " << ability_modifiers[WISDOM] << std::endl;
 	std::cout << std::right << std::setw(20) << "Charisma: " << std::left << std::setw(8) << ability_scores[CHARISMA] << std::left << std::setw(1) << "Modifier: " << ability_modifiers[CHARISMA] << std::endl;
+	std::cout << std::endl << std::right << std::setw(20) << "Equipment: " << std::endl << std::endl;
+	for (int i = 0; i < equipment_slots.size(); i++) {
+		if(equipment_slots[i] != nullptr)
+			std::cout << std::right << std::setw(20)<< Get_Equipment_Slot_Name((Character::Character::EquipmentSlots)i)<<": " << equipment_slots[i]->GetItemName()
+			<< std::endl;
+	}
 
 }
 
@@ -111,15 +115,8 @@ bool Character::Character::Levelup(Character_Class t_class)
 
 bool Character::Character::Equipe_Item(item::Item* t_item) {
 
-	/*if (inventory.GetItem(t_item->GetItemName()) == inventory.GetAllItems().end()) {
-		std::cerr << "Could not find '" << t_item->GetItemName() << "' in inventory" << std::endl;
-		return false;
-	}*/
-
-	item::Item* test = inventory.GetItem(t_item->GetItemName());
-	if (test == nullptr) {
-		cout << "Failed to find the item with name: " << t_item->GetItemName() << endl;
-		
+	if (inventory.GetItem(t_item->GetItemName()) == nullptr) {
+		cout << "Could not equipe '" << t_item->GetItemName() << "'. Item could not be found in inventory" << endl;
 		return false;
 	}
 
@@ -176,21 +173,21 @@ const int Character::Character::Get_Armour_Class()
 	return nat_AC;
 }
 
-const int Character::Character::calculate_proficiency()
-{
-	return proficiency_bonus = std::ceil((double)(Sum_Levels() / 4.0)) + 1;;
-}
-
 const int Character::Character::Get_Attack_Bonus()
 {
-	int attack_bonus = ability_modifiers[STRENGTH] + proficiency_bonus;;
+	int attack_bonus = ability_modifiers[STRENGTH] + Get_Proficiency_Bonus();
 	for (auto& i : equipment_slots) {
 		// add any attack_bonus enchantments from other equipped items
-		if (i != nullptr && i->GetEnchantmentType() == item::Weapon && i->GetEnchantmentType() != item::Weapon) {
+		if (i != nullptr && i->GetEnchantmentType() == CharacterStats::AttackBonus) {
 			attack_bonus += i->GetEnchantmentBonus();
 		}
 	}
 	return attack_bonus;
+}
+
+const int Character::Character::Get_Proficiency_Bonus()
+{
+	return std::ceil((double)(Sum_Levels() / 4.0)) + 1;	
 }
 
 std::string Character::Character::Get_Class_Name(Character_Class t_class)
@@ -255,5 +252,39 @@ std::string Character::Character::Get_Class_Name(int t_class)
 		return "Unknown Class";
 	}
 
+}
+
+std::string Character::Character::Get_Equipment_Slot_Name(EquipmentSlots t_slot)
+{
+	switch (t_slot)
+	{
+	case Character::Character::armor:
+		return "Armour";
+		break;
+	case Character::Character::shield:
+		return "Shield";
+		break;
+	case Character::Character::weapon:
+		return "Weapon";
+		break;
+	case Character::Character::boots:
+		return "Boots";
+		break;
+	case Character::Character::ring:
+		return "Ring";
+		break;
+	case Character::Character::helmet:
+		return "Helmet";
+		break;
+	case Character::Character::belt:
+		return "Belt";
+		break;
+	case Character::Character::bag:
+		return "Bag";
+		break;
+	default:
+		break;
+	}
+	return "";
 }
 
