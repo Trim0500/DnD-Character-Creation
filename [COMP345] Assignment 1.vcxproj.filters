@@ -41,6 +41,9 @@
     <ClInclude Include="testitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+	<ClInclude Include="Dice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Source Files</Filter>
     </ClInclude>
