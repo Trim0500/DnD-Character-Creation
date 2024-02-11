@@ -139,6 +139,7 @@
     <ClInclude Include="itemcontainer.h" />
     <ClInclude Include="testitem.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Dice.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
