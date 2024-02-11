@@ -25,7 +25,7 @@ namespace item {
 	* Each have a set amount of enchantment types they can imbue.
 	*/
 	enum ItemType {
-		Hemlet = 1,
+		Helmet = 1,
 		Armor,
 		Shield,
 		Ring,
