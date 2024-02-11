@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['monk_0',['monk',['../_character_8h.html#a85302146612e6b98c2845c25d5b0daf7aabe63a965379051f9f84d6e9dc418f1b',1,'Character.h']]]
+  ['monk_0',['Monk',['../namespace_character.html#afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359',1,'Character']]]
 ];

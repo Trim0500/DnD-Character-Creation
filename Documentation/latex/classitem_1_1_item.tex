@@ -17,6 +17,8 @@ Inheritance diagram for item\+::Item\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{classitem_1_1_item_a3cb35a0e23b7770d5b105679ff6f9928}{Item}} (const string \&, const int \&, const int \&, const int \&)
 \item 
+int \mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{Get\+Item\+Id}} ()
+\item 
 string \mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{Get\+Item\+Name}} ()
 \item 
 int \mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{Get\+Enchantment\+Bonus}} ()
@@ -24,6 +26,18 @@ int \mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{Get\+
 \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{Item\+Type}} \mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{Get\+Item\+Type}} ()
 \item 
 \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{Character\+Stats}} \mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{Get\+Enchantment\+Type}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classitem_1_1_item_acb244a5ecfbc1ea3ec69bfb39fc920f2}{item\+Type\+Strings}} \mbox{[}7\mbox{]} = \{ "{}Helmet"{}, "{}Armor"{}, "{}Shield"{}, "{}Ring"{}, "{}Belt"{}, "{}Boots"{}, "{}Weapon"{} \}
+\item 
+string \mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{stat\+Strings}} \mbox{[}9\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classitem_1_1_item_ab20effab31ea89b0bdb4c1e4ad94f2fd}{operator==}} (const \mbox{\hyperlink{classitem_1_1_item}{Item}} \&lhs, const \mbox{\hyperlink{classitem_1_1_item}{Item}} \&rhs)
 \end{DoxyCompactItemize}
 
 
@@ -43,7 +57,7 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00065}{65}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{item_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{item_8cpp_source}{item.\+cpp}}.
+Definition at line \mbox{\hyperlink{item_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{item_8cpp_source}{item.\+cpp}}.
 
 \Hypertarget{classitem_1_1_item_a3cb35a0e23b7770d5b105679ff6f9928}\label{classitem_1_1_item_a3cb35a0e23b7770d5b105679ff6f9928} 
 \index{item::Item@{item::Item}!Item@{Item}}
@@ -53,7 +67,7 @@ Definition at line \mbox{\hyperlink{item_8cpp_source_l00057}{57}} of file \mbox{
 
 
 
-Definition at line \mbox{\hyperlink{item_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{item_8cpp_source}{item.\+cpp}}.
+Definition at line \mbox{\hyperlink{item_8cpp_source_l00113}{113}} of file \mbox{\hyperlink{item_8cpp_source}{item.\+cpp}}.
 
 
 
@@ -66,7 +80,7 @@ Definition at line \mbox{\hyperlink{item_8cpp_source_l00105}{105}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00090}{90}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00108}{108}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 \Hypertarget{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}\label{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25} 
 \index{item::Item@{item::Item}!GetEnchantmentType@{GetEnchantmentType}}
@@ -76,7 +90,17 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00090}{90}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00092}{92}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00110}{110}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+
+\Hypertarget{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}\label{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d} 
+\index{item::Item@{item::Item}!GetItemId@{GetItemId}}
+\index{GetItemId@{GetItemId}!item::Item@{item::Item}}
+\doxysubsubsection{\texorpdfstring{GetItemId()}{GetItemId()}}
+{\footnotesize\ttfamily int item\+::\+Item\+::\+Get\+Item\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{item_8h_source_l00106}{106}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 \Hypertarget{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}\label{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6} 
 \index{item::Item@{item::Item}!GetItemName@{GetItemName}}
@@ -86,7 +110,7 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00092}{92}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00089}{89}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00107}{107}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 \Hypertarget{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}\label{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42} 
 \index{item::Item@{item::Item}!GetItemType@{GetItemType}}
@@ -96,7 +120,56 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00089}{89}} of file \mbox{\h
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00091}{91}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00109}{109}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classitem_1_1_item_ab20effab31ea89b0bdb4c1e4ad94f2fd}\label{classitem_1_1_item_ab20effab31ea89b0bdb4c1e4ad94f2fd} 
+\index{item::Item@{item::Item}!operator==@{operator==}}
+\index{operator==@{operator==}!item::Item@{item::Item}}
+\doxysubsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classitem_1_1_item}{Item}} \&}]{lhs,  }\item[{const \mbox{\hyperlink{classitem_1_1_item}{Item}} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{item_8h_source_l00105}{105}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classitem_1_1_item_acb244a5ecfbc1ea3ec69bfb39fc920f2}\label{classitem_1_1_item_acb244a5ecfbc1ea3ec69bfb39fc920f2} 
+\index{item::Item@{item::Item}!itemTypeStrings@{itemTypeStrings}}
+\index{itemTypeStrings@{itemTypeStrings}!item::Item@{item::Item}}
+\doxysubsubsection{\texorpdfstring{itemTypeStrings}{itemTypeStrings}}
+{\footnotesize\ttfamily string item\+::\+Item\+::item\+Type\+Strings\mbox{[}7\mbox{]} = \{ "{}Helmet"{}, "{}Armor"{}, "{}Shield"{}, "{}Ring"{}, "{}Belt"{}, "{}Boots"{}, "{}Weapon"{} \}}
+
+
+
+Definition at line \mbox{\hyperlink{item_8h_source_l00070}{70}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+
+\Hypertarget{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}\label{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5} 
+\index{item::Item@{item::Item}!statStrings@{statStrings}}
+\index{statStrings@{statStrings}!item::Item@{item::Item}}
+\doxysubsubsection{\texorpdfstring{statStrings}{statStrings}}
+{\footnotesize\ttfamily string item\+::\+Item\+::stat\+Strings\mbox{[}9\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{\ \textcolor{stringliteral}{"{}Strength"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Dexterity"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Constitution"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Intelligence"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Wisdom"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Charisma"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Armor\ Class"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Attack\ Bonus"{}},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Damage\ Bonus"{}}\ \}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{item_8h_source_l00074}{74}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 
 
