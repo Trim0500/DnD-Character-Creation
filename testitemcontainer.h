@@ -33,6 +33,7 @@ class TestItemContainer : public TestFixture {
 	CPPUNIT_TEST(TestCustomConstructor);
 	CPPUNIT_TEST(TestAddNewItem);
 	CPPUNIT_TEST(TestGetItemByName);
+	CPPUNIT_TEST(TestGetItemByItemType);
 	CPPUNIT_TEST(TestGetAllItems);
 	CPPUNIT_TEST(TestGetItemsByBonus);
 	CPPUNIT_TEST(TestGetItemsByType);
@@ -46,6 +47,7 @@ class TestItemContainer : public TestFixture {
 		void TestCustomConstructor(void);
 		void TestAddNewItem(void);
 		void TestGetItemByName(void);
+		void TestGetItemByItemType(void);
 		void TestGetAllItems(void);
 		void TestGetItemsByBonus(void);
 		void TestGetItemsByType(void);

@@ -85,6 +85,17 @@ void TestItemContainer::TestCustomConstructor(void) {
 void TestItemContainer::TestGetItemByName(void) {
 	Item* foundItem = wornItemsObject->GetItem("testHelmet");
 	CPPUNIT_ASSERT(foundItem->GetItemName() == "testHelmet");
+	
+	Item* nullPointer = wornItemsObject->GetItem("someRandomName");
+	CPPUNIT_ASSERT(nullPointer == nullptr);
+}
+
+void TestItemContainer::TestGetItemByItemType(void) {
+	Item* foundItem = wornItemsObject->GetItem(Weapon);
+	CPPUNIT_ASSERT(foundItem->GetItemType() == Weapon);
+
+	Item* nullPointer = wornItemsObject->GetItem(8);
+	CPPUNIT_ASSERT(nullPointer == nullptr);
 }
 
 void TestItemContainer::TestAddNewItem(void) {
