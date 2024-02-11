@@ -26,8 +26,6 @@ void TestItem::tearDown(void)
 }
 
 void TestItem::TestNoArgsItemConstructor(void) {
-	/*CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == "");*/
-
 	ostringstream name;
 	name << noArgsItemObject->itemTypeStrings[noArgsItemObject->GetItemType() - 1]
 			<< " +"
