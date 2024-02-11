@@ -8,13 +8,16 @@
 
 #include "testitemcontainer.h"
 
+#define BACKPACK_ITEM_SIZE 10
+#define CHEST_ITEM_SIZE 20
+
 using namespace std;
 
 void TestItemContainer::setUp(void)
 {
 	backpackObject = new ItemContainer("testBackpack", Backpack);
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < BACKPACK_ITEM_SIZE; i++)
 	{
 		Item* newItem = new Item();
 		backpackObject->AddNewItem(*newItem);
@@ -40,7 +43,7 @@ void TestItemContainer::setUp(void)
 
 	chestObject = new ItemContainer("testChest", TreasureChest);
 
-	for (int i = 0; i < 20; i++)
+	for (int i = 0; i < CHEST_ITEM_SIZE; i++)
 	{
 		Item* newItem = new Item();
 		chestObject->AddNewItem(*newItem);
@@ -71,4 +74,15 @@ void TestItemContainer::TestCustomConstructor(void) {
 
 	CPPUNIT_ASSERT(chestObject->GetItemName() == "testChest");
 	CPPUNIT_ASSERT(chestObject->GetItemType() == TreasureChest);
+}
+
+void TestItemContainer::TestGetAllItems(void) {
+	vector<Item> backpackItems = backpackObject->GetAllItems();
+	CPPUNIT_ASSERT(backpackItems.size() == BACKPACK_ITEM_SIZE);
+	
+	vector<Item> wornItems = wornItemsObject->GetAllItems();
+	CPPUNIT_ASSERT(wornItems.size() == 7);
+	
+	vector<Item> chestItems = chestObject->GetAllItems();
+	CPPUNIT_ASSERT(chestItems.size() == CHEST_ITEM_SIZE);
 }
