@@ -13,9 +13,6 @@ using namespace CppUnit;
 int main()
 {
     std::cout << "Hello World!\n";
-    Character::Character k;
-    item::Item sword("sword", 1, item::Weapon, item::Strength);
-    std::cout << k.Equipe_Item(&sword);
 
     // Get the top level suite from the registry
     //Test* suite = TestFactoryRegistry::getRegistry().makeTest();
