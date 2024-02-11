@@ -57,6 +57,8 @@ namespace {
 
 namespace item {
 	Item::Item() {
+		nextItemId = nextItemId + 1;
+		itemId = nextItemId;
 		enchantmentBonus = GenerateRandomInt(1, 5);
 		itemType = (ItemType)GenerateRandomInt(1, 7);
 		switch (itemType) {
@@ -109,6 +111,8 @@ namespace item {
 	}
 
 	Item::Item(const string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType) {
+		nextItemId = nextItemId + 1;
+		itemId = nextItemId;
 		itemName = _itemName;
 		enchantmentBonus = _enchantmentBonus;
 		itemType = (ItemType)_itemType;

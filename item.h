@@ -103,14 +103,17 @@ namespace item {
 			*/
 			Item(const string&, const int&, const int&, const int&);
 			friend bool operator==(const Item& lhs, const Item& rhs) { return lhs.itemName == rhs.itemName; };
-			//const int GetItemId() { return itemId; };
+			int GetItemId() { return itemId; };
 			string GetItemName() { return itemName; };
 			int GetEnchantmentBonus() { return enchantmentBonus; };
 			ItemType GetItemType() { return itemType; }
 			CharacterStats GetEnchantmentType() { return enchantmentType; };
 		private:
-			/*static inline unsigned int itemIdGen{ 0 };
-			const int itemId = itemIdGen++;*/
+			static inline int nextItemId = 0;
+			/*
+			* A variable
+			*/
+			int itemId;
 			/*
 			* A variable
 			*/

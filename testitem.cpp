@@ -26,6 +26,7 @@ void TestItem::tearDown(void)
 }
 
 void TestItem::TestNoArgsItemConstructor(void) {
+	CPPUNIT_ASSERT(noArgsItemObject->GetItemId() == 1);
 	ostringstream name;
 	name << noArgsItemObject->itemTypeStrings[noArgsItemObject->GetItemType() - 1]
 			<< " +"
@@ -39,10 +40,17 @@ void TestItem::TestNoArgsItemConstructor(void) {
 }
 
 void TestItem::TestItemConstructor(void) {
+	CPPUNIT_ASSERT(customItemObject->GetItemId() == 4);
 	CPPUNIT_ASSERT(customItemObject->GetItemName() == "testItem");
 	CPPUNIT_ASSERT(customItemObject->GetEnchantmentBonus() == 3);
 	CPPUNIT_ASSERT(customItemObject->GetItemType() == Ring);
 	CPPUNIT_ASSERT(customItemObject->GetEnchantmentType() == Strength);
+}
+
+void TestItem::TestGetItemId(void) {
+	CPPUNIT_ASSERT(noArgsItemObject->GetItemId() == 5);
+	
+	CPPUNIT_ASSERT(customItemObject->GetItemId() == 6);
 }
 
 void TestItem::TestGetItemName(void) {

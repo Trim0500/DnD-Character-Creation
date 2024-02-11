@@ -33,6 +33,7 @@ class TestItem : public TestFixture {
 	CPPUNIT_TEST_SUITE(TestItem);
 	CPPUNIT_TEST(TestNoArgsItemConstructor);
 	CPPUNIT_TEST(TestItemConstructor);
+	CPPUNIT_TEST(TestGetItemId);
 	CPPUNIT_TEST(TestGetItemName);
 	CPPUNIT_TEST(TestGetEnchantmentBonus);
 	CPPUNIT_TEST(TestGetItemType);
@@ -45,6 +46,7 @@ class TestItem : public TestFixture {
 	protected:
 		void TestNoArgsItemConstructor(void);
 		void TestItemConstructor(void);
+		void TestGetItemId(void);
 		void TestGetItemName(void);
 		void TestGetEnchantmentBonus(void);
 		void TestGetItemType(void);
