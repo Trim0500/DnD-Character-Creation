@@ -328,3 +328,25 @@ void TestItemContainer::TestGetItemsByStat(void) {
 	int dmgBonusChestItemsSize = dmgBonusChestItems.size();
 	CPPUNIT_ASSERT(dmgBonusChestItemsSize >= 0 && dmgBonusChestItemsSize <= CHEST_ITEM_SIZE);
 }
+
+void TestItemContainer::TestAddNewItem(void) {
+	int backpackItemSize = backpackObject->GetAllItems().size();
+
+	int wornItemsSize = wornItemsObject->GetAllItems().size();
+
+	int chestItemSize = chestObject->GetAllItems().size();
+
+	Item* newItem = new Item("newItem", 4, Shield, ArmorClass);
+
+	backpackObject->AddNewItem(*newItem);
+	CPPUNIT_ASSERT(backpackObject->GetAllItems().size() == backpackItemSize + 1);
+	CPPUNIT_ASSERT(backpackObject->GetAllItems().back() == *newItem);
+	
+	wornItemsObject->AddNewItem(*newItem);
+	CPPUNIT_ASSERT(wornItemsObject->GetAllItems().size() == wornItemsSize + 1);
+	CPPUNIT_ASSERT(wornItemsObject->GetAllItems().back() == *newItem);
+
+	chestObject->AddNewItem(*newItem);
+	CPPUNIT_ASSERT(chestObject->GetAllItems().size() == chestItemSize + 1);
+	CPPUNIT_ASSERT(chestObject->GetAllItems().back() == *newItem);
+}

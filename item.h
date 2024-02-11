@@ -86,6 +86,7 @@ namespace item {
 			* @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (1-10)
 			*/
 			Item(const string&, const int&, const int&, const int&);
+			friend bool operator==(const Item& lhs, const Item& rhs) { return lhs.itemName == rhs.itemName; };
 			string GetItemName() { return itemName; };
 			int GetEnchantmentBonus() { return enchantmentBonus; };
 			ItemType GetItemType() { return itemType; }
