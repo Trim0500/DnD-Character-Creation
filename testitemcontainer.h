@@ -33,6 +33,7 @@ class TestItemContainer : public TestFixture {
 	CPPUNIT_TEST(TestCustomConstructor);
 	CPPUNIT_TEST(TestGetAllItems);
 	CPPUNIT_TEST(TestGetItemsByBonus);
+	CPPUNIT_TEST(TestGetItemsByType);
 	CPPUNIT_TEST_SUITE_END();
 
 	public:
@@ -42,6 +43,7 @@ class TestItemContainer : public TestFixture {
 		void TestCustomConstructor(void);
 		void TestGetAllItems(void);
 		void TestGetItemsByBonus(void);
+		void TestGetItemsByType(void);
 	private:
 		ItemContainer* backpackObject;
 		ItemContainer* wornItemsObject;

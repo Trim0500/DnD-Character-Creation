@@ -148,3 +148,82 @@ void TestItemContainer::TestGetItemsByBonus(void) {
 	int returnedPlusFiveChestItemVectorSize = chestPlusFiveItems.size();
 	CPPUNIT_ASSERT(returnedPlusFiveChestItemVectorSize >= 0 && returnedPlusFiveChestItemVectorSize <= CHEST_ITEM_SIZE);
 }
+
+void TestItemContainer::TestGetItemsByType(void) {
+	vector<Item> helmetBackpackItems = backpackObject->GetItemsByItemType(Helmet);
+	int helmetBackpackItemsSize = helmetBackpackItems.size();
+	CPPUNIT_ASSERT(helmetBackpackItemsSize >= 0 && helmetBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> armorBackpackItems = backpackObject->GetItemsByItemType(Armor);
+	int armorBackpackItemsSize = armorBackpackItems.size();
+	CPPUNIT_ASSERT(armorBackpackItemsSize >= 0 && armorBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> shieldBackpackItems = backpackObject->GetItemsByItemType(Shield);
+	int shieldBackpackItemsSize = shieldBackpackItems.size();
+	CPPUNIT_ASSERT(shieldBackpackItemsSize >= 0 && shieldBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> ringBackpackItems = backpackObject->GetItemsByItemType(Ring);
+	int ringBackpackItemsSize = ringBackpackItems.size();
+	CPPUNIT_ASSERT(ringBackpackItemsSize >= 0 && ringBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> beltBackpackItems = backpackObject->GetItemsByItemType(Belt);
+	int beltBackpackItemsSize = beltBackpackItems.size();
+	CPPUNIT_ASSERT(beltBackpackItemsSize >= 0 && beltBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> bootsBackpackItems = backpackObject->GetItemsByItemType(Boots);
+	int bootsBackpackItemsSize = bootsBackpackItems.size();
+	CPPUNIT_ASSERT(bootsBackpackItemsSize >= 0 && bootsBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> weaponBackpackItems = backpackObject->GetItemsByItemType(Weapon);
+	int weaponBackpackItemsSize = weaponBackpackItems.size();
+	CPPUNIT_ASSERT(weaponBackpackItemsSize >= 0 && weaponBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+
+	vector<Item> helmetWornItems = wornItemsObject->GetItemsByItemType(Helmet);
+	CPPUNIT_ASSERT(helmetWornItems.size() == 1);
+	
+	vector<Item> armorWornItems = wornItemsObject->GetItemsByItemType(Armor);
+	CPPUNIT_ASSERT(armorWornItems.size() == 1);
+	
+	vector<Item> shieldWornItems = wornItemsObject->GetItemsByItemType(Shield);
+	CPPUNIT_ASSERT(armorWornItems.size() == 1);
+	
+	vector<Item> ringWornItems = wornItemsObject->GetItemsByItemType(Ring);
+	CPPUNIT_ASSERT(ringWornItems.size() == 1);
+	
+	vector<Item> beltWornItems = wornItemsObject->GetItemsByItemType(Belt);
+	CPPUNIT_ASSERT(beltWornItems.size() == 1);
+	
+	vector<Item> bootsWornItems = wornItemsObject->GetItemsByItemType(Boots);
+	CPPUNIT_ASSERT(bootsWornItems.size() == 1);
+	
+	vector<Item> weaponWornItems = wornItemsObject->GetItemsByItemType(Weapon);
+	CPPUNIT_ASSERT(weaponWornItems.size() == 1);
+
+	vector<Item> helmetChestItems = chestObject->GetItemsByItemType(Helmet);
+	int helmetChestItemsSize = helmetChestItems.size();
+	CPPUNIT_ASSERT(helmetChestItemsSize >= 0 && helmetChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> armorChestItems = chestObject->GetItemsByItemType(Armor);
+	int armorChestItemsSize = armorChestItems.size();
+	CPPUNIT_ASSERT(armorChestItemsSize >= 0 && armorChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> shieldChestItems = chestObject->GetItemsByItemType(Shield);
+	int shieldChestItemsSize = shieldChestItems.size();
+	CPPUNIT_ASSERT(shieldChestItemsSize >= 0 && shieldChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> ringChestItems = chestObject->GetItemsByItemType(Ring);
+	int ringChestItemsSize = ringChestItems.size();
+	CPPUNIT_ASSERT(ringChestItemsSize >= 0 && ringChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> beltChestItems = chestObject->GetItemsByItemType(Belt);
+	int beltChestItemsSize = beltChestItems.size();
+	CPPUNIT_ASSERT(beltChestItemsSize >= 0 && beltChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> bootsChestItems = chestObject->GetItemsByItemType(Boots);
+	int bootsChestItemsSize = bootsChestItems.size();
+	CPPUNIT_ASSERT(bootsChestItemsSize >= 0 && bootsChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> weaponChestItems = chestObject->GetItemsByItemType(Weapon);
+	int weaponChestItemsSize = weaponChestItems.size();
+	CPPUNIT_ASSERT(weaponChestItemsSize >= 0 && weaponChestItemsSize <= CHEST_ITEM_SIZE);
+}
