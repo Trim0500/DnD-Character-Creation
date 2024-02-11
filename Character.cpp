@@ -31,14 +31,111 @@ Character::Character::Character(){
 	}
 	//Generate hit points
 	for (int i{ 0 }; i < Sum_Levels(); i++) {
-		max_hit_points += (rd() % 10 + 1)+Get_Modifier(Constitution);
+		max_hit_points += (rd() % 10 + 1)+Modifier(Abilities::Constitution);
 	}
 	hit_points = max_hit_points;
 }
 
+Character::Character::Character(const Character& t_character)
+{
+	name = t_character.name;
+	for (int i = 0;i<level.size(); i++) {
+		level.at(i) = t_character.level.at(i);
+		if (level.at(i) > 0) {
+			character_class.set(i);
+		}
+	}
+	for (int i = 0; i < ability_scores.size(); i++) {
+		ability_scores[i] = t_character.ability_scores[i];
+	}
+	max_hit_points = t_character.max_hit_points;
+	hit_points = t_character.hit_points;
+}
+
+Character::Character::Character(std::string t_name, Character_Class t_class)
+{
+	std::random_device rd;
+
+	name = t_name;
+	//Set level
+	level.at((int)t_class) = 1;
+	//Set character_classes
+	character_class.set((int)t_class);
+	//Generate ability scores
+	for (int i{ 0 }; i < 6; i++) {
+		//roll 3d6 for each ability score
+		for (int j{ 0 }; j < 3; j++) {
+			ability_scores[i] += rd() % 6 + 1;
+		}
+	}
+	//Generate hit points
+	max_hit_points += (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	hit_points = max_hit_points;
+}
+
+Character::Character::Character(Character_Class t_class)
+{
+	std::random_device rd;
+
+	//Set level
+	level.at((int)t_class) = 1;
+	//Set character_classes
+	character_class.set((int)t_class);
+	//Generate ability scores
+	for (int i{ 0 }; i < 6; i++) {
+		//roll 3d6 for each ability score
+		for (int j{ 0 }; j < 3; j++) {
+			ability_scores[i] += rd() % 6 + 1;
+		}
+	}
+	//Generate hit points
+	max_hit_points = (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	hit_points = max_hit_points;
+}
+
+Character::Character::Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores)
+{
+	std::random_device rd;
+
+	name = t_name;
+	//Set level
+	level.at((int)t_class) = 1;
+	//Set character_classes
+	character_class.set((int)t_class);
+	//Generate ability scores
+	for (int i{ 0 }; i < 6; i++) {
+		ability_scores[i] = t_ability_scores[i];
+	}
+	//Generate hit points
+	max_hit_points = (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	hit_points = max_hit_points;
+}
+
+Character::Character::Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores, int t_max_hit_points)
+{
+	name = t_name;
+	//Set level
+	level.at((int)t_class) = 1;
+	//Set character_classes
+	character_class.set((int)t_class);
+	//Generate ability scores
+	for (int i{ 0 }; i < 6; i++) {
+		ability_scores[i] = t_ability_scores[i];
+	}
+	//Generate hit points
+	max_hit_points = t_max_hit_points;
+	hit_points = max_hit_points;
+}
+
+const std::string& Character::Character::Name(std::string t_name)
+{
+	name = t_name;
+	return name;
+}
+
 void Character::Character::Print_Character_Sheet()
 {
-	std::cout << std::right << std::setw(25) << "Name: " << name<<" (ID: "<<Get_ID()<<")"<<std::endl;
+	std::cout << std::right << std::setw(25) << "Name: " << name<<" (ID: "<<ID()<<")"<<std::endl;
 	std::cout << std::right << std::setw(25) << "Class: ";
 	for (int i = 0; i < 11; i++) {
 		if (character_class.test(i)) {
@@ -47,24 +144,55 @@ void Character::Character::Print_Character_Sheet()
 	}
 	std::cout << std::endl;
 	std::cout << std::right << std::setw(25) << "Level: " << Sum_Levels() << std::endl;
-	std::cout << std::right << std::setw(25) << "Proficiency Bonus : " << Get_Proficiency_Bonus() << std::endl;
-	std::cout << std::right << std::setw(25) << "Armour Class : " << Get_Armour_Class() << std::endl;
-	std::cout << std::right << std::setw(25) << "Attack Bonus : " << Get_Attack_Bonus() << std::endl;
-	std::cout << std::right << std::setw(25) << "Damage Bonus : " << Get_Damage_Bonus() << std::endl;
-	std::cout << std::endl << std::right << std::setw(20) << "Ability Scores: " << std::endl << std::endl;
-	std::cout << std::right << std::setw(20) << "Strength: " << std::left << std::setw(8) <<ability_scores[Strength] << std::left << std::setw(1) << "Modifier: " << Get_Modifier(Strength) << std::endl;
-	std::cout << std::right << std::setw(20) << "Dexterity: " << std::left << std::setw(8) << ability_scores[Dexterity] << std::left << std::setw(1) << "Modifier: " << Get_Modifier(Dexterity) << std::endl;
-	std::cout << std::right << std::setw(20) << "Constitution: " << std::left << std::setw(8) << ability_scores[Constitution] << std::left << std::setw(1) << "Modifier: " << Get_Modifier(Constitution) << std::endl;
-	std::cout << std::right << std::setw(20) << "Intelligence: " << std::left << std::setw(8) << ability_scores[Intelligence] << std::left << std::setw(1) << "Modifier: " << Get_Modifier(Intelligence) << std::endl;
-	std::cout << std::right << std::setw(20) << "Wisdom: " << std::left << std::setw(8) << ability_scores[Wisdom] << std::left << std::setw(1) << "Modifier: " << Get_Modifier(Wisdom) << std::endl;
-	std::cout << std::right << std::setw(20) << "Charisma: " << std::left << std::setw(8) << ability_scores[Charisma] << std::left << std::setw(1) << "Modifier: " << Get_Modifier(Charisma) << std::endl;
-	std::cout << std::endl << std::right << std::setw(20) << "Equipment: " << std::endl << std::endl;
+	std::cout << std::right << std::setw(25) << "HP: " << Hit_Points()<<"/"<<Max_Hit_Points() << std::endl;
+	std::cout << std::right << std::setw(25) << "Proficiency Bonus: " << Proficiency_Bonus() << std::endl;
+	std::cout << std::right << std::setw(25) << "Armour Class: " << Armour_Class() << std::endl;
+	std::cout << std::right << std::setw(25) << "Attack Bonus: " << Attack_Bonus() << std::endl;
+	std::cout << std::right << std::setw(25) << "Damage Bonus: " << Damage_Bonus() << std::endl;
+	std::cout << std::string(70, '-') << std::endl;
+	std::cout << std::right << std::setw(40) << "ABILITY SCORES" << std::endl;
+	std::cout << std::right << std::setw(20) << "Ability" << " | " << std::left << std::setw(20) << "Score"
+	<< " | " << std::left << std::setw(20) << "Modifier" << std::endl;
+	std::cout << std::string(70, '-') << std::endl;
+	std::cout << std::right << std::setw(20) << "Strength" <<" | "<< std::left << std::setw(20) << Ability_Score(Abilities::Strength)<<" | "<<std::right<<std::setw(2) << Modifier(Abilities::Strength) << std::endl;
+	std::cout << std::right << std::setw(20) << "Dexterity" << " | " << std::left << std::setw(20) << Ability_Score(Abilities::Dexterity) <<" | " << std::right << std::setw(2) << Modifier(Abilities::Dexterity) << std::endl;
+	std::cout << std::right << std::setw(20) << "Constitution" << " | " << std::left << std::setw(20) << Ability_Score(Abilities::Constitution) <<" | " << std::right << std::setw(2) << Modifier(Abilities::Constitution) << std::endl;
+	std::cout << std::right << std::setw(20) << "Intelligence" << " | " << std::left << std::setw(20) << Ability_Score(Abilities::Intelligence) << " | " << std::right << std::setw(2) << Modifier(Abilities::Intelligence) << std::endl;
+	std::cout << std::right << std::setw(20) << "Wisdom" << " | " << std::left << std::setw(20) << Ability_Score(Abilities::Wisdom) << std::left <<" | " << std::right << std::setw(2) << Modifier(Abilities::Wisdom) << std::endl;
+	std::cout << std::right << std::setw(20) << "Charisma" << " | " << std::left << std::setw(20) << Ability_Score(Abilities::Charisma) << " | " << std::right << std::setw(2) << Modifier(Abilities::Charisma) << std::endl;
+	std::cout << std::string(70, '-') << std::endl;
+	std::cout << std::right << std::setw(40) << "EQUIPPED ITEMS" << std::endl;
+	std::cout << std::right << std::setw(20) << "Equipment slot"<<" | " << std::left<<std::setw(20) << "Name(ID)" 
+	<< " | "  << std::left << std::setw(20) << "Enchantment" << std::endl;
+	std::cout << std::string(70, '-') << std::endl;
 	for (int i = 0; i < equipment_slots.size(); i++) {
-		if(equipment_slots[i] != nullptr)
-			std::cout << std::right << std::setw(20)<< Get_Equipment_Slot_Name((Equipment_Slots)i)<<": " << equipment_slots[i]->GetItemName()
-			<< std::endl;
+		if (equipment_slots[i] != nullptr) {
+			std::cout << std::right << std::setw(20) << Get_Equipment_Slot_Name((Equipment_Slots)i) << " | "
+			<< std::left << std::setw(20) << equipment_slots[i]->GetItemName() << std::right << std::setw(3) << " | ";
+			if (equipment_slots[i]->GetEnchantmentBonus() > 0) {
+				std::cout << "+";
+			}
+			std::cout << equipment_slots[i]->GetEnchantmentBonus()<<" ";
+			std::cout << equipment_slots[i]->GetEnchantmentType() << std::endl;
+		}
 	}
-
+	std::cout << std::string(70, '-') << std::endl;
+	std::cout << std::right << std::setw(38) << "INVENTORY" << std::endl;
+	std::cout << std::right << std::setw(20) << "Name(ID)" << " | " << std::left << std::setw(20) << "Type"
+	<< " | " << std::left << std::setw(20) << "Enchantment" << std::endl;
+	std::cout << std::string(70, '-') << std::endl;
+	for (int i = 0; i < inventory.GetAllItems().size(); i++) {
+		if (&inventory.GetAllItems().at(i) != nullptr) {
+			std::cout << std::right << std::setw(20) << inventory.GetAllItems().at(i).GetItemName() << " | "
+			<< std::left << std::setw(20) << inventory.GetAllItems().at(i).GetItemType() << " | ";
+			if (inventory.GetAllItems().at(i).GetEnchantmentBonus() > 0) {
+				std::cout << "+";
+			}
+			std::cout<< inventory.GetAllItems().at(i).GetEnchantmentBonus() << " " 
+			<< inventory.GetAllItems().at(i).GetEnchantmentType() << std::endl;
+		}
+	}
+	std::cout << std::string(70, '-') << std::endl;
 }
 
 const int Character::Character::Sum_Levels()
@@ -158,15 +286,45 @@ bool Character::Character::Equip_Item(item::Item* t_item) {
 	return true;
 }
 
-
-const int Character::Character::Get_Modifier(int t_ability)
+void Character::Character::Unequip_Item(Equipment_Slots t_slot)
 {
-	return std::floor(((float)(ability_scores[t_ability] - 10) / 2));
+	equipment_slots[(int)t_slot] = nullptr;
+	return;
 }
 
-const int Character::Character::Get_Armour_Class()
+
+const int Character::Character::Modifier(Abilities t_ability)
 {
-	int armour_class = 10 + Get_Modifier(Dexterity);
+	try {
+		return std::floor(((float)(ability_scores[(int)t_ability] - 10) / 2));
+	}
+	catch (std::exception& e) {
+		std::cerr << &e << std::endl;
+		return 0;
+	}
+}
+
+const int Character::Character::Ability_Score(Abilities t_ability)
+{
+	int score;
+	try {
+		score = ability_scores[(int)t_ability];
+	}
+	catch (std::exception& e) {
+		std::cerr << &e << std::endl;
+		return 0;
+	}
+	for (auto i : equipment_slots) {
+		if (i != nullptr && (int)i->GetEnchantmentType() == (int)t_ability) {
+			score += i->GetEnchantmentBonus();
+		}
+	}
+	return score;
+}
+
+const int Character::Character::Armour_Class()
+{
+	int armour_class = 10 + Modifier(Abilities::Dexterity);
 	for (auto &i : equipment_slots) {
 		// add any AC enchantments from other equipped items
 		if (i != nullptr && i->GetEnchantmentType() == ArmorClass) {
@@ -176,16 +334,15 @@ const int Character::Character::Get_Armour_Class()
 	return armour_class;
 }
 
-const int Character::Character::Get_Attack_Bonus()
+const int Character::Character::Attack_Bonus()
 {
 	int t_mod{ 0 };
-	if (Get_Modifier(Dexterity) > Get_Modifier(Strength))
-		t_mod = Get_Modifier(Dexterity);
-	else
-	{
-		t_mod = Get_Modifier(Strength);
+	if (Modifier(Abilities::Dexterity) > Modifier(Abilities::Strength))
+		t_mod = Modifier(Abilities::Dexterity);
+	else{
+		t_mod = Modifier(Abilities::Strength);
 	}
-	int attack_bonus = t_mod + Get_Proficiency_Bonus();
+	int attack_bonus = t_mod + Proficiency_Bonus();
 	for (auto& i : equipment_slots) {
 		// add any attack_bonus enchantments from other equipped items
 		if (i != nullptr && i->GetEnchantmentType() == CharacterStats::AttackBonus) {
@@ -195,14 +352,14 @@ const int Character::Character::Get_Attack_Bonus()
 	return attack_bonus;
 }
 
-const int Character::Character::Get_Proficiency_Bonus()
+const int Character::Character::Proficiency_Bonus()
 {
 	return std::ceil((double)(Sum_Levels() / 4.0)) + 1;	
 }
 
-const int Character::Character::Get_Damage_Bonus()
+const int Character::Character::Damage_Bonus()
 {
-	int damage_bonus = Get_Modifier(Strength);
+	int damage_bonus = Modifier(Abilities::Strength);
 	for (auto& i : equipment_slots) {
 		// add any damage_bonus enchantments from other equipped items
 		if (i != nullptr && i->GetEnchantmentType() == CharacterStats::DamageBonus) {
@@ -305,9 +462,10 @@ std::string Character::Character::Get_Equipment_Slot_Name(Equipment_Slots t_slot
 		return "Bag";
 		break;
 	default:
+		return "NA";
 		break;
 	}
-	return "";
+
 }
 
 
