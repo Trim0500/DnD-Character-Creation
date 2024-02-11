@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['paladin_0',['paladin',['../_character_8h.html#a85302146612e6b98c2845c25d5b0daf7a1d431170a7c32027f4692b2313902eac',1,'Character.h']]]
+  ['paladin_0',['Paladin',['../namespace_character.html#afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858',1,'Character']]]
 ];

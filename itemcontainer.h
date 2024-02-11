@@ -34,7 +34,8 @@ namespace itemcontainer {
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer
 			*/
-			ItemContainer(const string&, const int&);
+			ItemContainer(const string&, const int&, const int&);
+			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
 			vector<Item> GetAllItems() { return items; };
 			/*
 			* \fn GetItem
@@ -68,11 +69,14 @@ namespace itemcontainer {
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via character stat
 			*
-			* Overloaded member function that will use a character stat enum value (1-9) to find the items that have that type.
+			* Overloaded member function that will use a character stat enum value (0-8) to find the items that have that type.
 			*/
 			vector<Item> GetItemsByStat(const int&);
-			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
 		private:
+			/*
+			* A variable
+			*/
+			int capacity;
 			/*
 			* A variable
 			*/

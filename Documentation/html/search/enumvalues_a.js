@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ranger_0',['ranger',['../_character_8h.html#a85302146612e6b98c2845c25d5b0daf7afcb0b62ad01324356ed41e5f849b9eb1',1,'Character.h']]],
-  ['ring_1',['Ring',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7',1,'item']]],
-  ['rogue_2',['rogue',['../_character_8h.html#a85302146612e6b98c2845c25d5b0daf7a0a2665c40e87f90ae9ca26de1cf4a527',1,'Character.h']]]
+  ['ranger_0',['Ranger',['../namespace_character.html#afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0',1,'Character']]],
+  ['ring_1',['Ring',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7',1,'item::Ring'],['../namespace_character.html#a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1',1,'Character::Ring']]],
+  ['rogue_2',['Rogue',['../namespace_character.html#afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174',1,'Character']]]
 ];

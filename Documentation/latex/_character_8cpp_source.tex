@@ -2,35 +2,318 @@
 \hypertarget{_character_8cpp_source}{}\label{_character_8cpp_source}\mbox{\hyperlink{_character_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{Character.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <random>}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00005}\mbox{\hyperlink{class_character_a2e22068c6caf3cb2dc49dd633f874f21}{00005}}\ \mbox{\hyperlink{class_character_a2e22068c6caf3cb2dc49dd633f874f21}{Character::Character}}(\textcolor{keywordtype}{int}\ t\_level,\ \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7}{CharacterClass}}\ t\_class)\{}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{int}\ skill\_points\ =\ (2\ +\ ability\_modifiers[\mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778a669e2c9b9438baad4cb397a2ac42b9f1}{intelligence}}])\ *\ 4;}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{comment}{//-\/add\ exception\ handeling\ for\ level\ \&\&\ class}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00008}00008\ \ \ \ \ character\_class\ =\ t\_class;}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00009}00009\ \ \ \ \ level\ =\ t\_level;}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//Generate\ ability\ scores}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ 6;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \textcolor{comment}{//ability\ scores\ randomly\ generated\ between\ 1\ \&\ 18}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ ability\_scores[i]\ =\ rand()\ \%\ 18\ +\ 1;}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00014}00014\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{comment}{//Calculate\ ability\ modifiers}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ 6;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ ability\_modifiers[i]\ =\ std::floor((ability\_scores[i]\ -\/\ 10)\ /\ 2);}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00018}00018\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//Calculate\ hit\ points}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00020}00020\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//Character\ creation\ based\ on\ class\ }}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{switch}\ (character\_class)\{}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a670cad2a659c59eba108ca847faebebf}{fighter}}:}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Fighter\ class\ case\ }}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}is\ fighter"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}INVALID\ CLASS"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00030}00030\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00003}\mbox{\hyperlink{class_character_1_1_character_aeca5c2ffbe476a75c800c02bbf08e303}{00003}}\ \mbox{\hyperlink{class_character_1_1_character_aeca5c2ffbe476a75c800c02bbf08e303}{Character::Character::Character}}()\{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00004}00004\ \ \ \ \ \textcolor{comment}{//create\ random\ number\ generator}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00005}00005\ \ \ \ \ std::random\_device\ rd;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{comment}{//Generate\ level}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00008}00008\ \textcolor{comment}{\ \ \ \ int\ num\_levels\ =\ rd()\ \%\ 20\ +\ 1;}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00009}00009\ \textcolor{comment}{\ \ \ \ while\ (num\_levels\ >\ 1)\ \{}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00010}00010\ \textcolor{comment}{\ \ \ \ \ \ \ \ int\ \_take\ =\ rd()\ \%\ num\_levels;}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00011}00011\ \textcolor{comment}{\ \ \ \ \ \ \ \ num\_levels\ -\/=\ \_take;}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00012}00012\ \textcolor{comment}{\ \ \ \ \ \ \ \ level.at(rd()\ \%\ 10)\ +=\ \_take;}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00013}00013\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00014}00014\ \textcolor{comment}{\ \ \ \ if\ (num\_levels\ ==\ 1)\ \{}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00015}00015\ \textcolor{comment}{\ \ \ \ \ \ \ \ level.at(rd()\ \%\ 10)\ +=\ 1;}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00016}00016\ \textcolor{comment}{\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00017}00017\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00018}00018\ \ \ \ \ level.at((\textcolor{keywordtype}{int})\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee}{Character\_Class::Fighter}})\ =\ rd()\ \%\ 20\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//Set\ character\_classes}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0\ ;\ i<level.size();i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (level[i]\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ character\_class.set(i);}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//Generate\ ability\ scores}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//roll\ 3d6\ for\ each\ ability\ score}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\{\ 0\ \};\ j\ <\ 3;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ ability\_scores[i]\ +=\ rd()\ \%\ 6\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//Generate\ hit\ points}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ Sum\_Levels();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ max\_hit\_points\ +=\ (rd()\ \%\ 10\ +\ 1)+Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830ab4f803b1039df0efcfeb6b991e76e7fe}{Constitution}});}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00036}00036\ \ \ \ \ hit\_points\ =\ max\_hit\_points;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00039}\mbox{\hyperlink{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98}{00039}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98}{Character::Character::Print\_Character\_Sheet}}()}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00040}00040\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00041}00041\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(25)\ <<\ \textcolor{stringliteral}{"{}Name:\ "{}}\ <<\ name<<\textcolor{stringliteral}{"{}\ (ID:\ "{}}<<Get\_ID()<<\textcolor{stringliteral}{"{})"{}}<<std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00042}00042\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(25)\ <<\ \textcolor{stringliteral}{"{}Class:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 11;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (character\_class.test(i))\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ Get\_Class\_Name(i)\ <<\textcolor{stringliteral}{"{}("{}}<<level[i]<<\ \textcolor{stringliteral}{"{}),\ "{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00048}00048\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00049}00049\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(25)\ <<\ \textcolor{stringliteral}{"{}Level:\ "{}}\ <<\ Sum\_Levels()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00050}00050\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(25)\ <<\ \textcolor{stringliteral}{"{}Proficiency\ Bonus\ :\ "{}}\ <<\ Get\_Proficiency\_Bonus()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00051}00051\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(25)\ <<\ \textcolor{stringliteral}{"{}Armour\ Class\ :\ "{}}\ <<\ Get\_Armour\_Class()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00052}00052\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(25)\ <<\ \textcolor{stringliteral}{"{}Attack\ Bonus\ :\ "{}}\ <<\ Get\_Attack\_Bonus()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00053}00053\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(25)\ <<\ \textcolor{stringliteral}{"{}Damage\ Bonus\ :\ "{}}\ <<\ Get\_Damage\_Bonus()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00054}00054\ \ \ \ \ std::cout\ <<\ std::endl\ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Ability\ Scores:\ "{}}\ <<\ std::endl\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00055}00055\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Strength:\ "{}}\ <<\ std::left\ <<\ std::setw(8)\ <<ability\_scores[\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa490c397eb4162d21a50685377c163fd}{Strength}}]\ <<\ std::left\ <<\ std::setw(1)\ <<\ \textcolor{stringliteral}{"{}Modifier:\ "{}}\ <<\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa490c397eb4162d21a50685377c163fd}{Strength}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00056}00056\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Dexterity:\ "{}}\ <<\ std::left\ <<\ std::setw(8)\ <<\ ability\_scores[\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a039993368e103d9c94bfcc64075a8589}{Dexterity}}]\ <<\ std::left\ <<\ std::setw(1)\ <<\ \textcolor{stringliteral}{"{}Modifier:\ "{}}\ <<\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a039993368e103d9c94bfcc64075a8589}{Dexterity}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00057}00057\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Constitution:\ "{}}\ <<\ std::left\ <<\ std::setw(8)\ <<\ ability\_scores[\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830ab4f803b1039df0efcfeb6b991e76e7fe}{Constitution}}]\ <<\ std::left\ <<\ std::setw(1)\ <<\ \textcolor{stringliteral}{"{}Modifier:\ "{}}\ <<\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830ab4f803b1039df0efcfeb6b991e76e7fe}{Constitution}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00058}00058\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Intelligence:\ "{}}\ <<\ std::left\ <<\ std::setw(8)\ <<\ ability\_scores[\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a0d0c589d82ce615e4e49841b0776c015}{Intelligence}}]\ <<\ std::left\ <<\ std::setw(1)\ <<\ \textcolor{stringliteral}{"{}Modifier:\ "{}}\ <<\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a0d0c589d82ce615e4e49841b0776c015}{Intelligence}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00059}00059\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Wisdom:\ "{}}\ <<\ std::left\ <<\ std::setw(8)\ <<\ ability\_scores[\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830acccd442e217f28399690abe6127ab3ee}{Wisdom}}]\ <<\ std::left\ <<\ std::setw(1)\ <<\ \textcolor{stringliteral}{"{}Modifier:\ "{}}\ <<\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830acccd442e217f28399690abe6127ab3ee}{Wisdom}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00060}00060\ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Charisma:\ "{}}\ <<\ std::left\ <<\ std::setw(8)\ <<\ ability\_scores[\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a69347c021481a9bd4a34be445665ce38}{Charisma}}]\ <<\ std::left\ <<\ std::setw(1)\ <<\ \textcolor{stringliteral}{"{}Modifier:\ "{}}\ <<\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a69347c021481a9bd4a34be445665ce38}{Charisma}})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00061}00061\ \ \ \ \ std::cout\ <<\ std::endl\ <<\ std::right\ <<\ std::setw(20)\ <<\ \textcolor{stringliteral}{"{}Equipment:\ "{}}\ <<\ std::endl\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ equipment\_slots.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(equipment\_slots[i]\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(20)<<\ Get\_Equipment\_Slot\_Name((\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ad}{Equipment\_Slots}})i)<<\textcolor{stringliteral}{"{}:\ "{}}\ <<\ equipment\_slots[i]-\/>GetItemName()}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00070}\mbox{\hyperlink{class_character_1_1_character_ad2e7f922733b104ea716698eaef0ed8b}{00070}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_1_1_character_ad2e7f922733b104ea716698eaef0ed8b}{Character::Character::Sum\_Levels}}()}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00071}00071\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{int}\ sum\{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};i<level.size();i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ sum\ +=\ level[i];}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00079}\mbox{\hyperlink{class_character_1_1_character_a77829df538a2a1115b08481d8a25e887}{00079}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_character_1_1_character_a77829df538a2a1115b08481d8a25e887}{Character::Character::Levelup}}(\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\_Class}}\ t\_class)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00080}00080\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{switch}\ (t\_class)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7}{Character\_Class::Barbarian}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5}{Character\_Class::Bard}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a88f6c01a3b5711ec2a896c9f5462497c}{Character\_Class::Cleric}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e}{Character\_Class::Druid}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee}{Character\_Class::Fighter}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359}{Character\_Class::Monk}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00101}00101\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858}{Character\_Class::Paladin}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0}{Character\_Class::Ranger}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00107}00107\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174}{Character\_Class::Rogue}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f}{Character\_Class::Sorcerer}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5}{Character\_Class::Wizard}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00116}00116\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00119}00119\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00120}00120\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00122}\mbox{\hyperlink{class_character_1_1_character_a9c9be05b2d02069f69c91c9ad569a360}{00122}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_character_1_1_character_a9c9be05b2d02069f69c91c9ad569a360}{Character::Character::Equip\_Item}}(\mbox{\hyperlink{classitem_1_1_item}{item::Item}}*\ t\_item)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{if}\ (inventory.GetItem(t\_item-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}())\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Could\ not\ equipe\ '"{}}\ <<\ t\_item-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ <<\ \textcolor{stringliteral}{"{}'.\ Item\ could\ not\ be\ found\ in\ inventory"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{switch}\ (t\_item-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}())}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00129}00129\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff}{Helmet}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ equipment\_slots[(int)\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff}{Equipment\_Slots::Helmet}}]\ =\ t\_item;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8}{Armor}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ equipment\_slots[(int)\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8}{Equipment\_Slots::Armor}}]\ =\ t\_item;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4}{Shield}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ equipment\_slots[(int)\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4}{Equipment\_Slots::Shield}}]\ =\ t\_item;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1}{Ring}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ equipment\_slots[(int)\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1}{Equipment\_Slots::Ring}}]\ =\ t\_item;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c}{Belt}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ equipment\_slots[(int)\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c}{Equipment\_Slots::Belt}}]\ =\ t\_item;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b}{Boots}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ equipment\_slots[(int)\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b}{Equipment\_Slots::Boots}}]\ =\ t\_item;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b}{Weapon}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ equipment\_slots[(int)\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b}{Equipment\_Slots::Weapon}}]\ =\ t\_item;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae59effc574d9bec278c1ee0b976df884}{Backpack}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ equipment\_slots[(int)\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad3ab3d5184fe9b1b4428e4ffb797bdca}{Equipment\_Slots::Bag}}]\ =\ t\_item;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00154}00154\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Could\ not\ equipe\ '"{}}\ <<\ t\_item-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ <<\ \textcolor{stringliteral}{"{}'.\ No\ corresponding\ equipment\ slot"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00157}00157\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00159}00159\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00162}\mbox{\hyperlink{class_character_1_1_character_a6964dd47ef0a5114cc55203e781b0012}{00162}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_1_1_character_a6964dd47ef0a5114cc55203e781b0012}{Character::Character::Get\_Modifier}}(\textcolor{keywordtype}{int}\ t\_ability)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00163}00163\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{return}\ std::floor(((\textcolor{keywordtype}{float})(ability\_scores[t\_ability]\ -\/\ 10)\ /\ 2));}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00165}00165\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00167}\mbox{\hyperlink{class_character_1_1_character_a05de267ef83d3dfc3a83e42340aeec81}{00167}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_1_1_character_a05de267ef83d3dfc3a83e42340aeec81}{Character::Character::Get\_Armour\_Class}}()}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00168}00168\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{int}\ armour\_class\ =\ 10\ +\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a039993368e103d9c94bfcc64075a8589}{Dexterity}});}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&i\ :\ equipment\_slots)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ any\ AC\ enchantments\ from\ other\ equipped\ items}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ i-\/>GetEnchantmentType()\ ==\ \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa00d16e5dcfae5d53b7965219c967927}{ArmorClass}})\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ armour\_class\ +=\ i-\/>GetEnchantmentBonus();}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00175}00175\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{return}\ armour\_class;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00177}00177\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00179}\mbox{\hyperlink{class_character_1_1_character_a2c252ae80bf0b2234f0350f6cec69f83}{00179}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_1_1_character_a2c252ae80bf0b2234f0350f6cec69f83}{Character::Character::Get\_Attack\_Bonus}}()}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00180}00180\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00181}00181\ \ \ \ \ \textcolor{keywordtype}{int}\ t\_mod\{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00182}00182\ \ \ \ \ \textcolor{keywordflow}{if}\ (Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a039993368e103d9c94bfcc64075a8589}{Dexterity}})\ >\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa490c397eb4162d21a50685377c163fd}{Strength}}))}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ t\_mod\ =\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a039993368e103d9c94bfcc64075a8589}{Dexterity}});}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00185}00185\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ t\_mod\ =\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa490c397eb4162d21a50685377c163fd}{Strength}});}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00187}00187\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00188}00188\ \ \ \ \ \textcolor{keywordtype}{int}\ attack\_bonus\ =\ t\_mod\ +\ Get\_Proficiency\_Bonus();}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00189}00189\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ i\ :\ equipment\_slots)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ any\ attack\_bonus\ enchantments\ from\ other\ equipped\ items}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ i-\/>GetEnchantmentType()\ ==\ CharacterStats::AttackBonus)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ attack\_bonus\ +=\ i-\/>GetEnchantmentBonus();}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{return}\ attack\_bonus;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00196}00196\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00198}\mbox{\hyperlink{class_character_1_1_character_af0ed8c5896d4e6e46bcc946b04a0c86b}{00198}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_1_1_character_af0ed8c5896d4e6e46bcc946b04a0c86b}{Character::Character::Get\_Proficiency\_Bonus}}()}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00199}00199\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{return}\ std::ceil((\textcolor{keywordtype}{double})(Sum\_Levels()\ /\ 4.0))\ +\ 1;\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00201}00201\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00203}\mbox{\hyperlink{class_character_1_1_character_a6d194a36e26903ac37a90d95debe79d1}{00203}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_1_1_character_a6d194a36e26903ac37a90d95debe79d1}{Character::Character::Get\_Damage\_Bonus}}()}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00204}00204\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordtype}{int}\ damage\_bonus\ =\ Get\_Modifier(\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa490c397eb4162d21a50685377c163fd}{Strength}});}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00206}00206\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ i\ :\ equipment\_slots)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ add\ any\ damage\_bonus\ enchantments\ from\ other\ equipped\ items}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ i-\/>GetEnchantmentType()\ ==\ CharacterStats::DamageBonus)\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ damage\_bonus\ +=\ i-\/>GetEnchantmentBonus();}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00211}00211\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00212}00212\ \ \ \ \ \textcolor{keywordflow}{return}\ damage\_bonus;}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00213}00213\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00215}00215\ std::string\ Character::Character::Get\_Class\_Name(\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\_Class}}\ t\_class)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00216}00216\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{switch}\ (t\_class)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00218}00218\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7}{Character\_Class::Barbarian}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Barbarian"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5}{Character\_Class::Bard}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bard"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a88f6c01a3b5711ec2a896c9f5462497c}{Character\_Class::Cleric}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Cleric"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00225}00225\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e}{Character\_Class::Druid}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Druid"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00227}00227\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee}{Character\_Class::Fighter}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Fighter"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359}{Character\_Class::Monk}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Monk"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00231}00231\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858}{Character\_Class::Paladin}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Paladin"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00233}00233\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0}{Character\_Class::Ranger}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ranger"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174}{Character\_Class::Rogue}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Rogue"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f}{Character\_Class::Sorcerer}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Sorcerer"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5}{Character\_Class::Wizard}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Wizard"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unknown\ Class"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00243}00243\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00244}00244\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00245}00245\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00247}00247\ std::string\ Character::Character::Get\_Class\_Name(\textcolor{keywordtype}{int}\ t\_class)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00248}00248\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00249}00249\ \ \ \ \ \textcolor{keywordflow}{switch}\ (t\_class)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00250}00250\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Barbarian"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00253}00253\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bard"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Cleric"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00257}00257\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Druid"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00259}00259\ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Fighter"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Monk"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00263}00263\ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Paladin"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00265}00265\ \ \ \ \ \textcolor{keywordflow}{case}\ 7:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ranger"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00267}00267\ \ \ \ \ \textcolor{keywordflow}{case}\ 8:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Rogue"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{case}\ 9:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Sorcerer"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00271}00271\ \ \ \ \ \textcolor{keywordflow}{case}\ 10:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Wizard"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00273}00273\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unknown\ Class"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00275}00275\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00277}00277\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00278}00278\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00279}00279\ std::string\ Character::Character::Get\_Equipment\_Slot\_Name(\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ad}{Equipment\_Slots}}\ t\_slot)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00280}00280\ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00281}00281\ \ \ \ \ \textcolor{keywordflow}{switch}\ (t\_slot)}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00282}00282\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00283}00283\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8}{Equipment\_Slots::Armor}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Armour"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00286}00286\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4}{Equipment\_Slots::Shield}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Shield"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b}{Equipment\_Slots::Weapon}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Weapon"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00292}00292\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b}{Equipment\_Slots::Boots}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Boots"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00295}00295\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1}{Equipment\_Slots::Ring}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Ring"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00298}00298\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff}{Equipment\_Slots::Helmet}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Helmet"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00300}00300\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00301}00301\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c}{Equipment\_Slots::Belt}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Belt"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00304}00304\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad3ab3d5184fe9b1b4428e4ffb797bdca}{Equipment\_Slots::Bag}}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Bag"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00307}00307\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00309}00309\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00310}00310\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00311}00311\ \}}
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{_character_8cpp_source_l00314}00314\ }
 
 \end{DoxyCode}

@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <random>
+#include <string>
+#include <sstream>
 
 #include "item.h"
 
@@ -46,7 +48,7 @@ namespace {
 	item::CharacterStats PickEnchantmentType(const item::CharacterStats *allowedTypesArray) {
 		random_device seed;
 		mt19937 gen(seed());
-		uniform_int_distribution<int> distrib(0, sizeof(allowedTypesArray) - 1);
+		uniform_int_distribution<int> distrib(0, (sizeof(*allowedTypesArray) / sizeof(item::CharacterStats)) - 1);
 		int indexChosen = distrib(gen);
 
 		return allowedTypesArray[indexChosen];
@@ -55,6 +57,8 @@ namespace {
 
 namespace item {
 	Item::Item() {
+		nextItemId = nextItemId + 1;
+		itemId = nextItemId;
 		enchantmentBonus = GenerateRandomInt(1, 5);
 		itemType = (ItemType)GenerateRandomInt(1, 7);
 		switch (itemType) {
@@ -100,9 +104,15 @@ namespace item {
 			}
 				break;
 		}
+
+		ostringstream name;
+		name << itemTypeStrings[itemType - 1] << " +" << to_string(enchantmentBonus) << " (" << statStrings[enchantmentType] << ")";
+		itemName = name.str();
 	}
 
 	Item::Item(const string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType) {
+		nextItemId = nextItemId + 1;
+		itemId = nextItemId;
 		itemName = _itemName;
 		enchantmentBonus = _enchantmentBonus;
 		itemType = (ItemType)_itemType;

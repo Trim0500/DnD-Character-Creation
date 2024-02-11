@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['equipmentslots_0',['EquipmentSlots',['../struct_equipment_slots.html',1,'']]]
+  ['dice_0',['Dice',['../class_dice.html',1,'']]]
 ];

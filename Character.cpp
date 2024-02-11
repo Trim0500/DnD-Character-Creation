@@ -127,7 +127,7 @@ bool Character::Character::Equip_Item(item::Item* t_item) {
 	}
 	switch (t_item->GetItemType())
 	{
-	case Hemlet:
+	case Helmet:
 		equipment_slots[(int)Equipment_Slots::Helmet] = t_item;
 		break;
 	case Armor:

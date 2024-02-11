@@ -1,133 +1,92 @@
 \doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/\+Character.h File Reference}
 \hypertarget{_character_8h}{}\label{_character_8h}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/Character.h@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/Character.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$bitset$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include "{}item.\+h"{}}\newline
+{\ttfamily \#include "{}itemcontainer.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{struct_equipment_slots}{Equipment\+Slots}}
+class \mbox{\hyperlink{class_character_1_1_character}{Character\+::\+Character}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{class_character}{Character}}
+namespace \mbox{\hyperlink{namespace_character}{Character}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7}{Character\+Class}} \{ \newline
-\mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a7c77c92ec48908e5587870fb042382ce}{barbarian}}
-, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a593e68e0f3bfe6498648d61eaaecd8ac}{bard}}
-, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a338cb3c1828ccab55fdd63d8ae5e4e0d}{cleric}}
-, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a0d3ef4f5ebeebf4caabdb736d927f51b}{druid}}
+enum class \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+::\+Character\+\_\+\+Class}} \{ \newline
+\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7}{Character\+::\+Barbarian}} = 0
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5}{Character\+::\+Bard}} = 1
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a88f6c01a3b5711ec2a896c9f5462497c}{Character\+::\+Cleric}} = 2
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e}{Character\+::\+Druid}} = 3
 , \newline
-\mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a670cad2a659c59eba108ca847faebebf}{fighter}}
-, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7aabe63a965379051f9f84d6e9dc418f1b}{monk}}
-, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a1d431170a7c32027f4692b2313902eac}{paladin}}
-, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7afcb0b62ad01324356ed41e5f849b9eb1}{ranger}}
+\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee}{Character\+::\+Fighter}} = 4
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359}{Character\+::\+Monk}} = 5
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858}{Character\+::\+Paladin}} = 6
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0}{Character\+::\+Ranger}} = 7
 , \newline
-\mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a0a2665c40e87f90ae9ca26de1cf4a527}{rogue}}
-, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7ab8200b487426d135e89bff25aa613870}{sorcerer}}
-, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7a5e873db6e45879eeb784c8fce692f238}{wizard}}
+\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174}{Character\+::\+Rogue}} = 8
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f}{Character\+::\+Sorcerer}} = 9
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5}{Character\+::\+Wizard}} = 10
  \}
 \item 
-enum \mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778}{Abilities}} \{ \newline
-\mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778afb318aecc33d47209c796c8b887f4f11}{strength}} = 0
-, \mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778ad04b91645b682da84c2ec876576de615}{dexterity}} = 1
-, \mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778ad1215f8315991767619db2248c063740}{constitution}} = 2
-, \mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778a669e2c9b9438baad4cb397a2ac42b9f1}{intelligence}} = 3
+enum \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830}{Character\+::\+Abilities}} \{ \newline
+\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa490c397eb4162d21a50685377c163fd}{Character\+::\+Strength}} = 0
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a039993368e103d9c94bfcc64075a8589}{Character\+::\+Dexterity}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830ab4f803b1039df0efcfeb6b991e76e7fe}{Character\+::\+Constitution}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a0d0c589d82ce615e4e49841b0776c015}{Character\+::\+Intelligence}}
 , \newline
-\mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778a2d59f71bb3a688ceb8ffef1c7333e6df}{wisdom}} = 4
-, \mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778af9c3df3252f5c5fc05afc4d059b3195b}{charisma}} = 5
+\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830acccd442e217f28399690abe6127ab3ee}{Character\+::\+Wisdom}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a69347c021481a9bd4a34be445665ce38}{Character\+::\+Charisma}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa00d16e5dcfae5d53b7965219c967927}{Character\+::\+Armor\+Class}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830ab5702c60c324805e323aecf32ac65e73}{Character\+::\+Attack\+Bonus}}
+, \newline
+\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a96fa34ed601535f4612a06fa8b662b39}{Character\+::\+Damage\+Bonus}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830abd96d85a7fa05efc0af1f213e2c9b29d}{Character\+::\+NA}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ad}{Character\+::\+Equipment\+\_\+\+Slots}} \{ \newline
+\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8}{Character\+::\+Armor}} = 0
+, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4}{Character\+::\+Shield}}
+, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b}{Character\+::\+Weapon}}
+, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b}{Character\+::\+Boots}}
+, \newline
+\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1}{Character\+::\+Ring}}
+, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff}{Character\+::\+Helmet}}
+, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c}{Character\+::\+Belt}}
+, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad3ab3d5184fe9b1b4428e4ffb797bdca}{Character\+::\+Bag}}
  \}
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Enumeration Type Documentation}
-\Hypertarget{_character_8h_ac44a41fef1e45506070553169aff2778}\label{_character_8h_ac44a41fef1e45506070553169aff2778} 
-\index{Character.h@{Character.h}!Abilities@{Abilities}}
-\index{Abilities@{Abilities}!Character.h@{Character.h}}
-\doxysubsubsection{\texorpdfstring{Abilities}{Abilities}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{_character_8h_ac44a41fef1e45506070553169aff2778}{Abilities}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{strength@{strength}!Character.h@{Character.h}}\index{Character.h@{Character.h}!strength@{strength}}}\Hypertarget{_character_8h_ac44a41fef1e45506070553169aff2778afb318aecc33d47209c796c8b887f4f11}\label{_character_8h_ac44a41fef1e45506070553169aff2778afb318aecc33d47209c796c8b887f4f11} 
-strength&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{dexterity@{dexterity}!Character.h@{Character.h}}\index{Character.h@{Character.h}!dexterity@{dexterity}}}\Hypertarget{_character_8h_ac44a41fef1e45506070553169aff2778ad04b91645b682da84c2ec876576de615}\label{_character_8h_ac44a41fef1e45506070553169aff2778ad04b91645b682da84c2ec876576de615} 
-dexterity&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{constitution@{constitution}!Character.h@{Character.h}}\index{Character.h@{Character.h}!constitution@{constitution}}}\Hypertarget{_character_8h_ac44a41fef1e45506070553169aff2778ad1215f8315991767619db2248c063740}\label{_character_8h_ac44a41fef1e45506070553169aff2778ad1215f8315991767619db2248c063740} 
-constitution&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{intelligence@{intelligence}!Character.h@{Character.h}}\index{Character.h@{Character.h}!intelligence@{intelligence}}}\Hypertarget{_character_8h_ac44a41fef1e45506070553169aff2778a669e2c9b9438baad4cb397a2ac42b9f1}\label{_character_8h_ac44a41fef1e45506070553169aff2778a669e2c9b9438baad4cb397a2ac42b9f1} 
-intelligence&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{wisdom@{wisdom}!Character.h@{Character.h}}\index{Character.h@{Character.h}!wisdom@{wisdom}}}\Hypertarget{_character_8h_ac44a41fef1e45506070553169aff2778a2d59f71bb3a688ceb8ffef1c7333e6df}\label{_character_8h_ac44a41fef1e45506070553169aff2778a2d59f71bb3a688ceb8ffef1c7333e6df} 
-wisdom&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{charisma@{charisma}!Character.h@{Character.h}}\index{Character.h@{Character.h}!charisma@{charisma}}}\Hypertarget{_character_8h_ac44a41fef1e45506070553169aff2778af9c3df3252f5c5fc05afc4d059b3195b}\label{_character_8h_ac44a41fef1e45506070553169aff2778af9c3df3252f5c5fc05afc4d059b3195b} 
-charisma&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00017}{17}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
-\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7} 
-\index{Character.h@{Character.h}!CharacterClass@{CharacterClass}}
-\index{CharacterClass@{CharacterClass}!Character.h@{Character.h}}
-\doxysubsubsection{\texorpdfstring{CharacterClass}{CharacterClass}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7}{Character\+Class}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{barbarian@{barbarian}!Character.h@{Character.h}}\index{Character.h@{Character.h}!barbarian@{barbarian}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7a7c77c92ec48908e5587870fb042382ce}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7a7c77c92ec48908e5587870fb042382ce} 
-barbarian&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{bard@{bard}!Character.h@{Character.h}}\index{Character.h@{Character.h}!bard@{bard}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7a593e68e0f3bfe6498648d61eaaecd8ac}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7a593e68e0f3bfe6498648d61eaaecd8ac} 
-bard&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{cleric@{cleric}!Character.h@{Character.h}}\index{Character.h@{Character.h}!cleric@{cleric}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7a338cb3c1828ccab55fdd63d8ae5e4e0d}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7a338cb3c1828ccab55fdd63d8ae5e4e0d} 
-cleric&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{druid@{druid}!Character.h@{Character.h}}\index{Character.h@{Character.h}!druid@{druid}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7a0d3ef4f5ebeebf4caabdb736d927f51b}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7a0d3ef4f5ebeebf4caabdb736d927f51b} 
-druid&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{fighter@{fighter}!Character.h@{Character.h}}\index{Character.h@{Character.h}!fighter@{fighter}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7a670cad2a659c59eba108ca847faebebf}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7a670cad2a659c59eba108ca847faebebf} 
-fighter&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{monk@{monk}!Character.h@{Character.h}}\index{Character.h@{Character.h}!monk@{monk}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7aabe63a965379051f9f84d6e9dc418f1b}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7aabe63a965379051f9f84d6e9dc418f1b} 
-monk&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{paladin@{paladin}!Character.h@{Character.h}}\index{Character.h@{Character.h}!paladin@{paladin}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7a1d431170a7c32027f4692b2313902eac}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7a1d431170a7c32027f4692b2313902eac} 
-paladin&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ranger@{ranger}!Character.h@{Character.h}}\index{Character.h@{Character.h}!ranger@{ranger}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7afcb0b62ad01324356ed41e5f849b9eb1}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7afcb0b62ad01324356ed41e5f849b9eb1} 
-ranger&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{rogue@{rogue}!Character.h@{Character.h}}\index{Character.h@{Character.h}!rogue@{rogue}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7a0a2665c40e87f90ae9ca26de1cf4a527}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7a0a2665c40e87f90ae9ca26de1cf4a527} 
-rogue&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{sorcerer@{sorcerer}!Character.h@{Character.h}}\index{Character.h@{Character.h}!sorcerer@{sorcerer}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7ab8200b487426d135e89bff25aa613870}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7ab8200b487426d135e89bff25aa613870} 
-sorcerer&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{wizard@{wizard}!Character.h@{Character.h}}\index{Character.h@{Character.h}!wizard@{wizard}}}\Hypertarget{_character_8h_a85302146612e6b98c2845c25d5b0daf7a5e873db6e45879eeb784c8fce692f238}\label{_character_8h_a85302146612e6b98c2845c25d5b0daf7a5e873db6e45879eeb784c8fce692f238} 
-wizard&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00003}{3}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a48cd93a697e6f72f97115623a09d3d7f}{Character\+::is\+Barbarian}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}001 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a753965f474a07c624a345cf34f04b271}{Character\+::is\+Bard}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}010 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_ae5405d35ae72603a817edc43bf142519}{Character\+::is\+Cleric}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}100 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a6a57e32f18791d28fcf6c79c85d56235}{Character\+::is\+Druid}} \{ 0b0000\textquotesingle{}0001\textquotesingle{}000 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a809aff43f21676e7338bee84e94f883a}{Character\+::is\+Fighter}} \{ 0b0000\textquotesingle{}0010\textquotesingle{}000 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a6fa916f3a9562dfc0b9d86fdbd6372bc}{Character\+::is\+Monk}} \{ 0b0000\textquotesingle{}0100\textquotesingle{}000 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a12f70fecea003c3a9fbbd7bb73f816ff}{Character\+::is\+Paladin}} \{ 0b0000\textquotesingle{}1000\textquotesingle{}000 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a5da74a50fd0c0338d0cf6dcf6bd5c762}{Character\+::is\+Ranger}} \{ 0b0001\textquotesingle{}0000\textquotesingle{}000 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_aaf70df9a8019d5e0d4eeb704be6b1bbb}{Character\+::is\+Rogue}} \{ 0b0010\textquotesingle{}0000\textquotesingle{}000 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_ae57c7eda5fe1661c7b32fb79daa91c18}{Character\+::is\+Sorcerer}} \{ 0b0100\textquotesingle{}0000\textquotesingle{}000 \}
+\item 
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a31a6db66bb4d261d470bb93257ca1dfd}{Character\+::is\+Wizard}} \{ 0b1000\textquotesingle{}0000\textquotesingle{}000 \}
+\end{DoxyCompactItemize}
