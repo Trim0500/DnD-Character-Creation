@@ -227,3 +227,104 @@ void TestItemContainer::TestGetItemsByType(void) {
 	int weaponChestItemsSize = weaponChestItems.size();
 	CPPUNIT_ASSERT(weaponChestItemsSize >= 0 && weaponChestItemsSize <= CHEST_ITEM_SIZE);
 }
+
+void TestItemContainer::TestGetItemsByStat(void) {
+	vector<Item> strengthBackpackItems = backpackObject->GetItemsByStat(Strength);
+	int strengthBackpackItemsSize = strengthBackpackItems.size();
+	CPPUNIT_ASSERT(strengthBackpackItemsSize >= 0 && strengthBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> dexterityBackpackItems = backpackObject->GetItemsByStat(Dexterity);
+	int dexterityBackpackItemsSize = dexterityBackpackItems.size();
+	CPPUNIT_ASSERT(dexterityBackpackItemsSize >= 0 && dexterityBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> constitutionBackpackItems = backpackObject->GetItemsByStat(Constitution);
+	int constitutionBackpackItemsSize = constitutionBackpackItems.size();
+	CPPUNIT_ASSERT(constitutionBackpackItemsSize >= 0 && constitutionBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> intelligenceBackpackItems = backpackObject->GetItemsByStat(Intelligence);
+	int intelligenceBackpackItemsSize = intelligenceBackpackItems.size();
+	CPPUNIT_ASSERT(intelligenceBackpackItemsSize >= 0 && intelligenceBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> wisdomBackpackItems = backpackObject->GetItemsByStat(Wisdom);
+	int wisdomBackpackItemsSize = wisdomBackpackItems.size();
+	CPPUNIT_ASSERT(wisdomBackpackItemsSize >= 0 && wisdomBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> charismaBackpackItems = backpackObject->GetItemsByStat(Charisma);
+	int charismaBackpackItemsSize = charismaBackpackItems.size();
+	CPPUNIT_ASSERT(charismaBackpackItemsSize >= 0 && charismaBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> armorClassBackpackItems = backpackObject->GetItemsByStat(ArmorClass);
+	int armorClassBackpackItemsSize = armorClassBackpackItems.size();
+	CPPUNIT_ASSERT(armorClassBackpackItemsSize >= 0 && armorClassBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> attackBonusBackpackItems = backpackObject->GetItemsByStat(AttackBonus);
+	int attackBonusBackpackItemsSize = attackBonusBackpackItems.size();
+	CPPUNIT_ASSERT(attackBonusBackpackItemsSize >= 0 && attackBonusBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> dmgBonusBackpackItems = backpackObject->GetItemsByStat(DamageBonus);
+	int dmgBonusBackpackItemsSize = dmgBonusBackpackItems.size();
+	CPPUNIT_ASSERT(dmgBonusBackpackItemsSize >= 0 && dmgBonusBackpackItemsSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> strengthWornItems = wornItemsObject->GetItemsByStat(Strength);
+	CPPUNIT_ASSERT(strengthWornItems.size() == 1);
+	
+	vector<Item> dexterityWornItems = wornItemsObject->GetItemsByStat(Dexterity);
+	CPPUNIT_ASSERT(dexterityWornItems.size() == 1);
+	
+	vector<Item> constitutionWornItems = wornItemsObject->GetItemsByStat(Constitution);
+	CPPUNIT_ASSERT(constitutionWornItems.size() == 0);
+	
+	vector<Item> intelligenceWornItems = wornItemsObject->GetItemsByStat(Intelligence);
+	CPPUNIT_ASSERT(intelligenceWornItems.size() == 1);
+	
+	vector<Item> wisdomWornItems = wornItemsObject->GetItemsByStat(Wisdom);
+	CPPUNIT_ASSERT(wisdomWornItems.size() == 1);
+	
+	vector<Item> charismaWornItems = wornItemsObject->GetItemsByStat(Charisma);
+	CPPUNIT_ASSERT(charismaWornItems.size() == 0);
+	
+	vector<Item> armorClassWornItems = wornItemsObject->GetItemsByStat(ArmorClass);
+	CPPUNIT_ASSERT(armorClassWornItems.size() == 2);
+	
+	vector<Item> attackBonusWornItems = wornItemsObject->GetItemsByStat(AttackBonus);
+	CPPUNIT_ASSERT(attackBonusWornItems.size() == 1);
+	
+	vector<Item> dmgBonusWornItems = wornItemsObject->GetItemsByStat(DamageBonus);
+	CPPUNIT_ASSERT(dmgBonusWornItems.size() == 0);
+
+	vector<Item> strengthChestItems = chestObject->GetItemsByStat(Strength);
+	int strengthChestItemsSize = strengthChestItems.size();
+	CPPUNIT_ASSERT(strengthChestItemsSize >= 0 && strengthChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> dexterityChestItems = chestObject->GetItemsByStat(Dexterity);
+	int dexterityChestItemsSize = dexterityChestItems.size();
+	CPPUNIT_ASSERT(dexterityChestItemsSize >= 0 && dexterityChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> constitutionChestItems = chestObject->GetItemsByStat(Constitution);
+	int constitutionChestItemsSize = constitutionChestItems.size();
+	CPPUNIT_ASSERT(constitutionChestItemsSize >= 0 && constitutionChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> intelligenceChestItems = chestObject->GetItemsByStat(Intelligence);
+	int intelligenceChestItemsSize = intelligenceChestItems.size();
+	CPPUNIT_ASSERT(intelligenceChestItemsSize >= 0 && intelligenceChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> wisdomChestItems = chestObject->GetItemsByStat(Wisdom);
+	int wisdomChestItemsSize = wisdomChestItems.size();
+	CPPUNIT_ASSERT(wisdomChestItemsSize >= 0 && wisdomChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> charismaChestItems = chestObject->GetItemsByStat(Charisma);
+	int charismaChestItemsSize = charismaChestItems.size();
+	CPPUNIT_ASSERT(charismaChestItemsSize >= 0 && charismaChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> armorClassChestItems = chestObject->GetItemsByStat(ArmorClass);
+	int armorClassChestItemsSize = armorClassChestItems.size();
+	CPPUNIT_ASSERT(armorClassChestItemsSize >= 0 && armorClassChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> attackBonusChestItems = chestObject->GetItemsByStat(AttackBonus);
+	int attackBonusChestItemsSize = attackBonusChestItems.size();
+	CPPUNIT_ASSERT(attackBonusChestItemsSize >= 0 && attackBonusChestItemsSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> dmgBonusChestItems = chestObject->GetItemsByStat(DamageBonus);
+	int dmgBonusChestItemsSize = dmgBonusChestItems.size();
+	CPPUNIT_ASSERT(dmgBonusChestItemsSize >= 0 && dmgBonusChestItemsSize <= CHEST_ITEM_SIZE);
+}
