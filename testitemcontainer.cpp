@@ -10,6 +10,11 @@
 
 #define BACKPACK_ITEM_SIZE 10
 #define CHEST_ITEM_SIZE 20
+#define WORN_ITEMS_PLUS_ONE_ITEMS_SIZE 2
+#define WORN_ITEMS_PLUS_TWO_ITEMS_SIZE 4
+#define WORN_ITEMS_PLUS_THREE_ITEMS_SIZE 1
+#define WORN_ITEMS_PLUS_FOUR_ITEMS_SIZE 0
+#define WORN_ITEMS_PLUS_FIVE_ITEMS_SIZE 0
 
 using namespace std;
 
@@ -85,4 +90,61 @@ void TestItemContainer::TestGetAllItems(void) {
 	
 	vector<Item> chestItems = chestObject->GetAllItems();
 	CPPUNIT_ASSERT(chestItems.size() == CHEST_ITEM_SIZE);
+}
+
+void TestItemContainer::TestGetItemsByBonus(void) {
+	vector<Item> backpackPlusOneItems = backpackObject->GetItemsByEnchantmentBonus(1);
+	int returnedPlusOneBackPackItemVectorSize = backpackPlusOneItems.size();
+	CPPUNIT_ASSERT(returnedPlusOneBackPackItemVectorSize >= 0 && returnedPlusOneBackPackItemVectorSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> backpackPlusTwoItems = backpackObject->GetItemsByEnchantmentBonus(2);
+	int returnedPlusTwoBackPackItemVectorSize = backpackPlusTwoItems.size();
+	CPPUNIT_ASSERT(returnedPlusTwoBackPackItemVectorSize >= 0 && returnedPlusTwoBackPackItemVectorSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> backpackPlusThreeItems = backpackObject->GetItemsByEnchantmentBonus(3);
+	int returnedPlusThreeBackpackItemVectorSize = backpackPlusThreeItems.size();
+	CPPUNIT_ASSERT(returnedPlusThreeBackpackItemVectorSize >= 0 && returnedPlusThreeBackpackItemVectorSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> backpackPlusFourItems = backpackObject->GetItemsByEnchantmentBonus(4);
+	int returnedPlusFourBackpackItemVectorSize = backpackPlusFourItems.size();
+	CPPUNIT_ASSERT(returnedPlusFourBackpackItemVectorSize >= 0 && returnedPlusFourBackpackItemVectorSize <= BACKPACK_ITEM_SIZE);
+	
+	vector<Item> backpackPlusFiveItems = backpackObject->GetItemsByEnchantmentBonus(5);
+	int returnedPlusFiveBackpackItemVectorSize = backpackPlusFiveItems.size();
+	CPPUNIT_ASSERT(returnedPlusFiveBackpackItemVectorSize >= 0 && returnedPlusFiveBackpackItemVectorSize <= BACKPACK_ITEM_SIZE);
+
+	vector<Item> plusOneWornItems = wornItemsObject->GetItemsByEnchantmentBonus(1);
+	CPPUNIT_ASSERT(plusOneWornItems.size() == WORN_ITEMS_PLUS_ONE_ITEMS_SIZE);
+
+	vector<Item> plusTwoWornItems = wornItemsObject->GetItemsByEnchantmentBonus(2);
+	CPPUNIT_ASSERT(plusTwoWornItems.size() == WORN_ITEMS_PLUS_TWO_ITEMS_SIZE);
+	
+	vector<Item> plusThreeWornItems = wornItemsObject->GetItemsByEnchantmentBonus(3);
+	CPPUNIT_ASSERT(plusThreeWornItems.size() == WORN_ITEMS_PLUS_THREE_ITEMS_SIZE);
+	
+	vector<Item> plusFourWornItems = wornItemsObject->GetItemsByEnchantmentBonus(4);
+	CPPUNIT_ASSERT(plusFourWornItems.size() == WORN_ITEMS_PLUS_FOUR_ITEMS_SIZE);
+	
+	vector<Item> plusFiveWornItems = wornItemsObject->GetItemsByEnchantmentBonus(5);
+	CPPUNIT_ASSERT(plusFiveWornItems.size() == WORN_ITEMS_PLUS_FIVE_ITEMS_SIZE);
+
+	vector<Item> chestPlusOneItems = chestObject->GetItemsByEnchantmentBonus(1);
+	int returnedPlusOneChestItemVectorSize = chestPlusOneItems.size();
+	CPPUNIT_ASSERT(returnedPlusOneChestItemVectorSize >= 0 && returnedPlusOneChestItemVectorSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> chestPlusTwoItems = chestObject->GetItemsByEnchantmentBonus(2);
+	int returnedPlusTwoChestItemVectorSize = chestPlusTwoItems.size();
+	CPPUNIT_ASSERT(returnedPlusTwoChestItemVectorSize >= 0 && returnedPlusTwoChestItemVectorSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> chestPlusThreeItems = chestObject->GetItemsByEnchantmentBonus(3);
+	int returnedPlusThreeChestItemVectorSize = chestPlusThreeItems.size();
+	CPPUNIT_ASSERT(returnedPlusThreeChestItemVectorSize >= 0 && returnedPlusThreeChestItemVectorSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> chestPlusFourItems = chestObject->GetItemsByEnchantmentBonus(4);
+	int returnedPlusFourChestItemVectorSize = chestPlusFourItems.size();
+	CPPUNIT_ASSERT(returnedPlusFourChestItemVectorSize >= 0 && returnedPlusFourChestItemVectorSize <= CHEST_ITEM_SIZE);
+
+	vector<Item> chestPlusFiveItems = chestObject->GetItemsByEnchantmentBonus(5);
+	int returnedPlusFiveChestItemVectorSize = chestPlusFiveItems.size();
+	CPPUNIT_ASSERT(returnedPlusFiveChestItemVectorSize >= 0 && returnedPlusFiveChestItemVectorSize <= CHEST_ITEM_SIZE);
 }
