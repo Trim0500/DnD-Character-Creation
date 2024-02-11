@@ -20,9 +20,11 @@ namespace {
 }
 
 namespace itemcontainer {
-	ItemContainer::ItemContainer(const string& _containerName, const int& _containerType) : Item(_containerName, 0, _containerType, 10) {
+	ItemContainer::ItemContainer(const string& _containerName, const int& _containerType, const int& _capacity) :
+					Item(_containerName, 0, _containerType, 10) {
 		vector<Item> _items;
 		items = _items;
+		capacity = _capacity;
 	}
 
 	Item* ItemContainer::GetItem(const string& nameKey) {
