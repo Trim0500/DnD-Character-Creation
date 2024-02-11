@@ -31,11 +31,12 @@ using namespace itemcontainer;
 class TestItemContainer : public TestFixture {
 	CPPUNIT_TEST_SUITE(TestItemContainer);
 	CPPUNIT_TEST(TestCustomConstructor);
+	CPPUNIT_TEST(TestAddNewItem);
+	CPPUNIT_TEST(TestGetItemByName);
 	CPPUNIT_TEST(TestGetAllItems);
 	CPPUNIT_TEST(TestGetItemsByBonus);
 	CPPUNIT_TEST(TestGetItemsByType);
 	CPPUNIT_TEST(TestGetItemsByStat);
-	CPPUNIT_TEST(TestAddNewItem);
 	CPPUNIT_TEST_SUITE_END();
 
 	public:
@@ -43,11 +44,12 @@ class TestItemContainer : public TestFixture {
 		void tearDown(void);
 	protected:
 		void TestCustomConstructor(void);
+		void TestAddNewItem(void);
+		void TestGetItemByName(void);
 		void TestGetAllItems(void);
 		void TestGetItemsByBonus(void);
 		void TestGetItemsByType(void);
 		void TestGetItemsByStat(void);
-		void TestAddNewItem(void);
 	private:
 		ItemContainer* backpackObject;
 		ItemContainer* wornItemsObject;

@@ -82,6 +82,36 @@ void TestItemContainer::TestCustomConstructor(void) {
 	CPPUNIT_ASSERT(chestObject->GetItemType() == TreasureChest);
 }
 
+void TestItemContainer::TestGetItemByName(void) {
+	Item* foundItem = wornItemsObject->GetItem("testHelmet");
+	CPPUNIT_ASSERT(foundItem->GetItemName() == "testHelmet");
+}
+
+void TestItemContainer::TestAddNewItem(void) {
+	int backpackItemSize = backpackObject->GetAllItems().size();
+
+	int wornItemsSize = wornItemsObject->GetAllItems().size();
+
+	int chestItemSize = chestObject->GetAllItems().size();
+
+	Item* newItem = new Item("newItem", 4, Shield, ArmorClass);
+
+	backpackObject->AddNewItem(*newItem);
+	int currentBackpackItemSize = backpackObject->GetAllItems().size();
+	CPPUNIT_ASSERT(currentBackpackItemSize == backpackItemSize + 1 && currentBackpackItemSize == BACKPACK_ITEM_SIZE);
+	CPPUNIT_ASSERT(backpackObject->GetAllItems().back() == *newItem);
+
+	wornItemsObject->AddNewItem(*newItem);
+	int currentWornItemSize = wornItemsObject->GetAllItems().size();
+	CPPUNIT_ASSERT(currentWornItemSize == wornItemsSize + 1 && currentWornItemSize >= WORN_ITEMS_SIZE);
+	CPPUNIT_ASSERT(wornItemsObject->GetAllItems().back() == *newItem);
+
+	chestObject->AddNewItem(*newItem);
+	int currentChestItemSize = chestObject->GetAllItems().size();
+	CPPUNIT_ASSERT(currentChestItemSize == chestItemSize + 1 && currentChestItemSize <= CHEST_ITEM_SIZE);
+	CPPUNIT_ASSERT(chestObject->GetAllItems().back() == *newItem);
+}
+
 void TestItemContainer::TestGetAllItems(void) {
 	vector<Item> backpackItems = backpackObject->GetAllItems();
 	CPPUNIT_ASSERT(backpackItems.size() == BACKPACK_ITEM_SIZE - 1);
@@ -328,29 +358,4 @@ void TestItemContainer::TestGetItemsByStat(void) {
 	vector<Item> dmgBonusChestItems = chestObject->GetItemsByStat(DamageBonus);
 	int dmgBonusChestItemsSize = dmgBonusChestItems.size();
 	CPPUNIT_ASSERT(dmgBonusChestItemsSize >= 0 && dmgBonusChestItemsSize <= CHEST_ITEM_SIZE);
-}
-
-void TestItemContainer::TestAddNewItem(void) {
-	int backpackItemSize = backpackObject->GetAllItems().size();
-
-	int wornItemsSize = wornItemsObject->GetAllItems().size();
-
-	int chestItemSize = chestObject->GetAllItems().size();
-
-	Item* newItem = new Item("newItem", 4, Shield, ArmorClass);
-
-	backpackObject->AddNewItem(*newItem);
-	int currentBackpackItemSize = backpackObject->GetAllItems().size();
-	CPPUNIT_ASSERT(currentBackpackItemSize == backpackItemSize + 1 && currentBackpackItemSize == BACKPACK_ITEM_SIZE);
-	CPPUNIT_ASSERT(backpackObject->GetAllItems().back() == *newItem);
-	
-	wornItemsObject->AddNewItem(*newItem);
-	int currentWornItemSize = wornItemsObject->GetAllItems().size();
-	CPPUNIT_ASSERT(currentWornItemSize == wornItemsSize + 1 && currentWornItemSize >= WORN_ITEMS_SIZE);
-	CPPUNIT_ASSERT(wornItemsObject->GetAllItems().back() == *newItem);
-
-	chestObject->AddNewItem(*newItem);
-	int currentChestItemSize = chestObject->GetAllItems().size();
-	CPPUNIT_ASSERT(currentChestItemSize == chestItemSize + 1 && currentChestItemSize <= CHEST_ITEM_SIZE);
-	CPPUNIT_ASSERT(chestObject->GetAllItems().back() == *newItem);
 }
