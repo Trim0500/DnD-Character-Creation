@@ -42,14 +42,14 @@ namespace itemcontainer {
 			* 
 			* Overloaded method that uses an item name to find the specific item in the list and return it.
 			*/
-			vector<Item>::iterator GetItem(const string&);
+			Item* GetItem(const string&);
 			/*
 			* \fn GetItem
 			* \brief Overloaded method to find an item by item type
 			*
 			* Overloaded method that uses an item type value (1-7) to find the specific item in the list and return it.
 			*/
-			vector<Item>::iterator GetItem(const int&);
+			Item* GetItem(const int&);
 			/*
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via enchantment bonus

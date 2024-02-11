@@ -16,35 +16,7 @@ using namespace std;
 using namespace item;
 
 namespace {
-	/*
-	* \fn FindItemByName
-	* \brief Get an item from the item container via name
-	*
-	* Helper function to the ItemContainer class to find an item from an instance vector by item name.
-	*
-	* @param _itemVector The item instance vector to search from
-	* @param _nameKey The name of the item to search against in the list
-	*
-	* @returns An iterator pointing to the item instance in the vector
-	*/
-	vector<Item>::iterator FindItemByName(vector<Item> _itemVector, const string& _nameKey) {
-		return find_if(_itemVector.begin(), _itemVector.end(), [_nameKey](Item item) { return item.GetItemName() == _nameKey; });
-	}
-
-	/*
-	* \fn FindItemByItemType
-	* \brief Get an item from the item container via item type
-	*
-	* Helper function to the ItemContainer class to find an item from an instance vector by item type.
-	*
-	* @param _itemVector The item instance vector to search from
-	* @param _itemTypeKey The item type value of the item to search against in the list
-	*
-	* @returns An iterator pointing to the item instance in the vector
-	*/
-	vector<Item>::iterator FindItemByItemType(vector<Item> _itemVector, const int& _itemTypeKey) {
-		return find_if(_itemVector.begin(), _itemVector.end(), [_itemTypeKey](Item item) { return item.GetItemType() == (ItemType)_itemTypeKey; });
-	}
+	
 }
 
 namespace itemcontainer {
@@ -53,16 +25,26 @@ namespace itemcontainer {
 		items = _items;
 	}
 
-	vector<Item>::iterator ItemContainer::GetItem(const string& nameKey) {
-		vector<Item>::iterator it = FindItemByName(items, nameKey);
+	Item* ItemContainer::GetItem(const string& nameKey) {
+		for (int i = 0; i < items.size(); i++)
+		{
+			if (items[i].GetItemName() == nameKey) {
+				return &items[i];
+			}
+		}
 
-		return it;
+		return nullptr;
 	}
 
-	vector<Item>::iterator ItemContainer::GetItem(const int& itemType) {
-		vector<Item>::iterator it = FindItemByItemType(items, itemType);
+	Item* ItemContainer::GetItem(const int& itemType) {
+		for (int i = 0; i < items.size(); i++)
+		{
+			if (items[i].GetItemType() == itemType) {
+				return &items[i];
+			}
+		}
 
-		return it;
+		return nullptr;
 	}
 
 	vector<Item> ItemContainer::GetItemsByEnchantmentBonus(const int& enchantmentBonus) {
