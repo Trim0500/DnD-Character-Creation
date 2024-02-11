@@ -4,7 +4,7 @@
 */
 
 #pragma once
-
+/*
 #include <iostream>
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
@@ -23,6 +23,7 @@
 using namespace std;
 using namespace CppUnit;
 using namespace item;
+*/
 
 /*
 * \class TestItem
