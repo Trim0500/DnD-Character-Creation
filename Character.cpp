@@ -310,3 +310,37 @@ std::string Character::Character::Get_Equipment_Slot_Name(Equipment_Slots t_slot
 	return "";
 }
 
+std::string Character::Character::Get_Equipment_Slot_Name(EquipmentSlots t_slot)
+{
+	switch (t_slot)
+	{
+	case Character::Character::armor:
+		return "Armour";
+		break;
+	case Character::Character::shield:
+		return "Shield";
+		break;
+	case Character::Character::weapon:
+		return "Weapon";
+		break;
+	case Character::Character::boots:
+		return "Boots";
+		break;
+	case Character::Character::ring:
+		return "Ring";
+		break;
+	case Character::Character::helmet:
+		return "Helmet";
+		break;
+	case Character::Character::belt:
+		return "Belt";
+		break;
+	case Character::Character::bag:
+		return "Bag";
+		break;
+	default:
+		break;
+	}
+	return "";
+}
+
