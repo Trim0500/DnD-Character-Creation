@@ -26,7 +26,7 @@ namespace itemcontainer {
 	}
 
 	Item* ItemContainer::GetItem(const string& nameKey) {
-		for (int i = 0; i < items.size(); i++)
+		for (size_t i = 0; i < items.size(); i++)
 		{
 			if (items[i].GetItemName() == nameKey) {
 				return &items[i];
@@ -37,7 +37,7 @@ namespace itemcontainer {
 	}
 
 	Item* ItemContainer::GetItem(const int& itemType) {
-		for (int i = 0; i < items.size(); i++)
+		for (size_t i = 0; i < items.size(); i++)
 		{
 			if (items[i].GetItemType() == itemType) {
 				return &items[i];

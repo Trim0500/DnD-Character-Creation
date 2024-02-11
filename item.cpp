@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <random>
+#include <string>
+#include <sstream>
 
 #include "item.h"
 
@@ -100,6 +102,10 @@ namespace item {
 			}
 				break;
 		}
+
+		ostringstream name;
+		name << itemTypeStrings[itemType - 1] << " +" << to_string(enchantmentBonus) << " (" << statStrings[enchantmentType] << ")";
+		itemName = name.str();
 	}
 
 	Item::Item(const string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType) {

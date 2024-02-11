@@ -44,7 +44,7 @@ namespace item {
 	* Enum in the item namespace that represents the possible stats that an item can increase when worn by a character.
 	*/
 	enum CharacterStats {
-		Strength = 1,
+		Strength = 0,
 		Dexterity,
 		Constitution,
 		Intelligence,
@@ -65,6 +65,22 @@ namespace item {
 	class Item {
 		public:
 			/*
+			* A variable
+			*/
+			string itemTypeStrings[7] = { "Helmet", "Armor", "Shield", "Ring", "Belt", "Boots", "Weapon" };
+			/*
+			* A variable
+			*/
+			string statStrings[9] = { "Strength",
+										"Dexterity",
+										"Constitution",
+										"Intelligence",
+										"Wisdom",
+										"Charisma",
+										"Armor Class",
+										"Attack Bonus",
+										"Damage Bonus" };
+			/*
 			* \fn Item
 			* \brief No-args constructor for Item
 			*
@@ -83,15 +99,18 @@ namespace item {
 			* @param _itemName The reference to the name given to the item.
 			* @param _enchantmentBonus The reference to a constant integer representing the chosen enchantment bonus value. (0-5)
 			* @param _itemType The reference to a constant integer representing the chosen item type. (1-10)
-			* @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (1-10)
+			* @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (0-9)
 			*/
 			Item(const string&, const int&, const int&, const int&);
 			friend bool operator==(const Item& lhs, const Item& rhs) { return lhs.itemName == rhs.itemName; };
+			//const int GetItemId() { return itemId; };
 			string GetItemName() { return itemName; };
 			int GetEnchantmentBonus() { return enchantmentBonus; };
 			ItemType GetItemType() { return itemType; }
 			CharacterStats GetEnchantmentType() { return enchantmentType; };
 		private:
+			/*static inline unsigned int itemIdGen{ 0 };
+			const int itemId = itemIdGen++;*/
 			/*
 			* A variable
 			*/

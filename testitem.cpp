@@ -4,6 +4,8 @@
 */
 
 #include <iostream>
+#include <string>
+#include <sstream>
 
 #include "testitem.h"
 
@@ -13,7 +15,7 @@ void TestItem::setUp(void)
 {
 	noArgsItemObject = new Item();
 
-	customItemObject = new Item("testItem", 3, 4, 1);
+	customItemObject = new Item("testItem", 3, Ring, Strength);
 }
 
 void TestItem::tearDown(void)
@@ -24,10 +26,18 @@ void TestItem::tearDown(void)
 }
 
 void TestItem::TestNoArgsItemConstructor(void) {
-	CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == "");
+	/*CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == "");*/
+
+	ostringstream name;
+	name << noArgsItemObject->itemTypeStrings[noArgsItemObject->GetItemType() - 1]
+			<< " +"
+			<< to_string(noArgsItemObject->GetEnchantmentBonus())
+			<< " ("
+			<< noArgsItemObject->statStrings[noArgsItemObject->GetEnchantmentType()] << ")";
+	CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == name.str());
 	CPPUNIT_ASSERT(noArgsItemObject->GetEnchantmentBonus() >= 1 && noArgsItemObject->GetEnchantmentBonus() <= 5);
-	CPPUNIT_ASSERT(noArgsItemObject->GetItemType() >= 1 && noArgsItemObject->GetItemType() <= 7);
-	CPPUNIT_ASSERT(noArgsItemObject->GetEnchantmentType() >= 1 && noArgsItemObject->GetEnchantmentType() <= 9);
+	CPPUNIT_ASSERT(noArgsItemObject->GetItemType() >= Helmet && noArgsItemObject->GetItemType() <= Weapon);
+	CPPUNIT_ASSERT(noArgsItemObject->GetEnchantmentType() >= Strength && noArgsItemObject->GetEnchantmentType() <= DamageBonus);
 }
 
 void TestItem::TestItemConstructor(void) {
@@ -44,7 +54,7 @@ void TestItem::TestGetEnchantmentBonus(void) {
 }
 
 void TestItem::TestGetEnchantmentType(void) {
-	CPPUNIT_ASSERT(noArgsItemObject->GetEnchantmentType() >= 1 && noArgsItemObject->GetEnchantmentType() <= 9);
+	CPPUNIT_ASSERT(noArgsItemObject->GetEnchantmentType() >= Strength && noArgsItemObject->GetEnchantmentType() <= DamageBonus);
 
 	CPPUNIT_ASSERT(customItemObject->GetEnchantmentType() == Strength);
 }
