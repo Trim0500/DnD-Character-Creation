@@ -45,10 +45,28 @@ void TestItem::TestItemConstructor(void) {
 	CPPUNIT_ASSERT(customItemObject->GetEnchantmentType() == Strength);
 }
 
+void TestItem::TestGetItemName(void) {
+	ostringstream name;
+	name << noArgsItemObject->itemTypeStrings[noArgsItemObject->GetItemType() - 1]
+		<< " +"
+		<< to_string(noArgsItemObject->GetEnchantmentBonus())
+		<< " ("
+		<< noArgsItemObject->statStrings[noArgsItemObject->GetEnchantmentType()] << ")";
+	CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == name.str());
+
+	CPPUNIT_ASSERT(customItemObject->GetItemName() == "testItem");
+}
+
 void TestItem::TestGetEnchantmentBonus(void) {
 	CPPUNIT_ASSERT(noArgsItemObject->GetEnchantmentBonus() >= 1 && noArgsItemObject->GetEnchantmentBonus() <= 5);
 
 	CPPUNIT_ASSERT(customItemObject->GetEnchantmentBonus() == 3);
+}
+
+void TestItem::TestGetItemType(void) {
+	CPPUNIT_ASSERT(noArgsItemObject->GetItemType() >= Helmet && noArgsItemObject->GetItemType() <= Weapon);
+
+	CPPUNIT_ASSERT(customItemObject->GetItemType() == Ring);
 }
 
 void TestItem::TestGetEnchantmentType(void) {
