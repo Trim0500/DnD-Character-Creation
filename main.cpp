@@ -6,17 +6,24 @@
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
 
+#include "Character.h"
+
+using namespace std;
+using namespace CppUnit;
+using namespace item;
+using namespace itemcontainer;
+
 int main()
 {
 	// Get the top level suite from the registry
-	CppUnit::Test* suite = CppUnit::TestFactoryRegistry::getRegistry().makeTest();
+	Test* suite = TestFactoryRegistry::getRegistry().makeTest();
 
 	// Adds the test to the list of test to run
-	CppUnit::TextUi::TestRunner runner;
+	TextUi::TestRunner runner;
 	runner.addTest(suite);
 
 	// Change the default outputter to a compiler error format outputter
-	runner.setOutputter(new CppUnit::CompilerOutputter(&runner.result(),
+	runner.setOutputter(new CompilerOutputter(&runner.result(),
 		std::cerr));
 	// Run the tests.
 	bool wasSucessful = runner.run();
@@ -27,6 +34,35 @@ int main()
 	}
 	
 	/* Driver code here... */
+
+	Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
+
+	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence);
+	Item* armorObject = new Item("testArmor", 3, Armor, ArmorClass);
+	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass);
+	Item* ringObject = new Item("testRing", 1, Ring, Wisdom);
+	Item* beltObject = new Item("testBelt", 1, Belt, Strength);
+	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity);
+	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus);
+
+	ItemContainer* fighterInventory = &fighterCharacter->Inventory();
+	fighterInventory->AddNewItem(*helmetObject);
+	fighterInventory->AddNewItem(*armorObject);
+	fighterInventory->AddNewItem(*shieldObject);
+	fighterInventory->AddNewItem(*ringObject);
+	fighterInventory->AddNewItem(*beltObject);
+	fighterInventory->AddNewItem(*bootsObject);
+	fighterInventory->AddNewItem(*weaponObject);
+
+	fighterCharacter->Equip_Item(helmetObject);
+	fighterCharacter->Equip_Item(armorObject);
+	fighterCharacter->Equip_Item(shieldObject);
+	fighterCharacter->Equip_Item(ringObject);
+	fighterCharacter->Equip_Item(beltObject);
+	fighterCharacter->Equip_Item(bootsObject);
+	fighterCharacter->Equip_Item(weaponObject);
+
+	fighterCharacter->Print_Character_Sheet();
 
 	getchar();
 
