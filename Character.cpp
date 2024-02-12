@@ -256,7 +256,7 @@ bool Character::Character::Equip_Item(item::Item* t_item) {
 	}
 	switch (t_item->GetItemType())
 	{
-	case Hemlet:
+	case Helmet:
 		equipment_slots[Equipment_Slots::Helmet] = t_item;
 		break;
 	case Armor:
@@ -402,7 +402,7 @@ std::string Character::Character::Get_Item_Type_Name(item::ItemType t_type)
 {
 	switch (t_type)
 	{
-	case item::Hemlet:
+	case item::Helmet:
 		return "Helmet";
 	case item::Armor:
 		return "Armor";
