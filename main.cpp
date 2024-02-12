@@ -73,7 +73,6 @@ int main()
 
 	delete dice;
 	fighterInventory->GetAllItems().clear();
-	delete fighterInventory;
 	delete fighterCharacter;
 
 	return 0;
