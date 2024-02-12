@@ -238,8 +238,9 @@ namespace Character {
 		int hit_points{};
 
 		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
-		//std::vector<item::Item*> equipment_slots = std::vector<item::Item*>(8);
+    
 		itemcontainer::ItemContainer inventory = itemcontainer::ItemContainer("Inventory", Backpack, 10);
+
 		std::string Get_Class_Name(Character_Class t_class);
 		std::string Get_Class_Name(int t_class);
 
