@@ -228,6 +228,8 @@ namespace Character {
 		itemcontainer::ItemContainer inventory = itemcontainer::ItemContainer("Inventory", Backpack);
 		std::string Get_Class_Name(Character_Class t_class);
 		std::string Get_Class_Name(int t_class);
+
+		std::string Get_Item_Type_Name(item::ItemType t_type);
 		std::string Get_Equipment_Slot_Name(Equipment_Slots t_slot);
 
 	
