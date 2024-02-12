@@ -258,7 +258,6 @@ bool Character::Character::Equip_Item(item::Item* t_item) {
 	{
 	case Hemlet:
 		equipment_slots[Equipment_Slots::Helmet] = t_item;
-
 		break;
 	case Armor:
 		equipment_slots[Equipment_Slots::Armor] = t_item;

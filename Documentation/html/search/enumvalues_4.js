@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fighter_0',['fighter',['../_character_8h.html#a85302146612e6b98c2845c25d5b0daf7a670cad2a659c59eba108ca847faebebf',1,'Character.h']]]
+  ['fighter_0',['Fighter',['../namespace_character.html#afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee',1,'Character']]]
 ];

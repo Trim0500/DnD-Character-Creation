@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boots_0',['boots',['../struct_equipment_slots.html#a7ccc751f73369b0bcc89a2522f6c6a47',1,'EquipmentSlots']]]
+  ['statstrings_0',['statStrings',['../classitem_1_1_item.html#af9289f984e8daa309c1d5c5eb92fadb5',1,'item::Item']]]
 ];
