@@ -8,7 +8,7 @@
 #include <chrono>
 #include <vector>
 #include <bitset>
-#include <map>
+#include <unordered_map>
 #include "item.h"
 #include "itemcontainer.h"
 
@@ -58,6 +58,19 @@ namespace Character {
 		AttackBonus,
 		DamageBonus,
 		NA,
+	};
+
+	static const std::unordered_map<item::CharacterStats, Abilities> item_stat_TO_character_abilities{
+		{item::CharacterStats::Strength,Abilities::Strength},
+		{item::CharacterStats::Dexterity,Abilities::Dexterity},
+		{item::CharacterStats::Constitution,Abilities::Constitution},
+		{item::CharacterStats::Intelligence,Abilities::Intelligence},
+		{item::CharacterStats::Wisdom,Abilities::Wisdom},
+		{item::CharacterStats::Charisma,Abilities::Charisma},
+		{item::CharacterStats::ArmorClass,Abilities::ArmorClass},
+		{item::CharacterStats::AttackBonus,Abilities::AttackBonus},
+		{item::CharacterStats::DamageBonus,Abilities::DamageBonus},
+		{item::CharacterStats::NA,Abilities::NA},
 	};
 	
 	enum class Equipment_Slots {
@@ -203,8 +216,8 @@ namespace Character {
 		/* \fn Get_Equiped_Item()
 		*  \return Returns pointer to item type object corresponding to the paramaters equipment slot. Retruns nullptr if no item is found
 		*/
-		const item::Item* Equipped_Items(Equipment_Slots t_item) { return equipment_slots[(int)t_item]; };
-		const item::Item* Equipped_Items(int t_item) { return equipment_slots[t_item]; };
+		const item::Item* Equipped_Items(Equipment_Slots t_item) { return equipment_slots.at(t_item); };
+
 
 	private:
 
@@ -224,10 +237,12 @@ namespace Character {
 		int max_hit_points{};
 		int hit_points{};
 
-		std::vector<item::Item*> equipment_slots = std::vector<item::Item*>(8);
+		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
+		//std::vector<item::Item*> equipment_slots = std::vector<item::Item*>(8);
 		itemcontainer::ItemContainer inventory = itemcontainer::ItemContainer("Inventory", Backpack);
 		std::string Get_Class_Name(Character_Class t_class);
 		std::string Get_Class_Name(int t_class);
+		std::string Get_Abilities_Name(Abilities t_abilities);
 
 		std::string Get_Item_Type_Name(item::ItemType t_type);
 		std::string Get_Equipment_Slot_Name(Equipment_Slots t_slot);
