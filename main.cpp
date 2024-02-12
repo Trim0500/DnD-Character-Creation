@@ -7,6 +7,7 @@
 #include <cppunit/ui/text/TestRunner.h>
 
 #include "Character.h"
+#include "Dice.h"
 
 using namespace std;
 using namespace CppUnit;
@@ -64,7 +65,16 @@ int main()
 
 	fighterCharacter->Print_Character_Sheet();
 
+	Dice* dice = new Dice();
+	int rollValue = dice->roll("4d20+4");
+	cout << "Dice rolled: " << rollValue << endl;
+
 	getchar();
+
+	delete dice;
+	fighterInventory->GetAllItems().clear();
+	delete fighterInventory;
+	delete fighterCharacter;
 
 	return 0;
 }
