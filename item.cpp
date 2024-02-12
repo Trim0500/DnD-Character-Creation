@@ -60,7 +60,7 @@ namespace item {
 		nextItemId = nextItemId + 1;
 		itemId = nextItemId;
 		enchantmentBonus = GenerateRandomInt(1, 5);
-		itemType = (ItemType)GenerateRandomInt(1, 7);
+		itemType = (ItemType)GenerateRandomInt(Helmet, Weapon);
 		switch (itemType) {
 			case 1:
 			{
