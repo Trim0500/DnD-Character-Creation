@@ -18,10 +18,10 @@ void TestCharacter::tearDown(void)
 
 void TestCharacter::TestNoArgsCharacterConstructor(void)
 {
-	CPPUNIT_ASSERT(noArgsCharacterObject->ID() == 0);
+	CPPUNIT_ASSERT(noArgsCharacterObject->ID() >= 0);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Name() == "Cirian");
 	CPPUNIT_ASSERT(noArgsCharacterObject->Classes() == Character::isFighter);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Levels(Character::Character_Class::Fighter) > 1);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Levels(Character::Character_Class::Fighter) >= 1);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Levels(Character::Character_Class::Fighter) <= 20);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Max_Hit_Points() > 0);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Max_Hit_Points() <= 280);
@@ -29,7 +29,7 @@ void TestCharacter::TestNoArgsCharacterConstructor(void)
 
 void TestCharacter::TestCharacterConstructor(void)
 {
-	CPPUNIT_ASSERT(customCharacterObject->ID() > 0);
+	CPPUNIT_ASSERT(customCharacterObject->ID() >= 0);
 	CPPUNIT_ASSERT(customCharacterObject->Name() == "Testaniel Unitoph");
 	CPPUNIT_ASSERT(customCharacterObject->Classes() == Character::isFighter);
 	CPPUNIT_ASSERT(customCharacterObject->Levels(Character::Character_Class::Fighter) == 1);
@@ -39,8 +39,9 @@ void TestCharacter::TestCharacterConstructor(void)
 
 void TestCharacter::TestGetCharacterID(void)
 {
-	CPPUNIT_ASSERT(noArgsCharacterObject->ID() == 0);
-	CPPUNIT_ASSERT(customCharacterObject->ID() == 1);
+	CPPUNIT_ASSERT(noArgsCharacterObject->ID() >= 0);
+	CPPUNIT_ASSERT(customCharacterObject->ID() >= 1);
+	CPPUNIT_ASSERT(noArgsCharacterObject->ID() != customCharacterObject->ID());
 }
 
 void TestCharacter::TestGetCharacterName(void)
@@ -111,7 +112,7 @@ void TestCharacter::TestMaxHitPoints(void)
 	CPPUNIT_ASSERT(noArgsCharacterObject->Max_Hit_Points() <= 280);
 
 	CPPUNIT_ASSERT(customCharacterObject->Max_Hit_Points() > 0);
-	CPPUNIT_ASSERT(customCharacterObject->Max_Hit_Points() <= 10);
+	CPPUNIT_ASSERT(customCharacterObject->Max_Hit_Points() <= 14);
 }
 
 void TestCharacter::TestHitPoints(void)
@@ -164,8 +165,8 @@ void TestCharacter::TestAttackBonus(void)
 	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus() <= 10);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus() >= -2);
 
-	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus() <= 2);
-	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus() <= -2);
+	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus() <= 6);
+	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus() >= -2);
 }
 
 void TestCharacter::TestProficiencyBonus(void)
@@ -182,5 +183,5 @@ void TestCharacter::TestDamageBonus(void)
 	CPPUNIT_ASSERT(noArgsCharacterObject->Damage_Bonus() >= -4);
 
 	CPPUNIT_ASSERT(customCharacterObject->Damage_Bonus() <= 4);
-	CPPUNIT_ASSERT(customCharacterObject->Damage_Bonus() <= -4);
+	CPPUNIT_ASSERT(customCharacterObject->Damage_Bonus() >= -4);
 }

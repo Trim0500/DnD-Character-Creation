@@ -19,7 +19,21 @@
 class TestCharacter : public CppUnit::TestFixture
 {
 		CPPUNIT_TEST_SUITE(TestCharacter);
-
+		CPPUNIT_TEST(TestNoArgsCharacterConstructor);
+		CPPUNIT_TEST(TestCharacterConstructor);
+		CPPUNIT_TEST(TestGetCharacterID);
+		CPPUNIT_TEST(TestGetCharacterName);
+		CPPUNIT_TEST(TestSumLevels);
+		CPPUNIT_TEST(TestClasses);
+		CPPUNIT_TEST(TestEquipItem);
+		CPPUNIT_TEST(TestUnequipItem);
+		CPPUNIT_TEST(TestMaxHitPoints);
+		CPPUNIT_TEST(TestHitPoints);
+		CPPUNIT_TEST(TestAbilityScore);
+		CPPUNIT_TEST(TestArmourClass);
+		CPPUNIT_TEST(TestAttackBonus);
+		CPPUNIT_TEST(TestProficiencyBonus);
+		CPPUNIT_TEST(TestDamageBonus);
 		CPPUNIT_TEST_SUITE_END();
 
 	public:

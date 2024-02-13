@@ -30,8 +30,11 @@ Character::Character::Character(){
 		}
 	}
 	//Generate hit points
-	for (int i{ 0 }; i < Sum_Levels(); i++) {
-		max_hit_points += (rd() % 10 + 1)+Modifier(Abilities::Constitution);
+	while (max_hit_points <= 0)
+	{
+		for (int i{ 0 }; i < Sum_Levels(); i++) {
+			max_hit_points += (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+		}
 	}
 	hit_points = max_hit_points;
 
@@ -70,7 +73,9 @@ Character::Character::Character(std::string t_name, Character_Class t_class)
 		}
 	}
 	//Generate hit points
-	max_hit_points += (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	while (max_hit_points <= 0) {
+		max_hit_points = (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	}
 	hit_points = max_hit_points;
 }
 
@@ -90,7 +95,9 @@ Character::Character::Character(Character_Class t_class)
 		}
 	}
 	//Generate hit points
-	max_hit_points = (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	while (max_hit_points <= 0) {
+		max_hit_points = (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	}
 	hit_points = max_hit_points;
 }
 
@@ -108,7 +115,9 @@ Character::Character::Character(std::string t_name, Character_Class t_class, con
 		ability_scores[i] = t_ability_scores[i];
 	}
 	//Generate hit points
-	max_hit_points = (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	while (max_hit_points <= 0) {
+		max_hit_points = (rd() % 10 + 1) + Modifier(Abilities::Constitution);
+	}
 	hit_points = max_hit_points;
 }
 
@@ -124,7 +133,9 @@ Character::Character::Character(std::string t_name, Character_Class t_class, con
 		ability_scores[i] = t_ability_scores[i];
 	}
 	//Generate hit points
-	max_hit_points = t_max_hit_points;
+	while (max_hit_points <= 0) {
+		max_hit_points = t_max_hit_points;
+	}
 	hit_points = max_hit_points;
 }
 
