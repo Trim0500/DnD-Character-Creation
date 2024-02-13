@@ -25,9 +25,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="testitem.cpp">
-	  <Filter>Source Files</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testitemcontainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,11 +47,17 @@
     <ClInclude Include="testitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-	<ClInclude Include="Dice.h">
+    <ClInclude Include="Dice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testitemcontainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testCharacter.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

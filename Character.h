@@ -234,8 +234,8 @@ namespace Character {
 		* Vector array corresponding to a character's ability scores. Can be indexed using int/'Abilities' enum
 		*/
 		std::vector<int> ability_scores = std::vector<int>(6);
-		int max_hit_points{};
-		int hit_points{};
+		int max_hit_points{0};
+		int hit_points{0};
 
 		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
     
