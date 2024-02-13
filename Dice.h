@@ -16,10 +16,12 @@ public:
 	Dice();
 	static int roll(string query);
 	int roll();
+	void add_die();
+	void add_die(int amount);
 private:
-	int leading_multiplier;
-	int die_sides;
-	int addition;
+	int leading_multiplier=1;
+	int die_sides=4;
+	int addition=0;
 };
 Dice::Dice(string query){
 	smatch sm; // rename variables
@@ -71,6 +73,12 @@ int Dice::roll(string query){
 		rolls += (rand() % die_sides + 1); 
 	}
 	return rolls + addition;
+}
+void Dice::add_die() {
+	add_die(1);
+}
+void Dice::add_die(int amount) {
+	this->leading_multiplier += amount;
 }
 
 #endif
