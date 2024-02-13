@@ -4,7 +4,7 @@ Character::Character::Character(){
 	//create random number generator
 	std::random_device rd;
 	//Generate level
-	
+	/*
 	int num_levels = rd() % 20 + 1;
 	while (num_levels > 1) {
 		int _take = rd() % num_levels;
@@ -14,8 +14,8 @@ Character::Character::Character(){
 	if (num_levels == 1) {
 		level.at(rd() % 10) += 1;
 	}
-	
-	//level.at((int)Character_Class::Fighter) = rd() % 20 + 1;
+	*/
+	level.at((int)Character_Class::Fighter) = rd() % 20 + 1;
 	//Set character_classes
 	for (int i = 0 ; i<level.size();i++) {
 		if (level[i] > 0) {
@@ -163,13 +163,13 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(35) << "Charisma" << " | " << std::left << std::setw(35) << Ability_Score(Abilities::Charisma) << " | " << std::right << std::setw(2) << Modifier(Abilities::Charisma) << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(65) << "EQUIPPED ITEMS" << std::endl;
-	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << "Name(ID)" 
+	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name (ID)" 
 	<< " | "  << std::left << std::setw(35) << "Enchantment" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	for (auto i : equipment_slots) {
 		if (i.second != nullptr) {
-			std::cout << std::right << std::setw(35) << Get_Equipment_Slot_Name(i.first) << " | "
-			<< std::left << std::setw(35) << i.second->GetItemName() << std::right << std::setw(3) << " | ";
+			std::cout << std::right << std::setw(35) << Get_Equipment_Slot_Name(i.first) << " | " 
+			<< std::left << std::setw(35) << i.second->GetItemName() << " (" << i.second->GetItemId() << ") " << std::right << std::setw(3) << " | ";
 			if (i.second->GetEnchantmentBonus() > 0) {
 				std::cout << "+";
 			}
@@ -295,13 +295,16 @@ void Character::Character::Unequip_Item(Equipment_Slots t_slot)
 
 const int Character::Character::Modifier(Abilities t_ability)
 {
+	int modifier{ 0 };
+
 	try {
-		return std::floor(((float)(ability_scores[(int)t_ability] - 10) / 2));
+		modifier = std::floor(((float)(Ability_Score(t_ability) - 10) / 2));
 	}
 	catch (std::exception& e) {
 		std::cerr << &e << std::endl;
 		return 0;
 	}
+	return modifier;
 }
 
 const int Character::Character::Ability_Score(Abilities t_ability)
@@ -323,7 +326,6 @@ const int Character::Character::Ability_Score(Abilities t_ability)
 		catch (std::exception &e) {
 			std::cerr << &e << std::endl;
 		}
-		
 	}
 	return score;
 }
