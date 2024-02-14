@@ -19,11 +19,12 @@
 #include <cppunit/XmlOutputter.h>
 
 #include "item.h"
+//#include "testitemidcounter.h"
 
 using namespace std;
 using namespace CppUnit;
 using namespace item;
-
+//using namespace testitemidcounter;
 
 /*!
 * \class TestItem

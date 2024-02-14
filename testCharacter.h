@@ -15,6 +15,9 @@
 #include <cppunit/XmlOutputter.h>
 
 #include "Character.h"
+//#include "testitemidcounter.h"
+
+//using namespace testitemidcounter;
 
 class TestCharacter : public CppUnit::TestFixture
 {
