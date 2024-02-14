@@ -40,13 +40,13 @@ int main()
 
 	ItemContainer* fighterInventory = &fighterCharacter->Inventory();
 
-	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence);
-	Item* armorObject = new Item("testArmor", 3, Armor, ArmorClass);
-	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass);
-	Item* ringObject = new Item("testRing", 1, Ring, Wisdom);
-	Item* beltObject = new Item("testBelt", 1, Belt, Strength);
-	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity);
-	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus);
+	Item* helmetObject = new Item("Baron's Helmet", 2, Helmet, Intelligence);
+	Item* armorObject = new Item("Vanguard Armor", 3, Armor, ArmorClass);
+	Item* shieldObject = new Item("Hexlock Shield", 2, Shield, ArmorClass);
+	Item* ringObject = new Item("Pontifex Ring", 1, Ring, Wisdom);
+	Item* beltObject = new Item("Power Belt", 1, Belt, Strength);
+	Item* bootsObject = new Item("Pegasus Boots", 2, Boots, Dexterity);
+	Item* weaponObject = new Item("Steel Lance", 2, Weapon, AttackBonus);
 
 	fighterInventory->AddNewItem(*helmetObject);
 	fighterInventory->AddNewItem(*armorObject);
