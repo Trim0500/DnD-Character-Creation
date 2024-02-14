@@ -11,5 +11,5 @@ var searchData=
   ['isrogue_8',['isRogue',['../namespace_character.html#aaf70df9a8019d5e0d4eeb704be6b1bbb',1,'Character']]],
   ['issorcerer_9',['isSorcerer',['../namespace_character.html#ae57c7eda5fe1661c7b32fb79daa91c18',1,'Character']]],
   ['iswizard_10',['isWizard',['../namespace_character.html#a31a6db66bb4d261d470bb93257ca1dfd',1,'Character']]],
-  ['itemtypestrings_11',['itemTypeStrings',['../classitem_1_1_item.html#acb244a5ecfbc1ea3ec69bfb39fc920f2',1,'item::Item']]]
+  ['itemtypestrings_11',['itemTypeStrings',['../classitem_1_1_item.html#a0a45dc09af85eadcaa3eb2f24b7606df',1,'item::Item']]]
 ];

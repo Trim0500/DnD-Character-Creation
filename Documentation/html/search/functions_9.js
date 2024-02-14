@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['roll_0',['roll',['../class_dice.html#a4f045c0acc89669ff5d5b4dcd4c78e2c',1,'Dice']]]
+  ['name_0',['Name',['../class_character_1_1_character.html#a05ced65d9747dc7717ee447904755543',1,'Character::Character::Name()'],['../class_character_1_1_character.html#a4c9af781770b0bec21985052e8561421',1,'Character::Character::Name(std::string)']]]
 ];

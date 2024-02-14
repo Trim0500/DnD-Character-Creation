@@ -1,4 +1,4 @@
-/*
+/*!
 * \file itemcontainer.cpp
 * \brief Implementation file for the ItemContainer class
 *

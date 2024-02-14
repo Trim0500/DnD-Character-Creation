@@ -1,4 +1,4 @@
-/*
+/*!
 * \file testitem.cpp
 * \brief Test implementation for Item
 */

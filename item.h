@@ -1,4 +1,4 @@
-/*
+/*!!
 * \file item.h
 * \brief Header file for the Item class
 * 
@@ -29,12 +29,12 @@
 
 using namespace std;
 
-/*
+/*!!
 * \namespace item
 * \brief namespace to encapsulate character items
 */
 namespace item {
-	/*
+	/*!
 	* \enum Itemtype
 	* \brief Enum for the character item types
 	* 
@@ -54,7 +54,7 @@ namespace item {
 		TreasureChest
 	};
 
-	/*
+	/*!
 	* \enum CharacterStats
 	* \brief Enum for the character stats
 	*
@@ -73,7 +73,7 @@ namespace item {
 		NA
 	};
 
-	/*
+	/*!
 	* \class Item
 	* \brief Class for the character items
 	*
@@ -81,12 +81,14 @@ namespace item {
 	*/
 	class Item {
 		public:
-			/*
-			* A variable
+			/*!
+			* \var itemTypeStrings
+			* \brief String array for formatting item name item type
 			*/
 			string itemTypeStrings[7] = { "Helmet", "Armor", "Shield", "Ring", "Belt", "Boots", "Weapon" };
-			/*
-			* A variable
+			/*!
+			* \var itemTypeStrings
+			* \brief String array for formatting item name character stat
 			*/
 			string statStrings[9] = { "Strength",
 										"Dexterity",
@@ -97,7 +99,7 @@ namespace item {
 										"Armor Class",
 										"Attack Bonus",
 										"Damage Bonus" };
-			/*
+			/*!
 			* \fn Item
 			* \brief No-args constructor for Item
 			*
@@ -105,7 +107,7 @@ namespace item {
 			* Implemented in item.cpp.
 			*/
 			Item();
-			/*
+			/*!
 			* \fn Item
 			* \brief Overloaded constructor for Item
 			*
@@ -127,27 +129,27 @@ namespace item {
 			CharacterStats GetEnchantmentType() { return enchantmentType; };
 		private:
 			static inline int nextItemId = 0;
-			/*
+			/*!
 			* \var itemId
 			* \brief Integer that represents the item's unique ID
 			*/
 			int itemId;
-			/*
+			/*!
 			* \var itemName
 			* \brief Integer that represents the item's name
 			*/
 			string itemName;
-			/*
+			/*!
 			* \var enchantmentBonus
 			* \brief Integer that represents the item's stat bonus
 			*/
 			int enchantmentBonus;
-			/*
+			/*!
 			* \var enchantmentBonus
 			* \brief Integer that represents the item's type
 			*/
 			ItemType itemType;
-			/*
+			/*!
 			* \var enchantmentType
 			* \brief Integer that represents the item's stat
 			*/
