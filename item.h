@@ -1,8 +1,25 @@
 /*
 * \file item.h
 * \brief Header file for the Item class
+* 
+* @author Tristan Lafleur (40245238)
 *
-* This file puts in the forwrad declarations for the Item class and it's member fields and functions.
+* This file puts in the forward declarations for the Item class and it's member fields and functions.
+* 
+* The game rules involved in the design of this file follow the d20 5e DnD rules. This means that the items can range from up to
+*     7 different tyoes & give out an enchantment bonus to a character stat of up to +5. The items bonus are used in conjunction
+*     with character modifiers to influence the value of a dice roll to acheive a combat or non-combat situation based on armor
+*     or difficulty class respectively.
+* 
+* The design of this header file is meant to implement the generation of items as well as being able to retrieve certain pieces
+*     of information related to the item. To that end, the design of the class contains the necessary members outlined in the
+*     assignment specifications as well as a name and id property for uniqueness. The no args constructor is implemented using
+*     random number generation for containers like treasure chests. 
+* 
+* The implmenetation uses the string, sstream and random libraries for name formatting and random number generation through uniform
+*     distribution. The reasoning is due to the need to be able to give descriptive names to randomly generated items and have
+*     a reliable random number mechanism to be able to pick out different item types, bonuses and enchantment types upon repeat
+*     uses.
 */
 
 #pragma once 
@@ -111,23 +128,28 @@ namespace item {
 		private:
 			static inline int nextItemId = 0;
 			/*
-			* A variable
+			* \var itemId
+			* \brief Integer that represents the item's unique ID
 			*/
 			int itemId;
 			/*
-			* A variable
+			* \var itemName
+			* \brief Integer that represents the item's name
 			*/
 			string itemName;
 			/*
-			* A variable
+			* \var enchantmentBonus
+			* \brief Integer that represents the item's stat bonus
 			*/
 			int enchantmentBonus;
 			/*
-			* A variable
+			* \var enchantmentBonus
+			* \brief Integer that represents the item's type
 			*/
 			ItemType itemType;
 			/*
-			* A variable
+			* \var enchantmentType
+			* \brief Integer that represents the item's stat
 			*/
 			CharacterStats enchantmentType;
 	};

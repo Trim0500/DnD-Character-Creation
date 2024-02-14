@@ -1,8 +1,25 @@
 /*
 * \file itemcontainer.h
 * \brief Header file for the ItemContainer class
+* 
+* @author Tristan Lafleur (40245238)
 *
 * This file puts in the forwrad declarations for the ItemContainer class
+* 
+* The game rules involved in the design of this file follow the d20 5e DnD rules. Therefore, three container types exist for the
+*     gameworld and character, Backpack, Worn Items and Treasure Chests. Chests need to be place on the gameworld map to supply
+*     the character with loot to pick and choose from and into their backpack which can then have items be taken out and equipped.
+* 
+* The design of this file is to implement the generation for item containers by way of including a list of items, retreiving
+*     the items by certain metrics and adding in new ones. While the specifications mention that a container can hold any number
+*     of items, this does not hold true for every type such as the case of Worn Items whereby only 7 can be used. Therefore, 
+*     a capacity parameter is put in place to limit a container. Since containers are set in stone, no randomness is found for
+*     these objects unlike the actual items. The container is a subclass as it ends up having many similar properties to items
+*     and so allows the containers to be easier to maintain and extend later on.
+* 
+* The libraries used in this file would be string, vector and algorithm. The reasoning for it is that there is a need to provide
+*     and interface to have a data structure that allows for automatic resizing as containers can be dynamically sized throughout
+*     runtime and the items in the structure need to be found and retreived.
 */
 
 #pragma once
@@ -74,11 +91,13 @@ namespace itemcontainer {
 			vector<Item> GetItemsByStat(const int&);
 		private:
 			/*
-			* A variable
+			* \var capacity
+			* \brief Integer that represents the carrying capacity for the container
 			*/
 			int capacity;
 			/*
-			* A variable
+			* \var items
+			* \brief Vector of type Item that represents the containers item instances
 			*/
 			vector<Item> items;
 	};
