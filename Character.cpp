@@ -108,7 +108,9 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(25) << "Level: " << Sum_Levels() << std::endl;
 	std::cout << std::right << std::setw(25) << "Hit Die: ";
 	for (int i = 0; i < 12; i++) {
-		//std::cout << hit_die_pool.at((Character_Class)i).roll() << ", ";
+		if (hit_die_pool.at((Character_Class)i) != nullptr) {
+			std::cout << hit_die_pool.at((Character_Class)i)->get_string() << ", ";
+		}
 	}
 	std::cout << std::endl;
 	std::cout << std::right << std::setw(25) << "HP: " << Hit_Points()<<"/"<<Max_Hit_Points() << std::endl;
@@ -129,13 +131,13 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(35) << "Charisma" << " | " << std::left << std::setw(35) << Ability_Score(Abilities_Stats::Charisma) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Charisma) << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(65) << "EQUIPPED ITEMS" << std::endl;
-	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name (ID)" 
+	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name" 
 	<< " | "  << std::left << std::setw(35) << "Enchantment" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	for (auto i : equipment_slots) {
 		if (i.second != nullptr) {
 			std::cout << std::right << std::setw(35) << Get_Equipment_Slot_String(i.first) << " | "
-			<< std::left << std::setw(35) << i.second->GetItemName() << " (" << i.second->GetItemId() << ") " << std::right << std::setw(3) << " | ";
+			<< std::left << std::setw(35) << i.second->GetItemName() << std::right << std::setw(3) << " | ";
 			if (i.second->GetEnchantmentBonus() > 0) {
 				std::cout << "+";
 			}
@@ -145,7 +147,7 @@ void Character::Character::Print_Character_Sheet()
 	}
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(63) << "INVENTORY" << std::endl;
-	std::cout << std::right << std::setw(35) << "Name(ID)" << " | " << std::left << std::setw(35) << "Type"
+	std::cout << std::right << std::setw(35) << "Name" << " | " << std::left << std::setw(35) << "Type"
 	<< " | " << std::left << std::setw(35) << "Enchantment" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	for (int i = 0; i < inventory.GetAllItems().size(); i++) {
@@ -173,7 +175,7 @@ const int Character::Character::Sum_Levels()
 
 bool Character::Character::Levelup(Character_Class t_class)
 {
-	if (Sum_Levels() <= 20) {
+	if (Sum_Levels() < 20) {
 		switch (t_class)
 		{
 		case Character_Class::Barbarian:
@@ -545,12 +547,14 @@ bool Character::Character::Levelup_Barbarian()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d12");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!"<<std::endl;
+				std::cout << "Minimum multi-class requirement: "<<"Strength >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -560,7 +564,7 @@ bool Character::Character::Levelup_Barbarian()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d12");
 			return true;
 		}
 	}
@@ -587,12 +591,14 @@ bool Character::Character::Levelup_Bard()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<<"Charisma >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -602,7 +608,7 @@ bool Character::Character::Levelup_Bard()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -629,12 +635,14 @@ bool Character::Character::Levelup_Cleric()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: " << "Wisdom >= 13"<< std::endl;
 				return false;
 			}
 		}
@@ -644,7 +652,7 @@ bool Character::Character::Levelup_Cleric()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -671,12 +679,14 @@ bool Character::Character::Levelup_Druid()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<< "Wisdom >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -686,7 +696,7 @@ bool Character::Character::Levelup_Druid()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -713,12 +723,14 @@ bool Character::Character::Levelup_Fighter()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d10");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<< "Strength >= 13 OR Dexterity >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -728,7 +740,7 @@ bool Character::Character::Levelup_Fighter()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d10");
 			return true;
 		}
 	}
@@ -755,12 +767,14 @@ bool Character::Character::Levelup_Monk()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<<"Wisdom >= 13 AND Dexterity >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -770,7 +784,7 @@ bool Character::Character::Levelup_Monk()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -797,12 +811,14 @@ bool Character::Character::Levelup_Paladin()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d10");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<< "Charisma >= 13 AND Strength >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -812,7 +828,7 @@ bool Character::Character::Levelup_Paladin()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d10");
 			return true;
 		}
 	}
@@ -839,12 +855,14 @@ bool Character::Character::Levelup_Ranger()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d10");;
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<<"Dexterity >= 13 AND Wisdom >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -854,7 +872,7 @@ bool Character::Character::Levelup_Ranger()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d10");
 			return true;
 		}
 	}
@@ -881,12 +899,14 @@ bool Character::Character::Levelup_Rogue()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<<"Dexterity >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -896,7 +916,7 @@ bool Character::Character::Levelup_Rogue()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -923,12 +943,14 @@ bool Character::Character::Levelup_Sorcerer()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d6");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<<"Charisma >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -938,7 +960,7 @@ bool Character::Character::Levelup_Sorcerer()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d6");
 			return true;
 		}
 	}
@@ -965,12 +987,14 @@ bool Character::Character::Levelup_Warlock()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<<"Charisma >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -980,7 +1004,7 @@ bool Character::Character::Levelup_Warlock()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -1007,12 +1031,14 @@ bool Character::Character::Levelup_Wizard()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class)->add_die();
+				hit_die_pool.at(t_class) = new Dice("1d6");
 				return true;
 			}
 			else
 			{
 				//Don't meet minimum requierments to multiclass
+				std::cout << "Could not take a level in " << Get_Class_String(t_class) << "!" << std::endl;
+				std::cout << "Minimum multi-class requirement: "<<"Intelligence >= 13" << std::endl;
 				return false;
 			}
 		}
@@ -1022,7 +1048,7 @@ bool Character::Character::Levelup_Wizard()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class)->add_die();
+			hit_die_pool.at(t_class) = new Dice("1d6");
 			return true;
 		}
 	}

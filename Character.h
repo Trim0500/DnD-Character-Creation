@@ -163,7 +163,8 @@ namespace Character {
 		*/
 		const std::bitset<12> Classes() { return character_class; };
 		/* \fn Levelup()
-		*  \brief Levels up the the character by one level in a given class (Not fully implemented yet)
+		*  \brief Levels up the the character by one level in a given class. Note that ability score bonuses given
+		*  by items are not considered when checking if a character is able to mult-class
 		*  \param t_class: Enum of type 'Character_Class' indicating which class a character will take a level in
 		*  \return Returns true if levelup was performed succesfully, false otherwise
 		*/
@@ -261,6 +262,10 @@ namespace Character {
 		*  \brief Checks if the character is multi-classed with a particular character class
 		*/
 		bool Is_Multi_Classed(Character_Class t_class);
+		/* \fn Hit_Die_Pool()
+		*  \return Returns a const refrence to the characters' hit die pool
+		*/ 
+		const std::unordered_map<Character_Class, Dice*>& Hit_Die_Pool() { return hit_die_pool; };
 
 	private:
 
@@ -281,18 +286,18 @@ namespace Character {
 		int hit_points{0};
 
 		std::unordered_map<Character_Class, Dice*> hit_die_pool = {
-			{Character_Class::Barbarian,  new Dice("0d12")},
-			{Character_Class::Bard, new Dice("0d8")},
-			{Character_Class::Cleric, new Dice("0d8")},
-			{Character_Class::Druid, new Dice("0d8")},
-			{Character_Class::Fighter, new Dice("0d10")},
-			{Character_Class::Monk, new Dice("0d8")},
-			{Character_Class::Paladin, new Dice("0d10")},
-			{Character_Class::Ranger, new Dice("0d10")},
-			{Character_Class::Rogue, new Dice("0d8")},
-			{Character_Class::Sorcerer, new Dice("0d6")},
-			{Character_Class::Warlock, new Dice("0d8")},
-			{Character_Class::Wizard, new Dice("0d6")},
+			{Character_Class::Barbarian,  nullptr},
+			{Character_Class::Bard, nullptr},
+			{Character_Class::Cleric, nullptr},
+			{Character_Class::Druid, nullptr},
+			{Character_Class::Fighter, nullptr},
+			{Character_Class::Monk, nullptr},
+			{Character_Class::Paladin, nullptr},
+			{Character_Class::Ranger, nullptr},
+			{Character_Class::Rogue, nullptr},
+			{Character_Class::Sorcerer, nullptr},
+			{Character_Class::Warlock, nullptr},
+			{Character_Class::Wizard,nullptr},
 
 		};
 
