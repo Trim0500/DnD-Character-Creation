@@ -6,7 +6,7 @@ Character::Character::Character(){
 
 	int t_num_levels = rd() % 20 + 1;
 	//First level & class
-	Levelup((Character_Class)(rd() % 12));
+	Levelup(Character_Class::Fighter);
 	t_num_levels--;
 
 	//Generate ability scores
@@ -22,7 +22,7 @@ Character::Character::Character(){
 	for (int i{ 0 }; i < t_num_levels; i++) {
 
 		while (!t_level_taken) {
-			t_level_taken = Levelup((Character_Class)(rd() % 12));
+			t_level_taken = Levelup(Character_Class::Fighter);
 		}
 	}
 	hit_points = max_hit_points;
