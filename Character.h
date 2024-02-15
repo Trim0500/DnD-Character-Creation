@@ -3,7 +3,7 @@
 * The character creation is based off of the 5th edition Dungeons & Dragons! 
 * Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including
 * but not limited to...
-* 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon & tool proficiencies', 'Hit dice', 'Death saves', 'initiative' and 'saving throws'
+* 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon & tool proficiencies', 'Death saves', 'initiative' and 'saving throws'
 */
 #pragma once
 #include <iostream>
@@ -15,6 +15,7 @@
 #include <unordered_map>
 #include "item.h"
 #include "itemcontainer.h"
+#include "Dice.h"
 
 /* \namespace Character
 * \brief namespace used to encapsulate 'Character' class functionality
@@ -278,6 +279,22 @@ namespace Character {
 		std::vector<int> ability_scores = std::vector<int>(6);
 		int max_hit_points{0};
 		int hit_points{0};
+
+		std::unordered_map<Character_Class, Dice*> hit_die_pool = {
+			{Character_Class::Barbarian,  new Dice("0d12")},
+			{Character_Class::Bard, new Dice("0d8")},
+			{Character_Class::Cleric, new Dice("0d8")},
+			{Character_Class::Druid, new Dice("0d8")},
+			{Character_Class::Fighter, new Dice("0d10")},
+			{Character_Class::Monk, new Dice("0d8")},
+			{Character_Class::Paladin, new Dice("0d10")},
+			{Character_Class::Ranger, new Dice("0d10")},
+			{Character_Class::Rogue, new Dice("0d8")},
+			{Character_Class::Sorcerer, new Dice("0d6")},
+			{Character_Class::Warlock, new Dice("0d8")},
+			{Character_Class::Wizard, new Dice("0d6")},
+
+		};
 
 		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
     
