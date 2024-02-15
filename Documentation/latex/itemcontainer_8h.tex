@@ -1,5 +1,10 @@
 \doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/itemcontainer.h File Reference}
 \hypertarget{itemcontainer_8h}{}\label{itemcontainer_8h}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/itemcontainer.h@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/itemcontainer.h}}
+
+
+Header file for the Item\+Container class.  
+
+
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
@@ -8,9 +13,27 @@
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classitemcontainer_1_1_item_container}{itemcontainer\+::\+Item\+Container}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Class to abstract the different item containers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Namespace for the character item containers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the Item\+Container class. 
+
+\begin{DoxyAuthor}{Author}
+Tristan Lafleur (40245238)
+\end{DoxyAuthor}
+This file puts in the forwrad declarations for the Item\+Container class
+
+The game rules involved in the design of this file follow the d20 5e DnD rules. Therefore, three container types exist for the gameworld and character, Backpack, Worn Items and Treasure Chests. Chests need to be place on the gameworld map to supply the character with loot to pick and choose from and into their backpack which can then have items be taken out and equipped.
+
+The design of this file is to implement the generation for item containers by way of including a list of items, retreiving the items by certain metrics and adding in new ones. While the specifications mention that a container can hold any number of items, this does not hold true for every type such as the case of Worn Items whereby only 7 can be used. Therefore, a capacity parameter is put in place to limit a container. Since containers are set in stone, no randomness is found for these objects unlike the actual items. The container is a subclass as it ends up having many similar properties to items and so allows the containers to be easier to maintain and extend later on.
+
+The libraries used in this file would be string, vector and algorithm. The reasoning for it is that there is a need to provide and interface to have a data structure that allows for automatic resizing as containers can be dynamically sized throughout runtime and the items in the structure need to be found and retreived. 
+
+Definition in file \mbox{\hyperlink{itemcontainer_8h_source}{itemcontainer.\+h}}.
+

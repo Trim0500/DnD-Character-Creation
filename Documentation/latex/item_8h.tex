@@ -1,17 +1,22 @@
 \doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/item.h File Reference}
 \hypertarget{item_8h}{}\label{item_8h}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/item.h@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/item.h}}
+
+
+Header file for the Item class.  
+
+
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{classitem_1_1_item}{item\+::\+Item}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Class for the character items. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceitem}{item}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em namespace to encapsulate character items \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,4 +49,24 @@ enum \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item\+::\
 \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{item\+::\+Damage\+Bonus}}
 , \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca44125f26a1f7fbb82e6756ddd5e5bfce}{item\+::\+NA}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Enum for the character stats. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the Item class. 
+
+!
+
+\begin{DoxyAuthor}{Author}
+Tristan Lafleur (40245238)
+\end{DoxyAuthor}
+This file puts in the forward declarations for the Item class and it\textquotesingle{}s member fields and functions.
+
+The game rules involved in the design of this file follow the d20 5e DnD rules. This means that the items can range from up to 7 different tyoes \& give out an enchantment bonus to a character stat of up to +5. The items bonus are used in conjunction with character modifiers to influence the value of a dice roll to acheive a combat or non-\/combat situation based on armor or difficulty class respectively.
+
+The design of this header file is meant to implement the generation of items as well as being able to retrieve certain pieces of information related to the item. To that end, the design of the class contains the necessary members outlined in the assignment specifications as well as a name and id property for uniqueness. The no args constructor is implemented using random number generation for containers like treasure chests.
+
+The implmenetation uses the string, sstream and random libraries for name formatting and random number generation through uniform distribution. The reasoning is due to the need to be able to give descriptive names to randomly generated items and have a reliable random number mechanism to be able to pick out different item types, bonuses and enchantment types upon repeat uses. 
+
+Definition in file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+

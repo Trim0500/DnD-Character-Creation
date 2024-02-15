@@ -1,13 +1,7 @@
 \doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/item.cpp}
 \hypertarget{item_8cpp_source}{}\label{item_8cpp_source}\mbox{\hyperlink{item_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00001}00001\ \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00002}00002\ \textcolor{comment}{*\ \(\backslash\)file\ item.cpp}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00003}00003\ \textcolor{comment}{*\ \(\backslash\)brief\ Implementation\ file\ for\ the\ Item\ class}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00004}00004\ \textcolor{comment}{*}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00005}00005\ \textcolor{comment}{*\ This\ file\ puts\ in\ the\ function\ implementations\ for\ the\ Item\ class}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00006}00006\ \textcolor{comment}{*/}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00001}00001\ }
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <random>}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
@@ -18,17 +12,6 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00015}00015\ \textcolor{keyword}{using\ namespace\ }std;}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00017}00017\ \textcolor{keyword}{namespace\ }\{}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00019}00019\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)fn\ GenerateRandomInt}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00020}00020\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ RNG\ index\ helper\ function\ for\ Item}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00021}00021\ \textcolor{comment}{\ \ \ \ *}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00022}00022\ \textcolor{comment}{\ \ \ \ *\ Helper\ function\ to\ the\ Item\ class\ to\ generate\ an\ int\ corresponding\ to\ the\ index\ of\ an\ enchantment\ bonus\ or\ item\ type.}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00023}00023\ \textcolor{comment}{\ \ \ \ *}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00024}00024\ \textcolor{comment}{\ \ \ \ *\ @param\ min\ The\ minimum\ index\ in\ the\ range\ to\ pick\ from}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00025}00025\ \textcolor{comment}{\ \ \ \ *\ @param\ max\ The\ maximum\ index\ in\ the\ range\ to\ pick\ from}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00026}00026\ \textcolor{comment}{\ \ \ \ *}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00027}00027\ \textcolor{comment}{\ \ \ \ *\ @returns\ Integer\ that\ represents\ the\ index\ that\ was\ randomly\ generated\ from\ the\ specified\ range}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00028}00028\ \textcolor{comment}{\ \ \ \ */}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{int}\ GenerateRandomInt(\textcolor{keywordtype}{int}\ min,\ \textcolor{keywordtype}{int}\ max)\ \{}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ random\_device\ seed;}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ mt19937\ gen(seed());}
@@ -37,17 +20,6 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ distrib(gen);}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00035}00035\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{/*}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00038}00038\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)fn\ PickEnchantmentType}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00039}00039\ \textcolor{comment}{\ \ \ \ *\ \(\backslash\)brief\ RNG\ index\ helper\ function\ for\ Item's\ item\ types\ }}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00040}00040\ \textcolor{comment}{\ \ \ \ *}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00041}00041\ \textcolor{comment}{\ \ \ \ *\ Helper\ function\ to\ the\ Item\ class\ to\ generate\ an\ int\ corresponding\ to\ the\ index\ of\ an\ enchantment\ type.}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00042}00042\ \textcolor{comment}{\ \ \ \ *\ Uses\ the\ array\ to\ specify\ the\ index\ range.}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00043}00043\ \textcolor{comment}{\ \ \ \ *}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00044}00044\ \textcolor{comment}{\ \ \ \ *\ @param\ allowedTypesArray\ An\ address\ pointing\ to\ a\ constant\ array\ to\ extract\ a\ type\ via\ a\ randomly\ generated\ index}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00045}00045\ \textcolor{comment}{\ \ \ \ *}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00046}00046\ \textcolor{comment}{\ \ \ \ *\ @returns\ Enum\ index\ that\ represents\ the\ assigned\ enchantment\ type\ for\ the\ item.}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00047}00047\ \textcolor{comment}{\ \ \ \ */}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item::CharacterStats}}\ PickEnchantmentType(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item::CharacterStats}}\ *allowedTypesArray)\ \{}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ random\_device\ seed;}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ mt19937\ gen(seed());}
@@ -63,7 +35,7 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ nextItemId\ =\ nextItemId\ +\ 1;}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ itemId\ =\ nextItemId;}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ enchantmentBonus\ =\ GenerateRandomInt(1,\ 5);}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ itemType\ =\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})GenerateRandomInt(1,\ 7);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ itemType\ =\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})GenerateRandomInt(\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1}{Helmet}},\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158}{Weapon}});}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (itemType)\ \{}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
@@ -109,7 +81,7 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00107}00107\ }
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ ostringstream\ name;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ name\ <<\ \mbox{\hyperlink{classitem_1_1_item_acb244a5ecfbc1ea3ec69bfb39fc920f2}{itemTypeStrings}}[itemType\ -\/\ 1]\ <<\ \textcolor{stringliteral}{"{}\ +"{}}\ <<\ to\_string(enchantmentBonus)\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ \mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{statStrings}}[enchantmentType]\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ name\ <<\ \mbox{\hyperlink{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}{itemTypeStrings}}[itemType\ -\/\ 1]\ <<\ \textcolor{stringliteral}{"{}\ +"{}}\ <<\ to\_string(enchantmentBonus)\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ \mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{statStrings}}[enchantmentType]\ <<\ \textcolor{stringliteral}{"{})"{}};}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ itemName\ =\ name.str();}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00111}00111\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00112}00112\ }

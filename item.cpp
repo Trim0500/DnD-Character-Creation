@@ -1,4 +1,4 @@
-/*
+/*!
 * \file item.cpp
 * \brief Implementation file for the Item class
 *
@@ -15,7 +15,7 @@
 using namespace std;
 
 namespace {
-	/*
+	/*!
 	* \fn GenerateRandomInt
 	* \brief RNG index helper function for Item
 	*
@@ -34,7 +34,7 @@ namespace {
 		return distrib(gen);
 	}
 
-	/*
+	/*!
 	* \fn PickEnchantmentType
 	* \brief RNG index helper function for Item's item types 
 	*

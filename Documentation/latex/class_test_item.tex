@@ -2,6 +2,11 @@
 \hypertarget{class_test_item}{}\label{class_test_item}\index{TestItem@{TestItem}}
 
 
+Test Class to run unit tests for Item.  
+
+
+
+
 {\ttfamily \#include $<$testitem.\+h$>$}
 
 Inheritance diagram for Test\+Item\+:\begin{figure}[H]
@@ -13,122 +18,158 @@ Inheritance diagram for Test\+Item\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_test_item_aae450e117741e2c1fd22316c335cb506}{set\+Up}} (void)
-\item 
-void \mbox{\hyperlink{class_test_item_a6a5c6ad6c001638c525898c43a9f8d2a}{tear\+Down}} (void)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_test_item_a60343f4931465a4add60a8dc74a4f4d3}{set\+Up}} (void)
+\begin{DoxyCompactList}\small\item\em Function that creates two Item objects before running a test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_item_a38972453e27a89fdf85d6d05a2b10a13}{tear\+Down}} (void)
+\begin{DoxyCompactList}\small\item\em Function that deallocates the generated items. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_test_item_aa5f1cf3806e61d64ac66acb42da679e9}{Test\+No\+Args\+Item\+Constructor}} (void)
-\item 
-void \mbox{\hyperlink{class_test_item_a23dbd715411aef3adb7d72db94e97751}{Test\+Item\+Constructor}} (void)
-\item 
-void \mbox{\hyperlink{class_test_item_a57271a9426d2139fbcebbd978b12590e}{Test\+Get\+Item\+Id}} (void)
-\item 
-void \mbox{\hyperlink{class_test_item_a4371bd49043c676947f54aadebafa962}{Test\+Get\+Item\+Name}} (void)
-\item 
-void \mbox{\hyperlink{class_test_item_a027d63918be288207548fa41f1d6eba6}{Test\+Get\+Enchantment\+Bonus}} (void)
-\item 
-void \mbox{\hyperlink{class_test_item_afb407da14eff2d0680dc01cfcfbb9c69}{Test\+Get\+Item\+Type}} (void)
-\item 
-void \mbox{\hyperlink{class_test_item_ab7d2dffe05c237ccda790cdabc2e1fd8}{Test\+Get\+Enchantment\+Type}} (void)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{class_test_item_a9e3b7b0ad025dbf2754ee5ee87b10e25}{Test\+No\+Args\+Item\+Constructor}} (void)
+\begin{DoxyCompactList}\small\item\em Function that tests the no args constructor overload for random generation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_item_a6413c831d1edb7dfba5de0076c78c3ac}{Test\+Item\+Constructor}} (void)
+\begin{DoxyCompactList}\small\item\em Function that tests the custom constructor overload for static ganeration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_item_a47182462311b4bc7b268feb7276cb106}{Test\+Get\+Item\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Function that tests Get\+Item\+Id member function to verify the id increment is correct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_item_a46a335a1ef390e9208eb704413215392}{Test\+Get\+Item\+Name}} (void)
+\begin{DoxyCompactList}\small\item\em Function that tests Get\+Item\+Name member function to verify the created item\textquotesingle{}s name is correct. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_item_ad9222176b6d48485603edd5d88ddaaaa}{Test\+Get\+Enchantment\+Bonus}} (void)
+\begin{DoxyCompactList}\small\item\em Function that tests Get\+Enchantment\+Bonus member function to verify the created item\textquotesingle{}s bonus is in the right range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_item_aec2b80a3e0eb10bc94f203df672c1d63}{Test\+Get\+Item\+Type}} (void)
+\begin{DoxyCompactList}\small\item\em Function that tests Get\+Item\+Type member function to verify the created item\textquotesingle{}s type is in the right range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_item_a0bd12b3bd908749bcf1e08bb73b808e3}{Test\+Get\+Enchantment\+Type}} (void)
+\begin{DoxyCompactList}\small\item\em Function that tests Get\+Enchantment\+Type member function to verify the created item\textquotesingle{}s enchantment type is in the right range. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-
+Test Class to run unit tests for Item. 
 
 Definition at line \mbox{\hyperlink{testitem_8h_source_l00032}{32}} of file \mbox{\hyperlink{testitem_8h_source}{testitem.\+h}}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_test_item_aae450e117741e2c1fd22316c335cb506}\label{class_test_item_aae450e117741e2c1fd22316c335cb506} 
+\Hypertarget{class_test_item_a60343f4931465a4add60a8dc74a4f4d3}\label{class_test_item_a60343f4931465a4add60a8dc74a4f4d3} 
 \index{TestItem@{TestItem}!setUp@{setUp}}
 \index{setUp@{setUp}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{setUp()}{setUp()}}
-{\footnotesize\ttfamily void Test\+Item\+::set\+Up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Test\+Item\+::set\+Up (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function that creates two Item objects before running a test. 
 
 
 
 Definition at line \mbox{\hyperlink{testitem_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{testitem_8cpp_source}{testitem.\+cpp}}.
 
-\Hypertarget{class_test_item_a6a5c6ad6c001638c525898c43a9f8d2a}\label{class_test_item_a6a5c6ad6c001638c525898c43a9f8d2a} 
+\Hypertarget{class_test_item_a38972453e27a89fdf85d6d05a2b10a13}\label{class_test_item_a38972453e27a89fdf85d6d05a2b10a13} 
 \index{TestItem@{TestItem}!tearDown@{tearDown}}
 \index{tearDown@{tearDown}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{tearDown()}{tearDown()}}
-{\footnotesize\ttfamily void Test\+Item\+::tear\+Down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Test\+Item\+::tear\+Down (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function that deallocates the generated items. 
 
 
 
 Definition at line \mbox{\hyperlink{testitem_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{testitem_8cpp_source}{testitem.\+cpp}}.
 
-\Hypertarget{class_test_item_a027d63918be288207548fa41f1d6eba6}\label{class_test_item_a027d63918be288207548fa41f1d6eba6} 
+\Hypertarget{class_test_item_ad9222176b6d48485603edd5d88ddaaaa}\label{class_test_item_ad9222176b6d48485603edd5d88ddaaaa} 
 \index{TestItem@{TestItem}!TestGetEnchantmentBonus@{TestGetEnchantmentBonus}}
 \index{TestGetEnchantmentBonus@{TestGetEnchantmentBonus}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{TestGetEnchantmentBonus()}{TestGetEnchantmentBonus()}}
-{\footnotesize\ttfamily void Test\+Item\+::\+Test\+Get\+Enchantment\+Bonus (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Test\+Item\+::\+Test\+Get\+Enchantment\+Bonus (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Function that tests Get\+Enchantment\+Bonus member function to verify the created item\textquotesingle{}s bonus is in the right range. 
 
 
 
 Definition at line \mbox{\hyperlink{testitem_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{testitem_8cpp_source}{testitem.\+cpp}}.
 
-\Hypertarget{class_test_item_ab7d2dffe05c237ccda790cdabc2e1fd8}\label{class_test_item_ab7d2dffe05c237ccda790cdabc2e1fd8} 
+\Hypertarget{class_test_item_a0bd12b3bd908749bcf1e08bb73b808e3}\label{class_test_item_a0bd12b3bd908749bcf1e08bb73b808e3} 
 \index{TestItem@{TestItem}!TestGetEnchantmentType@{TestGetEnchantmentType}}
 \index{TestGetEnchantmentType@{TestGetEnchantmentType}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{TestGetEnchantmentType()}{TestGetEnchantmentType()}}
-{\footnotesize\ttfamily void Test\+Item\+::\+Test\+Get\+Enchantment\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Test\+Item\+::\+Test\+Get\+Enchantment\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Function that tests Get\+Enchantment\+Type member function to verify the created item\textquotesingle{}s enchantment type is in the right range. 
 
 
 
 Definition at line \mbox{\hyperlink{testitem_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{testitem_8cpp_source}{testitem.\+cpp}}.
 
-\Hypertarget{class_test_item_a57271a9426d2139fbcebbd978b12590e}\label{class_test_item_a57271a9426d2139fbcebbd978b12590e} 
+\Hypertarget{class_test_item_a47182462311b4bc7b268feb7276cb106}\label{class_test_item_a47182462311b4bc7b268feb7276cb106} 
 \index{TestItem@{TestItem}!TestGetItemId@{TestGetItemId}}
 \index{TestGetItemId@{TestGetItemId}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{TestGetItemId()}{TestGetItemId()}}
-{\footnotesize\ttfamily void Test\+Item\+::\+Test\+Get\+Item\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Test\+Item\+::\+Test\+Get\+Item\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Function that tests Get\+Item\+Id member function to verify the id increment is correct. 
 
 
 
 Definition at line \mbox{\hyperlink{testitem_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{testitem_8cpp_source}{testitem.\+cpp}}.
 
-\Hypertarget{class_test_item_a4371bd49043c676947f54aadebafa962}\label{class_test_item_a4371bd49043c676947f54aadebafa962} 
+\Hypertarget{class_test_item_a46a335a1ef390e9208eb704413215392}\label{class_test_item_a46a335a1ef390e9208eb704413215392} 
 \index{TestItem@{TestItem}!TestGetItemName@{TestGetItemName}}
 \index{TestGetItemName@{TestGetItemName}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{TestGetItemName()}{TestGetItemName()}}
-{\footnotesize\ttfamily void Test\+Item\+::\+Test\+Get\+Item\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Test\+Item\+::\+Test\+Get\+Item\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Function that tests Get\+Item\+Name member function to verify the created item\textquotesingle{}s name is correct. 
 
 
 
 Definition at line \mbox{\hyperlink{testitem_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{testitem_8cpp_source}{testitem.\+cpp}}.
 
-\Hypertarget{class_test_item_afb407da14eff2d0680dc01cfcfbb9c69}\label{class_test_item_afb407da14eff2d0680dc01cfcfbb9c69} 
+\Hypertarget{class_test_item_aec2b80a3e0eb10bc94f203df672c1d63}\label{class_test_item_aec2b80a3e0eb10bc94f203df672c1d63} 
 \index{TestItem@{TestItem}!TestGetItemType@{TestGetItemType}}
 \index{TestGetItemType@{TestGetItemType}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{TestGetItemType()}{TestGetItemType()}}
-{\footnotesize\ttfamily void Test\+Item\+::\+Test\+Get\+Item\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Test\+Item\+::\+Test\+Get\+Item\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Function that tests Get\+Item\+Type member function to verify the created item\textquotesingle{}s type is in the right range. 
 
 
 
 Definition at line \mbox{\hyperlink{testitem_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{testitem_8cpp_source}{testitem.\+cpp}}.
 
-\Hypertarget{class_test_item_a23dbd715411aef3adb7d72db94e97751}\label{class_test_item_a23dbd715411aef3adb7d72db94e97751} 
+\Hypertarget{class_test_item_a6413c831d1edb7dfba5de0076c78c3ac}\label{class_test_item_a6413c831d1edb7dfba5de0076c78c3ac} 
 \index{TestItem@{TestItem}!TestItemConstructor@{TestItemConstructor}}
 \index{TestItemConstructor@{TestItemConstructor}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{TestItemConstructor()}{TestItemConstructor()}}
-{\footnotesize\ttfamily void Test\+Item\+::\+Test\+Item\+Constructor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Test\+Item\+::\+Test\+Item\+Constructor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Function that tests the custom constructor overload for static ganeration. 
 
 
 
 Definition at line \mbox{\hyperlink{testitem_8cpp_source_l00042}{42}} of file \mbox{\hyperlink{testitem_8cpp_source}{testitem.\+cpp}}.
 
-\Hypertarget{class_test_item_aa5f1cf3806e61d64ac66acb42da679e9}\label{class_test_item_aa5f1cf3806e61d64ac66acb42da679e9} 
+\Hypertarget{class_test_item_a9e3b7b0ad025dbf2754ee5ee87b10e25}\label{class_test_item_a9e3b7b0ad025dbf2754ee5ee87b10e25} 
 \index{TestItem@{TestItem}!TestNoArgsItemConstructor@{TestNoArgsItemConstructor}}
 \index{TestNoArgsItemConstructor@{TestNoArgsItemConstructor}!TestItem@{TestItem}}
 \doxysubsubsection{\texorpdfstring{TestNoArgsItemConstructor()}{TestNoArgsItemConstructor()}}
-{\footnotesize\ttfamily void Test\+Item\+::\+Test\+No\+Args\+Item\+Constructor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Test\+Item\+::\+Test\+No\+Args\+Item\+Constructor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Function that tests the no args constructor overload for random generation. 
 
 
 

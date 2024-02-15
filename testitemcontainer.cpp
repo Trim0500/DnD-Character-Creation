@@ -1,4 +1,4 @@
-/*
+/*!
 * \file testitemcontainer.cpp
 * \brief Test implementation for Item
 */
@@ -54,6 +54,8 @@ void TestItemContainer::setUp(void)
 		Item* newItem = new Item();
 		chestObject->AddNewItem(*newItem);
 	}
+
+	//testItemCurrentId += 34;
 }
 
 void TestItemContainer::tearDown(void)
@@ -106,6 +108,8 @@ void TestItemContainer::TestAddNewItem(void) {
 	int chestItemSize = chestObject->GetAllItems().size();
 
 	Item* newItem = new Item("newItem", 4, Shield, ArmorClass);
+
+	//testItemCurrentId += 1;
 
 	backpackObject->AddNewItem(*newItem);
 	int currentBackpackItemSize = backpackObject->GetAllItems().size();

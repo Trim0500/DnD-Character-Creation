@@ -77,6 +77,8 @@ void TestCharacter::TestEquipItem(void)
 {
 	item::Item* testItem = new item::Item();
 
+	//testItemCurrentId += 1;
+
 	noArgsCharacterObject->Inventory().AddNewItem(*testItem);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Equip_Item(testItem));
 	
@@ -90,6 +92,7 @@ void TestCharacter::TestEquipItem(void)
 void TestCharacter::TestUnequipItem(void)
 {
 	item::Item* testItem = new item::Item("testItem", 3, item::ItemType::Ring, item::CharacterStats::Strength);
+	//testItemCurrentId += 1;
 	Character::Equipment_Slots testItemSlot;
 
 	noArgsCharacterObject->Inventory().AddNewItem(*testItem);

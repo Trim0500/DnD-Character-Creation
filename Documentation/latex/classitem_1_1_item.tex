@@ -2,6 +2,11 @@
 \hypertarget{classitem_1_1_item}{}\label{classitem_1_1_item}\index{item::Item@{item::Item}}
 
 
+Class for the character items.  
+
+
+
+
 {\ttfamily \#include $<$item.\+h$>$}
 
 Inheritance diagram for item\+::Item\+:\begin{figure}[H]
@@ -14,7 +19,7 @@ Inheritance diagram for item\+::Item\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classitem_1_1_item_a7e7998679cac37adb8124f012d5dd39e}{Item}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em No-\/args constructor for \doxylink{classitem_1_1_item}{Item}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classitem_1_1_item_a3cb35a0e23b7770d5b105679ff6f9928}{Item}} (const string \&, const int \&, const int \&, const int \&)
 \item 
 int \mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{Get\+Item\+Id}} ()
@@ -30,8 +35,8 @@ int \mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{Get\+
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{classitem_1_1_item_acb244a5ecfbc1ea3ec69bfb39fc920f2}{item\+Type\+Strings}} \mbox{[}7\mbox{]} = \{ "{}Helmet"{}, "{}Armor"{}, "{}Shield"{}, "{}Ring"{}, "{}Belt"{}, "{}Boots"{}, "{}Weapon"{} \}
-\item 
+string \mbox{\hyperlink{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}{item\+Type\+Strings}} \mbox{[}7\mbox{]} = \{ "{}Helmet"{}, "{}Armor"{}, "{}Shield"{}, "{}Ring"{}, "{}Belt"{}, "{}Boots"{}, "{}Weapon"{} \}
+\begin{DoxyCompactList}\small\item\em String array for formatting item name item type. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{stat\+Strings}} \mbox{[}9\mbox{]}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
@@ -42,9 +47,11 @@ bool \mbox{\hyperlink{classitem_1_1_item_ab20effab31ea89b0bdb4c1e4ad94f2fd}{oper
 
 
 \doxysubsection{Detailed Description}
+Class for the character items. 
 
+Class that abstracts the Items available to a character that are put into a container or worn. 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00065}{65}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00082}{82}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 
 
@@ -55,6 +62,27 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00065}{65}} of file \mbox{\h
 \doxysubsubsection{\texorpdfstring{Item()}{Item()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily item\+::\+Item\+::\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+No-\/args constructor for \doxylink{classitem_1_1_item}{Item}. 
+
+Overloaded constructor for \doxylink{classitem_1_1_item}{Item}.
+
+No-\/args constructor that will randomly generate an item in terms of enchantment count, item type and enchantment type. Implemented in \doxylink{item_8cpp}{item.\+cpp}.
+
+Custom constructor that will take in specified arguments to make an instance of the \doxylink{classitem_1_1_item}{Item} class. Note that enchantment bonus ranges from 1-\/5, item type ranges from 1-\/7 and enchantment type ranges from 1-\/9. Implemented by \doxylink{item_8cpp}{item.\+cpp}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+item\+Name} & The reference to the name given to the item. \\
+\hline
+{\em \+\_\+enchantment\+Bonus} & The reference to a constant integer representing the chosen enchantment bonus value. (0-\/5) \\
+\hline
+{\em \+\_\+item\+Type} & The reference to a constant integer representing the chosen item type. (1-\/10) \\
+\hline
+{\em \+\_\+enchantment\+Type} & The reference to a constant integer representing the chosen enchantment type value. (0-\/9) \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{item_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{item_8cpp_source}{item.\+cpp}}.
@@ -80,7 +108,7 @@ Definition at line \mbox{\hyperlink{item_8cpp_source_l00113}{113}} of file \mbox
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00108}{108}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00127}{127}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 \Hypertarget{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}\label{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25} 
 \index{item::Item@{item::Item}!GetEnchantmentType@{GetEnchantmentType}}
@@ -90,7 +118,7 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00108}{108}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00110}{110}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00129}{129}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 \Hypertarget{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}\label{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d} 
 \index{item::Item@{item::Item}!GetItemId@{GetItemId}}
@@ -100,7 +128,7 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00110}{110}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00106}{106}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00125}{125}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 \Hypertarget{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}\label{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6} 
 \index{item::Item@{item::Item}!GetItemName@{GetItemName}}
@@ -110,7 +138,7 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00106}{106}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00107}{107}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00126}{126}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 \Hypertarget{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}\label{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42} 
 \index{item::Item@{item::Item}!GetItemType@{GetItemType}}
@@ -120,7 +148,7 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00107}{107}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00109}{109}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00128}{128}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 
 
@@ -133,20 +161,24 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00109}{109}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00105}{105}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00124}{124}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classitem_1_1_item_acb244a5ecfbc1ea3ec69bfb39fc920f2}\label{classitem_1_1_item_acb244a5ecfbc1ea3ec69bfb39fc920f2} 
+\Hypertarget{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}\label{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df} 
 \index{item::Item@{item::Item}!itemTypeStrings@{itemTypeStrings}}
 \index{itemTypeStrings@{itemTypeStrings}!item::Item@{item::Item}}
 \doxysubsubsection{\texorpdfstring{itemTypeStrings}{itemTypeStrings}}
-{\footnotesize\ttfamily string item\+::\+Item\+::item\+Type\+Strings\mbox{[}7\mbox{]} = \{ "{}Helmet"{}, "{}Armor"{}, "{}Shield"{}, "{}Ring"{}, "{}Belt"{}, "{}Boots"{}, "{}Weapon"{} \}}
+{\footnotesize\ttfamily item\+::\+Item\+::item\+Type\+Strings = \{ "{}Helmet"{}, "{}Armor"{}, "{}Shield"{}, "{}Ring"{}, "{}Belt"{}, "{}Boots"{}, "{}Weapon"{} \}}
 
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00070}{70}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+String array for formatting item name item type. 
+
+String array for formatting item name character stat. 
+
+Definition at line \mbox{\hyperlink{item_8h_source_l00088}{88}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 \Hypertarget{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}\label{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5} 
 \index{item::Item@{item::Item}!statStrings@{statStrings}}
@@ -169,7 +201,7 @@ Definition at line \mbox{\hyperlink{item_8h_source_l00070}{70}} of file \mbox{\h
 \end{DoxyCode}
 
 
-Definition at line \mbox{\hyperlink{item_8h_source_l00074}{74}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
+Definition at line \mbox{\hyperlink{item_8h_source_l00093}{93}} of file \mbox{\hyperlink{item_8h_source}{item.\+h}}.
 
 
 

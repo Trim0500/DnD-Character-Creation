@@ -7,6 +7,7 @@
 #include <cppunit/ui/text/TestRunner.h>
 
 #include "Character.h"
+#include "Dice.h"
 
 using namespace std;
 using namespace CppUnit;
@@ -37,15 +38,16 @@ int main()
 
 	Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
 
-	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence);
-	Item* armorObject = new Item("testArmor", 3, Armor, ArmorClass);
-	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass);
-	Item* ringObject = new Item("testRing", 1, Ring, Wisdom);
-	Item* beltObject = new Item("testBelt", 1, Belt, Strength);
-	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity);
-	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus);
-
 	ItemContainer* fighterInventory = &fighterCharacter->Inventory();
+
+	Item* helmetObject = new Item("Baron's Helmet", 2, Helmet, Intelligence);
+	Item* armorObject = new Item("Vanguard Armor", 3, Armor, ArmorClass);
+	Item* shieldObject = new Item("Hexlock Shield", 2, Shield, ArmorClass);
+	Item* ringObject = new Item("Pontifex Ring", 1, Ring, Wisdom);
+	Item* beltObject = new Item("Power Belt", 1, Belt, Strength);
+	Item* bootsObject = new Item("Pegasus Boots", 2, Boots, Dexterity);
+	Item* weaponObject = new Item("Steel Lance", 2, Weapon, AttackBonus);
+
 	fighterInventory->AddNewItem(*helmetObject);
 	fighterInventory->AddNewItem(*armorObject);
 	fighterInventory->AddNewItem(*shieldObject);
@@ -54,17 +56,45 @@ int main()
 	fighterInventory->AddNewItem(*bootsObject);
 	fighterInventory->AddNewItem(*weaponObject);
 
-	fighterCharacter->Equip_Item(helmetObject);
 	fighterCharacter->Equip_Item(armorObject);
-	fighterCharacter->Equip_Item(shieldObject);
-	fighterCharacter->Equip_Item(ringObject);
 	fighterCharacter->Equip_Item(beltObject);
 	fighterCharacter->Equip_Item(bootsObject);
-	fighterCharacter->Equip_Item(weaponObject);
+
+	int remainingBackpackCapacity = fighterInventory->GetCapacity() - fighterInventory->GetAllItems().size();
+	for (int i = 0; i < remainingBackpackCapacity; i++)
+	{
+		Item* newItem = new Item();
+		fighterInventory->AddNewItem(*newItem);
+	}
 
 	fighterCharacter->Print_Character_Sheet();
 
+	cout << endl;
+
+	ItemContainer* treasureChest = new ItemContainer("Silver Chest", TreasureChest, 5);
+
+	int chestCapacity = treasureChest->GetCapacity();
+	for (int i = 0; i < chestCapacity; i++)
+	{
+		Item* newItem = new Item();
+		treasureChest->AddNewItem(*newItem);
+	}
+
+	treasureChest->PrintItemVector();
+
+	cout << endl;
+
+	Dice* dice = new Dice();
+	int rollValue = dice->roll("4d20+4");
+	cout << "Dice rolled: " << rollValue << endl;
+
 	getchar();
+
+	delete dice;
+	fighterInventory->GetAllItems().clear();
+	delete fighterCharacter;
+	treasureChest->GetAllItems().clear();
+	delete treasureChest;
 
 	return 0;
 }

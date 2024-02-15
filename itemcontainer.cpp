@@ -1,4 +1,4 @@
-/*
+/*!
 * \file itemcontainer.cpp
 * \brief Implementation file for the ItemContainer class
 *
@@ -77,5 +77,23 @@ namespace itemcontainer {
 			[enchantmentType](Item item) { return item.GetEnchantmentType() == (CharacterStats)enchantmentType; });
 
 		return resultVect;
+	}
+
+	void ItemContainer::PrintItemVector() {
+		cout << "\t\t" << this->GetItemName() << " Items Information" << endl;
+		cout << "------------------------------------------" << endl << endl;
+		
+		for (int i = 0; i < items.size(); i++)
+		{
+			cout << items[i].GetItemName()
+					<< "\t"
+					<< itemTypeStrings[items[i].GetItemType() - 1]
+					<< "\t"
+					<< to_string(items[i].GetEnchantmentBonus())
+					<< "\t"
+					<< statStrings[items[i].GetEnchantmentType()]
+					<< endl;
+		}
+		cout << "------------------------------------------" << endl;
 	}
 }
