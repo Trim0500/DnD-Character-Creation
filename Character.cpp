@@ -123,21 +123,22 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(35) << "Ability" << " | " << std::left << std::setw(35) << "Score"
 	<< " | " << std::left << std::setw(35) << "Modifier" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
-	std::cout << std::right << std::setw(35) << "Strength" <<" | "<< std::left << std::setw(35) << Ability_Score(Abilities_Stats::Strength)<<" | "<<std::right<<std::setw(2) << Modifier(Abilities_Stats::Strength) << std::endl;
-	std::cout << std::right << std::setw(35) << "Dexterity" << " | " << std::left << std::setw(35) << Ability_Score(Abilities_Stats::Dexterity) <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Dexterity) << std::endl;
-	std::cout << std::right << std::setw(35) << "Constitution" << " | " << std::left << std::setw(35) << Ability_Score(Abilities_Stats::Constitution) <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Constitution) << std::endl;
-	std::cout << std::right << std::setw(35) << "Intelligence" << " | " << std::left << std::setw(35) << Ability_Score(Abilities_Stats::Intelligence) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Intelligence) << std::endl;
-	std::cout << std::right << std::setw(35) << "Wisdom" << " | " << std::left << std::setw(35) << Ability_Score(Abilities_Stats::Wisdom) << std::left <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Wisdom) << std::endl;
-	std::cout << std::right << std::setw(35) << "Charisma" << " | " << std::left << std::setw(35) << Ability_Score(Abilities_Stats::Charisma) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Charisma) << std::endl;
+	std::cout << std::right << std::setw(35) << "Strength" <<" | "<< std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Strength)<<" | "<<std::right<<std::setw(2) << Modifier(Abilities_Stats::Strength) << std::endl;
+	std::cout << std::right << std::setw(35) << "Dexterity" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Dexterity) <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Dexterity) << std::endl;
+	std::cout << std::right << std::setw(35) << "Constitution" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Constitution) <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Constitution) << std::endl;
+	std::cout << std::right << std::setw(35) << "Intelligence" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Intelligence) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Intelligence) << std::endl;
+	std::cout << std::right << std::setw(35) << "Wisdom" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Wisdom) << std::left <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Wisdom) << std::endl;
+	std::cout << std::right << std::setw(35) << "Charisma" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Charisma) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Charisma) << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(65) << "EQUIPPED ITEMS" << std::endl;
-	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name" 
+	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name (ID)" 
 	<< " | "  << std::left << std::setw(35) << "Enchantment" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	for (auto i : equipment_slots) {
 		if (i.second != nullptr) {
-			std::cout << std::right << std::setw(35) << Get_Equipment_Slot_String(i.first) << " | "
-			<< std::left << std::setw(35) << i.second->GetItemName() << std::right << std::setw(3) << " | ";
+			std::cout << std::right << std::setw(35) << Get_Equipment_Slot_String(i.first) << " | ";
+			std::cout << std::left << std::setw(35) << i.second->GetItemName() <<" ("<<i.second->GetItemId()<<")";
+			std::cout<< std::right << std::setw(3) << " | ";
 			if (i.second->GetEnchantmentBonus() > 0) {
 				std::cout << "+";
 			}
@@ -267,7 +268,7 @@ void Character::Character::Receive_Damage(int t_damage)
 
 void Character::Character::Receive_Healing(int t_heal)
 {
-	if (t_heal + max_hit_points >= hit_points) {
+	if (t_heal + hit_points >= max_hit_points) {
 		hit_points = max_hit_points;
 	}
 	else {
@@ -275,7 +276,7 @@ void Character::Character::Receive_Healing(int t_heal)
 	}
 }
 
-const bool Character::Character::Alive()
+const bool Character::Character::Is_Alive()
 {
 	if (hit_points <= 0) {
 		return false;
@@ -289,7 +290,7 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 {
 	int modifier{ 0 };
 	try {
-		modifier = std::floor(((float)(Ability_Score(t_ability) - 10) / 2));
+		modifier = std::floor(((float)(Ability_Score_Bonused(t_ability) - 10) / 2));
 	}
 	catch (std::exception& e) {
 		std::cerr << &e << std::endl;
@@ -298,7 +299,20 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 	return modifier;
 }
 
-const int Character::Character::Ability_Score(Abilities_Stats t_ability)
+const int Character::Character::Ability_Score_Natural(Abilities_Stats t_ability)
+{
+	int score;
+	try {
+		score = ability_scores[(int)t_ability];
+	}
+	catch (std::exception& e) {
+		std::cerr << &e << std::endl;
+		return 0;
+	}
+	return score;
+}
+
+const int Character::Character::Ability_Score_Bonused(Abilities_Stats t_ability)
 {
 	int score;
 	try {
@@ -314,7 +328,7 @@ const int Character::Character::Ability_Score(Abilities_Stats t_ability)
 				score += i.second->GetEnchantmentBonus();
 			}
 		}
-		catch (std::exception &e) {
+		catch (std::exception& e) {
 			std::cerr << &e << std::endl;
 		}
 	}
