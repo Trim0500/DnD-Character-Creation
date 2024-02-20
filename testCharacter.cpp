@@ -127,31 +127,31 @@ void TestCharacter::TestHitPoints(void)
 
 void TestCharacter::TestAbilityScore(void)
 {
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Strength) >= 3);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Strength) <= 18);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Dexterity) >= 3);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Dexterity) <= 18);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Wisdom) >= 3);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Wisdom) <= 18);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Constitution) >= 3);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Constitution) <= 18);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Intelligence) >= 3);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Intelligence) <= 18);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Charisma) >= 3);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score(Character::Abilities_Stats::Charisma) <= 18);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Strength) >= 3);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Strength) <= 18);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Dexterity) >= 3);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Dexterity) <= 18);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Wisdom) >= 3);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Wisdom) <= 18);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Constitution) >= 3);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Constitution) <= 18);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Intelligence) >= 3);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Intelligence) <= 18);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Charisma) >= 3);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Charisma) <= 18);
 
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Strength) >= 3);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Strength) <= 18);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Dexterity) >= 3);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Dexterity) <= 18);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Wisdom) >= 3);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Wisdom) <= 18);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Constitution) >= 3);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Constitution) <= 18);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Intelligence) >= 3);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Intelligence) <= 18);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Charisma) >= 3);
-	CPPUNIT_ASSERT(customCharacterObject->Ability_Score(Character::Abilities_Stats::Charisma) <= 18);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Strength) >= 3);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Strength) <= 18);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Dexterity) >= 3);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Dexterity) <= 18);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Wisdom) >= 3);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Wisdom) <= 18);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Constitution) >= 3);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Constitution) <= 18);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Intelligence) >= 3);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Intelligence) <= 18);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Charisma) >= 3);
+	CPPUNIT_ASSERT(customCharacterObject->Ability_Score_Bonused(Character::Abilities_Stats::Charisma) <= 18);
 }
 
 void TestCharacter::TestArmourClass(void)
