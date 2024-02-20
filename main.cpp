@@ -36,7 +36,7 @@ int main()
 	
 	/* Driver code here... */
 
-	Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
+	/*Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
 
 	ItemContainer* fighterInventory = &fighterCharacter->Inventory();
 
@@ -94,7 +94,7 @@ int main()
 	fighterInventory->GetAllItems().clear();
 	delete fighterCharacter;
 	treasureChest->GetAllItems().clear();
-	delete treasureChest;
+	delete treasureChest;*/
 
 	return 0;
 }

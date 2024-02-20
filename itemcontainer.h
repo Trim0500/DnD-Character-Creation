@@ -51,7 +51,7 @@ namespace itemcontainer {
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer
 			*/
-			ItemContainer(const string&, const int&, const int&);
+			ItemContainer(const string&, const int&, const float&);
 			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
 			vector<Item> GetAllItems() { return items; };
 			int GetCapacity() { return capacity; };
@@ -98,9 +98,9 @@ namespace itemcontainer {
 		private:
 			/*!
 			* \var capacity
-			* \brief Integer that represents the carrying capacity for the container
+			* \brief Integer that represents the carrying capacity (in lbs) for the container
 			*/
-			int capacity;
+			float capacity;
 			/*!
 			* \var items
 			* \brief Vector of type Item that represents the containers item instances

@@ -91,7 +91,7 @@ void TestCharacter::TestEquipItem(void)
 
 void TestCharacter::TestUnequipItem(void)
 {
-	item::Item* testItem = new item::Item("testItem", 3, item::ItemType::Ring, item::CharacterStats::Strength);
+	item::Item* testItem = new item::Item("testItem", 3, item::ItemType::Ring, item::CharacterStats::Strength, 0.5);
 	//testItemCurrentId += 1;
 	Character::Equipment_Slots testItemSlot;
 

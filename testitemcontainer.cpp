@@ -31,13 +31,13 @@ void TestItemContainer::setUp(void)
 
 	wornItemsObject = new ItemContainer("testWornItems", WornItems, WORN_ITEMS_SIZE);
 
-	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence);
-	Item* armorObject = new Item("testArmor", 3, Armor, ArmorClass);
-	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass);
-	Item* ringObject = new Item("testRing", 1, Ring, Wisdom);
-	Item* beltObject = new Item("testBelt", 1, Belt, Strength);
-	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity);
-	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus);
+	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence, 5);
+	Item* armorObject = new Item("testArmor", 3, Armor, ArmorClass, 45);
+	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass, 10);
+	Item* ringObject = new Item("testRing", 1, Ring, Wisdom, 0.5);
+	Item* beltObject = new Item("testBelt", 1, Belt, Strength, 4.5);
+	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity, 5);
+	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus, 3);
 
 	wornItemsObject->AddNewItem(*helmetObject);
 	wornItemsObject->AddNewItem(*armorObject);
@@ -107,7 +107,7 @@ void TestItemContainer::TestAddNewItem(void) {
 
 	int chestItemSize = chestObject->GetAllItems().size();
 
-	Item* newItem = new Item("newItem", 4, Shield, ArmorClass);
+	Item* newItem = new Item("newItem", 4, Shield, ArmorClass, 12);
 
 	//testItemCurrentId += 1;
 
