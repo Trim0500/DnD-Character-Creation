@@ -47,12 +47,12 @@ int main()
 	Item* bootsObject = new Item("Pegasus Boots", 2, Boots, Dexterity, 5);
 	Item* weaponObject = new Item("Steel Lance", 2, Weapon, AttackBonus, 3);
 
-	fighterInventory->AddNewItem(*helmetObject);
-	fighterInventory->AddNewItem(*shieldObject);
-	fighterInventory->AddNewItem(*ringObject);
-	fighterInventory->AddNewItem(*beltObject);
-	fighterInventory->AddNewItem(*bootsObject);
-	fighterInventory->AddNewItem(*weaponObject);
+	fighterInventory->AddNewItem(helmetObject);
+	fighterInventory->AddNewItem(shieldObject);
+	fighterInventory->AddNewItem(ringObject);
+	fighterInventory->AddNewItem(beltObject);
+	fighterInventory->AddNewItem(bootsObject);
+	fighterInventory->AddNewItem(weaponObject);
 
 	fighterCharacter->Equip_Item(ringObject);
 	fighterCharacter->Equip_Item(beltObject);
@@ -78,7 +78,7 @@ int main()
 		}
 
 		Item* newItem = new Item();
-		treasureChest->AddNewItem(*newItem);
+		treasureChest->AddNewItem(newItem);
 		totalChestItemWeight += newItem->GetItemWeight();
 	}
 

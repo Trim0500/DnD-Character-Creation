@@ -79,10 +79,10 @@ void TestCharacter::TestEquipItem(void)
 
 	//testItemCurrentId += 1;
 
-	noArgsCharacterObject->Inventory().AddNewItem(*testItem);
+	noArgsCharacterObject->Inventory().AddNewItem(testItem);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Equip_Item(testItem));
 	
-	customCharacterObject->Inventory().AddNewItem(*testItem);
+	customCharacterObject->Inventory().AddNewItem(testItem);
 	CPPUNIT_ASSERT(customCharacterObject->Equip_Item(testItem));
 
 	delete testItem;
@@ -95,12 +95,12 @@ void TestCharacter::TestUnequipItem(void)
 	//testItemCurrentId += 1;
 	Character::Equipment_Slots testItemSlot;
 
-	noArgsCharacterObject->Inventory().AddNewItem(*testItem);
+	noArgsCharacterObject->Inventory().AddNewItem(testItem);
 	noArgsCharacterObject->Equip_Item(testItem);
 	noArgsCharacterObject->Unequip_Item(Character::Equipment_Slots::Ring);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Equipped_Items(Character::Equipment_Slots::Ring) == nullptr);
 
-	customCharacterObject->Inventory().AddNewItem(*testItem);
+	customCharacterObject->Inventory().AddNewItem(testItem);
 	customCharacterObject->Equip_Item(testItem);
 	customCharacterObject->Unequip_Item(Character::Equipment_Slots::Ring);
 	CPPUNIT_ASSERT(customCharacterObject->Equipped_Items(Character::Equipment_Slots::Ring) == nullptr);

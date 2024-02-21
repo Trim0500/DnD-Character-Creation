@@ -27,6 +27,22 @@ namespace itemcontainer {
 		capacity = _capacity;
 	}
 
+	int ItemContainer::AddNewItem(Item* newItem) {
+		if (GetItemType() == WornItems) {
+			Item* foundItem = GetItem(newItem->GetItemType());
+			if (foundItem != nullptr) {
+				return -1;
+			}
+		}
+		else if (newItem->GetItemWeight() + GetTotalItemWeight() >= capacity) {
+			return -1;
+		}
+
+		items.push_back(*newItem);
+
+		return 1;
+	}
+
 	float ItemContainer::GetTotalItemWeight() {
 		float total = 0.0;
 

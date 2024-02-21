@@ -52,7 +52,7 @@ namespace itemcontainer {
 			* \brief Overloaded constructior for ItemContainer
 			*/
 			ItemContainer(const string&, const int&, const float&);
-			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
+			int AddNewItem(Item*);
 			vector<Item> GetAllItems() { return items; };
 			float GetCapacity() { return capacity; };
 			float GetTotalItemWeight();
