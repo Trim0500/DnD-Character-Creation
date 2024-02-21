@@ -4,7 +4,7 @@ var searchData=
   ['installation_20instructions_1',['Installation Instructions',['../md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e.html#autotoc_md3',1,'']]],
   ['instructions_2',['Installation Instructions',['../md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e.html#autotoc_md3',1,'']]],
   ['intelligence_3',['Intelligence',['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a',1,'item::Intelligence'],['../namespace_character.html#adc11299f73c335c725b36d6e85fc7edba8f7ba58961e0fe40cfda61b412537fba',1,'Character::Intelligence']]],
-  ['inventory_4',['Inventory',['../class_character_1_1_character.html#a9f40a0944338a4ad57bb1555c85b7a24',1,'Character::Character']]],
+  ['inventory_4',['Inventory',['../class_character_1_1_character.html#a9f40a0944338a4ad57bb1555c85b7a24',1,'Character::Character::Inventory()'],['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03aeb519248e09e72ba6dc854a29229d6c1',1,'item::Inventory']]],
   ['is_5fmulti_5fclassed_5',['Is_Multi_Classed',['../class_character_1_1_character.html#ab09ba584adc1883651f03f0c2e0c7401',1,'Character::Character']]],
   ['isbarbarian_6',['isBarbarian',['../namespace_character.html#a00b5cdecff11125460d6b315e95cdeb3',1,'Character']]],
   ['isbard_7',['isBard',['../namespace_character.html#ae470b8104e39dd0062fc2bb73f0b29f6',1,'Character']]],

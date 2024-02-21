@@ -32,6 +32,7 @@ var searchData=
   ['testnoargscharacterconstructor_29',['TestNoArgsCharacterConstructor',['../class_test_character.html#aadf32ec3661d6a4f37921973095d6802',1,'TestCharacter']]],
   ['testnoargsitemconstructor_30',['TestNoArgsItemConstructor',['../class_test_item.html#a9e3b7b0ad025dbf2754ee5ee87b10e25',1,'TestItem']]],
   ['testproficiencybonus_31',['TestProficiencyBonus',['../class_test_character.html#a55ed78d0e82761fe2670a016ffa58884',1,'TestCharacter']]],
-  ['testsumlevels_32',['TestSumLevels',['../class_test_character.html#ab43c1d0bcb9635432b9afe54b8d6f510',1,'TestCharacter']]],
-  ['testunequipitem_33',['TestUnequipItem',['../class_test_character.html#a9f43ee0a7ea94fd92c479247569c9152',1,'TestCharacter']]]
+  ['testsetweightcapacity_32',['TestSetWeightCapacity',['../class_test_item_container.html#a1f0745e6fbe999f0789899802f164820',1,'TestItemContainer']]],
+  ['testsumlevels_33',['TestSumLevels',['../class_test_character.html#ab43c1d0bcb9635432b9afe54b8d6f510',1,'TestCharacter']]],
+  ['testunequipitem_34',['TestUnequipItem',['../class_test_character.html#a9f43ee0a7ea94fd92c479247569c9152',1,'TestCharacter']]]
 ];
