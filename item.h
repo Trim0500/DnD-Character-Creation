@@ -51,7 +51,8 @@ namespace item {
 		Weapon,
 		Backpack,
 		WornItems,
-		TreasureChest
+		TreasureChest,
+		Inventory
 	};
 
 	/*!

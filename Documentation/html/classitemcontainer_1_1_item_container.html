@@ -102,8 +102,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adedc9248ad9b736ed02dcc7539ac6345" id="r_adedc9248ad9b736ed02dcc7539ac6345"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adedc9248ad9b736ed02dcc7539ac6345">ItemContainer</a> (const string &amp;, const int &amp;, const float &amp;)</td></tr>
 <tr class="memdesc:adedc9248ad9b736ed02dcc7539ac6345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded constructior for <a class="el" href="classitemcontainer_1_1_item_container.html" title="Class to abstract the different item containers.">ItemContainer</a>.  <br /></td></tr>
 <tr class="separator:adedc9248ad9b736ed02dcc7539ac6345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacf5d7a6f56d5056797fc4b20892242d" id="r_aacf5d7a6f56d5056797fc4b20892242d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacf5d7a6f56d5056797fc4b20892242d">AddNewItem</a> (const <a class="el" href="classitem_1_1_item.html">Item</a> &amp;newItem)</td></tr>
-<tr class="separator:aacf5d7a6f56d5056797fc4b20892242d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a235a66e485d5db021d81cf77c862fbc6" id="r_a235a66e485d5db021d81cf77c862fbc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a235a66e485d5db021d81cf77c862fbc6">SetWeightLimit</a> (const float &amp;_capacity)</td></tr>
+<tr class="separator:a235a66e485d5db021d81cf77c862fbc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80be76423cae293d2f74f5a7b8756582" id="r_a80be76423cae293d2f74f5a7b8756582"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80be76423cae293d2f74f5a7b8756582">AddNewItem</a> (<a class="el" href="classitem_1_1_item.html">Item</a> *)</td></tr>
+<tr class="separator:a80be76423cae293d2f74f5a7b8756582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21184a7baf42de78796109c07856ea61" id="r_a21184a7baf42de78796109c07856ea61"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21184a7baf42de78796109c07856ea61">GetAllItems</a> ()</td></tr>
 <tr class="separator:a21184a7baf42de78796109c07856ea61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e7a292d06429c18a769509c95c14c11" id="r_a7e7a292d06429c18a769509c95c14c11"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e7a292d06429c18a769509c95c14c11">GetCapacity</a> ()</td></tr>
@@ -188,30 +190,22 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aacf5d7a6f56d5056797fc4b20892242d" name="aacf5d7a6f56d5056797fc4b20892242d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacf5d7a6f56d5056797fc4b20892242d">&#9670;&#160;</a></span>AddNewItem()</h2>
+<a id="a80be76423cae293d2f74f5a7b8756582" name="a80be76423cae293d2f74f5a7b8756582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80be76423cae293d2f74f5a7b8756582">&#9670;&#160;</a></span>AddNewItem()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void itemcontainer::ItemContainer::AddNewItem </td>
+          <td class="memname">int itemcontainer::ItemContainer::AddNewItem </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classitem_1_1_item.html">Item</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>newItem</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classitem_1_1_item.html">Item</a> *</td>          <td class="paramname"><span class="paramname"><em>newItem</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8h_source.html#l00055">55</a> of file <a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00030">30</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -238,7 +232,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8h_source.html#l00056">56</a> of file <a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8h_source.html#l00057">57</a> of file <a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -265,7 +259,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8h_source.html#l00057">57</a> of file <a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8h_source.html#l00058">58</a> of file <a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>.</p>
 
 </div>
 </div>
@@ -284,7 +278,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00052">52</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00068">68</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -303,7 +297,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00041">41</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00057">57</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -322,7 +316,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00063">63</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00079">79</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +335,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00073">73</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00089">89</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -360,7 +354,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00083">83</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00099">99</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -379,7 +373,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00030">30</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00046">46</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -400,7 +394,34 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Function to print out the info on individual items. </p>
 
-<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00093">93</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8cpp_source.html#l00109">109</a> of file <a class="el" href="itemcontainer_8cpp_source.html">itemcontainer.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a235a66e485d5db021d81cf77c862fbc6" name="a235a66e485d5db021d81cf77c862fbc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a235a66e485d5db021d81cf77c862fbc6">&#9670;&#160;</a></span>SetWeightLimit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void itemcontainer::ItemContainer::SetWeightLimit </td>
+          <td>(</td>
+          <td class="paramtype">const float &amp;</td>          <td class="paramname"><span class="paramname"><em>_capacity</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="itemcontainer_8h_source.html#l00055">55</a> of file <a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>.</p>
 
 </div>
 </div>

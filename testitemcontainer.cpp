@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "testitemcontainer.h"
+#include "Character.h"
 
 #define BACKPACK_ITEM_SIZE 30
 #define WORN_ITEMS_SIZE 7
@@ -26,8 +27,8 @@ void TestItemContainer::setUp(void)
 	Item* backpackShieldItem = new Item("testBackpackShield", 4, Shield, ArmorClass, 12);
 	Item* backpackBootsItem = new Item("testBackpackBoots", 4, Boots, Dexterity, 5);
 
-	backpackObject->AddNewItem(*backpackShieldItem);
-	backpackObject->AddNewItem(*backpackBootsItem);
+	backpackObject->AddNewItem(backpackShieldItem);
+	backpackObject->AddNewItem(backpackBootsItem);
 
 	wornItemsObject = new ItemContainer("testWornItems", WornItems, 0);
 
@@ -39,13 +40,13 @@ void TestItemContainer::setUp(void)
 	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity, 5);
 	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus, 3);
 
-	wornItemsObject->AddNewItem(*helmetObject);
-	wornItemsObject->AddNewItem(*armorObject);
-	wornItemsObject->AddNewItem(*shieldObject);
-	wornItemsObject->AddNewItem(*ringObject);
-	wornItemsObject->AddNewItem(*beltObject);
-	wornItemsObject->AddNewItem(*bootsObject);
-	wornItemsObject->AddNewItem(*weaponObject);
+	wornItemsObject->AddNewItem(helmetObject);
+	wornItemsObject->AddNewItem(armorObject);
+	wornItemsObject->AddNewItem(shieldObject);
+	wornItemsObject->AddNewItem(ringObject);
+	wornItemsObject->AddNewItem(beltObject);
+	wornItemsObject->AddNewItem(bootsObject);
+	wornItemsObject->AddNewItem(weaponObject);
 
 	chestObject = new ItemContainer("testChest", TreasureChest, CHEST_ITEM_SIZE);
 
@@ -56,9 +57,11 @@ void TestItemContainer::setUp(void)
 		}
 
 		Item* newitem = new Item();
-		chestObject->AddNewItem(*newitem);
+		chestObject->AddNewItem(newitem);
 		chestItemWeightTotal += newitem->GetItemWeight();
 	}
+
+	inventoryObject = new ItemContainer("testInventory", Inventory, 0);
 
 	//testItemCurrentId += 34;
 }
@@ -76,6 +79,8 @@ void TestItemContainer::tearDown(void)
 	chestObject->GetAllItems().clear();
 
 	delete chestObject;
+
+	delete inventoryObject;
 }
 
 void TestItemContainer::TestCustomConstructor(void) {
@@ -92,6 +97,45 @@ void TestItemContainer::TestCustomConstructor(void) {
 	CPPUNIT_ASSERT(chestObject->GetCapacity() >= CHEST_ITEM_SIZE);
 }
 
+void TestItemContainer::TestSetWeightCapacity(void) {
+	Character::Character* testCharacter = new Character::Character("testCharacter", Character::Character_Class::Fighter);
+	int strengthModifier = testCharacter->Ability_Score_Natural(Character::Abilities_Stats::Strength);
+	inventoryObject->SetWeightLimit(strengthModifier * 20);
+	CPPUNIT_ASSERT(inventoryObject->GetCapacity() == strengthModifier * 20);
+}
+
+void TestItemContainer::TestAddNewItem(void) {
+	int backpackItemSize = backpackObject->GetAllItems().size();
+	float backpackTotalItemWeight = backpackObject->GetTotalItemWeight();
+
+	int wornItemsSize = wornItemsObject->GetAllItems().size();
+
+	int chestItemSize = chestObject->GetAllItems().size();
+	float chestTotalItemWeight = chestObject->GetTotalItemWeight();
+
+	Item* newItem = new Item("newItem", 4, Armor, ArmorClass, 50);
+
+	//testItemCurrentId += 1;
+
+	int addResult = backpackObject->AddNewItem(newItem);
+	int currentBackpackItemSize = backpackObject->GetAllItems().size();
+	float currentBackpackItemWeightTotal = backpackObject->GetTotalItemWeight();
+	CPPUNIT_ASSERT(addResult == -1 &&
+					currentBackpackItemSize == backpackItemSize &&
+					currentBackpackItemWeightTotal == backpackTotalItemWeight &&
+					backpackObject->GetAllItems().back().GetItemId() != newItem->GetItemId());
+
+	int equipResult = wornItemsObject->AddNewItem(newItem);
+	int currentWornItemSize = wornItemsObject->GetAllItems().size();
+	CPPUNIT_ASSERT(equipResult == -1 && currentWornItemSize == wornItemsSize);
+
+	chestObject->AddNewItem(newItem);
+	int currentChestItemSize = chestObject->GetAllItems().size();
+	float currentChestItemWeightTotal = chestObject->GetTotalItemWeight();
+	CPPUNIT_ASSERT(currentChestItemSize == chestItemSize + 1 && currentChestItemWeightTotal <= CHEST_ITEM_SIZE);
+	CPPUNIT_ASSERT(chestObject->GetAllItems().back() == *newItem);
+}
+
 void TestItemContainer::TestGetItemByName(void) {
 	Item* foundItem = wornItemsObject->GetItem("testHelmet");
 	CPPUNIT_ASSERT(foundItem->GetItemName() == "testHelmet");
@@ -106,37 +150,6 @@ void TestItemContainer::TestGetItemByItemType(void) {
 
 	Item* nullPointer = wornItemsObject->GetItem(8);
 	CPPUNIT_ASSERT(nullPointer == nullptr);
-}
-
-void TestItemContainer::TestAddNewItem(void) {
-	int backpackItemSize = backpackObject->GetAllItems().size();
-	float backpackTotalItemWeight = backpackObject->GetTotalItemWeight();
-
-	int wornItemsSize = wornItemsObject->GetAllItems().size();
-
-	int chestItemSize = chestObject->GetAllItems().size();
-	float chestTotalItemWeight = chestObject->GetTotalItemWeight();
-
-	Item* newItem = new Item("newItem", 4, Shield, ArmorClass, 12);
-
-	//testItemCurrentId += 1;
-
-	backpackObject->AddNewItem(*newItem);
-	int currentBackpackItemSize = backpackObject->GetAllItems().size();
-	float currentBackpackItemWeightTotal = backpackObject->GetTotalItemWeight();
-	CPPUNIT_ASSERT(currentBackpackItemSize == backpackItemSize + 1 && currentBackpackItemWeightTotal <= BACKPACK_ITEM_SIZE);
-	CPPUNIT_ASSERT(backpackObject->GetAllItems().back() == *newItem);
-
-	wornItemsObject->AddNewItem(*newItem);
-	int currentWornItemSize = wornItemsObject->GetAllItems().size();
-	CPPUNIT_ASSERT(currentWornItemSize == wornItemsSize + 1 && currentWornItemSize >= WORN_ITEMS_SIZE);
-	CPPUNIT_ASSERT(wornItemsObject->GetAllItems().back() == *newItem);
-
-	chestObject->AddNewItem(*newItem);
-	int currentChestItemSize = chestObject->GetAllItems().size();
-	float currentChestItemWeightTotal = chestObject->GetTotalItemWeight();
-	CPPUNIT_ASSERT(currentChestItemSize == chestItemSize + 1 && currentChestItemWeightTotal <= CHEST_ITEM_SIZE);
-	CPPUNIT_ASSERT(chestObject->GetAllItems().back() == *newItem);
 }
 
 void TestItemContainer::TestGetItemWeightTotal(void) {

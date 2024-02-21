@@ -43,7 +43,8 @@ var searchData=
   ['testnoargscharacterconstructor_40',['TestNoArgsCharacterConstructor',['../class_test_character.html#aadf32ec3661d6a4f37921973095d6802',1,'TestCharacter']]],
   ['testnoargsitemconstructor_41',['TestNoArgsItemConstructor',['../class_test_item.html#a9e3b7b0ad025dbf2754ee5ee87b10e25',1,'TestItem']]],
   ['testproficiencybonus_42',['TestProficiencyBonus',['../class_test_character.html#a55ed78d0e82761fe2670a016ffa58884',1,'TestCharacter']]],
-  ['testsumlevels_43',['TestSumLevels',['../class_test_character.html#ab43c1d0bcb9635432b9afe54b8d6f510',1,'TestCharacter']]],
-  ['testunequipitem_44',['TestUnequipItem',['../class_test_character.html#a9f43ee0a7ea94fd92c479247569c9152',1,'TestCharacter']]],
-  ['treasurechest_45',['TreasureChest',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a2e431dccf0d1c3dda6e00d7841e73248',1,'item']]]
+  ['testsetweightcapacity_43',['TestSetWeightCapacity',['../class_test_item_container.html#a1f0745e6fbe999f0789899802f164820',1,'TestItemContainer']]],
+  ['testsumlevels_44',['TestSumLevels',['../class_test_character.html#ab43c1d0bcb9635432b9afe54b8d6f510',1,'TestCharacter']]],
+  ['testunequipitem_45',['TestUnequipItem',['../class_test_character.html#a9f43ee0a7ea94fd92c479247569c9152',1,'TestCharacter']]],
+  ['treasurechest_46',['TreasureChest',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a2e431dccf0d1c3dda6e00d7841e73248',1,'item']]]
 ];
