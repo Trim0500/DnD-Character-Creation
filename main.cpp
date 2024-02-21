@@ -36,48 +36,50 @@ int main()
 	
 	/* Driver code here... */
 
-	/*Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
+	Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
 
 	ItemContainer* fighterInventory = &fighterCharacter->Inventory();
 
-	Item* helmetObject = new Item("Baron's Helmet", 2, Helmet, Intelligence);
-	Item* armorObject = new Item("Vanguard Armor", 3, Armor, ArmorClass);
-	Item* shieldObject = new Item("Hexlock Shield", 2, Shield, ArmorClass);
-	Item* ringObject = new Item("Pontifex Ring", 1, Ring, Wisdom);
-	Item* beltObject = new Item("Power Belt", 1, Belt, Strength);
-	Item* bootsObject = new Item("Pegasus Boots", 2, Boots, Dexterity);
-	Item* weaponObject = new Item("Steel Lance", 2, Weapon, AttackBonus);
+	Item* helmetObject = new Item("Baron's Helmet", 2, Helmet, Intelligence, 5);
+	Item* shieldObject = new Item("Hexlock Shield", 2, Shield, ArmorClass, 10);
+	Item* ringObject = new Item("Pontifex Ring", 1, Ring, Wisdom, 0.5);
+	Item* beltObject = new Item("Power Belt", 1, Belt, Strength, 4.5);
+	Item* bootsObject = new Item("Pegasus Boots", 2, Boots, Dexterity, 5);
+	Item* weaponObject = new Item("Steel Lance", 2, Weapon, AttackBonus, 3);
 
 	fighterInventory->AddNewItem(*helmetObject);
-	fighterInventory->AddNewItem(*armorObject);
 	fighterInventory->AddNewItem(*shieldObject);
 	fighterInventory->AddNewItem(*ringObject);
 	fighterInventory->AddNewItem(*beltObject);
 	fighterInventory->AddNewItem(*bootsObject);
 	fighterInventory->AddNewItem(*weaponObject);
 
-	fighterCharacter->Equip_Item(armorObject);
+	fighterCharacter->Equip_Item(ringObject);
 	fighterCharacter->Equip_Item(beltObject);
 	fighterCharacter->Equip_Item(bootsObject);
+	fighterCharacter->Equip_Item(weaponObject);
 
-	int remainingBackpackCapacity = fighterInventory->GetCapacity() - fighterInventory->GetAllItems().size();
-	for (int i = 0; i < remainingBackpackCapacity; i++)
-	{
-		Item* newItem = new Item();
-		fighterInventory->AddNewItem(*newItem);
-	}
+	float remainingBackpackCapacity = fighterInventory->GetCapacity() - fighterInventory->GetTotalItemWeight();
+	cout << "Current Backpack item weight: " << fighterInventory->GetItemWeight() + fighterInventory->GetTotalItemWeight() << "lbs" << endl;
+	cout << "Remaining Backpack capacity: " << remainingBackpackCapacity << "lbs";
 
 	fighterCharacter->Print_Character_Sheet();
 
 	cout << endl;
 
-	ItemContainer* treasureChest = new ItemContainer("Silver Chest", TreasureChest, 5);
+	ItemContainer* treasureChest = new ItemContainer("Silver Chest", TreasureChest, 250);
 
 	int chestCapacity = treasureChest->GetCapacity();
-	for (int i = 0; i < chestCapacity; i++)
+	float totalChestItemWeight = 0.0;
+	while (true)
 	{
+		if (totalChestItemWeight >= treasureChest->GetCapacity() / 2) {
+			break;
+		}
+
 		Item* newItem = new Item();
 		treasureChest->AddNewItem(*newItem);
+		totalChestItemWeight += newItem->GetItemWeight();
 	}
 
 	treasureChest->PrintItemVector();
@@ -94,7 +96,7 @@ int main()
 	fighterInventory->GetAllItems().clear();
 	delete fighterCharacter;
 	treasureChest->GetAllItems().clear();
-	delete treasureChest;*/
+	delete treasureChest;
 
 	return 0;
 }

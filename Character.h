@@ -303,7 +303,7 @@ namespace Character {
 
 		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
     
-		itemcontainer::ItemContainer inventory = itemcontainer::ItemContainer("Inventory", Backpack, 10);
+		itemcontainer::ItemContainer inventory = itemcontainer::ItemContainer("Inventory", Backpack, 30);
 
 		std::string Get_Class_String(Character_Class t_class);
 		std::string Get_Class_String(int t_class);

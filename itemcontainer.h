@@ -54,7 +54,8 @@ namespace itemcontainer {
 			ItemContainer(const string&, const int&, const float&);
 			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
 			vector<Item> GetAllItems() { return items; };
-			int GetCapacity() { return capacity; };
+			float GetCapacity() { return capacity; };
+			float GetTotalItemWeight();
 			/*!
 			* \fn GetItem
 			* \brief Overloaded method to find an item by name

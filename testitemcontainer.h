@@ -34,6 +34,7 @@ class TestItemContainer : public TestFixture {
 	CPPUNIT_TEST_SUITE(TestItemContainer);
 	CPPUNIT_TEST(TestCustomConstructor);
 	CPPUNIT_TEST(TestAddNewItem);
+	CPPUNIT_TEST(TestGetItemWeightTotal);
 	CPPUNIT_TEST(TestGetItemByName);
 	CPPUNIT_TEST(TestGetItemByItemType);
 	CPPUNIT_TEST(TestGetAllItems);
@@ -64,6 +65,11 @@ class TestItemContainer : public TestFixture {
 		* \brief Function that tests adding in a new item to the list and ensuring the capacity is respected
 		*/
 		void TestAddNewItem(void);
+		/*!
+		* \fn TestGetItemWeightTotal
+		* \brief Function that tests summing up the weights of the items in a container to ensure they don't fall outside the boundaries
+		*/
+		void TestGetItemWeightTotal(void);
 		/*!
 		* \fn TestGetItemByName
 		* \brief Function that tests finding an item by name in the list of items (Worn Items)

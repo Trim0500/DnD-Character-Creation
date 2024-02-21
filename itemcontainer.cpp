@@ -27,6 +27,17 @@ namespace itemcontainer {
 		capacity = _capacity;
 	}
 
+	float ItemContainer::GetTotalItemWeight() {
+		float total = 0.0;
+
+		for (size_t i = 0; i < items.size(); i++)
+		{
+			total += items[i].GetItemWeight();
+		}
+
+		return total;
+	}
+
 	Item* ItemContainer::GetItem(const string& nameKey) {
 		for (size_t i = 0; i < items.size(); i++)
 		{
@@ -92,6 +103,9 @@ namespace itemcontainer {
 					<< to_string(items[i].GetEnchantmentBonus())
 					<< "\t"
 					<< statStrings[items[i].GetEnchantmentType()]
+					<< "\t"
+					<< to_string(items[i].GetItemWeight())
+					<< "lbs"
 					<< endl;
 		}
 		cout << "------------------------------------------" << endl;
