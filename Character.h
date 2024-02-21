@@ -176,18 +176,7 @@ namespace Character {
 		*  \return Returns true if equipping was performed succesfully, false otherwise
 		*/
 
-		bool Levelup_Barbarian();
-		bool Levelup_Bard();
-		bool Levelup_Cleric();
-		bool Levelup_Druid();
-		bool Levelup_Fighter();
-		bool Levelup_Monk();
-		bool Levelup_Paladin();
-		bool Levelup_Ranger();
-		bool Levelup_Rogue();
-		bool Levelup_Sorcerer();
-		bool Levelup_Warlock();
-		bool Levelup_Wizard();
+		
 
 		bool Equip_Item(item::Item* t_item);
 		/* \fn Unequip_Item()
@@ -219,17 +208,22 @@ namespace Character {
 		* \brief Checks if cahracter is alive;
 		* \return Returns 'true' if hp > 0, 'false' otherwise 
 		*/
-		const bool Alive();
+		const bool Is_Alive();
 		/* \fn Modifier()
 		*  \param t_ability: int/Ability enum indexing the desired modifier
-		*  \return Returns const int to desired modifier
+		*  \return Returns const int to desired modifier. Modifier is detremined using ability scores and item bonuses
 		*/
 		const int Modifier(Abilities_Stats t_ability);
-		/* \fn Ability_Score()
+		/* \fn Ability_Score_Natural()
 		*  \param t_ability: int/Ability enum indexing the desired ability score
-		*  \return Returns const int to desired ability score
+		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses
 		*/
-		const int Ability_Score(Abilities_Stats t_ability);
+		const int Ability_Score_Natural(Abilities_Stats t_ability);
+		/* \fn Ability_Score_Bonused()
+		*  \param t_ability: int/Ability enum indexing the desired ability score
+		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses
+		*/
+		const int Ability_Score_Bonused(Abilities_Stats t_ability);
 		/* \fn Armour_Class()
 		*  \brief Calculates and returns AC(armour class) based off a character's ability scores & equipped items
 		*  \return Returns const int AC
@@ -241,7 +235,7 @@ namespace Character {
 		*/
 		const int Attack_Bonus();
 		/* \fn Proficiency_Bonus()
-		*  \brief Calculates and returns proficiency bonus based off a character's cumulative levels and Strength/Dexterity modifer
+		*  \brief Calculates and returns proficiency bonus based off a character's cumulative levels
 		*  \return Returns const int to proficiency bonus
 		*/
 		const int Proficiency_Bonus();
@@ -310,6 +304,19 @@ namespace Character {
 		std::string Get_Abilities_String(Abilities_Stats t_abilities);
 		std::string Get_Item_Type_String(item::ItemType t_type);
 		std::string Get_Equipment_Slot_String(Equipment_Slots t_slot);
+
+		bool Levelup_Barbarian();
+		bool Levelup_Bard();
+		bool Levelup_Cleric();
+		bool Levelup_Druid();
+		bool Levelup_Fighter();
+		bool Levelup_Monk();
+		bool Levelup_Paladin();
+		bool Levelup_Ranger();
+		bool Levelup_Rogue();
+		bool Levelup_Sorcerer();
+		bool Levelup_Warlock();
+		bool Levelup_Wizard();
 
 	};
 }
