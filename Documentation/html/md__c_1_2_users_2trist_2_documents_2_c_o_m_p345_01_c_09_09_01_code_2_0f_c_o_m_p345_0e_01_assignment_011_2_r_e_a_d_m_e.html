@@ -77,8 +77,27 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="autotoc_md0"></a> </p>
 <h2><a class="anchor" id="autotoc_md1"></a>
+Authors</h2>
+<ul>
+<li>Charles Partous</li>
+<li>Tristan Lafleur</li>
+<li>Andrea Lewis</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2"></a>
 Description</h2>
-<p>A program that simulates a DnD character creation tool submitted as an assignment to Concorida University's COMP345 (Advanced Program Design with C++) course. </p>
+<p>A program that simulates a DnD character creation tool using the 5e ruleset submitted as an assignment to Concorida University's COMP345 (Advanced Program Design with C++) course.</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Installation Instructions</h2>
+<p>This program was created using Visual Studio 2022. In the zip file the solution is included along with the necessary source code to create a build and run it.</p>
+<p>In order to make a successful build of the project, follow these steps</p>
+<ol type="1">
+<li>Open the solution in Visual Studio and wait for everything to load</li>
+<li>Locate the directory for the CppUnit library and source code.</li>
+<li>Go to Go to 'Project &gt; Properties &gt; C/C++ &gt; General'. Put "{your directory}\cppunit-1.12.1\include" in the 'Additional Include Directories' text box.</li>
+<li>Go to 'Project &gt; Properties &gt; Linker &gt; Input'. Put "{your directory}\cppunit-1.12.1\lib\cppunit.lib" in the 'Additional Dependences' text box.</li>
+<li>Go to 'Project &gt; Properties &gt; Build Events &gt; Post-Build Event'. Put '"$(TargetPath)"' in the 'Command Line' textbox.Put 'Unit Tests...' in the 'Description' textbox.</li>
+<li>Run the project </li>
+</ol>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
