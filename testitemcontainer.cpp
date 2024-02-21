@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "testitemcontainer.h"
+#include "Character.h"
 
 #define BACKPACK_ITEM_SIZE 30
 #define WORN_ITEMS_SIZE 7
@@ -60,6 +61,8 @@ void TestItemContainer::setUp(void)
 		chestItemWeightTotal += newitem->GetItemWeight();
 	}
 
+	inventoryObject = new ItemContainer("testInventory", Inventory, 0);
+
 	//testItemCurrentId += 34;
 }
 
@@ -76,6 +79,8 @@ void TestItemContainer::tearDown(void)
 	chestObject->GetAllItems().clear();
 
 	delete chestObject;
+
+	delete inventoryObject;
 }
 
 void TestItemContainer::TestCustomConstructor(void) {
@@ -92,20 +97,11 @@ void TestItemContainer::TestCustomConstructor(void) {
 	CPPUNIT_ASSERT(chestObject->GetCapacity() >= CHEST_ITEM_SIZE);
 }
 
-void TestItemContainer::TestGetItemByName(void) {
-	Item* foundItem = wornItemsObject->GetItem("testHelmet");
-	CPPUNIT_ASSERT(foundItem->GetItemName() == "testHelmet");
-	
-	Item* nullPointer = wornItemsObject->GetItem("someRandomName");
-	CPPUNIT_ASSERT(nullPointer == nullptr);
-}
-
-void TestItemContainer::TestGetItemByItemType(void) {
-	Item* foundItem = wornItemsObject->GetItem(Weapon);
-	CPPUNIT_ASSERT(foundItem->GetItemType() == Weapon);
-
-	Item* nullPointer = wornItemsObject->GetItem(8);
-	CPPUNIT_ASSERT(nullPointer == nullptr);
+void TestItemContainer::TestSetWeightCapacity(void) {
+	Character::Character* testCharacter = new Character::Character("testCharacter", Character::Character_Class::Fighter);
+	int strengthModifier = testCharacter->Ability_Score(Character::Abilities_Stats::Strength);
+	inventoryObject->SetWeightLimit(strengthModifier * 20);
+	CPPUNIT_ASSERT(inventoryObject->GetCapacity() == strengthModifier * 20);
 }
 
 void TestItemContainer::TestAddNewItem(void) {
@@ -138,6 +134,22 @@ void TestItemContainer::TestAddNewItem(void) {
 	float currentChestItemWeightTotal = chestObject->GetTotalItemWeight();
 	CPPUNIT_ASSERT(currentChestItemSize == chestItemSize + 1 && currentChestItemWeightTotal <= CHEST_ITEM_SIZE);
 	CPPUNIT_ASSERT(chestObject->GetAllItems().back() == *newItem);
+}
+
+void TestItemContainer::TestGetItemByName(void) {
+	Item* foundItem = wornItemsObject->GetItem("testHelmet");
+	CPPUNIT_ASSERT(foundItem->GetItemName() == "testHelmet");
+	
+	Item* nullPointer = wornItemsObject->GetItem("someRandomName");
+	CPPUNIT_ASSERT(nullPointer == nullptr);
+}
+
+void TestItemContainer::TestGetItemByItemType(void) {
+	Item* foundItem = wornItemsObject->GetItem(Weapon);
+	CPPUNIT_ASSERT(foundItem->GetItemType() == Weapon);
+
+	Item* nullPointer = wornItemsObject->GetItem(8);
+	CPPUNIT_ASSERT(nullPointer == nullptr);
 }
 
 void TestItemContainer::TestGetItemWeightTotal(void) {

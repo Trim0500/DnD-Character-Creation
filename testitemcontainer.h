@@ -33,6 +33,7 @@ using namespace itemcontainer;
 class TestItemContainer : public TestFixture {
 	CPPUNIT_TEST_SUITE(TestItemContainer);
 	CPPUNIT_TEST(TestCustomConstructor);
+	CPPUNIT_TEST(TestSetWeightCapacity);
 	CPPUNIT_TEST(TestAddNewItem);
 	CPPUNIT_TEST(TestGetItemWeightTotal);
 	CPPUNIT_TEST(TestGetItemByName);
@@ -60,6 +61,11 @@ class TestItemContainer : public TestFixture {
 		* \brief Function that tests the custom constructor overload for name and container type correctness
 		*/
 		void TestCustomConstructor(void);
+		/*!
+		* \fn TestSetWeightCapacity
+		* \brief Function that tests the alteration to a container's weight capacity specified by character strength
+		*/
+		void TestSetWeightCapacity(void);
 		/*!
 		* \fn TestAddNewItem
 		* \brief Function that tests adding in a new item to the list and ensuring the capacity is respected
@@ -116,6 +122,11 @@ class TestItemContainer : public TestFixture {
 		* \brief Varaible that represents a pointer to a chest with random items included in it's list
 		*/
 		ItemContainer* chestObject;
+		/*!
+		* \var inventoryObject
+		* \brief Varaible that represents a pointer to a character's inventory
+		*/
+		ItemContainer* inventoryObject;
 };
 
 CPPUNIT_TEST_SUITE_REGISTRATION(TestItemContainer);

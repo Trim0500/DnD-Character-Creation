@@ -52,6 +52,7 @@ namespace itemcontainer {
 			* \brief Overloaded constructior for ItemContainer
 			*/
 			ItemContainer(const string&, const int&, const float&);
+			void SetWeightLimit(const float& _capacity) { capacity = _capacity; };
 			int AddNewItem(Item*);
 			vector<Item> GetAllItems() { return items; };
 			float GetCapacity() { return capacity; };
