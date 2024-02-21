@@ -61,7 +61,7 @@ int main()
 
 	float remainingBackpackCapacity = fighterInventory->GetCapacity() - fighterInventory->GetTotalItemWeight();
 	cout << "Current Backpack item weight: " << fighterInventory->GetItemWeight() + fighterInventory->GetTotalItemWeight() << "lbs" << endl;
-	cout << "Remaining Backpack capacity: " << remainingBackpackCapacity << "lbs";
+	cout << "Remaining Backpack capacity: " << remainingBackpackCapacity << "lbs" << endl;
 
 	fighterCharacter->Print_Character_Sheet();
 
