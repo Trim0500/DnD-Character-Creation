@@ -60,6 +60,34 @@ int Dice::roll(string query) {
 	}
 	return rolls + addition;
 }
+
+int Dice::roll_with_advantage() {
+	int r1, r2;
+	r1 = roll();
+	r2 = roll();
+	return max(r1,r2);
+}
+int Dice::roll_with_disadvantage() {
+	int r1, r2;
+	r1 = roll();
+	r2 = roll();
+	return min(r1,r2);
+}
+
+
+int Dice::roll_with_advantage(string query) {
+	int r1, r2;
+	r1 = Dice::roll(query);
+	r2 = Dice::roll(query);
+	return max(r1,r2);
+}
+int Dice::roll_with_disadvantage(string query) {
+	int r1, r2;
+	r1 = Dice::roll(query);
+	r2 = Dice::roll(query);
+	return min(r1,r2);
+}
+
 void Dice::add_die() {
 	add_die(1);
 }
