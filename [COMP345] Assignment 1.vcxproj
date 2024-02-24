@@ -77,7 +77,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_HAS_AUTO_PTR_ETC=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Dev\Cppunit-1.12.1.VS2010\cppunit-1.12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Downloads\Cppunit-1.12.1.VS2010\cppunit-1.12.1\include;C:\Dev\Cppunit-1.12.1.VS2010\cppunit-1.12.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,6 +138,8 @@
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="testCharacter.cpp" />
+    <ClCompile Include="testDice.cpp" />
+    <ClCompile Include="Dice.cpp" />
     <ClCompile Include="testitem.cpp" />
     <ClCompile Include="testitemcontainer.cpp" />
   </ItemGroup>
@@ -145,6 +147,7 @@
     <ClInclude Include="item.h" />
     <ClInclude Include="itemcontainer.h" />
     <ClInclude Include="testCharacter.h" />
+    <ClInclude Include="testDice.h" />
     <ClInclude Include="testitem.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="Dice.h" />
