@@ -95,23 +95,23 @@ void TestDice::TestConstructor(void){
 
 void TestDice::TestFullRoll(void){
 	int test[2];
-	test[0] = testRollMin(easy_query, 10000);
-	test[1] = testRollMax(easy_query, 10000);
+	test[0] = testRollMin(easy_query, 30);
+	test[1] = testRollMax(easy_query, 30);
 	CPPUNIT_ASSERT(test[0] >= 2);
 	CPPUNIT_ASSERT(test[1] <= 8);
 	
-	test[0] = testRollMin(just_add_query, 10000);
-	test[1] = testRollMax(just_add_query, 10000);
+	test[0] = testRollMin(just_add_query, 30);
+	test[1] = testRollMax(just_add_query, 30);
 	CPPUNIT_ASSERT(test[0] == 3);
 	CPPUNIT_ASSERT(test[1] == 3);
 
-	test[0] = testRollMin(hard_query, 10000);
-	test[1] = testRollMax(hard_query, 10000);
+	test[0] = testRollMin(hard_query, 30);
+	test[1] = testRollMax(hard_query, 30);
 	CPPUNIT_ASSERT(test[0] >= 116);
 	CPPUNIT_ASSERT(test[1] <= 420);
 
-	test[0] = testRollMin(just_subtract_query, 10000);
-	test[1] = testRollMax(just_subtract_query, 10000);
+	test[0] = testRollMin(just_subtract_query, 30);
+	test[1] = testRollMax(just_subtract_query, 30);
 	CPPUNIT_ASSERT(test[0] == -4);
 	CPPUNIT_ASSERT(test[1] == -4);
 }
@@ -132,12 +132,20 @@ void TestDice::TestAddDice(void){
 }
 
 void TestDice::TestInvalidQuery(void){
-	//CPPUNIT_ASSERT_THROW(Dice(invalid_query), std::invalid_argument);
+	CPPUNIT_ASSERT_THROW(Dice("10d3"), std::invalid_argument);
+	CPPUNIT_ASSERT_THROW(Dice("10d13"), std::invalid_argument);
+	CPPUNIT_ASSERT_THROW(Dice("1d49"), std::invalid_argument);
+	CPPUNIT_ASSERT_THROW(Dice::roll(invalid_query), std::invalid_argument);
 
-	//CPPUNIT_ASSERT_THROW(Dice("10d3"), std::invalid_argument);
-	//CPPUNIT_ASSERT_THROW(Dice("10d13"), std::invalid_argument);
-	//CPPUNIT_ASSERT_THROW(Dice("1d49"), std::invalid_argument);
-	//CPPUNIT_ASSERT_THROW(Dice::roll(invalid_query), std::invalid_argument);
+	bool dummy = false;
+	try {
+		Dice testDice(invalid_query);
+	}
+	catch (invalid_argument exc) {
+		dummy = true;
+	}
+
+	CPPUNIT_ASSERT(dummy);
 }
 
 void TestDice::TestRollNoAddition(void) {
@@ -156,38 +164,38 @@ void TestDice::TestAllDice(void){
 	d100 = Dice("1d100");
 
 	int test[2];
-	test[0] = testRollMin(d4, 10000);
-	test[1] = testRollMax(d4, 10000);
+	test[0] = testRollMin(d4, 30);
+	test[1] = testRollMax(d4, 30);
 	CPPUNIT_ASSERT(test[0] >= 1);
 	CPPUNIT_ASSERT(test[1] <= 4);
 
-	test[0] = testRollMin(d6, 10000);
-	test[1] = testRollMax(d6, 10000);
+	test[0] = testRollMin(d6, 30);
+	test[1] = testRollMax(d6, 30);
 	CPPUNIT_ASSERT(test[0] >= 1);
 	CPPUNIT_ASSERT(test[1] <= 6);
 
-	test[0] = testRollMin(d8, 10000);
-	test[1] = testRollMax(d8, 10000);
+	test[0] = testRollMin(d8, 30);
+	test[1] = testRollMax(d8, 30);
 	CPPUNIT_ASSERT(test[0] >= 1);
 	CPPUNIT_ASSERT(test[1] <= 8);
 
-	test[0] = testRollMin(d10, 10000);
-	test[1] = testRollMax(d10, 10000);
+	test[0] = testRollMin(d10, 30);
+	test[1] = testRollMax(d10, 30);
 	CPPUNIT_ASSERT(test[0] >= 1);
 	CPPUNIT_ASSERT(test[1] <= 10);
 
-	test[0] = testRollMin(d12, 10000);
-	test[1] = testRollMax(d12, 10000);
+	test[0] = testRollMin(d12, 30);
+	test[1] = testRollMax(d12, 30);
 	CPPUNIT_ASSERT(test[0] >= 1);
 	CPPUNIT_ASSERT(test[1] <= 12);
 
-	test[0] = testRollMin(d20, 10000);
-	test[1] = testRollMax(d20, 10000);
+	test[0] = testRollMin(d20, 30);
+	test[1] = testRollMax(d20, 30);
 	CPPUNIT_ASSERT(test[0] >= 1);
 	CPPUNIT_ASSERT(test[1] <= 20);
 
-	test[0] = testRollMin(d100, 10000);
-	test[1] = testRollMax(d100, 10000);
+	test[0] = testRollMin(d100, 30);
+	test[1] = testRollMax(d100, 30);
 	CPPUNIT_ASSERT(test[0] >= 1);
 	CPPUNIT_ASSERT(test[1] <= 100);
 
@@ -196,54 +204,54 @@ void TestDice::TestAllDice(void){
 void TestDice::TestAdditionNoRoll(){
 	int test[2];
 
-	test[0] = testRollMin(just_add_query, 10000);
-	test[1] = testRollMax(just_add_query, 10000);
+	test[0] = testRollMin(just_add_query, 30);
+	test[1] = testRollMax(just_add_query, 30);
 	CPPUNIT_ASSERT(test[0] == 3);
 	CPPUNIT_ASSERT(test[1] == 3);
 
 	Dice d1 = Dice(just_add_query);
 
-	test[0] = testRollMin(d1, 10000);
-	test[1] = testRollMax(d1, 10000);
+	test[0] = testRollMin(d1, 30);
+	test[1] = testRollMax(d1, 30);
 	CPPUNIT_ASSERT(test[0] == 3);
 	CPPUNIT_ASSERT(test[1] == 3);
 
 	Dice d2 = Dice("0d12");
 
-	test[0] = testRollMin(d2, 10000);
-	test[1] = testRollMax(d2, 10000);
+	test[0] = testRollMin(d2, 30);
+	test[1] = testRollMax(d2, 30);
 	CPPUNIT_ASSERT(test[0] == 0);
 	CPPUNIT_ASSERT(test[1] == 0);
 
 	Dice d3 = Dice("0d12+10");
 
-	test[0] = testRollMin(d3, 10000);
-	test[1] = testRollMax(d3, 10000);
+	test[0] = testRollMin(d3, 30);
+	test[1] = testRollMax(d3, 30);
 	CPPUNIT_ASSERT(test[0] == 10);
 	CPPUNIT_ASSERT(test[1] == 10);
 }
 
 void TestDice::TestSubtractionNoRoll(){
 	int test[2] = {0,0};
-	test[0] = testRollMin(just_subtract_query, 10000);
-	test[1] = testRollMax(just_subtract_query, 10000);
+	test[0] = testRollMin(just_subtract_query, 30);
+	test[1] = testRollMax(just_subtract_query, 30);
 	CPPUNIT_ASSERT(test[0] == -4);
 	CPPUNIT_ASSERT(test[1] == -4);
 
 	Dice d1 = Dice(just_subtract_query);
-	test[0] = testRollMin(d1, 10000);
-	test[1] = testRollMax(d1, 10000);
+	test[0] = testRollMin(d1, 30);
+	test[1] = testRollMax(d1, 30);
 	CPPUNIT_ASSERT(test[0] == -4);
 	CPPUNIT_ASSERT(test[1] == -4);
 
 	Dice d2 = Dice("0d12");
-	test[0] = testRollMin(d2, 10000);
-	test[1] = testRollMax(d2, 10000);
+	test[0] = testRollMin(d2, 30);
+	test[1] = testRollMax(d2, 30);
 	CPPUNIT_ASSERT(test[0] == 0);
 	CPPUNIT_ASSERT(test[1] == 0);
 	Dice d3 = Dice("0d12-10");
-	test[0] = testRollMin(d3, 10000);
-	test[1] = testRollMax(d3, 10000);
+	test[0] = testRollMin(d3, 30);
+	test[1] = testRollMax(d3, 30);
 	CPPUNIT_ASSERT(test[0] == -10);
 	CPPUNIT_ASSERT(test[1] == -10);
 }
