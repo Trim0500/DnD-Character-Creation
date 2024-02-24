@@ -51,12 +51,10 @@ namespace itemcontainer {
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer
 			*/
-			ItemContainer(const string&, const int&, const float&);
-			void SetWeightLimit(const float& _capacity) { capacity = _capacity; };
-			int AddNewItem(Item*);
+			ItemContainer(const string&, const int&, const int&);
+			void AddNewItem(const Item& newItem) { items.push_back(newItem); };
 			vector<Item> GetAllItems() { return items; };
-			float GetCapacity() { return capacity; };
-			float GetTotalItemWeight();
+			int GetCapacity() { return capacity; };
 			/*!
 			* \fn GetItem
 			* \brief Overloaded method to find an item by name
@@ -100,9 +98,9 @@ namespace itemcontainer {
 		private:
 			/*!
 			* \var capacity
-			* \brief Integer that represents the carrying capacity (in lbs) for the container
+			* \brief Integer that represents the carrying capacity for the container
 			*/
-			float capacity;
+			int capacity;
 			/*!
 			* \var items
 			* \brief Vector of type Item that represents the containers item instances
