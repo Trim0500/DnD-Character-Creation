@@ -5,7 +5,7 @@ Dice::Dice(string query) {
 	srand(time(nullptr));
 	smatch values_mathed; 
 	// check if query is valid
-	if (!regex_search(query, values_mathed, DICE)) {
+	if (!regex_match(query, values_mathed, DICE)) {
 		string e = "Query '" + query + "' is invalid\n";
 		throw invalid_argument(e);
 	}

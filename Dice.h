@@ -24,7 +24,7 @@
 
 using namespace std;
 
-static regex DICE("([0-9]+)d(4|6|8|10|12|20|100)((?:\\+|-)[0-9]*)*");
+static regex DICE("^([0-9]+)d(4|6|8|10|12|20|100)((?:\\+|-)[0-9]*)*$");
 class Dice {
 public:
 	/**

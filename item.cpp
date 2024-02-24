@@ -66,7 +66,7 @@ namespace item {
 			{
 				CharacterStats helmetEnchantmentTypes[3] = { Intelligence, Wisdom, ArmorClass };
 				enchantmentType = PickEnchantmentType(helmetEnchantmentTypes);
-				weight = enchantmentType == 6 ? GenerateRandomInt(8, 13) : 5;
+				weight = enchantmentType  == 6 ? GenerateRandomInt(8, 13) : 5;
 			}
 				break;
 			case 2:
