@@ -42,11 +42,36 @@ public:
 	 * @return result of the dice roll
 	*/
 	static int roll(string query);
+	
+	/*!
+	* @brief Rolls given query twice, keeping highest
+	* @param query the query to be rolled
+	* @return result of dice roll
+	*/
+	static int roll_with_advantage(string query);
+	/*!
+	* @brief Rolls given query twice, keeping lowest
+	* @param query the query to be rolled
+	* @return result of dice roll
+	*/
+	static int roll_with_disadvantage(string query);
+
 	/*!
 	 * @brief Roll the dice object
 	 * @return value of the roll
 	*/
 	int roll();
+
+	/*!
+	 * @brief Roll the dice object twice, keeping highest
+	 * @return value of the roll
+	*/
+	int roll_with_advantage();
+	/*!
+	 * @brief Roll the dice object twice, keeping lowest
+	 * @return value of the roll
+	*/
+	int roll_with_disadvantage();
 	/*!
 	 * @brief increases the number of die (x in query) by 1
 	*/
