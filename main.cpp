@@ -95,6 +95,7 @@ int main()
 	} catch (invalid_argument) {
 		cout << "invalid query" << endl;
 	}
+
 	getchar();
 
 	delete dice;

@@ -39,7 +39,7 @@ Dice::Dice() {
 int Dice::roll(string query) {
 	// same as constructor. Used for single dice rolls, not associated with other existing objects.
 	smatch values_mathed;
-	if (!regex_search(query, values_mathed, DICE)) {
+	if (!regex_match(query, values_mathed, DICE)) {
 		string e = "Query '" + query + "' is invalid\n";
 		throw invalid_argument(e);
 	}

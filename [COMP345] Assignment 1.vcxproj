@@ -147,6 +147,7 @@
     <ClCompile Include="testDice.cpp" />
     <ClCompile Include="testitem.cpp" />
     <ClCompile Include="testitemcontainer.cpp" />
+    <ClCompile Include="Dice.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="item.h" />
