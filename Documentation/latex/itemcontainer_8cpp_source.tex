@@ -17,112 +17,64 @@
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00020}00020\ \}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00021}00021\ }
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00022}\mbox{\hyperlink{namespaceitemcontainer}{00022}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}}\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00023}\mbox{\hyperlink{classitemcontainer_1_1_item_container_adedc9248ad9b736ed02dcc7539ac6345}{00023}}\ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container_adedc9248ad9b736ed02dcc7539ac6345}{ItemContainer::ItemContainer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \_containerName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_containerType,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \_capacity)\ :}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\_containerName,\ 0,\ \_containerType,\ 10,\ \_containerType\ ==\ 8\ ?\ 5\ :\ \_containerType\ ==\ 10\ ?\ 25\ :\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00023}\mbox{\hyperlink{classitemcontainer_1_1_item_container_acb35d6bf2b187a74d4198ae45304c54b}{00023}}\ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container_acb35d6bf2b187a74d4198ae45304c54b}{ItemContainer::ItemContainer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ \_containerName,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_containerType,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_capacity)\ :}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\_containerName,\ 0,\ \_containerType,\ 10)\ \{}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ vector<Item>\ \_items;}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ items\ =\ \_items;}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ capacity\ =\ \_capacity;}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00028}00028\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00030}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{00030}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{ItemContainer::AddNewItem}}(\mbox{\hyperlink{classitem_1_1_item}{Item}}*\ newItem)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ ==\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a5e5187a25bcb572f9755b15cb9e0d8b5}{WornItems}})\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ foundItem\ =\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{GetItem}}(newItem-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}());}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundItem\ !=\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00030}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{00030}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{ItemContainer::GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ nameKey)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (items[i].\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ nameKey)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&items[i];}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (newItem-\/>\mbox{\hyperlink{classitem_1_1_item_a9e3c7d4fc49e628cf70536ccf59112d7}{GetItemWeight}}()\ +\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{GetTotalItemWeight}}()\ >=\ capacity)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00039}00039\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ items.push\_back(*newItem);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00044}00044\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00046}\mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{00046}}\ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{ItemContainer::GetTotalItemWeight}}()\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ total\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00041}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a764aa3709415a62d38ce95a9b1a2bc62}{00041}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{ItemContainer::GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ itemType)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (items[i].\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ ==\ itemType)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&items[i];}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ total\ +=\ items[i].GetItemWeight();}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00053}00053\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ total;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00055}00055\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00057}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{00057}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{ItemContainer::GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ nameKey)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (items[i].\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ nameKey)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&items[i];}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00066}00066\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00068}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a764aa3709415a62d38ce95a9b1a2bc62}{00068}}\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{ItemContainer::GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ itemType)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (items[i].\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ ==\ itemType)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&items[i];}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00052}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}{00052}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}{ItemContainer::GetItemsByEnchantmentBonus}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ enchantmentBonus)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ [enchantmentBonus](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetEnchantmentBonus()\ ==\ enchantmentBonus;\ \});}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00062}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}{00062}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}{ItemContainer::GetItemsByItemType}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ itemType)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ [itemType](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetItemType()\ ==\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})itemType;\ \});}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00072}\mbox{\hyperlink{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}{00072}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}{ItemContainer::GetItemsByStat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ enchantmentType)\ \{}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ [enchantmentType](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetEnchantmentType()\ ==\ (\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}})enchantmentType;\ \});}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00079}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}{00079}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}{ItemContainer::GetItemsByEnchantmentBonus}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ enchantmentBonus)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ [enchantmentBonus](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetEnchantmentBonus()\ ==\ enchantmentBonus;\ \});}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00087}00087\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00089}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}{00089}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}{ItemContainer::GetItemsByItemType}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ itemType)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ [itemType](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetItemType()\ ==\ (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}})itemType;\ \});}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00097}00097\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00098}00098\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00099}\mbox{\hyperlink{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}{00099}}\ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}{ItemContainer::GetItemsByStat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ enchantmentType)\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ vector<Item>\ resultVect;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ copy\_if(items.begin(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ items.end(),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ back\_inserter(resultVect),}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ [enchantmentType](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespaceitem}{item}}.GetEnchantmentType()\ ==\ (\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}})enchantmentType;\ \});}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00105}00105\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00107}00107\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00108}00108\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00109}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f52fc08106eb5e}{00109}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f52fc08106eb5e}{ItemContainer::PrintItemVector}}()\ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)t"{}}\ <<\ this-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ <<\ \textcolor{stringliteral}{"{}\ Items\ Information"{}}\ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl\ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ items.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ items[i].GetItemName()}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}{itemTypeStrings}}[items[i].GetItemType()\ -\/\ 1]}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ to\_string(items[i].\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}())}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{statStrings}}[items[i].GetEnchantmentType()]}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t"{}}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ to\_string(items[i].\mbox{\hyperlink{classitem_1_1_item_a9e3c7d4fc49e628cf70536ccf59112d7}{GetItemWeight}}())}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}lbs"{}}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00128}00128\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00129}00129\ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVect;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8cpp_source_l00081}00081\ \}}
 
 \end{DoxyCode}
