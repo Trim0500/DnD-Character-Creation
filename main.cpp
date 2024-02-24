@@ -87,7 +87,12 @@ int main()
 	Dice* dice = new Dice();
 	int rollValue = dice->roll("4d20+4");
 	cout << "Dice rolled: " << rollValue << endl;
+	try {
 
+		Dice::roll("1z20");
+	} catch (invalid_argument) {
+		cout << "invalid query" << endl;
+	}
 	getchar();
 
 	delete dice;
