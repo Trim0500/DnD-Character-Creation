@@ -41,7 +41,7 @@ public:
 	* \brief
 	*/
 	void tearDown(void);
-	/**
+	/*!
 	 * @brief Helper function to roll thousands of dice
 	 * @param d Dice object to test
 	 * @param count number of times to roll the dice

@@ -1,5 +1,10 @@
 \doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/\+Character.h File Reference}
 \hypertarget{_character_8h}{}\label{_character_8h}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/Character.h@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/Character.h}}
+
+
+Header file containing \doxylink{class_character}{Character} functionality definitions The character creation is based off of the 5th edition Dungeons \& Dragons! Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including but not limited to... \textquotesingle{}Feats\textquotesingle{}, \textquotesingle{}Race\textquotesingle{}, \textquotesingle{}Class Features\textquotesingle{}, \textquotesingle{}Backgrounds\textquotesingle{}, \textquotesingle{}spells\textquotesingle{}, \textquotesingle{}skills\textquotesingle{}, \textquotesingle{}Armour, Weapon \& tool proficiencies\textquotesingle{}, \textquotesingle{}Death saves\textquotesingle{}, \textquotesingle{}initiative\textquotesingle{} and \textquotesingle{}saving throws\textquotesingle{}.  
+
+
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$iomanip$>$}\newline
 {\ttfamily \#include $<$random$>$}\newline
@@ -19,78 +24,13 @@ class \mbox{\hyperlink{class_character_1_1_character}{Character\+::\+Character}}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespace_character}{Character}}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-enum class \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+::\+Character\+\_\+\+Class}} \{ \newline
-\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7}{Character\+::\+Barbarian}} = 0
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5}{Character\+::\+Bard}} = 1
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a88f6c01a3b5711ec2a896c9f5462497c}{Character\+::\+Cleric}} = 2
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e}{Character\+::\+Druid}} = 3
-, \newline
-\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee}{Character\+::\+Fighter}} = 4
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359}{Character\+::\+Monk}} = 5
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858}{Character\+::\+Paladin}} = 6
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0}{Character\+::\+Ranger}} = 7
-, \newline
-\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174}{Character\+::\+Rogue}} = 8
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f}{Character\+::\+Sorcerer}} = 9
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a21305b754e03843876abc27387a0e57e}{Character\+::\+Warlock}} = 10
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5}{Character\+::\+Wizard}} = 11
- \}
-\item 
-enum class \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edb}{Character\+::\+Abilities\+\_\+\+Stats}} \{ \newline
-\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba5a455a612047a34ede7a6c564fa67c0a}{Character\+::\+Strength}} = 0
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbaa8747f5acdc2352d39f455bdd1689273}{Character\+::\+Dexterity}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbaae93e52a3c1f3bbcefbc805331fca9e9}{Character\+::\+Constitution}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba8f7ba58961e0fe40cfda61b412537fba}{Character\+::\+Intelligence}}
-, \newline
-\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba646f0a01b685558b975b5cd3f5b36241}{Character\+::\+Wisdom}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbaa47211f258a8e0172523525035c743af}{Character\+::\+Charisma}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba0a9be59870ecbb7f97a7878a311b556d}{Character\+::\+Armor\+Class}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311}{Character\+::\+Attack\+Bonus}}
-, \newline
-\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbaca1f13e821cca99c2b1e2b3fc4e12e9f}{Character\+::\+Damage\+Bonus}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbad4cd0dabcf4caa22ad92fab40844c786}{Character\+::\+NA}}
- \}
-\item 
-enum class \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ad}{Character\+::\+Equipment\+\_\+\+Slots}} \{ \newline
-\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8}{Character\+::\+Armor}} = 0
-, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4}{Character\+::\+Shield}}
-, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b}{Character\+::\+Weapon}}
-, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b}{Character\+::\+Boots}}
-, \newline
-\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1}{Character\+::\+Ring}}
-, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff}{Character\+::\+Helmet}}
-, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c}{Character\+::\+Belt}}
-, \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0adad3ab3d5184fe9b1b4428e4ffb797bdca}{Character\+::\+Bag}}
- \}
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a00b5cdecff11125460d6b315e95cdeb3}{Character\+::is\+Barbarian}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0001 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_ae470b8104e39dd0062fc2bb73f0b29f6}{Character\+::is\+Bard}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0010 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_ae1452f04c4a6d2b9d92820077901a74f}{Character\+::is\+Cleric}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0100 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_aa71f9e67ef0b41fea2e39476d659ea97}{Character\+::is\+Druid}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}1000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_ae8342c69dddc0b72ae97940abc0b89f1}{Character\+::is\+Fighter}} \{ 0b0000\textquotesingle{}0001\textquotesingle{}0000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_ad47be3c083a7f54c72fe9a756bf5bd4c}{Character\+::is\+Monk}} \{ 0b0000\textquotesingle{}0010\textquotesingle{}0000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a60aa5b15e5d991bb24c68f7849c38949}{Character\+::is\+Paladin}} \{ 0b0000\textquotesingle{}0100\textquotesingle{}0000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a337f4cc2a738d4433e1692d0532465f6}{Character\+::is\+Ranger}} \{ 0b0000\textquotesingle{}1000\textquotesingle{}0000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_af46d588138d500d3cec393eceda50be1}{Character\+::is\+Rogue}} \{ 0b0001\textquotesingle{}0000\textquotesingle{}0000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a598f797fbd8149540e35ae308f41b960}{Character\+::is\+Sorcerer}} \{ 0b0010\textquotesingle{}0000\textquotesingle{}0000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a2b73cffb972ec39f482568a2390edd48}{Character\+::is\+Warlock}} \{ 0b0100\textquotesingle{}0000\textquotesingle{}0000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a83261e8d9ba2c3475bce2a448b5ca4da}{Character\+::is\+Wizard}} \{ 0b1000\textquotesingle{}0000\textquotesingle{}0000 \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em namespace used to encapsulate \textquotesingle{}\doxylink{class_character}{Character}\textquotesingle{} class functionality \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file containing \doxylink{class_character}{Character} functionality definitions The character creation is based off of the 5th edition Dungeons \& Dragons! Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including but not limited to... \textquotesingle{}Feats\textquotesingle{}, \textquotesingle{}Race\textquotesingle{}, \textquotesingle{}Class Features\textquotesingle{}, \textquotesingle{}Backgrounds\textquotesingle{}, \textquotesingle{}spells\textquotesingle{}, \textquotesingle{}skills\textquotesingle{}, \textquotesingle{}Armour, Weapon \& tool proficiencies\textquotesingle{}, \textquotesingle{}Death saves\textquotesingle{}, \textquotesingle{}initiative\textquotesingle{} and \textquotesingle{}saving throws\textquotesingle{}. 
+
+! 
+
+Definition in file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
