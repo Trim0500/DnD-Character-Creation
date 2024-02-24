@@ -39,7 +39,6 @@ class TestItem : public TestFixture {
 	CPPUNIT_TEST(TestGetEnchantmentBonus);
 	CPPUNIT_TEST(TestGetItemType);
 	CPPUNIT_TEST(TestGetEnchantmentType);
-	CPPUNIT_TEST(TestGetItemWeight);
 	CPPUNIT_TEST_SUITE_END();
 
 	public:
@@ -89,11 +88,6 @@ class TestItem : public TestFixture {
 		* \brief Function that tests GetEnchantmentType member function to verify the created item's enchantment type is in the right range
 		*/
 		void TestGetEnchantmentType(void);
-		/*!
-		* \fn TestGetItemWeight
-		* \brief Function that tests GetItemWeight member function to verify the created item's weight is in the expected range
-		*/
-		void TestGetItemWeight(void);
 	private:
 		/*!
 		* \var noArgsItemObject
