@@ -8,26 +8,34 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_dice_ab3d9afcf8fba8e379a729197df553036}{Dice}} (string query)
-\item 
+\begin{DoxyCompactList}\small\item\em \doxylink{class_dice}{Dice} object constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Roll the dice object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_dice_ae9d4338f5c38d6e264499ff933a15b7f}{add\+\_\+die}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em increases the number of die (x in query) by 1 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_dice_a9745be8c524cefde005c9d8a21330d59}{add\+\_\+die}} (int amount)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em increases the number of dice (x in query) by amount \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_dice_ad49a44f1558d483f55e4804402a7e983}{get\+\_\+string}} ()
+\begin{DoxyCompactList}\small\item\em generates a string representation of the dice \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37}{get\+\_\+leading\+\_\+multiplier}} ()
+\begin{DoxyCompactList}\small\item\em leading\+\_\+multipler getter \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dice_a5d113ad9251a8561dd3101010b7af452}{get\+\_\+die\+\_\+sides}} ()
+\begin{DoxyCompactList}\small\item\em die\+\_\+sides getter \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dice_a8bf495738034fb0e5461a6761f007506}{get\+\_\+addition}} ()
+\begin{DoxyCompactList}\small\item\em addition getter \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static int \mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}} (string query)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rolls a given query. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00013}{13}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00028}{28}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
 
 
 
@@ -40,7 +48,16 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00013}{13}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00026}{26}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+\doxylink{class_dice}{Dice} object constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & string query under format xdy\mbox{[}+/-\/z\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}\label{class_dice_a6b9eadd945ad8fd3840379c8824e5d48} 
 \index{Dice@{Dice}!Dice@{Dice}}
@@ -50,7 +67,11 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00026}{26}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00051}{51}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+Default constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 
 
@@ -63,7 +84,11 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00051}{51}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00077}{77}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+increases the number of die (x in query) by 1 
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a9745be8c524cefde005c9d8a21330d59}\label{class_dice_a9745be8c524cefde005c9d8a21330d59} 
 \index{Dice@{Dice}!add\_die@{add\_die}}
@@ -73,7 +98,84 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00077}{77}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00080}{80}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+increases the number of dice (x in query) by amount 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & amount the increase number of dice by \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a8bf495738034fb0e5461a6761f007506}\label{class_dice_a8bf495738034fb0e5461a6761f007506} 
+\index{Dice@{Dice}!get\_addition@{get\_addition}}
+\index{get\_addition@{get\_addition}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{get\_addition()}{get\_addition()}}
+{\footnotesize\ttfamily int Dice\+::get\+\_\+addition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+addition getter 
+
+\begin{DoxyReturn}{Returns}
+number to add after roll 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a5d113ad9251a8561dd3101010b7af452}\label{class_dice_a5d113ad9251a8561dd3101010b7af452} 
+\index{Dice@{Dice}!get\_die\_sides@{get\_die\_sides}}
+\index{get\_die\_sides@{get\_die\_sides}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{get\_die\_sides()}{get\_die\_sides()}}
+{\footnotesize\ttfamily int Dice\+::get\+\_\+die\+\_\+sides (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+die\+\_\+sides getter 
+
+\begin{DoxyReturn}{Returns}
+dice\textquotesingle{}s number of sides 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37}\label{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37} 
+\index{Dice@{Dice}!get\_leading\_multiplier@{get\_leading\_multiplier}}
+\index{get\_leading\_multiplier@{get\_leading\_multiplier}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{get\_leading\_multiplier()}{get\_leading\_multiplier()}}
+{\footnotesize\ttfamily int Dice\+::get\+\_\+leading\+\_\+multiplier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+leading\+\_\+multipler getter 
+
+\begin{DoxyReturn}{Returns}
+leading multipler 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_ad49a44f1558d483f55e4804402a7e983}\label{class_dice_ad49a44f1558d483f55e4804402a7e983} 
+\index{Dice@{Dice}!get\_string@{get\_string}}
+\index{get\_string@{get\_string}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{get\_string()}{get\_string()}}
+{\footnotesize\ttfamily std\+::string Dice\+::get\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+generates a string representation of the dice 
+
+\begin{DoxyReturn}{Returns}
+string repr of die 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a612a16c434160895563d19099ca0b33b}\label{class_dice_a612a16c434160895563d19099ca0b33b} 
 \index{Dice@{Dice}!roll@{roll}}
@@ -83,7 +185,14 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00080}{80}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00044}{44}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+Roll the dice object. 
+
+\begin{DoxyReturn}{Returns}
+value of the roll 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}\label{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c} 
 \index{Dice@{Dice}!roll@{roll}}
@@ -93,10 +202,23 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00044}{44}} of file \mbox{\
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00054}{54}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+Rolls a given query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & the query to be rolled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of the dice roll 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\mbox{\hyperlink{_dice_8h}{Dice.\+h}}\end{DoxyCompactItemize}
+C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\mbox{\hyperlink{_dice_8h}{Dice.\+h}}\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\mbox{\hyperlink{_dice_8cpp}{Dice.\+cpp}}\end{DoxyCompactItemize}

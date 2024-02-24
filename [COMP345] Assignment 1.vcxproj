@@ -157,7 +157,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="testCharacter.cpp" />
     <ClCompile Include="testDice.cpp" />
-    <!-- <ClCompile Include="Dice.cpp" /> -->
     <ClCompile Include="testitem.cpp" />
     <ClCompile Include="testitemcontainer.cpp" />
   </ItemGroup>

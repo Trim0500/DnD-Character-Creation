@@ -15,71 +15,73 @@
 \DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00016}00016\ \ \ \ \ noArgsItemObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}();}
 \DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00017}00017\ }
 \DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00018}00018\ \ \ \ \ customItemObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}testItem"{}},\ 3,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{Ring}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00019}00019\ \}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00021}\mbox{\hyperlink{class_test_item_a38972453e27a89fdf85d6d05a2b10a13}{00021}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a38972453e27a89fdf85d6d05a2b10a13}{TestItem::tearDown}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00022}00022\ \{}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{delete}\ noArgsItemObject;}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{delete}\ customItemObject;}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00026}00026\ \}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00028}\mbox{\hyperlink{class_test_item_a9e3b7b0ad025dbf2754ee5ee87b10e25}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a9e3b7b0ad025dbf2754ee5ee87b10e25}{TestItem::TestNoArgsItemConstructor}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00029}00029\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}()\ ==\ 1);}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00030}00030\ \ \ \ \ ostringstream\ name;}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00031}00031\ \ \ \ \ name\ <<\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}{itemTypeStrings}}[noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ -\/\ 1]}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ +"{}}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ to\_string(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}())}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ ("{}}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{statStrings}}[noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()]\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00036}00036\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ name.str());}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00037}00037\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ >=\ 1\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ <=\ 5);}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00038}00038\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ >=\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1}{Helmet}}\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ <=\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158}{Weapon}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00039}00039\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ >=\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}}\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ <=\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{DamageBonus}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00040}00040\ \}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00041}00041\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00042}\mbox{\hyperlink{class_test_item_a6413c831d1edb7dfba5de0076c78c3ac}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a6413c831d1edb7dfba5de0076c78c3ac}{TestItem::TestItemConstructor}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00043}00043\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}()\ ==\ 4);}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00044}00044\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ \textcolor{stringliteral}{"{}testItem"{}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00045}00045\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ ==\ 3);}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00046}00046\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ ==\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{Ring}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00047}00047\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ ==\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00048}00048\ \}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00050}\mbox{\hyperlink{class_test_item_a47182462311b4bc7b268feb7276cb106}{00050}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a47182462311b4bc7b268feb7276cb106}{TestItem::TestGetItemId}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00051}00051\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}()\ ==\ 5);}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00052}00052\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00053}00053\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}()\ ==\ 6);}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00054}00054\ \}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00056}\mbox{\hyperlink{class_test_item_a46a335a1ef390e9208eb704413215392}{00056}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a46a335a1ef390e9208eb704413215392}{TestItem::TestGetItemName}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00057}00057\ \ \ \ \ ostringstream\ name;}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00058}00058\ \ \ \ \ name\ <<\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}{itemTypeStrings}}[noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ -\/\ 1]}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ +"{}}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ <<\ to\_string(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}())}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ ("{}}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ <<\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{statStrings}}[noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()]\ <<\ \textcolor{stringliteral}{"{})"{}};}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00063}00063\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ name.str());}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00065}00065\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ \textcolor{stringliteral}{"{}testItem"{}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00066}00066\ \}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00068}\mbox{\hyperlink{class_test_item_ad9222176b6d48485603edd5d88ddaaaa}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_ad9222176b6d48485603edd5d88ddaaaa}{TestItem::TestGetEnchantmentBonus}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00069}00069\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ >=\ 1\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ <=\ 5);}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00070}00070\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00071}00071\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ ==\ 3);}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00072}00072\ \}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00074}\mbox{\hyperlink{class_test_item_aec2b80a3e0eb10bc94f203df672c1d63}{00074}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_aec2b80a3e0eb10bc94f203df672c1d63}{TestItem::TestGetItemType}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00075}00075\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ >=\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1}{Helmet}}\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ <=\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158}{Weapon}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00077}00077\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ ==\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{Ring}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00078}00078\ \}}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00080}\mbox{\hyperlink{class_test_item_a0bd12b3bd908749bcf1e08bb73b808e3}{00080}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a0bd12b3bd908749bcf1e08bb73b808e3}{TestItem::TestGetEnchantmentType}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00081}00081\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ >=\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}}\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ <=\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{DamageBonus}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00082}00082\ }
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00083}00083\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ ==\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}});}
-\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00084}00084\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//testItemCurrentId\ +=\ 2;}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00021}00021\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00023}\mbox{\hyperlink{class_test_item_a38972453e27a89fdf85d6d05a2b10a13}{00023}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a38972453e27a89fdf85d6d05a2b10a13}{TestItem::tearDown}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{delete}\ noArgsItemObject;}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{delete}\ customItemObject;}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00030}\mbox{\hyperlink{class_test_item_a9e3b7b0ad025dbf2754ee5ee87b10e25}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a9e3b7b0ad025dbf2754ee5ee87b10e25}{TestItem::TestNoArgsItemConstructor}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//CPPUNIT\_ASSERT(noArgsItemObject-\/>GetItemId()\ ==\ testItemCurrentId\ -\/\ 1);}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00032}00032\ \ \ \ \ ostringstream\ name;}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00033}00033\ \ \ \ \ name\ <<\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}{itemTypeStrings}}[noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ -\/\ 1]}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ +"{}}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ to\_string(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}())}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ ("{}}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ <<\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{statStrings}}[noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()]\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00038}00038\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ name.str());}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00039}00039\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ >=\ 1\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ <=\ 5);}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00040}00040\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ >=\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1}{Helmet}}\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ <=\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158}{Weapon}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00041}00041\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ >=\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}}\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ <=\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{DamageBonus}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00044}\mbox{\hyperlink{class_test_item_a6413c831d1edb7dfba5de0076c78c3ac}{00044}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a6413c831d1edb7dfba5de0076c78c3ac}{TestItem::TestItemConstructor}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//CPPUNIT\_ASSERT(customItemObject-\/>GetItemId()\ ==\ testItemCurrentId);}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00046}00046\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ \textcolor{stringliteral}{"{}testItem"{}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00047}00047\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ ==\ 3);}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00048}00048\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ ==\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{Ring}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00049}00049\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ ==\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00052}\mbox{\hyperlink{class_test_item_a47182462311b4bc7b268feb7276cb106}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a47182462311b4bc7b268feb7276cb106}{TestItem::TestGetItemId}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{comment}{//CPPUNIT\_ASSERT(noArgsItemObject-\/>GetItemId()\ ==\ testItemCurrentId\ -\/\ 1);}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00054}00054\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//CPPUNIT\_ASSERT(customItemObject-\/>GetItemId()\ ==\ testItemCurrentId);}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00058}\mbox{\hyperlink{class_test_item_a46a335a1ef390e9208eb704413215392}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a46a335a1ef390e9208eb704413215392}{TestItem::TestGetItemName}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00059}00059\ \ \ \ \ ostringstream\ name;}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00060}00060\ \ \ \ \ name\ <<\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}{itemTypeStrings}}[noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ -\/\ 1]}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ +"{}}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ <<\ to\_string(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}())}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ ("{}}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ <<\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{statStrings}}[noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()]\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00065}00065\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ name.str());}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00067}00067\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{GetItemName}}()\ ==\ \textcolor{stringliteral}{"{}testItem"{}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00070}\mbox{\hyperlink{class_test_item_ad9222176b6d48485603edd5d88ddaaaa}{00070}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_ad9222176b6d48485603edd5d88ddaaaa}{TestItem::TestGetEnchantmentBonus}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00071}00071\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ >=\ 1\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ <=\ 5);}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00073}00073\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{GetEnchantmentBonus}}()\ ==\ 3);}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00076}\mbox{\hyperlink{class_test_item_aec2b80a3e0eb10bc94f203df672c1d63}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_aec2b80a3e0eb10bc94f203df672c1d63}{TestItem::TestGetItemType}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00077}00077\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ >=\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1}{Helmet}}\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ <=\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158}{Weapon}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00079}00079\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{GetItemType}}()\ ==\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{Ring}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00080}00080\ \}}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00082}\mbox{\hyperlink{class_test_item_a0bd12b3bd908749bcf1e08bb73b808e3}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_a0bd12b3bd908749bcf1e08bb73b808e3}{TestItem::TestGetEnchantmentType}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00083}00083\ \ \ \ \ CPPUNIT\_ASSERT(noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ >=\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}}\ \&\&\ noArgsItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ <=\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{DamageBonus}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00085}00085\ \ \ \ \ CPPUNIT\_ASSERT(customItemObject-\/>\mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{GetEnchantmentType}}()\ ==\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}});}
+\DoxyCodeLine{\Hypertarget{testitem_8cpp_source_l00086}00086\ \}}
 
 \end{DoxyCode}

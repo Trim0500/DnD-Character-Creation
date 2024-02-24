@@ -17,13 +17,9 @@
 \item 
 \mbox{\hyperlink{class_character_1_1_character_aa94542ab961f19fe4d469ced38464e1f}{Character}} (std\+::string t\+\_\+name, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}} t\+\_\+class, const std\+::vector$<$ int $>$ \&t\+\_\+ability\+\_\+scores)
 \item 
-\mbox{\hyperlink{class_character_1_1_character_ac9fe4ad1fbd0322111f579168791718e}{Character}} (std\+::string t\+\_\+name, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}} t\+\_\+class, const std\+::vector$<$ int $>$ \&t\+\_\+ability\+\_\+scores, int t\+\_\+max\+\_\+hit\+\_\+points)
-\item 
 const int \mbox{\hyperlink{class_character_1_1_character_ac6787ac4d6fa28285fa3f7df1e502f26}{ID}} ()
 \item 
-const std\+::string \& \mbox{\hyperlink{class_character_1_1_character_a05ced65d9747dc7717ee447904755543}{Name}} ()
-\item 
-const std\+::string \& \mbox{\hyperlink{class_character_1_1_character_a4c9af781770b0bec21985052e8561421}{Name}} (std\+::string)
+std\+::string \& \mbox{\hyperlink{class_character_1_1_character_a75480b2e7cdd7ebb5534158ce4d81570}{Name}} ()
 \item 
 void \mbox{\hyperlink{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98}{Print\+\_\+\+Character\+\_\+\+Sheet}} ()
 \item 
@@ -31,7 +27,7 @@ const int \mbox{\hyperlink{class_character_1_1_character_ad2e7f922733b104ea71669
 \item 
 const int \mbox{\hyperlink{class_character_1_1_character_ad504c4ba9d315ed891bf2b8af07734e4}{Levels}} (\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}} t\+\_\+class)
 \item 
-const std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{class_character_1_1_character_aa8a71bca9b4a743c19195b75a5ea1568}{Classes}} ()
+const std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_1_1_character_a7f202126edef72517f325913c8198138}{Classes}} ()
 \item 
 bool \mbox{\hyperlink{class_character_1_1_character_a77829df538a2a1115b08481d8a25e887}{Levelup}} (\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}} t\+\_\+class)
 \item 
@@ -43,9 +39,17 @@ const int \mbox{\hyperlink{class_character_1_1_character_a0a507afa1d4ab6fac45896
 \item 
 const int \mbox{\hyperlink{class_character_1_1_character_a1c8a8f5282248fbeb44a39b7b760e437}{Hit\+\_\+\+Points}} ()
 \item 
-const int \mbox{\hyperlink{class_character_1_1_character_af2939a4c80fb3447d372257ddb29d851}{Modifier}} (\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830}{Abilities}} t\+\_\+ability)
+void \mbox{\hyperlink{class_character_1_1_character_a69d342981eb8f28abfd5348765af1371}{Receive\+\_\+\+Damage}} (int t\+\_\+damage)
 \item 
-const int \mbox{\hyperlink{class_character_1_1_character_a80dcf77987d499b5ad85634bbf01ca50}{Ability\+\_\+\+Score}} (\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830}{Abilities}} t\+\_\+ability)
+void \mbox{\hyperlink{class_character_1_1_character_a012dd4525b3a888fa94264e88d8325d0}{Receive\+\_\+\+Healing}} (int t\+\_\+heal)
+\item 
+const bool \mbox{\hyperlink{class_character_1_1_character_a408d26f83e7e9c76ae95e795a2407df0}{Is\+\_\+\+Alive}} ()
+\item 
+const int \mbox{\hyperlink{class_character_1_1_character_a2bd558692c85928ca8a286d75f98687b}{Modifier}} (\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}} t\+\_\+ability)
+\item 
+const int \mbox{\hyperlink{class_character_1_1_character_a669226691026e10d884de6fba6651f83}{Ability\+\_\+\+Score\+\_\+\+Natural}} (\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}} t\+\_\+ability)
+\item 
+const int \mbox{\hyperlink{class_character_1_1_character_a3adc42b1975424edb212f769c98ae077}{Ability\+\_\+\+Score\+\_\+\+Bonused}} (\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}} t\+\_\+ability)
 \item 
 const int \mbox{\hyperlink{class_character_1_1_character_a76dd436f8b67c7922e54526fbe3ef0b3}{Armour\+\_\+\+Class}} ()
 \item 
@@ -58,13 +62,17 @@ const int \mbox{\hyperlink{class_character_1_1_character_a33417dd8e9dab618c2301f
 \mbox{\hyperlink{classitemcontainer_1_1_item_container}{itemcontainer\+::\+Item\+Container}} \& \mbox{\hyperlink{class_character_1_1_character_a9f40a0944338a4ad57bb1555c85b7a24}{Inventory}} ()
 \item 
 const \mbox{\hyperlink{classitem_1_1_item}{item\+::\+Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c}{Equipped\+\_\+\+Items}} (\mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ad}{Equipment\+\_\+\+Slots}} t\+\_\+item)
+\item 
+bool \mbox{\hyperlink{class_character_1_1_character_ab09ba584adc1883651f03f0c2e0c7401}{Is\+\_\+\+Multi\+\_\+\+Classed}} (\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}} t\+\_\+class)
+\item 
+const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}}, \mbox{\hyperlink{class_dice}{Dice}} \texorpdfstring{$\ast$}{*} $>$ \& \mbox{\hyperlink{class_character_1_1_character_aa55e190cf3512957533d862a24497b47}{Hit\+\_\+\+Die\+\_\+\+Pool}} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00091}{91}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00107}{107}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 
 
@@ -72,7 +80,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00091}{91}} of file \m
 \Hypertarget{class_character_1_1_character_aeca5c2ffbe476a75c800c02bbf08e303}\label{class_character_1_1_character_aeca5c2ffbe476a75c800c02bbf08e303} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -82,65 +90,65 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00003}{3}} of file \
 \Hypertarget{class_character_1_1_character_ae44cbb0cffa98b04a4e5953dc03b0395}\label{class_character_1_1_character_ae44cbb0cffa98b04a4e5953dc03b0395} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_character_1_1_character}{Character}} \&}]{t\+\_\+character }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a0031e30d656396a8be160d6b1a02648b}\label{class_character_1_1_character_a0031e30d656396a8be160d6b1a02648b} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}}}]{t\+\_\+class }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a8e15e5c459eaeac6e562032c2bc0dec1}\label{class_character_1_1_character_a8e15e5c459eaeac6e562032c2bc0dec1} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}}}]{t\+\_\+class }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_aa94542ab961f19fe4d469ced38464e1f}\label{class_character_1_1_character_aa94542ab961f19fe4d469ced38464e1f} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}}}]{t\+\_\+class,  }\item[{const std\+::vector$<$ int $>$ \&}]{t\+\_\+ability\+\_\+scores }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
-
-\Hypertarget{class_character_1_1_character_ac9fe4ad1fbd0322111f579168791718e}\label{class_character_1_1_character_ac9fe4ad1fbd0322111f579168791718e} 
-\index{Character::Character@{Character::Character}!Character@{Character}}
-\index{Character@{Character}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
-{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}}}]{t\+\_\+class,  }\item[{const std\+::vector$<$ int $>$ \&}]{t\+\_\+ability\+\_\+scores,  }\item[{int}]{t\+\_\+max\+\_\+hit\+\_\+points }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00124}{124}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00083}{83}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_character_1_1_character_a80dcf77987d499b5ad85634bbf01ca50}\label{class_character_1_1_character_a80dcf77987d499b5ad85634bbf01ca50} 
-\index{Character::Character@{Character::Character}!Ability\_Score@{Ability\_Score}}
-\index{Ability\_Score@{Ability\_Score}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Ability\_Score()}{Ability\_Score()}}
-{\footnotesize\ttfamily const int Character\+::\+Character\+::\+Ability\+\_\+\+Score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830}{Abilities}}}]{t\+\_\+ability }\end{DoxyParamCaption})}
+\Hypertarget{class_character_1_1_character_a3adc42b1975424edb212f769c98ae077}\label{class_character_1_1_character_a3adc42b1975424edb212f769c98ae077} 
+\index{Character::Character@{Character::Character}!Ability\_Score\_Bonused@{Ability\_Score\_Bonused}}
+\index{Ability\_Score\_Bonused@{Ability\_Score\_Bonused}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{Ability\_Score\_Bonused()}{Ability\_Score\_Bonused()}}
+{\footnotesize\ttfamily const int Character\+::\+Character\+::\+Ability\+\_\+\+Score\+\_\+\+Bonused (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}}}]{t\+\_\+ability }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00321}{321}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00315}{315}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+
+\Hypertarget{class_character_1_1_character_a669226691026e10d884de6fba6651f83}\label{class_character_1_1_character_a669226691026e10d884de6fba6651f83} 
+\index{Character::Character@{Character::Character}!Ability\_Score\_Natural@{Ability\_Score\_Natural}}
+\index{Ability\_Score\_Natural@{Ability\_Score\_Natural}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{Ability\_Score\_Natural()}{Ability\_Score\_Natural()}}
+{\footnotesize\ttfamily const int Character\+::\+Character\+::\+Ability\+\_\+\+Score\+\_\+\+Natural (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}}}]{t\+\_\+ability }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00302}{302}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a76dd436f8b67c7922e54526fbe3ef0b3}\label{class_character_1_1_character_a76dd436f8b67c7922e54526fbe3ef0b3} 
 \index{Character::Character@{Character::Character}!Armour\_Class@{Armour\_Class}}
@@ -150,7 +158,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00321}{321}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00344}{344}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00338}{338}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a8f976a772c74975eed6b64fdd0cae996}\label{class_character_1_1_character_a8f976a772c74975eed6b64fdd0cae996} 
 \index{Character::Character@{Character::Character}!Attack\_Bonus@{Attack\_Bonus}}
@@ -160,17 +168,17 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00344}{344}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00356}{356}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00350}{350}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
-\Hypertarget{class_character_1_1_character_aa8a71bca9b4a743c19195b75a5ea1568}\label{class_character_1_1_character_aa8a71bca9b4a743c19195b75a5ea1568} 
+\Hypertarget{class_character_1_1_character_a7f202126edef72517f325913c8198138}\label{class_character_1_1_character_a7f202126edef72517f325913c8198138} 
 \index{Character::Character@{Character::Character}!Classes@{Classes}}
 \index{Classes@{Classes}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Classes()}{Classes()}}
-{\footnotesize\ttfamily const std\+::bitset$<$ 11 $>$ Character\+::\+Character\+::\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily const std\+::bitset$<$ 12 $>$ Character\+::\+Character\+::\+Classes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00153}{153}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00164}{164}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a33417dd8e9dab618c2301f7fcf42590e}\label{class_character_1_1_character_a33417dd8e9dab618c2301f7fcf42590e} 
 \index{Character::Character@{Character::Character}!Damage\_Bonus@{Damage\_Bonus}}
@@ -180,7 +188,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00153}{153}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00379}{379}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00373}{373}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a9c9be05b2d02069f69c91c9ad569a360}\label{class_character_1_1_character_a9c9be05b2d02069f69c91c9ad569a360} 
 \index{Character::Character@{Character::Character}!Equip\_Item@{Equip\_Item}}
@@ -190,7 +198,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00379}{379}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00262}{262}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c}\label{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c} 
 \index{Character::Character@{Character::Character}!Equipped\_Items@{Equipped\_Items}}
@@ -200,7 +208,17 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00262}{262}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00219}{219}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00254}{254}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_1_1_character_aa55e190cf3512957533d862a24497b47}\label{class_character_1_1_character_aa55e190cf3512957533d862a24497b47} 
+\index{Character::Character@{Character::Character}!Hit\_Die\_Pool@{Hit\_Die\_Pool}}
+\index{Hit\_Die\_Pool@{Hit\_Die\_Pool}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{Hit\_Die\_Pool()}{Hit\_Die\_Pool()}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}}, \mbox{\hyperlink{class_dice}{Dice}} \texorpdfstring{$\ast$}{*} $>$ \& Character\+::\+Character\+::\+Hit\+\_\+\+Die\+\_\+\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00262}{262}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a1c8a8f5282248fbeb44a39b7b760e437}\label{class_character_1_1_character_a1c8a8f5282248fbeb44a39b7b760e437} 
 \index{Character::Character@{Character::Character}!Hit\_Points@{Hit\_Points}}
@@ -210,7 +228,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00219}{219}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00181}{181}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00196}{196}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ac6787ac4d6fa28285fa3f7df1e502f26}\label{class_character_1_1_character_ac6787ac4d6fa28285fa3f7df1e502f26} 
 \index{Character::Character@{Character::Character}!ID@{ID}}
@@ -220,7 +238,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00181}{181}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00131}{131}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00140}{140}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a9f40a0944338a4ad57bb1555c85b7a24}\label{class_character_1_1_character_a9f40a0944338a4ad57bb1555c85b7a24} 
 \index{Character::Character@{Character::Character}!Inventory@{Inventory}}
@@ -230,7 +248,27 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00131}{131}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00215}{215}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00250}{250}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_1_1_character_a408d26f83e7e9c76ae95e795a2407df0}\label{class_character_1_1_character_a408d26f83e7e9c76ae95e795a2407df0} 
+\index{Character::Character@{Character::Character}!Is\_Alive@{Is\_Alive}}
+\index{Is\_Alive@{Is\_Alive}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{Is\_Alive()}{Is\_Alive()}}
+{\footnotesize\ttfamily const bool Character\+::\+Character\+::\+Is\+\_\+\+Alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00279}{279}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+
+\Hypertarget{class_character_1_1_character_ab09ba584adc1883651f03f0c2e0c7401}\label{class_character_1_1_character_ab09ba584adc1883651f03f0c2e0c7401} 
+\index{Character::Character@{Character::Character}!Is\_Multi\_Classed@{Is\_Multi\_Classed}}
+\index{Is\_Multi\_Classed@{Is\_Multi\_Classed}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{Is\_Multi\_Classed()}{Is\_Multi\_Classed()}}
+{\footnotesize\ttfamily bool Character\+::\+Character\+::\+Is\+\_\+\+Multi\+\_\+\+Classed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}}}]{t\+\_\+class }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00443}{443}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ad504c4ba9d315ed891bf2b8af07734e4}\label{class_character_1_1_character_ad504c4ba9d315ed891bf2b8af07734e4} 
 \index{Character::Character@{Character::Character}!Levels@{Levels}}
@@ -240,7 +278,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00215}{215}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00147}{147}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00158}{158}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a77829df538a2a1115b08481d8a25e887}\label{class_character_1_1_character_a77829df538a2a1115b08481d8a25e887} 
 \index{Character::Character@{Character::Character}!Levelup@{Levelup}}
@@ -250,7 +288,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00147}{147}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00219}{219}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00177}{177}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a0a507afa1d4ab6fac45896da9c81d784}\label{class_character_1_1_character_a0a507afa1d4ab6fac45896da9c81d784} 
 \index{Character::Character@{Character::Character}!Max\_Hit\_Points@{Max\_Hit\_Points}}
@@ -260,37 +298,27 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00219}{219}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00177}{177}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00192}{192}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
-\Hypertarget{class_character_1_1_character_af2939a4c80fb3447d372257ddb29d851}\label{class_character_1_1_character_af2939a4c80fb3447d372257ddb29d851} 
+\Hypertarget{class_character_1_1_character_a2bd558692c85928ca8a286d75f98687b}\label{class_character_1_1_character_a2bd558692c85928ca8a286d75f98687b} 
 \index{Character::Character@{Character::Character}!Modifier@{Modifier}}
 \index{Modifier@{Modifier}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Modifier()}{Modifier()}}
-{\footnotesize\ttfamily const int Character\+::\+Character\+::\+Modifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830}{Abilities}}}]{t\+\_\+ability }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily const int Character\+::\+Character\+::\+Modifier (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}}}]{t\+\_\+ability }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00307}{307}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00289}{289}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
-\Hypertarget{class_character_1_1_character_a05ced65d9747dc7717ee447904755543}\label{class_character_1_1_character_a05ced65d9747dc7717ee447904755543} 
+\Hypertarget{class_character_1_1_character_a75480b2e7cdd7ebb5534158ce4d81570}\label{class_character_1_1_character_a75480b2e7cdd7ebb5534158ce4d81570} 
 \index{Character::Character@{Character::Character}!Name@{Name}}
 \index{Name@{Name}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily const std\+::string \& Character\+::\+Character\+::\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{Name()}{Name()}}
+{\footnotesize\ttfamily std\+::string \& Character\+::\+Character\+::\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00132}{132}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
-\Hypertarget{class_character_1_1_character_a4c9af781770b0bec21985052e8561421}\label{class_character_1_1_character_a4c9af781770b0bec21985052e8561421} 
-\index{Character::Character@{Character::Character}!Name@{Name}}
-\index{Name@{Name}!Character::Character@{Character::Character}}
-\doxysubsubsection{\texorpdfstring{Name()}{Name()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily const std\+::string \& Character\+::\+Character\+::\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00142}{142}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00144}{144}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98}\label{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98} 
 \index{Character::Character@{Character::Character}!Print\_Character\_Sheet@{Print\_Character\_Sheet}}
@@ -300,7 +328,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00142}{142}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00148}{148}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ab7bbbe32864bb38d2774d4ba96f2c202}\label{class_character_1_1_character_ab7bbbe32864bb38d2774d4ba96f2c202} 
 \index{Character::Character@{Character::Character}!Proficiency\_Bonus@{Proficiency\_Bonus}}
@@ -310,7 +338,27 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00148}{148}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00374}{374}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00368}{368}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+
+\Hypertarget{class_character_1_1_character_a69d342981eb8f28abfd5348765af1371}\label{class_character_1_1_character_a69d342981eb8f28abfd5348765af1371} 
+\index{Character::Character@{Character::Character}!Receive\_Damage@{Receive\_Damage}}
+\index{Receive\_Damage@{Receive\_Damage}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{Receive\_Damage()}{Receive\_Damage()}}
+{\footnotesize\ttfamily void Character\+::\+Character\+::\+Receive\+\_\+\+Damage (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+damage }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00259}{259}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+
+\Hypertarget{class_character_1_1_character_a012dd4525b3a888fa94264e88d8325d0}\label{class_character_1_1_character_a012dd4525b3a888fa94264e88d8325d0} 
+\index{Character::Character@{Character::Character}!Receive\_Healing@{Receive\_Healing}}
+\index{Receive\_Healing@{Receive\_Healing}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{Receive\_Healing()}{Receive\_Healing()}}
+{\footnotesize\ttfamily void Character\+::\+Character\+::\+Receive\+\_\+\+Healing (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+heal }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00269}{269}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ad2e7f922733b104ea716698eaef0ed8b}\label{class_character_1_1_character_ad2e7f922733b104ea716698eaef0ed8b} 
 \index{Character::Character@{Character::Character}!Sum\_Levels@{Sum\_Levels}}
@@ -320,7 +368,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00374}{374}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00210}{210}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00168}{168}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a5ace6e055c2cb431a58dda20df18d46e}\label{class_character_1_1_character_a5ace6e055c2cb431a58dda20df18d46e} 
 \index{Character::Character@{Character::Character}!Unequip\_Item@{Unequip\_Item}}
@@ -330,7 +378,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00210}{210}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00301}{301}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00253}{253}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 
 

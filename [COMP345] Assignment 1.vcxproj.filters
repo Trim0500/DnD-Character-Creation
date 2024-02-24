@@ -56,9 +56,6 @@
     <ClInclude Include="Dice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Character.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="testitemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
