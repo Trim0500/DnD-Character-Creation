@@ -1,5 +1,3 @@
-//header for var declaration
-//use #include to reference in .cpp
 #include <vector>
 #include <string>
 
@@ -16,12 +14,16 @@ namespace Map {
 
 	Cell_Type ConvertToCellType(char letter);
 
+	//all possible directions to look in:  down , right ,   up   ,  back
+	const vector<pair<int, int>> dirs = { {0, 1}, {1, 0}, {0, -1}, {-1, 0} };
+
 	class Map {
 	public: 
 		Map(int rows, int cols);
 
 		const int Rows() { return rows; };
 		const int Cols() { return cols; };
+		const int End_Cell() { return *end_cell; };
 
 		//Prompts user for map inputs
 		static Map* Create();
@@ -36,14 +38,16 @@ namespace Map {
 		void Print();
 
 		//Check if there is a possible passage through the map
+		bool IsTherePath();
+
+		//Check if the given x,y coordinates are a valid cell to step on
+		bool ValidCell(int row, int col, vector<vector<bool>> visitde);
 	
 	private:
 		int rows; // rows/height/x
 		int cols; // columns/width/y
-		//int start_row; // row for the start cell
-		//int start_col; // col for the start cell
-		int end_row; // row for the end cell
-		int end_col; // col for the end cell
+
+		int end_cell[2];
 		//start = upper right cell, ie: 0,0
 		//end = lower left cell, ie: cols.length-1, rows.lenght-1
 
