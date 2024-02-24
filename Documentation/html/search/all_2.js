@@ -6,5 +6,7 @@ var searchData=
   ['barbarian_3',['Barbarian',['../namespace_character.html#afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7',1,'Character']]],
   ['bard_4',['Bard',['../namespace_character.html#afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5',1,'Character']]],
   ['belt_5',['Belt',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a1ec13bc0551b0b9b015ba22b6ff865d5',1,'item::Belt'],['../namespace_character.html#a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c',1,'Character::Belt']]],
-  ['boots_6',['Boots',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d',1,'item::Boots'],['../namespace_character.html#a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b',1,'Character::Boots']]]
+  ['boots_6',['Boots',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d',1,'item::Boots'],['../namespace_character.html#a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b',1,'Character::Boots']]],
+  ['boots_5fmax_5fweight_7',['BOOTS_MAX_WEIGHT',['../testitem_8cpp.html#a58b3d0e24110339040cf727496ce9872',1,'testitem.cpp']]],
+  ['boots_5fmin_5fweight_8',['BOOTS_MIN_WEIGHT',['../testitem_8cpp.html#a540acde2449837f18b49248751e24e51',1,'testitem.cpp']]]
 ];

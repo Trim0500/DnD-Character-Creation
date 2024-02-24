@@ -2,5 +2,25 @@
 \hypertarget{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e}{}\label{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e}\index{\mbox{[}COMP345\mbox{]} Assignment 1@{[COMP345] Assignment 1}}
 \label{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md0}%
 \Hypertarget{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md0}%
- \hypertarget{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{\texorpdfstring{Description}{Description}}\label{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md1}
-A program that simulates a DnD character creation tool submitted as an assignment to Concorida University\textquotesingle{}s COMP345 (Advanced Program Design with C++) course. 
+ \hypertarget{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{\texorpdfstring{Authors}{Authors}}\label{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Charles Partous
+\item Tristan Lafleur
+\item Andrea Lewis
+\item Michelle Pilonsky
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md2}{}\doxysubsection{\texorpdfstring{Description}{Description}}\label{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md2}
+A program that simulates a DnD character creation tool using the 5e ruleset submitted as an assignment to Concorida University\textquotesingle{}s COMP345 (Advanced Program Design with C++) course.\hypertarget{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md3}{}\doxysubsection{\texorpdfstring{Installation Instructions}{Installation Instructions}}\label{md__c_1_2_users_2trist_2_documents_2_c_o_m_p345_01_c_09_09_01_code_2_0f_c_o_m_p345_0e_01_assignment_011_2_r_e_a_d_m_e_autotoc_md3}
+This program was created using Visual Studio 2022. In the zip file the solution is included along with the necessary source code to create a build and run it.
+
+In order to make a successful build of the project, follow these steps
+
+
+\begin{DoxyEnumerate}
+\item Open the solution in Visual Studio and wait for everything to load
+\item Locate the directory for the Cpp\+Unit library and source code.
+\item Go to Go to \textquotesingle{}Project \texorpdfstring{$>$}{>} Properties \texorpdfstring{$>$}{>} C/\+C++ \texorpdfstring{$>$}{>} General\textquotesingle{}. Put "{}\{your directory\}\textbackslash{}cppunit-\/1.\+12.\+1\textbackslash{}include"{} in the \textquotesingle{}Additional Include Directories\textquotesingle{} text box.
+\item Go to \textquotesingle{}Project \texorpdfstring{$>$}{>} Properties \texorpdfstring{$>$}{>} Linker \texorpdfstring{$>$}{>} Input\textquotesingle{}. Put "{}\{your directory\}\textbackslash{}cppunit-\/1.\+12.\+1\textbackslash{}lib\textbackslash{}cppunit.\+lib"{} in the \textquotesingle{}Additional Dependences\textquotesingle{} text box.
+\item Go to \textquotesingle{}Project \texorpdfstring{$>$}{>} Properties \texorpdfstring{$>$}{>} Build Events \texorpdfstring{$>$}{>} Post-\/\+Build Event\textquotesingle{}. Put \textquotesingle{}"{}\$(\+Target\+Path)"{}\textquotesingle{} in the \textquotesingle{}Command Line\textquotesingle{} textbox.\+Put \textquotesingle{}Unit Tests...\textquotesingle{} in the \textquotesingle{}Description\textquotesingle{} textbox.
+\item Run the project 
+\end{DoxyEnumerate}

@@ -149,7 +149,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Dice.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="itemcontainer.cpp" />
     <ClCompile Include="Character.cpp" />
