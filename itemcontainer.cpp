@@ -20,11 +20,38 @@ namespace {
 }
 
 namespace itemcontainer {
-	ItemContainer::ItemContainer(const string& _containerName, const int& _containerType, const int& _capacity) :
-					Item(_containerName, 0, _containerType, 10) {
+	ItemContainer::ItemContainer(const string& _containerName, const int& _containerType, const float& _capacity) :
+					Item(_containerName, 0, _containerType, 10, _containerType == 8 ? 5 : _containerType == 10 ? 25 : 0) {
 		vector<Item> _items;
 		items = _items;
 		capacity = _capacity;
+	}
+
+	int ItemContainer::AddNewItem(Item* newItem) {
+		if (GetItemType() == WornItems) {
+			Item* foundItem = GetItem(newItem->GetItemType());
+			if (foundItem != nullptr) {
+				return -1;
+			}
+		}
+		else if (newItem->GetItemWeight() + GetTotalItemWeight() >= capacity) {
+			return -1;
+		}
+
+		items.push_back(*newItem);
+
+		return 1;
+	}
+
+	float ItemContainer::GetTotalItemWeight() {
+		float total = 0.0;
+
+		for (size_t i = 0; i < items.size(); i++)
+		{
+			total += items[i].GetItemWeight();
+		}
+
+		return total;
 	}
 
 	Item* ItemContainer::GetItem(const string& nameKey) {
@@ -92,6 +119,9 @@ namespace itemcontainer {
 					<< to_string(items[i].GetEnchantmentBonus())
 					<< "\t"
 					<< statStrings[items[i].GetEnchantmentType()]
+					<< "\t"
+					<< to_string(items[i].GetItemWeight())
+					<< "lbs"
 					<< endl;
 		}
 		cout << "------------------------------------------" << endl;
