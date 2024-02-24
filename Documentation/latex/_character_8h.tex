@@ -9,7 +9,6 @@
 {\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
 {\ttfamily \#include "{}item.\+h"{}}\newline
 {\ttfamily \#include "{}itemcontainer.\+h"{}}\newline
-{\ttfamily \#include "{}Dice.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,23 +35,22 @@ enum class \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee4
 , \newline
 \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174}{Character\+::\+Rogue}} = 8
 , \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f}{Character\+::\+Sorcerer}} = 9
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a21305b754e03843876abc27387a0e57e}{Character\+::\+Warlock}} = 10
-, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5}{Character\+::\+Wizard}} = 11
+, \mbox{\hyperlink{namespace_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5}{Character\+::\+Wizard}} = 10
  \}
 \item 
-enum class \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edb}{Character\+::\+Abilities\+\_\+\+Stats}} \{ \newline
-\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba5a455a612047a34ede7a6c564fa67c0a}{Character\+::\+Strength}} = 0
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbaa8747f5acdc2352d39f455bdd1689273}{Character\+::\+Dexterity}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbaae93e52a3c1f3bbcefbc805331fca9e9}{Character\+::\+Constitution}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba8f7ba58961e0fe40cfda61b412537fba}{Character\+::\+Intelligence}}
+enum class \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830}{Character\+::\+Abilities}} \{ \newline
+\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a5a455a612047a34ede7a6c564fa67c0a}{Character\+::\+Strength}} = 0
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa8747f5acdc2352d39f455bdd1689273}{Character\+::\+Dexterity}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aae93e52a3c1f3bbcefbc805331fca9e9}{Character\+::\+Constitution}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a8f7ba58961e0fe40cfda61b412537fba}{Character\+::\+Intelligence}}
 , \newline
-\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba646f0a01b685558b975b5cd3f5b36241}{Character\+::\+Wisdom}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbaa47211f258a8e0172523525035c743af}{Character\+::\+Charisma}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba0a9be59870ecbb7f97a7878a311b556d}{Character\+::\+Armor\+Class}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311}{Character\+::\+Attack\+Bonus}}
+\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a646f0a01b685558b975b5cd3f5b36241}{Character\+::\+Wisdom}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aa47211f258a8e0172523525035c743af}{Character\+::\+Charisma}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a0a9be59870ecbb7f97a7878a311b556d}{Character\+::\+Armor\+Class}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830a024d7a2554a540559d2a2db537090311}{Character\+::\+Attack\+Bonus}}
 , \newline
-\mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbaca1f13e821cca99c2b1e2b3fc4e12e9f}{Character\+::\+Damage\+Bonus}}
-, \mbox{\hyperlink{namespace_character_adc11299f73c335c725b36d6e85fc7edbad4cd0dabcf4caa22ad92fab40844c786}{Character\+::\+NA}}
+\mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830aca1f13e821cca99c2b1e2b3fc4e12e9f}{Character\+::\+Damage\+Bonus}}
+, \mbox{\hyperlink{namespace_character_a7390822faeff7f62e8084fd85b0d0830ad4cd0dabcf4caa22ad92fab40844c786}{Character\+::\+NA}}
  \}
 \item 
 enum class \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0ad}{Character\+::\+Equipment\+\_\+\+Slots}} \{ \newline
@@ -70,27 +68,25 @@ enum class \mbox{\hyperlink{namespace_character_a9f688397f56ff67e4bdb949a6939c0a
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a00b5cdecff11125460d6b315e95cdeb3}{Character\+::is\+Barbarian}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0001 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a48cd93a697e6f72f97115623a09d3d7f}{Character\+::is\+Barbarian}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}001 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_ae470b8104e39dd0062fc2bb73f0b29f6}{Character\+::is\+Bard}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0010 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a753965f474a07c624a345cf34f04b271}{Character\+::is\+Bard}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}010 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_ae1452f04c4a6d2b9d92820077901a74f}{Character\+::is\+Cleric}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0100 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_ae5405d35ae72603a817edc43bf142519}{Character\+::is\+Cleric}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}100 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_aa71f9e67ef0b41fea2e39476d659ea97}{Character\+::is\+Druid}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}1000 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a6a57e32f18791d28fcf6c79c85d56235}{Character\+::is\+Druid}} \{ 0b0000\textquotesingle{}0001\textquotesingle{}000 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_ae8342c69dddc0b72ae97940abc0b89f1}{Character\+::is\+Fighter}} \{ 0b0000\textquotesingle{}0001\textquotesingle{}0000 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a809aff43f21676e7338bee84e94f883a}{Character\+::is\+Fighter}} \{ 0b0000\textquotesingle{}0010\textquotesingle{}000 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_ad47be3c083a7f54c72fe9a756bf5bd4c}{Character\+::is\+Monk}} \{ 0b0000\textquotesingle{}0010\textquotesingle{}0000 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a6fa916f3a9562dfc0b9d86fdbd6372bc}{Character\+::is\+Monk}} \{ 0b0000\textquotesingle{}0100\textquotesingle{}000 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a60aa5b15e5d991bb24c68f7849c38949}{Character\+::is\+Paladin}} \{ 0b0000\textquotesingle{}0100\textquotesingle{}0000 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a12f70fecea003c3a9fbbd7bb73f816ff}{Character\+::is\+Paladin}} \{ 0b0000\textquotesingle{}1000\textquotesingle{}000 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a337f4cc2a738d4433e1692d0532465f6}{Character\+::is\+Ranger}} \{ 0b0000\textquotesingle{}1000\textquotesingle{}0000 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a5da74a50fd0c0338d0cf6dcf6bd5c762}{Character\+::is\+Ranger}} \{ 0b0001\textquotesingle{}0000\textquotesingle{}000 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_af46d588138d500d3cec393eceda50be1}{Character\+::is\+Rogue}} \{ 0b0001\textquotesingle{}0000\textquotesingle{}0000 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_aaf70df9a8019d5e0d4eeb704be6b1bbb}{Character\+::is\+Rogue}} \{ 0b0010\textquotesingle{}0000\textquotesingle{}000 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a598f797fbd8149540e35ae308f41b960}{Character\+::is\+Sorcerer}} \{ 0b0010\textquotesingle{}0000\textquotesingle{}0000 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_ae57c7eda5fe1661c7b32fb79daa91c18}{Character\+::is\+Sorcerer}} \{ 0b0100\textquotesingle{}0000\textquotesingle{}000 \}
 \item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a2b73cffb972ec39f482568a2390edd48}{Character\+::is\+Warlock}} \{ 0b0100\textquotesingle{}0000\textquotesingle{}0000 \}
-\item 
-constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{namespace_character_a83261e8d9ba2c3475bce2a448b5ca4da}{Character\+::is\+Wizard}} \{ 0b1000\textquotesingle{}0000\textquotesingle{}0000 \}
+constexpr std\+::bitset$<$ 11 $>$ \mbox{\hyperlink{namespace_character_a31a6db66bb4d261d470bb93257ca1dfd}{Character\+::is\+Wizard}} \{ 0b1000\textquotesingle{}0000\textquotesingle{}000 \}
 \end{DoxyCompactItemize}

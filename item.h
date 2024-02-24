@@ -51,8 +51,7 @@ namespace item {
 		Weapon,
 		Backpack,
 		WornItems,
-		TreasureChest,
-		Inventory
+		TreasureChest
 	};
 
 	/*!
@@ -120,16 +119,14 @@ namespace item {
 			* @param _enchantmentBonus The reference to a constant integer representing the chosen enchantment bonus value. (0-5)
 			* @param _itemType The reference to a constant integer representing the chosen item type. (1-10)
 			* @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (0-9)
-			* @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 			*/
-			Item(const string&, const int&, const int&, const int&, const float&);
+			Item(const string&, const int&, const int&, const int&);
 			friend bool operator==(const Item& lhs, const Item& rhs) { return lhs.itemName == rhs.itemName; };
 			int GetItemId() { return itemId; };
 			string GetItemName() { return itemName; };
 			int GetEnchantmentBonus() { return enchantmentBonus; };
 			ItemType GetItemType() { return itemType; }
 			CharacterStats GetEnchantmentType() { return enchantmentType; };
-			float GetItemWeight() { return weight; };
 		private:
 			static inline int nextItemId = 0;
 			/*!
@@ -157,10 +154,5 @@ namespace item {
 			* \brief Integer that represents the item's stat
 			*/
 			CharacterStats enchantmentType;
-			/*!
-			* \var weight
-			* \brief Float that represents the weight (in lbs) of an item
-			*/
-			float weight;
 	};
 }
