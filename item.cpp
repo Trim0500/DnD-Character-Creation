@@ -66,48 +66,41 @@ namespace item {
 			{
 				CharacterStats helmetEnchantmentTypes[3] = { Intelligence, Wisdom, ArmorClass };
 				enchantmentType = PickEnchantmentType(helmetEnchantmentTypes);
-				weight = enchantmentType  == 6 ? GenerateRandomInt(8, 13) : 5;
 			}
 				break;
 			case 2:
 			case 3:
 			{
 				enchantmentType = ArmorClass;
-				weight = itemType == 2 ? enchantmentBonus >= 3 ? GenerateRandomInt(40, 65) : GenerateRandomInt(12, 20) : GenerateRandomInt(8, 13);
 			}
 				break;
 			case 4:
 			{
 				CharacterStats ringEnchantmentTypes[5] = { ArmorClass, Strength, Constitution, Wisdom, Charisma };
 				enchantmentType = PickEnchantmentType(ringEnchantmentTypes);
-				weight = 0.5;
 			}
 				break;
 			case 5:
 			{
 				CharacterStats beltEnchantmentTypes[2] = { Constitution, Strength };
 				enchantmentType = PickEnchantmentType(beltEnchantmentTypes);
-				weight = 4.5;
 			}
 				break;
 			case 6:
 			{
 				CharacterStats bootsEnchantmentTypes[2] = { ArmorClass, Dexterity };
 				enchantmentType = PickEnchantmentType(bootsEnchantmentTypes);
-				weight = enchantmentType == 6 ? GenerateRandomInt(8, 13) : 5;
 			}
 				break;
 			case 7:
 			{
 				CharacterStats weaponEnchantmentTypes[2] = { AttackBonus, DamageBonus };
 				enchantmentType = PickEnchantmentType(weaponEnchantmentTypes);
-				weight = enchantmentBonus >= 3 ? GenerateRandomInt(5, 18) : GenerateRandomInt(2, 4);
 			}
 				break;
 			default:
 			{
 				enchantmentType = (CharacterStats)1;
-				weight = 3;
 			}
 				break;
 		}
@@ -117,13 +110,12 @@ namespace item {
 		itemName = name.str();
 	}
 
-	Item::Item(const string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType, const float& _weight) {
+	Item::Item(const string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType) {
 		nextItemId = nextItemId + 1;
 		itemId = nextItemId;
 		itemName = _itemName;
 		enchantmentBonus = _enchantmentBonus;
 		itemType = (ItemType)_itemType;
 		enchantmentType = (CharacterStats)_enchantmentType;
-		weight = _weight;
 	}
 }
