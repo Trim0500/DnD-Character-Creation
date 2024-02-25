@@ -1,3 +1,8 @@
+/*!
+* \file testMap.cpp
+* \brief Test implementation for Map
+*/
+
 #include <iostream>
 #include <string>
 #include <sstream>
