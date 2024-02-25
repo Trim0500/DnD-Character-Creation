@@ -9,6 +9,7 @@
 #include "Character.h"
 #include "Dice.h"
 #include "demoitem.h"
+#include "DiceDemo.h"
 
 using namespace std;
 using namespace CppUnit;
@@ -98,7 +99,6 @@ int main()
 		cout << "invalid query" << endl;
 	}
 
-	getchar();
 
 	delete dice;
 	fighterInventory->GetAllItems().clear();
@@ -112,9 +112,13 @@ int main()
 	{
 		ShowCaseItemCreation();
 
+		DiceDemo();
+
 		cout << "Try again? (y|Y or n|N)";
 		cin >> tryAgain;
 	}
+
+	getchar();
 
 	return 0;
 }
