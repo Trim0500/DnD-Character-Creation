@@ -5,6 +5,8 @@
 #include <list>
 #include <queue>
 
+using namespace std;
+
 //basic constructor
 Map::Map::Map(int r, int c) {
 	rows = r;
@@ -22,16 +24,71 @@ Map::Map* Map::Map::Create() {
 
 	cout << "Enter the number of rows in your map: ";
 	cin >> rows;
+	//validate rows input
+	while (true) {
+		if (cin.fail() || rows < 1) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Invalid input. Please enter a positive number: ";
+			cin >> rows;
+		}
+		else {
+			break;
+		}
+	}
+
 	cout << "Enter the number of columns in your map: ";
 	cin >> cols;
+	//validate columns input
+	while (true) {
+		if (cin.fail() || cols < 1) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Invalid input. Please enter a positive number: ";
+			cin >> cols;
+		}
+		else {
+			break;
+		}
+	}
+
 
 	Map* map = new Map(rows, cols);
-
-	map->Customize();
 	map->Print();
-	cout << "check path" << endl;
-	bool path = map->IsTherePath();
-	cout << path;
+
+	char custm;
+	cout << "Leave as is? (y/n): ";
+	cin >> custm;
+	while (true) {
+		if (cin.fail()) {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Not a valid answer. Leave the map as is? (y/n): ";
+			cin >> custm;
+		}
+		if (custm == 'y' || custm == 'n') {
+			break;
+		}
+		else {
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Not a valid answer. Leave the map as is? (y/n): ";
+			cin >> custm;
+		}
+	}
+
+	if (custm == 'n') {
+		bool path = false;
+		while (!path) {
+			// Let the user customize the map how they want
+			map->Customize();
+			map->Print();
+			// Check that there is at least one path from start to end
+			cout << "Checking if there is a possible path ... " << endl;
+			path = map->IsTherePath();
+		}
+
+	}
 
 	return map;
 }
@@ -44,22 +101,74 @@ void Map::Map::Customize() {
 	Cell_Type type;
 
 	while (!stop) {
-		cout << "Enter the the cell row you want to change: ";
-		cin >> row;
-		cout << "Enter the cell column you want to change: ";
-		cin >> col;
-		cout << "Enter the cell type you want to change it to (e, w, s): ";
+
+		// get row and column input
+		while (true) {
+			//Get row input
+			cout << "Enter the the cell row you want to change: ";
+			cin >> row;
+			//validate row input
+			while (true) {
+				if (cin.fail() || row < 1 || row >= rows) {
+					cin.clear();
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					cout << "Invalid input. Please enter a positive number: ";
+					cin >> row;
+				}
+				else {
+					break;
+				}
+			}
+
+			//Get column input
+			cout << "Enter the cell column you want to change: ";
+			cin >> col;
+			//validate column input
+			while (true) {
+				if (cin.fail() || col < 1 || col >= cols) {
+					cin.clear();
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+					cout << "Invalid input. Please enter a positive number: ";
+					cin >> col;
+				}
+				else {
+					break;
+				}
+			}
+
+			//if the cell selected is the start or end
+			if ((row == 0 && col == 0) || (row == end_cell[0] && col == end_cell[1])) {
+				cout << "You cannot change the type of the start or end cell." << endl;
+			}
+			//valid cell input
+			else {
+				break;
+			}
+		}//end row and column input loop
+
+		cout << "Enter the cell type you want to change it to ([e]mpty, [w]all, [s]pecial): ";
 		cin >> celltype;
-
+		//validate input
+		while (true) {
+			if (cin.fail()) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Invalid input. Enter only 1 letter please: ";
+				cin >> row;
+			}
+			else {
+				break;
+			}
+		}
+		//convert input to celltype
 		type = ConvertToCellType(celltype);
-
+		//assign cell to its new type
 		grid[row][col] = type;
-
+		//print results
 		cout << "Your map looks like this: " << endl;
 		Print();
 
 		stop = KeepCustomizing();
-
 	}
 
 }
@@ -69,18 +178,24 @@ bool Map::Map::KeepCustomizing() {
 	while (true) {
 		cout << "Do you want to keep customizing? (y/n): "; //yes/no
 		cin >> ans;
-		if (ans == 'y' || ans == 'n') {
-			break;
+		if (!cin.fail()) {
+			if (ans == 'y' || ans == 'n') {
+				break;
+			}
 		}
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cout << "Not a valid answer.";
 	}
-	//don't wants to stop
+
+	//doesn't want to stop
 	if (ans == 'y') {
 		return false;
 	}
 	//wants to stop
 	return true;
 }
+
 
 //convert a given letter to it's corresponding cell type
 Map::Cell_Type Map::ConvertToCellType(char letter) {
@@ -101,13 +216,11 @@ Map::Cell_Type Map::ConvertToCellType(char letter) {
 
 bool Map::Map::IsTherePath() {
 	// start = 0,0
-	// end = lower right cell, ie: cols.length-1, rows.lenght-1
-	//int curr[2] = { 0,0 }; //current checking cell
-	//end_cell = {r-1, c-1}
+	// end_cell = {r-1, c-1}
 	bool found = false;
 
 	//initial list of visited cells (none to begin with)
-	vector<vector<bool>> visited(rows, std::vector<bool>(cols, false));
+	vector<vector<bool>> visited(rows, vector<bool>(cols, false));
 
 	//BFS queue
 	queue<pair<int, int>> q;
@@ -115,43 +228,41 @@ bool Map::Map::IsTherePath() {
 	//start cell is visited (0,0)
 	q.push({ 0,0 });
 	visited[0][0] = true;
-	cout << "initial values" << endl;
 
 	while (!q.empty()) {
 		auto curr = q.front(); // current checking cell
 		q.pop();
 
-		cout << "checking: " << curr.first << ", " << curr.second << endl;
+		//Scout << "checking: " << curr.first << ", " << curr.second << endl;
 
-		//check if at the end cell
+		//check if reach end cell
 		if (curr.first == end_cell[0] && curr.second == end_cell[1]) {
-			cout << "almost done" << endl;
+			//if made it this far, there is a path.
+			cout << "There is a path." << endl;
 			return true;
 		}
 
 		//keep searching
 		for (const auto& dir : dirs) {
-			cout << "keep searching" << endl;
 			int nextRow = curr.first + dir.first;
 			int nextCol = curr.second + dir.second;
 
-			cout << "nextrow: " << nextRow << " nextcol: " << nextCol << endl;
+			//DEBUG: cout << "nextrow: " << nextRow << " nextcol: " << nextCol << endl;
 
 			//check if next cell is not a wall or outside the map or been visited
-			if (ValidCell(nextRow, nextCol, visited) {
+			if (ValidCell(nextRow, nextCol, visited)) {
 				q.push({ nextRow, nextCol });
-				visited[nextRow][nextCol] = true;
 				visited[nextRow][nextCol] = true;
 			}
 		}
 	}
-
+	cout << "There is no path. Change your map." << endl;
 	return false;
-
 }
 
+//validate the next cell
 bool Map::Map::ValidCell(int nextRow, int nextCol, vector<vector<bool>> visited) {
-	return (nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols && grid[nextRow][nextCol] == Cell_Type::empty && !visited[nextRow][nextCol]);
+	return (nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols && grid[nextRow][nextCol] != Cell_Type::wall && !visited[nextRow][nextCol]);
 }
 
 //print the grid
@@ -163,3 +274,9 @@ void Map::Map::Print() {
 		cout << endl;
 	}
 }
+
+//USE ONLY IN DEBUG
+void Map::Map::ChangeCell(int row, int col, Cell_Type type) {
+	grid[row][col] = type;
+}
+
