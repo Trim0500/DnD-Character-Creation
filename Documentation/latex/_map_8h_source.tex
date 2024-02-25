@@ -1,0 +1,57 @@
+\doxysection{Map.\+h}
+\hypertarget{_map_8h_source}{}\label{_map_8h_source}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/DnD Character Creation Source Code/Map.h@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/Map.h}}
+\mbox{\hyperlink{_map_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00011}00011\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00017}00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_map}{Map}}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00023}\mbox{\hyperlink{class_map_aa1da1578fd3d40c69f3546de3ba3bc6f}{00023}}\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_map_aa1da1578fd3d40c69f3546de3ba3bc6f}{Cell\_Type}}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00024}00024\ \ \ \ \ \ \ \ \ empty=\textcolor{charliteral}{'\_'},\textcolor{comment}{//empty\ cell,\ character\ can\ move\ through\ it.}}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ wall=\textcolor{charliteral}{'w'},\textcolor{comment}{//wall\ cell,\ character\ cannot\ move\ through\ it.}}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ special=\textcolor{charliteral}{'s'}\textcolor{comment}{//special\ cell,\ character\ has\ a\ special\ interraction,\ can\ move\ after\ interraction.}}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00027}00027\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00033}\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{00033}}\ \ \ \ \ \mbox{\hyperlink{class_map_aa1da1578fd3d40c69f3546de3ba3bc6f}{Cell\_Type}}\ \mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{ConvertToCellType}}(\textcolor{keywordtype}{char}\ letter);}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00039}\mbox{\hyperlink{class_map_a5472a8cbabd535b6c0fc89de49302ee2}{00039}}\ \ \ \ \ \textcolor{keyword}{const}\ vector<pair<int,\ int>>\ \mbox{\hyperlink{class_map_a5472a8cbabd535b6c0fc89de49302ee2}{dirs}}\ =\ \{\ \{0,\ 1\},\ \{1,\ 0\},\ \{0,\ -\/1\},\ \{-\/1,\ 0\}\ \};}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00045}\mbox{\hyperlink{class_map_1_1_map}{00045}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{namespace_map}{Map}}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_map}{Map}}(\textcolor{keywordtype}{int}\ rows,\ \textcolor{keywordtype}{int}\ cols);}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00053}\mbox{\hyperlink{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69}{00053}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69}{Rows}}()\ \{\ \textcolor{keywordflow}{return}\ rows;\ \};}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00054}\mbox{\hyperlink{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4}{00054}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4}{Cols}}()\ \{\ \textcolor{keywordflow}{return}\ cols;\ \};}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00055}\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{00055}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}*\ \mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()\ \{\ \textcolor{keywordflow}{return}\ end\_cell;\ \};}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00056}\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{00056}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ vector<vector<Cell\_Type>>\&\ \mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()\ \{\ \textcolor{keywordflow}{return}\ grid;\ \};}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespace_map}{Map}}*\ Create();}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Customize();}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ KeepCustomizing();}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ Print();}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ IsTherePath();}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ValidCell(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ vector<vector<bool>>\ visitde);}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{comment}{//DEBUG\ ONLY}}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ ChangeCell(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ \mbox{\hyperlink{class_map_aa1da1578fd3d40c69f3546de3ba3bc6f}{Cell\_Type}});}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00096}00096\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00097}00097\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rows;}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ cols;}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ end\_cell[2];}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00118}00118\ \ \ \ \ \ \ \ \ vector<vector<Cell\_Type>>\ grid;}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00119}00119\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_map_8h_source_l00121}00121\ \}}
+
+\end{DoxyCode}

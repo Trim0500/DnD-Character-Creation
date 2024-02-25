@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/Dice.h Source File</title>
+<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/Dice.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -54,7 +54,6 @@ $(function() {
 $(function() { codefold.init(0); });
 /* @license-end */
 </script>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,8 +75,13 @@ $(function() { codefold.init(0); });
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e50ee4dfc2640631efeb2bdc63c536ea.html">DnD Character Creation Source Code</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/Dice.h</div></div>
+  <div class="headertitle"><div class="title">Dice.h</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="_dice_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
@@ -99,30 +103,39 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="class_dice.html#a6b9eadd945ad8fd3840379c8824e5d48">Dice</a>(<span class="keywordtype">string</span> query);</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="class_dice.html#a6b9eadd945ad8fd3840379c8824e5d48">Dice</a>();</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a612a16c434160895563d19099ca0b33b">roll</a>(<span class="keywordtype">string</span> query);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a612a16c434160895563d19099ca0b33b">roll</a>();</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_dice.html#ae9d4338f5c38d6e264499ff933a15b7f">add_die</a>();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_dice.html#ae9d4338f5c38d6e264499ff933a15b7f">add_die</a>(<span class="keywordtype">int</span> amount);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    std::string <a class="code hl_function" href="class_dice.html#ad49a44f1558d483f55e4804402a7e983">get_string</a>();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a0ed26bfb56a0adcabd96f76c1dc8df37">get_leading_multiplier</a>();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a5d113ad9251a8561dd3101010b7af452">get_die_sides</a>();</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a8bf495738034fb0e5461a6761f007506">get_addition</a>();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">int</span> leading_multiplier=1;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordtype">int</span> die_sides=4;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">int</span> addition=0;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a4e3e806488c756347490a4b76c02ec10">roll_with_advantage</a>(<span class="keywordtype">string</span> query);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a870e25ee830b3aa4d0124014d9334961">roll_with_disadvantage</a>(<span class="keywordtype">string</span> query);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a612a16c434160895563d19099ca0b33b">roll</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a4e3e806488c756347490a4b76c02ec10">roll_with_advantage</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a870e25ee830b3aa4d0124014d9334961">roll_with_disadvantage</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_dice.html#ae9d4338f5c38d6e264499ff933a15b7f">add_die</a>();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_dice.html#ae9d4338f5c38d6e264499ff933a15b7f">add_die</a>(<span class="keywordtype">int</span> amount);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    std::string <a class="code hl_function" href="class_dice.html#ad49a44f1558d483f55e4804402a7e983">get_string</a>();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a0ed26bfb56a0adcabd96f76c1dc8df37">get_leading_multiplier</a>();</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a5d113ad9251a8561dd3101010b7af452">get_die_sides</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_dice.html#a8bf495738034fb0e5461a6761f007506">get_addition</a>();</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">int</span> leading_multiplier=1;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">int</span> die_sides=4;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">int</span> addition=0;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>};</div>
 </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aclass_dice_html"><div class="ttname"><a href="class_dice.html">Dice</a></div><div class="ttdef"><b>Definition</b> <a href="#l00028">Dice.h:28</a></div></div>
-<div class="ttc" id="aclass_dice_html_a0ed26bfb56a0adcabd96f76c1dc8df37"><div class="ttname"><a href="class_dice.html#a0ed26bfb56a0adcabd96f76c1dc8df37">Dice::get_leading_multiplier</a></div><div class="ttdeci">int get_leading_multiplier()</div><div class="ttdoc">leading_multipler getter</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00081">Dice.cpp:81</a></div></div>
-<div class="ttc" id="aclass_dice_html_a5d113ad9251a8561dd3101010b7af452"><div class="ttname"><a href="class_dice.html#a5d113ad9251a8561dd3101010b7af452">Dice::get_die_sides</a></div><div class="ttdeci">int get_die_sides()</div><div class="ttdoc">die_sides getter</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00080">Dice.cpp:80</a></div></div>
+<div class="ttc" id="aclass_dice_html_a0ed26bfb56a0adcabd96f76c1dc8df37"><div class="ttname"><a href="class_dice.html#a0ed26bfb56a0adcabd96f76c1dc8df37">Dice::get_leading_multiplier</a></div><div class="ttdeci">int get_leading_multiplier()</div><div class="ttdoc">leading_multipler getter</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00109">Dice.cpp:109</a></div></div>
+<div class="ttc" id="aclass_dice_html_a4e3e806488c756347490a4b76c02ec10"><div class="ttname"><a href="class_dice.html#a4e3e806488c756347490a4b76c02ec10">Dice::roll_with_advantage</a></div><div class="ttdeci">int roll_with_advantage()</div><div class="ttdoc">Roll the dice object twice, keeping highest.</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00064">Dice.cpp:64</a></div></div>
+<div class="ttc" id="aclass_dice_html_a5d113ad9251a8561dd3101010b7af452"><div class="ttname"><a href="class_dice.html#a5d113ad9251a8561dd3101010b7af452">Dice::get_die_sides</a></div><div class="ttdeci">int get_die_sides()</div><div class="ttdoc">die_sides getter</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00108">Dice.cpp:108</a></div></div>
 <div class="ttc" id="aclass_dice_html_a612a16c434160895563d19099ca0b33b"><div class="ttname"><a href="class_dice.html#a612a16c434160895563d19099ca0b33b">Dice::roll</a></div><div class="ttdeci">int roll()</div><div class="ttdoc">Roll the dice object.</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00027">Dice.cpp:27</a></div></div>
 <div class="ttc" id="aclass_dice_html_a6b9eadd945ad8fd3840379c8824e5d48"><div class="ttname"><a href="class_dice.html#a6b9eadd945ad8fd3840379c8824e5d48">Dice::Dice</a></div><div class="ttdeci">Dice()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00036">Dice.cpp:36</a></div></div>
-<div class="ttc" id="aclass_dice_html_a8bf495738034fb0e5461a6761f007506"><div class="ttname"><a href="class_dice.html#a8bf495738034fb0e5461a6761f007506">Dice::get_addition</a></div><div class="ttdeci">int get_addition()</div><div class="ttdoc">addition getter</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00079">Dice.cpp:79</a></div></div>
-<div class="ttc" id="aclass_dice_html_ad49a44f1558d483f55e4804402a7e983"><div class="ttname"><a href="class_dice.html#ad49a44f1558d483f55e4804402a7e983">Dice::get_string</a></div><div class="ttdeci">std::string get_string()</div><div class="ttdoc">generates a string representation of the dice</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00070">Dice.cpp:70</a></div></div>
-<div class="ttc" id="aclass_dice_html_ae9d4338f5c38d6e264499ff933a15b7f"><div class="ttname"><a href="class_dice.html#ae9d4338f5c38d6e264499ff933a15b7f">Dice::add_die</a></div><div class="ttdeci">void add_die()</div><div class="ttdoc">increases the number of die (x in query) by 1</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00063">Dice.cpp:63</a></div></div>
+<div class="ttc" id="aclass_dice_html_a870e25ee830b3aa4d0124014d9334961"><div class="ttname"><a href="class_dice.html#a870e25ee830b3aa4d0124014d9334961">Dice::roll_with_disadvantage</a></div><div class="ttdeci">int roll_with_disadvantage()</div><div class="ttdoc">Roll the dice object twice, keeping lowest.</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00070">Dice.cpp:70</a></div></div>
+<div class="ttc" id="aclass_dice_html_a8bf495738034fb0e5461a6761f007506"><div class="ttname"><a href="class_dice.html#a8bf495738034fb0e5461a6761f007506">Dice::get_addition</a></div><div class="ttdeci">int get_addition()</div><div class="ttdoc">addition getter</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00107">Dice.cpp:107</a></div></div>
+<div class="ttc" id="aclass_dice_html_ad49a44f1558d483f55e4804402a7e983"><div class="ttname"><a href="class_dice.html#ad49a44f1558d483f55e4804402a7e983">Dice::get_string</a></div><div class="ttdeci">std::string get_string()</div><div class="ttdoc">generates a string representation of the dice</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00098">Dice.cpp:98</a></div></div>
+<div class="ttc" id="aclass_dice_html_ae9d4338f5c38d6e264499ff933a15b7f"><div class="ttname"><a href="class_dice.html#ae9d4338f5c38d6e264499ff933a15b7f">Dice::add_die</a></div><div class="ttdeci">void add_die()</div><div class="ttdoc">increases the number of die (x in query) by 1</div><div class="ttdef"><b>Definition</b> <a href="_dice_8cpp_source.html#l00091">Dice.cpp:91</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

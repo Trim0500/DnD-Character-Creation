@@ -1,3 +1,10 @@
+/*!
+* \file testMap.h
+* \brief Header file for the TestMap class
+*
+* @author Michelle Pilonsky
+*/
+
 #pragma once
 
 #include <iostream>
@@ -15,6 +22,10 @@
 
 #include "Map.h"
 
+/*!
+* \class TestMap
+* \brief Test Class to run unit tests for Map
+*/
 class TestMap : public CppUnit::TestFixture {
 
 	CPPUNIT_TEST_SUITE(TestMap);
