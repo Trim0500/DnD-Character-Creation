@@ -4,8 +4,8 @@
 
 - Charles Partous
 - Tristan Lafleur
-- Andrea Lewis
-- Michelle Pilonsky
+- Andrae Lewis
+- Michelle Polonsky
 
 ### Description
 
