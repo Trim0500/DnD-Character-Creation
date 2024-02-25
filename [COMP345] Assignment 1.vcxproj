@@ -85,6 +85,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="demoitem.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="itemcontainer.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -96,6 +97,7 @@
     <ClCompile Include="Dice.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="demoitem.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="itemcontainer.h" />
     <ClInclude Include="testCharacter.h" />

@@ -8,11 +8,13 @@
 
 #include "Character.h"
 #include "Dice.h"
+#include "demoitem.h"
 
 using namespace std;
 using namespace CppUnit;
 using namespace item;
 using namespace itemcontainer;
+using namespace demoitem;
 
 int main()
 {
@@ -36,7 +38,7 @@ int main()
 	
 	/* Driver code here... */
 
-	Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
+	/*Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
 
 	ItemContainer* fighterInventory = &fighterCharacter->Inventory();
 
@@ -102,7 +104,17 @@ int main()
 	fighterInventory->GetAllItems().clear();
 	delete fighterCharacter;
 	treasureChest->GetAllItems().clear();
-	delete treasureChest;
+	delete treasureChest;*/
+
+	char tryAgain = 'y';
+
+	while (tolower(tryAgain) != 'n')
+	{
+		ShowCaseItemCreation();
+
+		cout << "Try again? (y|Y or n|N)";
+		cin >> tryAgain;
+	}
 
 	return 0;
 }
