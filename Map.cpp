@@ -24,8 +24,8 @@ Map::Map* Map::Map::Create() {
 	int rows, cols;
 
 	string rowInput, colInput;
-	
-	regex numRgx("[1-9]");
+
+	regex numRgx("^[1-9][0-9]*$");
 	regex answerRgx("[y|n]");
 	smatch rowNumMatch, colNumMatch, answerMatch;
 
@@ -73,7 +73,6 @@ Map::Map* Map::Map::Create() {
 			}
 		}
 
-
 		Map* map = new Map(rows, cols);
 		map->Print();
 
@@ -115,7 +114,6 @@ Map::Map* Map::Map::Create() {
 				cout << "Checking if there is a possible path ... " << endl;
 				path = map->IsTherePath();
 			}
-
 		}
 
 		return map;
@@ -142,7 +140,7 @@ void Map::Map::Customize() {
 			cin >> row;
 			//validate row input
 			while (true) {
-				if (cin.fail() || row < 1 || row >= rows) {
+				if (cin.fail() || row < 0 || row >= rows) {
 					cin.clear();
 					cin.ignore(numeric_limits<streamsize>::max(), '\n');
 					cout << "Invalid input. Please enter a positive number: ";
@@ -158,7 +156,7 @@ void Map::Map::Customize() {
 			cin >> col;
 			//validate column input
 			while (true) {
-				if (cin.fail() || col < 1 || col >= cols) {
+				if (cin.fail() || col < 0 || col >= cols) {
 					cin.clear();
 					cin.ignore(numeric_limits<streamsize>::max(), '\n');
 					cout << "Invalid input. Please enter a positive number: ";
@@ -266,8 +264,6 @@ bool Map::Map::IsTherePath() {
 		auto curr = q.front(); // current checking cell
 		q.pop();
 
-		//Scout << "checking: " << curr.first << ", " << curr.second << endl;
-
 		//check if reach end cell
 		if (curr.first == end_cell[0] && curr.second == end_cell[1]) {
 			//if made it this far, there is a path.
@@ -295,14 +291,25 @@ bool Map::Map::IsTherePath() {
 
 //validate the next cell
 bool Map::Map::ValidCell(int nextRow, int nextCol, vector<vector<bool>> visited) {
-	return (nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols && grid[nextRow][nextCol] != Cell_Type::wall && !visited[nextRow][nextCol]);
+	return (nextRow >= 0 && nextRow < rows&&
+		nextCol >= 0 && nextCol < cols&&
+		grid[nextRow][nextCol] != Cell_Type::wall &&
+		!visited[nextRow][nextCol]);
 }
 
 //print the grid
 void Map::Map::Print() {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			cout << static_cast<char>(grid[i][j]) << " ";
+			if (i == 0 && j == 0) {
+				cout << "O" << " "; //spawn point, ie start
+			}
+			else if (i == rows - 1 && j == cols - 1) {
+				cout << "X" << " "; //end goal
+			}
+			else {
+				cout << static_cast<char>(grid[i][j]) << " ";
+			}
 		}
 		cout << endl;
 	}
