@@ -30,7 +30,7 @@
     <ClCompile Include="Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-	<ClCompile Include="Dice.cpp">
+    <ClCompile Include="Dice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="testitemcontainer.cpp">
@@ -40,6 +40,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="testDice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="demoCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="testDice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="demoCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
