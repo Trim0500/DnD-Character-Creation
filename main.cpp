@@ -8,8 +8,10 @@
 
 #include "Character.h"
 #include "Dice.h"
+#include "Map.h"
 #include "demoitem.h"
 #include "DiceDemo.h"
+#include "demoCharacter.h"
 
 using namespace std;
 using namespace CppUnit;
@@ -106,17 +108,21 @@ int main()
 	treasureChest->GetAllItems().clear();
 	delete treasureChest;*/
 
-	char tryAgain = 'y';
+	//char tryAgain = 'y';
 
-	while (tolower(tryAgain) != 'n')
-	{
-		ShowCaseItemCreation();
+	/*while (tolower(tryAgain) != 'n')
+	{*/
+		//ShowCaseItemCreation();
 
 		DiceDemo();
 
-		cout << "Try again? (y|Y or n|N)";
-		cin >> tryAgain;
-	}
+		demo_character();
+
+		Map::Map* map = Map::Map::Create(); //  this function takes care of everything you need to create a map
+
+		/*cout << "Try again? (y|Y or n|N)";
+		cin >> tryAgain;*/
+	//}
 
 	getchar();
 
