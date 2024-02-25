@@ -73,7 +73,6 @@ Map::Map* Map::Map::Create() {
 			}
 		}
 
-
 		Map* map = new Map(rows, cols);
 		map->Print();
 
@@ -115,7 +114,6 @@ Map::Map* Map::Map::Create() {
 				cout << "Checking if there is a possible path ... " << endl;
 				path = map->IsTherePath();
 			}
-
 		}
 
 		return map;
@@ -293,7 +291,10 @@ bool Map::Map::IsTherePath() {
 
 //validate the next cell
 bool Map::Map::ValidCell(int nextRow, int nextCol, vector<vector<bool>> visited) {
-	return (nextRow >= 0 && nextRow < rows&& nextCol >= 0 && nextCol < cols&& grid[nextRow][nextCol] != Cell_Type::wall && !visited[nextRow][nextCol]);
+	return (nextRow >= 0 && nextRow < rows&&
+		nextCol >= 0 && nextCol < cols&&
+		grid[nextRow][nextCol] != Cell_Type::wall &&
+		!visited[nextRow][nextCol]);
 }
 
 //print the grid

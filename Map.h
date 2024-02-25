@@ -22,7 +22,8 @@ namespace Map {
 
 		const int Rows() { return rows; };
 		const int Cols() { return cols; };
-		const int End_Cell() { return *end_cell; };
+		const int* End_Cell() { return end_cell; };
+		const vector<vector<Cell_Type>>& Grid() { return grid; };
 
 		//Prompts user for map inputs
 		static Map* Create();
@@ -54,7 +55,7 @@ namespace Map {
 		//end = lower left cell, ie: cols.length-1, rows.lenght-1
 
 		//grid mapping out the cell types
-		std::vector<std::vector<Cell_Type>> grid;
+		vector<vector<Cell_Type>> grid;
 	};
 
 }
