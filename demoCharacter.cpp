@@ -15,6 +15,11 @@ void demo_character()
 		std::cout << "3: Leave Character feature demo" << std::endl;
 		int user_input = 0;
 		std::cin >> user_input;
+		if(std::cin.fail()) {
+			std::cin.clear();
+			std::cout << "Bad entry.  Enter a NUMBER: ";
+			return;
+		}
 		switch (user_input)
 		{
 		case 1:
