@@ -8,6 +8,7 @@
 
 #include "Character.h"
 #include "Dice.h"
+#include "DiceDemo.h"
 
 using namespace std;
 using namespace CppUnit;
@@ -96,13 +97,15 @@ int main()
 		cout << "invalid query" << endl;
 	}
 
-	getchar();
+	// getchar();
+	DiceDemo();
 
 	delete dice;
 	fighterInventory->GetAllItems().clear();
 	delete fighterCharacter;
 	treasureChest->GetAllItems().clear();
 	delete treasureChest;
+
 
 	return 0;
 }
