@@ -43,7 +43,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DiceDemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="demoCharacter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -76,7 +81,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DiceDemo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="demoCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
