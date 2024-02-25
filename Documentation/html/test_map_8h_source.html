@@ -84,71 +84,72 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">testMap.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="test_map_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cppunit/TestCase.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cppunit/TestFixture.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cppunit/ui/text/TextTestRunner.h&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cppunit/extensions/HelperMacros.h&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cppunit/extensions/TestFactoryRegistry.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cppunit/TestResult.h&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cppunit/TestResultCollector.h&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cppunit/TestRunner.h&gt;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;cppunit/BriefTestProgressListener.h&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;cppunit/CompilerOutputter.h&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cppunit/XmlOutputter.h&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">Map.h</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_test_map.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_test_map.html">TestMap</a> : <span class="keyword">public</span> CppUnit::TestFixture {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    CPPUNIT_TEST_SUITE(<a class="code hl_class" href="class_test_map.html">TestMap</a>);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a33c95b0326921fb020b0532627b832ad">testConstructor</a>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a138ba8fca825cef69e19bfa7f66dc271">testGetRows</a>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#aea70ac3b76b93c265f13cd6c6f1adee6">testGetCols</a>);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#aba05372f947e94551f03b2dc3383a1ae">testGetEnd_Cell</a>);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a325c0471b701f968fd5583ac264e8062">testGetGrid</a>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a9d2b21734afab266ee52d548b4d02a68">testGridCreation</a>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a52f8c60895e323bb090fa9be4ec71af0">testChangeCellType</a>);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a0471c7fc8d6907828716cb937e47eaf5">testConvertToCellType</a>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">//CPPUNIT_TEST(testPath);</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a063d58809dee83be717eba2625a33638">testValidCell</a>);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">//CPPUNIT_TEST();</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">//CPPUNIT_TEST();</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">//CPPUNIT_TEST();</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    CPPUNIT_TEST_SUITE_END();</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#add9768c91c269a040d6d3946078d9aa7">setUp</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a6cfaefb6c113f8c5104fff6e30d6998b">tearDown</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a33c95b0326921fb020b0532627b832ad">testConstructor</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a138ba8fca825cef69e19bfa7f66dc271">testGetRows</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#aea70ac3b76b93c265f13cd6c6f1adee6">testGetCols</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#aba05372f947e94551f03b2dc3383a1ae">testGetEnd_Cell</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a325c0471b701f968fd5583ac264e8062">testGetGrid</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a9d2b21734afab266ee52d548b4d02a68">testGridCreation</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a52f8c60895e323bb090fa9be4ec71af0">testChangeCellType</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a0471c7fc8d6907828716cb937e47eaf5">testConvertToCellType</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a9b7231f6411baaab6bcfd6d1bbf92898">testPath</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a063d58809dee83be717eba2625a33638">testValidCell</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* mapWithParams;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* mapNoPath;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* mapLongPath;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* mapEmpty;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    vector&lt;vector&lt;bool&gt;&gt; visitedEmpty;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    vector&lt;vector&lt;bool&gt;&gt; visited;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<a href="test_map_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cppunit/TestCase.h&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;cppunit/TestFixture.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;cppunit/ui/text/TextTestRunner.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cppunit/extensions/HelperMacros.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;cppunit/extensions/TestFactoryRegistry.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;cppunit/TestResult.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;cppunit/TestResultCollector.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;cppunit/TestRunner.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;cppunit/BriefTestProgressListener.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;cppunit/CompilerOutputter.h&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;cppunit/XmlOutputter.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">Map.h</a>&quot;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_test_map.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="class_test_map.html">TestMap</a> : <span class="keyword">public</span> CppUnit::TestFixture {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    CPPUNIT_TEST_SUITE(<a class="code hl_class" href="class_test_map.html">TestMap</a>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a33c95b0326921fb020b0532627b832ad">testConstructor</a>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a138ba8fca825cef69e19bfa7f66dc271">testGetRows</a>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#aea70ac3b76b93c265f13cd6c6f1adee6">testGetCols</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#aba05372f947e94551f03b2dc3383a1ae">testGetEnd_Cell</a>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a325c0471b701f968fd5583ac264e8062">testGetGrid</a>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a9d2b21734afab266ee52d548b4d02a68">testGridCreation</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a52f8c60895e323bb090fa9be4ec71af0">testChangeCellType</a>);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a0471c7fc8d6907828716cb937e47eaf5">testConvertToCellType</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">//CPPUNIT_TEST(testPath);</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    CPPUNIT_TEST(<a class="code hl_function" href="class_test_map.html#a063d58809dee83be717eba2625a33638">testValidCell</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">//CPPUNIT_TEST();</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">//CPPUNIT_TEST();</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">//CPPUNIT_TEST();</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    CPPUNIT_TEST_SUITE_END();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#add9768c91c269a040d6d3946078d9aa7">setUp</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a6cfaefb6c113f8c5104fff6e30d6998b">tearDown</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a33c95b0326921fb020b0532627b832ad">testConstructor</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a138ba8fca825cef69e19bfa7f66dc271">testGetRows</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#aea70ac3b76b93c265f13cd6c6f1adee6">testGetCols</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#aba05372f947e94551f03b2dc3383a1ae">testGetEnd_Cell</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a325c0471b701f968fd5583ac264e8062">testGetGrid</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a9d2b21734afab266ee52d548b4d02a68">testGridCreation</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a52f8c60895e323bb090fa9be4ec71af0">testChangeCellType</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a0471c7fc8d6907828716cb937e47eaf5">testConvertToCellType</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a9b7231f6411baaab6bcfd6d1bbf92898">testPath</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_map.html#a063d58809dee83be717eba2625a33638">testValidCell</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* mapWithParams;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* mapNoPath;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* mapLongPath;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* mapEmpty;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    vector&lt;vector&lt;bool&gt;&gt; visitedEmpty;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    vector&lt;vector&lt;bool&gt;&gt; visited;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="test_map_8h.html#ac6ce84102cdd4a013e44d6f7cffb611e">   60</a></span><a class="code hl_function" href="test_map_8h.html#ac6ce84102cdd4a013e44d6f7cffb611e">CPPUNIT_TEST_SUITE_REGISTRATION</a>(<a class="code hl_class" href="class_test_map.html">TestMap</a>);</div>
-<div class="ttc" id="a_map_8h_html"><div class="ttname"><a href="_map_8h.html">Map.h</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html"><div class="ttname"><a href="class_map_1_1_map.html">Map::Map</a></div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00019">Map.h:19</a></div></div>
-<div class="ttc" id="aclass_test_map_html"><div class="ttname"><a href="class_test_map.html">TestMap</a></div><div class="ttdef"><b>Definition</b> <a href="#l00018">testMap.h:18</a></div></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="test_map_8h.html#ac6ce84102cdd4a013e44d6f7cffb611e">   71</a></span><a class="code hl_function" href="test_map_8h.html#ac6ce84102cdd4a013e44d6f7cffb611e">CPPUNIT_TEST_SUITE_REGISTRATION</a>(<a class="code hl_class" href="class_test_map.html">TestMap</a>);</div>
+<div class="ttc" id="a_map_8h_html"><div class="ttname"><a href="_map_8h.html">Map.h</a></div><div class="ttdoc">Header file for the Map class.</div></div>
+<div class="ttc" id="aclass_map_1_1_map_html"><div class="ttname"><a href="class_map_1_1_map.html">Map::Map</a></div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00045">Map.h:45</a></div></div>
+<div class="ttc" id="aclass_test_map_html"><div class="ttname"><a href="class_test_map.html">TestMap</a></div><div class="ttdoc">Test Class to run unit tests for Map.</div><div class="ttdef"><b>Definition</b> <a href="#l00029">testMap.h:29</a></div></div>
 <div class="ttc" id="aclass_test_map_html_a0471c7fc8d6907828716cb937e47eaf5"><div class="ttname"><a href="class_test_map.html#a0471c7fc8d6907828716cb937e47eaf5">TestMap::testConvertToCellType</a></div><div class="ttdeci">void testConvertToCellType(void)</div><div class="ttdef"><b>Definition</b> <a href="test_map_8cpp_source.html#l00087">testMap.cpp:87</a></div></div>
 <div class="ttc" id="aclass_test_map_html_a063d58809dee83be717eba2625a33638"><div class="ttname"><a href="class_test_map.html#a063d58809dee83be717eba2625a33638">TestMap::testValidCell</a></div><div class="ttdeci">void testValidCell(void)</div><div class="ttdef"><b>Definition</b> <a href="test_map_8cpp_source.html#l00102">testMap.cpp:102</a></div></div>
 <div class="ttc" id="aclass_test_map_html_a138ba8fca825cef69e19bfa7f66dc271"><div class="ttname"><a href="class_test_map.html#a138ba8fca825cef69e19bfa7f66dc271">TestMap::testGetRows</a></div><div class="ttdeci">void testGetRows(void)</div><div class="ttdef"><b>Definition</b> <a href="test_map_8cpp_source.html#l00051">testMap.cpp:51</a></div></div>

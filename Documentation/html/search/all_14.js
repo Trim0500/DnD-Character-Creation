@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wall_0',['wall',['../namespace_map.html#aa1da1578fd3d40c69f3546de3ba3bc6fa2d86bdac01a3315b95794ffa7360edc3',1,'Map']]],
+  ['wall_0',['wall',['../class_map.html#aa1da1578fd3d40c69f3546de3ba3bc6fa2d86bdac01a3315b95794ffa7360edc3',1,'Map']]],
   ['warlock_1',['Warlock',['../class_character.html#afed4352e48176e367ea1a8299f6aee42a21305b754e03843876abc27387a0e57e',1,'Character']]],
   ['weapon_2',['Weapon',['../class_character.html#a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b',1,'Character::Weapon'],['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158',1,'item::Weapon']]],
   ['weapon_5fhigh_5fenchantment_5fmax_5fweight_3',['WEAPON_HIGH_ENCHANTMENT_MAX_WEIGHT',['../testitem_8cpp.html#adf9904134510d496430f865fc0befeae',1,'testitem.cpp']]],

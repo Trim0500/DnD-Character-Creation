@@ -15,6 +15,6 @@ var searchData=
   ['dicedemo_12',['DiceDemo',['../_dice_demo_8cpp.html#a8253ca339bf57508a4854e6d2c297619',1,'DiceDemo():&#160;DiceDemo.cpp'],['../_dice_demo_8h.html#a8253ca339bf57508a4854e6d2c297619',1,'DiceDemo():&#160;DiceDemo.cpp']]],
   ['dicedemo_2ecpp_13',['DiceDemo.cpp',['../_dice_demo_8cpp.html',1,'']]],
   ['dicedemo_2eh_14',['DiceDemo.h',['../_dice_demo_8h.html',1,'']]],
-  ['dirs_15',['dirs',['../namespace_map.html#a540522bcbfbbe9a4bcc50f04f3646fb4',1,'Map']]],
+  ['dirs_15',['dirs',['../class_map.html#a5472a8cbabd535b6c0fc89de49302ee2',1,'Map']]],
   ['druid_16',['Druid',['../class_character.html#afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e',1,'Character']]]
 ];
