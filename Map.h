@@ -1,7 +1,6 @@
 #include <vector>
 #include <string>
 
-
 using namespace std;
 
 namespace Map {
@@ -42,6 +41,9 @@ namespace Map {
 
 		//Check if the given x,y coordinates are a valid cell to step on
 		bool ValidCell(int row, int col, vector<vector<bool>> visitde);
+
+		//DEBUG ONLY
+		void ChangeCell(int row, int col, Cell_Type);
 	
 	private:
 		int rows; // rows/height/x
