@@ -1,0 +1,41 @@
+\doxysection{demoitem.\+cpp}
+\hypertarget{demoitem_8cpp_source}{}\label{demoitem_8cpp_source}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/DnD Character Creation Source Code/demoitem.cpp@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/demoitem.cpp}}
+\mbox{\hyperlink{demoitem_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{demoitem_8h}{demoitem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{item.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{itemcontainer_8h}{itemcontainer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00008}00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00009}00009\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitem}{item}};}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}};}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00012}00012\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00014}00014\ \}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00016}\mbox{\hyperlink{namespacedemoitem}{00016}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedemoitem}{demoitem}}\ \{}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00017}\mbox{\hyperlink{namespacedemoitem_abdce5414c19d04b5fa00f10d58298c0e}{00017}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacedemoitem_abdce5414c19d04b5fa00f10d58298c0e}{ShowCaseItemCreation}}()\ \{}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ treasureChest\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}(\textcolor{stringliteral}{"{}Silver\ Chest"{}},\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a2e431dccf0d1c3dda6e00d7841e73248}{TreasureChest}},\ 250);}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ chestCapacity\ =\ treasureChest-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{GetCapacity}}();}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ totalChestItemWeight\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (totalChestItemWeight\ >=\ treasureChest-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{GetCapacity}}()\ /\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ newItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}();}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ treasureChest-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(newItem);}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ totalChestItemWeight\ +=\ newItem-\/>\mbox{\hyperlink{classitem_1_1_item_a9e3c7d4fc49e628cf70536ccf59112d7}{GetItemWeight}}();}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ treasureChest-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f52fc08106eb5e}{PrintItemVector}}();}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{demoitem_8cpp_source_l00035}00035\ \}}
+
+\end{DoxyCode}

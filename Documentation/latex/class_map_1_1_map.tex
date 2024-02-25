@@ -1,0 +1,175 @@
+\doxysection{Map\+::Map Class Reference}
+\hypertarget{class_map_1_1_map}{}\label{class_map_1_1_map}\index{Map::Map@{Map::Map}}
+
+
+{\ttfamily \#include $<$Map.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_1_1_map_a2d6bd8ea0c22c0524a9c13e86e3387ec}{Map}} (int rows, int cols)
+\item 
+const int \mbox{\hyperlink{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69}{Rows}} ()
+\item 
+const int \mbox{\hyperlink{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4}{Cols}} ()
+\item 
+const int \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\+\_\+\+Cell}} ()
+\item 
+const vector$<$ vector$<$ \mbox{\hyperlink{namespace_map_aa1da1578fd3d40c69f3546de3ba3bc6f}{Cell\+\_\+\+Type}} $>$ $>$ \& \mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}} ()
+\item 
+void \mbox{\hyperlink{class_map_1_1_map_a9d73212c5d079f7c18b362411c50b6a9}{Customize}} ()
+\item 
+bool \mbox{\hyperlink{class_map_1_1_map_aa84060982cfc1d8d84bbf1370946d02e}{Keep\+Customizing}} ()
+\item 
+void \mbox{\hyperlink{class_map_1_1_map_aae6b025288e8c6def550878f9e61c3da}{Print}} ()
+\item 
+bool \mbox{\hyperlink{class_map_1_1_map_a397b9afb4f62d0ee8301fe79a3ae068b}{Is\+There\+Path}} ()
+\item 
+bool \mbox{\hyperlink{class_map_1_1_map_a98276d62f5978b3ba16255215973f34f}{Valid\+Cell}} (int row, int col, vector$<$ vector$<$ bool $>$ $>$ visitde)
+\item 
+void \mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{Change\+Cell}} (int row, int col, \mbox{\hyperlink{namespace_map_aa1da1578fd3d40c69f3546de3ba3bc6f}{Cell\+\_\+\+Type}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_map_1_1_map}{Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_1_1_map_ab10b601ac847af51a47f90b291da2119}{Create}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_map_8h_source_l00019}{19}} of file \mbox{\hyperlink{_map_8h_source}{Map.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_map_1_1_map_a2d6bd8ea0c22c0524a9c13e86e3387ec}\label{class_map_1_1_map_a2d6bd8ea0c22c0524a9c13e86e3387ec} 
+\index{Map::Map@{Map::Map}!Map@{Map}}
+\index{Map@{Map}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{Map()}{Map()}}
+{\footnotesize\ttfamily Map\+::\+Map\+::\+Map (\begin{DoxyParamCaption}\item[{int}]{rows,  }\item[{int}]{cols }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}\label{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52} 
+\index{Map::Map@{Map::Map}!ChangeCell@{ChangeCell}}
+\index{ChangeCell@{ChangeCell}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{ChangeCell()}{ChangeCell()}}
+{\footnotesize\ttfamily void Map\+::\+Map\+::\+Change\+Cell (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{\mbox{\hyperlink{namespace_map_aa1da1578fd3d40c69f3546de3ba3bc6f}{Cell\+\_\+\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+\Hypertarget{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4}\label{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4} 
+\index{Map::Map@{Map::Map}!Cols@{Cols}}
+\index{Cols@{Cols}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{Cols()}{Cols()}}
+{\footnotesize\ttfamily const int Map\+::\+Map\+::\+Cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8h_source_l00024}{24}} of file \mbox{\hyperlink{_map_8h_source}{Map.\+h}}.
+
+\Hypertarget{class_map_1_1_map_ab10b601ac847af51a47f90b291da2119}\label{class_map_1_1_map_ab10b601ac847af51a47f90b291da2119} 
+\index{Map::Map@{Map::Map}!Create@{Create}}
+\index{Create@{Create}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} Map\+::\+Map\+::\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+\Hypertarget{class_map_1_1_map_a9d73212c5d079f7c18b362411c50b6a9}\label{class_map_1_1_map_a9d73212c5d079f7c18b362411c50b6a9} 
+\index{Map::Map@{Map::Map}!Customize@{Customize}}
+\index{Customize@{Customize}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{Customize()}{Customize()}}
+{\footnotesize\ttfamily void Map\+::\+Map\+::\+Customize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+\Hypertarget{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}\label{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2} 
+\index{Map::Map@{Map::Map}!End\_Cell@{End\_Cell}}
+\index{End\_Cell@{End\_Cell}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{End\_Cell()}{End\_Cell()}}
+{\footnotesize\ttfamily const int \texorpdfstring{$\ast$}{*} Map\+::\+Map\+::\+End\+\_\+\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8h_source_l00025}{25}} of file \mbox{\hyperlink{_map_8h_source}{Map.\+h}}.
+
+\Hypertarget{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}\label{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b} 
+\index{Map::Map@{Map::Map}!Grid@{Grid}}
+\index{Grid@{Grid}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{Grid()}{Grid()}}
+{\footnotesize\ttfamily const vector$<$ vector$<$ \mbox{\hyperlink{namespace_map_aa1da1578fd3d40c69f3546de3ba3bc6f}{Cell\+\_\+\+Type}} $>$ $>$ \& Map\+::\+Map\+::\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8h_source_l00026}{26}} of file \mbox{\hyperlink{_map_8h_source}{Map.\+h}}.
+
+\Hypertarget{class_map_1_1_map_a397b9afb4f62d0ee8301fe79a3ae068b}\label{class_map_1_1_map_a397b9afb4f62d0ee8301fe79a3ae068b} 
+\index{Map::Map@{Map::Map}!IsTherePath@{IsTherePath}}
+\index{IsTherePath@{IsTherePath}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{IsTherePath()}{IsTherePath()}}
+{\footnotesize\ttfamily bool Map\+::\+Map\+::\+Is\+There\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00248}{248}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+\Hypertarget{class_map_1_1_map_aa84060982cfc1d8d84bbf1370946d02e}\label{class_map_1_1_map_aa84060982cfc1d8d84bbf1370946d02e} 
+\index{Map::Map@{Map::Map}!KeepCustomizing@{KeepCustomizing}}
+\index{KeepCustomizing@{KeepCustomizing}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{KeepCustomizing()}{KeepCustomizing()}}
+{\footnotesize\ttfamily bool Map\+::\+Map\+::\+Keep\+Customizing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00207}{207}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+\Hypertarget{class_map_1_1_map_aae6b025288e8c6def550878f9e61c3da}\label{class_map_1_1_map_aae6b025288e8c6def550878f9e61c3da} 
+\index{Map::Map@{Map::Map}!Print@{Print}}
+\index{Print@{Print}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Map\+::\+Map\+::\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00301}{301}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+\Hypertarget{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69}\label{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69} 
+\index{Map::Map@{Map::Map}!Rows@{Rows}}
+\index{Rows@{Rows}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{Rows()}{Rows()}}
+{\footnotesize\ttfamily const int Map\+::\+Map\+::\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8h_source_l00023}{23}} of file \mbox{\hyperlink{_map_8h_source}{Map.\+h}}.
+
+\Hypertarget{class_map_1_1_map_a98276d62f5978b3ba16255215973f34f}\label{class_map_1_1_map_a98276d62f5978b3ba16255215973f34f} 
+\index{Map::Map@{Map::Map}!ValidCell@{ValidCell}}
+\index{ValidCell@{ValidCell}!Map::Map@{Map::Map}}
+\doxysubsubsection{\texorpdfstring{ValidCell()}{ValidCell()}}
+{\footnotesize\ttfamily bool Map\+::\+Map\+::\+Valid\+Cell (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{vector$<$ vector$<$ bool $>$ $>$}]{visitde }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_map_8cpp_source_l00293}{293}} of file \mbox{\hyperlink{_map_8cpp_source}{Map.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\+Dn\+D Character Creation Source Code/\mbox{\hyperlink{_map_8h}{Map.\+h}}\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\+Dn\+D Character Creation Source Code/\mbox{\hyperlink{_map_8cpp}{Map.\+cpp}}\end{DoxyCompactItemize}
