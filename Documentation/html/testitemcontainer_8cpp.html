@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/testitemcontainer.cpp File Reference</title>
+<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/testitemcontainer.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,11 +70,15 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e50ee4dfc2640631efeb2bdc63c536ea.html">DnD Character Creation Source Code</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/testitemcontainer.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">testitemcontainer.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -83,16 +87,17 @@ $(function() {
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;<a class="el" href="testitemcontainer_8h_source.html">testitemcontainer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_character_8h_source.html">Character.h</a>&quot;</code><br />
 </div>
 <p><a href="testitemcontainer_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aa064d93d451355a0e86e4973db0401a8" id="r_aa064d93d451355a0e86e4973db0401a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa064d93d451355a0e86e4973db0401a8">BACKPACK_ITEM_SIZE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memitem:aa064d93d451355a0e86e4973db0401a8" id="r_aa064d93d451355a0e86e4973db0401a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa064d93d451355a0e86e4973db0401a8">BACKPACK_ITEM_SIZE</a>&#160;&#160;&#160;30</td></tr>
 <tr class="separator:aa064d93d451355a0e86e4973db0401a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b3a4f43587451e4e99eaf94a4ab81a2" id="r_a2b3a4f43587451e4e99eaf94a4ab81a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b3a4f43587451e4e99eaf94a4ab81a2">WORN_ITEMS_SIZE</a>&#160;&#160;&#160;7</td></tr>
 <tr class="separator:a2b3a4f43587451e4e99eaf94a4ab81a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeaeeba65f210fb5be748506b96d01a2d" id="r_aeaeeba65f210fb5be748506b96d01a2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaeeba65f210fb5be748506b96d01a2d">CHEST_ITEM_SIZE</a>&#160;&#160;&#160;20</td></tr>
+<tr class="memitem:aeaeeba65f210fb5be748506b96d01a2d" id="r_aeaeeba65f210fb5be748506b96d01a2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeaeeba65f210fb5be748506b96d01a2d">CHEST_ITEM_SIZE</a>&#160;&#160;&#160;250</td></tr>
 <tr class="separator:aeaeeba65f210fb5be748506b96d01a2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa65e2546353b7b9fdaf383fdcbdb42c" id="r_afa65e2546353b7b9fdaf383fdcbdb42c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa65e2546353b7b9fdaf383fdcbdb42c">WORN_ITEMS_PLUS_ONE_ITEMS_SIZE</a>&#160;&#160;&#160;2</td></tr>
 <tr class="separator:afa65e2546353b7b9fdaf383fdcbdb42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,12 +122,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define BACKPACK_ITEM_SIZE&#160;&#160;&#160;10</td>
+          <td class="memname">#define BACKPACK_ITEM_SIZE&#160;&#160;&#160;30</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00011">11</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00012">12</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -133,12 +138,12 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CHEST_ITEM_SIZE&#160;&#160;&#160;20</td>
+          <td class="memname">#define CHEST_ITEM_SIZE&#160;&#160;&#160;250</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00013">13</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00014">14</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -154,7 +159,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00018">18</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00019">19</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -170,7 +175,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00017">17</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00018">18</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +191,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00014">14</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00015">15</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -202,7 +207,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00016">16</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00017">17</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -218,7 +223,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00015">15</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00016">16</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
 
 </div>
 </div>
@@ -234,7 +239,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00012">12</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="testitemcontainer_8cpp_source.html#l00013">13</a> of file <a class="el" href="testitemcontainer_8cpp_source.html">testitemcontainer.cpp</a>.</p>
 
 </div>
 </div>

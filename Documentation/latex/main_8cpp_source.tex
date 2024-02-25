@@ -1,5 +1,6 @@
-\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/main.cpp}
-\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\doxysection{main.\+cpp}
+\hypertarget{main_8cpp_source}{}\label{main_8cpp_source}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/DnD Character Creation Source Code/main.cpp@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/main.cpp}}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001\ \textcolor{comment}{//\ main.cpp\ :\ This\ file\ contains\ the\ 'main'\ function.\ Program\ execution\ begins\ and\ ends\ there.}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002\ \textcolor{comment}{//}}
@@ -11,111 +12,59 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ }
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{Character.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dice_8h}{Dice.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \textcolor{keyword}{using\ namespace\ }CppUnit;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitem}{item}};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00017}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ top\ level\ suite\ from\ the\ registry}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ Test*\ suite\ =\ TestFactoryRegistry::getRegistry().makeTest();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_8h}{Map.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{demoitem_8h}{demoitem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dice_demo_8h}{DiceDemo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{demo_character_8h}{demoCharacter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \textcolor{keyword}{using\ namespace\ }CppUnit;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitem}{item}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacedemoitem}{demoitem}};}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Adds\ the\ test\ to\ the\ list\ of\ test\ to\ run}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ TextUi::TestRunner\ runner;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ runner.addTest(suite);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ Change\ the\ default\ outputter\ to\ a\ compiler\ error\ format\ outputter}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ runner.setOutputter(\textcolor{keyword}{new}\ CompilerOutputter(\&runner.result(),}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ std::cerr));}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ Run\ the\ tests.}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasSucessful\ =\ runner.run();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Return\ error\ code\ 1\ if\ the\ one\ of\ test\ failed.}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (!wasSucessful)\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{/*\ Driver\ code\ here...\ */}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ fighterCharacter\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}(\textcolor{stringliteral}{"{}Marty"{}},\ Character::Character\_Class::Fighter);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ fighterInventory\ =\ \&fighterCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ helmetObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}Baron's\ Helmet"{}},\ 2,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1}{Helmet}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a}{Intelligence}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ armorObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}Vanguard\ Armor"{}},\ 3,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03accbeb800ab9169831734326a5b38cb4d}{Armor}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ shieldObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}Hexlock\ Shield"{}},\ 2,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9}{Shield}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ ringObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}Pontifex\ Ring"{}},\ 1,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{Ring}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383}{Wisdom}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ beltObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}Power\ Belt"{}},\ 1,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a1ec13bc0551b0b9b015ba22b6ff865d5}{Belt}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{Strength}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ bootsObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}Pegasus\ Boots"{}},\ 2,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d}{Boots}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69}{Dexterity}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ weaponObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}Steel\ Lance"{}},\ 2,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158}{Weapon}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c}{AttackBonus}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*helmetObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*armorObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*shieldObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*ringObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*beltObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*bootsObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*weaponObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ fighterCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}{Equip\_Item}}(armorObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ fighterCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}{Equip\_Item}}(beltObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ fighterCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}{Equip\_Item}}(bootsObject);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{int}\ remainingBackpackCapacity\ =\ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e3d97e9ca22d6d23194621c84bef4fb}{GetCapacity}}()\ -\/\ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61}{GetAllItems}}().size();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ remainingBackpackCapacity;\ i++)}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ newItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*newItem);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ fighterCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_aa6d260e9334652bfe1ee91ef7b2714a1}{Print\_Character\_Sheet}}();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ cout\ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ treasureChest\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}(\textcolor{stringliteral}{"{}Silver\ Chest"{}},\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a2e431dccf0d1c3dda6e00d7841e73248}{TreasureChest}},\ 5);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{int}\ chestCapacity\ =\ treasureChest-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e3d97e9ca22d6d23194621c84bef4fb}{GetCapacity}}();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ chestCapacity;\ i++)}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ newItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ treasureChest-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*newItem);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ \ \ \ \ treasureChest-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f52fc08106eb5e}{PrintItemVector}}();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ \ \ \ \ cout\ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}*\ dice\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_dice}{Dice}}();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keywordtype}{int}\ rollValue\ =\ dice-\/>\mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}}(\textcolor{stringliteral}{"{}4d20+4"{}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Dice\ rolled:\ "{}}\ <<\ rollValue\ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{Dice::roll}}(\textcolor{stringliteral}{"{}1z20"{}});}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}invalid\ query"{}}\ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096\ \ \ \ \ getchar();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keyword}{delete}\ dice;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099\ \ \ \ \ fighterInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61}{GetAllItems}}().clear();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keyword}{delete}\ fighterCharacter;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101\ \ \ \ \ treasureChest-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61}{GetAllItems}}().clear();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102\ \ \ \ \ \textcolor{keyword}{delete}\ treasureChest;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105\ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107\ \textcolor{comment}{//\ Run\ program:\ Ctrl\ +\ F5\ or\ Debug\ >\ Start\ Without\ Debugging\ menu}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108\ \textcolor{comment}{//\ Debug\ program:\ F5\ or\ Debug\ >\ Start\ Debugging\ menu}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110\ \textcolor{comment}{//\ Tips\ for\ Getting\ Started:\ }}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111\ \textcolor{comment}{//\ \ \ 1.\ Use\ the\ Solution\ Explorer\ window\ to\ add/manage\ files}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112\ \textcolor{comment}{//\ \ \ 2.\ Use\ the\ Team\ Explorer\ window\ to\ connect\ to\ source\ control}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113\ \textcolor{comment}{//\ \ \ 3.\ Use\ the\ Output\ window\ to\ see\ build\ output\ and\ other\ messages}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114\ \textcolor{comment}{//\ \ \ 4.\ Use\ the\ Error\ List\ window\ to\ view\ errors}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115\ \textcolor{comment}{//\ \ \ 5.\ Go\ to\ Project\ >\ Add\ New\ Item\ to\ create\ new\ code\ files,\ or\ Project\ >\ Add\ Existing\ Item\ to\ add\ existing\ code\ files\ to\ the\ project}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116\ \textcolor{comment}{//\ \ \ 6.\ In\ the\ future,\ to\ open\ this\ project\ again,\ go\ to\ File\ >\ Open\ >\ Project\ and\ select\ the\ .sln\ file}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00022}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ top\ level\ suite\ from\ the\ registry}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \ \ \ \ Test*\ suite\ =\ TestFactoryRegistry::getRegistry().makeTest();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Adds\ the\ test\ to\ the\ list\ of\ test\ to\ run}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ TextUi::TestRunner\ runner;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ runner.addTest(suite);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Change\ the\ default\ outputter\ to\ a\ compiler\ error\ format\ outputter}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ \ \ runner.setOutputter(\textcolor{keyword}{new}\ CompilerOutputter(\&runner.result(),}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ std::cerr));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Run\ the\ tests.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasSucessful\ =\ runner.run();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Return\ error\ code\ 1\ if\ the\ one\ of\ test\ failed.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (!wasSucessful)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ \mbox{\hyperlink{namespacedemoitem_abdce5414c19d04b5fa00f10d58298c0e}{ShowCaseItemCreation}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{_dice_demo_8cpp_a8253ca339bf57508a4854e6d2c297619}{DiceDemo}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ map\ =\ \mbox{\hyperlink{class_map_1_1_map_a2affecbecdee0a0c6ed995e205f12f21}{Map::Map::Create}}();\ \textcolor{comment}{//\ \ this\ function\ takes\ care\ of\ everything\ you\ need\ to\ create\ a\ map}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \ \ \ \ getchar();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \textcolor{comment}{//\ Run\ program:\ Ctrl\ +\ F5\ or\ Debug\ >\ Start\ Without\ Debugging\ menu}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \textcolor{comment}{//\ Debug\ program:\ F5\ or\ Debug\ >\ Start\ Debugging\ menu}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \textcolor{comment}{//\ Tips\ for\ Getting\ Started:\ }}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \textcolor{comment}{//\ \ \ 1.\ Use\ the\ Solution\ Explorer\ window\ to\ add/manage\ files}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \textcolor{comment}{//\ \ \ 2.\ Use\ the\ Team\ Explorer\ window\ to\ connect\ to\ source\ control}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \textcolor{comment}{//\ \ \ 3.\ Use\ the\ Output\ window\ to\ see\ build\ output\ and\ other\ messages}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \textcolor{comment}{//\ \ \ 4.\ Use\ the\ Error\ List\ window\ to\ view\ errors}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \textcolor{comment}{//\ \ \ 5.\ Go\ to\ Project\ >\ Add\ New\ Item\ to\ create\ new\ code\ files,\ or\ Project\ >\ Add\ Existing\ Item\ to\ add\ existing\ code\ files\ to\ the\ project}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \textcolor{comment}{//\ \ \ 6.\ In\ the\ future,\ to\ open\ this\ project\ again,\ go\ to\ File\ >\ Open\ >\ Project\ and\ select\ the\ .sln\ file}}
 
 \end{DoxyCode}

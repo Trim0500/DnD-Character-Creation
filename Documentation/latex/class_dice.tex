@@ -13,6 +13,10 @@
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}} ()
 \begin{DoxyCompactList}\small\item\em Roll the dice object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dice_a4e3e806488c756347490a4b76c02ec10}{roll\+\_\+with\+\_\+advantage}} ()
+\begin{DoxyCompactList}\small\item\em Roll the dice object twice, keeping highest. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_dice_a870e25ee830b3aa4d0124014d9334961}{roll\+\_\+with\+\_\+disadvantage}} ()
+\begin{DoxyCompactList}\small\item\em Roll the dice object twice, keeping lowest. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_dice_ae9d4338f5c38d6e264499ff933a15b7f}{add\+\_\+die}} ()
 \begin{DoxyCompactList}\small\item\em increases the number of die (x in query) by 1 \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_dice_a9745be8c524cefde005c9d8a21330d59}{add\+\_\+die}} (int amount)
@@ -29,7 +33,11 @@ int \mbox{\hyperlink{class_dice_a8bf495738034fb0e5461a6761f007506}{get\+\_\+addi
 \begin{DoxyCompactItemize}
 \item 
 static int \mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}} (string query)
-\begin{DoxyCompactList}\small\item\em Rolls a given query. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rolls a given query. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_dice_ad659697f160ffc004fd52fe02a755f49}{roll\+\_\+with\+\_\+advantage}} (string query)
+\begin{DoxyCompactList}\small\item\em Rolls given query twice, keeping highest. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_dice_a696f3cc0ec1effa65305a987a0904e7f}{roll\+\_\+with\+\_\+disadvantage}} (string query)
+\begin{DoxyCompactList}\small\item\em Rolls given query twice, keeping lowest. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -88,7 +96,7 @@ increases the number of die (x in query) by 1
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a9745be8c524cefde005c9d8a21330d59}\label{class_dice_a9745be8c524cefde005c9d8a21330d59} 
 \index{Dice@{Dice}!add\_die@{add\_die}}
@@ -107,7 +115,7 @@ increases the number of dice (x in query) by amount
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a8bf495738034fb0e5461a6761f007506}\label{class_dice_a8bf495738034fb0e5461a6761f007506} 
 \index{Dice@{Dice}!get\_addition@{get\_addition}}
@@ -124,7 +132,7 @@ number to add after roll
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a5d113ad9251a8561dd3101010b7af452}\label{class_dice_a5d113ad9251a8561dd3101010b7af452} 
 \index{Dice@{Dice}!get\_die\_sides@{get\_die\_sides}}
@@ -141,7 +149,7 @@ dice\textquotesingle{}s number of sides
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37}\label{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37} 
 \index{Dice@{Dice}!get\_leading\_multiplier@{get\_leading\_multiplier}}
@@ -158,7 +166,7 @@ leading multipler
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_ad49a44f1558d483f55e4804402a7e983}\label{class_dice_ad49a44f1558d483f55e4804402a7e983} 
 \index{Dice@{Dice}!get\_string@{get\_string}}
@@ -175,7 +183,7 @@ string repr of die
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a612a16c434160895563d19099ca0b33b}\label{class_dice_a612a16c434160895563d19099ca0b33b} 
 \index{Dice@{Dice}!roll@{roll}}
@@ -216,9 +224,87 @@ result of the dice roll
 
 Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
+\Hypertarget{class_dice_a4e3e806488c756347490a4b76c02ec10}\label{class_dice_a4e3e806488c756347490a4b76c02ec10} 
+\index{Dice@{Dice}!roll\_with\_advantage@{roll\_with\_advantage}}
+\index{roll\_with\_advantage@{roll\_with\_advantage}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{roll\_with\_advantage()}{roll\_with\_advantage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Dice\+::roll\+\_\+with\+\_\+advantage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Roll the dice object twice, keeping highest. 
+
+\begin{DoxyReturn}{Returns}
+value of the roll 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_ad659697f160ffc004fd52fe02a755f49}\label{class_dice_ad659697f160ffc004fd52fe02a755f49} 
+\index{Dice@{Dice}!roll\_with\_advantage@{roll\_with\_advantage}}
+\index{roll\_with\_advantage@{roll\_with\_advantage}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{roll\_with\_advantage()}{roll\_with\_advantage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Dice\+::roll\+\_\+with\+\_\+advantage (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rolls given query twice, keeping highest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & the query to be rolled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of dice roll 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a870e25ee830b3aa4d0124014d9334961}\label{class_dice_a870e25ee830b3aa4d0124014d9334961} 
+\index{Dice@{Dice}!roll\_with\_disadvantage@{roll\_with\_disadvantage}}
+\index{roll\_with\_disadvantage@{roll\_with\_disadvantage}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{roll\_with\_disadvantage()}{roll\_with\_disadvantage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Dice\+::roll\+\_\+with\+\_\+disadvantage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Roll the dice object twice, keeping lowest. 
+
+\begin{DoxyReturn}{Returns}
+value of the roll 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a696f3cc0ec1effa65305a987a0904e7f}\label{class_dice_a696f3cc0ec1effa65305a987a0904e7f} 
+\index{Dice@{Dice}!roll\_with\_disadvantage@{roll\_with\_disadvantage}}
+\index{roll\_with\_disadvantage@{roll\_with\_disadvantage}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{roll\_with\_disadvantage()}{roll\_with\_disadvantage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Dice\+::roll\+\_\+with\+\_\+disadvantage (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rolls given query twice, keeping lowest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & the query to be rolled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of dice roll 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\mbox{\hyperlink{_dice_8h}{Dice.\+h}}\item 
-C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\mbox{\hyperlink{_dice_8cpp}{Dice.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\+Dn\+D Character Creation Source Code/\mbox{\hyperlink{_dice_8h}{Dice.\+h}}\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\+Dn\+D Character Creation Source Code/\mbox{\hyperlink{_dice_8cpp}{Dice.\+cpp}}\end{DoxyCompactItemize}

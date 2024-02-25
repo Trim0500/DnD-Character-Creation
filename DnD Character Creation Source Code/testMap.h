@@ -1,6 +1,8 @@
 /*!
 * \file testMap.h
-* \brief test file for testing Map functions
+* \brief Header file for the TestMap class
+*
+* @author Michelle Polonsky
 */
 
 #pragma once
@@ -22,7 +24,7 @@
 
 /*!
 * \class TestMap
-* \test class to run unit tests for Map
+* \brief Test Class to run unit tests for Map
 */
 class TestMap : public CppUnit::TestFixture {
 

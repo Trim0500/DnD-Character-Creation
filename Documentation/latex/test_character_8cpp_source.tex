@@ -1,5 +1,6 @@
-\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/test\+Character.cpp}
-\hypertarget{test_character_8cpp_source}{}\label{test_character_8cpp_source}\mbox{\hyperlink{test_character_8cpp}{Go to the documentation of this file.}}
+\doxysection{test\+Character.\+cpp}
+\hypertarget{test_character_8cpp_source}{}\label{test_character_8cpp_source}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/DnD Character Creation Source Code/testCharacter.cpp@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/testCharacter.cpp}}
+\mbox{\hyperlink{test_character_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
@@ -82,10 +83,10 @@
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00079}00079\ }
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{comment}{//testItemCurrentId\ +=\ 1;}}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00082}00082\ \ \ \ \ noArgsCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*testItem);}
+\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00082}00082\ \ \ \ \ noArgsCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(testItem);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00083}00083\ \ \ \ \ CPPUNIT\_ASSERT(noArgsCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}{Equip\_Item}}(testItem));}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00084}00084\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00085}00085\ \ \ \ \ customCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*testItem);}
+\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00085}00085\ \ \ \ \ customCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(testItem);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00086}00086\ \ \ \ \ CPPUNIT\_ASSERT(customCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}{Equip\_Item}}(testItem));}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00087}00087\ }
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{keyword}{delete}\ testItem;}
@@ -94,16 +95,16 @@
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00091}00091\ }
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00092}\mbox{\hyperlink{class_test_character_a9f43ee0a7ea94fd92c479247569c9152}{00092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_character_a9f43ee0a7ea94fd92c479247569c9152}{TestCharacter::TestUnequipItem}}(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00093}00093\ \{}
-\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{item::Item}}*\ testItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{item::Item}}(\textcolor{stringliteral}{"{}testItem"{}},\ 3,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{item::ItemType::Ring}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{item::CharacterStats::Strength}});}
+\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{item::Item}}*\ testItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{item::Item}}(\textcolor{stringliteral}{"{}testItem"{}},\ 3,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7}{item::ItemType::Ring}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{item::CharacterStats::Strength}},\ 0.5);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{comment}{//testItemCurrentId\ +=\ 1;}}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00096}00096\ \ \ \ \ Character::Equipment\_Slots\ testItemSlot;}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00098}00098\ \ \ \ \ noArgsCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*testItem);}
+\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00098}00098\ \ \ \ \ noArgsCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(testItem);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00099}00099\ \ \ \ \ noArgsCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}{Equip\_Item}}(testItem);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00100}00100\ \ \ \ \ noArgsCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_ab3cf5f43ede3d781532514f47ea7914d}{Unequip\_Item}}(Character::Equipment\_Slots::Ring);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00101}00101\ \ \ \ \ CPPUNIT\_ASSERT(noArgsCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c}{Equipped\_Items}}(Character::Equipment\_Slots::Ring)\ ==\ \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00102}00102\ }
-\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00103}00103\ \ \ \ \ customCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_aacf5d7a6f56d5056797fc4b20892242d}{AddNewItem}}(*testItem);}
+\DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00103}00103\ \ \ \ \ customCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(testItem);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00104}00104\ \ \ \ \ customCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}{Equip\_Item}}(testItem);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00105}00105\ \ \ \ \ customCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_ab3cf5f43ede3d781532514f47ea7914d}{Unequip\_Item}}(Character::Equipment\_Slots::Ring);}
 \DoxyCodeLine{\Hypertarget{test_character_8cpp_source_l00106}00106\ \ \ \ \ CPPUNIT\_ASSERT(customCharacterObject-\/>\mbox{\hyperlink{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c}{Equipped\_Items}}(Character::Equipment\_Slots::Ring)\ ==\ \textcolor{keyword}{nullptr});}
