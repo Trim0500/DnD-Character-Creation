@@ -2,7 +2,7 @@
 * \file testMap.h
 * \brief Header file for the TestMap class
 *
-* @author Michelle Pilonsky
+* @author Michelle Polonsky
 */
 
 #pragma once

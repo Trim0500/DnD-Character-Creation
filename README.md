@@ -14,17 +14,14 @@ assignment to Concorida University's COMP345 (Advanced Program Design with C++) 
 
 ### Installation Instructions
 
-This program was created using Visual Studio 2022. In the zip file the solution is included
-along with the necessary source code to create a build and run it. 
+This program was created using Visual Studio 2022 and uses the build tools for 2019.
+In the zip file the solution is included along with the necessary source code to create a
+build and run it. 
 
 In order to make a successful build of the project, follow these steps
 
 1. Open the solution in Visual Studio and wait for everything to load
-2. Locate the directory for the CppUnit library and source code.
-3. Go to Go to 'Project > Properties > C/C++ > General'. Put "{your directory}\cppunit-1.12.1\include" in
-	the 'Additional Include Directories' text box.
-4. Go to 'Project > Properties > Linker > Input'. Put "{your directory}\cppunit-1.12.1\lib\cppunit.lib" in
-	the 'Additional Dependences' text box.
-5. Go to 'Project > Properties > Build Events > Post-Build Event'. Put '"$(TargetPath)"' in
-	the 'Command Line' textbox.Put 'Unit Tests...' in the 'Description' textbox.
-6. Run the project
+2. Run the program
+
+Note: It may happen that 1 test may show as a failure, simply run the program again and it should
+		resolve itself as this is part of the random tests.

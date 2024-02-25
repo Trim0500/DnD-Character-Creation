@@ -2,7 +2,7 @@
 * \file Map.h
 * \brief Header file for the Map class
 *
-* @author Michelle Pilonsky
+* @author Michelle Polonsky
 */
 
 #include <vector>
