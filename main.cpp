@@ -8,12 +8,16 @@
 
 #include "Character.h"
 #include "Dice.h"
+#include "Map.h"
+#include "demoitem.h"
 #include "DiceDemo.h"
+#include "demoCharacter.h"
 
 using namespace std;
 using namespace CppUnit;
 using namespace item;
 using namespace itemcontainer;
+using namespace demoitem;
 
 int main()
 {
@@ -35,77 +39,15 @@ int main()
 		return 1;
 	}
 	
-	/* Driver code here... */
+	ShowCaseItemCreation();
 
-	Character::Character* fighterCharacter = new Character::Character("Marty", Character::Character_Class::Fighter);
-
-	ItemContainer* fighterInventory = &fighterCharacter->Inventory();
-
-	Item* helmetObject = new Item("Baron's Helmet", 2, Helmet, Intelligence, 5);
-	Item* shieldObject = new Item("Hexlock Shield", 2, Shield, ArmorClass, 10);
-	Item* ringObject = new Item("Pontifex Ring", 1, Ring, Wisdom, 0.5);
-	Item* beltObject = new Item("Power Belt", 1, Belt, Strength, 4.5);
-	Item* bootsObject = new Item("Pegasus Boots", 2, Boots, Dexterity, 5);
-	Item* weaponObject = new Item("Steel Lance", 2, Weapon, AttackBonus, 3);
-
-	fighterInventory->AddNewItem(helmetObject);
-	fighterInventory->AddNewItem(shieldObject);
-	fighterInventory->AddNewItem(ringObject);
-	fighterInventory->AddNewItem(beltObject);
-	fighterInventory->AddNewItem(bootsObject);
-	fighterInventory->AddNewItem(weaponObject);
-
-	fighterCharacter->Equip_Item(ringObject);
-	fighterCharacter->Equip_Item(beltObject);
-	fighterCharacter->Equip_Item(bootsObject);
-	fighterCharacter->Equip_Item(weaponObject);
-
-	float remainingBackpackCapacity = fighterInventory->GetCapacity() - fighterInventory->GetTotalItemWeight();
-	cout << "Current Backpack item weight: " << fighterInventory->GetItemWeight() + fighterInventory->GetTotalItemWeight() << "lbs" << endl;
-	cout << "Remaining Backpack capacity: " << remainingBackpackCapacity << "lbs" << endl;
-
-	fighterCharacter->Print_Character_Sheet();
-
-	cout << endl;
-
-	ItemContainer* treasureChest = new ItemContainer("Silver Chest", TreasureChest, 250);
-
-	int chestCapacity = treasureChest->GetCapacity();
-	float totalChestItemWeight = 0.0;
-	while (true)
-	{
-		if (totalChestItemWeight >= treasureChest->GetCapacity() / 2) {
-			break;
-		}
-
-		Item* newItem = new Item();
-		treasureChest->AddNewItem(newItem);
-		totalChestItemWeight += newItem->GetItemWeight();
-	}
-
-	treasureChest->PrintItemVector();
-
-	cout << endl;
-
-	Dice* dice = new Dice();
-	int rollValue = dice->roll("4d20+4");
-	cout << "Dice rolled: " << rollValue << endl;
-	try {
-
-		Dice::roll("1z20");
-	} catch (invalid_argument) {
-		cout << "invalid query" << endl;
-	}
-
-	// getchar();
 	DiceDemo();
 
-	delete dice;
-	fighterInventory->GetAllItems().clear();
-	delete fighterCharacter;
-	treasureChest->GetAllItems().clear();
-	delete treasureChest;
+	demo_character();
 
+	Map::Map* map = Map::Map::Create(); //  this function takes care of everything you need to create a map
+
+	getchar();
 
 	return 0;
 }

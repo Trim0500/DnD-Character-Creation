@@ -4,6 +4,7 @@
 #include <stack>
 #include <list>
 #include <queue>
+#include <regex>
 
 using namespace std;
 
@@ -22,75 +23,107 @@ Map::Map::Map(int r, int c) {
 Map::Map* Map::Map::Create() {
 	int rows, cols;
 
-	cout << "Enter the number of rows in your map: ";
-	cin >> rows;
-	//validate rows input
-	while (true) {
-		if (cin.fail() || rows < 1) {
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "Invalid input. Please enter a positive number: ";
-			cin >> rows;
+	string rowInput, colInput;
+	
+	regex numRgx("[1-9]");
+	regex answerRgx("[y|n]");
+	smatch rowNumMatch, colNumMatch, answerMatch;
+
+	try {
+		cout << "Enter the number of rows in your map: ";
+		cin >> rowInput;
+		if (!regex_match(rowInput, rowNumMatch, numRgx)) {
+			throw exception("Invalid input!");
 		}
-		else {
-			break;
+
+		rows = stoi(rowInput);
+
+		//validate rows input
+		while (true) {
+			if (cin.fail() || rows < 1) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Invalid input. Please enter a positive number: ";
+				cin >> rows;
+			}
+			else {
+				break;
+			}
 		}
+
+		cout << "Enter the number of columns in your map: ";
+		cin >> colInput;
+
+		if (!regex_match(colInput, colNumMatch, numRgx)) {
+			throw exception("Invalid input!");
+		}
+
+		cols = stoi(rowInput);
+
+		//validate columns input
+		while (true) {
+			if (cin.fail() || cols < 1) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Invalid input. Please enter a positive number: ";
+				cin >> cols;
+			}
+			else {
+				break;
+			}
+		}
+
+
+		Map* map = new Map(rows, cols);
+		map->Print();
+
+		string answer;
+		cout << "Leave as is? (y/n): ";
+		cin >> answer;
+
+		if (!regex_match(answer, answerMatch, answerRgx)) {
+			throw exception("Invalid Input!");
+		}
+
+		char custm = answer[0];
+
+		while (true) {
+			if (cin.fail()) {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Not a valid answer. Leave the map as is? (y/n): ";
+				cin >> custm;
+			}
+			if (custm == 'y' || custm == 'n') {
+				break;
+			}
+			else {
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				cout << "Not a valid answer. Leave the map as is? (y/n): ";
+				cin >> custm;
+			}
+		}
+
+		if (custm == 'n') {
+			bool path = false;
+			while (!path) {
+				// Let the user customize the map how they want
+				map->Customize();
+				map->Print();
+				// Check that there is at least one path from start to end
+				cout << "Checking if there is a possible path ... " << endl;
+				path = map->IsTherePath();
+			}
+
+		}
+
+		return map;
+	}
+	catch (exception exc) {
+		cout << "Invalid input!" << endl;
 	}
 
-	cout << "Enter the number of columns in your map: ";
-	cin >> cols;
-	//validate columns input
-	while (true) {
-		if (cin.fail() || cols < 1) {
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "Invalid input. Please enter a positive number: ";
-			cin >> cols;
-		}
-		else {
-			break;
-		}
-	}
-
-
-	Map* map = new Map(rows, cols);
-	map->Print();
-
-	char custm;
-	cout << "Leave as is? (y/n): ";
-	cin >> custm;
-	while (true) {
-		if (cin.fail()) {
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "Not a valid answer. Leave the map as is? (y/n): ";
-			cin >> custm;
-		}
-		if (custm == 'y' || custm == 'n') {
-			break;
-		}
-		else {
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "Not a valid answer. Leave the map as is? (y/n): ";
-			cin >> custm;
-		}
-	}
-
-	if (custm == 'n') {
-		bool path = false;
-		while (!path) {
-			// Let the user customize the map how they want
-			map->Customize();
-			map->Print();
-			// Check that there is at least one path from start to end
-			cout << "Checking if there is a possible path ... " << endl;
-			path = map->IsTherePath();
-		}
-
-	}
-
-	return map;
 }
 
 void Map::Map::Customize() {
