@@ -86,6 +86,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="DiceDemo.cpp" />
+    <ClCompile Include="demoCharacter.cpp" />
     <ClCompile Include="item.cpp" />
     <ClCompile Include="itemcontainer.cpp" />
     <ClCompile Include="Character.cpp" />
@@ -98,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DiceDemo.h" />
+    <ClInclude Include="demoCharacter.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="itemcontainer.h" />
     <ClInclude Include="testCharacter.h" />
