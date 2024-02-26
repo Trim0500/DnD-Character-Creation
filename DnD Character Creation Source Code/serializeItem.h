@@ -36,9 +36,9 @@ namespace serializeItem {
 		float capacity;
 	};
 
-	list<Item*> LoadItems(const string&);
+	vector<ItemRecord*> LoadItemsByContainerIDs(const string&, const vector<int>&);
 	
-	list<ItemContainer*> LoadItemContainers(const string&);
+	vector<ItemContainerRecord*> LoadItemContainersByIDs(const string&, const vector<int>&);
 
 	void SaveItems(vector<Item*>);
 	
