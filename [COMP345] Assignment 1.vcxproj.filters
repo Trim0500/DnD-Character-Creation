@@ -57,6 +57,9 @@
     <ClCompile Include="DnD Character Creation Source Code\testMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DnD Character Creation Source Code\serializeItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DnD Character Creation Source Code\item.h">
@@ -99,6 +102,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DnD Character Creation Source Code\testMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DnD Character Creation Source Code\serializeItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

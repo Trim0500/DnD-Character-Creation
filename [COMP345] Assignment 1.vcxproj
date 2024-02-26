@@ -99,6 +99,7 @@
     <ClCompile Include="DnD Character Creation Source Code\Dice.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\Map.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\testMap.cpp" />
+    <ClCompile Include="DnD Character Creation Source Code\serializeItem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DnD Character Creation Source Code\demoitem.h" />
@@ -115,6 +116,7 @@
     <ClInclude Include="DnD Character Creation Source Code\testitemidcounter.h" />
     <ClInclude Include="DnD Character Creation Source Code\Map.h" />
     <ClInclude Include="DnD Character Creation Source Code\testMap.h" />
+    <ClInclude Include="DnD Character Creation Source Code\serializeItem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
