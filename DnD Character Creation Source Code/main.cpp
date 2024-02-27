@@ -13,13 +13,17 @@
 #include "DiceDemo.h"
 #include "demoCharacter.h"
 
-using namespace std;
+#include <FL/Fl.H>
+#include <FL/Fl_Window.H>
+#include <FL/Fl_Box.H>
+
+
 using namespace CppUnit;
 using namespace item;
 using namespace itemcontainer;
 using namespace demoitem;
 
-int main()
+int main(int argc, char** argv)
 {
 	// Get the top level suite from the registry
 	Test* suite = TestFactoryRegistry::getRegistry().makeTest();

@@ -1,0 +1,9 @@
+Package: expat
+Version: 2.5.0
+Port-Version: 3
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 539a029d9e5de9a0a3a694c5eefd633039022e367d824b860924655e4ab5c50a
+Description: XML parser library written in C
+Status: install ok half-installed

@@ -1,0 +1,8 @@
+Package: getopt-win32
+Version: 1.1.0.20220925
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: a10e5a95d6a964b42c586845ab5fd774c52a823e88ceb7c283d487fd800ff581
+Description: An implementation of getopt.
+Status: install ok half-installed

@@ -1,0 +1,9 @@
+Package: fontconfig
+Version: 2.14.2
+Port-Version: 1
+Depends: dirent, expat, freetype, getopt, gettext, gperf:x64-windows, libiconv, pthread, vcpkg-tool-meson:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 139577551d19253d7f0fe2bb5277dbb64a7bb0dc268191220bd4d34e9ca5ac0d
+Description: Library for configuring and customizing font access.
+Status: install ok installed
