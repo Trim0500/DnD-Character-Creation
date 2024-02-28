@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['levels_0',['Levels',['../class_character_1_1_character.html#ad504c4ba9d315ed891bf2b8af07734e4',1,'Character::Character']]],
-  ['levelup_1',['Levelup',['../class_character_1_1_character.html#a77829df538a2a1115b08481d8a25e887',1,'Character::Character']]]
+  ['levels_0',['Levels',['../class_character_1_1_character.html#a249907bfc3e812dc8b2cf7796bc21765',1,'Character::Character']]],
+  ['levelup_1',['Levelup',['../class_character_1_1_character.html#ac8ed00c91b7c01da4532f33cf2096d8d',1,'Character::Character']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['na_0',['NA',['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca44125f26a1f7fbb82e6756ddd5e5bfce',1,'item::NA'],['../namespace_character.html#a7390822faeff7f62e8084fd85b0d0830ad4cd0dabcf4caa22ad92fab40844c786',1,'Character::NA']]]
+  ['monk_0',['Monk',['../class_character.html#afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359',1,'Character']]]
 ];

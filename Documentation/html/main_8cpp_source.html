@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/main.cpp Source File</title>
+<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/main.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -54,7 +54,6 @@ $(function() {
 $(function() { codefold.init(0); });
 /* @license-end */
 </script>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -76,8 +75,13 @@ $(function() { codefold.init(0); });
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e50ee4dfc2640631efeb2bdc63c536ea.html">DnD Character Creation Source Code</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/main.cpp</div></div>
+  <div class="headertitle"><div class="title">main.cpp</div></div>
 </div><!--header-->
 <div class="contents">
 <a href="main_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// main.cpp : This file contains the &#39;main&#39; function. Program execution begins and ends there.</span></div>
@@ -90,116 +94,76 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="_character_8h.html">Character.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_dice_8h.html">Dice.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">using namespace </span>CppUnit;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceitem.html">item</a>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceitemcontainer.html">itemcontainer</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   17</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// Get the top level suite from the registry</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    Test* suite = TestFactoryRegistry::getRegistry().makeTest();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">Map.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="demoitem_8h.html">demoitem.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_dice_demo_8h.html">DiceDemo.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="demo_character_8h.html">demoCharacter.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">using namespace </span>CppUnit;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceitem.html">item</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespaceitemcontainer.html">itemcontainer</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacedemoitem.html">demoitem</a>;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// Adds the test to the list of test to run</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    TextUi::TestRunner runner;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    runner.addTest(suite);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// Change the default outputter to a compiler error format outputter</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    runner.setOutputter(<span class="keyword">new</span> CompilerOutputter(&amp;runner.result(),</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        std::cerr));</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// Run the tests.</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">bool</span> wasSucessful = runner.run();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// Return error code 1 if the one of test failed.</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">if</span> (!wasSucessful) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">/* Driver code here... */</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>* fighterCharacter = <span class="keyword">new</span> <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>(<span class="stringliteral">&quot;Marty&quot;</span>, <a class="code hl_enumvalue" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee">Character::Character_Class::Fighter</a>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="classitem_1_1_item.html">Item</a>* helmetObject = <span class="keyword">new</span> <a class="code hl_class" href="classitem_1_1_item.html">Item</a>(<span class="stringliteral">&quot;testHelmet&quot;</span>, 2, <a class="code hl_enumvalue" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1">Helmet</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a">Intelligence</a>);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_class" href="classitem_1_1_item.html">Item</a>* armorObject = <span class="keyword">new</span> <a class="code hl_class" href="classitem_1_1_item.html">Item</a>(<span class="stringliteral">&quot;testArmor&quot;</span>, 3, <a class="code hl_enumvalue" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03accbeb800ab9169831734326a5b38cb4d">Armor</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="classitem_1_1_item.html">Item</a>* shieldObject = <span class="keyword">new</span> <a class="code hl_class" href="classitem_1_1_item.html">Item</a>(<span class="stringliteral">&quot;testShield&quot;</span>, 2, <a class="code hl_enumvalue" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9">Shield</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">ArmorClass</a>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_class" href="classitem_1_1_item.html">Item</a>* ringObject = <span class="keyword">new</span> <a class="code hl_class" href="classitem_1_1_item.html">Item</a>(<span class="stringliteral">&quot;testRing&quot;</span>, 1, <a class="code hl_enumvalue" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7">Ring</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">Wisdom</a>);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="classitem_1_1_item.html">Item</a>* beltObject = <span class="keyword">new</span> <a class="code hl_class" href="classitem_1_1_item.html">Item</a>(<span class="stringliteral">&quot;testBelt&quot;</span>, 1, <a class="code hl_enumvalue" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a1ec13bc0551b0b9b015ba22b6ff865d5">Belt</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9">Strength</a>);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_class" href="classitem_1_1_item.html">Item</a>* bootsObject = <span class="keyword">new</span> <a class="code hl_class" href="classitem_1_1_item.html">Item</a>(<span class="stringliteral">&quot;testBoots&quot;</span>, 2, <a class="code hl_enumvalue" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d">Boots</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69">Dexterity</a>);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="classitem_1_1_item.html">Item</a>* weaponObject = <span class="keyword">new</span> <a class="code hl_class" href="classitem_1_1_item.html">Item</a>(<span class="stringliteral">&quot;testWeapon&quot;</span>, 2, <a class="code hl_enumvalue" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158">Weapon</a>, <a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c">AttackBonus</a>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="classitemcontainer_1_1_item_container.html">ItemContainer</a>* fighterInventory = &amp;fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a9f40a0944338a4ad57bb1555c85b7a24">Inventory</a>();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    fighterInventory-&gt;<a class="code hl_function" href="classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d">AddNewItem</a>(*helmetObject);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    fighterInventory-&gt;<a class="code hl_function" href="classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d">AddNewItem</a>(*armorObject);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    fighterInventory-&gt;<a class="code hl_function" href="classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d">AddNewItem</a>(*shieldObject);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    fighterInventory-&gt;<a class="code hl_function" href="classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d">AddNewItem</a>(*ringObject);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    fighterInventory-&gt;<a class="code hl_function" href="classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d">AddNewItem</a>(*beltObject);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    fighterInventory-&gt;<a class="code hl_function" href="classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d">AddNewItem</a>(*bootsObject);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    fighterInventory-&gt;<a class="code hl_function" href="classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d">AddNewItem</a>(*weaponObject);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a9c9be05b2d02069f69c91c9ad569a360">Equip_Item</a>(helmetObject);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a9c9be05b2d02069f69c91c9ad569a360">Equip_Item</a>(armorObject);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a9c9be05b2d02069f69c91c9ad569a360">Equip_Item</a>(shieldObject);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a9c9be05b2d02069f69c91c9ad569a360">Equip_Item</a>(ringObject);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a9c9be05b2d02069f69c91c9ad569a360">Equip_Item</a>(beltObject);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a9c9be05b2d02069f69c91c9ad569a360">Equip_Item</a>(bootsObject);</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a9c9be05b2d02069f69c91c9ad569a360">Equip_Item</a>(weaponObject);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    fighterCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#ac038bc962c9e6051555b994ebbf56a98">Print_Character_Sheet</a>();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_class" href="class_dice.html">Dice</a>* dice = <span class="keyword">new</span> <a class="code hl_class" href="class_dice.html">Dice</a>();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">int</span> rollValue = dice-&gt;<a class="code hl_function" href="class_dice.html#a4f045c0acc89669ff5d5b4dcd4c78e2c">roll</a>(<span class="stringliteral">&quot;4d20+4&quot;</span>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    cout &lt;&lt; <span class="stringliteral">&quot;Dice rolled: &quot;</span> &lt;&lt; rollValue &lt;&lt; endl;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    getchar();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keyword">delete</span> dice;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    fighterInventory-&gt;<a class="code hl_function" href="classitemcontainer_1_1_item_container.html#a21184a7baf42de78796109c07856ea61">GetAllItems</a>().clear();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">delete</span> fighterCharacter;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   22</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">// Get the top level suite from the registry</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    Test* suite = TestFactoryRegistry::getRegistry().makeTest();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Adds the test to the list of test to run</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    TextUi::TestRunner runner;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    runner.addTest(suite);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// Change the default outputter to a compiler error format outputter</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    runner.setOutputter(<span class="keyword">new</span> CompilerOutputter(&amp;runner.result(),</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        std::cerr));</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// Run the tests.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">bool</span> wasSucessful = runner.run();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Return error code 1 if the one of test failed.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (!wasSucessful) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <a class="code hl_function" href="namespacedemoitem.html#abdce5414c19d04b5fa00f10d58298c0e">ShowCaseItemCreation</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="_dice_demo_8cpp.html#a8253ca339bf57508a4854e6d2c297619">DiceDemo</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="demo_character_8cpp.html#a1afbd8aec4cb24d340487faa1192c1d8">demo_character</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* map = <a class="code hl_function" href="class_map_1_1_map.html#a2affecbecdee0a0c6ed995e205f12f21">Map::Map::Create</a>(); <span class="comment">//  this function takes care of everything you need to create a map</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    getchar();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">// Run program: Ctrl + F5 or Debug &gt; Start Without Debugging menu</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">// Debug program: F5 or Debug &gt; Start Debugging menu</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">// Tips for Getting Started: </span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">//   1. Use the Solution Explorer window to add/manage files</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">//   2. Use the Team Explorer window to connect to source control</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">//   3. Use the Output window to see build output and other messages</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//   4. Use the Error List window to view errors</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">//   5. Go to Project &gt; Add New Item to create new code files, or Project &gt; Add Existing Item to add existing code files to the project</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">//   6. In the future, to open this project again, go to File &gt; Open &gt; Project and select the .sln file</span></div>
-<div class="ttc" id="a_character_8h_html"><div class="ttname"><a href="_character_8h.html">Character.h</a></div></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">// Run program: Ctrl + F5 or Debug &gt; Start Without Debugging menu</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">// Debug program: F5 or Debug &gt; Start Debugging menu</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">// Tips for Getting Started: </span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//   1. Use the Solution Explorer window to add/manage files</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">//   2. Use the Team Explorer window to connect to source control</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">//   3. Use the Output window to see build output and other messages</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//   4. Use the Error List window to view errors</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">//   5. Go to Project &gt; Add New Item to create new code files, or Project &gt; Add Existing Item to add existing code files to the project</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//   6. In the future, to open this project again, go to File &gt; Open &gt; Project and select the .sln file</span></div>
+<div class="ttc" id="a_character_8h_html"><div class="ttname"><a href="_character_8h.html">Character.h</a></div><div class="ttdoc">Header file containing Character functionality definitions The character creation is based off of the...</div></div>
 <div class="ttc" id="a_dice_8h_html"><div class="ttname"><a href="_dice_8h.html">Dice.h</a></div></div>
-<div class="ttc" id="aclass_character_1_1_character_html"><div class="ttname"><a href="class_character_1_1_character.html">Character::Character</a></div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00091">Character.h:91</a></div></div>
-<div class="ttc" id="aclass_character_1_1_character_html_a9c9be05b2d02069f69c91c9ad569a360"><div class="ttname"><a href="class_character_1_1_character.html#a9c9be05b2d02069f69c91c9ad569a360">Character::Character::Equip_Item</a></div><div class="ttdeci">bool Equip_Item(item::Item *t_item)</div><div class="ttdef"><b>Definition</b> <a href="_character_8cpp_source.html#l00262">Character.cpp:262</a></div></div>
-<div class="ttc" id="aclass_character_1_1_character_html_a9f40a0944338a4ad57bb1555c85b7a24"><div class="ttname"><a href="class_character_1_1_character.html#a9f40a0944338a4ad57bb1555c85b7a24">Character::Character::Inventory</a></div><div class="ttdeci">itemcontainer::ItemContainer &amp; Inventory()</div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00215">Character.h:215</a></div></div>
-<div class="ttc" id="aclass_character_1_1_character_html_ac038bc962c9e6051555b994ebbf56a98"><div class="ttname"><a href="class_character_1_1_character.html#ac038bc962c9e6051555b994ebbf56a98">Character::Character::Print_Character_Sheet</a></div><div class="ttdeci">void Print_Character_Sheet()</div><div class="ttdef"><b>Definition</b> <a href="_character_8cpp_source.html#l00148">Character.cpp:148</a></div></div>
-<div class="ttc" id="aclass_dice_html"><div class="ttname"><a href="class_dice.html">Dice</a></div><div class="ttdef"><b>Definition</b> <a href="_dice_8h_source.html#l00013">Dice.h:13</a></div></div>
-<div class="ttc" id="aclass_dice_html_a4f045c0acc89669ff5d5b4dcd4c78e2c"><div class="ttname"><a href="class_dice.html#a4f045c0acc89669ff5d5b4dcd4c78e2c">Dice::roll</a></div><div class="ttdeci">static int roll(string query)</div><div class="ttdef"><b>Definition</b> <a href="_dice_8h_source.html#l00054">Dice.h:54</a></div></div>
-<div class="ttc" id="aclassitem_1_1_item_html"><div class="ttname"><a href="classitem_1_1_item.html">item::Item</a></div><div class="ttdoc">Class for the character items.</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00082">item.h:82</a></div></div>
-<div class="ttc" id="aclassitemcontainer_1_1_item_container_html"><div class="ttname"><a href="classitemcontainer_1_1_item_container.html">itemcontainer::ItemContainer</a></div><div class="ttdoc">Class to abstract the different item containers.</div><div class="ttdef"><b>Definition</b> <a href="itemcontainer_8h_source.html#l00048">itemcontainer.h:48</a></div></div>
-<div class="ttc" id="aclassitemcontainer_1_1_item_container_html_a21184a7baf42de78796109c07856ea61"><div class="ttname"><a href="classitemcontainer_1_1_item_container.html#a21184a7baf42de78796109c07856ea61">itemcontainer::ItemContainer::GetAllItems</a></div><div class="ttdeci">vector&lt; Item &gt; GetAllItems()</div><div class="ttdef"><b>Definition</b> <a href="itemcontainer_8h_source.html#l00056">itemcontainer.h:56</a></div></div>
-<div class="ttc" id="aclassitemcontainer_1_1_item_container_html_aacf5d7a6f56d5056797fc4b20892242d"><div class="ttname"><a href="classitemcontainer_1_1_item_container.html#aacf5d7a6f56d5056797fc4b20892242d">itemcontainer::ItemContainer::AddNewItem</a></div><div class="ttdeci">void AddNewItem(const Item &amp;newItem)</div><div class="ttdef"><b>Definition</b> <a href="itemcontainer_8h_source.html#l00055">itemcontainer.h:55</a></div></div>
-<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="#l00017">main.cpp:17</a></div></div>
-<div class="ttc" id="anamespace_character_html_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee"><div class="ttname"><a href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee">Character::Character_Class::Fighter</a></div><div class="ttdeci">@ Fighter</div></div>
+<div class="ttc" id="a_dice_demo_8cpp_html_a8253ca339bf57508a4854e6d2c297619"><div class="ttname"><a href="_dice_demo_8cpp.html#a8253ca339bf57508a4854e6d2c297619">DiceDemo</a></div><div class="ttdeci">void DiceDemo()</div><div class="ttdef"><b>Definition</b> <a href="_dice_demo_8cpp_source.html#l00005">DiceDemo.cpp:5</a></div></div>
+<div class="ttc" id="a_dice_demo_8h_html"><div class="ttname"><a href="_dice_demo_8h.html">DiceDemo.h</a></div></div>
+<div class="ttc" id="a_map_8h_html"><div class="ttname"><a href="_map_8h.html">Map.h</a></div><div class="ttdoc">Header file for the Map class.</div></div>
+<div class="ttc" id="aclass_map_1_1_map_html"><div class="ttname"><a href="class_map_1_1_map.html">Map::Map</a></div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00045">Map.h:45</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a2affecbecdee0a0c6ed995e205f12f21"><div class="ttname"><a href="class_map_1_1_map.html#a2affecbecdee0a0c6ed995e205f12f21">Map::Map::Create</a></div><div class="ttdeci">static Map * Create()</div><div class="ttdoc">Prompts user for map inputs.</div><div class="ttdef"><b>Definition</b> <a href="_map_8cpp_source.html#l00023">Map.cpp:23</a></div></div>
+<div class="ttc" id="ademo_character_8cpp_html_a1afbd8aec4cb24d340487faa1192c1d8"><div class="ttname"><a href="demo_character_8cpp.html#a1afbd8aec4cb24d340487faa1192c1d8">demo_character</a></div><div class="ttdeci">void demo_character()</div><div class="ttdef"><b>Definition</b> <a href="demo_character_8cpp_source.html#l00003">demoCharacter.cpp:3</a></div></div>
+<div class="ttc" id="ademo_character_8h_html"><div class="ttname"><a href="demo_character_8h.html">demoCharacter.h</a></div></div>
+<div class="ttc" id="ademoitem_8h_html"><div class="ttname"><a href="demoitem_8h.html">demoitem.h</a></div></div>
+<div class="ttc" id="amain_8cpp_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="#l00022">main.cpp:22</a></div></div>
+<div class="ttc" id="anamespacedemoitem_html"><div class="ttname"><a href="namespacedemoitem.html">demoitem</a></div><div class="ttdef"><b>Definition</b> <a href="demoitem_8cpp_source.html#l00016">demoitem.cpp:16</a></div></div>
+<div class="ttc" id="anamespacedemoitem_html_abdce5414c19d04b5fa00f10d58298c0e"><div class="ttname"><a href="namespacedemoitem.html#abdce5414c19d04b5fa00f10d58298c0e">demoitem::ShowCaseItemCreation</a></div><div class="ttdeci">void ShowCaseItemCreation()</div><div class="ttdef"><b>Definition</b> <a href="demoitem_8cpp_source.html#l00017">demoitem.cpp:17</a></div></div>
 <div class="ttc" id="anamespaceitem_html"><div class="ttname"><a href="namespaceitem.html">item</a></div><div class="ttdoc">namespace to encapsulate character items</div><div class="ttdef"><b>Definition</b> <a href="item_8cpp_source.html#l00058">item.cpp:58</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">item::Wisdom</a></div><div class="ttdeci">@ Wisdom</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00068">item.h:68</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">item::ArmorClass</a></div><div class="ttdeci">@ ArmorClass</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00070">item.h:70</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69">item::Dexterity</a></div><div class="ttdeci">@ Dexterity</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00065">item.h:65</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9">item::Strength</a></div><div class="ttdeci">@ Strength</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00064">item.h:64</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a">item::Intelligence</a></div><div class="ttdeci">@ Intelligence</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00067">item.h:67</a></div></div>
-<div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c">item::AttackBonus</a></div><div class="ttdeci">@ AttackBonus</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00071">item.h:71</a></div></div>
-<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03a1ec13bc0551b0b9b015ba22b6ff865d5"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a1ec13bc0551b0b9b015ba22b6ff865d5">item::Belt</a></div><div class="ttdeci">@ Belt</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00049">item.h:49</a></div></div>
-<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7">item::Ring</a></div><div class="ttdeci">@ Ring</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00048">item.h:48</a></div></div>
-<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a6eb1a0b2d631cccd1963a65da2748bc1">item::Helmet</a></div><div class="ttdeci">@ Helmet</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00045">item.h:45</a></div></div>
-<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d">item::Boots</a></div><div class="ttdeci">@ Boots</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00050">item.h:50</a></div></div>
-<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03ac176256f7c5b5df6b93f4bdc40874158">item::Weapon</a></div><div class="ttdeci">@ Weapon</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00051">item.h:51</a></div></div>
-<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03accbeb800ab9169831734326a5b38cb4d"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03accbeb800ab9169831734326a5b38cb4d">item::Armor</a></div><div class="ttdeci">@ Armor</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00046">item.h:46</a></div></div>
-<div class="ttc" id="anamespaceitem_html_ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9"><div class="ttname"><a href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9">item::Shield</a></div><div class="ttdeci">@ Shield</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00047">item.h:47</a></div></div>
 <div class="ttc" id="anamespaceitemcontainer_html"><div class="ttname"><a href="namespaceitemcontainer.html">itemcontainer</a></div><div class="ttdoc">Namespace for the character item containers.</div><div class="ttdef"><b>Definition</b> <a href="itemcontainer_8cpp_source.html#l00022">itemcontainer.cpp:22</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

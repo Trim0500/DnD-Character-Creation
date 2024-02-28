@@ -2,36 +2,421 @@
 \hypertarget{class_character}{}\label{class_character}\index{Character@{Character}}
 
 
+Represents \doxylink{class_character}{Character} type entities.  
+
+
+
+
 {\ttfamily \#include $<$Character.\+h$>$}
 
-\doxysubsubsection*{Public Member Functions}
+\doxysubsubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_character_a2e22068c6caf3cb2dc49dd633f874f21}{Character}} (int level, \mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7}{Character\+Class}} c\+\_\+class)
+enum class \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42}{Character\+\_\+\+Class}} \{ \newline
+\mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7}{Barbarian}} = 0
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5}{Bard}} = 1
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42a88f6c01a3b5711ec2a896c9f5462497c}{Cleric}} = 2
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e}{Druid}} = 3
+, \newline
+\mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee}{Fighter}} = 4
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359}{Monk}} = 5
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858}{Paladin}} = 6
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0}{Ranger}} = 7
+, \newline
+\mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174}{Rogue}} = 8
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f}{Sorcerer}} = 9
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42a21305b754e03843876abc27387a0e57e}{Warlock}} = 10
+, \mbox{\hyperlink{class_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5}{Wizard}} = 11
+ \}
+\begin{DoxyCompactList}\small\item\em Enum used to index various fields from the \doxylink{class_character}{Character} class. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}} \{ \newline
+\mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edba5a455a612047a34ede7a6c564fa67c0a}{Strength}} = 0
+, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edbaa8747f5acdc2352d39f455bdd1689273}{Dexterity}}
+, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edbaae93e52a3c1f3bbcefbc805331fca9e9}{Constitution}}
+, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edba8f7ba58961e0fe40cfda61b412537fba}{Intelligence}}
+, \newline
+\mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edba646f0a01b685558b975b5cd3f5b36241}{Wisdom}}
+, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edbaa47211f258a8e0172523525035c743af}{Charisma}}
+, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edba0a9be59870ecbb7f97a7878a311b556d}{Armor\+Class}}
+, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311}{Attack\+Bonus}}
+, \newline
+\mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edbaca1f13e821cca99c2b1e2b3fc4e12e9f}{Damage\+Bonus}}
+, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edbad4cd0dabcf4caa22ad92fab40844c786}{NA}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum used to index various fields from the \doxylink{class_character}{Character} class. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0ad}{Equipment\+\_\+\+Slots}} \{ \newline
+\mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8}{Armor}} = 0
+, \mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4}{Shield}}
+, \mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b}{Weapon}}
+, \mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b}{Boots}}
+, \newline
+\mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1}{Ring}}
+, \mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff}{Helmet}}
+, \mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c}{Belt}}
+, \mbox{\hyperlink{class_character_a9f688397f56ff67e4bdb949a6939c0adad3ab3d5184fe9b1b4428e4ffb797bdca}{Bag}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum used to index to fields from the \doxylink{class_character}{Character} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a00b5cdecff11125460d6b315e95cdeb3}{is\+Barbarian}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0001 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_ae470b8104e39dd0062fc2bb73f0b29f6}{is\+Bard}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0010 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_ae1452f04c4a6d2b9d92820077901a74f}{is\+Cleric}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}0100 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_aa71f9e67ef0b41fea2e39476d659ea97}{is\+Druid}} \{ 0b0000\textquotesingle{}0000\textquotesingle{}1000 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_ae8342c69dddc0b72ae97940abc0b89f1}{is\+Fighter}} \{ 0b0000\textquotesingle{}0001\textquotesingle{}0000 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_ad47be3c083a7f54c72fe9a756bf5bd4c}{is\+Monk}} \{ 0b0000\textquotesingle{}0010\textquotesingle{}0000 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a60aa5b15e5d991bb24c68f7849c38949}{is\+Paladin}} \{ 0b0000\textquotesingle{}0100\textquotesingle{}0000 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a337f4cc2a738d4433e1692d0532465f6}{is\+Ranger}} \{ 0b0000\textquotesingle{}1000\textquotesingle{}0000 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_af46d588138d500d3cec393eceda50be1}{is\+Rogue}} \{ 0b0001\textquotesingle{}0000\textquotesingle{}0000 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a598f797fbd8149540e35ae308f41b960}{is\+Sorcerer}} \{ 0b0010\textquotesingle{}0000\textquotesingle{}0000 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a2b73cffb972ec39f482568a2390edd48}{is\+Warlock}} \{ 0b0100\textquotesingle{}0000\textquotesingle{}0000 \}
+\item 
+constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a83261e8d9ba2c3475bce2a448b5ca4da}{is\+Wizard}} \{ 0b1000\textquotesingle{}0000\textquotesingle{}0000 \}
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item\+::\+Character\+Stats}}, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}} $>$ \mbox{\hyperlink{class_character_a290a8d7d18b31d69a68f4ffbcf90b16e}{item\+\_\+stat\+\_\+\+TO\+\_\+character\+\_\+stat}}
+\begin{DoxyCompactList}\small\item\em Unordered map used to map values from \doxylink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item\+::\+Character\+Stats} TO Character\+::\+Abilities\+\_\+\+Stats. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Represents \doxylink{class_character}{Character} type entities. 
 
-
-Definition at line \mbox{\hyperlink{_character_8h_source_l00037}{37}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
-
-
-
-\doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_character_a2e22068c6caf3cb2dc49dd633f874f21}\label{class_character_a2e22068c6caf3cb2dc49dd633f874f21} 
-\index{Character@{Character}!Character@{Character}}
-\index{Character@{Character}!Character@{Character}}
-\doxysubsubsection{\texorpdfstring{Character()}{Character()}}
-{\footnotesize\ttfamily Character\+::\+Character (\begin{DoxyParamCaption}\item[{int}]{level,  }\item[{\mbox{\hyperlink{_character_8h_a85302146612e6b98c2845c25d5b0daf7}{Character\+Class}}}]{c\+\_\+class }\end{DoxyParamCaption})}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edb}\label{class_character_adc11299f73c335c725b36d6e85fc7edb} 
+\index{Character@{Character}!Abilities\_Stats@{Abilities\_Stats}}
+\index{Abilities\_Stats@{Abilities\_Stats}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{Abilities\_Stats}{Abilities\_Stats}}
+{\footnotesize\ttfamily enum class Character\+::\+Abilities\+\_\+\+Stats\hspace{0.3cm}{\ttfamily [strong]}}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Enum used to index various fields from the \doxylink{class_character}{Character} class. 
+
+\textbackslash{}\+Enum Abilities\+\_\+\+Stats \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Strength@{Strength}!Character@{Character}}\index{Character@{Character}!Strength@{Strength}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edba5a455a612047a34ede7a6c564fa67c0a}\label{class_character_adc11299f73c335c725b36d6e85fc7edba5a455a612047a34ede7a6c564fa67c0a} 
+Strength&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dexterity@{Dexterity}!Character@{Character}}\index{Character@{Character}!Dexterity@{Dexterity}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edbaa8747f5acdc2352d39f455bdd1689273}\label{class_character_adc11299f73c335c725b36d6e85fc7edbaa8747f5acdc2352d39f455bdd1689273} 
+Dexterity&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Constitution@{Constitution}!Character@{Character}}\index{Character@{Character}!Constitution@{Constitution}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edbaae93e52a3c1f3bbcefbc805331fca9e9}\label{class_character_adc11299f73c335c725b36d6e85fc7edbaae93e52a3c1f3bbcefbc805331fca9e9} 
+Constitution&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Intelligence@{Intelligence}!Character@{Character}}\index{Character@{Character}!Intelligence@{Intelligence}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edba8f7ba58961e0fe40cfda61b412537fba}\label{class_character_adc11299f73c335c725b36d6e85fc7edba8f7ba58961e0fe40cfda61b412537fba} 
+Intelligence&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wisdom@{Wisdom}!Character@{Character}}\index{Character@{Character}!Wisdom@{Wisdom}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edba646f0a01b685558b975b5cd3f5b36241}\label{class_character_adc11299f73c335c725b36d6e85fc7edba646f0a01b685558b975b5cd3f5b36241} 
+Wisdom&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Charisma@{Charisma}!Character@{Character}}\index{Character@{Character}!Charisma@{Charisma}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edbaa47211f258a8e0172523525035c743af}\label{class_character_adc11299f73c335c725b36d6e85fc7edbaa47211f258a8e0172523525035c743af} 
+Charisma&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArmorClass@{ArmorClass}!Character@{Character}}\index{Character@{Character}!ArmorClass@{ArmorClass}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edba0a9be59870ecbb7f97a7878a311b556d}\label{class_character_adc11299f73c335c725b36d6e85fc7edba0a9be59870ecbb7f97a7878a311b556d} 
+Armor\+Class&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AttackBonus@{AttackBonus}!Character@{Character}}\index{Character@{Character}!AttackBonus@{AttackBonus}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311}\label{class_character_adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311} 
+Attack\+Bonus&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DamageBonus@{DamageBonus}!Character@{Character}}\index{Character@{Character}!DamageBonus@{DamageBonus}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edbaca1f13e821cca99c2b1e2b3fc4e12e9f}\label{class_character_adc11299f73c335c725b36d6e85fc7edbaca1f13e821cca99c2b1e2b3fc4e12e9f} 
+Damage\+Bonus&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NA@{NA}!Character@{Character}}\index{Character@{Character}!NA@{NA}}}\Hypertarget{class_character_adc11299f73c335c725b36d6e85fc7edbad4cd0dabcf4caa22ad92fab40844c786}\label{class_character_adc11299f73c335c725b36d6e85fc7edbad4cd0dabcf4caa22ad92fab40844c786} 
+NA&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00059}{59}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42}\label{class_character_afed4352e48176e367ea1a8299f6aee42} 
+\index{Character@{Character}!Character\_Class@{Character\_Class}}
+\index{Character\_Class@{Character\_Class}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{Character\_Class}{Character\_Class}}
+{\footnotesize\ttfamily enum class Character\+::\+Character\+\_\+\+Class\hspace{0.3cm}{\ttfamily [strong]}}
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+Enum used to index various fields from the \doxylink{class_character}{Character} class. 
+
+\textbackslash{}\+Enum Character\+\_\+\+Class \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Barbarian@{Barbarian}!Character@{Character}}\index{Character@{Character}!Barbarian@{Barbarian}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7}\label{class_character_afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7} 
+Barbarian&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bard@{Bard}!Character@{Character}}\index{Character@{Character}!Bard@{Bard}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5}\label{class_character_afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5} 
+Bard&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cleric@{Cleric}!Character@{Character}}\index{Character@{Character}!Cleric@{Cleric}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42a88f6c01a3b5711ec2a896c9f5462497c}\label{class_character_afed4352e48176e367ea1a8299f6aee42a88f6c01a3b5711ec2a896c9f5462497c} 
+Cleric&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Druid@{Druid}!Character@{Character}}\index{Character@{Character}!Druid@{Druid}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e}\label{class_character_afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e} 
+Druid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Fighter@{Fighter}!Character@{Character}}\index{Character@{Character}!Fighter@{Fighter}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee}\label{class_character_afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee} 
+Fighter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Monk@{Monk}!Character@{Character}}\index{Character@{Character}!Monk@{Monk}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359}\label{class_character_afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359} 
+Monk&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Paladin@{Paladin}!Character@{Character}}\index{Character@{Character}!Paladin@{Paladin}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858}\label{class_character_afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858} 
+Paladin&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ranger@{Ranger}!Character@{Character}}\index{Character@{Character}!Ranger@{Ranger}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0}\label{class_character_afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0} 
+Ranger&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rogue@{Rogue}!Character@{Character}}\index{Character@{Character}!Rogue@{Rogue}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174}\label{class_character_afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174} 
+Rogue&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sorcerer@{Sorcerer}!Character@{Character}}\index{Character@{Character}!Sorcerer@{Sorcerer}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f}\label{class_character_afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f} 
+Sorcerer&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Warlock@{Warlock}!Character@{Character}}\index{Character@{Character}!Warlock@{Warlock}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42a21305b754e03843876abc27387a0e57e}\label{class_character_afed4352e48176e367ea1a8299f6aee42a21305b754e03843876abc27387a0e57e} 
+Warlock&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Wizard@{Wizard}!Character@{Character}}\index{Character@{Character}!Wizard@{Wizard}}}\Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5}\label{class_character_afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5} 
+Wizard&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00028}{28}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0ad}\label{class_character_a9f688397f56ff67e4bdb949a6939c0ad} 
+\index{Character@{Character}!Equipment\_Slots@{Equipment\_Slots}}
+\index{Equipment\_Slots@{Equipment\_Slots}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{Equipment\_Slots}{Equipment\_Slots}}
+{\footnotesize\ttfamily enum class Character\+::\+Equipment\+\_\+\+Slots\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Enum used to index to fields from the \doxylink{class_character}{Character} class. 
+
+\textbackslash{}\+Enum Equipment\+\_\+\+Slots \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Armor@{Armor}!Character@{Character}}\index{Character@{Character}!Armor@{Armor}}}\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8}\label{class_character_a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8} 
+Armor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shield@{Shield}!Character@{Character}}\index{Character@{Character}!Shield@{Shield}}}\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4}\label{class_character_a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4} 
+Shield&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Weapon@{Weapon}!Character@{Character}}\index{Character@{Character}!Weapon@{Weapon}}}\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b}\label{class_character_a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b} 
+Weapon&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Boots@{Boots}!Character@{Character}}\index{Character@{Character}!Boots@{Boots}}}\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b}\label{class_character_a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b} 
+Boots&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ring@{Ring}!Character@{Character}}\index{Character@{Character}!Ring@{Ring}}}\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1}\label{class_character_a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1} 
+Ring&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Helmet@{Helmet}!Character@{Character}}\index{Character@{Character}!Helmet@{Helmet}}}\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff}\label{class_character_a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff} 
+Helmet&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Belt@{Belt}!Character@{Character}}\index{Character@{Character}!Belt@{Belt}}}\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c}\label{class_character_a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c} 
+Belt&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bag@{Bag}!Character@{Character}}\index{Character@{Character}!Bag@{Bag}}}\Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0adad3ab3d5184fe9b1b4428e4ffb797bdca}\label{class_character_a9f688397f56ff67e4bdb949a6939c0adad3ab3d5184fe9b1b4428e4ffb797bdca} 
+Bag&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00092}{92}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_character_a00b5cdecff11125460d6b315e95cdeb3}\label{class_character_a00b5cdecff11125460d6b315e95cdeb3} 
+\index{Character@{Character}!isBarbarian@{isBarbarian}}
+\index{isBarbarian@{isBarbarian}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isBarbarian}{isBarbarian}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Barbarian \{ 0b0000\textquotesingle{}0000\textquotesingle{}0001 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00043}{43}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_ae470b8104e39dd0062fc2bb73f0b29f6}\label{class_character_ae470b8104e39dd0062fc2bb73f0b29f6} 
+\index{Character@{Character}!isBard@{isBard}}
+\index{isBard@{isBard}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isBard}{isBard}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Bard \{ 0b0000\textquotesingle{}0000\textquotesingle{}0010 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00044}{44}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_ae1452f04c4a6d2b9d92820077901a74f}\label{class_character_ae1452f04c4a6d2b9d92820077901a74f} 
+\index{Character@{Character}!isCleric@{isCleric}}
+\index{isCleric@{isCleric}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isCleric}{isCleric}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Cleric \{ 0b0000\textquotesingle{}0000\textquotesingle{}0100 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00045}{45}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_aa71f9e67ef0b41fea2e39476d659ea97}\label{class_character_aa71f9e67ef0b41fea2e39476d659ea97} 
+\index{Character@{Character}!isDruid@{isDruid}}
+\index{isDruid@{isDruid}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isDruid}{isDruid}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Druid \{ 0b0000\textquotesingle{}0000\textquotesingle{}1000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00046}{46}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_ae8342c69dddc0b72ae97940abc0b89f1}\label{class_character_ae8342c69dddc0b72ae97940abc0b89f1} 
+\index{Character@{Character}!isFighter@{isFighter}}
+\index{isFighter@{isFighter}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isFighter}{isFighter}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Fighter \{ 0b0000\textquotesingle{}0001\textquotesingle{}0000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00047}{47}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_ad47be3c083a7f54c72fe9a756bf5bd4c}\label{class_character_ad47be3c083a7f54c72fe9a756bf5bd4c} 
+\index{Character@{Character}!isMonk@{isMonk}}
+\index{isMonk@{isMonk}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isMonk}{isMonk}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Monk \{ 0b0000\textquotesingle{}0010\textquotesingle{}0000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00048}{48}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a60aa5b15e5d991bb24c68f7849c38949}\label{class_character_a60aa5b15e5d991bb24c68f7849c38949} 
+\index{Character@{Character}!isPaladin@{isPaladin}}
+\index{isPaladin@{isPaladin}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isPaladin}{isPaladin}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Paladin \{ 0b0000\textquotesingle{}0100\textquotesingle{}0000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00049}{49}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a337f4cc2a738d4433e1692d0532465f6}\label{class_character_a337f4cc2a738d4433e1692d0532465f6} 
+\index{Character@{Character}!isRanger@{isRanger}}
+\index{isRanger@{isRanger}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isRanger}{isRanger}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Ranger \{ 0b0000\textquotesingle{}1000\textquotesingle{}0000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00050}{50}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_af46d588138d500d3cec393eceda50be1}\label{class_character_af46d588138d500d3cec393eceda50be1} 
+\index{Character@{Character}!isRogue@{isRogue}}
+\index{isRogue@{isRogue}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isRogue}{isRogue}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Rogue \{ 0b0001\textquotesingle{}0000\textquotesingle{}0000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00051}{51}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a598f797fbd8149540e35ae308f41b960}\label{class_character_a598f797fbd8149540e35ae308f41b960} 
+\index{Character@{Character}!isSorcerer@{isSorcerer}}
+\index{isSorcerer@{isSorcerer}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isSorcerer}{isSorcerer}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Sorcerer \{ 0b0010\textquotesingle{}0000\textquotesingle{}0000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00052}{52}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a2b73cffb972ec39f482568a2390edd48}\label{class_character_a2b73cffb972ec39f482568a2390edd48} 
+\index{Character@{Character}!isWarlock@{isWarlock}}
+\index{isWarlock@{isWarlock}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isWarlock}{isWarlock}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Warlock \{ 0b0100\textquotesingle{}0000\textquotesingle{}0000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00053}{53}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a83261e8d9ba2c3475bce2a448b5ca4da}\label{class_character_a83261e8d9ba2c3475bce2a448b5ca4da} 
+\index{Character@{Character}!isWizard@{isWizard}}
+\index{isWizard@{isWizard}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{isWizard}{isWizard}}
+{\footnotesize\ttfamily constexpr std\+::bitset$<$12$>$ Character\+::is\+Wizard \{ 0b1000\textquotesingle{}0000\textquotesingle{}0000 \}\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00054}{54}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a290a8d7d18b31d69a68f4ffbcf90b16e}\label{class_character_a290a8d7d18b31d69a68f4ffbcf90b16e} 
+\index{Character@{Character}!item\_stat\_TO\_character\_stat@{item\_stat\_TO\_character\_stat}}
+\index{item\_stat\_TO\_character\_stat@{item\_stat\_TO\_character\_stat}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{item\_stat\_TO\_character\_stat}{item\_stat\_TO\_character\_stat}}
+{\footnotesize\ttfamily const std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item\+::\+Character\+Stats}}, \mbox{\hyperlink{class_character_adc11299f73c335c725b36d6e85fc7edb}{Abilities\+\_\+\+Stats}}$>$ Character\+::item\+\_\+stat\+\_\+\+TO\+\_\+character\+\_\+stat\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca795fca78ef0e9438d896f0a687f059d9}{item::CharacterStats::Strength}},Abilities\_Stats::Strength\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69}{item::CharacterStats::Dexterity}},Abilities\_Stats::Dexterity\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca88f95653690284b91fda9aceaf530cc3}{item::CharacterStats::Constitution}},Abilities\_Stats::Constitution\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a}{item::CharacterStats::Intelligence}},Abilities\_Stats::Intelligence\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383}{item::CharacterStats::Wisdom}},Abilities\_Stats::Wisdom\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51cafe44b1fb15c77340c602b90b4c8354f6}{item::CharacterStats::Charisma}},Abilities\_Stats::Charisma\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{item::CharacterStats::ArmorClass}},Abilities\_Stats::ArmorClass\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c}{item::CharacterStats::AttackBonus}},Abilities\_Stats::AttackBonus\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51caed1b1d81dfde3f39d3fa9076dd6b96b6}{item::CharacterStats::DamageBonus}},Abilities\_Stats::DamageBonus\},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca44125f26a1f7fbb82e6756ddd5e5bfce}{item::CharacterStats::NA}},Abilities\_Stats::NA\},}
+\DoxyCodeLine{\ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+Unordered map used to map values from \doxylink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{item\+::\+Character\+Stats} TO Character\+::\+Abilities\+\_\+\+Stats. 
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00076}{76}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\mbox{\hyperlink{_character_8h}{Character.\+h}}\item 
-C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\mbox{\hyperlink{_character_8cpp}{Character.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}\+COMP345\mbox{]} Assignment 1/\+Dn\+D Character Creation Source Code/\mbox{\hyperlink{_character_8h}{Character.\+h}}\end{DoxyCompactItemize}
