@@ -256,10 +256,6 @@ namespace Character {
 		*  \brief Checks if the character is multi-classed with a particular character class
 		*/
 		bool Is_Multi_Classed(Character_Class t_class);
-		/* \fn Hit_Die_Pool()
-		*  \return Returns a const refrence to the characters' hit die pool
-		*/ 
-		const std::unordered_map<Character_Class, Dice*>& Hit_Die_Pool() { return hit_die_pool; };
 
 	private:
 
@@ -278,22 +274,6 @@ namespace Character {
 		std::vector<int> ability_scores = std::vector<int>(6);
 		int max_hit_points{0};
 		int hit_points{0};
-
-		std::unordered_map<Character_Class, Dice*> hit_die_pool = {
-			{Character_Class::Barbarian,  nullptr},
-			{Character_Class::Bard, nullptr},
-			{Character_Class::Cleric, nullptr},
-			{Character_Class::Druid, nullptr},
-			{Character_Class::Fighter, nullptr},
-			{Character_Class::Monk, nullptr},
-			{Character_Class::Paladin, nullptr},
-			{Character_Class::Ranger, nullptr},
-			{Character_Class::Rogue, nullptr},
-			{Character_Class::Sorcerer, nullptr},
-			{Character_Class::Warlock, nullptr},
-			{Character_Class::Wizard,nullptr},
-
-		};
 
 		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
     
