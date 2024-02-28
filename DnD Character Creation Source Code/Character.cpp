@@ -29,7 +29,7 @@ Character::Character::Character(){
 
 }
 
-Character::Character::Character(const Character& t_character) : id(t_character.ID())
+Character::Character::Character(const Character& t_character) : id(t_character.id)
 {
 	name = t_character.name;
 	for (int i = 0;i<level.size(); i++) {
