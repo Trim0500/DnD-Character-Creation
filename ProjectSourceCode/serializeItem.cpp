@@ -63,7 +63,7 @@ namespace serializeItem {
 	vector<ItemRecord*> LoadItemsByContainerIDs(const string& _fileURI, const vector<int>& _containerIDs) {
 		ifstream itemInputStream(_fileURI);
 		if (!itemInputStream.is_open()) {
-			throw new ios::failure("Failed to open the file at: " + _fileURI);
+			throw invalid_argument("Failed to open the file at: " + _fileURI);
 		}
 
 		vector<ItemRecord*> itemRecords = ReadItemRecords(&itemInputStream, _containerIDs);

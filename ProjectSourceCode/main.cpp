@@ -12,12 +12,16 @@
 #include "demoitem.h"
 #include "DiceDemo.h"
 #include "demoCharacter.h"
+#include "serializeItem.h"
+
+#define SAVED_ITEMS_URI "SavedItems\\SavedItems.csv"
 
 using namespace std;
 using namespace CppUnit;
 using namespace item;
 using namespace itemcontainer;
 using namespace demoitem;
+using namespace serializeItem;
 
 int main()
 {
@@ -39,13 +43,34 @@ int main()
 		return 1;
 	}
 	
-	ShowCaseItemCreation();
+	//ShowCaseItemCreation();
 
-	DiceDemo();
+	//DiceDemo();
 
-	demo_character();
+	//demo_character();
 
-	Map::Map* map = Map::Map::Create(); //  this function takes care of everything you need to create a map
+	//Map::Map* map = Map::Map::Create(); //  this function takes care of everything you need to create a map
+
+	/*vector<int> dummy;
+	dummy.push_back(1);
+
+	try {
+		vector<ItemRecord*> container1ItemRecords = LoadItemsByContainerIDs(SAVED_ITEMS_URI, dummy);
+
+		for (int i = 0; i < (int)container1ItemRecords.size(); i++)
+		{
+			cout << "Item Record info:" << endl;
+			cout << "Item Id: " << container1ItemRecords[i]->itemId << endl;
+			cout << "Container Id: " << container1ItemRecords[i]->containerId << endl;
+			cout << "Item Name: " << container1ItemRecords[i]->itemName << endl;
+			cout << "Enchantment Bonus: +" << container1ItemRecords[i]->enchantmentBonus << endl;
+			cout << "Item Type: " << container1ItemRecords[i]->itemtype << endl;
+			cout << "Enchantment Type: " << container1ItemRecords[i]->enchantmentType << endl;
+		}
+	}
+	catch (invalid_argument exc) {
+		cout << "Failed to find the Item Records." << endl;
+	}*/
 
 	getchar();
 
