@@ -137,11 +137,11 @@ namespace Character {
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
-		const int ID() { return id; };
+		const int ID() const { return id; };
 		/* \fn Name()
 		*  \brief Character name
 		*/
-		std::string& Name() { return name; };
+		std::string Name() const { return this->name; };
 		/* \fn Print_Character_Sheet
 		*  \brief Prints character data to consol
 		*/
@@ -176,7 +176,6 @@ namespace Character {
 		*  \return Returns true if equipping was performed succesfully, false otherwise
 		*/
 
-		
 
 		bool Equip_Item(item::Item* t_item);
 		/* \fn Unequip_Item()

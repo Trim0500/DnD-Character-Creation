@@ -86,7 +86,8 @@
       <AdditionalDependencies>C:\Dev\Cppunit-1.12.1.VS2010\cppunit-1.12.1\lib\cppunit.lib;C:\Dev\cppunit.lib;%(AdditionalDependencies);C:\Dev\cppunit.lib;C:\Dev\Cppunit-1.12.1.VS2010\cppunit-1.12.1\lib\cppunit.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>"$(TargetPath)"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Unit Tests</Message>
@@ -154,6 +155,7 @@
     <ClCompile Include="itemcontainer.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SerializeCharacter.cpp" />
     <ClCompile Include="testCharacter.cpp" />
     <ClCompile Include="testitem.cpp" />
     <ClCompile Include="testitemcontainer.cpp" />
@@ -167,6 +169,7 @@
     <ClInclude Include="Dice.h" />
     <ClInclude Include="testitemcontainer.h" />
     <ClInclude Include="testitemidcounter.h" />
+    <ClInclude Include="SerializeCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
