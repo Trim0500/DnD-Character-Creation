@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <sstream>
 
 #include "serializeItem.h"
 
@@ -11,17 +13,23 @@ namespace {
 		vector<ItemRecord*> resultVector;
 
 		while (!fileInput->eof()) {
-			string itemIdText = "";
-			string containerIdText = "";
+			string nextLine = "";
+			getline(*fileInput, nextLine);
 
-			getline(*fileInput, itemIdText);
-			getline(*fileInput, containerIdText);
+			stringstream lineStream(nextLine);
+			
+			vector<string> segmentList;
+
+			string segment = "";
+			while (getline(lineStream, segment, ',')) {
+				segmentList.push_back(segment);
+			}
 
 			bool foundID = false;
 
 			for (int i = 0; i < _IDVector.size(); i++)
 			{
-				if (stoi(containerIdText) == _IDVector[i]) {
+				if (stoi(segmentList[1]) == _IDVector[i]) {
 					foundID = true;
 
 					break;
@@ -32,26 +40,14 @@ namespace {
 				continue;
 			}
 
-			string itemName = "";
-			string enchantmentBonusText = "";
-			string itemTypeText = "";
-			string enchantmentTypeText = "";
-			string weightText = "";
-
-			getline(*fileInput, itemName);
-			getline(*fileInput, enchantmentBonusText);
-			getline(*fileInput, itemTypeText);
-			getline(*fileInput, enchantmentTypeText);
-			getline(*fileInput, weightText);
-
 			ItemRecord* foundRecord = new ItemRecord;
-			foundRecord->itemId = stoi(itemIdText);
-			foundRecord->containerId = stoi(containerIdText);
-			foundRecord->itemName = itemName;
-			foundRecord->enchantmentBonus = stoi(enchantmentBonusText);
-			foundRecord->itemtype = (ItemType)stoi(itemTypeText);
-			foundRecord->enchantmentType = (CharacterStats)stoi(enchantmentTypeText);
-			foundRecord->weight = stof(weightText);
+			foundRecord->itemId = stoi(segmentList[0]);
+			foundRecord->containerId = stoi(segmentList[1]);
+			foundRecord->itemName = segmentList[2];
+			foundRecord->enchantmentBonus = stoi(segmentList[3]);
+			foundRecord->itemtype = (ItemType)stoi(segmentList[4]);
+			foundRecord->enchantmentType = (CharacterStats)stoi(segmentList[5]);
+			foundRecord->weight = stof(segmentList[6]);
 			resultVector.push_back(foundRecord);
 		}
 

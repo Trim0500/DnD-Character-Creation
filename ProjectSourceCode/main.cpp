@@ -5,6 +5,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
+#include <filesystem>
 
 #include "Character.h"
 #include "Dice.h"
@@ -14,7 +15,7 @@
 #include "demoCharacter.h"
 #include "serializeItem.h"
 
-#define SAVED_ITEMS_URI "SavedItems\\SavedItems.csv"
+#define SAVED_ITEMS_URI "\\SavedItems\\SavedItems.csv"
 
 using namespace std;
 using namespace CppUnit;
@@ -51,26 +52,35 @@ int main()
 
 	//Map::Map* map = Map::Map::Create(); //  this function takes care of everything you need to create a map
 
-	/*vector<int> dummy;
+	vector<int> dummy;
 	dummy.push_back(1);
 
+	string currentPath = filesystem::current_path().string();
+
+	ostringstream fullURI;
+	fullURI << currentPath << SAVED_ITEMS_URI;
+
+	cout << "The file is attempted to be found at: " << fullURI.str() << endl;
+
 	try {
-		vector<ItemRecord*> container1ItemRecords = LoadItemsByContainerIDs(SAVED_ITEMS_URI, dummy);
+		vector<ItemRecord*> container1ItemRecords = LoadItemsByContainerIDs(fullURI.str(), dummy);
 
 		for (int i = 0; i < (int)container1ItemRecords.size(); i++)
 		{
 			cout << "Item Record info:" << endl;
+			cout << "-----------------" << endl << endl;
 			cout << "Item Id: " << container1ItemRecords[i]->itemId << endl;
 			cout << "Container Id: " << container1ItemRecords[i]->containerId << endl;
 			cout << "Item Name: " << container1ItemRecords[i]->itemName << endl;
 			cout << "Enchantment Bonus: +" << container1ItemRecords[i]->enchantmentBonus << endl;
 			cout << "Item Type: " << container1ItemRecords[i]->itemtype << endl;
 			cout << "Enchantment Type: " << container1ItemRecords[i]->enchantmentType << endl;
+			cout << "-----------------" << endl << endl;
 		}
 	}
 	catch (invalid_argument exc) {
-		cout << "Failed to find the Item Records." << endl;
-	}*/
+		cout << exc.what() << endl;
+	}
 
 	getchar();
 
