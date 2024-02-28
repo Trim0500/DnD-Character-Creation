@@ -158,6 +158,7 @@ namespace Character {
 		*  \brief Character name
 		*/
 		std::string Name() const { return this->name; };
+		std::string Name(const std::string& t_name);
 		/* \fn Print_Character_Sheet
 		*  \brief Prints character data to consol
 		*/

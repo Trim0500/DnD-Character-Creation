@@ -98,8 +98,6 @@ Character::Character::Character(std::string t_name, Character_Class t_class, con
 Character::Character::Character(const serializecharacter::CharacterRecord& t_record) : id(t_record.id)
 {
 	this->name = t_record.name;
-	this->hit_points = t_record.hit_points;
-	this->max_hit_points = t_record.max_hit_points;
 	for (int i{ 0 }; i < ability_scores.size(); i++) {
 		this->ability_scores[i] = t_record.ability_scores[i];
 	}
@@ -108,8 +106,16 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 			Levelup((Character_Class)i);
 		}
 	}
+	this->hit_points = t_record.hit_points;
+	this->max_hit_points = t_record.max_hit_points;
 }
 
+
+std::string Character::Character::Name(const std::string& t_name)
+{
+	name = t_name;
+	return name;
+}
 
 void Character::Character::Print_Character_Sheet()
 {
