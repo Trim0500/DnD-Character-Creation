@@ -30,6 +30,7 @@ using namespace serializeItem;
 class TestSerializeItem : public TestFixture {
 	CPPUNIT_TEST_SUITE(TestSerializeItem);
 	CPPUNIT_TEST(TestLoadItems);
+	CPPUNIT_TEST(TestLoadContainers);
 	CPPUNIT_TEST_SUITE_END();
 
 	public:
@@ -45,11 +46,16 @@ class TestSerializeItem : public TestFixture {
 		void tearDown(void);
 	protected:
 		void TestLoadItems(void);
+		void TestLoadContainers(void);
 	private:
 		vector<int> containerIDOneVector;
 		vector<int> containerIDTwoVector;
 		vector<int> containerIDVector;
 		vector<int> invalidContainerIDVector;
+		vector<int> characterIDVector;
+		vector<int> mapCellIDVector;
+		vector<int> allIDVector;
+		vector<int> invalidIDVector;
 };
 
 CPPUNIT_TEST_SUITE_REGISTRATION(TestSerializeItem);
