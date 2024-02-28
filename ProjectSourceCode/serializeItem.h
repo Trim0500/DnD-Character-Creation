@@ -6,6 +6,7 @@
 
 #include "item.h"
 #include "itemcontainer.h"
+#include "Character.h"
 
 using namespace std;
 using namespace item;
@@ -40,7 +41,7 @@ namespace serializeItem {
 	
 	vector<ItemContainerRecord*> LoadItemContainersByIDs(const string&, const vector<int>&);
 
-	void SaveItems(vector<Item*>);
+	void SaveItems(const string&, const vector<ItemContainer*>&);
 	
-	void SaveItemContainers(vector<ItemContainer*>);
+	void SaveItemContainers(const string&, const vector<Character::Character*>&);
 }

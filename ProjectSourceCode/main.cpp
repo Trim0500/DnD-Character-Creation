@@ -16,6 +16,7 @@
 #include "serializeItem.h"
 
 #define SAVED_ITEMS_URI "\\SavedItems\\SavedItems.csv"
+#define SAVED_DUMMY_ITEMS_URI "\\SavedItems\\DUMMYSavedItems.csv"
 
 using namespace std;
 using namespace CppUnit;
@@ -81,6 +82,33 @@ int main()
 	catch (invalid_argument exc) {
 		cout << exc.what() << endl;
 	}
+
+	ItemContainer backpackObject("testBackpack", Backpack, 30.0);
+
+	Item backpackShieldItem("testBackpackShield", 4, Shield, ArmorClass, 12);
+	Item backpackBootsItem("testBackpackBoots", 4, Boots, Dexterity, 5);
+
+	backpackObject.AddNewItem(&backpackShieldItem);
+	backpackObject.AddNewItem(&backpackBootsItem);
+
+	ItemContainer wornItemsObject("testWornItems", WornItems, 0);
+
+	Item helmetObject("testHelmet", 2, Helmet, Intelligence, 5);
+	Item armorObject("testArmor", 3, Armor, ArmorClass, 45);
+
+	wornItemsObject.AddNewItem(&helmetObject);
+	wornItemsObject.AddNewItem(&armorObject);
+
+	vector<ItemContainer*> testContainerVector;
+	testContainerVector.push_back(&backpackObject);
+	testContainerVector.push_back(&wornItemsObject);
+
+	string currentPath2 = filesystem::current_path().string();
+
+	ostringstream fullURI2;
+	fullURI2 << currentPath2 << SAVED_DUMMY_ITEMS_URI;
+
+	SaveItems(fullURI2.str(), testContainerVector);
 
 	getchar();
 

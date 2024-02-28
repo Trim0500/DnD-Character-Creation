@@ -8,12 +8,16 @@
 #include <string>
 #include <filesystem>
 #include <sstream>
+#include <sys/stat.h>
 
 #include "testserializeitem.h"
+#include "Character.h"
 
 #define INVALID_FILE_URI "SomeDumbURI.csv"
 #define LOAD_SAVED_ITEMS_URI "\\SavedItems\\TestLoadSavedItems.csv"
 #define LOAD_SAVED_CONTAINERS_URI "\\SavedItems\\TestLoadSavedItemContainers.csv"
+#define SAVE_SAVED_ITEMS_URI "\\SavedItems\\TestSaveSavedItems.csv"
+#define SAVE_SAVED_CONTAINERS_URI "\\SavedItems\\TestSaveSavedItemContainers.csv"
 
 using namespace std;
 using namespace serializeItem;
@@ -101,4 +105,55 @@ void TestSerializeItem::TestLoadContainers(void) {
 	catch (invalid_argument exc) {
 		cout << exc.what() << endl;
 	}
+}
+
+void TestSerializeItem::TestSaveItems(void) {
+	ItemContainer backpackObject("testBackpack", Backpack, 30.0);
+
+	Item backpackShieldItem("testBackpackShield", 4, Shield, ArmorClass, 12);
+	Item backpackBootsItem("testBackpackBoots", 4, Boots, Dexterity, 5);
+
+	backpackObject.AddNewItem(&backpackShieldItem);
+	backpackObject.AddNewItem(&backpackBootsItem);
+
+	ItemContainer wornItemsObject("testWornItems", WornItems, 0);
+
+	Item helmetObject("testHelmet", 2, Helmet, Intelligence, 5);
+	Item armorObject("testArmor", 3, Armor, ArmorClass, 45);
+	
+	wornItemsObject.AddNewItem(&helmetObject);
+	wornItemsObject.AddNewItem(&armorObject);
+
+	vector<ItemContainer*> testContainerVector;
+	testContainerVector.push_back(&backpackObject);
+	testContainerVector.push_back(&wornItemsObject);
+
+	string currentPath = filesystem::current_path().string();
+
+	ostringstream fullURI;
+	fullURI << currentPath << SAVE_SAVED_ITEMS_URI;
+
+	CPPUNIT_ASSERT_NO_THROW(SaveItems(fullURI.str(), testContainerVector));
+
+	struct stat buffer;
+	CPPUNIT_ASSERT(stat(fullURI.str().c_str(), &buffer) == 0);
+}
+
+void TestSerializeItem::TestSaveContainers(void) {
+	Character::Character* testCharacter = new Character::Character("Testaniel Unitoph", Character::Character_Class::Fighter);
+	Character::Character* testCharacter2 = new Character::Character("Marty", Character::Character_Class::Fighter);
+
+	vector<Character::Character*> testCharacterVector;
+	testCharacterVector.push_back(testCharacter);
+	testCharacterVector.push_back(testCharacter2);
+
+	string currentPath = filesystem::current_path().string();
+
+	ostringstream fullURI;
+	fullURI << currentPath << SAVE_SAVED_CONTAINERS_URI;
+
+	CPPUNIT_ASSERT_NO_THROW(SaveItemContainers(fullURI.str(), testCharacterVector));
+
+	struct stat buffer;
+	CPPUNIT_ASSERT(stat(fullURI.str().c_str(), &buffer) == 0);
 }

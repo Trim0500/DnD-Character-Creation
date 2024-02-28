@@ -31,6 +31,8 @@ class TestSerializeItem : public TestFixture {
 	CPPUNIT_TEST_SUITE(TestSerializeItem);
 	CPPUNIT_TEST(TestLoadItems);
 	CPPUNIT_TEST(TestLoadContainers);
+	CPPUNIT_TEST(TestSaveItems);
+	CPPUNIT_TEST(TestSaveContainers);
 	CPPUNIT_TEST_SUITE_END();
 
 	public:
@@ -47,6 +49,8 @@ class TestSerializeItem : public TestFixture {
 	protected:
 		void TestLoadItems(void);
 		void TestLoadContainers(void);
+		void TestSaveItems(void);
+		void TestSaveContainers(void);
 	private:
 		vector<int> containerIDOneVector;
 		vector<int> containerIDTwoVector;

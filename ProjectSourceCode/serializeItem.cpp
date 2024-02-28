@@ -100,6 +100,106 @@ namespace {
 
 		return resultVector;
 	}
+
+	vector<ItemRecord*> BuildItemRecords(const vector<ItemContainer*>& _itemContainers) {
+		vector<ItemRecord*> resultList;
+
+		for (int i = 0; i < (int)_itemContainers.size(); i++)
+		{
+			vector<Item> _itemsToSave = _itemContainers[i]->GetAllItems();
+			for (int j = 0; j < (int)_itemsToSave.size(); j++)
+			{
+				ItemRecord* newRecord = new ItemRecord;
+				newRecord->itemId = _itemsToSave[j].GetItemId();
+				newRecord->containerId = _itemContainers[i]->GetItemId();
+				newRecord->itemName = _itemsToSave[j].GetItemName();
+				newRecord->enchantmentBonus = _itemsToSave[j].GetEnchantmentBonus();
+				newRecord->itemtype = _itemsToSave[j].GetItemType();
+				newRecord->enchantmentType = _itemsToSave[j].GetEnchantmentType();
+				newRecord->weight = _itemsToSave[j].GetItemWeight();
+				resultList.push_back(newRecord);
+			}
+		}
+
+		return resultList;
+	}
+	
+	vector<ItemContainerRecord*> BuildContainerRecords(const vector<Character::Character*>& _characters) {
+		vector<ItemContainerRecord*> resultList;
+
+		for (int i = 0; i < (int)_characters.size(); i++)
+		{
+			ItemContainer containerToSave = _characters[i]->Inventory();
+
+			ItemContainerRecord* newRecord = new ItemContainerRecord;
+			newRecord->containerId = containerToSave.GetItemId();
+			newRecord->characterId = _characters[i]->ID();
+			newRecord->mapCellId = 0;
+			newRecord->itemName = containerToSave.GetItemName();
+			newRecord->enchantmentBonus = containerToSave.GetEnchantmentBonus();
+			newRecord->itemtype = containerToSave.GetItemType();
+			newRecord->enchantmentType = containerToSave.GetEnchantmentType();
+			newRecord->weight = containerToSave.GetItemWeight();
+			newRecord->capacity = containerToSave.GetCapacity();
+			resultList.push_back(newRecord);
+		}
+
+		return resultList;
+	}
+
+	string BuildItemCSVOutput(const vector<ItemRecord*>& _recordsToSave) {
+		string outputResult;
+
+		ostringstream csvOutput;
+		for (int i = 0; i < (int)_recordsToSave.size(); i++)
+		{
+			csvOutput << _recordsToSave[i]->itemId <<
+				"," <<
+				_recordsToSave[i]->containerId <<
+				"," <<
+				_recordsToSave[i]->itemName <<
+				"," <<
+				_recordsToSave[i]->enchantmentBonus <<
+				"," <<
+				_recordsToSave[i]->itemtype <<
+				"," <<
+				_recordsToSave[i]->enchantmentType <<
+				"," <<
+				_recordsToSave[i]->weight <<
+				endl;
+		}
+
+		return csvOutput.str();
+	}
+	
+	string BuildContainerCSVOutput(const vector<ItemContainerRecord*>& _recordsToSave) {
+		string outputResult;
+
+		ostringstream csvOutput;
+		for (int i = 0; i < (int)_recordsToSave.size(); i++)
+		{
+			csvOutput << _recordsToSave[i]->containerId <<
+				"," <<
+				_recordsToSave[i]->characterId <<
+				"," <<
+				_recordsToSave[i]->mapCellId <<
+				"," <<
+				_recordsToSave[i]->itemName <<
+				"," <<
+				_recordsToSave[i]->enchantmentBonus <<
+				"," <<
+				_recordsToSave[i]->itemtype <<
+				"," <<
+				_recordsToSave[i]->enchantmentType <<
+				"," <<
+				_recordsToSave[i]->weight <<
+				"," <<
+				_recordsToSave[i]->capacity <<
+				endl;
+		}
+
+		return csvOutput.str();
+	}
 }
 
 namespace serializeItem {
@@ -125,11 +225,25 @@ namespace serializeItem {
 		return containerRecords;
 	}
 
-	void SaveItems(vector<Item*> _itemsToSave) {
+	void SaveItems(const string& _fileURI, const vector<ItemContainer*>& _associatedContainers) {
+		vector<ItemRecord*> recordsToSave = BuildItemRecords(_associatedContainers);
 
+		string csvOutput = BuildItemCSVOutput(recordsToSave);
+		
+		ofstream itemOutputStream(_fileURI);
+		itemOutputStream << csvOutput;
+
+		itemOutputStream.close();
 	}
 	
-	void SaveItemContainers(vector<ItemContainer*> _containersToSave) {
+	void SaveItemContainers(const string& _fileURI, const vector<Character::Character*>& _associatedCharacters) {
+		vector<ItemContainerRecord*> recordsToSave = BuildContainerRecords(_associatedCharacters);
 
+		string csvOutput = BuildContainerCSVOutput(recordsToSave);
+
+		ofstream itemOutputStream(_fileURI);
+		itemOutputStream << csvOutput;
+
+		itemOutputStream.close();
 	}
 }
