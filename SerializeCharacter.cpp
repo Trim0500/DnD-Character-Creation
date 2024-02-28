@@ -75,3 +75,77 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character)
 
     return true;
 }
+
+serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std::string& filename)
+{
+    
+    std::ifstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error! Could not open file " << filename << std::endl;
+        return {};
+    }
+
+    serializecharacter::CharacterRecord record;
+    std::string line;
+    
+    while (std::getline(file, line)) {
+
+        std::stringstream spliter(line);
+        std::string field_key;
+        std::string data;
+        //Extract the field name
+        std::getline(spliter, field_key, ',');
+        if (field_key == "ID") {
+            while (std::getline(spliter, data, ',')) {
+                record.id = std::stoi(data);
+            }
+        }
+        else if (field_key == "Name") {
+            while (std::getline(spliter, data, ',')) {
+                record.name = data;
+            }
+        }
+        else if (field_key == "Ability_scores(Str_Dex_Con_Int_Wis_Cha)") {
+            int ability_index = 0;
+            while (std::getline(spliter, data, ',')) {
+                record.ability_scores[ability_index] = std::stoi(data);
+                ability_index++;
+            }
+        }
+        else if (field_key == "Levels(Barb_Bard_Cler_Drui_Figh_Monk_Pala_Rang_Rogu_Sorc_Warl_Wizr)") {
+            int class_index = 0;
+            while (std::getline(spliter, data, ',')) {
+                record.level[class_index] = std::stoi(data);
+                class_index++;
+            }
+        }
+        else if (field_key == "Max_HP") {
+            while (std::getline(spliter, data, ',')) {
+                record.max_hit_points = std::stoi(data);
+            }
+        }
+        else if (field_key == "Current_HP") {
+            while (std::getline(spliter, data, ',')) {
+                record.hit_points = std::stoi(data);
+            }
+
+        }
+        else if (field_key == "Inventroy_Item_IDs") {
+            int inventory_index = 0;
+            while (std::getline(spliter, data, ',')) {
+                record.inventory_item_ids.push_back(std::stoi(data));
+                inventory_index++;
+            }
+        }
+        else if (field_key == "Equipped_Item_IDs") {
+            int equipped_index = 0;
+            while (std::getline(spliter, data, ',')) {
+                record.equipped_item_ids.push_back(std::stoi(data));
+                equipped_index++;
+            }
+        }
+    }
+
+    file.close();
+    return record;
+}

@@ -29,7 +29,7 @@ Character::Character::Character(){
 
 }
 
-Character::Character::Character(const Character& t_character)
+Character::Character::Character(const Character& t_character) : id(t_character.ID())
 {
 	name = t_character.name;
 	for (int i = 0;i<level.size(); i++) {
@@ -95,6 +95,22 @@ Character::Character::Character(std::string t_name, Character_Class t_class, con
 	hit_points = max_hit_points;
 }
 
+Character::Character::Character(const serializecharacter::CharacterRecord& t_record) : id(t_record.id)
+{
+	this->name = t_record.name;
+	this->hit_points = t_record.hit_points;
+	this->max_hit_points = t_record.max_hit_points;
+	for (int i{ 0 }; i < ability_scores.size(); i++) {
+		this->ability_scores[i] = t_record.ability_scores[i];
+	}
+	for (int i{ 0 }; i < t_record.level.size(); i++) {
+		for (int j{ 0 }; j < t_record.level.at(i); j++) {
+			Levelup((Character_Class)i);
+		}
+	}
+}
+
+
 void Character::Character::Print_Character_Sheet()
 {
 	std::cout << std::right << std::setw(25) << "Name: " << name<<" (ID: "<<ID()<<")"<<std::endl;
@@ -106,7 +122,6 @@ void Character::Character::Print_Character_Sheet()
 	}
 	std::cout << std::endl;
 	std::cout << std::right << std::setw(25) << "Level: " << Sum_Levels() << std::endl;
-	std::cout << std::right << std::setw(25) << "Hit Die: ";
 	std::cout << std::right << std::setw(25) << "HP: " << Hit_Points()<<"/"<<Max_Hit_Points() << std::endl;
 	std::cout << std::right << std::setw(25) << "Proficiency Bonus: " << Proficiency_Bonus() << std::endl;
 	std::cout << std::right << std::setw(25) << "Armour Class: " << Armour_Class() << std::endl;

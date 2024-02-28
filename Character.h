@@ -13,9 +13,24 @@
 #include <vector>
 #include <bitset>
 #include <unordered_map>
+
 #include "item.h"
 #include "itemcontainer.h"
 #include "Dice.h"
+
+namespace serializecharacter {
+	struct CharacterRecord {
+		int id;
+		std::string name;
+		std::vector<int> ability_scores = std::vector<int>(6, 0);
+		std::vector<int> level = std::vector<int>(12, 0);
+		int max_hit_points{ 0 };
+		int hit_points{ 0 };
+		std::vector<int> inventory_item_ids;
+		std::vector<int> equipped_item_ids;
+	};
+}
+
 
 /* \namespace Character
 * \brief namespace used to encapsulate 'Character' class functionality
@@ -134,6 +149,7 @@ namespace Character {
 		*  \param t_ability_scores Set of desired ability scores {Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma}
 		*/
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores);
+		Character(const serializecharacter::CharacterRecord& t_record);
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
