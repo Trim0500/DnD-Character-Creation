@@ -1,6 +1,6 @@
 #include "SerializeCharacter.h"
 
-bool serializecharacter::SaveCharacter(Character::Character* t_character)
+bool serializecharacter::SaveCharacter(Character::Character* t_character, const std::string& t_path = "")
 {
     if (t_character == nullptr) {
         return false;
@@ -38,7 +38,8 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character)
     }
 
     //opening file
-    std::string filename = "Character_" + std::to_string(record.id) + ".csv";
+    std::string r_path = std::filesystem::current_path().string() + t_path;
+    std::string filename = r_path + "Character_" + std::to_string(record.id) + ".csv";
     std::ofstream outfile(filename);
     if (!outfile.is_open()) {
         std::cerr << "Error! Could not open " << filename << std::endl;
@@ -148,4 +149,23 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
 
     file.close();
     return record;
+}
+
+std::string serializecharacter::FindCharacterFile(int id, std::filesystem::path t_path)
+{
+    std::string filename, temp;
+    std::filesystem::path currentDir;
+    if (t_path.empty()) {
+        currentDir = std::filesystem::current_path();
+    }
+    else {
+        currentDir = t_path;
+    }
+    for (const auto& entry : std::filesystem::directory_iterator(currentDir)) {
+        temp = entry.path().filename().string();
+        if (temp.find(std::to_string(id)) != std::string::npos && temp.find("Character_") != std::string::npos) {
+            filename = currentDir.string()+"\\"+ temp;
+        }
+    }
+    return filename;
 }
