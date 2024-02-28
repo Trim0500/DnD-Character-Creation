@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['abilities_0',['Abilities',['../namespace_character.html#a7390822faeff7f62e8084fd85b0d0830',1,'Character']]]
+  ['abilities_5fstats_0',['Abilities_Stats',['../class_character.html#adc11299f73c335c725b36d6e85fc7edb',1,'Character']]]
 ];

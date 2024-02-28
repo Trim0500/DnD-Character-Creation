@@ -1,0 +1,64 @@
+\doxysection{test\+Dice.\+h}
+\hypertarget{test_dice_8h_source}{}\label{test_dice_8h_source}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/DnD Character Creation Source Code/testDice.h@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/testDice.h}}
+\mbox{\hyperlink{test_dice_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cppunit/TestCase.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cppunit/TestFixture.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <cppunit/ui/text/TextTestRunner.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <cppunit/extensions/HelperMacros.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <cppunit/extensions/TestFactoryRegistry.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <cppunit/TestResult.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <cppunit/TestResultCollector.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <cppunit/TestRunner.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <cppunit/BriefTestProgressListener.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <cppunit/CompilerOutputter.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <cppunit/XmlOutputter.h>}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dice_8h}{Dice.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00018}00018\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00019}00019\ \textcolor{keyword}{using\ namespace\ }CppUnit;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00021}\mbox{\hyperlink{class_test_dice}{00021}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_dice}{TestDice}}\ :\ \textcolor{keyword}{public}\ TestFixture\ \{}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00022}00022\ \ \ \ \ CPPUNIT\_TEST\_SUITE(\mbox{\hyperlink{class_test_dice}{TestDice}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00023}00023\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_dice_a80bb5d728f9c788529dc2e3ebee883e6}{TestConstructor}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00024}00024\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_dice_ab1049f66fe2e9cb94219e7f7fc267603}{TestAddDice}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00025}00025\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_dice_a1b0cbb315dd41d0c99cf284ef7ec1230}{TestInvalidQuery}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00026}00026\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_dice_ac75509b1898af98f3f366ed19d637110}{TestStaticRoll}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00027}00027\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_dice_a1042c190dd5effe049de70f5658d466d}{TestAdditionNoRoll}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00028}00028\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_dice_a321c39dde909ba0d5956513be217fa40}{TestRollNoAddition}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00029}00029\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_dice_a4db65c972cef1cf28f4e8723f29b600f}{TestFullRoll}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00030}00030\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_dice_a2b9601f4b68e9d75030d1b3ecc91cdad}{TestSubtractionNoRoll}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00031}00031\ \ \ \ \ CPPUNIT\_TEST\_SUITE\_END();}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00033}00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a93e9cf9a244623a3806f8d35413d1361}{setUp}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a0809a7cb4d91c1246c3746c489df2f74}{tearDown}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00051}00051\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00052}00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a80bb5d728f9c788529dc2e3ebee883e6}{TestConstructor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_ac75509b1898af98f3f366ed19d637110}{TestStaticRoll}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00054}00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_ab1049f66fe2e9cb94219e7f7fc267603}{TestAddDice}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a1b0cbb315dd41d0c99cf284ef7ec1230}{TestInvalidQuery}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00056}00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a1042c190dd5effe049de70f5658d466d}{TestAdditionNoRoll}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a321c39dde909ba0d5956513be217fa40}{TestRollNoAddition}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00058}00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a2b9601f4b68e9d75030d1b3ecc91cdad}{TestSubtractionNoRoll}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a4db65c972cef1cf28f4e8723f29b600f}{TestFullRoll}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_acd8f62e1bbe756887b4116d4e140d7b6}{TestAllDice}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00061}00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{string}\ easy\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{string}\ hard\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{string}\ invalid\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{string}\ just\_add\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{string}\ just\_subtract\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00067}00067\ \};}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00069}\mbox{\hyperlink{test_dice_8h_ac230180df71d7288cc8738de351f5577}{00069}}\ \mbox{\hyperlink{test_dice_8h_ac230180df71d7288cc8738de351f5577}{CPPUNIT\_TEST\_SUITE\_REGISTRATION}}(\mbox{\hyperlink{class_test_dice}{TestDice}});}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00070}00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(\textcolor{keywordtype}{string}\ query,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00071}00071\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00072}00072\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(\textcolor{keywordtype}{string}\ query,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00073}00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count);}
+
+\end{DoxyCode}

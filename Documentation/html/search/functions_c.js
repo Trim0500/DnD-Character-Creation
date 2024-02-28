@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['setup_0',['setUp',['../class_test_character.html#abeb01e3e59669f6eea994b9f61116be3',1,'TestCharacter::setUp()'],['../class_test_item.html#a60343f4931465a4add60a8dc74a4f4d3',1,'TestItem::setUp()'],['../class_test_item_container.html#a9fb451dba4cc0a848a8a446390e8fc45',1,'TestItemContainer::setUp()']]],
-  ['sum_5flevels_1',['Sum_Levels',['../class_character_1_1_character.html#ad2e7f922733b104ea716698eaef0ed8b',1,'Character::Character']]]
+  ['receive_5fdamage_0',['Receive_Damage',['../class_character_1_1_character.html#a6151ceea4232a21c828c66a4b2dea9ca',1,'Character::Character']]],
+  ['receive_5fhealing_1',['Receive_Healing',['../class_character_1_1_character.html#a012dd4525b3a888fa94264e88d8325d0',1,'Character::Character']]],
+  ['roll_2',['roll',['../class_dice.html#a4f045c0acc89669ff5d5b4dcd4c78e2c',1,'Dice::roll(string query)'],['../class_dice.html#a612a16c434160895563d19099ca0b33b',1,'Dice::roll()']]],
+  ['roll_5fwith_5fadvantage_3',['roll_with_advantage',['../class_dice.html#ad659697f160ffc004fd52fe02a755f49',1,'Dice::roll_with_advantage(string query)'],['../class_dice.html#a4e3e806488c756347490a4b76c02ec10',1,'Dice::roll_with_advantage()']]],
+  ['roll_5fwith_5fdisadvantage_4',['roll_with_disadvantage',['../class_dice.html#a696f3cc0ec1effa65305a987a0904e7f',1,'Dice::roll_with_disadvantage(string query)'],['../class_dice.html#a870e25ee830b3aa4d0124014d9334961',1,'Dice::roll_with_disadvantage()']]],
+  ['rows_5',['Rows',['../class_map_1_1_map.html#a042fba6c495bf8772aeab91c5e4ace69',1,'Map::Map']]]
 ];

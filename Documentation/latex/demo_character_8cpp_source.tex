@@ -1,0 +1,77 @@
+\doxysection{demo\+Character.\+cpp}
+\hypertarget{demo_character_8cpp_source}{}\label{demo_character_8cpp_source}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/DnD Character Creation Source Code/demoCharacter.cpp@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/demoCharacter.cpp}}
+\mbox{\hyperlink{demo_character_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{demo_character_8h}{demoCharacter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00003}\mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{00003}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}}()}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00005}00005\ \ \ \ \ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{bool}\ leave\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordflow}{while}\ (!leave)}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00008}00008\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00009}00009\ \ \ \ \ \ \ \ \ std::vector<int>\ demo\_attributes(6);}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ std::string\ demo\_name;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}OPTIONS"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1:\ Create\ random\ character"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2:\ Create\ character"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3:\ Leave\ Character\ feature\ demo"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ user\_input\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ std::cin\ >>\ user\_input;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(std::cin.fail())\ \{}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Bad\ entry.\ \ Enter\ a\ NUMBER:\ "{}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (user\_input)}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Creating\ a\ level\ 1\ fighter\ character\ with\ random\ attributes..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}(Character::Character\_Class::Fighter);}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Printing\ character\ sheet..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}}-\/>Print\_Character\_Sheet();}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Creating\ a\ level\ 1\ fighter\ character..."{}}\ <<\ std::endl<<\textcolor{stringliteral}{"{}Input\ desired\ ability\ scores..."{}}<<std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Strength:\ "{}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ demo\_attributes[0];}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Dexterity:\ "{}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ demo\_attributes[1];}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Constitution:\ "{}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ demo\_attributes[2];}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Intelligence:\ "{}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ demo\_attributes[3];}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Wisdom:\ "{}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ demo\_attributes[4];}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Charisma:\ "{}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ demo\_attributes[5];}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keywordtype}{int}\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Invalid\ input!\ Error\ '"{}}\ <<\ e\ <<\ \textcolor{stringliteral}{"{}'"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Input\ character\ name:\ "{}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ demo\_name;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}(demo\_name,Character::Character\_Class::Fighter,\ demo\_attributes);}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Printing\ character\ sheet..."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}}-\/>Print\_Character\_Sheet();}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{demo_character_8cpp_a1afbd8aec4cb24d340487faa1192c1d8}{demo\_character}};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Later\ gator!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ leave\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input!\ '"{}}\ <<\ user\_input\ <<\ \textcolor{stringliteral}{"{}'\ is\ not\ one\ of\ the\ available\ options!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{demo_character_8cpp_source_l00071}00071\ \}}
+
+\end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/Character.h File Reference</title>
+<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/Character.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,16 +70,21 @@ $(function() {
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_e50ee4dfc2640631efeb2bdc63c536ea.html">DnD Character Creation Source Code</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/Character.h File Reference</div></div>
+<a href="#namespaces">Namespaces</a>  </div>
+  <div class="headertitle"><div class="title">Character.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Header file containing <a class="el" href="class_character.html" title="Represents Character type entities.">Character</a> functionality definitions The character creation is based off of the 5th edition Dungeons &amp; Dragons! Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including but not limited to... 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon &amp; tool proficiencies', 'Death saves', 'initiative' and 'saving throws'.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;iomanip&gt;</code><br />
 <code>#include &lt;random&gt;</code><br />
@@ -89,6 +94,7 @@ $(function() {
 <code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &quot;<a class="el" href="item_8h_source.html">item.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_dice_8h_source.html">Dice.h</a>&quot;</code><br />
 </div>
 <p><a href="_character_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -100,83 +106,15 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespace_character" id="r_namespace_character"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html">Character</a></td></tr>
+<tr class="memdesc:namespace_character"><td class="mdescLeft">&#160;</td><td class="mdescRight">namespace used to encapsulate '<a class="el" href="class_character.html" title="Represents Character type entities.">Character</a>' class functionality <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:afed4352e48176e367ea1a8299f6aee42" id="r_afed4352e48176e367ea1a8299f6aee42"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42">Character::Character_Class</a> { <br />
-&#160;&#160;<a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a0a697cba19cd4c1974e2ee11a3c0b9c7">Character::Barbarian</a> = 0
-, <a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a51a547788c5ebad8e66b330b9fa747c5">Character::Bard</a> = 1
-, <a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a88f6c01a3b5711ec2a896c9f5462497c">Character::Cleric</a> = 2
-, <a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42ae7b1c3af3203c42e8a5450beb229c09e">Character::Druid</a> = 3
-, <br />
-&#160;&#160;<a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a5db14795d4c6928f94927d0c0a060bee">Character::Fighter</a> = 4
-, <a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359">Character::Monk</a> = 5
-, <a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858">Character::Paladin</a> = 6
-, <a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0">Character::Ranger</a> = 7
-, <br />
-&#160;&#160;<a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174">Character::Rogue</a> = 8
-, <a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a39babca9e3d0ceda5051773a25fe2a4f">Character::Sorcerer</a> = 9
-, <a class="el" href="namespace_character.html#afed4352e48176e367ea1a8299f6aee42a5af874093e5efcbaeb4377b84c5f2ec5">Character::Wizard</a> = 10
-<br />
- }</td></tr>
-<tr class="separator:afed4352e48176e367ea1a8299f6aee42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7390822faeff7f62e8084fd85b0d0830" id="r_a7390822faeff7f62e8084fd85b0d0830"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830">Character::Abilities</a> { <br />
-&#160;&#160;<a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830a5a455a612047a34ede7a6c564fa67c0a">Character::Strength</a> = 0
-, <a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830aa8747f5acdc2352d39f455bdd1689273">Character::Dexterity</a>
-, <a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830aae93e52a3c1f3bbcefbc805331fca9e9">Character::Constitution</a>
-, <a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830a8f7ba58961e0fe40cfda61b412537fba">Character::Intelligence</a>
-, <br />
-&#160;&#160;<a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830a646f0a01b685558b975b5cd3f5b36241">Character::Wisdom</a>
-, <a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830aa47211f258a8e0172523525035c743af">Character::Charisma</a>
-, <a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830a0a9be59870ecbb7f97a7878a311b556d">Character::ArmorClass</a>
-, <a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830a024d7a2554a540559d2a2db537090311">Character::AttackBonus</a>
-, <br />
-&#160;&#160;<a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830aca1f13e821cca99c2b1e2b3fc4e12e9f">Character::DamageBonus</a>
-, <a class="el" href="namespace_character.html#a7390822faeff7f62e8084fd85b0d0830ad4cd0dabcf4caa22ad92fab40844c786">Character::NA</a>
-<br />
- }</td></tr>
-<tr class="separator:a7390822faeff7f62e8084fd85b0d0830"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f688397f56ff67e4bdb949a6939c0ad" id="r_a9f688397f56ff67e4bdb949a6939c0ad"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0ad">Character::Equipment_Slots</a> { <br />
-&#160;&#160;<a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0adac77a8030f463c2c14aebd6452fc9f0a8">Character::Armor</a> = 0
-, <a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0ada970da5f1f2e32aeb9e488dd017160ab4">Character::Shield</a>
-, <a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0ada18c83669920215a818638ad0e5421e4b">Character::Weapon</a>
-, <a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b">Character::Boots</a>
-, <br />
-&#160;&#160;<a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1">Character::Ring</a>
-, <a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0ada5633f0c2ef79566f47e39491600497ff">Character::Helmet</a>
-, <a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c">Character::Belt</a>
-, <a class="el" href="namespace_character.html#a9f688397f56ff67e4bdb949a6939c0adad3ab3d5184fe9b1b4428e4ffb797bdca">Character::Bag</a>
-<br />
- }</td></tr>
-<tr class="separator:a9f688397f56ff67e4bdb949a6939c0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a48cd93a697e6f72f97115623a09d3d7f" id="r_a48cd93a697e6f72f97115623a09d3d7f"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a48cd93a697e6f72f97115623a09d3d7f">Character::isBarbarian</a> { 0b0000'0000'001 }</td></tr>
-<tr class="separator:a48cd93a697e6f72f97115623a09d3d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a753965f474a07c624a345cf34f04b271" id="r_a753965f474a07c624a345cf34f04b271"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a753965f474a07c624a345cf34f04b271">Character::isBard</a> { 0b0000'0000'010 }</td></tr>
-<tr class="separator:a753965f474a07c624a345cf34f04b271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5405d35ae72603a817edc43bf142519" id="r_ae5405d35ae72603a817edc43bf142519"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#ae5405d35ae72603a817edc43bf142519">Character::isCleric</a> { 0b0000'0000'100 }</td></tr>
-<tr class="separator:ae5405d35ae72603a817edc43bf142519"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a57e32f18791d28fcf6c79c85d56235" id="r_a6a57e32f18791d28fcf6c79c85d56235"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a6a57e32f18791d28fcf6c79c85d56235">Character::isDruid</a> { 0b0000'0001'000 }</td></tr>
-<tr class="separator:a6a57e32f18791d28fcf6c79c85d56235"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a809aff43f21676e7338bee84e94f883a" id="r_a809aff43f21676e7338bee84e94f883a"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a809aff43f21676e7338bee84e94f883a">Character::isFighter</a> { 0b0000'0010'000 }</td></tr>
-<tr class="separator:a809aff43f21676e7338bee84e94f883a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fa916f3a9562dfc0b9d86fdbd6372bc" id="r_a6fa916f3a9562dfc0b9d86fdbd6372bc"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a6fa916f3a9562dfc0b9d86fdbd6372bc">Character::isMonk</a> { 0b0000'0100'000 }</td></tr>
-<tr class="separator:a6fa916f3a9562dfc0b9d86fdbd6372bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12f70fecea003c3a9fbbd7bb73f816ff" id="r_a12f70fecea003c3a9fbbd7bb73f816ff"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a12f70fecea003c3a9fbbd7bb73f816ff">Character::isPaladin</a> { 0b0000'1000'000 }</td></tr>
-<tr class="separator:a12f70fecea003c3a9fbbd7bb73f816ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5da74a50fd0c0338d0cf6dcf6bd5c762" id="r_a5da74a50fd0c0338d0cf6dcf6bd5c762"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a5da74a50fd0c0338d0cf6dcf6bd5c762">Character::isRanger</a> { 0b0001'0000'000 }</td></tr>
-<tr class="separator:a5da74a50fd0c0338d0cf6dcf6bd5c762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf70df9a8019d5e0d4eeb704be6b1bbb" id="r_aaf70df9a8019d5e0d4eeb704be6b1bbb"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#aaf70df9a8019d5e0d4eeb704be6b1bbb">Character::isRogue</a> { 0b0010'0000'000 }</td></tr>
-<tr class="separator:aaf70df9a8019d5e0d4eeb704be6b1bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae57c7eda5fe1661c7b32fb79daa91c18" id="r_ae57c7eda5fe1661c7b32fb79daa91c18"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#ae57c7eda5fe1661c7b32fb79daa91c18">Character::isSorcerer</a> { 0b0100'0000'000 }</td></tr>
-<tr class="separator:ae57c7eda5fe1661c7b32fb79daa91c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31a6db66bb4d261d470bb93257ca1dfd" id="r_a31a6db66bb4d261d470bb93257ca1dfd"><td class="memItemLeft" align="right" valign="top">constexpr std::bitset&lt; 11 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html#a31a6db66bb4d261d470bb93257ca1dfd">Character::isWizard</a> { 0b1000'0000'000 }</td></tr>
-<tr class="separator:a31a6db66bb4d261d470bb93257ca1dfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header file containing <a class="el" href="class_character.html" title="Represents Character type entities.">Character</a> functionality definitions The character creation is based off of the 5th edition Dungeons &amp; Dragons! Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including but not limited to... 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon &amp; tool proficiencies', 'Death saves', 'initiative' and 'saving throws'. </p>
+<p>! </p>
+
+<p class="definition">Definition in file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0

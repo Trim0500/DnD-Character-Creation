@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['max_5fhit_5fpoints_1',['Max_Hit_Points',['../class_character_1_1_character.html#a0a507afa1d4ab6fac45896da9c81d784',1,'Character::Character']]],
-  ['modifier_2',['Modifier',['../class_character_1_1_character.html#af2939a4c80fb3447d372257ddb29d851',1,'Character::Character']]]
+  ['levels_0',['Levels',['../class_character_1_1_character.html#a249907bfc3e812dc8b2cf7796bc21765',1,'Character::Character']]],
+  ['levelup_1',['Levelup',['../class_character_1_1_character.html#ac8ed00c91b7c01da4532f33cf2096d8d',1,'Character::Character']]]
 ];
