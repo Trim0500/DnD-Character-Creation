@@ -38,8 +38,8 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     }
 
     //opening file
-    std::string r_path = std::filesystem::current_path().string() + t_path;
-    std::string filename = r_path + "Character_" + std::to_string(record.id) + ".csv";
+  
+    std::string filename = t_path + "Character_" + std::to_string(record.id) + ".csv";
     std::ofstream outfile(filename);
     if (!outfile.is_open()) {
         std::cerr << "Error! Could not open " << filename << std::endl;
