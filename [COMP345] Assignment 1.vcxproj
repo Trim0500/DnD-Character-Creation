@@ -62,7 +62,8 @@
       <AdditionalDependencies>$(SolutionDir)cppunit-1.12.1\lib\cppunit.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>"$(TargetPath)"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Unit Tests...</Message>
@@ -95,6 +96,7 @@
     <ClCompile Include="DnD Character Creation Source Code\itemcontainer.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\Character.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\main.cpp" />
+    <ClCompile Include="DnD Character Creation Source Code\SerializeCharacter.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\testCharacter.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\testDice.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\testitem.cpp" />
@@ -109,6 +111,7 @@
     <ClInclude Include="DnD Character Creation Source Code\demoCharacter.h" />
     <ClInclude Include="DnD Character Creation Source Code\item.h" />
     <ClInclude Include="DnD Character Creation Source Code\itemcontainer.h" />
+    <ClInclude Include="DnD Character Creation Source Code\SerializeCharacter.h" />
     <ClInclude Include="DnD Character Creation Source Code\testCharacter.h" />
     <ClInclude Include="DnD Character Creation Source Code\testDice.h" />
     <ClInclude Include="DnD Character Creation Source Code\testitem.h" />

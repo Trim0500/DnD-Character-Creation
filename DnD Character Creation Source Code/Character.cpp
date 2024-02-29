@@ -29,7 +29,7 @@ Character::Character::Character(){
 
 }
 
-Character::Character::Character(const Character& t_character)
+Character::Character::Character(const Character& t_character) : id(t_character.id)
 {
 	name = t_character.name;
 	for (int i = 0;i<level.size(); i++) {
@@ -95,6 +95,28 @@ Character::Character::Character(std::string t_name, Character_Class t_class, con
 	hit_points = max_hit_points;
 }
 
+Character::Character::Character(const serializecharacter::CharacterRecord& t_record) : id(t_record.id)
+{
+	this->name = t_record.name;
+	for (int i{ 0 }; i < ability_scores.size(); i++) {
+		this->ability_scores[i] = t_record.ability_scores[i];
+	}
+	for (int i{ 0 }; i < t_record.level.size(); i++) {
+		for (int j{ 0 }; j < t_record.level.at(i); j++) {
+			Levelup((Character_Class)i);
+		}
+	}
+	this->hit_points = t_record.hit_points;
+	this->max_hit_points = t_record.max_hit_points;
+}
+
+
+std::string Character::Character::Name(const std::string& t_name)
+{
+	name = t_name;
+	return name;
+}
+
 void Character::Character::Print_Character_Sheet()
 {
 	std::cout << std::right << std::setw(25) << "Name: " << name<<" (ID: "<<ID()<<")"<<std::endl;
@@ -106,13 +128,6 @@ void Character::Character::Print_Character_Sheet()
 	}
 	std::cout << std::endl;
 	std::cout << std::right << std::setw(25) << "Level: " << Sum_Levels() << std::endl;
-	std::cout << std::right << std::setw(25) << "Hit Die: ";
-	for (int i = 0; i < 12; i++) {
-		if (hit_die_pool.at((Character_Class)i) != nullptr) {
-			std::cout << hit_die_pool.at((Character_Class)i)->get_string() << ", ";
-		}
-	}
-	std::cout << std::endl;
 	std::cout << std::right << std::setw(25) << "HP: " << Hit_Points()<<"/"<<Max_Hit_Points() << std::endl;
 	std::cout << std::right << std::setw(25) << "Proficiency Bonus: " << Proficiency_Bonus() << std::endl;
 	std::cout << std::right << std::setw(25) << "Armour Class: " << Armour_Class() << std::endl;
@@ -561,7 +576,6 @@ bool Character::Character::Levelup_Barbarian()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d12");
 				return true;
 			}
 			else
@@ -578,7 +592,6 @@ bool Character::Character::Levelup_Barbarian()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d12");
 			return true;
 		}
 	}
@@ -587,7 +600,6 @@ bool Character::Character::Levelup_Barbarian()
 		level.at((int)t_class) += 1;
 		max_hit_points += (7 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -605,7 +617,6 @@ bool Character::Character::Levelup_Bard()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
@@ -622,7 +633,6 @@ bool Character::Character::Levelup_Bard()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -631,7 +641,6 @@ bool Character::Character::Levelup_Bard()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -649,7 +658,6 @@ bool Character::Character::Levelup_Cleric()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
@@ -666,7 +674,6 @@ bool Character::Character::Levelup_Cleric()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -675,7 +682,6 @@ bool Character::Character::Levelup_Cleric()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -693,7 +699,6 @@ bool Character::Character::Levelup_Druid()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
@@ -710,7 +715,6 @@ bool Character::Character::Levelup_Druid()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -719,7 +723,6 @@ bool Character::Character::Levelup_Druid()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -737,7 +740,6 @@ bool Character::Character::Levelup_Fighter()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d10");
 				return true;
 			}
 			else
@@ -754,7 +756,6 @@ bool Character::Character::Levelup_Fighter()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d10");
 			return true;
 		}
 	}
@@ -763,7 +764,6 @@ bool Character::Character::Levelup_Fighter()
 		level.at((int)t_class) += 1;
 		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -781,7 +781,6 @@ bool Character::Character::Levelup_Monk()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
@@ -798,7 +797,6 @@ bool Character::Character::Levelup_Monk()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -807,7 +805,6 @@ bool Character::Character::Levelup_Monk()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -825,7 +822,6 @@ bool Character::Character::Levelup_Paladin()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d10");
 				return true;
 			}
 			else
@@ -842,7 +838,6 @@ bool Character::Character::Levelup_Paladin()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d10");
 			return true;
 		}
 	}
@@ -851,7 +846,6 @@ bool Character::Character::Levelup_Paladin()
 		level.at((int)t_class) += 1;
 		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -869,7 +863,6 @@ bool Character::Character::Levelup_Ranger()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d10");;
 				return true;
 			}
 			else
@@ -886,7 +879,6 @@ bool Character::Character::Levelup_Ranger()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d10");
 			return true;
 		}
 	}
@@ -895,7 +887,6 @@ bool Character::Character::Levelup_Ranger()
 		level.at((int)t_class) += 1;
 		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -913,7 +904,6 @@ bool Character::Character::Levelup_Rogue()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
@@ -930,7 +920,6 @@ bool Character::Character::Levelup_Rogue()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -939,7 +928,6 @@ bool Character::Character::Levelup_Rogue()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -957,7 +945,6 @@ bool Character::Character::Levelup_Sorcerer()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d6");
 				return true;
 			}
 			else
@@ -974,7 +961,6 @@ bool Character::Character::Levelup_Sorcerer()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d6");
 			return true;
 		}
 	}
@@ -983,7 +969,6 @@ bool Character::Character::Levelup_Sorcerer()
 		level.at((int)t_class) += 1;
 		max_hit_points += (4 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -1001,7 +986,6 @@ bool Character::Character::Levelup_Warlock()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d8");
 				return true;
 			}
 			else
@@ -1018,7 +1002,6 @@ bool Character::Character::Levelup_Warlock()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d8");
 			return true;
 		}
 	}
@@ -1027,7 +1010,6 @@ bool Character::Character::Levelup_Warlock()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
@@ -1045,7 +1027,6 @@ bool Character::Character::Levelup_Wizard()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				hit_die_pool.at(t_class) = new Dice("1d6");
 				return true;
 			}
 			else
@@ -1062,7 +1043,6 @@ bool Character::Character::Levelup_Wizard()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			hit_die_pool.at(t_class) = new Dice("1d6");
 			return true;
 		}
 	}
@@ -1071,7 +1051,6 @@ bool Character::Character::Levelup_Wizard()
 		level.at((int)t_class) += 1;
 		max_hit_points += (4 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		hit_die_pool.at(t_class)->add_die();
 		return true;
 	}
 }
