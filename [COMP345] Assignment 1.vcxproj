@@ -103,6 +103,7 @@
     <ClCompile Include="ProjectSourceCode\testMap.cpp" />
     <ClCompile Include="ProjectSourceCode\serializeItem.cpp" />
     <ClCompile Include="ProjectSourceCode\testserializeitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProjectSourceCode\demoitem.h" />
@@ -121,6 +122,7 @@
     <ClInclude Include="ProjectSourceCode\testMap.h" />
     <ClInclude Include="ProjectSourceCode\serializeItem.h" />
     <ClInclude Include="ProjectSourceCode\testserializeitem.h" />
+    <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
