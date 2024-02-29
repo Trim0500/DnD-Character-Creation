@@ -13,6 +13,8 @@
 #include "DiceDemo.h"
 #include "demoCharacter.h"
 
+#include "GUI/ItemEditor.h"
+
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Box.H>
@@ -22,15 +24,16 @@ using namespace CppUnit;
 using namespace item;
 using namespace itemcontainer;
 using namespace demoitem;
+using namespace CampaignEditor;
 
 int main(int argc, char** argv)
 {
-	Fl_Window* window = new Fl_Window(340, 180);
-	Fl_Box* box = new Fl_Box(20, 40, 300, 100, "Hello, World!");
-	box->box(FL_UP_BOX);
-	box->labelfont(FL_BOLD + FL_ITALIC);
-	box->labelsize(36);
-	box->labeltype(FL_SHADOW_LABEL);
+	ItemEditor* window = new ItemEditor(800, 640);
+	// Fl_Box* box = new Fl_Box(20, 40, 300, 100, "Hello, World!");
+	// box->box(FL_UP_BOX);
+	// box->labelfont(FL_BOLD + FL_ITALIC);
+	// box->labelsize(36);
+	// box->labeltype(FL_SHADOW_LABEL);
 	window->end();
 	window->show(argc, argv);
 	return Fl::run();

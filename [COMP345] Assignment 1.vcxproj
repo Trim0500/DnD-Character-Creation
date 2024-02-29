@@ -95,6 +95,7 @@
     <ClCompile Include="DnD Character Creation Source Code\demoitem.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\DiceDemo.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\demoCharacter.cpp" />
+    <ClCompile Include="DnD Character Creation Source Code\GUI\ItemEditor.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\item.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\itemcontainer.cpp" />
     <ClCompile Include="DnD Character Creation Source Code\Character.cpp" />
@@ -112,6 +113,7 @@
     <ClInclude Include="DnD Character Creation Source Code\demoitem.h" />
     <ClInclude Include="DnD Character Creation Source Code\DiceDemo.h" />
     <ClInclude Include="DnD Character Creation Source Code\demoCharacter.h" />
+    <ClInclude Include="DnD Character Creation Source Code\GUI\ItemEditor.h" />
     <ClInclude Include="DnD Character Creation Source Code\item.h" />
     <ClInclude Include="DnD Character Creation Source Code\itemcontainer.h" />
     <ClInclude Include="DnD Character Creation Source Code\SerializeCharacter.h" />
