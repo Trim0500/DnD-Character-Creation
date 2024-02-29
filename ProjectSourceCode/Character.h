@@ -13,11 +13,26 @@
 #include <vector>
 #include <bitset>
 #include <unordered_map>
+
 #include "item.h"
 #include "itemcontainer.h"
 #include "Dice.h"
 
-/*! \namespace Character
+namespace serializecharacter {
+	struct CharacterRecord {
+		int id;
+		std::string name;
+		std::vector<int> ability_scores = std::vector<int>(6, 0);
+		std::vector<int> level = std::vector<int>(12, 0);
+		int max_hit_points{ 0 };
+		int hit_points{ 0 };
+		std::vector<int> inventory_item_ids;
+		std::vector<int> equipped_item_ids;
+	};
+}
+
+
+/* \namespace Character
 * \brief namespace used to encapsulate 'Character' class functionality
 */
 namespace Character {
@@ -134,15 +149,17 @@ namespace Character {
 		*  \param t_ability_scores Set of desired ability scores {Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma}
 		*/
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores);
-		/*! \fn ID()
+		Character(const serializecharacter::CharacterRecord& t_record);
+		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
 		const int ID() { return id; };
 		/*! \fn Name()
 		*  \brief Character name
 		*/
-		std::string& Name() { return name; };
-		/*! \fn Print_Character_Sheet
+		std::string Name() const { return this->name; };
+		std::string Name(const std::string& t_name);
+		/* \fn Print_Character_Sheet
 		*  \brief Prints character data to consol
 		*/
 		void Print_Character_Sheet();
@@ -176,7 +193,6 @@ namespace Character {
 		*  \return Returns true if equipping was performed succesfully, false otherwise
 		*/
 
-		
 
 		bool Equip_Item(item::Item* t_item);
 		/*! \fn Unequip_Item()
@@ -256,10 +272,6 @@ namespace Character {
 		*  \brief Checks if the character is multi-classed with a particular character class
 		*/
 		bool Is_Multi_Classed(Character_Class t_class);
-		/*! \fn Hit_Die_Pool()
-		*  \return Returns a const refrence to the characters' hit die pool
-		*/ 
-		const std::unordered_map<Character_Class, Dice*>& Hit_Die_Pool() { return hit_die_pool; };
 
 	private:
 
@@ -278,22 +290,6 @@ namespace Character {
 		std::vector<int> ability_scores = std::vector<int>(6);
 		int max_hit_points{0};
 		int hit_points{0};
-
-		std::unordered_map<Character_Class, Dice*> hit_die_pool = {
-			{Character_Class::Barbarian,  nullptr},
-			{Character_Class::Bard, nullptr},
-			{Character_Class::Cleric, nullptr},
-			{Character_Class::Druid, nullptr},
-			{Character_Class::Fighter, nullptr},
-			{Character_Class::Monk, nullptr},
-			{Character_Class::Paladin, nullptr},
-			{Character_Class::Ranger, nullptr},
-			{Character_Class::Rogue, nullptr},
-			{Character_Class::Sorcerer, nullptr},
-			{Character_Class::Warlock, nullptr},
-			{Character_Class::Wizard,nullptr},
-
-		};
 
 		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
     

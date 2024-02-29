@@ -60,7 +60,8 @@
       <AdditionalDependencies>$(SolutionDir)cppunit-1.12.1\lib\cppunit.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>"$(TargetPath)"</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Unit Tests...</Message>
