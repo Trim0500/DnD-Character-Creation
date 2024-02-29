@@ -51,15 +51,6 @@ class TestSerializeItem : public TestFixture {
 		void TestLoadContainers(void);
 		void TestSaveItems(void);
 		void TestSaveContainers(void);
-	private:
-		vector<int> containerIDOneVector;
-		vector<int> containerIDTwoVector;
-		vector<int> containerIDVector;
-		vector<int> invalidContainerIDVector;
-		vector<int> characterIDVector;
-		vector<int> mapCellIDVector;
-		vector<int> allIDVector;
-		vector<int> invalidIDVector;
 };
 
 CPPUNIT_TEST_SUITE_REGISTRATION(TestSerializeItem);

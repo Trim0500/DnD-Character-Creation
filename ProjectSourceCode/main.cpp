@@ -16,6 +16,7 @@
 #include "serializeItem.h"
 
 #define SAVED_ITEMS_URI "\\SavedItems\\SavedItems.csv"
+#define SAVED_CONTAINERS_URI "\\SavedItems\\SavedItemContainers.csv"
 #define SAVED_DUMMY_ITEMS_URI "\\SavedItems\\DUMMYSavedItems.csv"
 
 using namespace std;
@@ -53,9 +54,6 @@ int main()
 
 	//Map::Map* map = Map::Map::Create(); //  this function takes care of everything you need to create a map
 
-	vector<int> dummy;
-	dummy.push_back(1);
-
 	string currentPath = filesystem::current_path().string();
 
 	ostringstream fullURI;
@@ -64,18 +62,17 @@ int main()
 	cout << "The file is attempted to be found at: " << fullURI.str() << endl;
 
 	try {
-		vector<ItemRecord*> container1ItemRecords = LoadItemsByContainerIDs(fullURI.str(), dummy);
+		vector<Item*> container1ItemRecords = LoadItems(fullURI.str());
 
 		for (int i = 0; i < (int)container1ItemRecords.size(); i++)
 		{
 			cout << "Item Record info:" << endl;
 			cout << "-----------------" << endl << endl;
-			cout << "Item Id: " << container1ItemRecords[i]->itemId << endl;
-			cout << "Container Id: " << container1ItemRecords[i]->containerId << endl;
-			cout << "Item Name: " << container1ItemRecords[i]->itemName << endl;
-			cout << "Enchantment Bonus: +" << container1ItemRecords[i]->enchantmentBonus << endl;
-			cout << "Item Type: " << container1ItemRecords[i]->itemtype << endl;
-			cout << "Enchantment Type: " << container1ItemRecords[i]->enchantmentType << endl;
+			cout << "Item Id: " << container1ItemRecords[i]->GetItemId() << endl;
+			cout << "Item Name: " << container1ItemRecords[i]->GetItemName() << endl;
+			cout << "Enchantment Bonus: +" << container1ItemRecords[i]->GetEnchantmentBonus() << endl;
+			cout << "Item Type: " << container1ItemRecords[i]->GetItemType() << endl;
+			cout << "Enchantment Type: " << container1ItemRecords[i]->GetEnchantmentType() << endl;
 			cout << "-----------------" << endl << endl;
 		}
 	}
@@ -83,32 +80,29 @@ int main()
 		cout << exc.what() << endl;
 	}
 
-	ItemContainer backpackObject("testBackpack", Backpack, 30.0);
+	Item* backpackShieldItem = new Item("testBackpackShield", 4, Shield, ArmorClass, 12);
+	Item* backpackBootsItem = new Item("testBackpackBoots", 4, Boots, Dexterity, 5);
+		
+	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence, 5);
+	Item* armorObject = new Item("testArmor", 3, Armor, ArmorClass, 45);
 
-	Item backpackShieldItem("testBackpackShield", 4, Shield, ArmorClass, 12);
-	Item backpackBootsItem("testBackpackBoots", 4, Boots, Dexterity, 5);
-
-	backpackObject.AddNewItem(&backpackShieldItem);
-	backpackObject.AddNewItem(&backpackBootsItem);
-
-	ItemContainer wornItemsObject("testWornItems", WornItems, 0);
-
-	Item helmetObject("testHelmet", 2, Helmet, Intelligence, 5);
-	Item armorObject("testArmor", 3, Armor, ArmorClass, 45);
-
-	wornItemsObject.AddNewItem(&helmetObject);
-	wornItemsObject.AddNewItem(&armorObject);
-
-	vector<ItemContainer*> testContainerVector;
-	testContainerVector.push_back(&backpackObject);
-	testContainerVector.push_back(&wornItemsObject);
+	vector<Item*> testItemVector;
+	testItemVector.push_back(backpackShieldItem);
+	testItemVector.push_back(backpackBootsItem);
+	testItemVector.push_back(helmetObject);
+	testItemVector.push_back(armorObject);
 
 	string currentPath2 = filesystem::current_path().string();
 
 	ostringstream fullURI2;
 	fullURI2 << currentPath2 << SAVED_DUMMY_ITEMS_URI;
 
-	SaveItems(fullURI2.str(), testContainerVector);
+	SaveItems(fullURI2.str(), testItemVector);
+
+	string currentPath3 = filesystem::current_path().string();
+
+	ostringstream fullURI3;
+	fullURI3 << currentPath3 << SAVED_CONTAINERS_URI;
 
 	getchar();
 

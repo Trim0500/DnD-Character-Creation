@@ -6,7 +6,7 @@
 
 #include "item.h"
 #include "itemcontainer.h"
-#include "Character.h"
+//#include "Character.h"
 
 using namespace std;
 using namespace item;
@@ -16,7 +16,6 @@ namespace serializeItem {
 	struct ItemRecord
 	{
 		int itemId;
-		int containerId;
 		string itemName;
 		int enchantmentBonus;
 		ItemType itemtype;
@@ -27,21 +26,18 @@ namespace serializeItem {
 	struct ItemContainerRecord
 	{
 		int containerId;
-		int characterId;
-		int mapCellId;
 		string itemName;
-		int enchantmentBonus;
 		ItemType itemtype;
-		CharacterStats enchantmentType;
 		float weight;
 		float capacity;
+		vector<int> itemIDs;
 	};
 
-	vector<ItemRecord*> LoadItemsByContainerIDs(const string&, const vector<int>&);
-	
-	vector<ItemContainerRecord*> LoadItemContainersByIDs(const string&, const vector<int>&);
+	vector<Item*> LoadItems(const string&);
 
-	void SaveItems(const string&, const vector<ItemContainer*>&);
+	vector<ItemContainerRecord*> LoadItemContainerRecords(const string& _fileURI);
+
+	void SaveItems(const string&, const vector<Item*>&);
 	
-	void SaveItemContainers(const string&, const vector<Character::Character*>&);
+	void SaveItemContainers(const string&, const vector<ItemContainer*>&);
 }
