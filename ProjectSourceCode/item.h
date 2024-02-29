@@ -123,6 +123,22 @@ namespace item {
 			* @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 			*/
 			Item(const string&, const int&, const int&, const int&, const float&);
+			/*!
+			* \fn Item
+			* \brief Overloaded constructor for Item
+			*
+			* Custom constructor that will take in specified arguments to make an instance of the Item class.
+			* Note that enchantment bonus ranges from 1-5, item type ranges from 1-7 and enchantment type ranges from 1-9.
+			* Implemented by item.cpp.
+			*
+			* @param _itemId Integer that represents the retrieved item id from a csv
+			* @param _itemName The reference to the name given to the item.
+			* @param _enchantmentBonus The reference to a constant integer representing the chosen enchantment bonus value. (0-5)
+			* @param _itemType The reference to a constant integer representing the chosen item type. (1-10)
+			* @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (0-9)
+			* @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
+			*/
+			Item(const int&, const string&, const int&, const int&, const int&, const float&);
 			friend bool operator==(const Item& lhs, const Item& rhs) { return lhs.itemName == rhs.itemName; };
 			int GetItemId() { return itemId; };
 			string GetItemName() { return itemName; };

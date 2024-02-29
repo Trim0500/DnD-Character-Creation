@@ -126,4 +126,13 @@ namespace item {
 		enchantmentType = (CharacterStats)_enchantmentType;
 		weight = _weight;
 	}
+
+	Item::Item(const int& _itemId, const string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType, const float& _weight) {
+		itemId = _itemId;
+		itemName = _itemName;
+		enchantmentBonus = _enchantmentBonus;
+		itemType = (ItemType)_itemType;
+		enchantmentType = (CharacterStats)_enchantmentType;
+		weight = _weight;
+	}
 }
