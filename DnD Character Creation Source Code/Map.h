@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 
-using namespace std;
+// using namespace std;
 
 /*!
 * \namespace Map
@@ -36,7 +36,7 @@ namespace Map {
 	* \var dirs
 	* \brief all possible directions to look in : down, right, up, back
 	*/
-	const vector<pair<int, int>> dirs = { {0, 1}, {1, 0}, {0, -1}, {-1, 0} };
+	const std::vector<std::pair<int, int>> dirs = { {0, 1}, {1, 0}, {0, -1}, {-1, 0} };
 
 	/*!
 	* \class Map
@@ -53,7 +53,7 @@ namespace Map {
 		const int Rows() { return rows; };
 		const int Cols() { return cols; };
 		const int* End_Cell() { return end_cell; };
-		const vector<vector<Cell_Type>>& Grid() { return grid; };
+		const std::vector<std::vector<Cell_Type>>& Grid() { return grid; };
 
 		/*!
 		* \fn Create
@@ -89,7 +89,7 @@ namespace Map {
 		* \fn ValidCell
 		* \brief Check if the given x,y coordinates are a valid cell to step on
 		*/
-		bool ValidCell(int row, int col, vector<vector<bool>> visitde);
+		bool ValidCell(int row, int col, std::vector<std::vector<bool>> visitde);
 
 		//DEBUG ONLY
 		void ChangeCell(int row, int col, Cell_Type);
@@ -115,7 +115,7 @@ namespace Map {
 		* \var grid
 		* \brief grid mapping out the cell types
 		*/
-		vector<vector<Cell_Type>> grid;
+		std::vector<std::vector<Cell_Type>> grid;
 	};
 
 }

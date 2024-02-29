@@ -21,7 +21,7 @@
 #include "item.h"
 //#include "testitemidcounter.h"
 
-using namespace std;
+// using namespace std;
 using namespace CppUnit;
 using namespace item;
 //using namespace testitemidcounter;

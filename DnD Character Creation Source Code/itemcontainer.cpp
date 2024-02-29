@@ -12,7 +12,7 @@
 #include "item.h"
 #include "itemcontainer.h"
 
-using namespace std;
+// using namespace std;
 using namespace item;
 
 namespace {
@@ -20,9 +20,9 @@ namespace {
 }
 
 namespace itemcontainer {
-	ItemContainer::ItemContainer(const string& _containerName, const int& _containerType, const float& _capacity) :
+	ItemContainer::ItemContainer(const std::string& _containerName, const int& _containerType, const float& _capacity) :
 					Item(_containerName, 0, _containerType, 10, _containerType == 8 ? 5 : _containerType == 10 ? 25 : 0) {
-		vector<Item> _items;
+		std::vector<Item> _items;
 		items = _items;
 		capacity = _capacity;
 	}
@@ -54,7 +54,7 @@ namespace itemcontainer {
 		return total;
 	}
 
-	Item* ItemContainer::GetItem(const string& nameKey) {
+	Item* ItemContainer::GetItem(const std::string& nameKey) {
 		for (size_t i = 0; i < items.size(); i++)
 		{
 			if (items[i].GetItemName() == nameKey) {
@@ -76,8 +76,8 @@ namespace itemcontainer {
 		return nullptr;
 	}
 
-	vector<Item> ItemContainer::GetItemsByEnchantmentBonus(const int& enchantmentBonus) {
-		vector<Item> resultVect;
+	std::vector<Item> ItemContainer::GetItemsByEnchantmentBonus(const int& enchantmentBonus) {
+		std::vector<Item> resultVect;
 		copy_if(items.begin(),
 				items.end(),
 				back_inserter(resultVect), 
@@ -86,8 +86,8 @@ namespace itemcontainer {
 		return resultVect;
 	}
 
-	vector<Item> ItemContainer::GetItemsByItemType(const int& itemType) {
-		vector<Item> resultVect;
+	std::vector<Item> ItemContainer::GetItemsByItemType(const int& itemType) {
+		std::vector<Item> resultVect;
 		copy_if(items.begin(),
 			items.end(),
 			back_inserter(resultVect),
@@ -96,8 +96,8 @@ namespace itemcontainer {
 		return resultVect;
 	}
 
-	vector<Item> ItemContainer::GetItemsByStat(const int& enchantmentType) {
-		vector<Item> resultVect;
+	std::vector<Item> ItemContainer::GetItemsByStat(const int& enchantmentType) {
+		std::vector<Item> resultVect;
 		copy_if(items.begin(),
 			items.end(),
 			back_inserter(resultVect),
@@ -107,23 +107,23 @@ namespace itemcontainer {
 	}
 
 	void ItemContainer::PrintItemVector() {
-		cout << "\t\t" << this->GetItemName() << " Items Information" << endl;
-		cout << "------------------------------------------" << endl << endl;
+		std::cout << "\t\t" << this->GetItemName() << " Items Information" << std::endl;
+		std::cout << "------------------------------------------" << std::endl << std::endl;
 		
 		for (int i = 0; i < items.size(); i++)
 		{
-			cout << items[i].GetItemName()
+			std::cout << items[i].GetItemName()
 					<< "\t"
 					<< itemTypeStrings[items[i].GetItemType() - 1]
 					<< "\t"
-					<< to_string(items[i].GetEnchantmentBonus())
+					<< std::to_string(items[i].GetEnchantmentBonus())
 					<< "\t"
 					<< statStrings[items[i].GetEnchantmentType()]
 					<< "\t"
-					<< to_string(items[i].GetItemWeight())
+					<< std::to_string(items[i].GetItemWeight())
 					<< "lbs"
-					<< endl;
+					<< std::endl;
 		}
-		cout << "------------------------------------------" << endl;
+		std::cout << "------------------------------------------" << std::endl;
 	}
 }

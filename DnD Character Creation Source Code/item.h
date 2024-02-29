@@ -27,7 +27,7 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+// using namespace std;
 
 /*!!
 * \namespace item
@@ -86,12 +86,12 @@ namespace item {
 			* \var itemTypeStrings
 			* \brief String array for formatting item name item type
 			*/
-			string itemTypeStrings[7] = { "Helmet", "Armor", "Shield", "Ring", "Belt", "Boots", "Weapon" };
+			std::string itemTypeStrings[7] = { "Helmet", "Armor", "Shield", "Ring", "Belt", "Boots", "Weapon" };
 			/*!
 			* \var itemTypeStrings
 			* \brief String array for formatting item name character stat
 			*/
-			string statStrings[9] = { "Strength",
+			std::string statStrings[9] = { "Strength",
 										"Dexterity",
 										"Constitution",
 										"Intelligence",
@@ -122,10 +122,10 @@ namespace item {
 			* @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (0-9)
 			* @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 			*/
-			Item(const string&, const int&, const int&, const int&, const float&);
+			Item(const std::string&, const int&, const int&, const int&, const float&);
 			friend bool operator==(const Item& lhs, const Item& rhs) { return lhs.itemName == rhs.itemName; };
 			int GetItemId() { return itemId; };
-			string GetItemName() { return itemName; };
+			std::string GetItemName() { return itemName; };
 			int GetEnchantmentBonus() { return enchantmentBonus; };
 			ItemType GetItemType() { return itemType; }
 			CharacterStats GetEnchantmentType() { return enchantmentType; };
@@ -141,7 +141,7 @@ namespace item {
 			* \var itemName
 			* \brief Integer that represents the item's name
 			*/
-			string itemName;
+			std::string itemName;
 			/*!
 			* \var enchantmentBonus
 			* \brief Integer that represents the item's stat bonus

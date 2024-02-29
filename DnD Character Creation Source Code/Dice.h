@@ -22,16 +22,16 @@
 #include <regex>
 #include <string>
 
-using namespace std;
+// using namespace std;
 
-static regex DICE("^([0-9]+)d(4|6|8|10|12|20|100)((?:\\+|-)[0-9]*)*$");
+static std::regex DICE("^([0-9]+)d(4|6|8|10|12|20|100)((?:\\+|-)[0-9]*)*$");
 class Dice {
 public:
 	/*!
 	 * @brief Dice object constructor
 	 * @param query string query under format xdy[+/-z]
 	*/
-	Dice(string query);
+	Dice(std::string query);
 	/*!
 	 * @brief Default constructor.
 	*/
@@ -41,20 +41,20 @@ public:
 	 * @param query the query to be rolled
 	 * @return result of the dice roll
 	*/
-	static int roll(string query);
+	static int roll(std::string query);
 	
 	/*!
 	* @brief Rolls given query twice, keeping highest
 	* @param query the query to be rolled
 	* @return result of dice roll
 	*/
-	static int roll_with_advantage(string query);
+	static int roll_with_advantage(std::string query);
 	/*!
 	* @brief Rolls given query twice, keeping lowest
 	* @param query the query to be rolled
 	* @return result of dice roll
 	*/
-	static int roll_with_disadvantage(string query);
+	static int roll_with_disadvantage(std::string query);
 
 	/*!
 	 * @brief Roll the dice object
@@ -82,8 +82,8 @@ public:
 	*/
 	void add_die(int amount);
 	/*!
-	 * @brief generates a string representation of the dice
-	 * @return string repr of die
+	 * @brief generates a std::string representation of the dice
+	 * @return std::string repr of die
 	*/
 	std::string get_string();
 	/*!

@@ -24,7 +24,7 @@
 #define WEAPON_HIGH_ENCHANTMENT_MIN_WEIGHT 5
 #define WEAPON_HIGH_ENCHANTMENT_MAX_WEIGHT 18
 
-using namespace std;
+// using namespace std;
 
 void TestItem::setUp(void)
 {
@@ -44,10 +44,10 @@ void TestItem::tearDown(void)
 
 void TestItem::TestNoArgsItemConstructor(void) {
 	//CPPUNIT_ASSERT(noArgsItemObject->GetItemId() == testItemCurrentId - 1);
-	ostringstream name;
+	std::ostringstream name;
 	name << noArgsItemObject->itemTypeStrings[noArgsItemObject->GetItemType() - 1]
 			<< " +"
-			<< to_string(noArgsItemObject->GetEnchantmentBonus())
+			<< std::to_string(noArgsItemObject->GetEnchantmentBonus())
 			<< " ("
 			<< noArgsItemObject->statStrings[noArgsItemObject->GetEnchantmentType()] << ")";
 	CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == name.str());
@@ -71,10 +71,10 @@ void TestItem::TestGetItemId(void) {
 }
 
 void TestItem::TestGetItemName(void) {
-	ostringstream name;
+	std::ostringstream name;
 	name << noArgsItemObject->itemTypeStrings[noArgsItemObject->GetItemType() - 1]
 		<< " +"
-		<< to_string(noArgsItemObject->GetEnchantmentBonus())
+		<< std::to_string(noArgsItemObject->GetEnchantmentBonus())
 		<< " ("
 		<< noArgsItemObject->statStrings[noArgsItemObject->GetEnchantmentType()] << ")";
 	CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == name.str());
