@@ -15,108 +15,108 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ProjectSourceCode\main.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\item.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\itemcontainer.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\itemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testitem.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\testitemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Character.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\testitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Dice.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\demoitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\serializeItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\testserializeitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testDice.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Character\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\demoitem.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Character\testCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\DiceDemo.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Character\demoCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\demoCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Character\SerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Map.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Dice\Dice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testMap.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Dice\testDice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\serializeItem.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Dice\DiceDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testserializeitem.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Map\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Map\testMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ProjectSourceCode\item.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\itemcontainer.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\itemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitem.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\testitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Dice.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\testitemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Character.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\testitemidcounter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitemcontainer.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\demoitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testCharacter.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\serializeItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitemidcounter.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\testserializeitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testDice.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Character\Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\demoitem.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Character\testCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\DiceDemo.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Character\demoCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\demoCharacter.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Character\SerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Map.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Dice\Dice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testMap.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Dice\testDice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\serializeItem.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Dice\DiceDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testserializeitem.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Map\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Map\testMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

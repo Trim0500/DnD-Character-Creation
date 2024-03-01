@@ -14,9 +14,9 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{ea5958e6-0f72-4c74-88e1-aa190e7ea305}</ProjectGuid>
-    <RootNamespace>COMP345Assignment1</RootNamespace>
+    <RootNamespace>COMP345Project</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>[COMP345]Project</ProjectName>
+    <ProjectName>COMP345Project</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -87,42 +87,42 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ProjectSourceCode\demoitem.cpp" />
-    <ClCompile Include="ProjectSourceCode\DiceDemo.cpp" />
-    <ClCompile Include="ProjectSourceCode\demoCharacter.cpp" />
-    <ClCompile Include="ProjectSourceCode\item.cpp" />
-    <ClCompile Include="ProjectSourceCode\itemcontainer.cpp" />
-    <ClCompile Include="ProjectSourceCode\Character.cpp" />
-    <ClCompile Include="ProjectSourceCode\main.cpp" />
-    <ClCompile Include="ProjectSourceCode\testCharacter.cpp" />
-    <ClCompile Include="ProjectSourceCode\testDice.cpp" />
-    <ClCompile Include="ProjectSourceCode\testitem.cpp" />
-    <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp" />
-    <ClCompile Include="ProjectSourceCode\Dice.cpp" />
-    <ClCompile Include="ProjectSourceCode\Map.cpp" />
-    <ClCompile Include="ProjectSourceCode\testMap.cpp" />
-    <ClCompile Include="ProjectSourceCode\serializeItem.cpp" />
-    <ClCompile Include="ProjectSourceCode\testserializeitem.cpp" />
-    <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\item.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\demoitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\itemcontainer.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\testitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\testitemcontainer.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\serializeItem.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Item\testserializeitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Character\demoCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Character\Character.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Character\testCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Character\SerializeCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Dice\testDice.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Dice\DiceDemo.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Dice\Dice.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Map\Map.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Map\testMap.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ProjectSourceCode\demoitem.h" />
-    <ClInclude Include="ProjectSourceCode\DiceDemo.h" />
-    <ClInclude Include="ProjectSourceCode\demoCharacter.h" />
-    <ClInclude Include="ProjectSourceCode\item.h" />
-    <ClInclude Include="ProjectSourceCode\itemcontainer.h" />
-    <ClInclude Include="ProjectSourceCode\testCharacter.h" />
-    <ClInclude Include="ProjectSourceCode\testDice.h" />
-    <ClInclude Include="ProjectSourceCode\testitem.h" />
-    <ClInclude Include="ProjectSourceCode\Character.h" />
-    <ClInclude Include="ProjectSourceCode\Dice.h" />
-    <ClInclude Include="ProjectSourceCode\testitemcontainer.h" />
-    <ClInclude Include="ProjectSourceCode\testitemidcounter.h" />
-    <ClInclude Include="ProjectSourceCode\Map.h" />
-    <ClInclude Include="ProjectSourceCode\testMap.h" />
-    <ClInclude Include="ProjectSourceCode\serializeItem.h" />
-    <ClInclude Include="ProjectSourceCode\testserializeitem.h" />
-    <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\item.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\itemcontainer.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\demoitem.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\testitem.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\serializeItem.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\testserializeitem.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\testitemcontainer.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\testitemidcounter.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Character\Character.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Character\demoCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Character\testCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Character\SerializeCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Dice\Dice.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Dice\DiceDemo.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Dice\testDice.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Map\Map.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Map\testMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
