@@ -42,16 +42,19 @@ namespace campaign {
             * \fn Campaign
             * \brief Overloaded constructor to when loading a campaign
             * 
-            * \param _mapMatrix 2D matrix of ints that represents the campaign's data 
-            * \param _currentMap Integer that represents the number of cols for matrix
+            * \param _mapMatrix 2D matrix of ints that represents the campaign's map data 
+            * \param _currentMap Instance of a CampaignMap struct loaded from serialization
+            * \param _mapsInCampaign Vector that represents a loaded list of pointers to Map instances 
             */
-            Campaign(std::vector<std::vector<int>>, CampaignMap);
+            Campaign(std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
             /*!
             * \fn GetMap
             * \brief Function to find the map data at the specified coordinates
             * 
             * \param _coordX Integer that represents the x coordiante to look for in the matrix
             * \param _coordY Integer that represents the y coordiante to look for in the matrix
+            * 
+            * \return Pointer to a map instance in the campaign at the specified coordiantes
             */
             Map::Map* GetMap(const int&, const int&);
         private:
@@ -65,5 +68,10 @@ namespace campaign {
             * \brief Instance of the CampaignMap struct to represent the current map shown/loaded
             */
             CampaignMap currentMap;
+            /*!
+            * \var mapsInCampaign
+            * \brief Vector that represents the pointers to Map instances that the maps that exist in the campaign
+            */
+            std::vector<Map::Map*> mapsInCampaign;
     };
 }
