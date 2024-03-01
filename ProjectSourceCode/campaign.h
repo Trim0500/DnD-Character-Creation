@@ -61,6 +61,12 @@ namespace campaign {
             */
             Map::Map* GetMap(const int&, const int&);
         private:
+            static inline int nextCampaignID = 0;
+            /*!
+            * \var campaignID
+            * \brief Integer representing the unique ID for a Campaign
+            */
+            int campaignID;
             /*!
             * \var mapIDs
             * \brief A matrix of ints that represents the relative positions of the maps in a campaign
