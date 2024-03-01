@@ -10,6 +10,9 @@ using namespace std;
 
 //basic constructor
 Map::Map::Map(int r, int c) {
+	nextMapID += 1;
+	mapID = nextMapID;
+	cout << "Instance Map ID is: " << mapID << endl;
 	rows = r;
 	cols = c;
 	end_cell[0] = r - 1;
