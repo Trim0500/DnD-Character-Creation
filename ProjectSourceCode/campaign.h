@@ -55,6 +55,9 @@ namespace campaign {
             * \param _coordY Integer that represents the y coordiante to look for in the matrix
             * 
             * \return Pointer to a map instance in the campaign at the specified coordiantes
+            * 
+            * \throw exception
+            * \throw invalid_argument
             */
             Map::Map* GetMap(const int&, const int&);
         private:

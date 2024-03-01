@@ -6,11 +6,33 @@
 */
 
 #include <algorithm>
+#include <string>
+#include <sstream>
 
 #include "Campaign.h"
 
 namespace {
+    /*!
+    * \fn FindMapByID
+    * \brief Helper function to find the Map instance pointer in a Map instnace pointer vector
+    * 
+    * \param _mapID Address of a constant integer that represents the ID key
+    * \param _mapVector Address of a constant vector of Map instance pointers that represents vetcor to search
+    * 
+    * \return The pointer to a Map instance
+    * 
+    * \throw exception
+    */
+    Map::Map* FindMapByID(const int& _mapID, const std::vector<Map::Map*>& _mapVector) {
+        auto foundMap = std::find_if(_mapVector.begin(),
+                                        _mapVector.end(),
+                                        [_mapID](Map::Map* map){return map->GetMapID() == _mapID;});
+        if (foundMap == _mapVector.end()) {
+            throw std::exception("Failed to find the map w/ID: " + _mapID);
+        }
 
+        return (*foundMap);
+    }
 }
 
 namespace campaign {
@@ -38,16 +60,14 @@ namespace campaign {
     }
 
     Map::Map* Campaign::GetMap(const int& _coordX, const int& _coordY) {
-        int foundMapID = mapIDs[_coordX][_coordY];
-
-        auto foundMap = std::find_if(mapsInCampaign.begin(),
-                                        mapsInCampaign.end(),
-                                        [foundMapID](Map::Map* map){return map->GetMapID() == foundMapID;});
-        if (foundMap == mapsInCampaign.end()) {
-            // throw exception, should be noted in docs
+        if ((_coordX < 0 || _coordX > (int)mapIDs.size() - 1) || (_coordY < 0 || _coordY > mapIDs[_coordX - 1].size() - 1)) {
+            std::ostringstream message;
+            message << "Invalid coordiantes: " << _coordX << "," << _coordY;
+            throw std::invalid_argument(message.str());
         }
-
-        Map::Map* result = (*foundMap);
+        
+        int foundMapID = mapIDs[_coordX][_coordY];
+        Map::Map* result = FindMapByID(foundMapID, mapsInCampaign);
 
         currentMap.mapID = result->GetMapID();
         currentMap.coorX = _coordX;
