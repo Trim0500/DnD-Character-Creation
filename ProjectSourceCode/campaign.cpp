@@ -42,10 +42,12 @@ namespace campaign {
         std::vector<std::vector<int>> newMapIDMatrix;
         for (int i = 0; i < _rows; ++i)
         {
+            std::vector<int> columnIDs;
             for (int j = 0; j < _cols; ++j)
             {
-                newMapIDMatrix[i].push_back(0);
+                columnIDs.push_back(0);
             }
+            newMapIDMatrix.push_back(columnIDs);
         }
         mapIDs = newMapIDMatrix;
         currentMap.mapID = 0;
