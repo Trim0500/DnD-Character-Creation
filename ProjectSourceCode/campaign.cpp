@@ -62,13 +62,13 @@ namespace campaign {
     }
 
     Map::Map* Campaign::GetMap(const int& _coordX, const int& _coordY) {
-        if ((_coordX < 0 || _coordX > (int)mapIDs.size() - 1) || (_coordY < 0 || _coordY > mapIDs[_coordX - 1].size() - 1)) {
+        if ((_coordX < 1 || _coordX > (int)mapIDs.size()) || (_coordY < 1 || _coordY > mapIDs[_coordX - 1].size())) {
             std::ostringstream message;
             message << "Invalid coordiantes: " << _coordX << "," << _coordY;
             throw std::invalid_argument(message.str());
         }
         
-        int foundMapID = mapIDs[_coordX][_coordY];
+        int foundMapID = mapIDs[_coordX - 1][_coordY - 1];
         Map::Map* result = FindMapByID(foundMapID, mapsInCampaign);
 
         currentMap.mapID = result->GetMapID();

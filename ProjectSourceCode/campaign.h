@@ -47,9 +47,12 @@ namespace campaign {
             * \param _mapsInCampaign Vector that represents a loaded list of pointers to Map instances 
             */
             Campaign(std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
+            std::vector<std::vector<int>>* GetMapIDs() {return &mapIDs;};
+            CampaignMap* GetCurrentMap() {return &currentMap;};
+            std::vector<Map::Map*>* GetMapsInCampaign() {return &mapsInCampaign;};
             /*!
             * \fn GetMap
-            * \brief Function to find the map data at the specified coordinates
+            * \brief Function to find the map data at the specified coordinates (Coordiantes should be 1-indexed)
             * 
             * \param _coordX Integer that represents the x coordiante to look for in the matrix
             * \param _coordY Integer that represents the y coordiante to look for in the matrix
