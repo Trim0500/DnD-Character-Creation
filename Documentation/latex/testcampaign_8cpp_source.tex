@@ -1,0 +1,131 @@
+\doxysection{testcampaign.\+cpp}
+\hypertarget{testcampaign_8cpp_source}{}\label{testcampaign_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testcampaign.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testcampaign.cpp}}
+\mbox{\hyperlink{testcampaign_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{testcampaign_8h}{testcampaign.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00008}\mbox{\hyperlink{testcampaign_8cpp_a08e427f1fa510f4264afd3effa5af1ad}{00008}}\ \textcolor{preprocessor}{\#define\ NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT\ 3}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00009}\mbox{\hyperlink{testcampaign_8cpp_a3c6f24e35ef9c7896f84a38d60bd8034}{00009}}\ \textcolor{preprocessor}{\#define\ NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT\ 3}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00010}\mbox{\hyperlink{testcampaign_8cpp_a7f895162e5d478f9e6dd7ceb21cf22a4}{00010}}\ \textcolor{preprocessor}{\#define\ NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE\ 0}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00011}\mbox{\hyperlink{testcampaign_8cpp_a5a38a129cf963e108dd09ea27048c64b}{00011}}\ \textcolor{preprocessor}{\#define\ EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT\ 3}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00012}\mbox{\hyperlink{testcampaign_8cpp_a90fcf5e6eb0f44b0209f748780aca502}{00012}}\ \textcolor{preprocessor}{\#define\ EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT\ 3}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00013}\mbox{\hyperlink{testcampaign_8cpp_a70f941fc8da35a6a2206576f8711af2b}{00013}}\ \textcolor{preprocessor}{\#define\ EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR\ 2}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00014}\mbox{\hyperlink{testcampaign_8cpp_a534197a54a351009a28a97e524fc2468}{00014}}\ \textcolor{preprocessor}{\#define\ EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR\ 2}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00015}\mbox{\hyperlink{testcampaign_8cpp_ad291c429d3e555ff99596da2d0365825}{00015}}\ \textcolor{preprocessor}{\#define\ EXISTING\_CAMPAIGN\_INVALID\_X\_COOR\ 10}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00016}\mbox{\hyperlink{testcampaign_8cpp_a7f02a0bce3d77f3f0702d6214a8e2b20}{00016}}\ \textcolor{preprocessor}{\#define\ EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR\ -\/10}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00017}\mbox{\hyperlink{testcampaign_8cpp_abfc514352e9ec6083d2a54501260bf22}{00017}}\ \textcolor{preprocessor}{\#define\ EXISTING\_CAMPAIGN\_X\_COOR\ 2}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00018}\mbox{\hyperlink{testcampaign_8cpp_a1b50db0d2d1a794da25f9a0fc0b99325}{00018}}\ \textcolor{preprocessor}{\#define\ EXISTING\_CAMPAIGN\_Y\_COOR\ 2}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00020}\mbox{\hyperlink{class_test_campaign_adb4e1012c3b1ba3266a34a57dc5d24db}{00020}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_adb4e1012c3b1ba3266a34a57dc5d24db}{TestCampaign::setUp}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00021}00021\ \ \ \ \ newCampaignObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}(\mbox{\hyperlink{testcampaign_8cpp_a08e427f1fa510f4264afd3effa5af1ad}{NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}},\ \mbox{\hyperlink{testcampaign_8cpp_a3c6f24e35ef9c7896f84a38d60bd8034}{NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00023}00023\ \ \ \ \ std::vector<std::vector<int>>\ existingMapIDs;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{testcampaign_8cpp_a5a38a129cf963e108dd09ea27048c64b}{EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ std::vector<int>\ columnIDs;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \mbox{\hyperlink{testcampaign_8cpp_a90fcf5e6eb0f44b0209f748780aca502}{EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT}};\ ++j)}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ columnIDs.push\_back(\mbox{\hyperlink{testcampaign_8cpp_a7f895162e5d478f9e6dd7ceb21cf22a4}{NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ existingMapIDs.push\_back(columnIDs);}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00036}00036\ \ \ \ \ std::vector<Map::Map*>\ campaignMaps;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00037}00037\ \ \ \ \ campaignMaps.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(5,\ 5));}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00038}00038\ \ \ \ \ campaignMaps.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(5,\ 5));}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00039}00039\ \ \ \ \ campaignMaps.push\_back(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(5,\ 5));}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00040}00040\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00041}00041\ \ \ \ \ existingMapIDs[0][1]\ =\ campaignMaps[0]-\/>GetMapID();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00042}00042\ \ \ \ \ existingMapIDs[1][1]\ =\ campaignMaps[1]-\/>GetMapID();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00043}00043\ \ \ \ \ existingMapIDs[2][1]\ =\ campaignMaps[2]-\/>GetMapID();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00044}00044\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_map}{CampaignMap}}\ currentMap;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00046}00046\ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}}\ =\ existingMapIDs[1][1];}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00047}00047\ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}}\ =\ \mbox{\hyperlink{testcampaign_8cpp_a70f941fc8da35a6a2206576f8711af2b}{EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR}};}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00048}00048\ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}}\ =\ \mbox{\hyperlink{testcampaign_8cpp_a534197a54a351009a28a97e524fc2468}{EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR}};}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00050}00050\ \ \ \ \ existingCampaignObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}(existingMapIDs,\ currentMap,\ campaignMaps);}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00053}\mbox{\hyperlink{class_test_campaign_a2f23c7178b7d0eecad8b04cde4ffdae2}{00053}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_a2f23c7178b7d0eecad8b04cde4ffdae2}{TestCampaign::tearDown}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{delete}\ newCampaignObject;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00056}00056\ \ \ \ \ existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a036823e2a2afc0ff1982b4b599765eab}{GetMapIDs}}()-\/>clear();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00057}00057\ \ \ \ \ existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a31f226396bfef40e6feba310a5b3575e}{GetMapsInCampaign}}()-\/>clear();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{delete}\ existingCampaignObject;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00062}\mbox{\hyperlink{class_test_campaign_a4b4a9b0cbb58d27ba4c6721b0268093e}{00062}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_a4b4a9b0cbb58d27ba4c6721b0268093e}{TestCampaign::TestCampaignConstructor}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00063}00063\ \ \ \ \ std::vector<std::vector<int>>\ newCampaignMapIDs\ =\ *newCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a036823e2a2afc0ff1982b4b599765eab}{GetMapIDs}}();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00064}00064\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_a08e427f1fa510f4264afd3effa5af1ad}{NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}},\ (\textcolor{keywordtype}{int})newCampaignMapIDs.size());}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00065}00065\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)newCampaignMapIDs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_a3c6f24e35ef9c7896f84a38d60bd8034}{NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT}},\ (\textcolor{keywordtype}{int})newCampaignMapIDs[i].size());}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)newCampaignMapIDs[i].size();\ j++)}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_a7f895162e5d478f9e6dd7ceb21cf22a4}{NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE}},\ newCampaignMapIDs[i][j]);}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00075}00075\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00076}00076\ \ \ \ \ std::vector<std::vector<int>>*\ existingCampaignMapIDs\ =\ existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a036823e2a2afc0ff1982b4b599765eab}{GetMapIDs}}();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00077}00077\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_a5a38a129cf963e108dd09ea27048c64b}{EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}},\ (\textcolor{keywordtype}{int})existingCampaignMapIDs-\/>size());}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00078}00078\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)existingCampaignMapIDs-\/>size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_a90fcf5e6eb0f44b0209f748780aca502}{EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT}},\ (\textcolor{keywordtype}{int})existingCampaignMapIDs[i].size());}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)existingCampaignMapIDs[i].size();\ j++)}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0\ \&\&\ j\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(1,\ newCampaignMapIDs[i][j]);}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 1\ \&\&\ j\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(2,\ newCampaignMapIDs[i][j]);}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 2\ \&\&\ j\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(3,\ newCampaignMapIDs[i][j]);}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(0,\ newCampaignMapIDs[i][j]);}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_map}{CampaignMap}}*\ existingCampaignCurrentMap\ =\ existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_aa53e79b0a8040ba86a5338ecf0da9cd8}{GetCurrentMap}}();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00106}00106\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a31f226396bfef40e6feba310a5b3575e}{GetMapsInCampaign}}()-\/>at(1)-\/>GetMapID(),\ existingCampaignCurrentMap-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00107}00107\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_a70f941fc8da35a6a2206576f8711af2b}{EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR}},\ existingCampaignCurrentMap-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00108}00108\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_a534197a54a351009a28a97e524fc2468}{EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR}},\ existingCampaignCurrentMap-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00109}00109\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00110}00110\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(3,\ (\textcolor{keywordtype}{int})existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a31f226396bfef40e6feba310a5b3575e}{GetMapsInCampaign}}()-\/>size());}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00113}\mbox{\hyperlink{class_test_campaign_ae5ea8be01082ad6caaac8dfbf563ddc6}{00113}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_ae5ea8be01082ad6caaac8dfbf563ddc6}{TestCampaign::TestGetMap}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00114}00114\ \ \ \ \ std::ostringstream\ message;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00115}00115\ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Invalid\ coordiantes:\ "{}}\ <<\ \mbox{\hyperlink{testcampaign_8cpp_ad291c429d3e555ff99596da2d0365825}{EXISTING\_CAMPAIGN\_INVALID\_X\_COOR}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \mbox{\hyperlink{testcampaign_8cpp_a7f02a0bce3d77f3f0702d6214a8e2b20}{EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR}};}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00116}00116\ \ \ \ \ CPPUNIT\_ASSERT\_THROW\_MESSAGE(message.str(),}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{GetMap}}(\mbox{\hyperlink{testcampaign_8cpp_ad291c429d3e555ff99596da2d0365825}{EXISTING\_CAMPAIGN\_INVALID\_X\_COOR}},\ \mbox{\hyperlink{testcampaign_8cpp_a7f02a0bce3d77f3f0702d6214a8e2b20}{EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR}}),}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::invalid\_argument);}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{int}\ expectedMapID\ =\ existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a31f226396bfef40e6feba310a5b3575e}{GetMapsInCampaign}}()-\/>at(1)-\/>GetMapID();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00121}00121\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00122}00122\ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ foundMap\ =\ existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{GetMap}}(\mbox{\hyperlink{testcampaign_8cpp_abfc514352e9ec6083d2a54501260bf22}{EXISTING\_CAMPAIGN\_X\_COOR}},\ \mbox{\hyperlink{testcampaign_8cpp_a1b50db0d2d1a794da25f9a0fc0b99325}{EXISTING\_CAMPAIGN\_Y\_COOR}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00123}00123\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(expectedMapID,\ foundMap-\/>\mbox{\hyperlink{class_map_1_1_map_abdc27dfaf8a3904dc45ffeb396e60e6e}{GetMapID}}());}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_map}{CampaignMap}}*\ currentMap\ =\ existingCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_aa53e79b0a8040ba86a5338ecf0da9cd8}{GetCurrentMap}}();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00126}00126\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(expectedMapID,\ currentMap-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00127}00127\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_abfc514352e9ec6083d2a54501260bf22}{EXISTING\_CAMPAIGN\_X\_COOR}},\ currentMap-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00128}00128\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{testcampaign_8cpp_a1b50db0d2d1a794da25f9a0fc0b99325}{EXISTING\_CAMPAIGN\_Y\_COOR}},\ currentMap-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00129}00129\ \}}
+
+\end{DoxyCode}

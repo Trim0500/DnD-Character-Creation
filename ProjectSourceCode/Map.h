@@ -44,6 +44,7 @@ namespace Map {
 	*/
 	class Map {
 	public: 
+		int GetMapID() {return mapID;};
 		/*!
 		* \fn Map
 		* \brief Constructor to build a basic map provided by user
