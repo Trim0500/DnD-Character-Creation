@@ -60,16 +60,16 @@ void TestCampaign::tearDown(void) {
 }
 
 void TestCampaign::TestCampaignConstructor(void) {
-    std::vector<std::vector<int>> newCampaignMapIDs = *newCampaignObject->GetMapIDs();
-    CPPUNIT_ASSERT_EQUAL(NEW_CAMPAIGN_MAPIDS_ROW_COUNT, (int)newCampaignMapIDs.size());
+    std::vector<std::vector<int>>* newCampaignMapIDs = newCampaignObject->GetMapIDs();
+    CPPUNIT_ASSERT_EQUAL(NEW_CAMPAIGN_MAPIDS_ROW_COUNT, (int)newCampaignMapIDs->size());
     
-    for (int i = 0; i < (int)newCampaignMapIDs.size(); ++i)
+    for (int i = 0; i < (int)newCampaignMapIDs->size(); ++i)
     {
-        CPPUNIT_ASSERT_EQUAL(NEW_CAMPAIGN_MAPIDS_COL_COUNT, (int)newCampaignMapIDs[i].size());
+        CPPUNIT_ASSERT_EQUAL(NEW_CAMPAIGN_MAPIDS_COL_COUNT, (int)newCampaignMapIDs->at(i).size());
 
         for (int j = 0; j < (int)newCampaignMapIDs[i].size(); j++)
         {
-            CPPUNIT_ASSERT_EQUAL(NEW_CAMPAIGN_MAPIDS_CELL_VALUE, newCampaignMapIDs[i][j]);
+            CPPUNIT_ASSERT_EQUAL(NEW_CAMPAIGN_MAPIDS_CELL_VALUE, newCampaignMapIDs->at(i).at(j));
         }
     }
     
@@ -78,27 +78,31 @@ void TestCampaign::TestCampaignConstructor(void) {
     
     for (int i = 0; i < (int)existingCampaignMapIDs->size(); ++i)
     {
-        CPPUNIT_ASSERT_EQUAL(EXISTING_CAMPAIGN_MAPIDS_COL_COUNT, (int)existingCampaignMapIDs[i].size());
+        CPPUNIT_ASSERT_EQUAL(EXISTING_CAMPAIGN_MAPIDS_COL_COUNT, (int)existingCampaignMapIDs->at(i).size());
 
-        for (int j = 0; j < (int)existingCampaignMapIDs[i].size(); j++)
+        for (int j = 0; j < (int)existingCampaignMapIDs->at(i).size(); j++)
         {
+            std::vector<Map::Map*>* mapsInCampaign = existingCampaignObject->GetMapsInCampaign();
+
+            int mapIDAtCell = existingCampaignMapIDs->at(i).at(j);
+
             if (i == 0 && j == 1) {
-                CPPUNIT_ASSERT_EQUAL(1, newCampaignMapIDs[i][j]);
+                CPPUNIT_ASSERT_EQUAL(mapsInCampaign->at(0)->GetMapID(), mapIDAtCell);
 
                 continue;
             }
             else if (i == 1 && j == 1) {
-                CPPUNIT_ASSERT_EQUAL(2, newCampaignMapIDs[i][j]);
+                CPPUNIT_ASSERT_EQUAL(mapsInCampaign->at(1)->GetMapID(), mapIDAtCell);
 
                 continue;
             }
             else if (i == 2 && j == 1) {
-                CPPUNIT_ASSERT_EQUAL(3, newCampaignMapIDs[i][j]);
+                CPPUNIT_ASSERT_EQUAL(mapsInCampaign->at(2)->GetMapID(), mapIDAtCell);
 
                 continue;
             }
 
-            CPPUNIT_ASSERT_EQUAL(0, newCampaignMapIDs[i][j]);
+            CPPUNIT_ASSERT_EQUAL(0, mapIDAtCell);
         }
     }
 
