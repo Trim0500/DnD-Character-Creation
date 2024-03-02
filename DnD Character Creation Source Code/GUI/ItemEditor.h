@@ -1,17 +1,21 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include <FL/Fl.H>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Group.H>
+#include <FL/Fl_Pack.H>
 // #include <FL/Fl_Flex.H>
 #include <FL/Fl_Input.H>
+#include <FL/Fl_Browser.H>
 #include <FL/Fl_Int_Input.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Float_Input.H>
 
 #include "../item.h"
 #include "../Character.h"
+// #include "../serializeItem.h"
 
 namespace CampaignEditor {
 
@@ -23,6 +27,11 @@ namespace CampaignEditor {
 				const int height = 50;
 				const int padding = 30;
 				int c_y = 10;
+				Fl_Pack * _g = new Fl_Pack(0,0,300,640);
+				itemBrowser = new Fl_Browser(margin, 20, 300, 500, "Items");
+				_g->end();
+				c_y = 10;
+				Fl_Pack * g = new Fl_Pack(400,0,400,640);
 				idInput = new Fl_Int_Input(margin, c_y, width, height, "Id");
 				c_y += padding+height;
 				containerIdInput = new Fl_Int_Input(margin, c_y, width, height, "Container Id"); // temp
@@ -34,9 +43,21 @@ namespace CampaignEditor {
 				weightInput = new Fl_Float_Input(margin,c_y, width, height, "Weight");
 				c_y += padding+height;
 				Fl_Button * button = new Fl_Button(margin, c_y, width, height, "submit");
+				// g->resizable();
+				idInput->align(FL_ALIGN_TOP);
+				containerIdInput->align(FL_ALIGN_TOP);
+				itemTypeInput->align(FL_ALIGN_TOP);
+				weightInput->align(FL_ALIGN_TOP);
+				itemBrowser->align(FL_ALIGN_TOP);
+				g->end();
+				this->resizable(this);
 			};
 
 		private: 
+
+			// Item browser
+			Fl_Browser * itemBrowser;
+			std::vector<std::string> item_database;
 			// UI Components
 
 			Fl_Int_Input * idInput; // constant
