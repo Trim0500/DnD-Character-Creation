@@ -106,6 +106,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7e7998679cac37adb8124f012d5dd39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30c1d4e226db309d759301e34f470a8f" id="r_a30c1d4e226db309d759301e34f470a8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30c1d4e226db309d759301e34f470a8f">Item</a> (const string &amp;, const int &amp;, const int &amp;, const int &amp;, const float &amp;)</td></tr>
 <tr class="separator:a30c1d4e226db309d759301e34f470a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2876f055fdea599ec9c710096fc0abe4" id="r_a2876f055fdea599ec9c710096fc0abe4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2876f055fdea599ec9c710096fc0abe4">Item</a> (const int &amp;, const string &amp;, const int &amp;, const int &amp;, const int &amp;, const float &amp;)</td></tr>
+<tr class="separator:a2876f055fdea599ec9c710096fc0abe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bc21c27d852361df5ae709eaac7720d" id="r_a1bc21c27d852361df5ae709eaac7720d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bc21c27d852361df5ae709eaac7720d">GetItemId</a> ()</td></tr>
 <tr class="separator:a1bc21c27d852361df5ae709eaac7720d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1ad3254799bbd2d6017f098b333d2b6" id="r_ac1ad3254799bbd2d6017f098b333d2b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1ad3254799bbd2d6017f098b333d2b6">GetItemName</a> ()</td></tr>
@@ -139,7 +141,7 @@ Friends</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00083">83</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e7998679cac37adb8124f012d5dd39e" name="a7e7998679cac37adb8124f012d5dd39e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e7998679cac37adb8124f012d5dd39e">&#9670;&#160;</a></span>Item() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e7998679cac37adb8124f012d5dd39e">&#9670;&#160;</a></span>Item() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,6 +165,18 @@ Friends</h2></td></tr>
     <tr><td class="paramname">_enchantmentBonus</td><td>The reference to a constant integer representing the chosen enchantment bonus value. (0-5) </td></tr>
     <tr><td class="paramname">_itemType</td><td>The reference to a constant integer representing the chosen item type. (1-10) </td></tr>
     <tr><td class="paramname">_enchantmentType</td><td>The reference to a constant integer representing the chosen enchantment type value. (0-9) </td></tr>
+    <tr><td class="paramname">_weight</td><td>The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Custom constructor that will take in specified arguments to make an instance of the <a class="el" href="classitem_1_1_item.html" title="Class for the character items.">Item</a> class. Note that enchantment bonus ranges from 1-5, item type ranges from 1-7 and enchantment type ranges from 1-9. Implemented by <a class="el" href="item_8cpp.html" title="Implementation file for the Item class.">item.cpp</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_itemId</td><td>Integer that represents the retrieved item id from a csv </td></tr>
+    <tr><td class="paramname">_itemName</td><td>The reference to the name given to the item. </td></tr>
+    <tr><td class="paramname">_enchantmentBonus</td><td>The reference to a constant integer representing the chosen enchantment bonus value. (0-5) </td></tr>
+    <tr><td class="paramname">_itemType</td><td>The reference to a constant integer representing the chosen item type. (1-10) </td></tr>
+    <tr><td class="paramname">_enchantmentType</td><td>The reference to a constant integer representing the chosen enchantment type value. (0-9) </td></tr>
     <tr><td class="paramname">_weight</td><td>The reference to a constant float representing the chosen weight vaule. This weight depends on the item type. </td></tr>
   </table>
   </dd>
@@ -173,7 +187,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <a id="a30c1d4e226db309d759301e34f470a8f" name="a30c1d4e226db309d759301e34f470a8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30c1d4e226db309d759301e34f470a8f">&#9670;&#160;</a></span>Item() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a30c1d4e226db309d759301e34f470a8f">&#9670;&#160;</a></span>Item() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,6 +224,49 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a2876f055fdea599ec9c710096fc0abe4" name="a2876f055fdea599ec9c710096fc0abe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2876f055fdea599ec9c710096fc0abe4">&#9670;&#160;</a></span>Item() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">item::Item::Item </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemId</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemName</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_enchantmentBonus</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemType</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_enchantmentType</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float &amp;</td>          <td class="paramname"><span class="paramname"><em>_weight</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00130">130</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a4ba1d561d9bc83cecb5786916667a675" name="a4ba1d561d9bc83cecb5786916667a675"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ba1d561d9bc83cecb5786916667a675">&#9670;&#160;</a></span>GetEnchantmentBonus()</h2>
@@ -234,7 +291,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00129">129</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00145">145</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -261,7 +318,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00131">131</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00147">147</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -288,7 +345,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00127">127</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00143">143</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -315,7 +372,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00128">128</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00144">144</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -342,7 +399,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00130">130</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00146">146</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -369,7 +426,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00132">132</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00148">148</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -401,7 +458,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00126">126</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00142">142</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -451,8 +508,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/<a class="el" href="item_8h_source.html">item.h</a></li>
-<li>C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/<a class="el" href="item_8cpp_source.html">item.cpp</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="item_8h_source.html">item.h</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="item_8cpp_source.html">item.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -11,9 +11,13 @@
 
 #include "Map.h"
 
+/*!
+* \namespace campaign
+* \brief Namespace to partition the Campaign functionality
+*/
 namespace campaign {
     /*!
-    * \enum CampaignMap
+    * \struct CampaignMap
     * \brief Enum to represent the relative data of maps in a campaign
     */
     struct CampaignMap
@@ -23,6 +27,10 @@ namespace campaign {
         int coorY;
     };
 
+    /*!
+    * \class Campaign
+    * \brief Class to abstract the campaign functionality
+    */
     class Campaign {
         public:
             /*!

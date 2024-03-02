@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/main.cpp File Reference</title>
+<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,11 +72,12 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_e50ee4dfc2640631efeb2bdc63c536ea.html">DnD Character Creation Source Code</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
@@ -85,20 +86,80 @@ $(function() {
 <code>#include &lt;cppunit/CompilerOutputter.h&gt;</code><br />
 <code>#include &lt;cppunit/extensions/TestFactoryRegistry.h&gt;</code><br />
 <code>#include &lt;cppunit/ui/text/TestRunner.h&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
 <code>#include &quot;<a class="el" href="_character_8h_source.html">Character.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_dice_8h_source.html">Dice.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_map_8h_source.html">Map.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="demoitem_8h_source.html">demoitem.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_dice_demo_8h_source.html">DiceDemo.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="demo_character_8h_source.html">demoCharacter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="serialize_item_8h_source.html">serializeItem.h</a>&quot;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3e80d5d33d0f52daefc04a7d132dfb32" id="r_a3e80d5d33d0f52daefc04a7d132dfb32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e80d5d33d0f52daefc04a7d132dfb32">SAVED_ITEMS_URI</a>&#160;&#160;&#160;&quot;\\SavedItems\\SavedItems.csv&quot;</td></tr>
+<tr class="separator:a3e80d5d33d0f52daefc04a7d132dfb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a21d97647b4dd776b307467cb7cf7fa" id="r_a2a21d97647b4dd776b307467cb7cf7fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a21d97647b4dd776b307467cb7cf7fa">SAVED_CONTAINERS_URI</a>&#160;&#160;&#160;&quot;\\SavedItems\\SavedItemContainers.csv&quot;</td></tr>
+<tr class="separator:a2a21d97647b4dd776b307467cb7cf7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2628bf8db87321b0adbae97a95db3f" id="r_afa2628bf8db87321b0adbae97a95db3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa2628bf8db87321b0adbae97a95db3f">SAVED_DUMMY_ITEMS_URI</a>&#160;&#160;&#160;&quot;\\SavedItems\\DUMMYSavedItems.csv&quot;</td></tr>
+<tr class="separator:afa2628bf8db87321b0adbae97a95db3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a2a21d97647b4dd776b307467cb7cf7fa" name="a2a21d97647b4dd776b307467cb7cf7fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a21d97647b4dd776b307467cb7cf7fa">&#9670;&#160;</a></span>SAVED_CONTAINERS_URI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAVED_CONTAINERS_URI&#160;&#160;&#160;&quot;\\SavedItems\\SavedItemContainers.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00019">19</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="afa2628bf8db87321b0adbae97a95db3f" name="afa2628bf8db87321b0adbae97a95db3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2628bf8db87321b0adbae97a95db3f">&#9670;&#160;</a></span>SAVED_DUMMY_ITEMS_URI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAVED_DUMMY_ITEMS_URI&#160;&#160;&#160;&quot;\\SavedItems\\DUMMYSavedItems.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00020">20</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a3e80d5d33d0f52daefc04a7d132dfb32" name="a3e80d5d33d0f52daefc04a7d132dfb32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e80d5d33d0f52daefc04a7d132dfb32">&#9670;&#160;</a></span>SAVED_ITEMS_URI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SAVED_ITEMS_URI&#160;&#160;&#160;&quot;\\SavedItems\\SavedItems.csv&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00018">18</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&#160;</a></span>main()</h2>
@@ -115,7 +176,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00022">22</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00029">29</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

@@ -1,8 +1,19 @@
 var searchData=
 [
   ['empty_0',['empty',['../class_map.html#aa1da1578fd3d40c69f3546de3ba3bc6faa2e4822a98337283e39f7b60acf85ec9',1,'Map']]],
-  ['end_5fcell_1',['End_Cell',['../class_map_1_1_map.html#ad51329271c354d87c8db9f65180020a2',1,'Map::Map']]],
-  ['equip_5fitem_2',['Equip_Item',['../class_character_1_1_character.html#a32194dcd8247e58b270bcf67a5275011',1,'Character::Character']]],
-  ['equipment_5fslots_3',['Equipment_Slots',['../class_character.html#a9f688397f56ff67e4bdb949a6939c0ad',1,'Character']]],
-  ['equipped_5fitems_4',['Equipped_Items',['../class_character_1_1_character.html#aa5c47e27bdca5b45bbda9c64e323ff4c',1,'Character::Character']]]
+  ['enchantmentbonus_1',['enchantmentBonus',['../structserialize_item_1_1_item_record.html#aca1eb19fe60c14395a68047bb4bfb93c',1,'serializeItem::ItemRecord']]],
+  ['enchantmenttype_2',['enchantmentType',['../structserialize_item_1_1_item_record.html#a7300054f0b2af1f9e70bc5bd184e9736',1,'serializeItem::ItemRecord']]],
+  ['end_5fcell_3',['End_Cell',['../class_map_1_1_map.html#ad51329271c354d87c8db9f65180020a2',1,'Map::Map']]],
+  ['equip_5fitem_4',['Equip_Item',['../class_character_1_1_character.html#a32194dcd8247e58b270bcf67a5275011',1,'Character::Character']]],
+  ['equipment_5fslots_5',['Equipment_Slots',['../class_character.html#a9f688397f56ff67e4bdb949a6939c0ad',1,'Character']]],
+  ['equipped_5fitem_5fids_6',['equipped_item_ids',['../structserializecharacter_1_1_character_record.html#acd409f72d8fa7c06b5cb7e583a2f27d2',1,'serializecharacter::CharacterRecord']]],
+  ['equipped_5fitems_7',['Equipped_Items',['../class_character_1_1_character.html#aa5c47e27bdca5b45bbda9c64e323ff4c',1,'Character::Character']]],
+  ['existing_5fcampaign_5fcurrent_5fx_5fcoor_8',['EXISTING_CAMPAIGN_CURRENT_X_COOR',['../testcampaign_8cpp.html#a70f941fc8da35a6a2206576f8711af2b',1,'testcampaign.cpp']]],
+  ['existing_5fcampaign_5fcurrent_5fy_5fcoor_9',['EXISTING_CAMPAIGN_CURRENT_Y_COOR',['../testcampaign_8cpp.html#a534197a54a351009a28a97e524fc2468',1,'testcampaign.cpp']]],
+  ['existing_5fcampaign_5finvalid_5fx_5fcoor_10',['EXISTING_CAMPAIGN_INVALID_X_COOR',['../testcampaign_8cpp.html#ad291c429d3e555ff99596da2d0365825',1,'testcampaign.cpp']]],
+  ['existing_5fcampaign_5finvalid_5fy_5fcoor_11',['EXISTING_CAMPAIGN_INVALID_Y_COOR',['../testcampaign_8cpp.html#a7f02a0bce3d77f3f0702d6214a8e2b20',1,'testcampaign.cpp']]],
+  ['existing_5fcampaign_5fmapids_5fcol_5fcount_12',['EXISTING_CAMPAIGN_MAPIDS_COL_COUNT',['../testcampaign_8cpp.html#a90fcf5e6eb0f44b0209f748780aca502',1,'testcampaign.cpp']]],
+  ['existing_5fcampaign_5fmapids_5frow_5fcount_13',['EXISTING_CAMPAIGN_MAPIDS_ROW_COUNT',['../testcampaign_8cpp.html#a5a38a129cf963e108dd09ea27048c64b',1,'testcampaign.cpp']]],
+  ['existing_5fcampaign_5fx_5fcoor_14',['EXISTING_CAMPAIGN_X_COOR',['../testcampaign_8cpp.html#abfc514352e9ec6083d2a54501260bf22',1,'testcampaign.cpp']]],
+  ['existing_5fcampaign_5fy_5fcoor_15',['EXISTING_CAMPAIGN_Y_COOR',['../testcampaign_8cpp.html#a1b50db0d2d1a794da25f9a0fc0b99325',1,'testcampaign.cpp']]]
 ];

@@ -1,117 +1,118 @@
 \doxysection{test\+Map.\+cpp}
-\hypertarget{test_map_8cpp_source}{}\label{test_map_8cpp_source}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/DnD Character Creation Source Code/testMap.cpp@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/testMap.cpp}}
+\hypertarget{test_map_8cpp_source}{}\label{test_map_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testMap.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testMap.cpp}}
 \mbox{\hyperlink{test_map_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <sstream>}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{test_map_8h}{testMap.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00007}\mbox{\hyperlink{class_test_map_add9768c91c269a040d6d3946078d9aa7}{00007}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_add9768c91c269a040d6d3946078d9aa7}{TestMap::setUp}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00008}00008\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00009}00009\ \ \ \ \ mapWithParams\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(5,\ 4);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00010}00010\ \ \ \ \ mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(1,\ 1,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{test_map_8h}{testMap.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00012}00012\ \ \ \ \ mapNoPath\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(10,\ 10);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00013}00013\ \ \ \ \ mapNoPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(0,\ 1,\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00014}00014\ \ \ \ \ mapNoPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(1,\ 0,\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00016}00016\ \ \ \ \ mapLongPath\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(5,\ 5);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00017}00017\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(0,\ 3,\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00018}00018\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(1,\ 1,\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00019}00019\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(1,\ 3,\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00020}00020\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(2,\ 2,\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00021}00021\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(3,\ 1,\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00022}00022\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(4,\ 3,\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00024}00024\ \ \ \ \ mapEmpty\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(7,\ 7);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00025}00025\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00026}00026\ \ \ \ \ visitedEmpty\ =\ vector<vector<bool>>(7,\ vector<bool>(7,\ \textcolor{keyword}{false}));}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00027}00027\ \ \ \ \ visitedEmpty[0][0]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00012}\mbox{\hyperlink{class_test_map_a2c6aee8fbf0bec9fecf0b5aa683e6450}{00012}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a2c6aee8fbf0bec9fecf0b5aa683e6450}{TestMap::setUp}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00014}00014\ \ \ \ \ mapWithParams\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(5,\ 4);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00015}00015\ \ \ \ \ mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(1,\ 1,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00017}00017\ \ \ \ \ mapNoPath\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(10,\ 10);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00018}00018\ \ \ \ \ mapNoPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(0,\ 1,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00019}00019\ \ \ \ \ mapNoPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(1,\ 0,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00021}00021\ \ \ \ \ mapLongPath\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(5,\ 5);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00022}00022\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(0,\ 3,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00023}00023\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(1,\ 1,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00024}00024\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(1,\ 3,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00025}00025\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(2,\ 2,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00026}00026\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(3,\ 1,\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00027}00027\ \ \ \ \ mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{ChangeCell}}(4,\ 3,\ Map::Cell\_Type::wall);}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00029}00029\ \ \ \ \ visited\ =\ vector<vector<bool>>(10,\ vector<bool>(10,\ \textcolor{keyword}{false}));}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00030}00030\ \ \ \ \ visited[0][0]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00031}00031\ \}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00033}\mbox{\hyperlink{class_test_map_a6cfaefb6c113f8c5104fff6e30d6998b}{00033}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a6cfaefb6c113f8c5104fff6e30d6998b}{TestMap::tearDown}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00034}00034\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{delete}\ mapWithParams;}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{delete}\ mapNoPath;}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{delete}\ mapLongPath;}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{delete}\ mapEmpty;}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00039}00039\ \}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00041}\mbox{\hyperlink{class_test_map_a33c95b0326921fb020b0532627b832ad}{00041}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a33c95b0326921fb020b0532627b832ad}{TestMap::testConstructor}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00042}00042\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00043}00043\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69}{Rows}}()\ ==\ 5);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00044}00044\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4}{Cols}}()\ ==\ 4);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00045}00045\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()[0]\ ==\ 4);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00046}00046\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()[1]\ ==\ 3);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00047}00047\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}().size()\ ==\ 5);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00048}00048\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[0].size()\ ==\ 4);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00049}00049\ \}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00051}\mbox{\hyperlink{class_test_map_a138ba8fca825cef69e19bfa7f66dc271}{00051}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a138ba8fca825cef69e19bfa7f66dc271}{TestMap::testGetRows}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00052}00052\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00053}00053\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69}{Rows}}()\ ==\ 5);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00029}00029\ \ \ \ \ mapEmpty\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}(7,\ 7);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00031}00031\ \ \ \ \ visitedEmpty\ =\ vector<vector<bool>>(7,\ vector<bool>(7,\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00032}00032\ \ \ \ \ visitedEmpty[0][0]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00034}00034\ \ \ \ \ visited\ =\ vector<vector<bool>>(10,\ vector<bool>(10,\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00035}00035\ \ \ \ \ visited[0][0]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00038}\mbox{\hyperlink{class_test_map_a8d75f6e30595b5142684f6a4ba1318e2}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a8d75f6e30595b5142684f6a4ba1318e2}{TestMap::tearDown}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00039}00039\ \{}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{delete}\ mapWithParams;}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{delete}\ mapNoPath;}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{delete}\ mapLongPath;}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{delete}\ mapEmpty;}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00046}\mbox{\hyperlink{class_test_map_aa9cfc9aae6ea67f166c47bca16cec944}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_aa9cfc9aae6ea67f166c47bca16cec944}{TestMap::testConstructor}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00048}00048\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69}{Rows}}()\ ==\ 5);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00049}00049\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4}{Cols}}()\ ==\ 4);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00050}00050\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()[0]\ ==\ 4);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00051}00051\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()[1]\ ==\ 3);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00052}00052\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}().size()\ ==\ 5);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00053}00053\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[0].size()\ ==\ 4);}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00054}00054\ \}}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00056}\mbox{\hyperlink{class_test_map_aea70ac3b76b93c265f13cd6c6f1adee6}{00056}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_aea70ac3b76b93c265f13cd6c6f1adee6}{TestMap::testGetCols}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00056}\mbox{\hyperlink{class_test_map_a06459662b2860dc7f1f13655d9df78ca}{00056}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a06459662b2860dc7f1f13655d9df78ca}{TestMap::testGetRows}}(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00057}00057\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00058}00058\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4}{Cols}}()\ ==\ 4);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00058}00058\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a042fba6c495bf8772aeab91c5e4ace69}{Rows}}()\ ==\ 5);}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00059}00059\ \}}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00061}\mbox{\hyperlink{class_test_map_aba05372f947e94551f03b2dc3383a1ae}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_aba05372f947e94551f03b2dc3383a1ae}{TestMap::testGetEnd\_Cell}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00061}\mbox{\hyperlink{class_test_map_a666c5bcfc8bff79c632d8fdb662c4e93}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a666c5bcfc8bff79c632d8fdb662c4e93}{TestMap::testGetCols}}(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00062}00062\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00063}00063\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()[0]\ ==\ 4);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00064}00064\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()[1]\ ==\ 3);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00065}00065\ \}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00066}00066\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00067}\mbox{\hyperlink{class_test_map_a325c0471b701f968fd5583ac264e8062}{00067}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a325c0471b701f968fd5583ac264e8062}{TestMap::testGetGrid}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00068}00068\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00069}00069\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}().size()\ ==\ 5);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00070}00070\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[0].size()\ ==\ 4);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00071}00071\ \}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00072}00072\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00073}\mbox{\hyperlink{class_test_map_a9d2b21734afab266ee52d548b4d02a68}{00073}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a9d2b21734afab266ee52d548b4d02a68}{TestMap::testGridCreation}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00074}00074\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00075}00075\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[0][0]\ ==\ Map::Cell\_Type::empty);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00076}00076\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[0][1]\ ==\ Map::Cell\_Type::empty);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00077}00077\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[2][2]\ ==\ Map::Cell\_Type::empty);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00078}00078\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[2][3]\ ==\ Map::Cell\_Type::empty);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00079}00079\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[2][2]\ !=\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00080}00080\ \}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00082}\mbox{\hyperlink{class_test_map_a52f8c60895e323bb090fa9be4ec71af0}{00082}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a52f8c60895e323bb090fa9be4ec71af0}{TestMap::testChangeCellType}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00083}00083\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00084}00084\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[1][1]\ ==\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00063}00063\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a60ad009d381e576425ea5b39c38f97e4}{Cols}}()\ ==\ 4);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00066}\mbox{\hyperlink{class_test_map_a04576d103a42df18566007deb106b4f5}{00066}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a04576d103a42df18566007deb106b4f5}{TestMap::testGetEnd\_Cell}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00067}00067\ \{}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00068}00068\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()[0]\ ==\ 4);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00069}00069\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_ad51329271c354d87c8db9f65180020a2}{End\_Cell}}()[1]\ ==\ 3);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00072}\mbox{\hyperlink{class_test_map_a721560f80042c8c578fb529cbc797c10}{00072}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a721560f80042c8c578fb529cbc797c10}{TestMap::testGetGrid}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00073}00073\ \{}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00074}00074\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}().size()\ ==\ 5);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00075}00075\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[0].size()\ ==\ 4);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00078}\mbox{\hyperlink{class_test_map_a84c95543d152f5f34c01f09858e7da6d}{00078}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a84c95543d152f5f34c01f09858e7da6d}{TestMap::testGridCreation}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00079}00079\ \{}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00080}00080\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[0][0]\ ==\ Map::Cell\_Type::empty);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00081}00081\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[0][1]\ ==\ Map::Cell\_Type::empty);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00082}00082\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[2][2]\ ==\ Map::Cell\_Type::empty);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00083}00083\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[2][3]\ ==\ Map::Cell\_Type::empty);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00084}00084\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[2][2]\ !=\ Map::Cell\_Type::wall);}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00085}00085\ \}}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00086}00086\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00087}\mbox{\hyperlink{class_test_map_a0471c7fc8d6907828716cb937e47eaf5}{00087}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a0471c7fc8d6907828716cb937e47eaf5}{TestMap::testConvertToCellType}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00087}\mbox{\hyperlink{class_test_map_a417021888f19b633d2aa1e12f506fc7f}{00087}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a417021888f19b633d2aa1e12f506fc7f}{TestMap::testChangeCellType}}(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00088}00088\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00089}00089\ \ \ \ \ CPPUNIT\_ASSERT(\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{charliteral}{'e'})\ ==\ Map::Cell\_Type::empty);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00090}00090\ \ \ \ \ CPPUNIT\_ASSERT(\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{charliteral}{'w'})\ ==\ Map::Cell\_Type::wall);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00091}00091\ \ \ \ \ CPPUNIT\_ASSERT(\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{charliteral}{'s'})\ ==\ Map::Cell\_Type::special);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00092}00092\ \ \ \ \ CPPUNIT\_ASSERT(\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{charliteral}{'p'})\ ==\ Map::Cell\_Type::empty);}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00093}00093\ \}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00094}00094\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00095}\mbox{\hyperlink{class_test_map_a9b7231f6411baaab6bcfd6d1bbf92898}{00095}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a9b7231f6411baaab6bcfd6d1bbf92898}{TestMap::testPath}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00096}00096\ \{}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00097}00097\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{IsTherePath}}()\ ==\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00098}00098\ \ \ \ \ CPPUNIT\_ASSERT(mapNoPath-\/>\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{IsTherePath}}()\ ==\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00099}00099\ \ \ \ \ CPPUNIT\_ASSERT(mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{IsTherePath}}()\ ==\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00100}00100\ \}}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00101}00101\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00102}\mbox{\hyperlink{class_test_map_a063d58809dee83be717eba2625a33638}{00102}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a063d58809dee83be717eba2625a33638}{TestMap::testValidCell}}(\textcolor{keywordtype}{void})}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00103}00103\ \{\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00104}00104\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(0,\ 1,\ visitedEmpty)\ ==\ \textcolor{keyword}{true});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00105}00105\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(-\/1,\ 0,\ visitedEmpty)\ ==\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00106}00106\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(0,\ -\/1,\ visitedEmpty)\ ==\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00107}00107\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(0,\ 8,\ visitedEmpty)\ ==\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00108}00108\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(8,\ 0,\ visitedEmpty)\ ==\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00109}00109\ }
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00110}00110\ \ \ \ \ CPPUNIT\_ASSERT(mapNoPath-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(0,\ 1,\ visited)\ ==\ \textcolor{keyword}{false});}
-\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00111}00111\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00089}00089\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a9e3a32103b7bffe5f85fa03c7db3b15b}{Grid}}()[1][1]\ ==\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00092}\mbox{\hyperlink{class_test_map_a5173de00548b25197c3c49bc63e99a0c}{00092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_a5173de00548b25197c3c49bc63e99a0c}{TestMap::testConvertToCellType}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00093}00093\ \{}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00094}00094\ \ \ \ \ CPPUNIT\_ASSERT(\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{charliteral}{'e'})\ ==\ Map::Cell\_Type::empty);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00095}00095\ \ \ \ \ CPPUNIT\_ASSERT(\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{charliteral}{'w'})\ ==\ Map::Cell\_Type::wall);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00096}00096\ \ \ \ \ CPPUNIT\_ASSERT(\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{charliteral}{'s'})\ ==\ Map::Cell\_Type::special);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00097}00097\ \ \ \ \ CPPUNIT\_ASSERT(\mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{charliteral}{'p'})\ ==\ Map::Cell\_Type::empty);}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00098}00098\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00100}\mbox{\hyperlink{class_test_map_abd97332d8c152ad251a8a9048f706ce8}{00100}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_abd97332d8c152ad251a8a9048f706ce8}{TestMap::testPath}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00101}00101\ \{}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00102}00102\ \ \ \ \ CPPUNIT\_ASSERT(mapWithParams-\/>\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{IsTherePath}}()\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00103}00103\ \ \ \ \ CPPUNIT\_ASSERT(mapNoPath-\/>\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{IsTherePath}}()\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00104}00104\ \ \ \ \ CPPUNIT\_ASSERT(mapLongPath-\/>\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{IsTherePath}}()\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00105}00105\ \}}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00107}\mbox{\hyperlink{class_test_map_acd21b3f35adf973d388943f296220c9a}{00107}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_map_acd21b3f35adf973d388943f296220c9a}{TestMap::testValidCell}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00108}00108\ \{\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00109}00109\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(0,\ 1,\ visitedEmpty)\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00110}00110\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(-\/1,\ 0,\ visitedEmpty)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00111}00111\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(0,\ -\/1,\ visitedEmpty)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00112}00112\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(0,\ 8,\ visitedEmpty)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00113}00113\ \ \ \ \ CPPUNIT\_ASSERT(mapEmpty-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(8,\ 0,\ visitedEmpty)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00115}00115\ \ \ \ \ CPPUNIT\_ASSERT(mapNoPath-\/>\mbox{\hyperlink{class_map_1_1_map_a3c3dcfa430434b7d2484896313152bf7}{ValidCell}}(0,\ 1,\ visited)\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{test_map_8cpp_source_l00116}00116\ \}}
 
 \end{DoxyCode}

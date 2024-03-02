@@ -1,20 +1,64 @@
-\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/\+DnD Character Creation Source Code/main.cpp File Reference}
-\hypertarget{main_8cpp}{}\label{main_8cpp}\index{C:/Users/trist/Documents/COMP345 C++ Code/\mbox{[}COMP345\mbox{]} Assignment 1/DnD Character Creation Source Code/main.cpp@{C:/Users/trist/Documents/COMP345 C++ Code/[COMP345] Assignment 1/DnD Character Creation Source Code/main.cpp}}
+\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/main.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/main.cpp}}
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$cppunit/\+Compiler\+Outputter.\+h$>$}\newline
 {\ttfamily \#include $<$cppunit/extensions/\+Test\+Factory\+Registry.\+h$>$}\newline
 {\ttfamily \#include $<$cppunit/ui/text/\+Test\+Runner.\+h$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
 {\ttfamily \#include "{}Character.\+h"{}}\newline
 {\ttfamily \#include "{}Dice.\+h"{}}\newline
 {\ttfamily \#include "{}Map.\+h"{}}\newline
 {\ttfamily \#include "{}demoitem.\+h"{}}\newline
 {\ttfamily \#include "{}Dice\+Demo.\+h"{}}\newline
 {\ttfamily \#include "{}demo\+Character.\+h"{}}\newline
+{\ttfamily \#include "{}serialize\+Item.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a3e80d5d33d0f52daefc04a7d132dfb32}{SAVED\+\_\+\+ITEMS\+\_\+\+URI}}~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Saved\+Items.\+csv"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_a2a21d97647b4dd776b307467cb7cf7fa}{SAVED\+\_\+\+CONTAINERS\+\_\+\+URI}}~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Saved\+Item\+Containers.\+csv"{}
+\item 
+\#define \mbox{\hyperlink{main_8cpp_afa2628bf8db87321b0adbae97a95db3f}{SAVED\+\_\+\+DUMMY\+\_\+\+ITEMS\+\_\+\+URI}}~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+DUMMYSaved\+Items.\+csv"{}
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8cpp_a2a21d97647b4dd776b307467cb7cf7fa}\label{main_8cpp_a2a21d97647b4dd776b307467cb7cf7fa} 
+\index{main.cpp@{main.cpp}!SAVED\_CONTAINERS\_URI@{SAVED\_CONTAINERS\_URI}}
+\index{SAVED\_CONTAINERS\_URI@{SAVED\_CONTAINERS\_URI}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVED\_CONTAINERS\_URI}{SAVED\_CONTAINERS\_URI}}
+{\footnotesize\ttfamily \#define SAVED\+\_\+\+CONTAINERS\+\_\+\+URI~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Saved\+Item\+Containers.\+csv"{}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_afa2628bf8db87321b0adbae97a95db3f}\label{main_8cpp_afa2628bf8db87321b0adbae97a95db3f} 
+\index{main.cpp@{main.cpp}!SAVED\_DUMMY\_ITEMS\_URI@{SAVED\_DUMMY\_ITEMS\_URI}}
+\index{SAVED\_DUMMY\_ITEMS\_URI@{SAVED\_DUMMY\_ITEMS\_URI}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVED\_DUMMY\_ITEMS\_URI}{SAVED\_DUMMY\_ITEMS\_URI}}
+{\footnotesize\ttfamily \#define SAVED\+\_\+\+DUMMY\+\_\+\+ITEMS\+\_\+\+URI~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+DUMMYSaved\+Items.\+csv"{}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\Hypertarget{main_8cpp_a3e80d5d33d0f52daefc04a7d132dfb32}\label{main_8cpp_a3e80d5d33d0f52daefc04a7d132dfb32} 
+\index{main.cpp@{main.cpp}!SAVED\_ITEMS\_URI@{SAVED\_ITEMS\_URI}}
+\index{SAVED\_ITEMS\_URI@{SAVED\_ITEMS\_URI}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVED\_ITEMS\_URI}{SAVED\_ITEMS\_URI}}
+{\footnotesize\ttfamily \#define SAVED\+\_\+\+ITEMS\+\_\+\+URI~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Saved\+Items.\+csv"{}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
 
 
 \doxysubsection{Function Documentation}
@@ -26,5 +70,5 @@ int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
 
 
 
-Definition at line \mbox{\hyperlink{main_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
 
