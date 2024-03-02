@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <string>
 #include <sstream>
+#include <fstream>
 
 #include "Campaign.h"
 
@@ -32,6 +33,86 @@ namespace {
         }
 
         return (*foundMap);
+    }
+
+    /*!
+    * \fn BuildCampaignRecord
+    * \brief Helper function to build a CampaignRecord to be used to save to a file
+    */
+    campaign::CampaignRecord BuildCampaignRecord(campaign::Campaign _campaign) {
+        campaign::CampaignRecord result;
+
+        result.campaignID = *_campaign.GetCampaignID();
+        result.numRows = _campaign.GetMapIDs()->size();
+        result.numCols = _campaign.GetMapIDs()->at(0).size();
+        result.mapIDs = *_campaign.GetMapIDs();
+        result.currentMapID = _campaign.GetCurrentMap()->mapID;
+        result.currentMapXCoor = _campaign.GetCurrentMap()->coorX;
+        result.currentMapYCoor = _campaign.GetCurrentMap()->coorY;
+
+        std::vector<int> includedMapIDs;
+
+        std::vector<Map::Map*>* mapsInCampaign = _campaign.GetMapsInCampaign();
+        for (int i = 0; i < (int)mapsInCampaign->size(); ++i)
+        {
+            includedMapIDs.push_back(mapsInCampaign->at(i)->GetMapID());
+        }
+        
+        result.mapsInCampaign = includedMapIDs;
+
+        return result;
+    }
+
+    std::string BuildCampaignCSVContent(campaign::CampaignRecord _campaignRecord) {
+        std::ostringstream mapIDsString;
+        mapIDsString << "[";
+        
+        std::vector<std::vector<int>> mapIDs = _campaignRecord.mapIDs;
+        for (int i = 0; i < (int)mapIDs.size(); ++i)
+        {
+            for (int j = 0; j < (int)mapIDs[i].size(); ++j)
+            {
+                if (i + 1 == mapIDs.size() && j + 1 == mapIDs[i].size()) {
+                    mapIDsString << "{" << i << ";" << j << ";" << mapIDs[i][j] << "}";
+
+                    break;    
+                }
+
+                mapIDsString << "{" << i << ";" << j << ";" << mapIDs[i][j] << "}:";
+            }
+            
+        }
+
+        mapIDsString << "]";
+
+        std::ostringstream mapsInCampaignString;
+        mapsInCampaignString << "[";
+        
+        std::vector<int> mapsInCampaign = _campaignRecord.mapsInCampaign;
+        for (int i = 0; i < (int)mapsInCampaign.size(); ++i)
+        {
+            if (i + 1 == mapsInCampaign.size()) {
+                mapsInCampaignString << mapsInCampaign[i];
+
+                break;
+            }
+
+            mapsInCampaignString << mapsInCampaign[i] << ":";
+        }
+        
+        mapsInCampaignString << "]";
+
+        std::ostringstream result;
+        result << _campaignRecord.campaignID
+                << _campaignRecord.numRows
+                << _campaignRecord.numCols
+                << mapIDsString.str()
+                << _campaignRecord.currentMapID
+                << _campaignRecord.currentMapXCoor
+                << _campaignRecord.currentMapYCoor
+                << mapsInCampaignString.str();
+
+        return result.str();
     }
 }
 
@@ -76,5 +157,20 @@ namespace campaign {
         currentMap.coorX = _coordY;
 
         return result;
+    }
+
+    void SaveCampaigns(const std::string& _folderDir, Campaign _campaignToSave) {
+        std::ostringstream fileNamePattern;
+        fileNamePattern << "Campaign" << *_campaignToSave.GetCampaignID() << ".csv";
+
+        ostringstream fullURI;
+        fullURI << _folderDir << "\\" << fileNamePattern.str();
+
+        CampaignRecord recordToSave = BuildCampaignRecord(_campaignToSave);
+
+        std::string csvOutput = BuildCampaignCSVContent(recordToSave);
+
+        std::ofstream campaignFile(fullURI.str());
+        campaignFile << csvOutput;
     }
 }

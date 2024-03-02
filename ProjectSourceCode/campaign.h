@@ -28,6 +28,21 @@ namespace campaign {
     };
 
     /*!
+    * \struct CampaignRecord
+    * \brief Struct that represents the serialized Campaign format to save & load
+    */
+    struct CampaignRecord {
+        int campaignID;
+        int numRows;
+        int numCols;
+        std::vector<std::vector<int>> mapIDs;
+        int currentMapID;
+        int currentMapXCoor;
+        int currentMapYCoor;
+        std::vector<int> mapsInCampaign;
+    };
+
+    /*!
     * \class Campaign
     * \brief Class to abstract the campaign functionality
     */
@@ -55,6 +70,7 @@ namespace campaign {
             * \param _mapsInCampaign Vector that represents a loaded list of pointers to Map instances 
             */
             Campaign(std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
+            int* GetCampaignID() { return &campaignID; };
             std::vector<std::vector<int>>* GetMapIDs() {return &mapIDs;};
             CampaignMap* GetCurrentMap() {return &currentMap;};
             std::vector<Map::Map*>* GetMapsInCampaign() {return &mapsInCampaign;};
@@ -94,4 +110,13 @@ namespace campaign {
             */
             std::vector<Map::Map*> mapsInCampaign;
     };
+
+    /*!
+    * \fn SaveCampaigns 
+    * \brief Function to save instances of created campaigns into a CSV file.
+    * 
+    * \param _folderDir String that represents the absolute path of the directory to save the contents to (Do not append with slash)
+    * \param _campaignToSave Campaign instance that represents the current campaign the user wants to save the edits
+    */
+    void SaveCampaigns(const std::string&, Campaign);
 }
