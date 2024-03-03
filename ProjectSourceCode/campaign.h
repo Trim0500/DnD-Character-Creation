@@ -53,6 +53,7 @@ namespace campaign {
             * \brief No-args constructor for Campaign
             */
             Campaign();
+
             /*!
             * \fn Campaign
             * \brief Overloaded constructor to create a new campaign
@@ -61,6 +62,7 @@ namespace campaign {
             * \param _cols Integer that represents the number of cols for matrix
             */
             Campaign(const int&, const int&);
+
             /*!
             * \fn Campaign
             * \brief Overloaded constructor to when loading a campaign
@@ -70,10 +72,15 @@ namespace campaign {
             * \param _mapsInCampaign Vector that represents a loaded list of pointers to Map instances 
             */
             Campaign(std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
+
             int* GetCampaignID() { return &campaignID; };
+
             std::vector<std::vector<int>>* GetMapIDs() {return &mapIDs;};
+
             CampaignMap* GetCurrentMap() {return &currentMap;};
+
             std::vector<Map::Map*>* GetMapsInCampaign() {return &mapsInCampaign;};
+
             /*!
             * \fn GetMap
             * \brief Function to find the map data at the specified coordinates (Coordiantes should be 1-indexed)
@@ -89,21 +96,25 @@ namespace campaign {
             Map::Map* GetMap(const int&, const int&);
         private:
             static inline int nextCampaignID = 0;
+
             /*!
             * \var campaignID
             * \brief Integer representing the unique ID for a Campaign
             */
             int campaignID;
+
             /*!
             * \var mapIDs
             * \brief A matrix of ints that represents the relative positions of the maps in a campaign
             */
             std::vector<std::vector<int>> mapIDs;
+            
             /*!
             * \var currentMap
             * \brief Instance of the CampaignMap struct to represent the current map shown/loaded
             */
             CampaignMap currentMap;
+            
             /*!
             * \var mapsInCampaign
             * \brief Vector that represents the pointers to Map instances that the maps that exist in the campaign
@@ -119,4 +130,15 @@ namespace campaign {
     * \param _campaignToSave Campaign instance that represents the current campaign the user wants to save the edits
     */
     void SaveCampaigns(const std::string&, Campaign);
+
+    /*!
+    * \fn LoadCampaigns 
+    * \brief Function to load instances of created campaigns from a CSV file.
+    * 
+    * \param _campaignID String that represents the absolute path of the directory to save the contents to (Do not append with slash)
+    * \param _folderDir String that represents the absolute path of the directory to save the contents to (Do not append with slash)
+    * 
+    * \return Pointer to a CampaignRecord struct that represents the selecetd campaing to use
+    */
+    CampaignRecord* LoadCampaign(const int&, const std::string&);
 }
