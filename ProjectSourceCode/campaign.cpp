@@ -47,20 +47,20 @@ namespace {
     campaign::CampaignRecord BuildCampaignRecord(campaign::Campaign _campaign) {
         campaign::CampaignRecord result;
 
-        result.campaignID = *_campaign.GetCampaignID();
-        result.numRows = _campaign.GetMapIDs()->size();
-        result.numCols = _campaign.GetMapIDs()->at(0).size();
-        result.mapIDs = *_campaign.GetMapIDs();
-        result.currentMapID = _campaign.GetCurrentMap()->mapID;
-        result.currentMapXCoor = _campaign.GetCurrentMap()->coorX;
-        result.currentMapYCoor = _campaign.GetCurrentMap()->coorY;
+        result.campaignID = _campaign.GetCampaignID();
+        result.numRows = _campaign.GetMapIDs().size();
+        result.numCols = _campaign.GetMapIDs().at(0).size();
+        result.mapIDs = _campaign.GetMapIDs();
+        result.currentMapID = _campaign.GetCurrentMap().mapID;
+        result.currentMapXCoor = _campaign.GetCurrentMap().coorX;
+        result.currentMapYCoor = _campaign.GetCurrentMap().coorY;
 
         std::vector<int> includedMapIDs;
 
-        std::vector<Map::Map*>* mapsInCampaign = _campaign.GetMapsInCampaign();
-        for (int i = 0; i < (int)mapsInCampaign->size(); ++i)
+        std::vector<Map::Map*> mapsInCampaign = _campaign.GetMapsInCampaign();
+        for (int i = 0; i < (int)mapsInCampaign.size(); ++i)
         {
-            includedMapIDs.push_back(mapsInCampaign->at(i)->GetMapID());
+            includedMapIDs.push_back(mapsInCampaign.at(i)->GetMapID());
         }
         
         result.mapsInCampaign = includedMapIDs;
@@ -237,14 +237,46 @@ namespace campaign {
         currentMap.mapID = 0;
         currentMap.coorX = 0;
         currentMap.coorY = 0;
+
+        std::vector<Map::Map*> emptyMapsInCampaignVector;
+        mapsInCampaign = emptyMapsInCampaignVector;
     }
 
-    Campaign::Campaign(std::vector<std::vector<int>> _mapMatrix, CampaignMap _currentMap, std::vector<Map::Map*> _mapsInCampaign) {
-        nextCampaignID += 1;
-        campaignID = nextCampaignID;
+    Campaign::Campaign(int _existingCampaignID,
+                        std::vector<std::vector<int>> _mapMatrix,
+                        CampaignMap _currentMap,
+                        std::vector<Map::Map*> _mapsInCampaign) {
+        campaignID = _existingCampaignID;
         mapIDs = _mapMatrix;
         currentMap = _currentMap;
         mapsInCampaign = _mapsInCampaign;
+    }
+
+    void Campaign::AddMapToCampaign(const int& _row, const int& _col, Map::Map& _mapToAdd) {
+        if (mapsInCampaign.size() >= mapIDs.size() * mapIDs[0].size()) {
+            throw std::exception("Too many maps!");
+        }
+        else if ((_row < 1 || _row > (int)mapIDs.size()) || (_col < 1 || _col > mapIDs[_row - 1].size())) {
+            std::ostringstream message;
+            message << "Invalid coordiantes: " << _row << "," << _col;
+            throw std::invalid_argument(message.str());
+        }
+        
+        if (mapIDs[_row - 1][_col -1] == 0) {
+            mapsInCampaign.push_back(&_mapToAdd);
+        }
+        else {
+            int mapIDAtCell = mapIDs[_row - 1][_col -1];
+            auto mapAtCell = std::find_if(mapsInCampaign.begin(), mapsInCampaign.end(), [mapIDAtCell](Map::Map* map){return map->GetMapID() == mapIDAtCell;});
+            if (mapAtCell == mapsInCampaign.end()) {
+                throw std::exception("Failed to find the map to replace through update");
+            }
+
+            mapsInCampaign.erase(mapAtCell);
+            mapsInCampaign.push_back(&_mapToAdd);
+        }
+        
+        mapIDs[_row - 1][_col - 1] = _mapToAdd.GetMapID();
     }
 
     Map::Map* Campaign::GetMap(const int& _coordX, const int& _coordY) {
@@ -266,7 +298,7 @@ namespace campaign {
 
     void SaveCampaigns(const std::string& _folderDir, Campaign _campaignToSave) {
         std::ostringstream fileNamePattern;
-        fileNamePattern << "Campaign" << *_campaignToSave.GetCampaignID() << ".csv";
+        fileNamePattern << "Campaign" << _campaignToSave.GetCampaignID() << ".csv";
 
         ostringstream fullURI;
         fullURI << _folderDir << "\\" << fileNamePattern.str();

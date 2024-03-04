@@ -18,7 +18,7 @@
 namespace campaign {
     /*!
     * \struct CampaignMap
-    * \brief Enum to represent the relative data of maps in a campaign
+    * \brief Struct to represent the current map selected when editing the campaign
     */
     struct CampaignMap
     {
@@ -67,19 +67,33 @@ namespace campaign {
             * \fn Campaign
             * \brief Overloaded constructor to when loading a campaign
             * 
+            * \param _existingCampaignID Integer which represents the campaign's saved ID
             * \param _mapMatrix 2D matrix of ints that represents the campaign's map data 
             * \param _currentMap Instance of a CampaignMap struct loaded from serialization
             * \param _mapsInCampaign Vector that represents a loaded list of pointers to Map instances 
             */
-            Campaign(std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
+            Campaign(int, std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
 
-            int* GetCampaignID() { return &campaignID; };
+            int GetCampaignID() { return campaignID; };
 
-            std::vector<std::vector<int>>* GetMapIDs() {return &mapIDs;};
+            std::vector<std::vector<int>> GetMapIDs() {return mapIDs;};
 
-            CampaignMap* GetCurrentMap() {return &currentMap;};
+            CampaignMap GetCurrentMap() {return currentMap;};
 
-            std::vector<Map::Map*>* GetMapsInCampaign() {return &mapsInCampaign;};
+            /*!
+            * \fn AddMapToCampaign
+            * \brief Function to add a new Map instance to the campaign and set the ID at the cell
+            * 
+            * \param _row Integer that represents the 1-indexed row number 
+            * \param _col Integer that represents the 1-indexed column number 
+            * \param _mapToAdd Map instance that represents the map to insert into the cell
+            * 
+            * \throw exception
+            * \throw invalid_argument
+            */
+            void AddMapToCampaign(const int&, const int&, Map::Map&);
+
+            std::vector<Map::Map*> GetMapsInCampaign() {return mapsInCampaign;};
 
             /*!
             * \fn GetMap

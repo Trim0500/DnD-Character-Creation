@@ -2,7 +2,7 @@ var searchData=
 [
   ['campaign_0',['Campaign',['../classcampaign_1_1_campaign.html',1,'campaign']]],
   ['campaign_1',['campaign',['../namespacecampaign.html',1,'']]],
-  ['campaign_2',['Campaign',['../classcampaign_1_1_campaign.html#a7d08206f784aaa67e5e8b791bec0d4cd',1,'campaign::Campaign::Campaign()'],['../classcampaign_1_1_campaign.html#aa606b1c884d8c3230d9773a407a0111f',1,'campaign::Campaign::Campaign(const int &amp;, const int &amp;)'],['../classcampaign_1_1_campaign.html#ae9fdc1f151a30ef2b795ff97e80c6c18',1,'campaign::Campaign::Campaign(std::vector&lt; std::vector&lt; int &gt; &gt;, CampaignMap, std::vector&lt; Map::Map * &gt;)']]],
+  ['campaign_2',['Campaign',['../classcampaign_1_1_campaign.html#a7d08206f784aaa67e5e8b791bec0d4cd',1,'campaign::Campaign::Campaign()'],['../classcampaign_1_1_campaign.html#aa606b1c884d8c3230d9773a407a0111f',1,'campaign::Campaign::Campaign(const int &amp;, const int &amp;)'],['../classcampaign_1_1_campaign.html#a130ec162ee5fff17823e5b496820b1aa',1,'campaign::Campaign::Campaign(int, std::vector&lt; std::vector&lt; int &gt; &gt;, CampaignMap, std::vector&lt; Map::Map * &gt;)']]],
   ['campaign_2ecpp_3',['campaign.cpp',['../campaign_8cpp.html',1,'']]],
   ['campaign_2eh_4',['campaign.h',['../campaign_8h.html',1,'']]],
   ['campaignid_5',['campaignID',['../structcampaign_1_1_campaign_record.html#a8ced47d618594bdf7cb44b97c342fa34',1,'campaign::CampaignRecord']]],
