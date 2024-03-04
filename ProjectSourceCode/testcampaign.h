@@ -31,7 +31,10 @@ using namespace campaign;
 class TestCampaign : public TestFixture {
     CPPUNIT_TEST_SUITE(TestCampaign);
     CPPUNIT_TEST(TestCampaignConstructor);
+    CPPUNIT_TEST(TestAddNewMap);
     CPPUNIT_TEST(TestGetMap);
+    CPPUNIT_TEST(TestSaveCampaign);
+    CPPUNIT_TEST(TestLoadCampaign);
 	CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -40,6 +43,7 @@ class TestCampaign : public TestFixture {
 		* \brief Function that creates two Item objects before running a test
 		*/
 		void setUp(void);
+
 		/*!
 		* \fn tearDown
 		* \brief Function that deallocates the generated items
@@ -51,17 +55,37 @@ class TestCampaign : public TestFixture {
 		* \brief Function that tests the custom constructor overload for static ganeration
 		*/
 		void TestCampaignConstructor(void);
+
+		/*!
+		* \fn TestAddNewMap
+		* \brief Function that tests GetMap member function
+		*/
+		void TestAddNewMap(void);
+
 		/*!
 		* \fn TestGetMap
 		* \brief Function that tests GetMap member function
 		*/
 		void TestGetMap(void);
+
+		/*!
+		* \fn TestSaveCampaign
+		* \brief Function that tests the SaveCampaign member function
+		*/
+		void TestSaveCampaign(void);
+
+		/*!
+		* \fn TestLoadCampaign
+		* \brief Function that tests the LoadCampaign member function
+		*/
+		void TestLoadCampaign(void);
 	private:
 		/*!
 		* \var customCampaignObject
 		* \brief Variable that represents the pointer to a fresh campaign
 		*/
 		Campaign* newCampaignObject;
+
 		/*!
 		* \var customItemObject
 		* \brief Pointer to a Campaign instance that represents an existing campaign

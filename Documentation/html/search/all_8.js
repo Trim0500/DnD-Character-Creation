@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['id_0',['ID',['../class_character_1_1_character.html#ac6787ac4d6fa28285fa3f7df1e502f26',1,'Character::Character']]],
-  ['id_1',['id',['../structserializecharacter_1_1_character_record.html#ab9be96ea6980b7f6f5688d8a3bb34b25',1,'serializecharacter::CharacterRecord']]],
+  ['id_0',['id',['../structserializecharacter_1_1_character_record.html#ab9be96ea6980b7f6f5688d8a3bb34b25',1,'serializecharacter::CharacterRecord']]],
+  ['id_1',['ID',['../class_character_1_1_character.html#ac6787ac4d6fa28285fa3f7df1e502f26',1,'Character::Character']]],
   ['intelligence_2',['Intelligence',['../class_character.html#adc11299f73c335c725b36d6e85fc7edba8f7ba58961e0fe40cfda61b412537fba',1,'Character::Intelligence'],['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca984feef55fc7f67371f12e73369de37a',1,'item::Intelligence']]],
   ['invalid_5ffile_5furi_3',['INVALID_FILE_URI',['../testserializeitem_8cpp.html#acf66d7b126722900897f1e9ea2d322b0',1,'testserializeitem.cpp']]],
   ['inventory_4',['Inventory',['../class_character_1_1_character.html#a13f07e7b65f813101bc2a0b844eab657',1,'Character::Character::Inventory()'],['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03aeb519248e09e72ba6dc854a29229d6c1',1,'item::Inventory']]],
