@@ -139,6 +139,8 @@ namespace campaign {
     * \param _folderDir String that represents the absolute path of the directory to save the contents to (Do not append with slash)
     * 
     * \return Pointer to a CampaignRecord struct that represents the selecetd campaing to use
+    * 
+    * \throw invalid_argument
     */
     CampaignRecord* LoadCampaign(const int&, const std::string&);
 }

@@ -3,6 +3,13 @@
 * \brief Test implementation for Campaign
 */
 
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <filesystem>
+#include <sstream>
+#include <sys/stat.h>
+
 #include "testcampaign.h"
 
 #define NEW_CAMPAIGN_MAPIDS_ROW_COUNT 3
@@ -16,6 +23,7 @@
 #define EXISTING_CAMPAIGN_INVALID_Y_COOR -10
 #define EXISTING_CAMPAIGN_X_COOR 2
 #define EXISTING_CAMPAIGN_Y_COOR 2
+#define SAVED_CAMPAIGNS_FOLDER_NAME "\\SavedCampaigns\\TestCampaigns"
 
 void TestCampaign::setUp(void) {
     newCampaignObject = new Campaign(NEW_CAMPAIGN_MAPIDS_ROW_COUNT, NEW_CAMPAIGN_MAPIDS_COL_COUNT);
@@ -130,4 +138,31 @@ void TestCampaign::TestGetMap(void) {
     CPPUNIT_ASSERT_EQUAL(expectedMapID, currentMap->mapID);
     CPPUNIT_ASSERT_EQUAL(EXISTING_CAMPAIGN_X_COOR, currentMap->coorX);
     CPPUNIT_ASSERT_EQUAL(EXISTING_CAMPAIGN_Y_COOR, currentMap->coorY);
+}
+
+void TestCampaign::TestSaveCampaign(void) {
+    std::string currentPath = std::filesystem::current_path().string();
+
+	std::ostringstream folderURI;
+	folderURI << currentPath << SAVED_CAMPAIGNS_FOLDER_NAME;
+
+	CPPUNIT_ASSERT_NO_THROW(campaign::SaveCampaigns(folderURI.str(), *newCampaignObject));
+
+    std::ostringstream newCampaignFilePath;
+    newCampaignFilePath << folderURI.str() << "\\Campaign" << *newCampaignObject->GetCampaignID() << ".csv";
+
+	struct stat newCampaignFileBuffer;
+	CPPUNIT_ASSERT(stat(newCampaignFilePath.str().c_str(), &newCampaignFileBuffer) == 0);
+
+    CPPUNIT_ASSERT_NO_THROW(campaign::SaveCampaigns(folderURI.str(), *existingCampaignObject));
+
+    std::ostringstream existingCampaignFilePath;
+    existingCampaignFilePath << folderURI.str() << "\\Campaign" << *existingCampaignObject->GetCampaignID() << ".csv";
+
+	struct stat existingCampaignFileBuffer;
+	CPPUNIT_ASSERT(stat(existingCampaignFilePath.str().c_str(), &existingCampaignFileBuffer) == 0);
+}
+
+void TestCampaign::TestLoadCampaign(void) {
+
 }

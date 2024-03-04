@@ -32,6 +32,8 @@ class TestCampaign : public TestFixture {
     CPPUNIT_TEST_SUITE(TestCampaign);
     CPPUNIT_TEST(TestCampaignConstructor);
     CPPUNIT_TEST(TestGetMap);
+    CPPUNIT_TEST(TestSaveCampaign);
+    //CPPUNIT_TEST(TestLoadCampaign);
 	CPPUNIT_TEST_SUITE_END();
 
     public:
@@ -56,6 +58,16 @@ class TestCampaign : public TestFixture {
 		* \brief Function that tests GetMap member function
 		*/
 		void TestGetMap(void);
+		/*!
+		* \fn TestSaveCampaign
+		* \brief Function that tests the SaveCampaign member function
+		*/
+		void TestSaveCampaign(void);
+		/*!
+		* \fn TestLoadCampaign
+		* \brief Function that tests the LoadCampaign member function
+		*/
+		void TestLoadCampaign(void);
 	private:
 		/*!
 		* \var customCampaignObject

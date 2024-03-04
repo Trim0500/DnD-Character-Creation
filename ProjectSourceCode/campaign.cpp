@@ -117,12 +117,19 @@ namespace {
 
         std::ostringstream result;
         result << _campaignRecord.campaignID
+                << ","
                 << _campaignRecord.numRows
+                << ","
                 << _campaignRecord.numCols
+                << ","
                 << mapIDsString.str()
+                << ","
                 << _campaignRecord.currentMapID
+                << ","
                 << _campaignRecord.currentMapXCoor
+                << ","
                 << _campaignRecord.currentMapYCoor
+                << ","
                 << mapsInCampaignString.str();
 
         return result.str();
@@ -213,6 +220,9 @@ namespace campaign {
     Campaign::Campaign(){};
 
     Campaign::Campaign(const int& _rows, const int& _cols) {
+        nextCampaignID += 1;
+        campaignID = nextCampaignID;
+
         std::vector<std::vector<int>> newMapIDMatrix;
         for (int i = 0; i < _rows; ++i)
         {
@@ -230,6 +240,8 @@ namespace campaign {
     }
 
     Campaign::Campaign(std::vector<std::vector<int>> _mapMatrix, CampaignMap _currentMap, std::vector<Map::Map*> _mapsInCampaign) {
+        nextCampaignID += 1;
+        campaignID = nextCampaignID;
         mapIDs = _mapMatrix;
         currentMap = _currentMap;
         mapsInCampaign = _mapsInCampaign;
