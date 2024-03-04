@@ -7,24 +7,7 @@
 #include <cppunit/ui/text/TestRunner.h>
 #include <filesystem>
 
-#include "Character.h"
-#include "Dice.h"
-#include "Map.h"
-#include "demoitem.h"
-#include "DiceDemo.h"
-#include "demoCharacter.h"
-#include "serializeItem.h"
-
-#define SAVED_ITEMS_URI "\\SavedItems\\SavedItems.csv"
-#define SAVED_CONTAINERS_URI "\\SavedItems\\SavedItemContainers.csv"
-#define SAVED_DUMMY_ITEMS_URI "\\SavedItems\\DUMMYSavedItems.csv"
-
-using namespace std;
 using namespace CppUnit;
-using namespace item;
-using namespace itemcontainer;
-using namespace demoitem;
-using namespace serializeItem;
 
 int main()
 {

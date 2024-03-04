@@ -293,5 +293,7 @@ namespace campaign {
         CampaignRecord* resultRecord = LoadCampaignRecord(&campaignFileInputStream);
 
         campaignFileInputStream.close();
+
+        return resultRecord;
     }
 }
