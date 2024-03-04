@@ -33,7 +33,7 @@ class TestCampaign : public TestFixture {
     CPPUNIT_TEST(TestCampaignConstructor);
     CPPUNIT_TEST(TestGetMap);
     CPPUNIT_TEST(TestSaveCampaign);
-    //CPPUNIT_TEST(TestLoadCampaign);
+    CPPUNIT_TEST(TestLoadCampaign);
 	CPPUNIT_TEST_SUITE_END();
 
     public:

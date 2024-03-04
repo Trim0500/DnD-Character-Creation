@@ -24,6 +24,7 @@
 #define EXISTING_CAMPAIGN_X_COOR 2
 #define EXISTING_CAMPAIGN_Y_COOR 2
 #define SAVED_CAMPAIGNS_FOLDER_NAME "\\SavedCampaigns\\TestCampaigns"
+#define SAVED_CAMPAIGNS_INVALID_URI "SomePhonyURI"
 
 void TestCampaign::setUp(void) {
     newCampaignObject = new Campaign(NEW_CAMPAIGN_MAPIDS_ROW_COUNT, NEW_CAMPAIGN_MAPIDS_COL_COUNT);
@@ -164,5 +165,54 @@ void TestCampaign::TestSaveCampaign(void) {
 }
 
 void TestCampaign::TestLoadCampaign(void) {
+    std::ostringstream fileNotFoundMessage;
+	fileNotFoundMessage << "Failed to open the file at: " << SAVED_CAMPAIGNS_INVALID_URI;
+	CPPUNIT_ASSERT_THROW_MESSAGE(fileNotFoundMessage.str(), campaign::LoadCampaign(*newCampaignObject->GetCampaignID(), SAVED_CAMPAIGNS_INVALID_URI), std::invalid_argument);
 
+    std::string currentPath = filesystem::current_path().string();
+
+    std::ostringstream folderURI;
+	folderURI << currentPath << SAVED_CAMPAIGNS_FOLDER_NAME;
+
+    campaign::CampaignRecord* testCampaignRecord = campaign::LoadCampaign(0, folderURI.str());
+
+    CPPUNIT_ASSERT_EQUAL(0, testCampaignRecord->campaignID);
+    CPPUNIT_ASSERT_EQUAL(EXISTING_CAMPAIGN_MAPIDS_ROW_COUNT, testCampaignRecord->numRows);
+    CPPUNIT_ASSERT_EQUAL(EXISTING_CAMPAIGN_MAPIDS_COL_COUNT, testCampaignRecord->numCols);
+
+    std::vector<std::vector<int>>* existingCampaignMapIDs = &testCampaignRecord->mapIDs;
+    CPPUNIT_ASSERT_EQUAL(EXISTING_CAMPAIGN_MAPIDS_ROW_COUNT, (int)existingCampaignMapIDs->size());
+    
+    for (int i = 0; i < (int)existingCampaignMapIDs->size(); ++i)
+    {
+        CPPUNIT_ASSERT_EQUAL(EXISTING_CAMPAIGN_MAPIDS_COL_COUNT, (int)existingCampaignMapIDs->at(i).size());
+
+        for (int j = 0; j < (int)existingCampaignMapIDs->at(i).size(); j++)
+        {
+            int mapIDAtCell = existingCampaignMapIDs->at(i).at(j);
+
+            if (i == 0 && j == 1) {
+                CPPUNIT_ASSERT_EQUAL(47, mapIDAtCell);
+
+                continue;
+            }
+            else if (i == 1 && j == 1) {
+                CPPUNIT_ASSERT_EQUAL(48, mapIDAtCell);
+
+                continue;
+            }
+            else if (i == 2 && j == 1) {
+                CPPUNIT_ASSERT_EQUAL(49, mapIDAtCell);
+
+                continue;
+            }
+
+            CPPUNIT_ASSERT_EQUAL(0, mapIDAtCell);
+        }
+    }
+
+    CPPUNIT_ASSERT_EQUAL(48, testCampaignRecord->currentMapID);
+    CPPUNIT_ASSERT_EQUAL(2, testCampaignRecord->currentMapXCoor);
+    CPPUNIT_ASSERT_EQUAL(2, testCampaignRecord->currentMapYCoor);
+    CPPUNIT_ASSERT_EQUAL(3, (int)testCampaignRecord->mapsInCampaign.size());
 }

@@ -181,7 +181,7 @@ namespace {
 
             std::smatch mapCellValueMatch;
 
-			std::regex mapIDCellRgx("{[0-9]+;[0-9]+;[0-9]+}");
+			std::regex mapIDCellRgx("\\{[0-9]+;[0-9]+;[0-9]+\\}");
             while(std::regex_search(segmentList[3], mapCellValueMatch, mapIDCellRgx)) {
                 std::string cellValueString = mapCellValueMatch.str();
 
