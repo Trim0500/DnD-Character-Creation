@@ -1,5 +1,27 @@
 var searchData=
 [
-  ['hit_5fdie_5fpool_0',['Hit_Die_Pool',['../class_character_1_1_character.html#af108953a504a746cb2b74a03decdf4fd',1,'Character::Character']]],
-  ['hit_5fpoints_1',['Hit_Points',['../class_character_1_1_character.html#ad1857f9f184b1eac2145cabfa14b5283',1,'Character::Character']]]
+  ['get_5faddition_0',['get_addition',['../class_dice.html#a8bf495738034fb0e5461a6761f007506',1,'Dice']]],
+  ['get_5fdie_5fsides_1',['get_die_sides',['../class_dice.html#a5d113ad9251a8561dd3101010b7af452',1,'Dice']]],
+  ['get_5fleading_5fmultiplier_2',['get_leading_multiplier',['../class_dice.html#a0ed26bfb56a0adcabd96f76c1dc8df37',1,'Dice']]],
+  ['get_5fstring_3',['get_string',['../class_dice.html#ad49a44f1558d483f55e4804402a7e983',1,'Dice']]],
+  ['getallitems_4',['GetAllItems',['../classitemcontainer_1_1_item_container.html#a21184a7baf42de78796109c07856ea61',1,'itemcontainer::ItemContainer']]],
+  ['getcampaignid_5',['GetCampaignID',['../classcampaign_1_1_campaign.html#afb9e465401e5a1672382073a82df591c',1,'campaign::Campaign']]],
+  ['getcapacity_6',['GetCapacity',['../classitemcontainer_1_1_item_container.html#a7e7a292d06429c18a769509c95c14c11',1,'itemcontainer::ItemContainer']]],
+  ['getcurrentmap_7',['GetCurrentMap',['../classcampaign_1_1_campaign.html#a7497223a9fcb92c738c999973ac5a2db',1,'campaign::Campaign']]],
+  ['getenchantmentbonus_8',['GetEnchantmentBonus',['../classitem_1_1_item.html#a4ba1d561d9bc83cecb5786916667a675',1,'item::Item']]],
+  ['getenchantmenttype_9',['GetEnchantmentType',['../classitem_1_1_item.html#a74ebf5073f51301db65ddf10a07aaa25',1,'item::Item']]],
+  ['getitem_10',['GetItem',['../classitemcontainer_1_1_item_container.html#a5b571b65600f3cc8ee570429794b2ffa',1,'itemcontainer::ItemContainer::GetItem(const string &amp;)'],['../classitemcontainer_1_1_item_container.html#a764aa3709415a62d38ce95a9b1a2bc62',1,'itemcontainer::ItemContainer::GetItem(const int &amp;)']]],
+  ['getitemid_11',['GetItemId',['../classitem_1_1_item.html#a1bc21c27d852361df5ae709eaac7720d',1,'item::Item']]],
+  ['getitemname_12',['GetItemName',['../classitem_1_1_item.html#ac1ad3254799bbd2d6017f098b333d2b6',1,'item::Item']]],
+  ['getitemsbyenchantmentbonus_13',['GetItemsByEnchantmentBonus',['../classitemcontainer_1_1_item_container.html#a8b283eb1eba96e2a01dfa974bef62640',1,'itemcontainer::ItemContainer']]],
+  ['getitemsbyitemtype_14',['GetItemsByItemType',['../classitemcontainer_1_1_item_container.html#a2d758d25f200781c24b9447163e2d2fd',1,'itemcontainer::ItemContainer']]],
+  ['getitemsbystat_15',['GetItemsByStat',['../classitemcontainer_1_1_item_container.html#ae89d2f505c2fd076f7eac8f27735b901',1,'itemcontainer::ItemContainer']]],
+  ['getitemtype_16',['GetItemType',['../classitem_1_1_item.html#a00609c418b85cc5fbae97d6f77739a42',1,'item::Item']]],
+  ['getitemweight_17',['GetItemWeight',['../classitem_1_1_item.html#a9e3c7d4fc49e628cf70536ccf59112d7',1,'item::Item']]],
+  ['getmap_18',['GetMap',['../classcampaign_1_1_campaign.html#a70e76d6130f9690579ead3f4f4bd2137',1,'campaign::Campaign']]],
+  ['getmapid_19',['GetMapID',['../class_map_1_1_map.html#abdc27dfaf8a3904dc45ffeb396e60e6e',1,'Map::Map']]],
+  ['getmapids_20',['GetMapIDs',['../classcampaign_1_1_campaign.html#a13d4328492b88ccfc913e593bdabe4e8',1,'campaign::Campaign']]],
+  ['getmapsincampaign_21',['GetMapsInCampaign',['../classcampaign_1_1_campaign.html#a6e88e304a025488c77d69d33038d509d',1,'campaign::Campaign']]],
+  ['gettotalitemweight_22',['GetTotalItemWeight',['../classitemcontainer_1_1_item_container.html#adaa78ba43583a872779f99282b882401',1,'itemcontainer::ItemContainer']]],
+  ['grid_23',['Grid',['../class_map_1_1_map.html#a9e3a32103b7bffe5f85fa03c7db3b15b',1,'Map::Map']]]
 ];

@@ -104,6 +104,8 @@
     <ClCompile Include="ProjectSourceCode\ImplFiles\Map\Map.cpp" />
     <ClCompile Include="ProjectSourceCode\ImplFiles\Map\testMap.cpp" />
     <ClCompile Include="ProjectSourceCode\ImplFiles\main.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Campaign\campaign.cpp" />
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Campaign\testcampaign.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\item.h" />
@@ -123,6 +125,8 @@
     <ClInclude Include="ProjectSourceCode\HeaderFiles\Dice\testDice.h" />
     <ClInclude Include="ProjectSourceCode\HeaderFiles\Map\Map.h" />
     <ClInclude Include="ProjectSourceCode\HeaderFiles\Map\testMap.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Campaign\campaign.h" />
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Campaign\testcampaign.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

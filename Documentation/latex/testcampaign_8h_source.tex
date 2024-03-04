@@ -1,0 +1,56 @@
+\doxysection{testcampaign.\+h}
+\hypertarget{testcampaign_8h_source}{}\label{testcampaign_8h_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testcampaign.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testcampaign.h}}
+\mbox{\hyperlink{testcampaign_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <cppunit/TestCase.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <cppunit/TestFixture.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <cppunit/ui/text/TextTestRunner.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <cppunit/extensions/HelperMacros.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <cppunit/extensions/TestFactoryRegistry.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <cppunit/TestResult.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ <cppunit/TestResultCollector.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <cppunit/TestRunner.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00018}00018\ \textcolor{preprocessor}{\#include\ <cppunit/BriefTestProgressListener.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00019}00019\ \textcolor{preprocessor}{\#include\ <cppunit/CompilerOutputter.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00020}00020\ \textcolor{preprocessor}{\#include\ <cppunit/XmlOutputter.h>}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{campaign_8h}{campaign.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00024}00024\ \textcolor{keyword}{using\ namespace\ }CppUnit;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00025}00025\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacecampaign}{campaign}};}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00031}\mbox{\hyperlink{class_test_campaign}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_campaign}{TestCampaign}}\ :\ \textcolor{keyword}{public}\ TestFixture\ \{}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00032}00032\ \ \ \ \ CPPUNIT\_TEST\_SUITE(\mbox{\hyperlink{class_test_campaign}{TestCampaign}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00033}00033\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_campaign_a4b4a9b0cbb58d27ba4c6721b0268093e}{TestCampaignConstructor}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00034}00034\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_campaign_adbc7b3bef95e8bc9eea0ae28df70ca6f}{TestAddNewMap}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00035}00035\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_campaign_ae5ea8be01082ad6caaac8dfbf563ddc6}{TestGetMap}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00036}00036\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_campaign_ae03d416fca0c2a2355ccc4fe9f9e4cbb}{TestSaveCampaign}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00037}00037\ \ \ \ \ CPPUNIT\_TEST(\mbox{\hyperlink{class_test_campaign_ac2b74481dee9d0376a2ae23038c420e0}{TestLoadCampaign}});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00038}00038\ \ \ \ \ CPPUNIT\_TEST\_SUITE\_END();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_adb4e1012c3b1ba3266a34a57dc5d24db}{setUp}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_a2f23c7178b7d0eecad8b04cde4ffdae2}{tearDown}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_a4b4a9b0cbb58d27ba4c6721b0268093e}{TestCampaignConstructor}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_adbc7b3bef95e8bc9eea0ae28df70ca6f}{TestAddNewMap}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_ae5ea8be01082ad6caaac8dfbf563ddc6}{TestGetMap}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_ae03d416fca0c2a2355ccc4fe9f9e4cbb}{TestSaveCampaign}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_campaign_ac2b74481dee9d0376a2ae23038c420e0}{TestLoadCampaign}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00082}00082\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}*\ newCampaignObject;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}*\ existingCampaignObject;}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00094}00094\ \};}
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{testcampaign_8h_source_l00096}\mbox{\hyperlink{testcampaign_8h_a6aa72d57c653ec509e92c8ca9bcfc3bc}{00096}}\ \mbox{\hyperlink{testcampaign_8h_a6aa72d57c653ec509e92c8ca9bcfc3bc}{CPPUNIT\_TEST\_SUITE\_REGISTRATION}}(\mbox{\hyperlink{class_test_campaign}{TestCampaign}});}
+
+\end{DoxyCode}

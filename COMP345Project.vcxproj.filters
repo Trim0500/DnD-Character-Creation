@@ -66,6 +66,12 @@
     <ClCompile Include="ProjectSourceCode\ImplFiles\Map\testMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="campaign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testcampaign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProjectSourceCode\HeaderFiles\Item\item.h">
@@ -117,6 +123,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\HeaderFiles\Map\testMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="campaign.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testcampaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
