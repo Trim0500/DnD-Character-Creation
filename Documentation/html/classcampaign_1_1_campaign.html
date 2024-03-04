@@ -97,6 +97,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa606b1c884d8c3230d9773a407a0111f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9fdc1f151a30ef2b795ff97e80c6c18" id="r_ae9fdc1f151a30ef2b795ff97e80c6c18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9fdc1f151a30ef2b795ff97e80c6c18">Campaign</a> (std::vector&lt; std::vector&lt; int &gt; &gt;, <a class="el" href="structcampaign_1_1_campaign_map.html">CampaignMap</a>, std::vector&lt; <a class="el" href="class_map_1_1_map.html">Map::Map</a> * &gt;)</td></tr>
 <tr class="separator:ae9fdc1f151a30ef2b795ff97e80c6c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2c321bf5efea7133ae6973f4e22b404" id="r_ab2c321bf5efea7133ae6973f4e22b404"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2c321bf5efea7133ae6973f4e22b404">GetCampaignID</a> ()</td></tr>
+<tr class="separator:ab2c321bf5efea7133ae6973f4e22b404"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a036823e2a2afc0ff1982b4b599765eab" id="r_a036823e2a2afc0ff1982b4b599765eab"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a036823e2a2afc0ff1982b4b599765eab">GetMapIDs</a> ()</td></tr>
 <tr class="separator:a036823e2a2afc0ff1982b4b599765eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa53e79b0a8040ba86a5338ecf0da9cd8" id="r_aa53e79b0a8040ba86a5338ecf0da9cd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcampaign_1_1_campaign_map.html">CampaignMap</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa53e79b0a8040ba86a5338ecf0da9cd8">GetCurrentMap</a> ()</td></tr>
@@ -110,7 +112,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to abstract the campaign functionality. </p>
 
-<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00034">34</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00049">49</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7d08206f784aaa67e5e8b791bec0d4cd" name="a7d08206f784aaa67e5e8b791bec0d4cd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7d08206f784aaa67e5e8b791bec0d4cd">&#9670;&#160;</a></span>Campaign() <span class="overload">[1/3]</span></h2>
@@ -141,7 +143,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="campaign_8cpp_source.html#l00039">39</a> of file <a class="el" href="campaign_8cpp_source.html">campaign.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="campaign_8cpp_source.html#l00220">220</a> of file <a class="el" href="campaign_8cpp_source.html">campaign.cpp</a>.</p>
 
 </div>
 </div>
@@ -164,7 +166,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="campaign_8cpp_source.html#l00041">41</a> of file <a class="el" href="campaign_8cpp_source.html">campaign.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="campaign_8cpp_source.html#l00222">222</a> of file <a class="el" href="campaign_8cpp_source.html">campaign.cpp</a>.</p>
 
 </div>
 </div>
@@ -192,11 +194,38 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="campaign_8cpp_source.html#l00058">58</a> of file <a class="el" href="campaign_8cpp_source.html">campaign.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="campaign_8cpp_source.html#l00242">242</a> of file <a class="el" href="campaign_8cpp_source.html">campaign.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab2c321bf5efea7133ae6973f4e22b404" name="ab2c321bf5efea7133ae6973f4e22b404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c321bf5efea7133ae6973f4e22b404">&#9670;&#160;</a></span>GetCampaignID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int * campaign::Campaign::GetCampaignID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00076">76</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
+
+</div>
+</div>
 <a id="aa53e79b0a8040ba86a5338ecf0da9cd8" name="aa53e79b0a8040ba86a5338ecf0da9cd8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa53e79b0a8040ba86a5338ecf0da9cd8">&#9670;&#160;</a></span>GetCurrentMap()</h2>
 
@@ -220,7 +249,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00059">59</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00080">80</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
 
 </div>
 </div>
@@ -260,7 +289,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="campaign_8cpp_source.html#l00064">64</a> of file <a class="el" href="campaign_8cpp_source.html">campaign.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="campaign_8cpp_source.html#l00250">250</a> of file <a class="el" href="campaign_8cpp_source.html">campaign.cpp</a>.</p>
 
 </div>
 </div>
@@ -287,7 +316,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00058">58</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00078">78</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
 
 </div>
 </div>
@@ -314,7 +343,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00060">60</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="campaign_8h_source.html#l00082">82</a> of file <a class="el" href="campaign_8h_source.html">campaign.h</a>.</p>
 
 </div>
 </div>
