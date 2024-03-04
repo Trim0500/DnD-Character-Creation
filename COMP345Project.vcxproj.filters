@@ -66,10 +66,10 @@
     <ClCompile Include="ProjectSourceCode\ImplFiles\Map\testMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="campaign.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Campaign\campaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testcampaign.cpp">
+    <ClCompile Include="ProjectSourceCode\ImplFiles\Campaign\testcampaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,10 +125,10 @@
     <ClInclude Include="ProjectSourceCode\HeaderFiles\Map\testMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="campaign.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Campaign\campaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="testcampaign.h">
+    <ClInclude Include="ProjectSourceCode\HeaderFiles\Campaign\testcampaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
