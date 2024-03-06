@@ -63,13 +63,16 @@
     <ClCompile Include="ProjectSourceCode\testserializeitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="campaign.cpp">
+    <ClCompile Include="ProjectSourceCode\campaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testcampaign.cpp">
+    <ClCompile Include="ProjectSourceCode\testcampaign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testSerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -122,13 +125,16 @@
     <ClInclude Include="ProjectSourceCode\testserializeitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\SerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="campaign.h">
+    <ClInclude Include="ProjectSourceCode\campaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="testcampaign.h">
+    <ClInclude Include="ProjectSourceCode\testcampaign.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testSerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
