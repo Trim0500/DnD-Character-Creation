@@ -2,7 +2,7 @@
 * \file Campaign.cpp
 * \brief Implementation class of the editable Campaign
 * 
-* \author Tristan Lafleur
+* \author Tristan Lafleur (40245238)
 */
 
 #include <algorithm>
