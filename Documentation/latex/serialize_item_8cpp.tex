@@ -1,5 +1,10 @@
 \doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/serialize\+Item.cpp File Reference}
 \hypertarget{serialize_item_8cpp}{}\label{serialize_item_8cpp}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/serializeItem.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/serializeItem.cpp}}
+
+
+File that implements the serialization of the Items and Containers present in a campaign.  
+
+
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
@@ -11,15 +16,27 @@
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceserialize_item}{serialize\+Item}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Namespace to encapsulate the serialization functionality for the Items and Containers. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceserialize_item_adffd28f81ca49d6ca9f3093818141573}{serialize\+Item\+::\+Load\+Items}} (const string \&\+\_\+file\+URI)
+std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceserialize_item_a3eb7f4d80f0a3a3f1b64a469586ea526}{serialize\+Item\+::\+Load\+Items}} (const std\+::string \&\+\_\+file\+URI)
 \item 
-vector$<$ \mbox{\hyperlink{structserialize_item_1_1_item_container_record}{Item\+Container\+Record}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceserialize_item_a242becffcbbdf5a4020b4b3b0ab2cc3b}{serialize\+Item\+::\+Load\+Item\+Container\+Records}} (const string \&\+\_\+file\+URI)
+std\+::vector$<$ \mbox{\hyperlink{structserialize_item_1_1_item_container_record}{Item\+Container\+Record}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceserialize_item_a2a870bf6413d2c41aa6f290e782ea25d}{serialize\+Item\+::\+Load\+Item\+Container\+Records}} (const std\+::string \&\+\_\+file\+URI)
 \item 
-void \mbox{\hyperlink{namespaceserialize_item_aab8fa7061f17afa136412e2db33c8bc0}{serialize\+Item\+::\+Save\+Items}} (const string \&\+\_\+file\+URI, const vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ \&\+\_\+items\+To\+Save)
+void \mbox{\hyperlink{namespaceserialize_item_a62e11cf99b2764370af7e341461babae}{serialize\+Item\+::\+Save\+Items}} (const std\+::string \&\+\_\+file\+URI, const std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ \&\+\_\+items\+To\+Save)
 \item 
-void \mbox{\hyperlink{namespaceserialize_item_a53b7211e8431bc1ef99799bff67b83ea}{serialize\+Item\+::\+Save\+Item\+Containers}} (const string \&\+\_\+file\+URI, const vector$<$ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{Item\+Container}} \texorpdfstring{$\ast$}{*} $>$ \&\+\_\+containers\+To\+Save)
+void \mbox{\hyperlink{namespaceserialize_item_a0851a057bcbcbec83648d134c08a6231}{serialize\+Item\+::\+Save\+Item\+Containers}} (const std\+::string \&\+\_\+file\+URI, const std\+::vector$<$ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{Item\+Container}} \texorpdfstring{$\ast$}{*} $>$ \&\+\_\+containers\+To\+Save)
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File that implements the serialization of the Items and Containers present in a campaign. 
+
+\begin{DoxyAuthor}{Author}
+Tristan Lafleur (40245238) 
+\end{DoxyAuthor}
+
+
+Definition in file \mbox{\hyperlink{serialize_item_8cpp_source}{serialize\+Item.\+cpp}}.
+

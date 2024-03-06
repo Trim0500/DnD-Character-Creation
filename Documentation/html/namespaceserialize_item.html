@@ -78,66 +78,73 @@ $(function() {
   <div class="headertitle"><div class="title">serializeItem Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Namespace to encapsulate the serialization functionality for the Items and Containers.  
+<a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structserialize_item_1_1_item_container_record.html">ItemContainerRecord</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that represents the format of the containers that are saved into csv files.  <a href="structserialize_item_1_1_item_container_record.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structserialize_item_1_1_item_record.html">ItemRecord</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that represents the format of the items that are saved into csv files.  <a href="structserialize_item_1_1_item_record.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adffd28f81ca49d6ca9f3093818141573" id="r_adffd28f81ca49d6ca9f3093818141573"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adffd28f81ca49d6ca9f3093818141573">LoadItems</a> (const string &amp;_fileURI)</td></tr>
-<tr class="separator:adffd28f81ca49d6ca9f3093818141573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a242becffcbbdf5a4020b4b3b0ab2cc3b" id="r_a242becffcbbdf5a4020b4b3b0ab2cc3b"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="structserialize_item_1_1_item_container_record.html">ItemContainerRecord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a242becffcbbdf5a4020b4b3b0ab2cc3b">LoadItemContainerRecords</a> (const string &amp;_fileURI)</td></tr>
-<tr class="separator:a242becffcbbdf5a4020b4b3b0ab2cc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab8fa7061f17afa136412e2db33c8bc0" id="r_aab8fa7061f17afa136412e2db33c8bc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab8fa7061f17afa136412e2db33c8bc0">SaveItems</a> (const string &amp;_fileURI, const vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt; &amp;_itemsToSave)</td></tr>
-<tr class="separator:aab8fa7061f17afa136412e2db33c8bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53b7211e8431bc1ef99799bff67b83ea" id="r_a53b7211e8431bc1ef99799bff67b83ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53b7211e8431bc1ef99799bff67b83ea">SaveItemContainers</a> (const string &amp;_fileURI, const vector&lt; <a class="el" href="classitemcontainer_1_1_item_container.html">ItemContainer</a> * &gt; &amp;_containersToSave)</td></tr>
-<tr class="separator:a53b7211e8431bc1ef99799bff67b83ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eb7f4d80f0a3a3f1b64a469586ea526" id="r_a3eb7f4d80f0a3a3f1b64a469586ea526"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3eb7f4d80f0a3a3f1b64a469586ea526">LoadItems</a> (const std::string &amp;_fileURI)</td></tr>
+<tr class="separator:a3eb7f4d80f0a3a3f1b64a469586ea526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a870bf6413d2c41aa6f290e782ea25d" id="r_a2a870bf6413d2c41aa6f290e782ea25d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structserialize_item_1_1_item_container_record.html">ItemContainerRecord</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a870bf6413d2c41aa6f290e782ea25d">LoadItemContainerRecords</a> (const std::string &amp;_fileURI)</td></tr>
+<tr class="separator:a2a870bf6413d2c41aa6f290e782ea25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62e11cf99b2764370af7e341461babae" id="r_a62e11cf99b2764370af7e341461babae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62e11cf99b2764370af7e341461babae">SaveItems</a> (const std::string &amp;_fileURI, const std::vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt; &amp;_itemsToSave)</td></tr>
+<tr class="separator:a62e11cf99b2764370af7e341461babae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0851a057bcbcbec83648d134c08a6231" id="r_a0851a057bcbcbec83648d134c08a6231"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0851a057bcbcbec83648d134c08a6231">SaveItemContainers</a> (const std::string &amp;_fileURI, const std::vector&lt; <a class="el" href="classitemcontainer_1_1_item_container.html">ItemContainer</a> * &gt; &amp;_containersToSave)</td></tr>
+<tr class="separator:a0851a057bcbcbec83648d134c08a6231"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a242becffcbbdf5a4020b4b3b0ab2cc3b" name="a242becffcbbdf5a4020b4b3b0ab2cc3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a242becffcbbdf5a4020b4b3b0ab2cc3b">&#9670;&#160;</a></span>LoadItemContainerRecords()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Namespace to encapsulate the serialization functionality for the Items and Containers. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a2a870bf6413d2c41aa6f290e782ea25d" name="a2a870bf6413d2c41aa6f290e782ea25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a870bf6413d2c41aa6f290e782ea25d">&#9670;&#160;</a></span>LoadItemContainerRecords()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="structserialize_item_1_1_item_container_record.html">ItemContainerRecord</a> * &gt; serializeItem::LoadItemContainerRecords </td>
+          <td class="memname">std::vector&lt; <a class="el" href="structserialize_item_1_1_item_container_record.html">ItemContainerRecord</a> * &gt; serializeItem::LoadItemContainerRecords </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>_fileURI</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>_fileURI</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="serialize_item_8cpp_source.html#l00227">227</a> of file <a class="el" href="serialize_item_8cpp_source.html">serializeItem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="serialize_item_8cpp_source.html#l00289">289</a> of file <a class="el" href="serialize_item_8cpp_source.html">serializeItem.cpp</a>.</p>
 
 </div>
 </div>
-<a id="adffd28f81ca49d6ca9f3093818141573" name="adffd28f81ca49d6ca9f3093818141573"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adffd28f81ca49d6ca9f3093818141573">&#9670;&#160;</a></span>LoadItems()</h2>
+<a id="a3eb7f4d80f0a3a3f1b64a469586ea526" name="a3eb7f4d80f0a3a3f1b64a469586ea526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eb7f4d80f0a3a3f1b64a469586ea526">&#9670;&#160;</a></span>LoadItems()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt; serializeItem::LoadItems </td>
+          <td class="memname">std::vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt; serializeItem::LoadItems </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>_fileURI</em></span></td><td>)</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>_fileURI</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="serialize_item_8cpp_source.html#l00214">214</a> of file <a class="el" href="serialize_item_8cpp_source.html">serializeItem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="serialize_item_8cpp_source.html#l00276">276</a> of file <a class="el" href="serialize_item_8cpp_source.html">serializeItem.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a53b7211e8431bc1ef99799bff67b83ea" name="a53b7211e8431bc1ef99799bff67b83ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53b7211e8431bc1ef99799bff67b83ea">&#9670;&#160;</a></span>SaveItemContainers()</h2>
+<a id="a0851a057bcbcbec83648d134c08a6231" name="a0851a057bcbcbec83648d134c08a6231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0851a057bcbcbec83648d134c08a6231">&#9670;&#160;</a></span>SaveItemContainers()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,22 +152,22 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void serializeItem::SaveItemContainers </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>_fileURI</em>, </span></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>_fileURI</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const vector&lt; <a class="el" href="classitemcontainer_1_1_item_container.html">ItemContainer</a> * &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>_containersToSave</em></span>&#160;)</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classitemcontainer_1_1_item_container.html">ItemContainer</a> * &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>_containersToSave</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="serialize_item_8cpp_source.html#l00251">251</a> of file <a class="el" href="serialize_item_8cpp_source.html">serializeItem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="serialize_item_8cpp_source.html#l00313">313</a> of file <a class="el" href="serialize_item_8cpp_source.html">serializeItem.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aab8fa7061f17afa136412e2db33c8bc0" name="aab8fa7061f17afa136412e2db33c8bc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab8fa7061f17afa136412e2db33c8bc0">&#9670;&#160;</a></span>SaveItems()</h2>
+<a id="a62e11cf99b2764370af7e341461babae" name="a62e11cf99b2764370af7e341461babae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62e11cf99b2764370af7e341461babae">&#9670;&#160;</a></span>SaveItems()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,17 +175,17 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void serializeItem::SaveItems </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>_fileURI</em>, </span></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>_fileURI</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemsToSave</em></span>&#160;)</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemsToSave</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="serialize_item_8cpp_source.html#l00240">240</a> of file <a class="el" href="serialize_item_8cpp_source.html">serializeItem.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="serialize_item_8cpp_source.html#l00302">302</a> of file <a class="el" href="serialize_item_8cpp_source.html">serializeItem.cpp</a>.</p>
 
 </div>
 </div>

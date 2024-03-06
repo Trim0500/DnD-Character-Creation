@@ -16,8 +16,8 @@ var searchData=
   ['iswizard_13',['isWizard',['../class_character.html#a83261e8d9ba2c3475bce2a448b5ca4da',1,'Character']]],
   ['item_5fstat_5fto_5fcharacter_5fstat_14',['item_stat_TO_character_stat',['../class_character.html#a290a8d7d18b31d69a68f4ffbcf90b16e',1,'Character']]],
   ['itemid_15',['itemId',['../structserialize_item_1_1_item_record.html#a177e46f264fb07b755579655d458a2d2',1,'serializeItem::ItemRecord']]],
-  ['itemids_16',['itemIDs',['../structserialize_item_1_1_item_container_record.html#a8bbd03a9d407497de47098421df81853',1,'serializeItem::ItemContainerRecord']]],
-  ['itemname_17',['itemName',['../structserialize_item_1_1_item_record.html#a65095782412f6c624aeee2fd697fcf2c',1,'serializeItem::ItemRecord::itemName'],['../structserialize_item_1_1_item_container_record.html#aef44b10e90901740f6afad6ff00cd5c2',1,'serializeItem::ItemContainerRecord::itemName']]],
+  ['itemids_16',['itemIDs',['../structserialize_item_1_1_item_container_record.html#adee2471a223acafa55e193e3a4161841',1,'serializeItem::ItemContainerRecord']]],
+  ['itemname_17',['itemName',['../structserialize_item_1_1_item_record.html#a5897ab1077852befefcab44cd5b615af',1,'serializeItem::ItemRecord::itemName'],['../structserialize_item_1_1_item_container_record.html#abf971342c2548360d8ca1b69c7bbf4f4',1,'serializeItem::ItemContainerRecord::itemName']]],
   ['itemtype_18',['itemtype',['../structserialize_item_1_1_item_record.html#a63e11d12012788dc85e0b2015371db7d',1,'serializeItem::ItemRecord::itemtype'],['../structserialize_item_1_1_item_container_record.html#ae0354b06a3e0432068af3d7bdb1aec5f',1,'serializeItem::ItemContainerRecord::itemtype']]],
   ['itemtypestrings_19',['itemTypeStrings',['../classitem_1_1_item.html#a0a45dc09af85eadcaa3eb2f24b7606df',1,'item::Item']]]
 ];
