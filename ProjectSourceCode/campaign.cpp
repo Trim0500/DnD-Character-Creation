@@ -13,6 +13,8 @@
 
 #include "Campaign.h"
 
+using namespace campaign;
+
 namespace {
     /*!
     * \fn FindMapByID
@@ -44,8 +46,8 @@ namespace {
     * 
     * \return Instance of the CampaignRecord struct housing the information about the campaign to save
     */
-    campaign::CampaignRecord BuildCampaignRecord(campaign::Campaign _campaign) {
-        campaign::CampaignRecord result;
+    CampaignRecord BuildCampaignRecord(Campaign _campaign) {
+        CampaignRecord result;
 
         result.campaignID = _campaign.GetCampaignID();
         result.numRows = _campaign.GetMapIDs().size();
@@ -76,7 +78,7 @@ namespace {
     * 
     * \return String that represents the CSV formatted output
     */
-    std::string BuildCampaignCSVContent(campaign::CampaignRecord _campaignRecord) {
+    std::string BuildCampaignCSVContent(CampaignRecord _campaignRecord) {
         std::ostringstream mapIDsString;
         mapIDsString << "[";
         
@@ -143,8 +145,8 @@ namespace {
     * 
     * \return Pointer to an instance of the CampaignRecord struct that represents the loaded Campaign
     */
-    campaign::CampaignRecord* LoadCampaignRecord(std::ifstream* _fileStream) {
-        campaign::CampaignRecord* result = new campaign::CampaignRecord;
+    CampaignRecord* LoadCampaignRecord(std::ifstream* _fileStream) {
+        CampaignRecord* result = new CampaignRecord;
 
         while (!_fileStream->eof()) {
 			std::string nextLine = "";
