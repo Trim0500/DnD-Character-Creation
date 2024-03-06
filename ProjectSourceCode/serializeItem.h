@@ -1,6 +1,6 @@
 /*!
-* \file serializeitem.h
-* \brief File that implements the serialization of the Items and Containers present in a campaign.
+* \file serializeItem.h
+* \brief File that has the forward declarations for the serialization of the Items and Containers present in a campaign.
 * 
 * \author Tristan Lafleur (40245238)
 */
