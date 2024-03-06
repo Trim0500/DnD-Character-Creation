@@ -44,6 +44,7 @@ namespace Map {
 	*/
 	class Map {
 	public: 
+		int GetMapID() {return mapID;};
 		/*!
 		* \fn Map
 		* \brief Constructor to build a basic map provided by user
@@ -95,6 +96,12 @@ namespace Map {
 		void ChangeCell(int row, int col, Cell_Type);
 	
 	private:
+		static inline int nextMapID = 0;
+		/*!
+		* \var mapID
+		* \brief Integer representing the unique ID for the instance of the map
+		*/
+		int mapID;
 		/*!
 		* \var rows
 		* \brief rows/height/x

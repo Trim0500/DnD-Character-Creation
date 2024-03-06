@@ -1,0 +1,185 @@
+\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/testcampaign.cpp File Reference}
+\hypertarget{testcampaign_8cpp}{}\label{testcampaign_8cpp}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testcampaign.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testcampaign.cpp}}
+
+
+Test implementation for Campaign.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include "{}testcampaign.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a08e427f1fa510f4264afd3effa5af1ad}{NEW\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+ROW\+\_\+\+COUNT}}~3
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a3c6f24e35ef9c7896f84a38d60bd8034}{NEW\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+COL\+\_\+\+COUNT}}~3
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a7f895162e5d478f9e6dd7ceb21cf22a4}{NEW\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+CELL\+\_\+\+VALUE}}~0
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a5a38a129cf963e108dd09ea27048c64b}{EXISTING\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+ROW\+\_\+\+COUNT}}~3
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a90fcf5e6eb0f44b0209f748780aca502}{EXISTING\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+COL\+\_\+\+COUNT}}~3
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a70f941fc8da35a6a2206576f8711af2b}{EXISTING\+\_\+\+CAMPAIGN\+\_\+\+CURRENT\+\_\+\+X\+\_\+\+COOR}}~2
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a534197a54a351009a28a97e524fc2468}{EXISTING\+\_\+\+CAMPAIGN\+\_\+\+CURRENT\+\_\+\+Y\+\_\+\+COOR}}~2
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_ad291c429d3e555ff99596da2d0365825}{EXISTING\+\_\+\+CAMPAIGN\+\_\+\+INVALID\+\_\+\+X\+\_\+\+COOR}}~10
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a7f02a0bce3d77f3f0702d6214a8e2b20}{EXISTING\+\_\+\+CAMPAIGN\+\_\+\+INVALID\+\_\+\+Y\+\_\+\+COOR}}~-\/10
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_abfc514352e9ec6083d2a54501260bf22}{EXISTING\+\_\+\+CAMPAIGN\+\_\+\+X\+\_\+\+COOR}}~2
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a1b50db0d2d1a794da25f9a0fc0b99325}{EXISTING\+\_\+\+CAMPAIGN\+\_\+\+Y\+\_\+\+COOR}}~2
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a37dfabb88603ff2356d3095ade72c8d6}{SAVED\+\_\+\+CAMPAIGNS\+\_\+\+FOLDER\+\_\+\+NAME}}~"{}\textbackslash{}\textbackslash{}Saved\+Campaigns\textbackslash{}\textbackslash{}\+Test\+Campaigns"{}
+\item 
+\#define \mbox{\hyperlink{testcampaign_8cpp_a8718dd84ed94bf7fbbdab99517354da6}{SAVED\+\_\+\+CAMPAIGNS\+\_\+\+INVALID\+\_\+\+URI}}~"{}Some\+Phony\+URI"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test implementation for Campaign. 
+
+
+
+Definition in file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{testcampaign_8cpp_a70f941fc8da35a6a2206576f8711af2b}\label{testcampaign_8cpp_a70f941fc8da35a6a2206576f8711af2b} 
+\index{testcampaign.cpp@{testcampaign.cpp}!EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR@{EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR}}
+\index{EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR@{EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR}{EXISTING\_CAMPAIGN\_CURRENT\_X\_COOR}}
+{\footnotesize\ttfamily \#define EXISTING\+\_\+\+CAMPAIGN\+\_\+\+CURRENT\+\_\+\+X\+\_\+\+COOR~2}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a534197a54a351009a28a97e524fc2468}\label{testcampaign_8cpp_a534197a54a351009a28a97e524fc2468} 
+\index{testcampaign.cpp@{testcampaign.cpp}!EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR@{EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR}}
+\index{EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR@{EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR}{EXISTING\_CAMPAIGN\_CURRENT\_Y\_COOR}}
+{\footnotesize\ttfamily \#define EXISTING\+\_\+\+CAMPAIGN\+\_\+\+CURRENT\+\_\+\+Y\+\_\+\+COOR~2}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_ad291c429d3e555ff99596da2d0365825}\label{testcampaign_8cpp_ad291c429d3e555ff99596da2d0365825} 
+\index{testcampaign.cpp@{testcampaign.cpp}!EXISTING\_CAMPAIGN\_INVALID\_X\_COOR@{EXISTING\_CAMPAIGN\_INVALID\_X\_COOR}}
+\index{EXISTING\_CAMPAIGN\_INVALID\_X\_COOR@{EXISTING\_CAMPAIGN\_INVALID\_X\_COOR}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{EXISTING\_CAMPAIGN\_INVALID\_X\_COOR}{EXISTING\_CAMPAIGN\_INVALID\_X\_COOR}}
+{\footnotesize\ttfamily \#define EXISTING\+\_\+\+CAMPAIGN\+\_\+\+INVALID\+\_\+\+X\+\_\+\+COOR~10}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a7f02a0bce3d77f3f0702d6214a8e2b20}\label{testcampaign_8cpp_a7f02a0bce3d77f3f0702d6214a8e2b20} 
+\index{testcampaign.cpp@{testcampaign.cpp}!EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR@{EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR}}
+\index{EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR@{EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR}{EXISTING\_CAMPAIGN\_INVALID\_Y\_COOR}}
+{\footnotesize\ttfamily \#define EXISTING\+\_\+\+CAMPAIGN\+\_\+\+INVALID\+\_\+\+Y\+\_\+\+COOR~-\/10}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a90fcf5e6eb0f44b0209f748780aca502}\label{testcampaign_8cpp_a90fcf5e6eb0f44b0209f748780aca502} 
+\index{testcampaign.cpp@{testcampaign.cpp}!EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT@{EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT}}
+\index{EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT@{EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT}{EXISTING\_CAMPAIGN\_MAPIDS\_COL\_COUNT}}
+{\footnotesize\ttfamily \#define EXISTING\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+COL\+\_\+\+COUNT~3}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a5a38a129cf963e108dd09ea27048c64b}\label{testcampaign_8cpp_a5a38a129cf963e108dd09ea27048c64b} 
+\index{testcampaign.cpp@{testcampaign.cpp}!EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT@{EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}}
+\index{EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT@{EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}{EXISTING\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}}
+{\footnotesize\ttfamily \#define EXISTING\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+ROW\+\_\+\+COUNT~3}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_abfc514352e9ec6083d2a54501260bf22}\label{testcampaign_8cpp_abfc514352e9ec6083d2a54501260bf22} 
+\index{testcampaign.cpp@{testcampaign.cpp}!EXISTING\_CAMPAIGN\_X\_COOR@{EXISTING\_CAMPAIGN\_X\_COOR}}
+\index{EXISTING\_CAMPAIGN\_X\_COOR@{EXISTING\_CAMPAIGN\_X\_COOR}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{EXISTING\_CAMPAIGN\_X\_COOR}{EXISTING\_CAMPAIGN\_X\_COOR}}
+{\footnotesize\ttfamily \#define EXISTING\+\_\+\+CAMPAIGN\+\_\+\+X\+\_\+\+COOR~2}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a1b50db0d2d1a794da25f9a0fc0b99325}\label{testcampaign_8cpp_a1b50db0d2d1a794da25f9a0fc0b99325} 
+\index{testcampaign.cpp@{testcampaign.cpp}!EXISTING\_CAMPAIGN\_Y\_COOR@{EXISTING\_CAMPAIGN\_Y\_COOR}}
+\index{EXISTING\_CAMPAIGN\_Y\_COOR@{EXISTING\_CAMPAIGN\_Y\_COOR}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{EXISTING\_CAMPAIGN\_Y\_COOR}{EXISTING\_CAMPAIGN\_Y\_COOR}}
+{\footnotesize\ttfamily \#define EXISTING\+\_\+\+CAMPAIGN\+\_\+\+Y\+\_\+\+COOR~2}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00025}{25}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a7f895162e5d478f9e6dd7ceb21cf22a4}\label{testcampaign_8cpp_a7f895162e5d478f9e6dd7ceb21cf22a4} 
+\index{testcampaign.cpp@{testcampaign.cpp}!NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE@{NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE}}
+\index{NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE@{NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE}{NEW\_CAMPAIGN\_MAPIDS\_CELL\_VALUE}}
+{\footnotesize\ttfamily \#define NEW\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+CELL\+\_\+\+VALUE~0}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a3c6f24e35ef9c7896f84a38d60bd8034}\label{testcampaign_8cpp_a3c6f24e35ef9c7896f84a38d60bd8034} 
+\index{testcampaign.cpp@{testcampaign.cpp}!NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT@{NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT}}
+\index{NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT@{NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT}{NEW\_CAMPAIGN\_MAPIDS\_COL\_COUNT}}
+{\footnotesize\ttfamily \#define NEW\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+COL\+\_\+\+COUNT~3}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a08e427f1fa510f4264afd3effa5af1ad}\label{testcampaign_8cpp_a08e427f1fa510f4264afd3effa5af1ad} 
+\index{testcampaign.cpp@{testcampaign.cpp}!NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT@{NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}}
+\index{NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT@{NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}{NEW\_CAMPAIGN\_MAPIDS\_ROW\_COUNT}}
+{\footnotesize\ttfamily \#define NEW\+\_\+\+CAMPAIGN\+\_\+\+MAPIDS\+\_\+\+ROW\+\_\+\+COUNT~3}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a37dfabb88603ff2356d3095ade72c8d6}\label{testcampaign_8cpp_a37dfabb88603ff2356d3095ade72c8d6} 
+\index{testcampaign.cpp@{testcampaign.cpp}!SAVED\_CAMPAIGNS\_FOLDER\_NAME@{SAVED\_CAMPAIGNS\_FOLDER\_NAME}}
+\index{SAVED\_CAMPAIGNS\_FOLDER\_NAME@{SAVED\_CAMPAIGNS\_FOLDER\_NAME}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVED\_CAMPAIGNS\_FOLDER\_NAME}{SAVED\_CAMPAIGNS\_FOLDER\_NAME}}
+{\footnotesize\ttfamily \#define SAVED\+\_\+\+CAMPAIGNS\+\_\+\+FOLDER\+\_\+\+NAME~"{}\textbackslash{}\textbackslash{}Saved\+Campaigns\textbackslash{}\textbackslash{}\+Test\+Campaigns"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+
+\Hypertarget{testcampaign_8cpp_a8718dd84ed94bf7fbbdab99517354da6}\label{testcampaign_8cpp_a8718dd84ed94bf7fbbdab99517354da6} 
+\index{testcampaign.cpp@{testcampaign.cpp}!SAVED\_CAMPAIGNS\_INVALID\_URI@{SAVED\_CAMPAIGNS\_INVALID\_URI}}
+\index{SAVED\_CAMPAIGNS\_INVALID\_URI@{SAVED\_CAMPAIGNS\_INVALID\_URI}!testcampaign.cpp@{testcampaign.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVED\_CAMPAIGNS\_INVALID\_URI}{SAVED\_CAMPAIGNS\_INVALID\_URI}}
+{\footnotesize\ttfamily \#define SAVED\+\_\+\+CAMPAIGNS\+\_\+\+INVALID\+\_\+\+URI~"{}Some\+Phony\+URI"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testcampaign_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{testcampaign_8cpp_source}{testcampaign.\+cpp}}.
+

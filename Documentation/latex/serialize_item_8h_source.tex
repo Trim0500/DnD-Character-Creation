@@ -1,0 +1,47 @@
+\doxysection{serialize\+Item.\+h}
+\hypertarget{serialize_item_8h_source}{}\label{serialize_item_8h_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/serializeItem.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/serializeItem.h}}
+\mbox{\hyperlink{serialize_item_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{item.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{itemcontainer_8h}{itemcontainer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitem}{item}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00017}00017\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00023}00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceserialize_item}{serializeItem}}\ \{}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00028}\mbox{\hyperlink{structserialize_item_1_1_item_record}{00028}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structserialize_item_1_1_item_record}{ItemRecord}}}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00030}\mbox{\hyperlink{structserialize_item_1_1_item_record_a177e46f264fb07b755579655d458a2d2}{00030}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structserialize_item_1_1_item_record_a177e46f264fb07b755579655d458a2d2}{itemId}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00031}\mbox{\hyperlink{structserialize_item_1_1_item_record_a5897ab1077852befefcab44cd5b615af}{00031}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structserialize_item_1_1_item_record_a5897ab1077852befefcab44cd5b615af}{itemName}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00032}\mbox{\hyperlink{structserialize_item_1_1_item_record_aca1eb19fe60c14395a68047bb4bfb93c}{00032}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structserialize_item_1_1_item_record_aca1eb19fe60c14395a68047bb4bfb93c}{enchantmentBonus}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00033}\mbox{\hyperlink{structserialize_item_1_1_item_record_a63e11d12012788dc85e0b2015371db7d}{00033}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}}\ \mbox{\hyperlink{structserialize_item_1_1_item_record_a63e11d12012788dc85e0b2015371db7d}{itemtype}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00034}\mbox{\hyperlink{structserialize_item_1_1_item_record_a7300054f0b2af1f9e70bc5bd184e9736}{00034}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{CharacterStats}}\ \mbox{\hyperlink{structserialize_item_1_1_item_record_a7300054f0b2af1f9e70bc5bd184e9736}{enchantmentType}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00035}\mbox{\hyperlink{structserialize_item_1_1_item_record_a8184aec371d465f01ccdd35e2d623d4a}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structserialize_item_1_1_item_record_a8184aec371d465f01ccdd35e2d623d4a}{weight}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00036}00036\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00037}00037\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00042}\mbox{\hyperlink{structserialize_item_1_1_item_container_record}{00042}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structserialize_item_1_1_item_container_record}{ItemContainerRecord}}}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00044}\mbox{\hyperlink{structserialize_item_1_1_item_container_record_a517b4239e1ebd9ffd6d2750e15516a03}{00044}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structserialize_item_1_1_item_container_record_a517b4239e1ebd9ffd6d2750e15516a03}{containerId}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00045}\mbox{\hyperlink{structserialize_item_1_1_item_container_record_abf971342c2548360d8ca1b69c7bbf4f4}{00045}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structserialize_item_1_1_item_container_record_abf971342c2548360d8ca1b69c7bbf4f4}{itemName}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00046}\mbox{\hyperlink{structserialize_item_1_1_item_container_record_ae0354b06a3e0432068af3d7bdb1aec5f}{00046}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}}\ \mbox{\hyperlink{structserialize_item_1_1_item_container_record_ae0354b06a3e0432068af3d7bdb1aec5f}{itemtype}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00047}\mbox{\hyperlink{structserialize_item_1_1_item_container_record_adb68cce2c93666934431871d4555be9b}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structserialize_item_1_1_item_container_record_adb68cce2c93666934431871d4555be9b}{weight}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00048}\mbox{\hyperlink{structserialize_item_1_1_item_container_record_a38426ae3b2533ab53dbb733409d0b9ec}{00048}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structserialize_item_1_1_item_container_record_a38426ae3b2533ab53dbb733409d0b9ec}{capacity}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00049}\mbox{\hyperlink{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841}{00049}}\ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841}{itemIDs}};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00050}00050\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00062}00062\ \ \ \ \ std::vector<Item*>\ \mbox{\hyperlink{namespaceserialize_item_a3eb7f4d80f0a3a3f1b64a469586ea526}{LoadItems}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00074}00074\ \ \ \ \ std::vector<ItemContainerRecord*>\ \mbox{\hyperlink{namespaceserialize_item_a2a870bf6413d2c41aa6f290e782ea25d}{LoadItemContainerRecords}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceserialize_item_a62e11cf99b2764370af7e341461babae}{SaveItems}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::vector<Item*>\&);}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00084}00084\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceserialize_item_a0851a057bcbcbec83648d134c08a6231}{SaveItemContainers}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::vector<ItemContainer*>\&);}
+\DoxyCodeLine{\Hypertarget{serialize_item_8h_source_l00093}00093\ \}}
+
+\end{DoxyCode}

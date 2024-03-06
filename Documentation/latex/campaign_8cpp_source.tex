@@ -1,0 +1,298 @@
+\doxysection{campaign.\+cpp}
+\hypertarget{campaign_8cpp_source}{}\label{campaign_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/campaign.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/campaign.cpp}}
+\mbox{\hyperlink{campaign_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{campaign_8h}{Campaign.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacecampaign}{campaign}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00018}00018\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ FindMapByID(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_mapID,\ \textcolor{keyword}{const}\ std::vector<Map::Map*>\&\ \_mapVector)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundMap\ =\ std::find\_if(\_mapVector.begin(),}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_mapVector.end(),}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\_mapID](\mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ map)\{return\ map-\/>GetMapID()\ ==\ \_mapID;\});}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundMap\ ==\ \_mapVector.end())\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Failed\ to\ find\ the\ map\ w/ID:\ "{}}\ +\ \_mapID);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*foundMap);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00049}00049\ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}\ BuildCampaignRecord(\mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}\ \_campaign)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}\ result;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structcampaign_1_1_campaign_record_a8ced47d618594bdf7cb44b97c342fa34}{campaignID}}\ =\ \_campaign.\mbox{\hyperlink{classcampaign_1_1_campaign_afb9e465401e5a1672382073a82df591c}{GetCampaignID}}();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structcampaign_1_1_campaign_record_aef49d993812d9b721179efd6af5b19e2}{numRows}}\ =\ \_campaign.\mbox{\hyperlink{classcampaign_1_1_campaign_a13d4328492b88ccfc913e593bdabe4e8}{GetMapIDs}}().size();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structcampaign_1_1_campaign_record_a26d80d71ebfaedfa784858b2c0c1b5d6}{numCols}}\ =\ \_campaign.\mbox{\hyperlink{classcampaign_1_1_campaign_a13d4328492b88ccfc913e593bdabe4e8}{GetMapIDs}}().at(0).size();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structcampaign_1_1_campaign_record_a23fa59a8b27dc3a96901bbd67f682151}{mapIDs}}\ =\ \_campaign.\mbox{\hyperlink{classcampaign_1_1_campaign_a13d4328492b88ccfc913e593bdabe4e8}{GetMapIDs}}();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structcampaign_1_1_campaign_record_ad818aaff58fff29156d0c516ce86cae6}{currentMapID}}\ =\ \_campaign.\mbox{\hyperlink{classcampaign_1_1_campaign_a7497223a9fcb92c738c999973ac5a2db}{GetCurrentMap}}().\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structcampaign_1_1_campaign_record_a31404e4a1eb74a67de2b3cbf76aeb4c0}{currentMapXCoor}}\ =\ \_campaign.\mbox{\hyperlink{classcampaign_1_1_campaign_a7497223a9fcb92c738c999973ac5a2db}{GetCurrentMap}}().\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structcampaign_1_1_campaign_record_ade162ec2f1352b1241c83d6856036a65}{currentMapYCoor}}\ =\ \_campaign.\mbox{\hyperlink{classcampaign_1_1_campaign_a7497223a9fcb92c738c999973ac5a2db}{GetCurrentMap}}().\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ std::vector<int>\ includedMapIDs;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ std::vector<Map::Map*>\ mapsInCampaign\ =\ \_campaign.\mbox{\hyperlink{classcampaign_1_1_campaign_a6e88e304a025488c77d69d33038d509d}{GetMapsInCampaign}}();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)mapsInCampaign.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ includedMapIDs.push\_back(mapsInCampaign.at(i)-\/>GetMapID());}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structcampaign_1_1_campaign_record_af4bbd4ea1c2a33063a9c64879a193429}{mapsInCampaign}}\ =\ includedMapIDs;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00081}00081\ \ \ \ \ std::string\ BuildCampaignCSVContent(\mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}\ \_campaignRecord)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ std::ostringstream\ mapIDsString;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ mapIDsString\ <<\ \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>>\ mapIDs\ =\ \_campaignRecord.\mbox{\hyperlink{structcampaign_1_1_campaign_record_a23fa59a8b27dc3a96901bbd67f682151}{mapIDs}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)mapIDs.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)mapIDs[i].size();\ ++j)}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ +\ 1\ ==\ mapIDs.size()\ \&\&\ j\ +\ 1\ ==\ mapIDs[i].size())\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapIDsString\ <<\ \textcolor{stringliteral}{"{}\{"{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{};"{}}\ <<\ j\ <<\ \textcolor{stringliteral}{"{};"{}}\ <<\ mapIDs[i][j]\ <<\ \textcolor{stringliteral}{"{}\}"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapIDsString\ <<\ \textcolor{stringliteral}{"{}\{"{}}\ <<\ i\ <<\ \textcolor{stringliteral}{"{};"{}}\ <<\ j\ <<\ \textcolor{stringliteral}{"{};"{}}\ <<\ mapIDs[i][j]\ <<\ \textcolor{stringliteral}{"{}\}:"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ mapIDsString\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ std::ostringstream\ mapsInCampaignString;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ mapsInCampaignString\ <<\ \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ std::vector<int>\ mapsInCampaign\ =\ \_campaignRecord.\mbox{\hyperlink{structcampaign_1_1_campaign_record_af4bbd4ea1c2a33063a9c64879a193429}{mapsInCampaign}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)mapsInCampaign.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ +\ 1\ ==\ mapsInCampaign.size())\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapsInCampaignString\ <<\ mapsInCampaign[i];}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ mapsInCampaignString\ <<\ mapsInCampaign[i]\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ mapsInCampaignString\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ std::ostringstream\ result;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ result\ <<\ \_campaignRecord.\mbox{\hyperlink{structcampaign_1_1_campaign_record_a8ced47d618594bdf7cb44b97c342fa34}{campaignID}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \_campaignRecord.\mbox{\hyperlink{structcampaign_1_1_campaign_record_aef49d993812d9b721179efd6af5b19e2}{numRows}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \_campaignRecord.\mbox{\hyperlink{structcampaign_1_1_campaign_record_a26d80d71ebfaedfa784858b2c0c1b5d6}{numCols}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ mapIDsString.str()}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \_campaignRecord.\mbox{\hyperlink{structcampaign_1_1_campaign_record_ad818aaff58fff29156d0c516ce86cae6}{currentMapID}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \_campaignRecord.\mbox{\hyperlink{structcampaign_1_1_campaign_record_a31404e4a1eb74a67de2b3cbf76aeb4c0}{currentMapXCoor}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \_campaignRecord.\mbox{\hyperlink{structcampaign_1_1_campaign_record_ade162ec2f1352b1241c83d6856036a65}{currentMapYCoor}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{},"{}}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ mapsInCampaignString.str();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}*\ LoadCampaignRecord(std::ifstream*\ \_fileStream)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}*\ result\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!\_fileStream-\/>eof())\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ nextLine\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(*\_fileStream,\ nextLine);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(nextLine);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ segmentList;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ segment\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ segment,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ segmentList.push\_back(segment);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a8ced47d618594bdf7cb44b97c342fa34}{campaignID}}\ =\ std::stoi(segmentList[0]);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_aef49d993812d9b721179efd6af5b19e2}{numRows}}\ =\ std::stoi(segmentList[1]);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a26d80d71ebfaedfa784858b2c0c1b5d6}{numCols}}\ =\ std::stoi(segmentList[2]);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<int>>\ mapIDs;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_aef49d993812d9b721179efd6af5b19e2}{numRows}};\ ++i)}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ colIDs;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a26d80d71ebfaedfa784858b2c0c1b5d6}{numCols}};\ ++j)}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colIDs.push\_back(0);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapIDs.push\_back(colIDs);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ std::regex\ numberRgx(\textcolor{stringliteral}{"{}[0-\/9]+"{}});}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ std::smatch\ mapCellValueMatch;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ std::regex\ mapIDCellRgx(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)\{[0-\/9]+;[0-\/9]+;[0-\/9]+\(\backslash\)\(\backslash\)\}"{}});}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(std::regex\_search(segmentList[3],\ mapCellValueMatch,\ mapIDCellRgx))\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ cellValueString\ =\ mapCellValueMatch.str();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ cellValueInfo;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::smatch\ numMatch;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::regex\_search(cellValueString,\ numMatch,\ numberRgx))\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cellValueInfo.push\_back(std::stoi(numMatch.str()));}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cellValueString\ =\ numMatch.suffix().str();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapIDs[cellValueInfo[0]][cellValueInfo[1]]\ =\ cellValueInfo[2];}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ segmentList[3]\ =\ mapCellValueMatch.suffix().str();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a23fa59a8b27dc3a96901bbd67f682151}{mapIDs}}\ =\ mapIDs;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_ad818aaff58fff29156d0c516ce86cae6}{currentMapID}}\ =\ std::stoi(segmentList[4]);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a31404e4a1eb74a67de2b3cbf76aeb4c0}{currentMapXCoor}}\ =\ std::stoi(segmentList[5]);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_ade162ec2f1352b1241c83d6856036a65}{currentMapYCoor}}\ =\ std::stoi(segmentList[6]);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00208}00208\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ std::smatch\ mapIDInCampaignMatch;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::regex\_search(segmentList[7],\ mapIDInCampaignMatch,\ numberRgx))\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_af4bbd4ea1c2a33063a9c64879a193429}{mapsInCampaign}}.push\_back(stoi(mapIDInCampaignMatch.str()));}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ segmentList[7]\ =\ mapIDInCampaignMatch.suffix().str();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00219}00219\ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00221}\mbox{\hyperlink{namespacecampaign}{00221}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecampaign}{campaign}}\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00222}\mbox{\hyperlink{classcampaign_1_1_campaign_a7d08206f784aaa67e5e8b791bec0d4cd}{00222}}\ \ \ \ \ \mbox{\hyperlink{classcampaign_1_1_campaign_a7d08206f784aaa67e5e8b791bec0d4cd}{Campaign::Campaign}}()\{\};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00223}00223\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00224}\mbox{\hyperlink{classcampaign_1_1_campaign_aa606b1c884d8c3230d9773a407a0111f}{00224}}\ \ \ \ \ \mbox{\hyperlink{classcampaign_1_1_campaign_a7d08206f784aaa67e5e8b791bec0d4cd}{Campaign::Campaign}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_rows,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_cols)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ nextCampaignID\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ campaignID\ =\ nextCampaignID;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ std::vector<std::vector<int>>\ newMapIDMatrix;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \_rows;\ ++i)}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ columnIDs;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ \_cols;\ ++j)}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columnIDs.push\_back(0);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ newMapIDMatrix.push\_back(columnIDs);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ mapIDs\ =\ newMapIDMatrix;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ std::vector<Map::Map*>\ emptyMapsInCampaignVector;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ mapsInCampaign\ =\ emptyMapsInCampaignVector;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00245}00245\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00247}\mbox{\hyperlink{classcampaign_1_1_campaign_a130ec162ee5fff17823e5b496820b1aa}{00247}}\ \ \ \ \ \mbox{\hyperlink{classcampaign_1_1_campaign_a7d08206f784aaa67e5e8b791bec0d4cd}{Campaign::Campaign}}(\textcolor{keywordtype}{int}\ \_existingCampaignID,}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<int>>\ \_mapMatrix,}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_map}{CampaignMap}}\ \_currentMap,}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Map::Map*>\ \_mapsInCampaign)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ campaignID\ =\ \_existingCampaignID;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ mapIDs\ =\ \_mapMatrix;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ currentMap\ =\ \_currentMap;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ mapsInCampaign\ =\ \_mapsInCampaign;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00255}00255\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00257}\mbox{\hyperlink{classcampaign_1_1_campaign_ae9f04d113a7961c08dcb4df38dfb8798}{00257}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classcampaign_1_1_campaign_ae9f04d113a7961c08dcb4df38dfb8798}{Campaign::AddMapToCampaign}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_row,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_col,\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}\&\ \_mapToAdd)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mapsInCampaign.size()\ >=\ mapIDs.size()\ *\ mapIDs[0].size())\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Too\ many\ maps!"{}});}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((\_row\ <\ 1\ ||\ \_row\ >\ (\textcolor{keywordtype}{int})mapIDs.size())\ ||\ (\_col\ <\ 1\ ||\ \_col\ >\ mapIDs[\_row\ -\/\ 1].size()))\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ message;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Invalid\ coordiantes:\ "{}}\ <<\ \_row\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \_col;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(message.str());}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mapIDs[\_row\ -\/\ 1][\_col\ -\/1]\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ mapsInCampaign.push\_back(\&\_mapToAdd);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mapIDAtCell\ =\ mapIDs[\_row\ -\/\ 1][\_col\ -\/1];}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ mapAtCell\ =\ std::find\_if(mapsInCampaign.begin(),\ mapsInCampaign.end(),\ [mapIDAtCell](\mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ map)\{return\ map-\/>GetMapID()\ ==\ mapIDAtCell;\});}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mapAtCell\ ==\ mapsInCampaign.end())\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Failed\ to\ find\ the\ map\ to\ replace\ through\ update"{}});}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ mapsInCampaign.erase(mapAtCell);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ mapsInCampaign.push\_back(\&\_mapToAdd);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ mapIDs[\_row\ -\/\ 1][\_col\ -\/\ 1]\ =\ \_mapToAdd.\mbox{\hyperlink{class_map_1_1_map_abdc27dfaf8a3904dc45ffeb396e60e6e}{GetMapID}}();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00282}00282\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00284}\mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{00284}}\ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{Campaign::GetMap}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_coordX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_coordY)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\_coordX\ <\ 1\ ||\ \_coordX\ >\ (\textcolor{keywordtype}{int})mapIDs.size())\ ||\ (\_coordY\ <\ 1\ ||\ \_coordY\ >\ mapIDs[\_coordX\ -\/\ 1].size()))\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ message;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ message\ <<\ \textcolor{stringliteral}{"{}Invalid\ coordiantes:\ "{}}\ <<\ \_coordX\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \_coordY;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(message.str());}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ foundMapID\ =\ mapIDs[\_coordX\ -\/\ 1][\_coordY\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ result\ =\ FindMapByID(foundMapID,\ mapsInCampaign);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00294}00294\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}}\ =\ result-\/>\mbox{\hyperlink{class_map_1_1_map_abdc27dfaf8a3904dc45ffeb396e60e6e}{GetMapID}}();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}}\ =\ \_coordX;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00296}00296\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}}\ =\ \_coordY;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00299}00299\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00301}\mbox{\hyperlink{namespacecampaign_a3f28ed2bf1bfc32b4d702a512394cec4}{00301}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacecampaign_a3f28ed2bf1bfc32b4d702a512394cec4}{SaveCampaigns}}(\textcolor{keyword}{const}\ std::string\&\ \_folderDir,\ \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}\ \_campaignToSave)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00302}00302\ \ \ \ \ \ \ \ \ std::ostringstream\ fileNamePattern;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ fileNamePattern\ <<\ \textcolor{stringliteral}{"{}Campaign"{}}\ <<\ \_campaignToSave.\mbox{\hyperlink{classcampaign_1_1_campaign_afb9e465401e5a1672382073a82df591c}{GetCampaignID}}()\ <<\ \textcolor{stringliteral}{"{}.csv"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00304}00304\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ ostringstream\ fullURI;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ fullURI\ <<\ \_folderDir\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ <<\ fileNamePattern.str();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00307}00307\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}\ recordToSave\ =\ BuildCampaignRecord(\_campaignToSave);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00309}00309\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ std::string\ csvOutput\ =\ BuildCampaignCSVContent(recordToSave);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ std::ofstream\ campaignFile(fullURI.str());}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ campaignFile\ <<\ csvOutput;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00314}00314\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ campaignFile.close();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00316}00316\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00318}\mbox{\hyperlink{namespacecampaign_a5ceea3a63ff06811eea8f560c701bbcb}{00318}}\ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}*\ \mbox{\hyperlink{namespacecampaign_a5ceea3a63ff06811eea8f560c701bbcb}{LoadCampaign}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_campaignID,\ \textcolor{keyword}{const}\ std::string\&\ \_folderDir)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ std::ostringstream\ fullURI;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ fullURI\ <<\ \_folderDir\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}\ <<\ \textcolor{stringliteral}{"{}Campaign"{}}\ <<\ \_campaignID\ <<\ \textcolor{stringliteral}{"{}.csv"{}};}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00321}00321\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ std::ifstream\ campaignFileInputStream(fullURI.str());}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!campaignFileInputStream.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ invalid\_argument(\textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file\ at:\ "{}}\ +\ fullURI.str());}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}*\ resultRecord\ =\ LoadCampaignRecord(\&campaignFileInputStream);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ campaignFileInputStream.close();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultRecord;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00332}00332\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00333}00333\ \}}
+
+\end{DoxyCode}

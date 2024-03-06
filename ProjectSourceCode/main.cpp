@@ -5,19 +5,9 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
+#include <filesystem>
 
-#include "Character.h"
-#include "Dice.h"
-#include "Map.h"
-#include "demoitem.h"
-#include "DiceDemo.h"
-#include "demoCharacter.h"
-
-using namespace std;
 using namespace CppUnit;
-using namespace item;
-using namespace itemcontainer;
-using namespace demoitem;
 
 int main()
 {
@@ -38,14 +28,6 @@ int main()
 	if (!wasSucessful) {
 		return 1;
 	}
-	
-	ShowCaseItemCreation();
-
-	DiceDemo();
-
-	demo_character();
-
-	Map::Map* map = Map::Map::Create(); //  this function takes care of everything you need to create a map
 
 	getchar();
 
