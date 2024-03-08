@@ -1,12 +1,18 @@
 #include "Map.h"
 #include <iostream>
-#include <vector>
-#include <stack>
 #include <list>
 #include <queue>
 #include <regex>
+#include <stack>
+#include <vector>
 
 using namespace std;
+
+//default constructor
+Map::Map::Map() {
+	nextMapID += 1;
+	mapID = nextMapID;
+}
 
 //basic constructor
 Map::Map::Map(int r, int c) {
@@ -20,6 +26,26 @@ Map::Map::Map(int r, int c) {
 	for (int i = 0; i < rows; i++) {
 		grid.push_back(vector<Cell_Type>(cols, Cell_Type::empty));
 	}
+}
+
+void Map::Map::setRows(int r) {
+	this->rows = r;
+}
+void Map::Map::setCols(int c) {
+	this->cols = c;
+}
+void Map::Map::setEnd_Cell(int row, int col) {
+	this->end_cell[0] = row;
+	this->end_cell[1] = col;
+}
+void Map::Map::setEmpty(int row, int col) {
+	this->grid[row][col] = Cell_Type::empty;
+}
+void Map::Map::setWall(int row, int col) {
+	this->grid[row][col] = Cell_Type::wall;
+}
+void Map::Map::setSpecial(int row, int col) {
+	this->grid[row][col] = Cell_Type::special;
 }
 
 Map::Map* Map::Map::Create() {
@@ -125,6 +151,12 @@ Map::Map* Map::Map::Create() {
 	}
 
 }
+
+//create rows
+
+//create columns
+
+//
 
 void Map::Map::Customize() {
 	bool stop = false;
@@ -293,8 +325,8 @@ bool Map::Map::IsTherePath() {
 
 //validate the next cell
 bool Map::Map::ValidCell(int nextRow, int nextCol, vector<vector<bool>> visited) {
-	return (nextRow >= 0 && nextRow < rows&&
-		nextCol >= 0 && nextCol < cols&&
+	return (nextRow >= 0 && nextRow < rows &&
+		nextCol >= 0 && nextCol < cols &&
 		grid[nextRow][nextCol] != Cell_Type::wall &&
 		!visited[nextRow][nextCol]);
 }

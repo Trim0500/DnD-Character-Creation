@@ -5,8 +5,6 @@
 * @author Michelle Polonsky
 */
 
-#include <vector>
-#include <string>
 
 using namespace std;
 
@@ -21,9 +19,9 @@ namespace Map {
 	* \brief Enum to represent the posible cell types on a map
 	*/
 	enum class Cell_Type {
-		empty='_',//empty cell, character can move through it.
-		wall='w',//wall cell, character cannot move through it.
-		special='s'//special cell, character has a special interraction, can move after interraction.
+		empty = '_',//empty cell, character can move through it.
+		wall = 'w',//wall cell, character cannot move through it.
+		special = 's'//special cell, character has a special interraction, can move after interraction.
 	};
 
 	/*!
@@ -43,23 +41,43 @@ namespace Map {
 	* \brief Class to encapsulate the map functionality
 	*/
 	class Map {
-	public: 
-		int GetMapID() {return mapID;};
+	public:
+
+		/*!
+		* \fn Map
+		* \brief Constructor to build a basic map provided by user
+		*/
+		Map();
+
 		/*!
 		* \fn Map
 		* \brief Constructor to build a basic map provided by user
 		*/
 		Map(int rows, int cols);
 
-		const int Rows() { return rows; };
-		const int Cols() { return cols; };
-		const int* End_Cell() { return end_cell; };
-		const vector<vector<Cell_Type>>& Grid() { return grid; };
+		/*!
+		* \brief Getters
+		*/
+		int GetMapID() { return mapID; };
+		const int getRows() { return rows; };
+		const int getCols() { return cols; };
+		const int* getEnd_Cell() { return end_cell; };
+		const vector<vector<Cell_Type>>& getGrid() { return grid; };
+
+		/*!
+		* \brief Setters
+		*/
+		void setRows(int rows);
+		void setCols(int cols);
+		void setEnd_Cell(int row, int col);
+		void setEmpty(int row, int col);
+		void setWall(int row, int col);
+		void setSpecial(int row, int col);
 
 		/*!
 		* \fn Create
 		* \brief Prompts user for map inputs
-		*/ 
+		*/
 		static Map* Create();
 
 		/*!
@@ -94,8 +112,11 @@ namespace Map {
 
 		//DEBUG ONLY
 		void ChangeCell(int row, int col, Cell_Type);
-	
+
 	private:
+		/*!
+		*
+		*/
 		static inline int nextMapID = 0;
 		/*!
 		* \var mapID
