@@ -146,6 +146,8 @@ namespace item {
 
 			friend bool operator==(const Item& lhs, const Item& rhs) { return lhs.itemName == rhs.itemName; };
 
+			int GetNextItemID() { return nextItemId; };
+
 			void SetItemIDCounter(int _nextID) { nextItemId = _nextID; };
 
 			int GetItemId() { return itemId; };
