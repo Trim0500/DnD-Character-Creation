@@ -1,9 +1,0 @@
-Package: cppunit
-Version: 1.15.1
-Port-Version: 4
-Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
-Architecture: x86-windows
-Multi-Arch: same
-Abi: 40783ad6ee8bf593a64741cb39b1cc960f41a787491c6010fa402c7c39367f10
-Description: Unit testing framework module for the C++ programming language
-Status: install ok half-installed

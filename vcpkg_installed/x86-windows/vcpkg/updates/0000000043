@@ -1,9 +1,0 @@
-Package: gperf
-Version: 3.1
-Port-Version: 6
-Depends: vcpkg-cmake, vcpkg-cmake-config
-Architecture: x64-windows
-Multi-Arch: same
-Abi: 3eb91ce443c7e2e1f10c440c178201fc490ac2ae45ebea8f266fa8bf9bbcd61c
-Description: GNU perfect hash function generator
-Status: install ok installed

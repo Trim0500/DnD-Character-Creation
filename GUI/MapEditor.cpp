@@ -24,6 +24,10 @@ void MapEditor::create(){
 	// TODO: create empty map
 }
 
+void MapEditor::save_data() {
+	// TODO: get values to save map
+}
+
 void MapEditor::populate_browser() {
 	std::string label;
 	for (int i = 0; i < 10; i++) {

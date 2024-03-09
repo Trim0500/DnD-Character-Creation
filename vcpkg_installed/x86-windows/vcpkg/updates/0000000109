@@ -1,7 +1,0 @@
-Package: fltk
-Feature: opengl
-Depends: opengl
-Architecture: x64-windows
-Multi-Arch: same
-Description: OpenGL support
-Status: install ok installed

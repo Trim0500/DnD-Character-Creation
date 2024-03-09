@@ -72,7 +72,19 @@
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testSerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\BaseEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\ItemEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\MainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\MapEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -134,7 +146,22 @@
     <ClInclude Include="ProjectSourceCode\testcampaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="testSerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\BaseEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\CampaignEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\ItemEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\MainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\MapEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

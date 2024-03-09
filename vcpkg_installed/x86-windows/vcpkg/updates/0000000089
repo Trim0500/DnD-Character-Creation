@@ -1,9 +1,0 @@
-Package: pthread
-Version: 3.0.0
-Port-Version: 2
-Depends: pthreads
-Architecture: x64-windows
-Multi-Arch: same
-Abi: 11ebaaeab875a3e00a0280886452bb1d7f46611e2e4171ee1a6013e30f278031
-Description: empty package, linking to other port
-Status: install ok installed

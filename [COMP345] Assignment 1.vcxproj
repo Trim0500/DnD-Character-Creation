@@ -93,6 +93,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GUI\BaseEditor.cpp" />
+    <ClCompile Include="GUI\ItemEditor.cpp" />
+    <ClCompile Include="GUI\MainMenu.cpp" />
+    <ClCompile Include="GUI\MapEditor.cpp" />
     <ClCompile Include="ProjectSourceCode\demoitem.cpp" />
     <ClCompile Include="ProjectSourceCode\DiceDemo.cpp" />
     <ClCompile Include="ProjectSourceCode\demoCharacter.cpp" />
@@ -108,13 +112,18 @@
     <ClCompile Include="ProjectSourceCode\Map.cpp" />
     <ClCompile Include="ProjectSourceCode\testMap.cpp" />
     <ClCompile Include="ProjectSourceCode\serializeItem.cpp" />
+    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\testserializeitem.cpp" />
     <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
-    <ClCompile Include="testSerializeCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GUI\BaseEditor.h" />
+    <ClInclude Include="GUI\CampaignEditor.h" />
+    <ClInclude Include="GUI\ItemEditor.h" />
+    <ClInclude Include="GUI\MainMenu.h" />
+    <ClInclude Include="GUI\MapEditor.h" />
     <ClInclude Include="ProjectSourceCode\demoitem.h" />
     <ClInclude Include="ProjectSourceCode\DiceDemo.h" />
     <ClInclude Include="ProjectSourceCode\demoCharacter.h" />
@@ -130,11 +139,11 @@
     <ClInclude Include="ProjectSourceCode\Map.h" />
     <ClInclude Include="ProjectSourceCode\testMap.h" />
     <ClInclude Include="ProjectSourceCode\serializeItem.h" />
+    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\testserializeitem.h" />
     <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\campaign.h" />
     <ClInclude Include="ProjectSourceCode\testcampaign.h" />
-    <ClInclude Include="testSerializeCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

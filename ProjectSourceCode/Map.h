@@ -1,3 +1,4 @@
+#pragma once
 /*!
 * \file Map.h
 * \brief Header file for the Map class

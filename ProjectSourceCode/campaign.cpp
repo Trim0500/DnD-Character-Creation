@@ -302,7 +302,7 @@ namespace campaign {
         std::ostringstream fileNamePattern;
         fileNamePattern << "Campaign" << _campaignToSave.GetCampaignID() << ".csv";
 
-        ostringstream fullURI;
+        std::ostringstream fullURI;
         fullURI << _folderDir << "\\" << fileNamePattern.str();
 
         CampaignRecord recordToSave = BuildCampaignRecord(_campaignToSave);
@@ -321,7 +321,7 @@ namespace campaign {
 
         std::ifstream campaignFileInputStream(fullURI.str());
         if (!campaignFileInputStream.is_open()) {
-			throw invalid_argument("Failed to open the file at: " + fullURI.str());
+			throw std::invalid_argument("Failed to open the file at: " + fullURI.str());
 		}
 
         CampaignRecord* resultRecord = LoadCampaignRecord(&campaignFileInputStream);

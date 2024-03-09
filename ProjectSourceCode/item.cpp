@@ -13,6 +13,7 @@
 #include "item.h"
 
 // using namespace std;
+using std::string;
 
 namespace {
 	/*!

@@ -13,8 +13,8 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
-#include "ProjectSourceCode/Character.h"
-#include "ProjectSourceCode/SerializeCharacter.h"
+#include "./Character.h"
+#include "./SerializeCharacter.h"
 
 class TestSerializeCharacter : public CppUnit::TestFixture
 {

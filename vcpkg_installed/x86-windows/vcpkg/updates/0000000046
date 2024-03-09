@@ -1,9 +1,0 @@
-Package: gettext
-Version: 0.21.1
-Port-Version: 3
-Depends: gettext-libintl
-Architecture: x86-windows
-Multi-Arch: same
-Abi: 1aceffca5a4eaa0683bed861d2fcdea2ddd5c05847e1edac82d7d6f8df3b6705
-Description: A GNU framework to help produce multi-lingual messages.
-Status: install ok half-installed

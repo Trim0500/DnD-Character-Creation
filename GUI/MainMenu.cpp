@@ -10,25 +10,19 @@ using namespace CampaignEditor;
 MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT) {
 	
 	menu = new Fl_Menu_Bar(0,0, WINDOW_WIDTH, 30, "Campaign Editor");
-	Fl_Menu_Item bar[] = {
-		{"&open", FL_CTRL+'o', MainMenu::static_open, (void*)this},
-		{"&save", FL_CTRL+'s', MainMenu::static_save, (void*)this},
-		{"save as...", FL_SHIFT+'s', MainMenu::static_save_as, (void*)this}
-	};
-	menu->copy(bar);
-	// const int window_width = WINDOW_WIDTH;
-	// const int window_height = WINDOW_HEIGHT;
-
-	tabs = new Fl_Tabs(10, 30, WINDOW_WIDTH, WINDOW_HEIGHT);
-	ig = new Fl_Group(20, 30, WINDOW_WIDTH, WINDOW_HEIGHT - 150, "Items");
+	menu->add("open", FL_CTRL+'o', MainMenu::static_open, (void*)this);
+	menu->add("save", FL_CTRL+'s', MainMenu::static_save, (void*)this);
+	// menu->end();
+	tabs = new Fl_Tabs(10, 30, WINDOW_WIDTH, WINDOW_HEIGHT-30);
+	ig = new Fl_Group(20, 30, WINDOW_WIDTH, WINDOW_HEIGHT - 50, "Items");
 	{
-		ie = new ItemEditor(50, 50, WINDOW_WIDTH - 150, WINDOW_HEIGHT - 150);
+		ie = new ItemEditor(20, 30, WINDOW_WIDTH - 150, WINDOW_HEIGHT - 50);
 	}
 	ig->end();
 
-	mg = new Fl_Group(20, 30, WINDOW_WIDTH - 40, WINDOW_HEIGHT - 150, "Map");
+	mg = new Fl_Group(20, 30, WINDOW_WIDTH - 40, WINDOW_HEIGHT - 50, "Map");
 	{
-		me = new MapEditor(50, 50, WINDOW_WIDTH - 150, WINDOW_HEIGHT - 150);
+		me = new MapEditor(20, 30, WINDOW_WIDTH - 150, WINDOW_HEIGHT - 50);
 	}
 	mg->end();
 
@@ -38,7 +32,4 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT) {
 }
 
 void MainMenu::start() {
-	ie->populate_browser();
-	this->show();
-
 }

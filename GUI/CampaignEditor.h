@@ -1,6 +1,7 @@
 #pragma once
 
 #include <FL/Fl_Pack.H>
+#include <FL/Fl_Hold_Browser.H>
 
 #include "../ProjectSourceCode/campaign.h"
 
@@ -19,6 +20,6 @@ namespace CampaignEditor {
 
 		Fl_Hold_Browser* map_browser;
 		Campaign * campaign;
-	}
+	};
 }
 

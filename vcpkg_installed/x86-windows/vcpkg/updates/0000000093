@@ -1,9 +1,0 @@
-Package: gettext-libintl
-Version: 0.21.1
-Port-Version: 1
-Depends: libiconv
-Architecture: x64-windows
-Multi-Arch: same
-Abi: 0c82d290c4d62885e313e2935575e5fc3b250f4dd56229a7046d9a0910436e19
-Description: The libintl C library from GNU gettext-runtime.
-Status: install ok installed

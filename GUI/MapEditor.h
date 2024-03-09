@@ -7,7 +7,7 @@
 #include <FL/Fl_Box.H>
 #include <vector>
 #include "BaseEditor.h"
-#include "../DnD Character Creation Source Code/Map.h"
+#include "../ProjectSourceCode/Map.h"
 
 namespace CampaignEditor
 {
@@ -41,6 +41,7 @@ namespace CampaignEditor
 		MapCellButton *get_cell(int x, int y) { return cell_buttons[y][x]; }
 		void create();
 		void load_data();
+		void save_data();
 	protected:
 		;
 
