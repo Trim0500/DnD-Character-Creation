@@ -15,96 +15,126 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DnD Character Creation Source Code\main.cpp">
+    <ClCompile Include="ProjectSourceCode\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\item.cpp">
+    <ClCompile Include="ProjectSourceCode\item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\itemcontainer.cpp">
+    <ClCompile Include="ProjectSourceCode\itemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\testitem.cpp">
+    <ClCompile Include="ProjectSourceCode\testitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\Character.cpp">
+    <ClCompile Include="ProjectSourceCode\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\Dice.cpp">
+    <ClCompile Include="ProjectSourceCode\Dice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\testitemcontainer.cpp">
+    <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\testCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\testCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\testDice.cpp">
+    <ClCompile Include="ProjectSourceCode\testDice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\demoitem.cpp">
+    <ClCompile Include="ProjectSourceCode\demoitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\DiceDemo.cpp">
+    <ClCompile Include="ProjectSourceCode\DiceDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\demoCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\demoCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\Map.cpp">
+    <ClCompile Include="ProjectSourceCode\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DnD Character Creation Source Code\testMap.cpp">
+    <ClCompile Include="ProjectSourceCode\testMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\serializeItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\testserializeitem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\campaign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\testcampaign.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testSerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DnD Character Creation Source Code\item.h">
+    <ClInclude Include="ProjectSourceCode\item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\itemcontainer.h">
+    <ClInclude Include="ProjectSourceCode\itemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\testitem.h">
+    <ClInclude Include="ProjectSourceCode\testitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\Dice.h">
+    <ClInclude Include="ProjectSourceCode\Dice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\Character.h">
+    <ClInclude Include="ProjectSourceCode\Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\testitemcontainer.h">
+    <ClInclude Include="ProjectSourceCode\testitemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\testCharacter.h">
+    <ClInclude Include="ProjectSourceCode\testCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\testitemidcounter.h">
+    <ClInclude Include="ProjectSourceCode\testitemidcounter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\testDice.h">
+    <ClInclude Include="ProjectSourceCode\testDice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\demoitem.h">
+    <ClInclude Include="ProjectSourceCode\demoitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\DiceDemo.h">
+    <ClInclude Include="ProjectSourceCode\DiceDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\demoCharacter.h">
+    <ClInclude Include="ProjectSourceCode\demoCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\Map.h">
+    <ClInclude Include="ProjectSourceCode\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DnD Character Creation Source Code\testMap.h">
+    <ClInclude Include="ProjectSourceCode\testMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\serializeItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\testserializeitem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\SerializeCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\campaign.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\testcampaign.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testSerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -16,6 +16,7 @@
     <ProjectGuid>{ea5958e6-0f72-4c74-88e1-aa190e7ea305}</ProjectGuid>
     <RootNamespace>COMP345Assignment1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>[COMP345]Project</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -92,40 +93,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DnD Character Creation Source Code\demoitem.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\DiceDemo.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\demoCharacter.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\GUI\ItemEditor.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\item.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\itemcontainer.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\Character.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\main.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\SerializeCharacter.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\testCharacter.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\testDice.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\testitem.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\testitemcontainer.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\Dice.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\Map.cpp" />
-    <ClCompile Include="DnD Character Creation Source Code\testMap.cpp" />
+    <ClCompile Include="ProjectSourceCode\demoitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\DiceDemo.cpp" />
+    <ClCompile Include="ProjectSourceCode\demoCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\item.cpp" />
+    <ClCompile Include="ProjectSourceCode\itemcontainer.cpp" />
+    <ClCompile Include="ProjectSourceCode\Character.cpp" />
+    <ClCompile Include="ProjectSourceCode\main.cpp" />
+    <ClCompile Include="ProjectSourceCode\testCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\testDice.cpp" />
+    <ClCompile Include="ProjectSourceCode\testitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp" />
+    <ClCompile Include="ProjectSourceCode\Dice.cpp" />
+    <ClCompile Include="ProjectSourceCode\Map.cpp" />
+    <ClCompile Include="ProjectSourceCode\testMap.cpp" />
+    <ClCompile Include="ProjectSourceCode\serializeItem.cpp" />
+    <ClCompile Include="ProjectSourceCode\testserializeitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\campaign.cpp" />
+    <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
+    <ClCompile Include="testSerializeCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DnD Character Creation Source Code\demoitem.h" />
-    <ClInclude Include="DnD Character Creation Source Code\DiceDemo.h" />
-    <ClInclude Include="DnD Character Creation Source Code\demoCharacter.h" />
-    <ClInclude Include="DnD Character Creation Source Code\GUI\ItemEditor.h" />
-    <ClInclude Include="DnD Character Creation Source Code\item.h" />
-    <ClInclude Include="DnD Character Creation Source Code\itemcontainer.h" />
-    <ClInclude Include="DnD Character Creation Source Code\SerializeCharacter.h" />
-    <ClInclude Include="DnD Character Creation Source Code\testCharacter.h" />
-    <ClInclude Include="DnD Character Creation Source Code\testDice.h" />
-    <ClInclude Include="DnD Character Creation Source Code\testitem.h" />
-    <ClInclude Include="DnD Character Creation Source Code\Character.h" />
-    <ClInclude Include="DnD Character Creation Source Code\Dice.h" />
-    <ClInclude Include="DnD Character Creation Source Code\testitemcontainer.h" />
-    <ClInclude Include="DnD Character Creation Source Code\testitemidcounter.h" />
-    <ClInclude Include="DnD Character Creation Source Code\Map.h" />
-    <ClInclude Include="DnD Character Creation Source Code\testMap.h" />
+    <ClInclude Include="ProjectSourceCode\demoitem.h" />
+    <ClInclude Include="ProjectSourceCode\DiceDemo.h" />
+    <ClInclude Include="ProjectSourceCode\demoCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\item.h" />
+    <ClInclude Include="ProjectSourceCode\itemcontainer.h" />
+    <ClInclude Include="ProjectSourceCode\testCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\testDice.h" />
+    <ClInclude Include="ProjectSourceCode\testitem.h" />
+    <ClInclude Include="ProjectSourceCode\Character.h" />
+    <ClInclude Include="ProjectSourceCode\Dice.h" />
+    <ClInclude Include="ProjectSourceCode\testitemcontainer.h" />
+    <ClInclude Include="ProjectSourceCode\testitemidcounter.h" />
+    <ClInclude Include="ProjectSourceCode\Map.h" />
+    <ClInclude Include="ProjectSourceCode\testMap.h" />
+    <ClInclude Include="ProjectSourceCode\serializeItem.h" />
+    <ClInclude Include="ProjectSourceCode\testserializeitem.h" />
+    <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\campaign.h" />
+    <ClInclude Include="ProjectSourceCode\testcampaign.h" />
+    <ClInclude Include="testSerializeCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

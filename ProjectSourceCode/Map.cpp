@@ -10,6 +10,8 @@
 
 //basic constructor
 Map::Map::Map(int r, int c) {
+	nextMapID += 1;
+	mapID = nextMapID;
 	rows = r;
 	cols = c;
 	end_cell[0] = r - 1;

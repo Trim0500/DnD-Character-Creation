@@ -1,0 +1,89 @@
+\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/testserializeitem.cpp File Reference}
+\hypertarget{testserializeitem_8cpp}{}\label{testserializeitem_8cpp}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testserializeitem.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testserializeitem.cpp}}
+
+
+Test implementation for Item serialization.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include "{}testserializeitem.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0}{INVALID\+\_\+\+FILE\+\_\+\+URI}}~"{}Some\+Dumb\+URI.\+csv"{}
+\item 
+\#define \mbox{\hyperlink{testserializeitem_8cpp_a97e708e72db1412fa3e1b7a50fd12124}{LOAD\+\_\+\+SAVED\+\_\+\+ITEMS\+\_\+\+URI}}~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Test\+Load\+Saved\+Items.\+csv"{}
+\item 
+\#define \mbox{\hyperlink{testserializeitem_8cpp_a66aaf19046c76b03201d991cb8b86558}{LOAD\+\_\+\+SAVED\+\_\+\+CONTAINERS\+\_\+\+URI}}~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Test\+Load\+Saved\+Item\+Containers.\+csv"{}
+\item 
+\#define \mbox{\hyperlink{testserializeitem_8cpp_a843605b7d3dd2482103ca2ee1dce65f1}{SAVE\+\_\+\+SAVED\+\_\+\+ITEMS\+\_\+\+URI}}~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Test\+Save\+Saved\+Items.\+csv"{}
+\item 
+\#define \mbox{\hyperlink{testserializeitem_8cpp_a75cf3db2030d2de69a3c1c5d70b00c6d}{SAVE\+\_\+\+SAVED\+\_\+\+CONTAINERS\+\_\+\+URI}}~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Test\+Save\+Saved\+Item\+Containers.\+csv"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test implementation for Item serialization. 
+
+
+
+Definition in file \mbox{\hyperlink{testserializeitem_8cpp_source}{testserializeitem.\+cpp}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0}\label{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0} 
+\index{testserializeitem.cpp@{testserializeitem.cpp}!INVALID\_FILE\_URI@{INVALID\_FILE\_URI}}
+\index{INVALID\_FILE\_URI@{INVALID\_FILE\_URI}!testserializeitem.cpp@{testserializeitem.cpp}}
+\doxysubsubsection{\texorpdfstring{INVALID\_FILE\_URI}{INVALID\_FILE\_URI}}
+{\footnotesize\ttfamily \#define INVALID\+\_\+\+FILE\+\_\+\+URI~"{}Some\+Dumb\+URI.\+csv"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testserializeitem_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{testserializeitem_8cpp_source}{testserializeitem.\+cpp}}.
+
+\Hypertarget{testserializeitem_8cpp_a66aaf19046c76b03201d991cb8b86558}\label{testserializeitem_8cpp_a66aaf19046c76b03201d991cb8b86558} 
+\index{testserializeitem.cpp@{testserializeitem.cpp}!LOAD\_SAVED\_CONTAINERS\_URI@{LOAD\_SAVED\_CONTAINERS\_URI}}
+\index{LOAD\_SAVED\_CONTAINERS\_URI@{LOAD\_SAVED\_CONTAINERS\_URI}!testserializeitem.cpp@{testserializeitem.cpp}}
+\doxysubsubsection{\texorpdfstring{LOAD\_SAVED\_CONTAINERS\_URI}{LOAD\_SAVED\_CONTAINERS\_URI}}
+{\footnotesize\ttfamily \#define LOAD\+\_\+\+SAVED\+\_\+\+CONTAINERS\+\_\+\+URI~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Test\+Load\+Saved\+Item\+Containers.\+csv"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testserializeitem_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{testserializeitem_8cpp_source}{testserializeitem.\+cpp}}.
+
+\Hypertarget{testserializeitem_8cpp_a97e708e72db1412fa3e1b7a50fd12124}\label{testserializeitem_8cpp_a97e708e72db1412fa3e1b7a50fd12124} 
+\index{testserializeitem.cpp@{testserializeitem.cpp}!LOAD\_SAVED\_ITEMS\_URI@{LOAD\_SAVED\_ITEMS\_URI}}
+\index{LOAD\_SAVED\_ITEMS\_URI@{LOAD\_SAVED\_ITEMS\_URI}!testserializeitem.cpp@{testserializeitem.cpp}}
+\doxysubsubsection{\texorpdfstring{LOAD\_SAVED\_ITEMS\_URI}{LOAD\_SAVED\_ITEMS\_URI}}
+{\footnotesize\ttfamily \#define LOAD\+\_\+\+SAVED\+\_\+\+ITEMS\+\_\+\+URI~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Test\+Load\+Saved\+Items.\+csv"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testserializeitem_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{testserializeitem_8cpp_source}{testserializeitem.\+cpp}}.
+
+\Hypertarget{testserializeitem_8cpp_a75cf3db2030d2de69a3c1c5d70b00c6d}\label{testserializeitem_8cpp_a75cf3db2030d2de69a3c1c5d70b00c6d} 
+\index{testserializeitem.cpp@{testserializeitem.cpp}!SAVE\_SAVED\_CONTAINERS\_URI@{SAVE\_SAVED\_CONTAINERS\_URI}}
+\index{SAVE\_SAVED\_CONTAINERS\_URI@{SAVE\_SAVED\_CONTAINERS\_URI}!testserializeitem.cpp@{testserializeitem.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVE\_SAVED\_CONTAINERS\_URI}{SAVE\_SAVED\_CONTAINERS\_URI}}
+{\footnotesize\ttfamily \#define SAVE\+\_\+\+SAVED\+\_\+\+CONTAINERS\+\_\+\+URI~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Test\+Save\+Saved\+Item\+Containers.\+csv"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testserializeitem_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{testserializeitem_8cpp_source}{testserializeitem.\+cpp}}.
+
+\Hypertarget{testserializeitem_8cpp_a843605b7d3dd2482103ca2ee1dce65f1}\label{testserializeitem_8cpp_a843605b7d3dd2482103ca2ee1dce65f1} 
+\index{testserializeitem.cpp@{testserializeitem.cpp}!SAVE\_SAVED\_ITEMS\_URI@{SAVE\_SAVED\_ITEMS\_URI}}
+\index{SAVE\_SAVED\_ITEMS\_URI@{SAVE\_SAVED\_ITEMS\_URI}!testserializeitem.cpp@{testserializeitem.cpp}}
+\doxysubsubsection{\texorpdfstring{SAVE\_SAVED\_ITEMS\_URI}{SAVE\_SAVED\_ITEMS\_URI}}
+{\footnotesize\ttfamily \#define SAVE\+\_\+\+SAVED\+\_\+\+ITEMS\+\_\+\+URI~"{}\textbackslash{}\textbackslash{}Saved\+Items\textbackslash{}\textbackslash{}\+Test\+Save\+Saved\+Items.\+csv"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testserializeitem_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{testserializeitem_8cpp_source}{testserializeitem.\+cpp}}.
+

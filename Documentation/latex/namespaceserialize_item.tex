@@ -1,0 +1,71 @@
+\doxysection{serialize\+Item Namespace Reference}
+\hypertarget{namespaceserialize_item}{}\label{namespaceserialize_item}\index{serializeItem@{serializeItem}}
+
+
+Namespace to encapsulate the serialization functionality for the Items and Containers.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structserialize_item_1_1_item_container_record}{Item\+Container\+Record}}
+\begin{DoxyCompactList}\small\item\em Struct that represents the format of the containers that are saved into csv files. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structserialize_item_1_1_item_record}{Item\+Record}}
+\begin{DoxyCompactList}\small\item\em Struct that represents the format of the items that are saved into csv files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceserialize_item_a3eb7f4d80f0a3a3f1b64a469586ea526}{Load\+Items}} (const std\+::string \&\+\_\+file\+URI)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structserialize_item_1_1_item_container_record}{Item\+Container\+Record}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceserialize_item_a2a870bf6413d2c41aa6f290e782ea25d}{Load\+Item\+Container\+Records}} (const std\+::string \&\+\_\+file\+URI)
+\item 
+void \mbox{\hyperlink{namespaceserialize_item_a62e11cf99b2764370af7e341461babae}{Save\+Items}} (const std\+::string \&\+\_\+file\+URI, const std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ \&\+\_\+items\+To\+Save)
+\item 
+void \mbox{\hyperlink{namespaceserialize_item_a0851a057bcbcbec83648d134c08a6231}{Save\+Item\+Containers}} (const std\+::string \&\+\_\+file\+URI, const std\+::vector$<$ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{Item\+Container}} \texorpdfstring{$\ast$}{*} $>$ \&\+\_\+containers\+To\+Save)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace to encapsulate the serialization functionality for the Items and Containers. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceserialize_item_a2a870bf6413d2c41aa6f290e782ea25d}\label{namespaceserialize_item_a2a870bf6413d2c41aa6f290e782ea25d} 
+\index{serializeItem@{serializeItem}!LoadItemContainerRecords@{LoadItemContainerRecords}}
+\index{LoadItemContainerRecords@{LoadItemContainerRecords}!serializeItem@{serializeItem}}
+\doxysubsubsection{\texorpdfstring{LoadItemContainerRecords()}{LoadItemContainerRecords()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structserialize_item_1_1_item_container_record}{Item\+Container\+Record}} \texorpdfstring{$\ast$}{*} $>$ serialize\+Item\+::\+Load\+Item\+Container\+Records (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+file\+URI }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{serialize_item_8cpp_source_l00289}{289}} of file \mbox{\hyperlink{serialize_item_8cpp_source}{serialize\+Item.\+cpp}}.
+
+\Hypertarget{namespaceserialize_item_a3eb7f4d80f0a3a3f1b64a469586ea526}\label{namespaceserialize_item_a3eb7f4d80f0a3a3f1b64a469586ea526} 
+\index{serializeItem@{serializeItem}!LoadItems@{LoadItems}}
+\index{LoadItems@{LoadItems}!serializeItem@{serializeItem}}
+\doxysubsubsection{\texorpdfstring{LoadItems()}{LoadItems()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ serialize\+Item\+::\+Load\+Items (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+file\+URI }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{serialize_item_8cpp_source_l00276}{276}} of file \mbox{\hyperlink{serialize_item_8cpp_source}{serialize\+Item.\+cpp}}.
+
+\Hypertarget{namespaceserialize_item_a0851a057bcbcbec83648d134c08a6231}\label{namespaceserialize_item_a0851a057bcbcbec83648d134c08a6231} 
+\index{serializeItem@{serializeItem}!SaveItemContainers@{SaveItemContainers}}
+\index{SaveItemContainers@{SaveItemContainers}!serializeItem@{serializeItem}}
+\doxysubsubsection{\texorpdfstring{SaveItemContainers()}{SaveItemContainers()}}
+{\footnotesize\ttfamily void serialize\+Item\+::\+Save\+Item\+Containers (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+file\+URI,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{Item\+Container}} \texorpdfstring{$\ast$}{*} $>$ \&}]{\+\_\+containers\+To\+Save }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{serialize_item_8cpp_source_l00313}{313}} of file \mbox{\hyperlink{serialize_item_8cpp_source}{serialize\+Item.\+cpp}}.
+
+\Hypertarget{namespaceserialize_item_a62e11cf99b2764370af7e341461babae}\label{namespaceserialize_item_a62e11cf99b2764370af7e341461babae} 
+\index{serializeItem@{serializeItem}!SaveItems@{SaveItems}}
+\index{SaveItems@{SaveItems}!serializeItem@{serializeItem}}
+\doxysubsubsection{\texorpdfstring{SaveItems()}{SaveItems()}}
+{\footnotesize\ttfamily void serialize\+Item\+::\+Save\+Items (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+file\+URI,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} $>$ \&}]{\+\_\+items\+To\+Save }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{serialize_item_8cpp_source_l00302}{302}} of file \mbox{\hyperlink{serialize_item_8cpp_source}{serialize\+Item.\+cpp}}.
+

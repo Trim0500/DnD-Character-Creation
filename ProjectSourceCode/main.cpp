@@ -13,30 +13,43 @@
 #include "DiceDemo.h"
 #include "demoCharacter.h"
 
-#include "GUI/ItemEditor.h"
-
-#include <FL/Fl.H>
-#include <FL/Fl_Window.H>
-#include <FL/Fl_Box.H>
-
-
+using namespace std;
 using namespace CppUnit;
 using namespace item;
 using namespace itemcontainer;
 using namespace demoitem;
-using namespace CampaignEditor;
 
-int main(int argc, char** argv)
+int main()
 {
-	ItemEditor* window = new ItemEditor(800, 640);
-	// Fl_Box* box = new Fl_Box(20, 40, 300, 100, "Hello, World!");
-	// box->box(FL_UP_BOX);
-	// box->labelfont(FL_BOLD + FL_ITALIC);
-	// box->labelsize(36);
-	// box->labeltype(FL_SHADOW_LABEL);
-	window->end();
-	window->show(argc, argv);
-	return Fl::run();
+	// Get the top level suite from the registry
+	Test* suite = TestFactoryRegistry::getRegistry().makeTest();
+
+	// Adds the test to the list of test to run
+	TextUi::TestRunner runner;
+	runner.addTest(suite);
+
+	// Change the default outputter to a compiler error format outputter
+	runner.setOutputter(new CompilerOutputter(&runner.result(),
+		std::cerr));
+	// Run the tests.
+	bool wasSucessful = runner.run();
+
+	// Return error code 1 if the one of test failed.
+	if (!wasSucessful) {
+		return 1;
+	}
+	
+	ShowCaseItemCreation();
+
+	DiceDemo();
+
+	demo_character();
+
+	Map::Map* map = Map::Map::Create(); //  this function takes care of everything you need to create a map
+
+	getchar();
+
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
