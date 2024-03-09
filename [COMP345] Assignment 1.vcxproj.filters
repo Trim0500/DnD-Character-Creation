@@ -72,7 +72,7 @@
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testSerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -134,7 +134,7 @@
     <ClInclude Include="ProjectSourceCode\testcampaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="testSerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -106,7 +106,7 @@
     <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
-    <ClCompile Include="testSerializeCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProjectSourceCode\demoitem.h" />
@@ -128,7 +128,7 @@
     <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\campaign.h" />
     <ClInclude Include="ProjectSourceCode\testcampaign.h" />
-    <ClInclude Include="testSerializeCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
