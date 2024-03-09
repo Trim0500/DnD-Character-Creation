@@ -1,6 +1,6 @@
 {
   "dependencies": [
     "cppunit",
-   {"name": "fltk", "version>=": "1.3.9"}
+   "fltk"
   ]
 }
