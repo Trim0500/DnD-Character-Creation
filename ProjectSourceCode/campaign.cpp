@@ -152,7 +152,11 @@ namespace {
 			std::string nextLine = "";
 			std::getline(*_fileStream, nextLine);
 
-			std::stringstream lineStream(nextLine);
+            if (nextLine.empty()) {
+                continue;
+            }
+            
+            std::stringstream lineStream(nextLine);
 
 			std::vector<std::string> segmentList;
 
