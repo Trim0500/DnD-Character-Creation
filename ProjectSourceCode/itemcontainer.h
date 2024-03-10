@@ -51,12 +51,20 @@ namespace itemcontainer {
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer
 			*/
-			ItemContainer(const std::string&, const int&, const float&);
-			void SetWeightLimit(const float& _capacity) { capacity = _capacity; };
-			int AddNewItem(Item*);
-			std::vector<Item> GetAllItems() { return items; };
+			ItemContainer(const string&, const int&, const float&);
+
 			float GetCapacity() { return capacity; };
+
+			void SetWeightLimit(const float& _capacity) { capacity = _capacity; };
+
+			int AddNewItem(Item*);
+
+			vector<Item> GetAllItems() { return items; };
+
+			void SetItems(std::vector<Item> _items) { items = _items; };
+
 			float GetTotalItemWeight();
+
 			/*!
 			* \fn GetItem
 			* \brief Overloaded method to find an item by name
@@ -71,6 +79,7 @@ namespace itemcontainer {
 			* Overloaded method that uses an item type value (1-7) to find the specific item in the list and return it.
 			*/
 			Item* GetItem(const int&);
+
 			/*!
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via enchantment bonus
@@ -103,6 +112,7 @@ namespace itemcontainer {
 			* \brief Integer that represents the carrying capacity (in lbs) for the container
 			*/
 			float capacity;
+
 			/*!
 			* \var items
 			* \brief Vector of type Item that represents the containers item instances

@@ -57,6 +57,10 @@ namespace {
 			std::string nextLine = "";
 			std::getline(*fileInput, nextLine);
 
+			if (nextLine.empty()) {
+				continue;
+			}
+
 			std::stringstream lineStream(nextLine);
 
 			std::vector<std::string> segmentList;
@@ -95,6 +99,10 @@ namespace {
 		while (!fileInput->eof()) {
 			std::string nextLine = "";
 			std::getline(*fileInput, nextLine);
+
+			if (nextLine.empty()) {
+				continue;
+			}
 
 			std::stringstream lineStream(nextLine);
 
