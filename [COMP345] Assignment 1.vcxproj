@@ -97,6 +97,7 @@
     <ClCompile Include="GUI\ItemEditor.cpp" />
     <ClCompile Include="GUI\MainMenu.cpp" />
     <ClCompile Include="GUI\MapEditor.cpp" />
+    <ClCompile Include="GUI\MapSerializer.cpp" />
     <ClCompile Include="ProjectSourceCode\demoitem.cpp" />
     <ClCompile Include="ProjectSourceCode\DiceDemo.cpp" />
     <ClCompile Include="ProjectSourceCode\demoCharacter.cpp" />
@@ -124,6 +125,7 @@
     <ClInclude Include="GUI\ItemEditor.h" />
     <ClInclude Include="GUI\MainMenu.h" />
     <ClInclude Include="GUI\MapEditor.h" />
+    <ClInclude Include="GUI\MapSerializer.h" />
     <ClInclude Include="ProjectSourceCode\demoitem.h" />
     <ClInclude Include="ProjectSourceCode\DiceDemo.h" />
     <ClInclude Include="ProjectSourceCode\demoCharacter.h" />

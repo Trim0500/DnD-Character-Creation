@@ -88,15 +88,7 @@ namespace CampaignEditor
 			}
 			catch (const std::exception &e)
 			{
-				try
-				{
-					save_as();
-					serializeItem::SaveItems(this->filepath, items);
-				}
-				catch (const std::exception &e)
-				{
-					fl_alert("There was an error saving the file");
-				}
+				fl_alert("There was an error saving the file. Try using 'save as'");
 			}
 			try
 			{

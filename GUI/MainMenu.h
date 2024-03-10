@@ -4,8 +4,10 @@
 #include <FL/Fl_Menu_Item.H>
 #include <FL/Fl_Group.H>
 #include <FL/Fl_Tabs.H>
+#include <vector>
 #include "ItemEditor.h"
 #include "MapEditor.h"
+#include "../ProjectSourceCode/Map.h"
 namespace CampaignEditor {
     class MainMenu :
         public Fl_Window
@@ -82,6 +84,9 @@ namespace CampaignEditor {
 
 		Fl_Group * ig;
 		Fl_Group * mg;
+
+		
+		std::vector<Map::Map*> maps;
     };
 
 
