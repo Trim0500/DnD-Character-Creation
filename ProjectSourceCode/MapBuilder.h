@@ -15,6 +15,7 @@ namespace MapBuilder {
 		virtual void buildRows() = 0;
 		virtual void buildCols() = 0;
 		virtual void buildGrid() = 0;
+		virtual void buildEndCell() = 0;
 		virtual void buildEmpty() = 0;
 		virtual void buildWall() = 0;
 		virtual void buildSpecial() = 0;

@@ -11,22 +11,22 @@ using namespace std;
 //default constructor
 Map::Map::Map() {
 	nextMapID += 1;
-	mapID = nextMapID;
+	this->mapID = nextMapID;
 }
 
-//basic constructor
-Map::Map::Map(int r, int c) {
-	nextMapID += 1;
-	mapID = nextMapID;
-	rows = r;
-	cols = c;
-	end_cell[0] = r - 1;
-	end_cell[1] = c - 1;
-
-	for (int i = 0; i < rows; i++) {
-		grid.push_back(vector<Cell_Type>(cols, Cell_Type::empty));
-	}
-}
+////basic constructor
+//Map::Map::Map(int r, int c) {
+//	nextMapID += 1;
+//	this->mapID = nextMapID;
+//	this->rows = r;
+//	this->cols = c;
+//	this->end_cell[0] = r - 1;
+//	this->end_cell[1] = c - 1;
+//
+//	for (int i = 0; i < rows; i++) {
+//		this->grid.push_back(vector<Cell_Type>(cols, Cell_Type::empty));
+//	}
+//}
 
 void Map::Map::setRows(int r) {
 	this->rows = r;
@@ -34,9 +34,14 @@ void Map::Map::setRows(int r) {
 void Map::Map::setCols(int c) {
 	this->cols = c;
 }
-void Map::Map::setEnd_Cell(int row, int col) {
-	this->end_cell[0] = row;
-	this->end_cell[1] = col;
+void Map::Map::setEndCell() {
+	this->endCell[0] = this->rows - 1;
+	this->endCell[1] = this->cols - 1;
+}
+void Map::Map::setGrid() {
+	for (int i = 0; i < this->rows; i++) {
+		this->grid.push_back(vector<Cell_Type>(this->cols, Cell_Type::empty));
+	}
 }
 void Map::Map::setEmpty(int row, int col) {
 	this->grid[row][col] = Cell_Type::empty;
@@ -101,7 +106,11 @@ Map::Map* Map::Map::Create() {
 			}
 		}
 
-		Map* map = new Map(rows, cols);
+		Map* map = new Map();
+		map->setRows(rows);
+		map->setCols(cols);
+		map->setGrid();
+		map->setEndCell();
 		map->Print();
 
 		string answer;
@@ -152,12 +161,6 @@ Map::Map* Map::Map::Create() {
 
 }
 
-//create rows
-
-//create columns
-
-//
-
 void Map::Map::Customize() {
 	bool stop = false;
 	int row;
@@ -202,7 +205,7 @@ void Map::Map::Customize() {
 			}
 
 			//if the cell selected is the start or end
-			if ((row == 0 && col == 0) || (row == end_cell[0] && col == end_cell[1])) {
+			if ((row == 0 && col == 0) || (row == endCell[0] && col == endCell[1])) {
 				cout << "You cannot change the type of the start or end cell." << endl;
 			}
 			//valid cell input
@@ -299,7 +302,7 @@ bool Map::Map::IsTherePath() {
 		q.pop();
 
 		//check if reach end cell
-		if (curr.first == end_cell[0] && curr.second == end_cell[1]) {
+		if (curr.first == endCell[0] && curr.second == endCell[1]) {
 			//if made it this far, there is a path.
 			cout << "There is a path." << endl;
 			return true;

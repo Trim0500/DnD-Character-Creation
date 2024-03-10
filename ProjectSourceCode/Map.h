@@ -5,6 +5,7 @@
 * @author Michelle Polonsky
 */
 
+#include <vector>
 
 using namespace std;
 
@@ -53,7 +54,7 @@ namespace Map {
 		* \fn Map
 		* \brief Constructor to build a basic map provided by user
 		*/
-		Map(int rows, int cols);
+		//Map(int rows, int cols);
 
 		/*!
 		* \brief Getters
@@ -61,7 +62,7 @@ namespace Map {
 		int GetMapID() { return mapID; };
 		const int getRows() { return rows; };
 		const int getCols() { return cols; };
-		const int* getEnd_Cell() { return end_cell; };
+		const int* getEnd_Cell() { return endCell; };
 		const vector<vector<Cell_Type>>& getGrid() { return grid; };
 
 		/*!
@@ -69,7 +70,8 @@ namespace Map {
 		*/
 		void setRows(int rows);
 		void setCols(int cols);
-		void setEnd_Cell(int row, int col);
+		void setGrid();
+		void setEndCell();
 		void setEmpty(int row, int col);
 		void setWall(int row, int col);
 		void setSpecial(int row, int col);
@@ -137,7 +139,7 @@ namespace Map {
 		* \var end_cell
 		* \brief start = upper right cell, ie: 0,0, end = lower left cell, ie: cols.length-1, rows.lenght-1
 		*/
-		int end_cell[2];
+		int endCell[2];
 
 		/*!
 		* \var grid
