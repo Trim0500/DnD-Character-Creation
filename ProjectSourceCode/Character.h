@@ -17,6 +17,7 @@
 #include "item.h"
 #include "itemcontainer.h"
 #include "Dice.h"
+#include "Observable.h"
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -119,7 +120,7 @@ namespace Character {
 	/*! \class Character
 	* \brief Represents Character type entities
 	*/
-	class Character {
+	class Character : public Observable {
 	public:
 		/*! \fn Character()
 		*  \brief Default character constructor that generates a character with random values for level, ability scores and maximum

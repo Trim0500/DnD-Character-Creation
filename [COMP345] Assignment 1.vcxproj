@@ -114,6 +114,8 @@
     <ClInclude Include="ProjectSourceCode\demoCharacter.h" />
     <ClInclude Include="ProjectSourceCode\item.h" />
     <ClInclude Include="ProjectSourceCode\itemcontainer.h" />
+    <ClInclude Include="ProjectSourceCode\Observable.h" />
+    <ClInclude Include="ProjectSourceCode\Observer.h" />
     <ClInclude Include="ProjectSourceCode\testCharacter.h" />
     <ClInclude Include="ProjectSourceCode\testDice.h" />
     <ClInclude Include="ProjectSourceCode\testitem.h" />
