@@ -1,5 +1,11 @@
 #pragma once
-class EmptyCell
+
+#include "Interactable.h"
+
+class EmptyCell : public Interactable::Interactable
 {
+public:
+
+	bool passable() { return true; }
 };
 

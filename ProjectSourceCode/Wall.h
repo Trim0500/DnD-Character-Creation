@@ -1,5 +1,11 @@
 #pragma once
-class Wall
+
+#include "Interactable.h"
+
+class Wall : public Interactable::Interactable
 {
+public:
+
+	bool passable() { return false; }
 };
 
