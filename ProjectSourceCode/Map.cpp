@@ -41,7 +41,7 @@ void Map::Map::setEndCell() {
 }
 void Map::Map::setGrid() {
 	for (int i = 0; i < this->rows; i++) {
-		this->grid.push_back(vector<Interactable>(this->cols, Cell_Type::empty));
+		this->grid.push_back(vector<Interactable>(this->cols, Cell_Type::empty));//TODO
 	}
 }
 void Map::Map::setEmpty(int row, int col) {
