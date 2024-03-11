@@ -41,6 +41,8 @@ namespace CampaignEditor {
 
 			if (current == mg) {
 				std::cout << "Saving in Map Editor" << std::endl;
+				ie->save();
+
 				return;
 			}
 		};
@@ -58,6 +60,7 @@ namespace CampaignEditor {
 
 			if (current == mg) {
 				std::cout << "Opening in Map Editor" << std::endl;
+				me->open();
 				return;
 			}
 		};
@@ -66,14 +69,16 @@ namespace CampaignEditor {
 			Fl_Group * current = tabs->value()->as_group();
 			std::cout << "Triggering Save function" << std::endl;
 			std::cout << current << std::endl;
-			std::cout << ie << std::endl;
+			// std::cout << ie << std::endl;
 			if (current == ig) {
 				std::cout << "Saving in Item Editor" << std::endl;
+				ie->save_as();
 				return;
 			}
 
 			if (current == mg) {
-				std::cout << "Saving in Map Editor" << std::endl;
+				std::cout << "Saving as in Map Editor" << std::endl;
+				me->save_as();
 			}
 		};
     private:

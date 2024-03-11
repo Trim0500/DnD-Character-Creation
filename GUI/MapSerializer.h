@@ -9,7 +9,7 @@ namespace CampaignEditor {
 		
 		public:
 			static Map::Map load_map(std::string& filename);
-			static bool save_map(std::string& filename, Map::Map& m);
+			static bool save_map(std::string& filename, Map::Map * m);
 		private:
 			;
 	};

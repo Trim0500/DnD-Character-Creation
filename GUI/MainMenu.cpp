@@ -7,22 +7,23 @@
 using namespace CampaignEditor;
 
 
-MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT) {
+MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor") {
 	
 	menu = new Fl_Menu_Bar(0,0, WINDOW_WIDTH, 30, "Campaign Editor");
-	menu->add("open", FL_CTRL+'o', MainMenu::static_open, (void*)this);
-	menu->add("save", FL_CTRL+'s', MainMenu::static_save, (void*)this);
+	menu->add("@fileopen open", FL_CTRL+'o', MainMenu::static_open, (void*)this);
+	menu->add("@filesave save", FL_CTRL+'s', MainMenu::static_save, (void*)this);
+	menu->add("@filesave save as", FL_CTRL+FL_SHIFT+'s', MainMenu::static_save_as, (void*)this);
 	// menu->end();
 	tabs = new Fl_Tabs(10, 30, WINDOW_WIDTH, WINDOW_HEIGHT-30);
-	ig = new Fl_Group(20, 30, WINDOW_WIDTH, WINDOW_HEIGHT - 50, "Items");
+	ig = new Fl_Group(20, 90, WINDOW_WIDTH, WINDOW_HEIGHT - 60, "Items");
 	{
-		ie = new ItemEditor(20, 30, WINDOW_WIDTH - 150, WINDOW_HEIGHT - 50);
+		ie = new ItemEditor(20, 90, WINDOW_WIDTH-10, WINDOW_HEIGHT - 90);
 	}
 	ig->end();
 
-	mg = new Fl_Group(20, 30, WINDOW_WIDTH - 40, WINDOW_HEIGHT - 50, "Map");
+	mg = new Fl_Group(20, 90, WINDOW_WIDTH, WINDOW_HEIGHT - 60, "Map");
 	{
-		me = new MapEditor(20, 30, WINDOW_WIDTH - 150, WINDOW_HEIGHT - 50);
+		me = new MapEditor(20, 90, WINDOW_WIDTH-10, WINDOW_HEIGHT - 90);
 	}
 	mg->end();
 

@@ -10,16 +10,17 @@ namespace CampaignEditor
 		return File_Chooser("Open...", Fl_Native_File_Chooser::BROWSE_FILE );
 	}
 	bool BaseEditor::save_as() {
-		return File_Chooser("Save As...", Fl_Native_File_Chooser::BROWSE_SAVE_FILE);
+		return File_Chooser("Save As...", Fl_Native_File_Chooser::BROWSE_SAVE_FILE, Fl_Native_File_Chooser::SAVEAS_CONFIRM);
 	}
 	bool BaseEditor::File_Chooser(){
 		return File_Chooser("Open", Fl_Native_File_Chooser::BROWSE_FILE);
 	}
-	bool BaseEditor::File_Chooser(std::string title, Fl_Native_File_Chooser::Type t){
+	bool BaseEditor::File_Chooser(std::string title, Fl_Native_File_Chooser::Type t, int o){
 		Fl_Native_File_Chooser fnfc;
 		fnfc.title(title.c_str());
 		fnfc.filter("*.csv");
 		fnfc.type(t);
+		fnfc.options(o);
 		fnfc.directory("./");
 		switch (fnfc.show())
 		{
