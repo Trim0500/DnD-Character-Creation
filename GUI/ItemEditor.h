@@ -27,7 +27,7 @@ namespace CampaignEditor
 {
 	class ItemEditor : public BaseEditor
 	{
-		friend class MainMenu;
+		friend class MainMenu; 
 
 	public:
 		ItemEditor(int x, int y, int w, int h);
@@ -36,6 +36,7 @@ namespace CampaignEditor
 		void save();
 		void open();
 		void save_as();
+		void save_as(std::string s);
 		void save_data();
 		void delete_entry();
 		void update_data();

@@ -211,4 +211,15 @@ namespace CampaignEditor
 			}
 		};
 	}
+	void ItemEditor::save_as(std::string s)
+	{
+		try
+		{
+			serializeItem::SaveItems(s, items);
+		}
+		catch (const std::exception &e)
+		{
+			fl_alert("There was an error saving the file. Try using 'save as'");
+		}
+	}
 }
