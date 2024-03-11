@@ -14,4 +14,7 @@ class Observable {
 
 	private:
 		std::list<Observer*> *_observers;
+		Observable() {
+			_observers = new std::list<Observer*>();
+		}
 };
