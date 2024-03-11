@@ -21,7 +21,8 @@ namespace CampaignEditor
 		idInput = new Fl_Int_Input(0, 0, w, height, "Id");
 		idInput->readonly(true);
 		nameInput = new Fl_Input(0, 0, w, height, "name");
-		itemTypeInput = new Fl_Int_Input(0, 0, w, height, "Item Type");
+		// itemTypeInput = new Fl_Int_Input(0, 0, w, height, "Item Type");
+		itemTypeInput = new Fl_Input_Choice(0,0, w, height, "Item Type");
 		weightInput = new Fl_Float_Input(0, 0, w, height, "Weight");
 
 		/*

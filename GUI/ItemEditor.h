@@ -50,7 +50,7 @@ namespace CampaignEditor
 
 		Fl_Int_Input *idInput; // constant
 		Fl_Input *nameInput;
-		Fl_Int_Input *itemTypeInput;
+		Fl_Input_Choice *itemTypeInput;
 		Fl_Float_Input *weightInput;
 
 		// TODO: enchantment section
