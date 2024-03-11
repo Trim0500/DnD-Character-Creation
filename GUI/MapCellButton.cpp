@@ -5,5 +5,5 @@ MapCellButton::MapCellButton(int x, int y, int w, int h, int _x, int _y) : Fl_Bu
 {
 	this->x = _x;
 	this->y = _y;
-	std::cout << _x << "," << _y << std::endl;
+	// std::cout << _x << "," << _y << std::endl;
 }

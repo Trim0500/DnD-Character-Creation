@@ -2,6 +2,8 @@
 #include "ItemEditor.h"
 #define WINDOW_HEIGHT 640
 #define WINDOW_WIDTH 800
+#define GROUP_SETTINGS 20, 90, WINDOW_WIDTH, (WINDOW_HEIGHT - 30)*.8
+#define EDITOR_SETTINGS 30, 90, WINDOW_WIDTH*.8, (WINDOW_HEIGHT - 60)*.8
 #include "MainMenu.h"
 
 using namespace CampaignEditor;
@@ -15,17 +17,23 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 	menu->add("@filesave save as", FL_CTRL+FL_SHIFT+'s', MainMenu::static_save_as, (void*)this);
 	// menu->end();
 	tabs = new Fl_Tabs(10, 30, WINDOW_WIDTH, WINDOW_HEIGHT-30);
-	ig = new Fl_Group(20, 90, WINDOW_WIDTH, WINDOW_HEIGHT - 60, "Items");
+	// cg = new Fl_Group(GROUP_SETTINGS, "Campaign");
+	// {
+		ce = new CampaignEditor(EDITOR_SETTINGS);
+		ce->end();
+	// }
+	// cg->end();
+	mg = new Fl_Group(GROUP_SETTINGS, "Map");
 	{
-		ie = new ItemEditor(20, 90, WINDOW_WIDTH-10, WINDOW_HEIGHT - 90);
-	}
-	ig->end();
-
-	mg = new Fl_Group(20, 90, WINDOW_WIDTH, WINDOW_HEIGHT - 60, "Map");
-	{
-		me = new MapEditor(20, 90, WINDOW_WIDTH-10, WINDOW_HEIGHT - 90);
+		me = new MapEditor(EDITOR_SETTINGS);
+		me->set_maps(ce->get_maps());
 	}
 	mg->end();
+	ig = new Fl_Group(GROUP_SETTINGS, "Items");
+	{
+		ie = new ItemEditor(EDITOR_SETTINGS);
+	}
+	ig->end();
 
 	tabs->end();
 	this->end();
@@ -34,3 +42,6 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 
 void MainMenu::start() {
 }
+
+
+

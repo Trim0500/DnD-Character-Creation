@@ -26,6 +26,7 @@ namespace CampaignEditor
 		int X() { return x; }
 		int Y() { return y; }
 		int handle(int e);
+
 	private:
 		Map::Cell_Type ct;
 		int x, y;
@@ -33,12 +34,14 @@ namespace CampaignEditor
 	};
 	class MapEditor : public BaseEditor
 	{
+		friend class MainMenu;
+
 	public:
 		MapEditor(int x, int y, int w, int h);
+		MapCellButton *get_cell(int x, int y) { return mcbs[y][x]; }
+
 		void redraw_map();
-		void load_map(Map::Map *m);
 		void populate_browser();
-		MapCellButton *get_cell(int x, int y) { return cell_buttons[y][x]; }
 		void create();
 		void open();
 		void save() { save_as(); };
@@ -50,15 +53,13 @@ namespace CampaignEditor
 		void update_cell(int x, int y, Map::Cell_Type ct);
 		void update_cell(int x, int y, std::string ct);
 		void update_cell(int x, int y, char ct);
-
+		void set_maps(std::vector<Map::Map *> *m) { maps = m; }
 		static void confirm(Fl_Widget *widget, void *f);
 		static void hide(Fl_Widget *widget, void *f);
+
 	private:
 		Fl_Scroll *map_grid;
-		Fl_Group *side_bars;
-		std::vector<std::vector<MapCellButton *>> cell_buttons;
-
-		std::vector<Map::Map *> maps;
+		std::vector<Map::Map *> *maps;
 		Map::Map *current_map;
 		int _grid_x, _grid_y;
 		std::vector<std::vector<MapCellButton *>> mcbs;

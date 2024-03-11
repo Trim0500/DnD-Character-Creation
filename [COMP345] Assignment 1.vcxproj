@@ -94,6 +94,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GUI\BaseEditor.cpp" />
+    <ClCompile Include="GUI\CampaignEditor.cpp" />
     <ClCompile Include="GUI\ItemEditor.cpp" />
     <ClCompile Include="GUI\MainMenu.cpp" />
     <ClCompile Include="GUI\MapCellButton.cpp" />
