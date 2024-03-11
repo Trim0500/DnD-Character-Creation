@@ -10,7 +10,13 @@
 #include "CampaignEditor.h"
 #include "MapSerializer.h"
 #include <filesystem>
+#include <fstream>
+#include <iostream>
 #include "../ProjectSourceCode/Map.h"
+
+
+namespace fs = std::filesystem;
+
 namespace CampaignEditor
 {
 	class MainMenu : public Fl_Window
@@ -49,7 +55,7 @@ namespace CampaignEditor
 				me->filepath = ce->filepath;
 				std::string fp;
 				for (Map::Map *_m: *me->maps){
-					std::filesystem::create_directories(me->filepath + "/Maps");
+					fs::create_directories(me->filepath + "/Maps");
 					fp = me->filepath + "/Maps/Map" + std::to_string(_m->GetMapID()) + ".csv";
 					MapSerializer::save_map(fp, _m);
 				}
@@ -57,7 +63,7 @@ namespace CampaignEditor
 				
 				temp = ie->filepath;
 
-				std::filesystem::create_directories(ce->filepath + "/Items");
+				fs::create_directories(ce->filepath + "/Items");
 				ie->filepath = ce->filepath+"/Items/items.csv";
 				ie->save();
 				ie->filepath = temp;
@@ -87,9 +93,18 @@ namespace CampaignEditor
 			std::cout << ie << std::endl;
 			if (current == ce->as_group())
 			{
-				std::cout << "Opening in Item Editor" << std::endl;
+				std::cout << "Opening in Campaign Editor" << std::endl;
 				// ie->save_as();
 				ce->open();
+				ie->open(ce->filepath + "/Items/items.csv");
+				std::string ext(".csv");
+				std::string path(ce->filepath + "/Maps");
+				for (auto &p : fs::directory_iterator(path)) {
+					if (p.path().extension() == ext){
+						me->open(p.path().string());
+					}
+				}
+				me->set_maps(ce->maps);
 				return;
 			}
 			if (current == ig)

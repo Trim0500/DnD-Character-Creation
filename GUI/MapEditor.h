@@ -44,6 +44,7 @@ namespace CampaignEditor
 		void populate_browser();
 		void create();
 		void open();
+		void open(std::string);
 		void save() { save_as(); };
 		void save_as();
 		void load_data();

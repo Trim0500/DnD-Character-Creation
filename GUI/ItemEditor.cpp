@@ -8,6 +8,28 @@ using std::to_string;
 
 namespace CampaignEditor
 {
+	item::ItemType stoit(const std::string s)
+	{
+		int j = 7;
+		for (int i = 0; i < j; i++)
+		{
+			if (s == itemTypeStrings[i])
+			{
+				return static_cast<item::ItemType>(i + 1);
+			}
+		}
+	}
+	item::CharacterStats stocs(const std::string s)
+	{
+		int j = 9;
+		for (int i = 0; i < j; i++)
+		{
+			if (s == statStrings[i])
+			{
+				return static_cast<item::CharacterStats>(i);
+			}
+		}
+	}
 	ItemEditor::ItemEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 	{
 		const int margin = 100;
@@ -22,7 +44,14 @@ namespace CampaignEditor
 		idInput->readonly(true);
 		nameInput = new Fl_Input(0, 0, w, height, "name");
 		// itemTypeInput = new Fl_Int_Input(0, 0, w, height, "Item Type");
-		itemTypeInput = new Fl_Input_Choice(0,0, w, height, "Item Type");
+		itemTypeInput = new Fl_Input_Choice(0, 0, w, height, "Item Type");
+		Fl_Input *_temp = itemTypeInput->input();
+		_temp->readonly(true);
+		int s = 7;
+		for (int i = 0; i < s; i++)
+		{
+			itemTypeInput->add(item::itemTypeStrings[i].c_str());
+		}
 		weightInput = new Fl_Float_Input(0, 0, w, height, "Weight");
 
 		/*
@@ -31,10 +60,10 @@ namespace CampaignEditor
 		Fl_Pack *ench = new Fl_Pack(0, 0, w, 200);
 
 		enchantmentTypeInput = new Fl_Input_Choice(0, 0, w, height, "Ench type");
-		Fl_Input *_temp = enchantmentTypeInput->input();
-		_temp->readonly(true);
+		Fl_Input *__temp = enchantmentTypeInput->input();
+		__temp->readonly(true);
 		Fl_Menu_Button *mb = enchantmentTypeInput->menubutton();
-		int s = 9;
+		s = 9;
 		for (int i = 0; i < s; i++)
 		{
 			mb->add(item::statStrings[i].c_str());
@@ -107,14 +136,14 @@ namespace CampaignEditor
 	void ItemEditor::save_data()
 	{
 		// TODO
-		// current_item -> SetItemID();
+		current_item->SetItemID(std::stoi(idInput->value()));
 		current_item->SetItemName(nameInput->value());
-		// current_item->SetItemType(itemTypeInput->value()); // TODO: change input to dropdown
+		current_item->SetItemType(stoit(itemTypeInput->value())); // TODO: change input to dropdown
 
 		current_item->SetItemWeight(std::stof(weightInput->value()));
 
-		// current_item->SetEnchantmentType();
-		// current_item->SetEnchantmentBonus(); // TODO: Enchantment menu
+		current_item->SetEnchantmentType(stocs(enchantmentTypeInput->value()));
+		current_item->SetEnchantmentBonus(std::stoi(enchantmentBonusInput->value()));
 
 		populate_browser();
 	}
@@ -131,7 +160,7 @@ namespace CampaignEditor
 		currentItemId = to_string(_loadedItemId);
 		currentItemName = _loadedItemName;
 		currentEnchantmentBonus = to_string(_loadedEnchantmentBonus);
-		currentItemType = to_string(_loadedItemType);
+		currentItemType = item::itemTypeStrings[_loadedItemType - 1];
 		currentWeight = to_string(_loadedWeight);
 
 		idInput->value(currentItemId.c_str());
@@ -173,7 +202,27 @@ namespace CampaignEditor
 			}
 		}
 	}
-
+	void ItemEditor::open(std::string s)
+	{
+		filepath = s;
+		try
+		{
+			items = serializeItem::LoadItems(filepath);
+			/* code */
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+		try
+		{
+			populate_browser();
+		}
+		catch (const std::exception &e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+	}
 	void ItemEditor::open()
 	{
 		// filepath = BaseEditor::open();

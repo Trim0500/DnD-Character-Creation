@@ -176,7 +176,25 @@ namespace CampaignEditor
 		};
 	} 
 	void CampaignEditor::open() {
+		if (BaseEditor::File_Chooser("Open", Fl_Native_File_Chooser::BROWSE_DIRECTORY))
+		{
+			try {
+				CampaignRecord *cr = campaign::LoadCampaign(1, filepath);
+				CampaignMap cp;
+				cp.mapID = 0;
+				cp.coorX = cp.coorY = 0;
+				maps = new std::vector<Map::Map*>();
+				campaign = new Campaign(
+					cr->campaignID,
+					cr->mapIDs,
+					cp,
+					*maps
+				);
+				redraw_map();
+			} catch (const std::exception &e) {
 
+			}
+		}
 	}
 	void CampaignEditor::save_all(){
 		for (Map::Map *_m: *maps){

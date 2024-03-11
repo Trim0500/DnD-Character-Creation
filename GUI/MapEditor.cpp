@@ -49,7 +49,8 @@ int MapCellButton::handle(int e)
 		this->value(current_l != 0);
 		return 1;
 	}
-	if (e == FL_PUSH){
+	if (e == FL_PUSH)
+	{
 		this->set();
 		return 1;
 	}
@@ -85,7 +86,6 @@ void MapEditor::redraw_map()
 	// map_grid->scroll_to(0,0);
 	map_grid->show();
 }
-
 
 void MapEditor::load_data()
 {
@@ -190,6 +190,16 @@ void MapEditor::populate_browser()
 		label = std::to_string(i->GetMapID());
 		browser->add(label.c_str(), i);
 	}
+}
+
+void MapEditor::open(std::string s)
+{
+	Map::Map m = MapSerializer::load_map(filepath);
+	maps->push_back(&m);
+	populate_browser();
+	browser->bottomline(browser->size());
+	browser->select(browser->size());
+	load_data();
 }
 
 void MapEditor::open()
