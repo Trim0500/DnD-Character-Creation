@@ -45,11 +45,11 @@ void TestItem::tearDown(void)
 void TestItem::TestNoArgsItemConstructor(void) {
 	//CPPUNIT_ASSERT(noArgsItemObject->GetItemId() == testItemCurrentId - 1);
 	std::ostringstream name;
-	name << noArgsItemObject->itemTypeStrings[noArgsItemObject->GetItemType() - 1]
+	name << itemTypeStrings[noArgsItemObject->GetItemType() - 1]
 			<< " +"
 			<< std::to_string(noArgsItemObject->GetEnchantmentBonus())
 			<< " ("
-			<< noArgsItemObject->statStrings[noArgsItemObject->GetEnchantmentType()] << ")";
+			<< statStrings[noArgsItemObject->GetEnchantmentType()] << ")";
 	CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == name.str());
 	CPPUNIT_ASSERT(noArgsItemObject->GetEnchantmentBonus() >= 1 && noArgsItemObject->GetEnchantmentBonus() <= 5);
 	CPPUNIT_ASSERT(noArgsItemObject->GetItemType() >= Helmet && noArgsItemObject->GetItemType() <= Weapon);
@@ -72,11 +72,11 @@ void TestItem::TestGetItemId(void) {
 
 void TestItem::TestGetItemName(void) {
 	std::ostringstream name;
-	name << noArgsItemObject->itemTypeStrings[noArgsItemObject->GetItemType() - 1]
+	name << itemTypeStrings[noArgsItemObject->GetItemType() - 1]
 		<< " +"
 		<< std::to_string(noArgsItemObject->GetEnchantmentBonus())
 		<< " ("
-		<< noArgsItemObject->statStrings[noArgsItemObject->GetEnchantmentType()] << ")";
+		<< statStrings[noArgsItemObject->GetEnchantmentType()] << ")";
 	CPPUNIT_ASSERT(noArgsItemObject->GetItemName() == name.str());
 
 	CPPUNIT_ASSERT(customItemObject->GetItemName() == "testItem");
