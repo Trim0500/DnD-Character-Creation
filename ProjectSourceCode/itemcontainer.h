@@ -51,7 +51,7 @@ namespace itemcontainer {
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer
 			*/
-			ItemContainer(const string&, const int&, const float&);
+			ItemContainer(const std::string&, const int&, const float&);
 
 			float GetCapacity() { return capacity; };
 
@@ -59,7 +59,7 @@ namespace itemcontainer {
 
 			int AddNewItem(Item*);
 
-			vector<Item> GetAllItems() { return items; };
+			std::vector<Item> GetAllItems() { return items; };
 
 			void SetItems(std::vector<Item> _items) { items = _items; };
 
