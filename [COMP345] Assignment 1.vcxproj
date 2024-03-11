@@ -87,6 +87,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ProjectSourceCode\Interactable.cpp" />
+    <ClCompile Include="ProjectSourceCode\MapDirector.cpp" />
     <ClCompile Include="ProjectSourceCode\demoitem.cpp" />
     <ClCompile Include="ProjectSourceCode\DiceDemo.cpp" />
     <ClCompile Include="ProjectSourceCode\demoCharacter.cpp" />
@@ -106,9 +108,12 @@
     <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
-    <ClCompile Include="RawMapBuilder.cpp" />
+    <ClCompile Include="ProjectSourceCode\RawMapBuilder.cpp" />
+    <ClCompile Include="ProjectSourceCode\MapBuilder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ProjectSourceCode\Interactable.h" />
+    <ClInclude Include="ProjectSourceCode\MapDirector.h" />
     <ClInclude Include="ProjectSourceCode\demoitem.h" />
     <ClInclude Include="ProjectSourceCode\DiceDemo.h" />
     <ClInclude Include="ProjectSourceCode\demoCharacter.h" />
@@ -128,7 +133,8 @@
     <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\campaign.h" />
     <ClInclude Include="ProjectSourceCode\testcampaign.h" />
-    <ClInclude Include="RawMapBuilder.h" />
+    <ClInclude Include="ProjectSourceCode\RawMapBuilder.h" />
+    <ClCompile Include="ProjectSourceCode\MapBuilder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

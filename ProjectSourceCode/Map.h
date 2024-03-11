@@ -5,6 +5,7 @@
 * @author Michelle Polonsky
 */
 
+#include "Interactable.h"
 #include <vector>
 
 using namespace std;
@@ -15,21 +16,22 @@ using namespace std;
 */
 namespace Map {
 
-	/*!
-	* \enum Cell_Type
-	* \brief Enum to represent the posible cell types on a map
-	*/
-	enum class Cell_Type {
-		empty = '_',//empty cell, character can move through it.
-		wall = 'w',//wall cell, character cannot move through it.
-		special = 's'//special cell, character has a special interraction, can move after interraction.
-	};
+	// DEPRECATED IN PHASE 2
+	///*!
+	//* \enum Cell_Type
+	//* \brief Enum to represent the posible cell types on a map
+	//*/
+	//enum class Cell_Type {
+	//	empty = '_',//empty cell, character can move through it.
+	//	wall = 'w',//wall cell, character cannot move through it.
+	//	special = 's'//special cell, character has a special interraction, can move after interraction.
+	//};
 
 	/*!
 	* \fn ConvertToCellType
 	* \brief Free function to take a letter and attempt to map it to a cell type
 	*/
-	Cell_Type ConvertToCellType(char letter);
+	Interactable::Interactable ConvertToCellType(char letter);
 
 	/*!
 	* \var dirs
@@ -63,7 +65,7 @@ namespace Map {
 		const int getRows() { return rows; };
 		const int getCols() { return cols; };
 		const int* getEnd_Cell() { return endCell; };
-		const vector<vector<Cell_Type>>& getGrid() { return grid; };
+		const vector<vector<Interactable::Interactable>>& getGrid() { return grid; };//TODO
 
 		/*!
 		* \brief Setters
@@ -113,7 +115,7 @@ namespace Map {
 		bool ValidCell(int row, int col, vector<vector<bool>> visitde);
 
 		//DEBUG ONLY
-		void ChangeCell(int row, int col, Cell_Type);
+		//void ChangeCell(int row, int col, Cell_Type);//
 
 	private:
 		/*!
@@ -145,7 +147,7 @@ namespace Map {
 		* \var grid
 		* \brief grid mapping out the cell types
 		*/
-		vector<vector<Cell_Type>> grid;
+		vector<vector<Interactable::Interactable>> grid;
 	};
 
 }

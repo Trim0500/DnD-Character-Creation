@@ -1,13 +1,17 @@
 #pragma once
 
-#include "MapBuilder.cpp"
-
+#include "MapBuilder.h"
+using namespace std;
 
 namespace RawMapBuilder {
 
-	class RawMapBuilder : public MapBuilder {
+	class RawMapBuilder : public MapBuilder::MapBuilder {
 
 	public:
+		//save map object to a file
+		virtual bool SaveMap(Map::Map* map);
+		//load map from a text file
+		virtual Map::Map* LoadMap(std::string& filename);
 
 		virtual void buildRows(int rows);
 
@@ -17,12 +21,7 @@ namespace RawMapBuilder {
 
 		virtual void buildGrid();
 
-		virtual void buildEmpty(int row, int col);
-
-		virtual void buildWall(int row, int col);
-
-		virtual void buildSpecial(int row, int col);
-
+		virtual void buildTypes();
 	};
 
 }

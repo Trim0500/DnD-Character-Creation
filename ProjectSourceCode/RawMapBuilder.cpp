@@ -1,5 +1,9 @@
+#include "MapBuilder.h"
 #include "RawMapBuilder.h"
-
+#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
 using RMP = RawMapBuilder::RawMapBuilder;
 
 void RMP::buildRows(int rows) {
@@ -18,10 +22,42 @@ void RMP::buildGrid() {
 	m_map->setGrid();
 }
 
-void RMP::buildEmpty(int row, int col) {
-	m_map->setEmpty(row, col);
+void RMP::buildTypes() {
+	//m_map->setEmpty(row, col);
+	//TODO
 }
 
-void RMP::buildSpecial(int row, int col) {
-	m_map->setSpecial(row, col);
+bool SaveMap(Map::Map* map, std::string& filename) {
+	//create file
+	ofstream file(filename);
+	try {
+		//open file
+		if (!file.is_open()) {
+			cout << "Could not open file: " << filename << endl;
+		}
+		else {
+			file << map->getRows() << "," << map->getCols() << endl;
+
+		}
+	}
+	catch (const ofstream::failure& e) {
+		cout << "Exception caught while opening file: " << filename << endl;
+	}
+
+	file.close()
+
+
+
+
 }
+
+Map::Map* LoadMap(std::string& filename) {
+
+
+
+
+
+
+
+}
+

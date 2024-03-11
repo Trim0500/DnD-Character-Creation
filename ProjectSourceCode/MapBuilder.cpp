@@ -1,5 +1,9 @@
 #include "MapBuilder.h"
+#include <fstream>
+#include <iostream>
+#include <string>
+using namespace std;
 
 using namespace MapBuilder;
 
-//everything implemented in header file already 
+//no implementation. generic class. 

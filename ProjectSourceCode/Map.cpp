@@ -1,4 +1,5 @@
 #include "Map.h"
+#include <Interactable.h>
 #include <iostream>
 #include <list>
 #include <queue>
@@ -40,7 +41,7 @@ void Map::Map::setEndCell() {
 }
 void Map::Map::setGrid() {
 	for (int i = 0; i < this->rows; i++) {
-		this->grid.push_back(vector<Cell_Type>(this->cols, Cell_Type::empty));
+		this->grid.push_back(vector<Interactable>(this->cols, Cell_Type::empty));
 	}
 }
 void Map::Map::setEmpty(int row, int col) {
@@ -354,6 +355,6 @@ void Map::Map::Print() {
 
 //USE ONLY IN DEBUG
 void Map::Map::ChangeCell(int row, int col, Cell_Type type) {
-	grid[row][col] = type;
+	this->grid[row][col] = type;
 }
 
