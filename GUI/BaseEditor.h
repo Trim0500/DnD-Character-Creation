@@ -9,13 +9,15 @@ namespace CampaignEditor {
 	class BaseEditor :
 		public Fl_Pack
 	{
+		friend class MainMenu; 
+
 	public:
 		BaseEditor(int x, int y, int w, int h) : Fl_Pack(x, y, w-10, h-10) {
 			spacing(30);
 			int c_y = 10;
 			this->type(Fl_Pack::HORIZONTAL);
 			this->spacing(100);
-			Fl_Pack* _g = new Fl_Pack(10, 45, w * .2, (h) * .9);
+			_g = new Fl_Pack(10, 45, w * .2, (h) * .9);
 			browser = new Fl_Hold_Browser(0, 20, w / 2, (h) * .5);
 			Fl_Pack* _b = new Fl_Pack(0,0, w * .2, 30);
 			_b->type(Fl_Pack::HORIZONTAL);
@@ -25,9 +27,11 @@ namespace CampaignEditor {
 			create_new->callback(static_create_new, (void*)this);
 			_b->end();
 			_g->end();
-			g = new Fl_Pack(0, 0, w * .8, (h));
+			g = new Fl_Pack(0, 0, w * .6, (h));
 
 			g->end();
+			sidebar = new Fl_Pack(0, 0, w * .2, (h));
+			sidebar->end();
 			browser->callback(static_load_data,(void *)this);
 
 			this->resizable(g);
@@ -47,6 +51,8 @@ namespace CampaignEditor {
 	protected:
 		Fl_Hold_Browser* browser;
 		Fl_Pack* g;
+		Fl_Pack* _g;
+		Fl_Pack* sidebar;
 		virtual void populate_browser() = 0;
 		virtual void load_data() = 0;
 		virtual void save_data() = 0;
