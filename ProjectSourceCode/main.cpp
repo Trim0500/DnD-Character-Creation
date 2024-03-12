@@ -23,11 +23,8 @@ using namespace CampaignEditor;
 
 int main()
 {
-	// Get the top level suite from the registry
 	MainMenu * m = new MainMenu();
-	// m->start();
 	m->show();
-	
 	return Fl::run();
 }
 
