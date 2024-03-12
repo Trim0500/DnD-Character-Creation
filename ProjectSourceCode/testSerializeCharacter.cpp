@@ -18,6 +18,7 @@ void TestSerializeCharacter::TestSaveCharacter(void)
 
 void TestSerializeCharacter::TestLoadCharacter(void)
 {
+
 	serializecharacter::SaveCharacter(characterObject, "");
 	filename = serializecharacter::FindCharacterFile(characterObject->ID(), "");
 	serializecharacter::CharacterRecord record = serializecharacter::LoadCharacter(filename);

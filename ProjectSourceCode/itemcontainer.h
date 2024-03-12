@@ -61,6 +61,7 @@ namespace itemcontainer {
 
 			std::vector<Item> GetAllItems() { return items; };
 
+
 			void SetItems(std::vector<Item> _items) { items = _items; };
 
 			float GetTotalItemWeight();
