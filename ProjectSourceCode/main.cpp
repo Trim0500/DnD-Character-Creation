@@ -6,11 +6,6 @@
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
 #include <filesystem>
-#include "Character.h"
-#include "item.h"
-#include "SerializeCharacter.h"
-#include "serializeItem.h"
-
 using namespace CppUnit;
 
 int main()
@@ -34,18 +29,6 @@ int main()
 	}
 	
 	getchar();
-	Character::Character bob;
-	item::Item test_item;
-	item::Item test_item1;
-	bob.Inventory().AddNewItem(&test_item);
-	bob.Inventory().AddNewItem(&test_item1);
-	bob.Equip_Item(&bob.Inventory().GetAllItems().at(0));
-	serializecharacter::SaveCharacter(&bob, "");
-	bob.Print_Character_Sheet();
-	std::string charFilePath = serializecharacter::FindCharacterFile(34, "");
-	Character::Character lucy = Character::Character(serializecharacter::LoadCharacter(charFilePath));
-	lucy.Print_Character_Sheet();
-
 	return 0;
 }
 
