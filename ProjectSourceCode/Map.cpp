@@ -1,5 +1,9 @@
+#include "Character.h"
+#include "EmptyCell.h"
+#include "Interactable.h"
+#include "item.h"
 #include "Map.h"
-#include <Interactable.h>
+#include "Wall.h"
 #include <iostream>
 #include <list>
 #include <queue>
@@ -41,18 +45,22 @@ void Map::Map::setEndCell() {
 }
 void Map::Map::setGrid() {
 	for (int i = 0; i < this->rows; i++) {
-		this->grid.push_back(vector<Interactable>(this->cols, Cell_Type::empty));//TODO
+		this->grid.push_back(vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
 	}
 }
 void Map::Map::setEmpty(int row, int col) {
-	this->grid[row][col] = Cell_Type::empty;
+	this->grid[row][col] = new EmptyCell();
 }
 void Map::Map::setWall(int row, int col) {
-	this->grid[row][col] = Cell_Type::wall;
+	this->grid[row][col] = new Wall();
 }
-void Map::Map::setSpecial(int row, int col) {
-	this->grid[row][col] = Cell_Type::special;
+void Map::Map::setCharacter(int row, int col, Character::Character cha) {
+	this->grid[row][col] = &cha;
 }
+//TODO
+//void Map::Map::setItem(int row, int col, Item::Item item) {
+//	this->grid[row][col] = &item;
+//}
 
 Map::Map* Map::Map::Create() {
 	int rows, cols;

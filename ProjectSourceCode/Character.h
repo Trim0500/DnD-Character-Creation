@@ -1,22 +1,22 @@
 /*!! \file Character.h
 * \brief Header file containing Character functionality definitions
-* The character creation is based off of the 5th edition Dungeons & Dragons! 
+* The character creation is based off of the 5th edition Dungeons & Dragons!
 * Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including
 * but not limited to...
 * 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon & tool proficiencies', 'Death saves', 'initiative' and 'saving throws'
 */
 #pragma once
-#include <iostream>
-#include <iomanip>
-#include <random>
-#include <chrono>
-#include <vector>
-#include <bitset>
-#include <unordered_map>
-
+#include "Dice.h"
+#include "Interactable.h"
 #include "item.h"
 #include "itemcontainer.h"
-#include "Dice.h"
+#include <bitset>
+#include <chrono>
+#include <iomanip>
+#include <iostream>
+#include <random>
+#include <unordered_map>
+#include <vector>
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -36,7 +36,7 @@ namespace serializecharacter {
 * \brief namespace used to encapsulate 'Character' class functionality
 */
 namespace Character {
-	
+
 	/*! \Enum Character_Class
 	*  \brief Enum used to index various fields from the Character class
 	*/
@@ -54,19 +54,19 @@ namespace Character {
 		Warlock = 10,
 		Wizard = 11
 	};
-	
-	constexpr std::bitset<12> isBarbarian	{ 0b0000'0000'0001 };
-	constexpr std::bitset<12> isBard		{ 0b0000'0000'0010 };
-	constexpr std::bitset<12> isCleric		{ 0b0000'0000'0100 };
-	constexpr std::bitset<12> isDruid		{ 0b0000'0000'1000 };
-	constexpr std::bitset<12> isFighter		{ 0b0000'0001'0000 };
-	constexpr std::bitset<12> isMonk		{ 0b0000'0010'0000 };
-	constexpr std::bitset<12> isPaladin		{ 0b0000'0100'0000 };
-	constexpr std::bitset<12> isRanger		{ 0b0000'1000'0000 };
-	constexpr std::bitset<12> isRogue		{ 0b0001'0000'0000 };
-	constexpr std::bitset<12> isSorcerer	{ 0b0010'0000'0000 };
-	constexpr std::bitset<12> isWarlock		{ 0b0100'0000'0000 };
-	constexpr std::bitset<12> isWizard		{ 0b1000'0000'0000 };
+
+	constexpr std::bitset<12> isBarbarian{ 0b0000'0000'0001 };
+	constexpr std::bitset<12> isBard{ 0b0000'0000'0010 };
+	constexpr std::bitset<12> isCleric{ 0b0000'0000'0100 };
+	constexpr std::bitset<12> isDruid{ 0b0000'0000'1000 };
+	constexpr std::bitset<12> isFighter{ 0b0000'0001'0000 };
+	constexpr std::bitset<12> isMonk{ 0b0000'0010'0000 };
+	constexpr std::bitset<12> isPaladin{ 0b0000'0100'0000 };
+	constexpr std::bitset<12> isRanger{ 0b0000'1000'0000 };
+	constexpr std::bitset<12> isRogue{ 0b0001'0000'0000 };
+	constexpr std::bitset<12> isSorcerer{ 0b0010'0000'0000 };
+	constexpr std::bitset<12> isWarlock{ 0b0100'0000'0000 };
+	constexpr std::bitset<12> isWizard{ 0b1000'0000'0000 };
 
 	/*! \Enum Abilities_Stats
 	*  \brief Enum used to index various fields from the Character class
@@ -85,7 +85,7 @@ namespace Character {
 		NA,
 	};
 
-	/*! 
+	/*!
 	*  \brief Unordered map used to map values from item::CharacterStats TO Character::Abilities_Stats
 	*/
 	static const std::unordered_map<item::CharacterStats, Abilities_Stats> item_stat_TO_character_stat{
@@ -100,7 +100,7 @@ namespace Character {
 		{item::CharacterStats::DamageBonus,Abilities_Stats::DamageBonus},
 		{item::CharacterStats::NA,Abilities_Stats::NA},
 	};
-	
+
 	/*! \Enum Equipment_Slots
 	*  \brief Enum used to index to fields from the Character class
 	*/
@@ -119,8 +119,10 @@ namespace Character {
 	/*! \class Character
 	* \brief Represents Character type entities
 	*/
-	class Character {
+	class Character : public Interactable::Interactable {
 	public:
+		bool passable() const { return true; };
+
 		/*! \fn Character()
 		*  \brief Default character constructor that generates a character with random values for level, ability scores and maximum
 		* hit points (By default will only give levels in the 'Fighter' class)
@@ -132,7 +134,7 @@ namespace Character {
 		Character(const Character& t_character);
 		/*! \fn Character()
 		*  \brief Character Constructor. Initializes the character with one level in a given character class
-		*  \param t_name: Name for the character 
+		*  \param t_name: Name for the character
 		*  \param t_class: Character class the character will be given a level for
 		*/
 		Character(std::string t_name, Character_Class t_class);
@@ -148,7 +150,7 @@ namespace Character {
 		*  \param t_class Character class the character will be given a level for
 		*  \param t_ability_scores Set of desired ability scores {Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma}
 		*/
-		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores);
+		Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores);
 		Character(const serializecharacter::CharacterRecord& t_record);
 		/* \fn ID()
 		*  \brief Unique Character ID
@@ -164,7 +166,7 @@ namespace Character {
 		*/
 		void Print_Character_Sheet();
 		/*! \fn Sum_Levels()
-		*  \brief Returns sum total of all levels for this character 
+		*  \brief Returns sum total of all levels for this character
 		*  \return Returns const sum of elements in 'level' vector array
 		*/
 		const int Sum_Levels();
@@ -212,7 +214,7 @@ namespace Character {
 		const int Hit_Points() { return hit_points; };
 		/*! \fn Receive_Damage()
 		* \brief Inflict damage to character;
-		* \param t_damage: amount of damage inflicted 
+		* \param t_damage: amount of damage inflicted
 		*/
 		void Receive_Damage(int t_damage);
 		/*! \fn Receive_Damage()
@@ -222,7 +224,7 @@ namespace Character {
 		void Receive_Healing(int t_heal);
 		/*! \fn Alive()
 		* \brief Checks if cahracter is alive;
-		* \return Returns 'true' if hp > 0, 'false' otherwise 
+		* \return Returns 'true' if hp > 0, 'false' otherwise
 		*/
 		const bool Is_Alive();
 		/*! \fn Modifier()
@@ -280,19 +282,19 @@ namespace Character {
 
 		std::string name{ "Cirian" };
 		std::bitset<12> character_class;
-		/*! 
+		/*!
 		* Vector array corresponding to how many levels the character has taken in each class. Can be indexed using int/'Abilities' enum
 		*/
-		std::vector<int> level = std::vector<int> (12,0);
+		std::vector<int> level = std::vector<int>(12, 0);
 		/*!
 		* Vector array corresponding to a character's ability scores. Can be indexed using int/'Abilities' enum
 		*/
 		std::vector<int> ability_scores = std::vector<int>(6);
-		int max_hit_points{0};
-		int hit_points{0};
+		int max_hit_points{ 0 };
+		int hit_points{ 0 };
 
-		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
-    
+		std::unordered_map<Equipment_Slots, item::Item*> equipment_slots;
+
 		itemcontainer::ItemContainer inventory = itemcontainer::ItemContainer("Inventory", Backpack, 30);
 
 		std::string Get_Class_String(Character_Class t_class);

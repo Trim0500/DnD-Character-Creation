@@ -6,6 +6,6 @@ class Wall : public Interactable::Interactable
 {
 public:
 
-	bool passable() { return false; }
+	bool passable() const { return false; }
 };
 

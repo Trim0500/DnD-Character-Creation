@@ -65,7 +65,7 @@ namespace Map {
 		const int getRows() { return rows; };
 		const int getCols() { return cols; };
 		const int* getEnd_Cell() { return endCell; };
-		const vector<vector<Interactable::Interactable>>& getGrid() { return grid; };//TODO
+		const vector<vector<Interactable::Interactable*>> getGrid() { return grid; };//TODO
 
 		/*!
 		* \brief Setters
@@ -76,7 +76,7 @@ namespace Map {
 		void setEndCell();
 		void setEmpty(int row, int col);
 		void setWall(int row, int col);
-		void setSpecial(int row, int col);
+		void setCharacter(int row, int col, Character::Character cha);
 
 		/*!
 		* \fn Create
@@ -147,7 +147,7 @@ namespace Map {
 		* \var grid
 		* \brief grid mapping out the cell types
 		*/
-		vector<vector<Interactable::Interactable>> grid;
+		vector<vector<Interactable::Interactable*>> grid;
 	};
 
 }
