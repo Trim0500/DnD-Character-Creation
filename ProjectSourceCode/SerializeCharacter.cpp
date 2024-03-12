@@ -36,6 +36,21 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
 
         }
     }
+    //Save inventory
+    std::string currentPath = filesystem::current_path().string();
+
+    std::ostringstream fullURI;
+    fullURI << currentPath << t_path<< "\\InventoryItemsCharacter_" <<std::to_string(record.id) << ".csv";
+    std::vector<Item*> inventoryVector;
+    for (int i{ 0 }; i < t_character->Inventory().GetAllItems().size(); i++) {
+        item::Item* saved_item = &t_character->Inventory().GetAllItems().at(i);
+        inventoryVector.push_back(saved_item);
+    }
+    record.inventory_container_path = fullURI.str();
+
+    if(t_character->Inventory().GetCapacity() > 0)
+        serializeItem::SaveItems(fullURI.str(), inventoryVector);
+    record.inventory_container_id = t_character->Inventory().GetItemId();
 
     //opening file
   
@@ -70,7 +85,11 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
         outfile << record.equipped_item_ids[i] << ",";
     }
     outfile << std::endl;
-    
+    outfile << "Inventory_Container_Path," <<record.inventory_container_path;
+    outfile << std::endl;
+    outfile << "Inventory_Container_ID," << record.inventory_container_id;
+    outfile << std::endl;
+
     //Closing file
     outfile.close();
 
@@ -145,6 +164,12 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
                 equipped_index++;
             }
         }
+        else if (field_key == "Inventory_Container_Path,") {
+            record.inventory_container_path = data;
+        }
+        else if (field_key == "Inventory_Container_ID,") {
+            record.inventory_container_id = std::stoi(data);
+        }
     }
 
     file.close();
@@ -163,7 +188,7 @@ std::string serializecharacter::FindCharacterFile(int id, std::filesystem::path 
     }
     for (const auto& entry : std::filesystem::directory_iterator(currentDir)) {
         temp = entry.path().filename().string();
-        if (temp.find(std::to_string(id)) != std::string::npos && temp.find("Character_") != std::string::npos) {
+        if (temp.find(std::to_string(id)) != std::string::npos && temp.find("Character_") != std::string::npos && !(temp.find("InventoryItemsCharacter_") != std::string::npos)) {
             filename = currentDir.string()+"\\"+ temp;
         }
     }

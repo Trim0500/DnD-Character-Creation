@@ -108,6 +108,8 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 	}
 	this->hit_points = t_record.hit_points;
 	this->max_hit_points = t_record.max_hit_points;
+	std::vector<serializeItem::ItemContainerRecord*> item_container_record = serializeItem::LoadItemContainerRecords(t_record.inventory_container_path);
+
 }
 
 
@@ -565,6 +567,34 @@ std::string Character::Character::Get_Equipment_Slot_String(Equipment_Slots t_sl
 		return "NA";
 	}
 
+}
+
+int Character::Character::setAttribute(Abilities_Stats t_ability, int t_val)
+{
+	this->ability_scores.at((int)t_ability) = t_val;
+	this->notify();
+	return t_val;
+}
+
+int Character::Character::setMaxHitPoints(int t_val)
+{
+	this->max_hit_points = t_val;
+	this->notify();
+	return t_val;
+}
+
+int Character::Character::setHitPoints(int t_val)
+{
+	this->hit_points = t_val;
+	this->notify();
+	return t_val;
+}
+
+int Character::Character::setLevel(Character_Class t_class, int t_val)
+{
+	this->level.at((int)t_class) = t_val;
+	this->notify();
+	return t_val;
 }
 
 bool Character::Character::Levelup_Barbarian()

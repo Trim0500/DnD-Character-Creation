@@ -18,9 +18,11 @@ void TestSerializeCharacter::TestSaveCharacter(void)
 
 void TestSerializeCharacter::TestLoadCharacter(void)
 {
+
 	serializecharacter::SaveCharacter(characterObject, "");
 	filename = serializecharacter::FindCharacterFile(characterObject->ID(), "");
 	serializecharacter::CharacterRecord record = serializecharacter::LoadCharacter(filename);
+	std::cerr << record.id << " | " << characterObject->ID() << std::endl;
 	CPPUNIT_ASSERT(record.id == characterObject->ID());
 	CPPUNIT_ASSERT(record.name == characterObject->Name());
 	CPPUNIT_ASSERT(record.max_hit_points == characterObject->Max_Hit_Points());

@@ -11,10 +11,10 @@ class Observable {
 				i->update((void*)this);
 			}
 		}
-
-	private:
-		std::list<Observer*> *_observers;
 		Observable() {
 			_observers = new std::list<Observer*>();
 		}
+
+	private:
+		std::list<Observer*> *_observers;
 };
