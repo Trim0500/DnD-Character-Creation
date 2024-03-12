@@ -6,6 +6,10 @@
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
 #include <filesystem>
+#include "Character.h"
+#include "item.h"
+#include "SerializeCharacter.h"
+#include "serializeItem.h"
 
 using namespace CppUnit;
 
@@ -28,8 +32,17 @@ int main()
 	if (!wasSucessful) {
 		return 1;
 	}
-
+	
 	getchar();
+	Character::Character bob;
+	item::Item test_item;
+	item::Item* test_item1 = new item::Item();
+	bob.Inventory().AddNewItem(&test_item);
+	bob.Inventory().AddNewItem(test_item1);
+	serializecharacter::SaveCharacter(&bob, "");
+	bob.Print_Character_Sheet();
+	delete test_item1;
+	//serializeItem::SaveItemContainers(currentPath, testContainerObject);
 
 	return 0;
 }
