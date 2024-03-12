@@ -48,6 +48,10 @@ void Map::Map::setGrid() {
 		this->grid.push_back(vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
 	}
 }
+void Map::Map::setCell(int row, int col, Interactable::Interactable& cell) {
+	this->grid[row][col] = &cell;
+}
+
 void Map::Map::setEmpty(int row, int col) {
 	this->grid[row][col] = new EmptyCell();
 }
@@ -175,7 +179,7 @@ void Map::Map::Customize() {
 	int row;
 	int col;
 	char celltype;
-	Cell_Type type;
+	//Cell_Type type;
 
 	while (!stop) {
 
@@ -274,22 +278,22 @@ bool Map::Map::KeepCustomizing() {
 }
 
 
-//convert a given letter to it's corresponding cell type
-Map::Cell_Type Map::ConvertToCellType(char letter) {
-
-	switch (letter) {
-	case 'e':
-		return Cell_Type::empty;
-	case 'w':
-		return Cell_Type::wall;
-	case 's':
-		return Cell_Type::special;
-	default:
-		cout << "Not a cell type. Defaults to 'empty'.";
-		return Cell_Type::empty;
-	}
-
-}
+////convert a given letter to it's corresponding cell type
+//Map::Cell_Type Map::ConvertToCellType(char letter) {
+//
+//	switch (letter) {
+//	case 'e':
+//		return Cell_Type::empty;
+//	case 'w':
+//		return Cell_Type::wall;
+//	case 's':
+//		return Cell_Type::special;
+//	default:
+//		cout << "Not a cell type. Defaults to 'empty'.";
+//		return Cell_Type::empty;
+//	}
+//
+//}
 
 bool Map::Map::IsTherePath() {
 	// start = 0,0
@@ -362,7 +366,7 @@ void Map::Map::Print() {
 }
 
 //USE ONLY IN DEBUG
-void Map::Map::ChangeCell(int row, int col, Cell_Type type) {
+void Map::Map::ChangeCell(int row, int col, Interactable::Interactable) {
 	this->grid[row][col] = type;
 }
 

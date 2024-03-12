@@ -74,6 +74,7 @@ namespace Map {
 		void setCols(int cols);
 		void setGrid();
 		void setEndCell();
+		void setCell(int row, int col, Interactable::Interactable& cell);
 		void setEmpty(int row, int col);
 		void setWall(int row, int col);
 		void setCharacter(int row, int col, Character::Character cha);
