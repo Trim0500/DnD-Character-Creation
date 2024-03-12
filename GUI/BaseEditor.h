@@ -5,6 +5,8 @@
 #include <FL/Fl_Hold_Browser.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Native_File_Chooser.H>
+#include <FL/Fl_File_Input.H>
+
 namespace CampaignEditor {
 	class BaseEditor :
 		public Fl_Pack
@@ -13,11 +15,12 @@ namespace CampaignEditor {
 
 	public:
 		BaseEditor(int x, int y, int w, int h) : Fl_Pack(x, y, w-10, h-10) {
-			spacing(30);
+			// spacing(30);
 			int c_y = 10;
 			this->type(Fl_Pack::HORIZONTAL);
 			this->spacing(100);
 			_g = new Fl_Pack(10, 45, w * .2, (h) * .9);
+
 			browser = new Fl_Hold_Browser(0, 20, w / 2, (h) * .5);
 			Fl_Pack* _b = new Fl_Pack(0,0, w * .2, 30);
 			_b->type(Fl_Pack::HORIZONTAL);
@@ -67,6 +70,7 @@ namespace CampaignEditor {
 		Fl_Button* delete_button;
 		bool unsaved_data = true;
 		std::string filepath;
+		Fl_File_Input * fp;
 		// virtual vector<
 	};
 }
