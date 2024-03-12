@@ -42,9 +42,13 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     std::ostringstream fullURI;
     fullURI << currentPath << t_path<< "\\InventoryItemsCharacter_" <<std::to_string(record.id) << ".csv";
     std::vector<Item*> inventoryVector;
-    for (int i{ 0 }; i < t_character->Inventory().GetAllItems().size(); i++) {
-        item::Item* saved_item = &t_character->Inventory().GetAllItems().at(i);
+
+    /*for (auto i : t_character->Inventory().GetAllItems()) {
+        item::Item* saved_item = &i;
         inventoryVector.push_back(saved_item);
+    }*/
+    for (int i{ 0 }; i < t_character->Inventory().GetAllItems().size(); i++) {
+        inventoryVector.push_back(&t_character->Inventory().GetAllItems().at(i));
     }
     record.inventory_container_path = fullURI.str();
 
@@ -164,11 +168,15 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
                 equipped_index++;
             }
         }
-        else if (field_key == "Inventory_Container_Path,") {
-            record.inventory_container_path = data;
+        else if (field_key == "Inventory_Container_Path") {
+            while (std::getline(spliter, data, ',')) {
+                record.inventory_container_path = data;
+            }
         }
-        else if (field_key == "Inventory_Container_ID,") {
-            record.inventory_container_id = std::stoi(data);
+        else if (field_key == "Inventory_Container_ID") {
+            while (std::getline(spliter, data, ',')) {
+                record.inventory_container_id = std::stoi(data);
+            }
         }
     }
 

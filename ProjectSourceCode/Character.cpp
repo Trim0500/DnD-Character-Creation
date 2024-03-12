@@ -108,7 +108,19 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 	}
 	this->hit_points = t_record.hit_points;
 	this->max_hit_points = t_record.max_hit_points;
-	std::vector<serializeItem::ItemContainerRecord*> item_container_record = serializeItem::LoadItemContainerRecords(t_record.inventory_container_path);
+	std::vector<item::Item*> item_container_record = serializeItem::LoadItems(t_record.inventory_container_path);
+	for (auto t_items : item_container_record) {
+		this->Inventory().AddNewItem(t_items);
+	}
+	for (int i{ 0 }; i < t_record.equipped_item_ids.size(); i++) {
+		bool found = false;
+		for (int j{ 0 }; j < this->Inventory().GetAllItems().size(); j++) {
+			if (this->Inventory().GetAllItems().at(j).GetItemId() == t_record.equipped_item_ids.at(i)) {
+				this->Equip_Item(&this->Inventory().GetAllItems().at(j));
+				found = true;
+			}
+		}
+	}
 
 }
 

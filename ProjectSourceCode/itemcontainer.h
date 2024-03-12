@@ -59,7 +59,7 @@ namespace itemcontainer {
 
 			int AddNewItem(Item*);
 
-			vector<Item> GetAllItems() { return items; };
+			vector<Item>& GetAllItems() { return items; };
 
 			void SetItems(std::vector<Item> _items) { items = _items; };
 
