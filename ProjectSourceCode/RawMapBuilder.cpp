@@ -27,7 +27,6 @@ void RMP::buildGrid() {
 }
 
 void RMP::buildTypes() {
-	//m_map->setEmpty(row, col);
 	//TODO
 }
 
@@ -38,6 +37,7 @@ bool SaveMap(Map::Map* map, std::string& filename) {
 		//open file
 		if (!file.is_open()) {
 			cout << "Could not open file: " << filename << endl;
+			return false;
 		}
 		else {
 			file << map->getRows() << "," << map->getCols() << endl;
@@ -53,40 +53,55 @@ bool SaveMap(Map::Map* map, std::string& filename) {
 					}
 					//if item
 					else if (typeid(map->getGrid()[i][j]) == typeid(Item)) {
-						file << i << "," << j << "i" << endl;
-						//file<< map->getGrid()[i][j]).serializeItem? idk how to use the serialize item 
-						//row,col,i
-						//everything about the item 
+						file << i << "," << j << "i" << "," << dynamic_cast<Item*>(map->getGrid()[i][j])->GetItemId() << endl;
+						//row,col,i,ID
 					}
 					// if character	
 					else if (typeid(map->getGrid()[i][j]) == typeid(Character::Character)) {
-						file << i << "," << j << "c" << endl;
-						//file<< map->getGrid()[i][j]).serializeItem? idk how to use the serialize item 
+						file << i << "," << j << "c" << "," << dynamic_cast<Character::Character*>(map->getGrid()[i][j])->ID() << endl;
 						//row,col,c
 					}
 					//if the cell type is empty: do nothing
-					/*if (typeid(map->getGrid()[i][j]) == typeid(EmptyCell)) {
-
-					}*/
+					else if (typeid(map->getGrid()[i][j]) == typeid(EmptyCell)) {
+						file << i << "," << j << "e" << endl;
+					}
 				}
 			}//end loop
 		}//end file writing
-		file.close();
 	}
 	catch (const ofstream::failure& e) {
 		cout << "Exception caught while opening file: " << filename << endl;
 	}
 
 	file.close();
+	return true;
 }
 
 Map::Map* LoadMap(std::string& filename) {
+	//USE BUILD FUNCTIONS IN HERE
+
+	//Map::Map mapload = new
+
+	ifstream file(filename);
+
+	try {
+		//open file
+		if (!file.is_open()) {
+			cout << "Could not open file: " << filename << endl;
+		}
+		else {
+			string line;
+			//while there is content in the file
+			while (getline(file, line)) {
 
 
+			}
+		}
 
 
-
-
-
+	}
+	catch (const ifstream::failure& e) {
+		cout << "Exception caught while opening file: " << filename << endl;
+	}
 }
 

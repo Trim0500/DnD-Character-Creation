@@ -14,5 +14,5 @@ Map::Map* MD::getMap() {
 
 void MD::constructMap() {
 	m_mapBuilder->createnewMap();
-	//more to come
+	//more to come?
 }
