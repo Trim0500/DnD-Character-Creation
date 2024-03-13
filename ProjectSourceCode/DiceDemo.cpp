@@ -5,20 +5,20 @@
 void DiceDemo(){
 	int r;
 	Dice d;
-	string query;
+	std::string query;
 	
 	//while (true) {
-		cout << "Input dice to roll: (! to return to main menu)" << endl;
-		cin >> query;
+		std::cout << "Input dice to roll: (! to return to main menu)" << std::endl;
+		std::cin >> query;
 		///if (query.rfind("!", 0) == 0) { break; }
-		cout << query;
+		std::cout << query;
 		try {
 			d = Dice(query);
 			r = d.roll(query);
-			cout << "You rolled " << r << endl;
+			std::cout << "You rolled " << r << std::endl;
 		}
-		catch (invalid_argument exc) {
-			cout << "Invalid query" << endl;
+		catch (std::invalid_argument exc) {
+			std::cout << "Invalid query" << std::endl;
 		}
 	//}
 };

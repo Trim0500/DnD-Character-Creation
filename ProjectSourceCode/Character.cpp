@@ -244,7 +244,7 @@ bool Character::Character::Levelup(Character_Class t_class)
 bool Character::Character::Equip_Item(item::Item* t_item) {
 	
 	if (inventory.GetItem(t_item->GetItemName()) == nullptr) {
-		cout << "Could not equipe '" << t_item->GetItemName() << "'. Item could not be found in inventory" << endl;
+		std::cout << "Could not equipe '" << t_item->GetItemName() << "'. Item could not be found in inventory" << std::endl;
 		return false;
 	}
 	switch (t_item->GetItemType())

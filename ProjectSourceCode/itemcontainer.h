@@ -30,7 +30,7 @@
 
 #include "item.h"
 
-using namespace std;
+// using namespace std;
 using namespace item;
 
 /*!
@@ -51,7 +51,7 @@ namespace itemcontainer {
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer
 			*/
-			ItemContainer(const string&, const int&, const float&);
+			ItemContainer(const std::string&, const int&, const float&);
 
 			float GetCapacity() { return capacity; };
 
@@ -59,7 +59,8 @@ namespace itemcontainer {
 
 			int AddNewItem(Item*);
 
-			vector<Item>& GetAllItems() { return items; };
+			std::vector<Item> GetAllItems() { return items; };
+
 
 			void SetItems(std::vector<Item> _items) { items = _items; };
 
@@ -71,8 +72,7 @@ namespace itemcontainer {
 			* 
 			* Overloaded method that uses an item name to find the specific item in the list and return it.
 			*/
-			Item* GetItem(const string&);
-
+			Item* GetItem(const std::string&);
 			/*!
 			* \fn GetItem
 			* \brief Overloaded method to find an item by item type
@@ -87,24 +87,21 @@ namespace itemcontainer {
 			* 
 			* Overloaded member function that will use an enchantment bonus (1-5) to find the items that have that bonus.
 			*/
-			vector<Item> GetItemsByEnchantmentBonus(const int&);
-			
+			std::vector<Item> GetItemsByEnchantmentBonus(const int&);
 			/*!
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via item type
 			*
 			* Overloaded member function that will use an item type enum value (1-7) to find the items that have that type.
 			*/
-			vector<Item> GetItemsByItemType(const int&);
-
+			std::vector<Item> GetItemsByItemType(const int&);
 			/*!
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via character stat
 			*
 			* Overloaded member function that will use a character stat enum value (0-8) to find the items that have that type.
 			*/
-			vector<Item> GetItemsByStat(const int&);
-
+			std::vector<Item> GetItemsByStat(const int&);
 			/*!
 			* \fn PrintItemVector
 			* \brief Function to print out the info on individual items
@@ -121,6 +118,6 @@ namespace itemcontainer {
 			* \var items
 			* \brief Vector of type Item that represents the containers item instances
 			*/
-			vector<Item> items;
+			std::vector<Item> items;
 	};
 }
