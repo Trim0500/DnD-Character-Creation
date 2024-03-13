@@ -2,7 +2,7 @@
 * \file campaign.h
 * \brief Class that abstracts the functionality for the main editable campaigns
 *
-* @author Tristan Lafleur
+* @author Tristan Lafleur (40245238)
 */
 
 #pragma once

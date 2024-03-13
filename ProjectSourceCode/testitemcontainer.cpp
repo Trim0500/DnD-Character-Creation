@@ -18,7 +18,7 @@
 #define WORN_ITEMS_PLUS_FOUR_ITEMS_SIZE 0
 #define WORN_ITEMS_PLUS_FIVE_ITEMS_SIZE 0
 
-using namespace std;
+// using namespace std;
 
 void TestItemContainer::setUp(void)
 {
@@ -161,207 +161,207 @@ void TestItemContainer::TestGetItemWeightTotal(void) {
 }
 
 void TestItemContainer::TestGetAllItems(void) {
-	vector<Item> backpackItems = backpackObject->GetAllItems();
+	std::vector<Item> backpackItems = backpackObject->GetAllItems();
 	CPPUNIT_ASSERT(backpackItems.size() == 2);
 	
-	vector<Item> wornItems = wornItemsObject->GetAllItems();
+	std::vector<Item> wornItems = wornItemsObject->GetAllItems();
 	CPPUNIT_ASSERT(wornItems.size() == WORN_ITEMS_SIZE);
 	
-	vector<Item> chestItems = chestObject->GetAllItems();
+	std::vector<Item> chestItems = chestObject->GetAllItems();
 	CPPUNIT_ASSERT(chestItems.size() >= 0);
 }
 
 void TestItemContainer::TestGetItemsByBonus(void) {
-	vector<Item> backpackPlusOneItems = backpackObject->GetItemsByEnchantmentBonus(1);
+	std::vector<Item> backpackPlusOneItems = backpackObject->GetItemsByEnchantmentBonus(1);
 	CPPUNIT_ASSERT(backpackPlusOneItems.size() == 0);
 	
-	vector<Item> backpackPlusTwoItems = backpackObject->GetItemsByEnchantmentBonus(2);
+	std::vector<Item> backpackPlusTwoItems = backpackObject->GetItemsByEnchantmentBonus(2);
 	CPPUNIT_ASSERT(backpackPlusTwoItems.size() == 0);
 	
-	vector<Item> backpackPlusThreeItems = backpackObject->GetItemsByEnchantmentBonus(3);
+	std::vector<Item> backpackPlusThreeItems = backpackObject->GetItemsByEnchantmentBonus(3);
 	CPPUNIT_ASSERT(backpackPlusThreeItems.size() == 0);
 	
-	vector<Item> backpackPlusFourItems = backpackObject->GetItemsByEnchantmentBonus(4);
+	std::vector<Item> backpackPlusFourItems = backpackObject->GetItemsByEnchantmentBonus(4);
 	CPPUNIT_ASSERT(backpackPlusFourItems.size() == 2);
 	
-	vector<Item> backpackPlusFiveItems = backpackObject->GetItemsByEnchantmentBonus(5);
+	std::vector<Item> backpackPlusFiveItems = backpackObject->GetItemsByEnchantmentBonus(5);
 	CPPUNIT_ASSERT(backpackPlusFiveItems.size() == 0);
 
-	vector<Item> plusOneWornItems = wornItemsObject->GetItemsByEnchantmentBonus(1);
+	std::vector<Item> plusOneWornItems = wornItemsObject->GetItemsByEnchantmentBonus(1);
 	CPPUNIT_ASSERT(plusOneWornItems.size() == WORN_ITEMS_PLUS_ONE_ITEMS_SIZE);
 
-	vector<Item> plusTwoWornItems = wornItemsObject->GetItemsByEnchantmentBonus(2);
+	std::vector<Item> plusTwoWornItems = wornItemsObject->GetItemsByEnchantmentBonus(2);
 	CPPUNIT_ASSERT(plusTwoWornItems.size() == WORN_ITEMS_PLUS_TWO_ITEMS_SIZE);
 	
-	vector<Item> plusThreeWornItems = wornItemsObject->GetItemsByEnchantmentBonus(3);
+	std::vector<Item> plusThreeWornItems = wornItemsObject->GetItemsByEnchantmentBonus(3);
 	CPPUNIT_ASSERT(plusThreeWornItems.size() == WORN_ITEMS_PLUS_THREE_ITEMS_SIZE);
 	
-	vector<Item> plusFourWornItems = wornItemsObject->GetItemsByEnchantmentBonus(4);
+	std::vector<Item> plusFourWornItems = wornItemsObject->GetItemsByEnchantmentBonus(4);
 	CPPUNIT_ASSERT(plusFourWornItems.size() == WORN_ITEMS_PLUS_FOUR_ITEMS_SIZE);
 	
-	vector<Item> plusFiveWornItems = wornItemsObject->GetItemsByEnchantmentBonus(5);
+	std::vector<Item> plusFiveWornItems = wornItemsObject->GetItemsByEnchantmentBonus(5);
 	CPPUNIT_ASSERT(plusFiveWornItems.size() == WORN_ITEMS_PLUS_FIVE_ITEMS_SIZE);
 
-	vector<Item> chestPlusOneItems = chestObject->GetItemsByEnchantmentBonus(1);
+	std::vector<Item> chestPlusOneItems = chestObject->GetItemsByEnchantmentBonus(1);
 	CPPUNIT_ASSERT(chestPlusOneItems.size() >= 0);
 
-	vector<Item> chestPlusTwoItems = chestObject->GetItemsByEnchantmentBonus(2);
+	std::vector<Item> chestPlusTwoItems = chestObject->GetItemsByEnchantmentBonus(2);
 	CPPUNIT_ASSERT(chestPlusTwoItems.size() >= 0);
 
-	vector<Item> chestPlusThreeItems = chestObject->GetItemsByEnchantmentBonus(3);
+	std::vector<Item> chestPlusThreeItems = chestObject->GetItemsByEnchantmentBonus(3);
 	CPPUNIT_ASSERT(chestPlusThreeItems.size() >= 0);
 
-	vector<Item> chestPlusFourItems = chestObject->GetItemsByEnchantmentBonus(4);
+	std::vector<Item> chestPlusFourItems = chestObject->GetItemsByEnchantmentBonus(4);
 	CPPUNIT_ASSERT(chestPlusFourItems.size() >= 0);
 
-	vector<Item> chestPlusFiveItems = chestObject->GetItemsByEnchantmentBonus(5);
+	std::vector<Item> chestPlusFiveItems = chestObject->GetItemsByEnchantmentBonus(5);
 	CPPUNIT_ASSERT(chestPlusFiveItems.size() >= 0);
 }
 
 void TestItemContainer::TestGetItemsByType(void) {
-	vector<Item> helmetBackpackItems = backpackObject->GetItemsByItemType(Helmet);
+	std::vector<Item> helmetBackpackItems = backpackObject->GetItemsByItemType(Helmet);
 	CPPUNIT_ASSERT(helmetBackpackItems.size() >= 0);
 	
-	vector<Item> armorBackpackItems = backpackObject->GetItemsByItemType(Armor);
+	std::vector<Item> armorBackpackItems = backpackObject->GetItemsByItemType(Armor);
 	CPPUNIT_ASSERT(armorBackpackItems.size() >= 0);
 	
-	vector<Item> shieldBackpackItems = backpackObject->GetItemsByItemType(Shield);
+	std::vector<Item> shieldBackpackItems = backpackObject->GetItemsByItemType(Shield);
 	CPPUNIT_ASSERT(shieldBackpackItems.size() >= 0);
 	
-	vector<Item> ringBackpackItems = backpackObject->GetItemsByItemType(Ring);
+	std::vector<Item> ringBackpackItems = backpackObject->GetItemsByItemType(Ring);
 	CPPUNIT_ASSERT(ringBackpackItems.size() >= 0);
 	
-	vector<Item> beltBackpackItems = backpackObject->GetItemsByItemType(Belt);
+	std::vector<Item> beltBackpackItems = backpackObject->GetItemsByItemType(Belt);
 	CPPUNIT_ASSERT(beltBackpackItems.size() >= 0);
 	
-	vector<Item> bootsBackpackItems = backpackObject->GetItemsByItemType(Boots);
+	std::vector<Item> bootsBackpackItems = backpackObject->GetItemsByItemType(Boots);
 	CPPUNIT_ASSERT(bootsBackpackItems.size() >= 0);
 	
-	vector<Item> weaponBackpackItems = backpackObject->GetItemsByItemType(Weapon);
+	std::vector<Item> weaponBackpackItems = backpackObject->GetItemsByItemType(Weapon);
 	CPPUNIT_ASSERT(weaponBackpackItems.size() >= 0);
 
-	vector<Item> helmetWornItems = wornItemsObject->GetItemsByItemType(Helmet);
+	std::vector<Item> helmetWornItems = wornItemsObject->GetItemsByItemType(Helmet);
 	CPPUNIT_ASSERT(helmetWornItems.size() == 1);
 	
-	vector<Item> armorWornItems = wornItemsObject->GetItemsByItemType(Armor);
+	std::vector<Item> armorWornItems = wornItemsObject->GetItemsByItemType(Armor);
 	CPPUNIT_ASSERT(armorWornItems.size() == 1);
 	
-	vector<Item> shieldWornItems = wornItemsObject->GetItemsByItemType(Shield);
+	std::vector<Item> shieldWornItems = wornItemsObject->GetItemsByItemType(Shield);
 	CPPUNIT_ASSERT(armorWornItems.size() == 1);
 	
-	vector<Item> ringWornItems = wornItemsObject->GetItemsByItemType(Ring);
+	std::vector<Item> ringWornItems = wornItemsObject->GetItemsByItemType(Ring);
 	CPPUNIT_ASSERT(ringWornItems.size() == 1);
 	
-	vector<Item> beltWornItems = wornItemsObject->GetItemsByItemType(Belt);
+	std::vector<Item> beltWornItems = wornItemsObject->GetItemsByItemType(Belt);
 	CPPUNIT_ASSERT(beltWornItems.size() == 1);
 	
-	vector<Item> bootsWornItems = wornItemsObject->GetItemsByItemType(Boots);
+	std::vector<Item> bootsWornItems = wornItemsObject->GetItemsByItemType(Boots);
 	CPPUNIT_ASSERT(bootsWornItems.size() == 1);
 	
-	vector<Item> weaponWornItems = wornItemsObject->GetItemsByItemType(Weapon);
+	std::vector<Item> weaponWornItems = wornItemsObject->GetItemsByItemType(Weapon);
 	CPPUNIT_ASSERT(weaponWornItems.size() == 1);
 
-	vector<Item> helmetChestItems = chestObject->GetItemsByItemType(Helmet);
+	std::vector<Item> helmetChestItems = chestObject->GetItemsByItemType(Helmet);
 	CPPUNIT_ASSERT(helmetChestItems.size() >= 0);
 
-	vector<Item> armorChestItems = chestObject->GetItemsByItemType(Armor);
+	std::vector<Item> armorChestItems = chestObject->GetItemsByItemType(Armor);
 	CPPUNIT_ASSERT(armorChestItems.size() >= 0);
 
-	vector<Item> shieldChestItems = chestObject->GetItemsByItemType(Shield);
+	std::vector<Item> shieldChestItems = chestObject->GetItemsByItemType(Shield);
 	CPPUNIT_ASSERT(shieldChestItems.size() >= 0);
 
-	vector<Item> ringChestItems = chestObject->GetItemsByItemType(Ring);
+	std::vector<Item> ringChestItems = chestObject->GetItemsByItemType(Ring);
 	CPPUNIT_ASSERT(ringChestItems.size() >= 0);
 
-	vector<Item> beltChestItems = chestObject->GetItemsByItemType(Belt);
+	std::vector<Item> beltChestItems = chestObject->GetItemsByItemType(Belt);
 	CPPUNIT_ASSERT(beltChestItems.size() >= 0);
 
-	vector<Item> bootsChestItems = chestObject->GetItemsByItemType(Boots);
+	std::vector<Item> bootsChestItems = chestObject->GetItemsByItemType(Boots);
 	CPPUNIT_ASSERT(bootsChestItems.size() >= 0);
 
-	vector<Item> weaponChestItems = chestObject->GetItemsByItemType(Weapon);
+	std::vector<Item> weaponChestItems = chestObject->GetItemsByItemType(Weapon);
 	CPPUNIT_ASSERT(weaponChestItems.size() >= 0);
 }
 
 void TestItemContainer::TestGetItemsByStat(void) {
-	vector<Item> strengthBackpackItems = backpackObject->GetItemsByStat(Strength);
+	std::vector<Item> strengthBackpackItems = backpackObject->GetItemsByStat(Strength);
 	CPPUNIT_ASSERT(strengthBackpackItems.size() >= 0);
 	
-	vector<Item> dexterityBackpackItems = backpackObject->GetItemsByStat(Dexterity);
+	std::vector<Item> dexterityBackpackItems = backpackObject->GetItemsByStat(Dexterity);
 	CPPUNIT_ASSERT(dexterityBackpackItems.size() >= 0);
 	
-	vector<Item> constitutionBackpackItems = backpackObject->GetItemsByStat(Constitution);
+	std::vector<Item> constitutionBackpackItems = backpackObject->GetItemsByStat(Constitution);
 	CPPUNIT_ASSERT(constitutionBackpackItems.size() >= 0);
 	
-	vector<Item> intelligenceBackpackItems = backpackObject->GetItemsByStat(Intelligence);
+	std::vector<Item> intelligenceBackpackItems = backpackObject->GetItemsByStat(Intelligence);
 	CPPUNIT_ASSERT(intelligenceBackpackItems.size() >= 0);
 	
-	vector<Item> wisdomBackpackItems = backpackObject->GetItemsByStat(Wisdom);
+	std::vector<Item> wisdomBackpackItems = backpackObject->GetItemsByStat(Wisdom);
 	CPPUNIT_ASSERT(wisdomBackpackItems.size() >= 0);
 	
-	vector<Item> charismaBackpackItems = backpackObject->GetItemsByStat(Charisma);
+	std::vector<Item> charismaBackpackItems = backpackObject->GetItemsByStat(Charisma);
 	CPPUNIT_ASSERT(charismaBackpackItems.size() >= 0);
 	
-	vector<Item> armorClassBackpackItems = backpackObject->GetItemsByStat(ArmorClass);
+	std::vector<Item> armorClassBackpackItems = backpackObject->GetItemsByStat(ArmorClass);
 	CPPUNIT_ASSERT(armorClassBackpackItems.size() >= 0);
 	
-	vector<Item> attackBonusBackpackItems = backpackObject->GetItemsByStat(AttackBonus);
+	std::vector<Item> attackBonusBackpackItems = backpackObject->GetItemsByStat(AttackBonus);
 	CPPUNIT_ASSERT(attackBonusBackpackItems.size() >= 0);
 	
-	vector<Item> dmgBonusBackpackItems = backpackObject->GetItemsByStat(DamageBonus);
+	std::vector<Item> dmgBonusBackpackItems = backpackObject->GetItemsByStat(DamageBonus);
 	CPPUNIT_ASSERT(dmgBonusBackpackItems.size() >= 0);
 	
-	vector<Item> strengthWornItems = wornItemsObject->GetItemsByStat(Strength);
+	std::vector<Item> strengthWornItems = wornItemsObject->GetItemsByStat(Strength);
 	CPPUNIT_ASSERT(strengthWornItems.size() == 1);
 	
-	vector<Item> dexterityWornItems = wornItemsObject->GetItemsByStat(Dexterity);
+	std::vector<Item> dexterityWornItems = wornItemsObject->GetItemsByStat(Dexterity);
 	CPPUNIT_ASSERT(dexterityWornItems.size() == 1);
 	
-	vector<Item> constitutionWornItems = wornItemsObject->GetItemsByStat(Constitution);
+	std::vector<Item> constitutionWornItems = wornItemsObject->GetItemsByStat(Constitution);
 	CPPUNIT_ASSERT(constitutionWornItems.size() == 0);
 	
-	vector<Item> intelligenceWornItems = wornItemsObject->GetItemsByStat(Intelligence);
+	std::vector<Item> intelligenceWornItems = wornItemsObject->GetItemsByStat(Intelligence);
 	CPPUNIT_ASSERT(intelligenceWornItems.size() == 1);
 	
-	vector<Item> wisdomWornItems = wornItemsObject->GetItemsByStat(Wisdom);
+	std::vector<Item> wisdomWornItems = wornItemsObject->GetItemsByStat(Wisdom);
 	CPPUNIT_ASSERT(wisdomWornItems.size() == 1);
 	
-	vector<Item> charismaWornItems = wornItemsObject->GetItemsByStat(Charisma);
+	std::vector<Item> charismaWornItems = wornItemsObject->GetItemsByStat(Charisma);
 	CPPUNIT_ASSERT(charismaWornItems.size() == 0);
 	
-	vector<Item> armorClassWornItems = wornItemsObject->GetItemsByStat(ArmorClass);
+	std::vector<Item> armorClassWornItems = wornItemsObject->GetItemsByStat(ArmorClass);
 	CPPUNIT_ASSERT(armorClassWornItems.size() == 2);
 	
-	vector<Item> attackBonusWornItems = wornItemsObject->GetItemsByStat(AttackBonus);
+	std::vector<Item> attackBonusWornItems = wornItemsObject->GetItemsByStat(AttackBonus);
 	CPPUNIT_ASSERT(attackBonusWornItems.size() == 1);
 	
-	vector<Item> dmgBonusWornItems = wornItemsObject->GetItemsByStat(DamageBonus);
+	std::vector<Item> dmgBonusWornItems = wornItemsObject->GetItemsByStat(DamageBonus);
 	CPPUNIT_ASSERT(dmgBonusWornItems.size() == 0);
 
-	vector<Item> strengthChestItems = chestObject->GetItemsByStat(Strength);
+	std::vector<Item> strengthChestItems = chestObject->GetItemsByStat(Strength);
 	CPPUNIT_ASSERT(strengthChestItems.size() >= 0);
 
-	vector<Item> dexterityChestItems = chestObject->GetItemsByStat(Dexterity);
+	std::vector<Item> dexterityChestItems = chestObject->GetItemsByStat(Dexterity);
 	CPPUNIT_ASSERT(dexterityChestItems.size() >= 0);
 
-	vector<Item> constitutionChestItems = chestObject->GetItemsByStat(Constitution);
+	std::vector<Item> constitutionChestItems = chestObject->GetItemsByStat(Constitution);
 	CPPUNIT_ASSERT(constitutionChestItems.size() >= 0);
 
-	vector<Item> intelligenceChestItems = chestObject->GetItemsByStat(Intelligence);
+	std::vector<Item> intelligenceChestItems = chestObject->GetItemsByStat(Intelligence);
 	CPPUNIT_ASSERT(intelligenceChestItems.size() >= 0);
 
-	vector<Item> wisdomChestItems = chestObject->GetItemsByStat(Wisdom);
+	std::vector<Item> wisdomChestItems = chestObject->GetItemsByStat(Wisdom);
 	CPPUNIT_ASSERT(wisdomChestItems.size() >= 0);
 
-	vector<Item> charismaChestItems = chestObject->GetItemsByStat(Charisma);
+	std::vector<Item> charismaChestItems = chestObject->GetItemsByStat(Charisma);
 	CPPUNIT_ASSERT(charismaChestItems.size() >= 0);
 
-	vector<Item> armorClassChestItems = chestObject->GetItemsByStat(ArmorClass);
+	std::vector<Item> armorClassChestItems = chestObject->GetItemsByStat(ArmorClass);
 	CPPUNIT_ASSERT(armorClassChestItems.size() >= 0);
 
-	vector<Item> attackBonusChestItems = chestObject->GetItemsByStat(AttackBonus);
+	std::vector<Item> attackBonusChestItems = chestObject->GetItemsByStat(AttackBonus);
 	CPPUNIT_ASSERT(attackBonusChestItems.size() >= 0);
 
-	vector<Item> dmgBonusChestItems = chestObject->GetItemsByStat(DamageBonus);
+	std::vector<Item> dmgBonusChestItems = chestObject->GetItemsByStat(DamageBonus);
 	CPPUNIT_ASSERT(dmgBonusChestItems.size() >= 0);
 }

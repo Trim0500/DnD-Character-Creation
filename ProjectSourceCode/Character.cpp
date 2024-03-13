@@ -108,12 +108,27 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 	}
 	this->hit_points = t_record.hit_points;
 	this->max_hit_points = t_record.max_hit_points;
+	std::vector<item::Item*> item_container_record = serializeItem::LoadItems(t_record.inventory_container_path);
+	for (auto t_items : item_container_record) {
+		this->Inventory().AddNewItem(t_items);
+	}
+	for (int i{ 0 }; i < t_record.equipped_item_ids.size(); i++) {
+		bool found = false;
+		for (int j{ 0 }; j < this->Inventory().GetAllItems().size(); j++) {
+			if (this->Inventory().GetAllItems().at(j).GetItemId() == t_record.equipped_item_ids.at(i)) {
+				this->Equip_Item(&this->Inventory().GetAllItems().at(j));
+				found = true;
+			}
+		}
+	}
+
 }
 
 
 std::string Character::Character::Name(const std::string& t_name)
 {
 	name = t_name;
+	this->notify();
 	return name;
 }
 
@@ -229,7 +244,7 @@ bool Character::Character::Levelup(Character_Class t_class)
 bool Character::Character::Equip_Item(item::Item* t_item) {
 	
 	if (inventory.GetItem(t_item->GetItemName()) == nullptr) {
-		cout << "Could not equipe '" << t_item->GetItemName() << "'. Item could not be found in inventory" << endl;
+		std::cout << "Could not equipe '" << t_item->GetItemName() << "'. Item could not be found in inventory" << std::endl;
 		return false;
 	}
 	switch (t_item->GetItemType())
@@ -262,13 +277,14 @@ bool Character::Character::Equip_Item(item::Item* t_item) {
 		std::cerr << "Could not equipe '" << t_item->GetItemName() << "'. No corresponding equipment slot" << std::endl;
 		return false;
 	}
+	this->notify();
 	return true;
 }
 
 void Character::Character::Unequip_Item(Equipment_Slots t_slot)
 {
 	equipment_slots.at(t_slot) = nullptr;
-	return;
+	this->notify();
 }
 
 void Character::Character::Receive_Damage(int t_damage)
@@ -279,6 +295,7 @@ void Character::Character::Receive_Damage(int t_damage)
 	else {
 		hit_points -= t_damage;
 	}
+	this->notify();
 }
 
 void Character::Character::Receive_Healing(int t_heal)
@@ -289,6 +306,7 @@ void Character::Character::Receive_Healing(int t_heal)
 	else {
 		hit_points += t_heal;
 	}
+	this->notify();
 }
 
 const bool Character::Character::Is_Alive()
@@ -563,6 +581,34 @@ std::string Character::Character::Get_Equipment_Slot_String(Equipment_Slots t_sl
 
 }
 
+int Character::Character::setAttribute(Abilities_Stats t_ability, int t_val)
+{
+	this->ability_scores.at((int)t_ability) = t_val;
+	this->notify();
+	return t_val;
+}
+
+int Character::Character::setMaxHitPoints(int t_val)
+{
+	this->max_hit_points = t_val;
+	this->notify();
+	return t_val;
+}
+
+int Character::Character::setHitPoints(int t_val)
+{
+	this->hit_points = t_val;
+	this->notify();
+	return t_val;
+}
+
+int Character::Character::setLevel(Character_Class t_class, int t_val)
+{
+	this->level.at((int)t_class) = t_val;
+	this->notify();
+	return t_val;
+}
+
 bool Character::Character::Levelup_Barbarian()
 {
 	Character_Class t_class = Character_Class::Barbarian;
@@ -576,6 +622,7 @@ bool Character::Character::Levelup_Barbarian()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -592,6 +639,7 @@ bool Character::Character::Levelup_Barbarian()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -600,6 +648,7 @@ bool Character::Character::Levelup_Barbarian()
 		level.at((int)t_class) += 1;
 		max_hit_points += (7 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -617,6 +666,7 @@ bool Character::Character::Levelup_Bard()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -633,6 +683,7 @@ bool Character::Character::Levelup_Bard()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -641,6 +692,7 @@ bool Character::Character::Levelup_Bard()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -658,6 +710,7 @@ bool Character::Character::Levelup_Cleric()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -674,6 +727,7 @@ bool Character::Character::Levelup_Cleric()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -682,6 +736,7 @@ bool Character::Character::Levelup_Cleric()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -699,6 +754,7 @@ bool Character::Character::Levelup_Druid()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -715,6 +771,7 @@ bool Character::Character::Levelup_Druid()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -723,6 +780,7 @@ bool Character::Character::Levelup_Druid()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -740,6 +798,7 @@ bool Character::Character::Levelup_Fighter()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -756,6 +815,7 @@ bool Character::Character::Levelup_Fighter()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -764,6 +824,7 @@ bool Character::Character::Levelup_Fighter()
 		level.at((int)t_class) += 1;
 		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -781,6 +842,7 @@ bool Character::Character::Levelup_Monk()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -797,6 +859,7 @@ bool Character::Character::Levelup_Monk()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -805,6 +868,7 @@ bool Character::Character::Levelup_Monk()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -822,6 +886,7 @@ bool Character::Character::Levelup_Paladin()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -838,6 +903,7 @@ bool Character::Character::Levelup_Paladin()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -846,6 +912,7 @@ bool Character::Character::Levelup_Paladin()
 		level.at((int)t_class) += 1;
 		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -863,6 +930,7 @@ bool Character::Character::Levelup_Ranger()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -879,6 +947,7 @@ bool Character::Character::Levelup_Ranger()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -887,6 +956,7 @@ bool Character::Character::Levelup_Ranger()
 		level.at((int)t_class) += 1;
 		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -904,6 +974,7 @@ bool Character::Character::Levelup_Rogue()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -920,6 +991,7 @@ bool Character::Character::Levelup_Rogue()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -928,6 +1000,7 @@ bool Character::Character::Levelup_Rogue()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -945,6 +1018,7 @@ bool Character::Character::Levelup_Sorcerer()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -961,6 +1035,7 @@ bool Character::Character::Levelup_Sorcerer()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -969,6 +1044,7 @@ bool Character::Character::Levelup_Sorcerer()
 		level.at((int)t_class) += 1;
 		max_hit_points += (4 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -986,6 +1062,7 @@ bool Character::Character::Levelup_Warlock()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -1002,6 +1079,7 @@ bool Character::Character::Levelup_Warlock()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -1010,6 +1088,7 @@ bool Character::Character::Levelup_Warlock()
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }
@@ -1027,6 +1106,7 @@ bool Character::Character::Levelup_Wizard()
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
+				this->notify();
 				return true;
 			}
 			else
@@ -1043,6 +1123,7 @@ bool Character::Character::Levelup_Wizard()
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
+			this->notify();
 			return true;
 		}
 	}
@@ -1051,6 +1132,7 @@ bool Character::Character::Levelup_Wizard()
 		level.at((int)t_class) += 1;
 		max_hit_points += (4 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
+		this->notify();
 		return true;
 	}
 }

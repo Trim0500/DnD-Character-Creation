@@ -5,9 +5,22 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
+
+#include "Character.h"
+#include "Dice.h"
+#include "Map.h"
+#include "demoitem.h"
+#include "DiceDemo.h"
+#include "demoCharacter.h"
+#include "../GUI/MainMenu.h"
+
 #include <filesystem>
 
 using namespace CppUnit;
+using namespace item;
+using namespace itemcontainer;
+using namespace demoitem;
+using namespace CampaignEditor;
 
 int main()
 {
@@ -28,9 +41,10 @@ int main()
 	if (!wasSucessful) {
 		return 1;
 	}
-
+	MainMenu * m = new MainMenu();
+	m->show();
+  Fl::run();
 	getchar();
-
 	return 0;
 }
 

@@ -30,7 +30,7 @@
 
 #include "item.h"
 
-using namespace std;
+// using namespace std;
 using namespace item;
 
 /*!
@@ -51,19 +51,28 @@ namespace itemcontainer {
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer
 			*/
-			ItemContainer(const string&, const int&, const float&);
-			void SetWeightLimit(const float& _capacity) { capacity = _capacity; };
-			int AddNewItem(Item*);
-			vector<Item> GetAllItems() { return items; };
+			ItemContainer(const std::string&, const int&, const float&);
+
 			float GetCapacity() { return capacity; };
+
+			void SetWeightLimit(const float& _capacity) { capacity = _capacity; };
+
+			int AddNewItem(Item*);
+
+			std::vector<Item> GetAllItems() { return items; };
+
+
+			void SetItems(std::vector<Item> _items) { items = _items; };
+
 			float GetTotalItemWeight();
+
 			/*!
 			* \fn GetItem
 			* \brief Overloaded method to find an item by name
 			* 
 			* Overloaded method that uses an item name to find the specific item in the list and return it.
 			*/
-			Item* GetItem(const string&);
+			Item* GetItem(const std::string&);
 			/*!
 			* \fn GetItem
 			* \brief Overloaded method to find an item by item type
@@ -71,27 +80,28 @@ namespace itemcontainer {
 			* Overloaded method that uses an item type value (1-7) to find the specific item in the list and return it.
 			*/
 			Item* GetItem(const int&);
+
 			/*!
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via enchantment bonus
 			* 
 			* Overloaded member function that will use an enchantment bonus (1-5) to find the items that have that bonus.
 			*/
-			vector<Item> GetItemsByEnchantmentBonus(const int&);
+			std::vector<Item> GetItemsByEnchantmentBonus(const int&);
 			/*!
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via item type
 			*
 			* Overloaded member function that will use an item type enum value (1-7) to find the items that have that type.
 			*/
-			vector<Item> GetItemsByItemType(const int&);
+			std::vector<Item> GetItemsByItemType(const int&);
 			/*!
 			* \fn GetItems
 			* \brief Overloaded method to find a list of items via character stat
 			*
 			* Overloaded member function that will use a character stat enum value (0-8) to find the items that have that type.
 			*/
-			vector<Item> GetItemsByStat(const int&);
+			std::vector<Item> GetItemsByStat(const int&);
 			/*!
 			* \fn PrintItemVector
 			* \brief Function to print out the info on individual items
@@ -103,10 +113,11 @@ namespace itemcontainer {
 			* \brief Integer that represents the carrying capacity (in lbs) for the container
 			*/
 			float capacity;
+
 			/*!
 			* \var items
 			* \brief Vector of type Item that represents the containers item instances
 			*/
-			vector<Item> items;
+			std::vector<Item> items;
 	};
 }

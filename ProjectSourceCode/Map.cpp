@@ -11,7 +11,7 @@
 #include <stack>
 #include <vector>
 
-using namespace std;
+// using namespace std;
 
 //default constructor
 Map::Map::Map() {
@@ -19,47 +19,9 @@ Map::Map::Map() {
 	this->mapID = nextMapID;
 }
 
-////basic constructor
-//Map::Map::Map(int r, int c) {
-//	nextMapID += 1;
-//	this->mapID = nextMapID;
-//	this->rows = r;
-//	this->cols = c;
-//	this->end_cell[0] = r - 1;
-//	this->end_cell[1] = c - 1;
-//
-//	for (int i = 0; i < rows; i++) {
-//		this->grid.push_back(vector<Cell_Type>(cols, Cell_Type::empty));
-//	}
-//}
-
-void Map::Map::setRows(int r) {
-	this->rows = r;
-}
-void Map::Map::setCols(int c) {
-	this->cols = c;
-}
-void Map::Map::setEndCell() {
-	this->endCell[0] = this->rows - 1;
-	this->endCell[1] = this->cols - 1;
-}
-void Map::Map::setGrid() {
-	for (int i = 0; i < this->rows; i++) {
-		this->grid.push_back(vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
+	for (int i = 0; i < rows; i++) {
+		grid.push_back(std::vector<Cell_Type>(cols, Cell_Type::empty));
 	}
-}
-void Map::Map::setCell(int row, int col, Interactable::Interactable& cell) {
-	this->grid[row][col] = &cell;
-}
-
-void Map::Map::setEmpty(int row, int col) {
-	this->grid[row][col] = new EmptyCell();
-}
-void Map::Map::setWall(int row, int col) {
-	this->grid[row][col] = new Wall();
-}
-void Map::Map::setCharacter(int row, int col, Character::Character cha) {
-	this->grid[row][col] = &cha;
 }
 //TODO
 //void Map::Map::setItem(int row, int col, Item::Item item) {
@@ -69,50 +31,50 @@ void Map::Map::setCharacter(int row, int col, Character::Character cha) {
 Map::Map* Map::Map::Create() {
 	int rows, cols;
 
-	string rowInput, colInput;
+	std::string rowInput, colInput;
 
-	regex numRgx("^[1-9][0-9]*$");
-	regex answerRgx("[y|n]");
-	smatch rowNumMatch, colNumMatch, answerMatch;
+	std::regex numRgx("^[1-9][0-9]*$");
+	std::regex answerRgx("[y|n]");
+	std::smatch rowNumMatch, colNumMatch, answerMatch;
 
 	try {
-		cout << "Enter the number of rows in your map: ";
-		cin >> rowInput;
+		std::cout << "Enter the number of rows in your map: ";
+		std::cin >> rowInput;
 		if (!regex_match(rowInput, rowNumMatch, numRgx)) {
-			throw exception("Invalid input!");
+			throw std::exception("Invalid input!");
 		}
 
 		rows = stoi(rowInput);
 
 		//validate rows input
 		while (true) {
-			if (cin.fail() || rows < 1) {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "Invalid input. Please enter a positive number: ";
-				cin >> rows;
+			if (std::cin.fail() || rows < 1) {
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Invalid input. Please enter a positive number: ";
+				std::cin >> rows;
 			}
 			else {
 				break;
 			}
 		}
 
-		cout << "Enter the number of columns in your map: ";
-		cin >> colInput;
+		std::cout << "Enter the number of columns in your map: ";
+		std::cin >> colInput;
 
 		if (!regex_match(colInput, colNumMatch, numRgx)) {
-			throw exception("Invalid input!");
+			throw std::exception("Invalid input!");
 		}
 
 		cols = stoi(rowInput);
 
 		//validate columns input
 		while (true) {
-			if (cin.fail() || cols < 1) {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "Invalid input. Please enter a positive number: ";
-				cin >> cols;
+			if (std::cin.fail() || cols < 1) {
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Invalid input. Please enter a positive number: ";
+				std::cin >> cols;
 			}
 			else {
 				break;
@@ -126,31 +88,31 @@ Map::Map* Map::Map::Create() {
 		map->setEndCell();
 		map->Print();
 
-		string answer;
-		cout << "Leave as is? (y/n): ";
-		cin >> answer;
+		std::string answer;
+		std::cout << "Leave as is? (y/n): ";
+		std::cin >> answer;
 
 		if (!regex_match(answer, answerMatch, answerRgx)) {
-			throw exception("Invalid Input!");
+			throw std::exception("Invalid Input!");
 		}
 
 		char custm = answer[0];
 
 		while (true) {
-			if (cin.fail()) {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "Not a valid answer. Leave the map as is? (y/n): ";
-				cin >> custm;
+			if (std::cin.fail()) {
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Not a valid answer. Leave the map as is? (y/n): ";
+				std::cin >> custm;
 			}
 			if (custm == 'y' || custm == 'n') {
 				break;
 			}
 			else {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "Not a valid answer. Leave the map as is? (y/n): ";
-				cin >> custm;
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Not a valid answer. Leave the map as is? (y/n): ";
+				std::cin >> custm;
 			}
 		}
 
@@ -161,15 +123,15 @@ Map::Map* Map::Map::Create() {
 				map->Customize();
 				map->Print();
 				// Check that there is at least one path from start to end
-				cout << "Checking if there is a possible path ... " << endl;
+				std::cout << "Checking if there is a possible path ... " << std::endl;
 				path = map->IsTherePath();
 			}
 		}
 
 		return map;
 	}
-	catch (exception exc) {
-		cout << "Invalid input!" << endl;
+	catch (std::exception exc) {
+		std::cout << "Invalid input!" << std::endl;
 	}
 
 }
@@ -186,15 +148,15 @@ void Map::Map::Customize() {
 		// get row and column input
 		while (true) {
 			//Get row input
-			cout << "Enter the the cell row you want to change: ";
-			cin >> row;
+			std::cout << "Enter the the cell row you want to change: ";
+			std::cin >> row;
 			//validate row input
 			while (true) {
-				if (cin.fail() || row < 0 || row >= rows) {
-					cin.clear();
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');
-					cout << "Invalid input. Please enter a positive number: ";
-					cin >> row;
+				if (std::cin.fail() || row < 0 || row >= rows) {
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "Invalid input. Please enter a positive number: ";
+					std::cin >> row;
 				}
 				else {
 					break;
@@ -202,15 +164,15 @@ void Map::Map::Customize() {
 			}
 
 			//Get column input
-			cout << "Enter the cell column you want to change: ";
-			cin >> col;
+			std::cout << "Enter the cell column you want to change: ";
+			std::cin >> col;
 			//validate column input
 			while (true) {
-				if (cin.fail() || col < 0 || col >= cols) {
-					cin.clear();
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');
-					cout << "Invalid input. Please enter a positive number: ";
-					cin >> col;
+				if (std::cin.fail() || col < 0 || col >= cols) {
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "Invalid input. Please enter a positive number: ";
+					std::cin >> col;
 				}
 				else {
 					break;
@@ -218,8 +180,8 @@ void Map::Map::Customize() {
 			}
 
 			//if the cell selected is the start or end
-			if ((row == 0 && col == 0) || (row == endCell[0] && col == endCell[1])) {
-				cout << "You cannot change the type of the start or end cell." << endl;
+			if ((row == 0 && col == 0) || (row == end_cell[0] && col == end_cell[1])) {
+				std::cout << "You cannot change the type of the start or end cell." << std::endl;
 			}
 			//valid cell input
 			else {
@@ -227,15 +189,15 @@ void Map::Map::Customize() {
 			}
 		}//end row and column input loop
 
-		cout << "Enter the cell type you want to change it to ([e]mpty, [w]all, [s]pecial): ";
-		cin >> celltype;
+		std::cout << "Enter the cell type you want to change it to ([e]mpty, [w]all, [s]pecial): ";
+		std::cin >> celltype;
 		//validate input
 		while (true) {
-			if (cin.fail()) {
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				cout << "Invalid input. Enter only 1 letter please: ";
-				cin >> row;
+			if (std::cin.fail()) {
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Invalid input. Enter only 1 letter please: ";
+				std::cin >> row;
 			}
 			else {
 				break;
@@ -246,7 +208,7 @@ void Map::Map::Customize() {
 		//assign cell to its new type
 		grid[row][col] = type;
 		//print results
-		cout << "Your map looks like this: " << endl;
+		std::cout << "Your map looks like this: " << std::endl;
 		Print();
 
 		stop = KeepCustomizing();
@@ -257,16 +219,16 @@ void Map::Map::Customize() {
 bool Map::Map::KeepCustomizing() {
 	char ans = 'a'; //answer
 	while (true) {
-		cout << "Do you want to keep customizing? (y/n): "; //yes/no
-		cin >> ans;
-		if (!cin.fail()) {
+		std::cout << "Do you want to keep customizing? (y/n): "; //yes/no
+		std::cin >> ans;
+		if (!std::cin.fail()) {
 			if (ans == 'y' || ans == 'n') {
 				break;
 			}
 		}
-		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << "Not a valid answer.";
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Not a valid answer.";
 	}
 
 	//doesn't want to stop
@@ -277,6 +239,21 @@ bool Map::Map::KeepCustomizing() {
 	return true;
 }
 
+
+//convert a given letter to it's corresponding cell type
+Map::Cell_Type Map::ConvertToCellType(char letter) {
+
+	switch (letter) {
+	case 'e':
+		return Cell_Type::empty;
+	case 'w':
+		return Cell_Type::wall;
+	case 's':
+		return Cell_Type::special;
+	default:
+		std::cout << "Not a cell type. Defaults to 'empty'.";
+		return Cell_Type::empty;
+	}
 
 ////convert a given letter to it's corresponding cell type
 //Map::Cell_Type Map::ConvertToCellType(char letter) {
@@ -301,10 +278,10 @@ bool Map::Map::IsTherePath() {
 	bool found = false;
 
 	//initial list of visited cells (none to begin with)
-	vector<vector<bool>> visited(rows, vector<bool>(cols, false));
+	std::vector<std::vector<bool>> visited(rows, std::vector<bool>(cols, false));
 
 	//BFS queue
-	queue<pair<int, int>> q;
+	std::queue<std::pair<int, int>> q;
 
 	//start cell is visited (0,0)
 	q.push({ 0,0 });
@@ -317,7 +294,7 @@ bool Map::Map::IsTherePath() {
 		//check if reach end cell
 		if (curr.first == endCell[0] && curr.second == endCell[1]) {
 			//if made it this far, there is a path.
-			cout << "There is a path." << endl;
+			std::cout << "There is a path." << std::endl;
 			return true;
 		}
 
@@ -326,7 +303,7 @@ bool Map::Map::IsTherePath() {
 			int nextRow = curr.first + dir.first;
 			int nextCol = curr.second + dir.second;
 
-			//DEBUG: cout << "nextrow: " << nextRow << " nextcol: " << nextCol << endl;
+			//DEBUG: std::cout << "nextrow: " << nextRow << " nextcol: " << nextCol << std::endl;
 
 			//check if next cell is not a wall or outside the map or been visited
 			if (ValidCell(nextRow, nextCol, visited)) {
@@ -335,14 +312,14 @@ bool Map::Map::IsTherePath() {
 			}
 		}
 	}
-	cout << "There is no path. Change your map." << endl;
+	std::cout << "There is no path. Change your map." << std::endl;
 	return false;
 }
 
 //validate the next cell
-bool Map::Map::ValidCell(int nextRow, int nextCol, vector<vector<bool>> visited) {
-	return (nextRow >= 0 && nextRow < rows &&
-		nextCol >= 0 && nextCol < cols &&
+bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>> visited) {
+	return (nextRow >= 0 && nextRow < rows&&
+		nextCol >= 0 && nextCol < cols&&
 		grid[nextRow][nextCol] != Cell_Type::wall &&
 		!visited[nextRow][nextCol]);
 }
@@ -352,16 +329,16 @@ void Map::Map::Print() {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			if (i == 0 && j == 0) {
-				cout << "O" << " "; //spawn point, ie start
+				std::cout << "O" << " "; //spawn point, ie start
 			}
 			else if (i == rows - 1 && j == cols - 1) {
-				cout << "X" << " "; //end goal
+				std::cout << "X" << " "; //end goal
 			}
 			else {
-				cout << static_cast<char>(grid[i][j]) << " ";
+				std::cout << static_cast<char>(grid[i][j]) << " ";
 			}
 		}
-		cout << endl;
+		std::cout << std::endl;
 	}
 }
 

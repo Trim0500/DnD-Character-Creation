@@ -30,10 +30,10 @@
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00030}00030\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00031}00031\ \}}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00033}\mbox{\hyperlink{class_test_serialize_item_a38223ffd6b9842dc8b71b8a0dbe71f07}{00033}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_serialize_item_a38223ffd6b9842dc8b71b8a0dbe71f07}{TestSerializeItem::TestLoadItems}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00033}\mbox{\hyperlink{class_test_serialize_item_a0c47226ec85011353d59ff3f9b4193db}{00033}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_serialize_item_a0c47226ec85011353d59ff3f9b4193db}{TestSerializeItem::TestLoadItems}}(\textcolor{keywordtype}{void})\ \{}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00034}00034\ \ \ \ \ ostringstream\ fileNotFoundMessage;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00035}00035\ \ \ \ \ fileNotFoundMessage\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file\ at:\ "{}}\ <<\ \mbox{\hyperlink{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0}{INVALID\_FILE\_URI}};}
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00036}00036\ \ \ \ \ CPPUNIT\_ASSERT\_THROW\_MESSAGE(fileNotFoundMessage.str(),\ \mbox{\hyperlink{namespaceserialize_item_adffd28f81ca49d6ca9f3093818141573}{LoadItems}}(\mbox{\hyperlink{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0}{INVALID\_FILE\_URI}}),\ invalid\_argument);}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00036}00036\ \ \ \ \ CPPUNIT\_ASSERT\_THROW\_MESSAGE(fileNotFoundMessage.str(),\ \mbox{\hyperlink{namespaceserialize_item_a3eb7f4d80f0a3a3f1b64a469586ea526}{LoadItems}}(\mbox{\hyperlink{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0}{INVALID\_FILE\_URI}}),\ invalid\_argument);}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00037}00037\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ currentPath\ =\ filesystem::current\_path().string();}
@@ -41,7 +41,7 @@
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ ostringstream\ fullURI;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ fullURI\ <<\ currentPath\ <<\ \mbox{\hyperlink{testserializeitem_8cpp_a97e708e72db1412fa3e1b7a50fd12124}{LOAD\_SAVED\_ITEMS\_URI}};}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ vector<Item*>\ testItems\ =\ \mbox{\hyperlink{namespaceserialize_item_adffd28f81ca49d6ca9f3093818141573}{LoadItems}}(fullURI.str());}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ vector<Item*>\ testItems\ =\ \mbox{\hyperlink{namespaceserialize_item_a3eb7f4d80f0a3a3f1b64a469586ea526}{LoadItems}}(fullURI.str());}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00045}00045\ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(5,\ (\textcolor{keywordtype}{int})testItems.size());}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ }
@@ -58,10 +58,10 @@
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00058}00058\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00059}00059\ \}}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00061}\mbox{\hyperlink{class_test_serialize_item_a678beb248f28c2d014c431389ef9cecc}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_serialize_item_a678beb248f28c2d014c431389ef9cecc}{TestSerializeItem::TestLoadContainers}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00061}\mbox{\hyperlink{class_test_serialize_item_a008d92e8efccd91a5987165bb648b59f}{00061}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_serialize_item_a008d92e8efccd91a5987165bb648b59f}{TestSerializeItem::TestLoadContainers}}(\textcolor{keywordtype}{void})\ \{}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00062}00062\ \ \ \ \ ostringstream\ fileNotFoundMessage;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00063}00063\ \ \ \ \ fileNotFoundMessage\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file\ at:\ "{}}\ <<\ \mbox{\hyperlink{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0}{INVALID\_FILE\_URI}};}
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00064}00064\ \ \ \ \ CPPUNIT\_ASSERT\_THROW\_MESSAGE(fileNotFoundMessage.str(),\ \mbox{\hyperlink{namespaceserialize_item_a242becffcbbdf5a4020b4b3b0ab2cc3b}{LoadItemContainerRecords}}(\mbox{\hyperlink{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0}{INVALID\_FILE\_URI}}),\ invalid\_argument);}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00064}00064\ \ \ \ \ CPPUNIT\_ASSERT\_THROW\_MESSAGE(fileNotFoundMessage.str(),\ \mbox{\hyperlink{namespaceserialize_item_a2a870bf6413d2c41aa6f290e782ea25d}{LoadItemContainerRecords}}(\mbox{\hyperlink{testserializeitem_8cpp_acf66d7b126722900897f1e9ea2d322b0}{INVALID\_FILE\_URI}}),\ invalid\_argument);}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00065}00065\ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ currentPath\ =\ filesystem::current\_path().string();}
@@ -69,27 +69,27 @@
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ ostringstream\ fullURI;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ fullURI\ <<\ currentPath\ <<\ \mbox{\hyperlink{testserializeitem_8cpp_a66aaf19046c76b03201d991cb8b86558}{LOAD\_SAVED\_CONTAINERS\_URI}};}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ vector<ItemContainerRecord*>\ testContainerRecords\ =\ \mbox{\hyperlink{namespaceserialize_item_a242becffcbbdf5a4020b4b3b0ab2cc3b}{LoadItemContainerRecords}}(fullURI.str());}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ vector<ItemContainerRecord*>\ testContainerRecords\ =\ \mbox{\hyperlink{namespaceserialize_item_a2a870bf6413d2c41aa6f290e782ea25d}{LoadItemContainerRecords}}(fullURI.str());}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00073}00073\ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(3,\ (\textcolor{keywordtype}{int})testContainerRecords.size());}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00075}00075\ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structserialize_item_1_1_item_container_record}{ItemContainerRecord}}*\ testRecord\ =\ testContainerRecords[0];}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(1,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_a517b4239e1ebd9ffd6d2750e15516a03}{containerId}});}
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT(\textcolor{stringliteral}{"{}Some\ Backpack"{}}\ ==\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_aef44b10e90901740f6afad6ff00cd5c2}{itemName}});}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT(\textcolor{stringliteral}{"{}Some\ Backpack"{}}\ ==\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_abf971342c2548360d8ca1b69c7bbf4f4}{itemName}});}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae59effc574d9bec278c1ee0b976df884}{Backpack}},\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_ae0354b06a3e0432068af3d7bdb1aec5f}{itemtype}});}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_DOUBLES\_EQUAL(5.0,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_adb68cce2c93666934431871d4555be9b}{weight}},\ 0.0001);}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_DOUBLES\_EQUAL(30.0,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_a38426ae3b2533ab53dbb733409d0b9ec}{capacity}},\ 0.0001);}
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(3,\ (\textcolor{keywordtype}{int})testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_a8bbd03a9d407497de47098421df81853}{itemIDs}}.size());}
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(10,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_a8bbd03a9d407497de47098421df81853}{itemIDs}}[0]);}
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(8,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_a8bbd03a9d407497de47098421df81853}{itemIDs}}[1]);}
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(5,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_a8bbd03a9d407497de47098421df81853}{itemIDs}}[2]);}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(3,\ (\textcolor{keywordtype}{int})testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841}{itemIDs}}.size());}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(10,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841}{itemIDs}}[0]);}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(8,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841}{itemIDs}}[1]);}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(5,\ testRecord-\/>\mbox{\hyperlink{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841}{itemIDs}}[2]);}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00086}00086\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{catch}\ (invalid\_argument\ exc)\ \{}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ cout\ <<\ exc.what()\ <<\ endl;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00089}00089\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00090}00090\ \}}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00091}00091\ }
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00092}\mbox{\hyperlink{class_test_serialize_item_ad83e0d5c3fed9db054f16d1133a2dbe0}{00092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_serialize_item_ad83e0d5c3fed9db054f16d1133a2dbe0}{TestSerializeItem::TestSaveItems}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00092}\mbox{\hyperlink{class_test_serialize_item_a265bedd59d7bb5ca7fa6a82ca494f005}{00092}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_serialize_item_a265bedd59d7bb5ca7fa6a82ca494f005}{TestSerializeItem::TestSaveItems}}(\textcolor{keywordtype}{void})\ \{}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ backpackShieldItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}testBackpackShield"{}},\ 4,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9}{Shield}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}},\ 12);}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ backpackBootsItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}testBackpackBoots"{}},\ 4,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d}{Boots}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69}{Dexterity}},\ 5);}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00095}00095\ }
@@ -107,13 +107,13 @@
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00107}00107\ \ \ \ \ ostringstream\ fullURI;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00108}00108\ \ \ \ \ fullURI\ <<\ currentPath\ <<\ \mbox{\hyperlink{testserializeitem_8cpp_a843605b7d3dd2482103ca2ee1dce65f1}{SAVE\_SAVED\_ITEMS\_URI}};}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00109}00109\ }
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00110}00110\ \ \ \ \ CPPUNIT\_ASSERT\_NO\_THROW(\mbox{\hyperlink{namespaceserialize_item_aab8fa7061f17afa136412e2db33c8bc0}{SaveItems}}(fullURI.str(),\ testItemVector));}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00110}00110\ \ \ \ \ CPPUNIT\_ASSERT\_NO\_THROW(\mbox{\hyperlink{namespaceserialize_item_a62e11cf99b2764370af7e341461babae}{SaveItems}}(fullURI.str(),\ testItemVector));}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00111}00111\ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keyword}{struct\ }stat\ buffer;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00113}00113\ \ \ \ \ CPPUNIT\_ASSERT(stat(fullURI.str().c\_str(),\ \&buffer)\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00114}00114\ \}}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00115}00115\ }
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00116}\mbox{\hyperlink{class_test_serialize_item_a6ceb059fa524ef0669b8f095a0357e5e}{00116}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_serialize_item_a6ceb059fa524ef0669b8f095a0357e5e}{TestSerializeItem::TestSaveContainers}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00116}\mbox{\hyperlink{class_test_serialize_item_a044bcccaaab8e641178495a9021c404b}{00116}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_serialize_item_a044bcccaaab8e641178495a9021c404b}{TestSerializeItem::TestSaveContainers}}(\textcolor{keywordtype}{void})\ \{}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00117}00117\ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ testBackpackObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}(\textcolor{stringliteral}{"{}Some\ Backpack"{}},\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae59effc574d9bec278c1ee0b976df884}{Backpack}},\ 30.0);}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00118}00118\ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00119}00119\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ backpackShieldItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}testBackpackShield"{}},\ 4,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03ae70559d14865e62ecede34f6948bbea9}{Shield}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}},\ 12);}
@@ -132,7 +132,7 @@
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00132}00132\ \ \ \ \ ostringstream\ fullURI;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00133}00133\ \ \ \ \ fullURI\ <<\ currentPath\ <<\ \mbox{\hyperlink{testserializeitem_8cpp_a75cf3db2030d2de69a3c1c5d70b00c6d}{SAVE\_SAVED\_CONTAINERS\_URI}};}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00134}00134\ }
-\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00135}00135\ \ \ \ \ CPPUNIT\_ASSERT\_NO\_THROW(\mbox{\hyperlink{namespaceserialize_item_a53b7211e8431bc1ef99799bff67b83ea}{SaveItemContainers}}(fullURI.str(),\ testContainerObject));}
+\DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00135}00135\ \ \ \ \ CPPUNIT\_ASSERT\_NO\_THROW(\mbox{\hyperlink{namespaceserialize_item_a0851a057bcbcbec83648d134c08a6231}{SaveItemContainers}}(fullURI.str(),\ testContainerObject));}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00136}00136\ }
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{struct\ }stat\ buffer;}
 \DoxyCodeLine{\Hypertarget{testserializeitem_8cpp_source_l00138}00138\ \ \ \ \ CPPUNIT\_ASSERT(stat(fullURI.str().c\_str(),\ \&buffer)\ ==\ 0);}
