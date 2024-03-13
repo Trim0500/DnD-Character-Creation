@@ -28,10 +28,10 @@ void TestMap::setUp(void)
 
 	mapEmpty = new Map::Map(7, 7);
 
-	visitedEmpty = vector<vector<bool>>(7, vector<bool>(7, false));
+	visitedEmpty = std::vector<std::vector<bool>>(7, std::vector<bool>(7, false));
 	visitedEmpty[0][0] = true;
 
-	visited = vector<vector<bool>>(10, vector<bool>(10, false));
+	visited = std::vector<std::vector<bool>>(10, std::vector<bool>(10, false));
 	visited[0][0] = true;
 }
 

@@ -37,7 +37,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
         }
     }
     //Save inventory
-    std::string currentPath = filesystem::current_path().string();
+    std::string currentPath = std::filesystem::current_path().string();
 
     std::ostringstream fullURI;
     fullURI << currentPath << t_path<< "\\InventoryItemsCharacter_" <<std::to_string(record.id) << ".csv";

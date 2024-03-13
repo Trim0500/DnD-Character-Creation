@@ -15,7 +15,7 @@
 
 #include "Dice.h"
 
-using namespace std;
+// using namespace std;
 using namespace CppUnit;
 
 class TestDice : public TestFixture {
@@ -59,15 +59,15 @@ protected:
 	void TestFullRoll(void);
 	void TestAllDice(void);
 private:
-	string easy_query;
-	string hard_query;
-	string invalid_query;
-	string just_add_query;
-	string just_subtract_query;
+	std::string easy_query;
+	std::string hard_query;
+	std::string invalid_query;
+	std::string just_add_query;
+	std::string just_subtract_query;
 };
 
 CPPUNIT_TEST_SUITE_REGISTRATION(TestDice);
-int testRollMin(string query, int count);
+int testRollMin(std::string query, int count);
 int testRollMin(Dice &d, int count);
-int testRollMax(string query, int count);
+int testRollMax(std::string query, int count);
 int testRollMax(Dice &d, int count);

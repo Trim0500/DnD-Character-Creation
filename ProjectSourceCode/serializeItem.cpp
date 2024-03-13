@@ -50,7 +50,7 @@ namespace {
 	* 
 	* \return Vector of dynamically allocated Item instance pointers representing the saved items loaded into memory
 	*/
-	std::vector<Item*> GetItems(ifstream* fileInput) {
+	std::vector<Item*> GetItems(std::ifstream* fileInput) {
 		std::vector<ItemRecord*> itemRecords;
 
 		while (!fileInput->eof()) {
@@ -93,7 +93,7 @@ namespace {
 	* 
 	* \return Vector of dynamically allocated ItemContainerRecord instance pointers representing the container records loaded into memory
 	*/
-	std::vector<ItemContainerRecord*> GetContainerRecords(ifstream* fileInput) {
+	std::vector<ItemContainerRecord*> GetContainerRecords(std::ifstream* fileInput) {
 		std::vector<ItemContainerRecord*> resultVector;
 
 		while (!fileInput->eof()) {
@@ -120,9 +120,9 @@ namespace {
 			foundRecord->weight = std::stof(segmentList[3]);
 			foundRecord->capacity = std::stof(segmentList[4]);
 
-			smatch match;
+			std::smatch match;
 
-			regex numberRgx("[0-9]+");
+			std::regex numberRgx("[0-9]+");
 
 			while (regex_search(segmentList[5], match, numberRgx)) {
 				foundRecord->itemIDs.push_back(std::stoi(match.str()));
@@ -208,7 +208,7 @@ namespace {
 	std::string BuildItemCSVOutput(const std::vector<ItemRecord*>& _recordsToSave) {
 		std::string outputResult;
 
-		ostringstream csvOutput;
+		std::ostringstream csvOutput;
 		for (int i = 0; i < (int)_recordsToSave.size(); i++)
 		{
 			csvOutput << _recordsToSave[i]->itemId <<
@@ -224,7 +224,7 @@ namespace {
 				_recordsToSave[i]->enchantmentType <<
 				"," <<
 				_recordsToSave[i]->weight <<
-				endl;
+				std::endl;
 		}
 
 		return csvOutput.str();
@@ -241,24 +241,24 @@ namespace {
 	std::string BuildContainerCSVOutput(const std::vector<ItemContainerRecord*>& _recordsToSave) {
 		std::string outputResult;
 
-		ostringstream csvOutput;
+		std::ostringstream csvOutput;
 		for (int i = 0; i < (int)_recordsToSave.size(); i++)
 		{
 			std::vector<int> itemIDs = _recordsToSave[i]->itemIDs;
 
 			int itemIDVectorSize = itemIDs.size();
 
-			ostringstream itemIDsStringStream;
+			std::ostringstream itemIDsStringStream;
 			itemIDsStringStream << "[";
 			for (int i = 0; i < itemIDVectorSize; i++)
 			{
 				if (i + 1 == itemIDVectorSize) {
-					itemIDsStringStream << to_string(itemIDs[i]);
+					itemIDsStringStream << std::to_string(itemIDs[i]);
 
 					break;
 				}
 
-				itemIDsStringStream << to_string(itemIDs[i]) << ":";
+				itemIDsStringStream << std::to_string(itemIDs[i]) << ":";
 			}
 			itemIDsStringStream << "]";
 
@@ -273,7 +273,7 @@ namespace {
 				_recordsToSave[i]->capacity <<
 				"," <<
 				itemIDsStringStream.str() <<
-				endl;
+				std::endl;
 		}
 
 		return csvOutput.str();
@@ -282,9 +282,9 @@ namespace {
 
 namespace serializeItem {
 	std::vector<Item*> LoadItems(const std::string& _fileURI) {
-		ifstream itemInputStream(_fileURI);
+		std::ifstream itemInputStream(_fileURI);
 		if (!itemInputStream.is_open()) {
-			throw invalid_argument("Failed to open the file at: " + _fileURI);
+			throw std::invalid_argument("Failed to open the file at: " + _fileURI);
 		}
 
 		std::vector<Item*> loadedItems = GetItems(&itemInputStream);
@@ -295,9 +295,9 @@ namespace serializeItem {
 	}
 	
 	std::vector<ItemContainerRecord*> LoadItemContainerRecords(const std::string& _fileURI) {
-		ifstream containerInputStream(_fileURI);
+		std::ifstream containerInputStream(_fileURI);
 		if (!containerInputStream.is_open()) {
-			throw invalid_argument("Failed to open the file at: " + _fileURI);
+			throw std::invalid_argument("Failed to open the file at: " + _fileURI);
 		}
 
 		std::vector<ItemContainerRecord*> containerRecords = GetContainerRecords(&containerInputStream);
@@ -312,7 +312,7 @@ namespace serializeItem {
 
 		std::string csvOutput = BuildItemCSVOutput(recordsToSave);
 
-		ofstream itemOutputStream(_fileURI);
+		std::ofstream itemOutputStream(_fileURI);
 		itemOutputStream << csvOutput;
 
 		itemOutputStream.close();
@@ -323,7 +323,7 @@ namespace serializeItem {
 
 		std::string csvOutput = BuildContainerCSVOutput(recordsToSave);
 
-		ofstream itemOutputStream(_fileURI);
+		std::ofstream itemOutputStream(_fileURI);
 		itemOutputStream << csvOutput;
 
 		itemOutputStream.close();

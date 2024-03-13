@@ -69,6 +69,19 @@
 		"xstddef": "cpp",
 		"xtr1common": "cpp",
 		"xtree": "cpp",
-		"xutility": "cpp"
+		"xutility": "cpp",
+		"strstream": "cpp",
+		"*.tcc": "cpp",
+		"codecvt": "cpp",
+		"cstdarg": "cpp",
+		"cwctype": "cpp",
+		"deque": "cpp",
+		"functional": "cpp",
+		"memory_resource": "cpp",
+		"numeric": "cpp",
+		"set": "cpp",
+		"string_view": "cpp",
+		"fstream": "cpp",
+		"cinttypes": "cpp"
 	}
 }

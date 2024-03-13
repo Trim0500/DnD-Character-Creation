@@ -44,6 +44,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <VcpkgInstalledDir>.\packages</VcpkgInstalledDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -87,6 +93,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GUI\BaseEditor.cpp" />
+    <ClCompile Include="GUI\CampaignEditor.cpp" />
+    <ClCompile Include="GUI\ItemEditor.cpp" />
+    <ClCompile Include="GUI\MainMenu.cpp" />
+    <ClCompile Include="GUI\MapCellButton.cpp" />
+    <ClCompile Include="GUI\MapEditor.cpp" />
+    <ClCompile Include="GUI\MapSerializer.cpp" />
+    <ClCompile Include="GUI\MapViewWindow.cpp" />
     <ClCompile Include="ProjectSourceCode\demoitem.cpp" />
     <ClCompile Include="ProjectSourceCode\DiceDemo.cpp" />
     <ClCompile Include="ProjectSourceCode\demoCharacter.cpp" />
@@ -102,13 +116,24 @@
     <ClCompile Include="ProjectSourceCode\Map.cpp" />
     <ClCompile Include="ProjectSourceCode\testMap.cpp" />
     <ClCompile Include="ProjectSourceCode\serializeItem.cpp" />
+    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\testserializeitem.cpp" />
     <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
-    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" />
+    <!-- <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" /> -->
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GUI\BaseEditor.h" />
+    <ClInclude Include="GUI\BaseViewer.h" />
+    <ClInclude Include="GUI\CampaignEditor.h" />
+    <ClInclude Include="GUI\CharacterEditor.h" />
+    <ClInclude Include="GUI\CharacterViewWindow.h" />
+    <ClInclude Include="GUI\ItemEditor.h" />
+    <ClInclude Include="GUI\MainMenu.h" />
+    <ClInclude Include="GUI\MapEditor.h" />
+    <ClInclude Include="GUI\MapSerializer.h" />
+    <ClInclude Include="GUI\MapViewWindow.h" />
     <ClInclude Include="ProjectSourceCode\demoitem.h" />
     <ClInclude Include="ProjectSourceCode\DiceDemo.h" />
     <ClInclude Include="ProjectSourceCode\demoCharacter.h" />
@@ -126,11 +151,12 @@
     <ClInclude Include="ProjectSourceCode\Map.h" />
     <ClInclude Include="ProjectSourceCode\testMap.h" />
     <ClInclude Include="ProjectSourceCode\serializeItem.h" />
+    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\testserializeitem.h" />
     <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\campaign.h" />
     <ClInclude Include="ProjectSourceCode\testcampaign.h" />
-    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" />
+    <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
