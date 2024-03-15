@@ -26,6 +26,7 @@ Character::Character::Character(){
 		}
 	}
 	hit_points = max_hit_points;
+	wornItems = this;
 
 }
 
@@ -43,6 +44,7 @@ Character::Character::Character(const Character& t_character) : id(t_character.i
 	}
 	max_hit_points = t_character.max_hit_points;
 	hit_points = t_character.hit_points;
+	wornItems = t_character.wornItems;
 }
 
 Character::Character::Character(std::string t_name, Character_Class t_class)
@@ -61,6 +63,7 @@ Character::Character::Character(std::string t_name, Character_Class t_class)
 	}
 
 	hit_points = max_hit_points;
+	wornItems = this;
 }
 
 Character::Character::Character(Character_Class t_class)
@@ -78,6 +81,7 @@ Character::Character::Character(Character_Class t_class)
 	}
 
 	hit_points = max_hit_points;
+	wornItems = this;
 }
 
 Character::Character::Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores)
@@ -93,6 +97,7 @@ Character::Character::Character(std::string t_name, Character_Class t_class, con
 	}
 
 	hit_points = max_hit_points;
+	wornItems = this;
 }
 
 Character::Character::Character(const serializecharacter::CharacterRecord& t_record) : id(t_record.id)
@@ -279,6 +284,15 @@ bool Character::Character::Equip_Item(item::Item* t_item) {
 	}
 	this->notify();
 	return true;
+}
+
+void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
+	if (inventory.GetItem(_itemToEquip->GetItemId()) == nullptr) {
+		throw std::invalid_argument("[Character/Equip_Item_Decorator] -- Failed to find the item in the inventory to equip");
+	}
+
+	_itemToEquip->SetWrappee(wornItems);	
+	wornItems = _itemToEquip;
 }
 
 void Character::Character::Unequip_Item(Equipment_Slots t_slot)

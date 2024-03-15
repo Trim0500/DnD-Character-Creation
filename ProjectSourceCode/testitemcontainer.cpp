@@ -148,7 +148,7 @@ void TestItemContainer::TestGetItemByItemType(void) {
 	Item* foundItem = wornItemsObject->GetItem(Weapon);
 	CPPUNIT_ASSERT(foundItem->GetItemType() == Weapon);
 
-	Item* nullPointer = wornItemsObject->GetItem(8);
+	Item* nullPointer = wornItemsObject->GetItem(Backpack);
 	CPPUNIT_ASSERT(nullPointer == nullptr);
 }
 

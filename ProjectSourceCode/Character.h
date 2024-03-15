@@ -202,6 +202,9 @@ namespace Character {
 
 
 		bool Equip_Item(item::Item* t_item);
+
+		void Equip_Item_Decorator(item::Item* _itemToEquip);
+
 		/*! \fn Unequip_Item()
 		*  \brief Equips an item into the character's corresponding equipment slot. Item must be contained within the 'inventory'
 		*  vector array to be equipped
@@ -337,6 +340,8 @@ namespace Character {
 		bool Levelup_Sorcerer();
 		bool Levelup_Warlock();
 		bool Levelup_Wizard();
+
+		AbstractComponent* wornItems;
 
 	};
 }
