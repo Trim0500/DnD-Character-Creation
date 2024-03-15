@@ -193,7 +193,7 @@
 \DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00193}00193\ \ \ \ \ fileNotFoundMessage\ <<\ \textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file\ at:\ "{}}\ <<\ \mbox{\hyperlink{testcampaign_8cpp_a8718dd84ed94bf7fbbdab99517354da6}{SAVED\_CAMPAIGNS\_INVALID\_URI}};}
 \DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00194}00194\ \ \ \ \ CPPUNIT\_ASSERT\_THROW\_MESSAGE(fileNotFoundMessage.str(),\ \mbox{\hyperlink{namespacecampaign_a5ceea3a63ff06811eea8f560c701bbcb}{campaign::LoadCampaign}}(newCampaignObject-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_afb9e465401e5a1672382073a82df591c}{GetCampaignID}}(),\ \mbox{\hyperlink{testcampaign_8cpp_a8718dd84ed94bf7fbbdab99517354da6}{SAVED\_CAMPAIGNS\_INVALID\_URI}}),\ std::invalid\_argument);}
 \DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00195}00195\ }
-\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00196}00196\ \ \ \ \ std::string\ currentPath\ =\ filesystem::current\_path().string();}
+\DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00196}00196\ \ \ \ \ std::string\ currentPath\ =\ std::filesystem::current\_path().string();}
 \DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00197}00197\ }
 \DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00198}00198\ \ \ \ \ std::ostringstream\ folderURI;}
 \DoxyCodeLine{\Hypertarget{testcampaign_8cpp_source_l00199}00199\ \ \ \ \ folderURI\ <<\ currentPath\ <<\ \mbox{\hyperlink{testcampaign_8cpp_a37dfabb88603ff2356d3095ade72c8d6}{SAVED\_CAMPAIGNS\_FOLDER\_NAME}};}

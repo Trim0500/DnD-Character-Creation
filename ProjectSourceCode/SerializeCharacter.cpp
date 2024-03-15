@@ -11,7 +11,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     record.id = t_character->ID();
     //copy ability scores
     for (int i{ 0 }; i < 6; i++) {
-        record.ability_scores.at(i) = t_character->Ability_Score_Natural((Character::Abilities_Stats)i);
+        record.ability_scores.at(i) = t_character->Ability_Score_Natural(i);
     }
     //copy levels
     for (int i{ 0 }; i < 12; i++) {

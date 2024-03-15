@@ -1,0 +1,133 @@
+\doxysection{componentdecorator\+::Component\+Decorator Class Reference}
+\hypertarget{classcomponentdecorator_1_1_component_decorator}{}\label{classcomponentdecorator_1_1_component_decorator}\index{componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}}
+
+
+Class that implements the Abstract\+Component interface.  
+
+
+
+
+{\ttfamily \#include $<$componentdecorator.\+h$>$}
+
+Inheritance diagram for componentdecorator\+::Component\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classcomponentdecorator_1_1_component_decorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_a79279acc3e72c89be2553ab45f03445d}{Component\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em No-\/args constructor for the \doxylink{classcomponentdecorator_1_1_component_decorator}{Component\+Decorator} class meant to be used for when Items are not equipped to a character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_a6858c5f071ff3766ff47e10dfa62c337}{Component\+Decorator}} (\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*}\+\_\+wrappee)
+\item 
+int \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_a72ea5ebf2652b1989e03d405f11d6a37}{Ability\+\_\+\+Score\+\_\+\+Natural}} (int) override
+\begin{DoxyCompactList}\small\item\em Overriden function that is meant to use the wrappee\textquotesingle{}s function of the same name as a baseline for derived classes. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_a72e4f92bcba76d839385bb4d3fdedeb9}{Get\+Decorator\+List}} () override
+\begin{DoxyCompactList}\small\item\em Overriden function that is meant to use the wrappee\textquotesingle{}s function of the same name as a baseline for concete implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_ad12ee7309bd6a59949eb9c7e396e7958}{wrappee}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that implements the Abstract\+Component interface. 
+
+Definition at line \mbox{\hyperlink{componentdecorator_8h_source_l00022}{22}} of file \mbox{\hyperlink{componentdecorator_8h_source}{componentdecorator.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcomponentdecorator_1_1_component_decorator_a79279acc3e72c89be2553ab45f03445d}\label{classcomponentdecorator_1_1_component_decorator_a79279acc3e72c89be2553ab45f03445d} 
+\index{componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}!ComponentDecorator@{ComponentDecorator}}
+\index{ComponentDecorator@{ComponentDecorator}!componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}}
+\doxysubsubsection{\texorpdfstring{ComponentDecorator()}{ComponentDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily componentdecorator\+::\+Component\+Decorator\+::\+Component\+Decorator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+No-\/args constructor for the \doxylink{classcomponentdecorator_1_1_component_decorator}{Component\+Decorator} class meant to be used for when Items are not equipped to a character. 
+
+Custom constructor for the \doxylink{classcomponentdecorator_1_1_component_decorator}{Component\+Decorator} class meant to be used for when Characters are loaded into a game. 
+
+Definition at line \mbox{\hyperlink{componentdecorator_8h_source_l00029}{29}} of file \mbox{\hyperlink{componentdecorator_8h_source}{componentdecorator.\+h}}.
+
+\Hypertarget{classcomponentdecorator_1_1_component_decorator_a6858c5f071ff3766ff47e10dfa62c337}\label{classcomponentdecorator_1_1_component_decorator_a6858c5f071ff3766ff47e10dfa62c337} 
+\index{componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}!ComponentDecorator@{ComponentDecorator}}
+\index{ComponentDecorator@{ComponentDecorator}!componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}}
+\doxysubsubsection{\texorpdfstring{ComponentDecorator()}{ComponentDecorator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily componentdecorator\+::\+Component\+Decorator\+::\+Component\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*}}]{\+\_\+wrappee }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{componentdecorator_8h_source_l00035}{35}} of file \mbox{\hyperlink{componentdecorator_8h_source}{componentdecorator.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcomponentdecorator_1_1_component_decorator_a72ea5ebf2652b1989e03d405f11d6a37}\label{classcomponentdecorator_1_1_component_decorator_a72ea5ebf2652b1989e03d405f11d6a37} 
+\index{componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}!Ability\_Score\_Natural@{Ability\_Score\_Natural}}
+\index{Ability\_Score\_Natural@{Ability\_Score\_Natural}!componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}}
+\doxysubsubsection{\texorpdfstring{Ability\_Score\_Natural()}{Ability\_Score\_Natural()}}
+{\footnotesize\ttfamily componentdecorator\+::\+Component\+Decorator\+::\+Ability\+\_\+\+Score\+\_\+\+Natural (\begin{DoxyParamCaption}\item[{int}]{\+\_\+anility\+Score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overriden function that is meant to use the wrappee\textquotesingle{}s function of the same name as a baseline for derived classes. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_a56c06eb5c2af2dab3864628ebd1db3d0}{abstractcomponent\+::\+Abstract\+Component}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classitem_1_1_item_a2b97618ae2a65b92aa9967d81d5b97c4}{item\+::\+Item}}.
+
+
+
+Definition at line \mbox{\hyperlink{componentdecorator_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{componentdecorator_8cpp_source}{componentdecorator.\+cpp}}.
+
+\Hypertarget{classcomponentdecorator_1_1_component_decorator_a72e4f92bcba76d839385bb4d3fdedeb9}\label{classcomponentdecorator_1_1_component_decorator_a72e4f92bcba76d839385bb4d3fdedeb9} 
+\index{componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}!GetDecoratorList@{GetDecoratorList}}
+\index{GetDecoratorList@{GetDecoratorList}!componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}}
+\doxysubsubsection{\texorpdfstring{GetDecoratorList()}{GetDecoratorList()}}
+{\footnotesize\ttfamily componentdecorator\+::\+Component\+Decorator\+::\+Get\+Decorator\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overriden function that is meant to use the wrappee\textquotesingle{}s function of the same name as a baseline for concete implementations. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_ad76ada9fbc3f620ce6707dc578110734}{abstractcomponent\+::\+Abstract\+Component}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classitem_1_1_item_aab6e419cfea26bdea0389095c0f336c6}{item\+::\+Item}}.
+
+
+
+Definition at line \mbox{\hyperlink{componentdecorator_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{componentdecorator_8cpp_source}{componentdecorator.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classcomponentdecorator_1_1_component_decorator_ad12ee7309bd6a59949eb9c7e396e7958}\label{classcomponentdecorator_1_1_component_decorator_ad12ee7309bd6a59949eb9c7e396e7958} 
+\index{componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}!wrappee@{wrappee}}
+\index{wrappee@{wrappee}!componentdecorator::ComponentDecorator@{componentdecorator::ComponentDecorator}}
+\doxysubsubsection{\texorpdfstring{wrappee}{wrappee}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}}\texorpdfstring{$\ast$}{*} componentdecorator\+::\+Component\+Decorator\+::wrappee\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{componentdecorator_8h_source_l00052}{52}} of file \mbox{\hyperlink{componentdecorator_8h_source}{componentdecorator.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{componentdecorator_8h}{componentdecorator.\+h}}\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{componentdecorator_8cpp}{componentdecorator.\+cpp}}\end{DoxyCompactItemize}

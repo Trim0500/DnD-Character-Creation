@@ -54,6 +54,17 @@ namespace itemcontainer {
 		return total;
 	}
 
+	Item* ItemContainer::GetItem(const int& _itemID) {
+		for (size_t i = 0; i < items.size(); i++)
+		{
+			if (items[i].GetItemId() == _itemID) {
+				return &items[i];
+			}
+		}
+
+		return nullptr;
+	}
+
 	Item* ItemContainer::GetItem(const std::string& nameKey) {
 		for (size_t i = 0; i < items.size(); i++)
 		{
@@ -65,7 +76,7 @@ namespace itemcontainer {
 		return nullptr;
 	}
 
-	Item* ItemContainer::GetItem(const int& itemType) {
+	Item* ItemContainer::GetItem(ItemType itemType) {
 		for (size_t i = 0; i < items.size(); i++)
 		{
 			if (items[i].GetItemType() == itemType) {

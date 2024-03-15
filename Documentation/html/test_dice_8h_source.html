@@ -101,7 +101,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="_dice_8h.html">Dice.h</a>&quot;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// using namespace std;</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">using namespace </span>CppUnit;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
@@ -131,19 +131,19 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_dice.html#a4db65c972cef1cf28f4e8723f29b600f">TestFullRoll</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_test_dice.html#acd8f62e1bbe756887b4116d4e140d7b6">TestAllDice</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">string</span> easy_query;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">string</span> hard_query;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">string</span> invalid_query;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">string</span> just_add_query;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">string</span> just_subtract_query;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    std::string easy_query;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    std::string hard_query;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    std::string invalid_query;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::string just_add_query;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    std::string just_subtract_query;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
 </div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="test_dice_8h.html#ac230180df71d7288cc8738de351f5577">   69</a></span><a class="code hl_function" href="test_dice_8h.html#ac230180df71d7288cc8738de351f5577">CPPUNIT_TEST_SUITE_REGISTRATION</a>(<a class="code hl_class" href="class_test_dice.html">TestDice</a>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_dice_8h.html#a8dba41f8d36c0118e664a94c70ce57e5">testRollMin</a>(<span class="keywordtype">string</span> query, <span class="keywordtype">int</span> count);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_dice_8h.html#a8dba41f8d36c0118e664a94c70ce57e5">testRollMin</a>(<a class="code hl_class" href="class_dice.html">Dice</a> &amp;d, <span class="keywordtype">int</span> count);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_dice_8h.html#a3a25e324b94111702ed083b0bc2e5e79">testRollMax</a>(<span class="keywordtype">string</span> query, <span class="keywordtype">int</span> count);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_dice_8h.html#a3a25e324b94111702ed083b0bc2e5e79">testRollMax</a>(<a class="code hl_class" href="class_dice.html">Dice</a> &amp;d, <span class="keywordtype">int</span> count);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_dice_8h.html#a06f21f4c319dc34541cfc7d5c1bad4e1">testRollMin</a>(std::string query, <span class="keywordtype">int</span> count);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_dice_8h.html#a06f21f4c319dc34541cfc7d5c1bad4e1">testRollMin</a>(<a class="code hl_class" href="class_dice.html">Dice</a> &amp;d, <span class="keywordtype">int</span> count);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_dice_8h.html#acb36736f255bd8dd14e94aae133cd704">testRollMax</a>(std::string query, <span class="keywordtype">int</span> count);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keywordtype">int</span> <a class="code hl_function" href="test_dice_8h.html#acb36736f255bd8dd14e94aae133cd704">testRollMax</a>(<a class="code hl_class" href="class_dice.html">Dice</a> &amp;d, <span class="keywordtype">int</span> count);</div>
 <div class="ttc" id="a_dice_8h_html"><div class="ttname"><a href="_dice_8h.html">Dice.h</a></div></div>
 <div class="ttc" id="aclass_dice_html"><div class="ttname"><a href="class_dice.html">Dice</a></div><div class="ttdef"><b>Definition</b> <a href="_dice_8h_source.html#l00028">Dice.h:28</a></div></div>
 <div class="ttc" id="aclass_test_dice_html"><div class="ttname"><a href="class_test_dice.html">TestDice</a></div><div class="ttdef"><b>Definition</b> <a href="#l00021">testDice.h:21</a></div></div>
@@ -158,9 +158,9 @@ $(function() { codefold.init(0); });
 <div class="ttc" id="aclass_test_dice_html_ab1049f66fe2e9cb94219e7f7fc267603"><div class="ttname"><a href="class_test_dice.html#ab1049f66fe2e9cb94219e7f7fc267603">TestDice::TestAddDice</a></div><div class="ttdeci">void TestAddDice(void)</div><div class="ttdef"><b>Definition</b> <a href="test_dice_8cpp_source.html#l00124">testDice.cpp:124</a></div></div>
 <div class="ttc" id="aclass_test_dice_html_ac75509b1898af98f3f366ed19d637110"><div class="ttname"><a href="class_test_dice.html#ac75509b1898af98f3f366ed19d637110">TestDice::TestStaticRoll</a></div><div class="ttdeci">void TestStaticRoll(void)</div><div class="ttdef"><b>Definition</b> <a href="test_dice_8cpp_source.html#l00119">testDice.cpp:119</a></div></div>
 <div class="ttc" id="aclass_test_dice_html_acd8f62e1bbe756887b4116d4e140d7b6"><div class="ttname"><a href="class_test_dice.html#acd8f62e1bbe756887b4116d4e140d7b6">TestDice::TestAllDice</a></div><div class="ttdeci">void TestAllDice(void)</div><div class="ttdef"><b>Definition</b> <a href="test_dice_8cpp_source.html#l00156">testDice.cpp:156</a></div></div>
-<div class="ttc" id="atest_dice_8h_html_a3a25e324b94111702ed083b0bc2e5e79"><div class="ttname"><a href="test_dice_8h.html#a3a25e324b94111702ed083b0bc2e5e79">testRollMax</a></div><div class="ttdeci">int testRollMax(string query, int count)</div><div class="ttdef"><b>Definition</b> <a href="test_dice_8cpp_source.html#l00046">testDice.cpp:46</a></div></div>
-<div class="ttc" id="atest_dice_8h_html_a8dba41f8d36c0118e664a94c70ce57e5"><div class="ttname"><a href="test_dice_8h.html#a8dba41f8d36c0118e664a94c70ce57e5">testRollMin</a></div><div class="ttdeci">int testRollMin(string query, int count)</div><div class="ttdef"><b>Definition</b> <a href="test_dice_8cpp_source.html#l00019">testDice.cpp:19</a></div></div>
+<div class="ttc" id="atest_dice_8h_html_a06f21f4c319dc34541cfc7d5c1bad4e1"><div class="ttname"><a href="test_dice_8h.html#a06f21f4c319dc34541cfc7d5c1bad4e1">testRollMin</a></div><div class="ttdeci">int testRollMin(std::string query, int count)</div><div class="ttdef"><b>Definition</b> <a href="test_dice_8cpp_source.html#l00019">testDice.cpp:19</a></div></div>
 <div class="ttc" id="atest_dice_8h_html_ac230180df71d7288cc8738de351f5577"><div class="ttname"><a href="test_dice_8h.html#ac230180df71d7288cc8738de351f5577">CPPUNIT_TEST_SUITE_REGISTRATION</a></div><div class="ttdeci">CPPUNIT_TEST_SUITE_REGISTRATION(TestDice)</div></div>
+<div class="ttc" id="atest_dice_8h_html_acb36736f255bd8dd14e94aae133cd704"><div class="ttname"><a href="test_dice_8h.html#acb36736f255bd8dd14e94aae133cd704">testRollMax</a></div><div class="ttdeci">int testRollMax(std::string query, int count)</div><div class="ttdef"><b>Definition</b> <a href="test_dice_8cpp_source.html#l00046">testDice.cpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -6,6 +6,7 @@ var searchData=
   ['new_5fcampaign_5fmapids_5fcell_5fvalue_3',['NEW_CAMPAIGN_MAPIDS_CELL_VALUE',['../testcampaign_8cpp.html#a7f895162e5d478f9e6dd7ceb21cf22a4',1,'testcampaign.cpp']]],
   ['new_5fcampaign_5fmapids_5fcol_5fcount_4',['NEW_CAMPAIGN_MAPIDS_COL_COUNT',['../testcampaign_8cpp.html#a3c6f24e35ef9c7896f84a38d60bd8034',1,'testcampaign.cpp']]],
   ['new_5fcampaign_5fmapids_5frow_5fcount_5',['NEW_CAMPAIGN_MAPIDS_ROW_COUNT',['../testcampaign_8cpp.html#a08e427f1fa510f4264afd3effa5af1ad',1,'testcampaign.cpp']]],
-  ['numcols_6',['numCols',['../structcampaign_1_1_campaign_record.html#a26d80d71ebfaedfa784858b2c0c1b5d6',1,'campaign::CampaignRecord']]],
-  ['numrows_7',['numRows',['../structcampaign_1_1_campaign_record.html#aef49d993812d9b721179efd6af5b19e2',1,'campaign::CampaignRecord']]]
+  ['notify_6',['notify',['../class_observable.html#a099bf851e05bb8c1a25e83f2a1389e58',1,'Observable']]],
+  ['numcols_7',['numCols',['../structcampaign_1_1_campaign_record.html#a26d80d71ebfaedfa784858b2c0c1b5d6',1,'campaign::CampaignRecord']]],
+  ['numrows_8',['numRows',['../structcampaign_1_1_campaign_record.html#aef49d993812d9b721179efd6af5b19e2',1,'campaign::CampaignRecord']]]
 ];

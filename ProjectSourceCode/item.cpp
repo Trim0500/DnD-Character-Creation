@@ -57,7 +57,7 @@ namespace {
 }
 
 namespace item {
-	Item::Item() {
+	Item::Item() : ComponentDecorator() {
 		nextItemId = nextItemId + 1;
 		itemId = nextItemId;
 		enchantmentBonus = GenerateRandomInt(1, 5);
@@ -118,7 +118,11 @@ namespace item {
 		itemName = name.str();
 	}
 
-	Item::Item(const std::string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType, const float& _weight) {
+	Item::Item(const std::string& _itemName,
+				const int& _enchantmentBonus,
+				const int& _itemType,
+				const int& _enchantmentType,
+				const float& _weight) : ComponentDecorator() {
 		nextItemId = nextItemId + 1;
 		itemId = nextItemId;
 		itemName = _itemName;
@@ -128,12 +132,34 @@ namespace item {
 		weight = _weight;
 	}
 
-	Item::Item(const int& _itemId, const string& _itemName, const int& _enchantmentBonus, const int& _itemType, const int& _enchantmentType, const float& _weight) {
+	Item::Item(const int& _itemId,
+				const string& _itemName,
+				const int& _enchantmentBonus,
+				const int& _itemType,
+				const int& _enchantmentType,
+				const float& _weight) : ComponentDecorator() {
 		itemId = _itemId;
 		itemName = _itemName;
 		enchantmentBonus = _enchantmentBonus;
 		itemType = (ItemType)_itemType;
 		enchantmentType = (CharacterStats)_enchantmentType;
 		weight = _weight;
+	}
+
+	int Item::Ability_Score_Natural(int _abilityScore) {
+		int result = wrappee->Ability_Score_Natural(_abilityScore);
+
+		if (enchantmentType == _abilityScore) {
+			result += enchantmentType;
+		}
+
+		return result;
+	}
+
+	std::vector<AbstractComponent*> Item::GetDecoratorList() {
+		std::vector<AbstractComponent*> decoratorList = wrappee->GetDecoratorList();
+		decoratorList.push_back(this);
+
+		return decoratorList;
 	}
 }
