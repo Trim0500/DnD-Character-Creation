@@ -27,6 +27,10 @@
 #include <iostream>
 #include <string>
 
+#include "componentdecorator.h"
+
+using namespace componentdecorator;
+
 // using namespace std;
 
 /*!!
@@ -102,7 +106,7 @@ namespace item
 	 *
 	 * Class that abstracts the Items available to a character that are put into a container or worn.
 	 */
-	class Item
+	class Item : public ComponentDecorator
 	{
 	public:
 		/*!
@@ -129,6 +133,7 @@ namespace item
 		 * @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 		 */
 		Item(const std::string &, const int &, const int &, const int &, const float &);
+
 		/*!
 		 * \fn Item
 		 * \brief Overloaded constructor for Item
@@ -145,7 +150,12 @@ namespace item
 		 * @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 		 */
 		Item(const int &, const std::string &, const int &, const int &, const int &, const float &);
+		
 		friend bool operator==(const Item &lhs, const Item &rhs) { return lhs.itemName == rhs.itemName; };
+
+		int Ability_Score_Natural(int) override;
+
+		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };
 
 		int GetNextItemID() { return nextItemId; };
 

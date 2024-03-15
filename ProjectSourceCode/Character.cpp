@@ -332,7 +332,7 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 	return modifier;
 }
 
-const int Character::Character::Ability_Score_Natural(Abilities_Stats t_ability)
+int Character::Character::Ability_Score_Natural(int t_ability)
 {
 	int score;
 	try {

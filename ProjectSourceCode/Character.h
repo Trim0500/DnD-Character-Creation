@@ -19,6 +19,9 @@
 #include "Dice.h"
 #include "Observable.h"
 #include "serializeItem.h"
+#include "abstractcomponent.h"
+
+using namespace abstractcomponent;
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -123,7 +126,7 @@ namespace Character {
 	/*! \class Character
 	* \brief Represents Character type entities
 	*/
-	class Character : public Observable{
+	class Character : public Observable, public AbstractComponent {
 	public:
 		/*! \fn Character()
 		*  \brief Default character constructor that generates a character with random values for level, ability scores and maximum
@@ -238,7 +241,7 @@ namespace Character {
 		*  \param t_ability: int/Ability enum indexing the desired ability score
 		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses
 		*/
-		const int Ability_Score_Natural(Abilities_Stats t_ability);
+		int Ability_Score_Natural(int t_ability) override;
 		/*! \fn Ability_Score_Bonused()
 		*  \param t_ability: int/Ability enum indexing the desired ability score
 		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses

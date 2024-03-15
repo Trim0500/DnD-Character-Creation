@@ -75,6 +75,9 @@
     <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectSourceCode\componentdecorator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="GUI\BaseEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -159,6 +162,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\abstractcomponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\componentdecorator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GUI\BaseEditor.h">
