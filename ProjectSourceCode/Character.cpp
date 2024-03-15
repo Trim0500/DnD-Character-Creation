@@ -322,6 +322,23 @@ void Character::Character::Unequip_Item(Equipment_Slots t_slot)
 	this->notify();
 }
 
+void Character::Character::Unequip_Item_Decorator(item::Item* _itemToRemove) {
+	std::vector<AbstractComponent*> decoratorList = wornItems->GetDecoratorList();
+	
+	wornItems = this;
+
+	for (int i = 0; i < (int)decoratorList.size(); ++i)
+	{
+		Item* decoratorItem = dynamic_cast<Item*>(decoratorList.at(i));
+		if (_itemToRemove->GetItemId() == decoratorItem->GetItemId()) {
+			continue;
+		}
+
+		decoratorItem->SetWrappee(wornItems);	
+		wornItems = decoratorItem;
+	}
+}
+
 void Character::Character::Receive_Damage(int t_damage)
 {
 	if (t_damage >= hit_points) {

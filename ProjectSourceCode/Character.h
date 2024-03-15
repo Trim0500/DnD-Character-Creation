@@ -212,6 +212,9 @@ namespace Character {
 		*  \return Returns 'true' if equipping was performed succesfully, 'false' otherwise
 		*/
 		void Unequip_Item(Equipment_Slots t_slot);
+
+		void Unequip_Item_Decorator(item::Item* _itemToRemove);
+
 		/*! \fn Max_Hit_Points()
 		*  \return Returns const int to the maxium number of hitpoints for this character
 		*/
