@@ -1,3 +1,6 @@
+#include <sstream>
+#include <string>
+
 #include "Character.h"
 
 Character::Character::Character(){
@@ -290,6 +293,24 @@ void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
 	if (inventory.GetItem(_itemToEquip->GetItemId()) == nullptr) {
 		throw std::invalid_argument("[Character/Equip_Item_Decorator] -- Failed to find the item in the inventory to equip");
 	}
+
+	std::vector<AbstractComponent*> decoratorList = wornItems->GetDecoratorList();
+	int decoratorListSize = decoratorList.size();
+	if (decoratorListSize == 7) {
+		throw std::exception("[Character/Equip_Item_Decorator] -- Can't equip another item!");
+	}
+
+	for (int i = 0; i < (int)decoratorList.size(); ++i)
+	{
+		Item* equippedItem = dynamic_cast<Item*>(decoratorList.at(i));
+
+		if (_itemToEquip->GetItemType() == equippedItem->GetItemType()) {
+			std::ostringstream excMessage;
+			excMessage << "[Character/Equip_Item_Decorator] -- Can't equip another " << itemTypeStrings[_itemToEquip->GetItemType() - 1];
+			throw std::exception(excMessage.str().c_str());
+		}
+	}
+	
 
 	_itemToEquip->SetWrappee(wornItems);	
 	wornItems = _itemToEquip;

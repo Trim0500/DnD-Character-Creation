@@ -283,6 +283,8 @@ namespace Character {
 		*/
 		bool Is_Multi_Classed(Character_Class t_class);
 
+		std::vector<AbstractComponent*> GetDecoratorList() override { std::vector<AbstractComponent*> initDecorators; return initDecorators; };
+
 	private:
 
 		static inline unsigned int id_gen{ 0 };

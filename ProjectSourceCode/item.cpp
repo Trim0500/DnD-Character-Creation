@@ -155,4 +155,11 @@ namespace item {
 
 		return result;
 	}
+
+	std::vector<AbstractComponent*> Item::GetDecoratorList() {
+		std::vector<AbstractComponent*> decoratorList = wrappee->GetDecoratorList();
+		decoratorList.push_back(this);
+
+		return decoratorList;
+	}
 }

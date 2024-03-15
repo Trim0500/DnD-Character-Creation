@@ -155,6 +155,8 @@ namespace item
 
 		int Ability_Score_Natural(int) override;
 
+		std::vector<AbstractComponent*> GetDecoratorList() override;
+
 		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };
 
 		int GetNextItemID() { return nextItemId; };
