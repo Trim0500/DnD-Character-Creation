@@ -9,19 +9,19 @@
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00005}\mbox{\hyperlink{_dice_demo_8cpp_a8253ca339bf57508a4854e6d2c297619}{00005}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_dice_demo_8cpp_a8253ca339bf57508a4854e6d2c297619}{DiceDemo}}()\{}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{int}\ r;}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00007}00007\ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}\ d;}
-\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00008}00008\ \ \ \ \ \textcolor{keywordtype}{string}\ query;}
+\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00008}00008\ \ \ \ \ std::string\ query;}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00009}00009\ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//while\ (true)\ \{}}
-\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Input\ dice\ to\ roll:\ (!\ to\ return\ to\ main\ menu)"{}}\ <<\ endl;}
-\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ cin\ >>\ query;}
-\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ cout\ <<\ query;}
+\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Input\ dice\ to\ roll:\ (!\ to\ return\ to\ main\ menu)"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ std::cin\ >>\ query;}
+\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ std::cout\ <<\ query;}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ d\ =\ \mbox{\hyperlink{class_dice}{Dice}}(query);}
-\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ d.\mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}}(query);}
-\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}You\ rolled\ "{}}\ <<\ r\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ r\ =\ d.\mbox{\hyperlink{class_dice_afa3e9a90a12b210370e708a79e67c715}{roll}}(query);}
+\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ rolled\ "{}}\ <<\ r\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (invalid\_argument\ exc)\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ query"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ query"{}}\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{comment}{//\}}}
 \DoxyCodeLine{\Hypertarget{_dice_demo_8cpp_source_l00024}00024\ \};}

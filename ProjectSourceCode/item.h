@@ -153,8 +153,22 @@ namespace item
 		
 		friend bool operator==(const Item &lhs, const Item &rhs) { return lhs.itemName == rhs.itemName; };
 
+		/*!
+		* \fn Ability_Score_Natural
+		* \brief Overriden function that is meant to use the wrappee's function of the same name to then add on the enchantment bonus of the worn item
+		*
+		* \param _abilityScore Integer that represents the ability score targeted to calculate the ability score through worn item bonuses 
+		*
+		* \return Integer that represents the calculated bonus for an ability score through item bonuses (recursive)
+		*/
 		int Ability_Score_Natural(int) override;
 
+		/*!
+		* \fn GetDecoratorList
+		* \brief Overriden function that is meant to use the wrappee's function of the same name and then push the decorator's pointer to a list
+		* 
+		* \return Vector of pointers to AbstractComponent instances that represent the worn items in play
+		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override;
 
 		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };

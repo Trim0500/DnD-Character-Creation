@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['democharacter_2ecpp_0',['demoCharacter.cpp',['../demo_character_8cpp.html',1,'']]],
-  ['democharacter_2eh_1',['demoCharacter.h',['../demo_character_8h.html',1,'']]],
-  ['demoitem_2ecpp_2',['demoitem.cpp',['../demoitem_8cpp.html',1,'']]],
-  ['demoitem_2eh_3',['demoitem.h',['../demoitem_8h.html',1,'']]],
-  ['dice_2ecpp_4',['Dice.cpp',['../_dice_8cpp.html',1,'']]],
-  ['dice_2eh_5',['Dice.h',['../_dice_8h.html',1,'']]],
-  ['dicedemo_2ecpp_6',['DiceDemo.cpp',['../_dice_demo_8cpp.html',1,'']]],
-  ['dicedemo_2eh_7',['DiceDemo.h',['../_dice_demo_8h.html',1,'']]]
+  ['campaign_2ecpp_0',['campaign.cpp',['../campaign_8cpp.html',1,'']]],
+  ['campaign_2eh_1',['campaign.h',['../campaign_8h.html',1,'']]],
+  ['character_2ecpp_2',['Character.cpp',['../_character_8cpp.html',1,'']]],
+  ['character_2eh_3',['Character.h',['../_character_8h.html',1,'']]],
+  ['componentdecorator_2ecpp_4',['componentdecorator.cpp',['../componentdecorator_8cpp.html',1,'']]],
+  ['componentdecorator_2eh_5',['componentdecorator.h',['../componentdecorator_8h.html',1,'']]]
 ];

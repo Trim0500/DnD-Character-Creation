@@ -12,33 +12,37 @@ Class to abstract the different item containers.
 Inheritance diagram for itemcontainer\+::Item\+Container\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classitemcontainer_1_1_item_container}
+\includegraphics[height=4.000000cm]{classitemcontainer_1_1_item_container}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classitemcontainer_1_1_item_container_adedc9248ad9b736ed02dcc7539ac6345}{Item\+Container}} (const string \&, const int \&, const float \&)
+\mbox{\hyperlink{classitemcontainer_1_1_item_container_ab1f37ce03210bd9835109c9841438a08}{Item\+Container}} (const std\+::string \&, const int \&, const float \&)
 \begin{DoxyCompactList}\small\item\em Overloaded constructior for \doxylink{classitemcontainer_1_1_item_container}{Item\+Container}. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{Get\+Capacity}} ()
+\item 
 void \mbox{\hyperlink{classitemcontainer_1_1_item_container_a235a66e485d5db021d81cf77c862fbc6}{Set\+Weight\+Limit}} (const float \&\+\_\+capacity)
 \item 
 int \mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{Add\+New\+Item}} (\mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*})
 \item 
-vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61}{Get\+All\+Items}} ()
+std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{Get\+All\+Items}} ()
 \item 
-float \mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{Get\+Capacity}} ()
+void \mbox{\hyperlink{classitemcontainer_1_1_item_container_abe12c56a3f1565476d989a22797ca086}{Set\+Items}} (std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \+\_\+items)
 \item 
 float \mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{Get\+Total\+Item\+Weight}} ()
 \item 
-\mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{Get\+Item}} (const string \&)
-\item 
 \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classitemcontainer_1_1_item_container_a764aa3709415a62d38ce95a9b1a2bc62}{Get\+Item}} (const int \&)
 \item 
-vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}{Get\+Items\+By\+Enchantment\+Bonus}} (const int \&)
+\mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classitemcontainer_1_1_item_container_a3ce306b8b1afbeb6345824f9038d0ce1}{Get\+Item}} (const std\+::string \&)
 \item 
-vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}{Get\+Items\+By\+Item\+Type}} (const int \&)
+\mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classitemcontainer_1_1_item_container_ae7a99975aff31f86e754e714f098078c}{Get\+Item}} (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{Item\+Type}})
 \item 
-vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \mbox{\hyperlink{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}{Get\+Items\+By\+Stat}} (const int \&)
+std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a6245b725c1e0e48cebd0fff5376535e4}{Get\+Items\+By\+Enchantment\+Bonus}} (const int \&)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \mbox{\hyperlink{classitemcontainer_1_1_item_container_ac6a6c6ae0bf9d3e9415294af0f311885}{Get\+Items\+By\+Item\+Type}} (const int \&)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a85382839ced306f0ae70367165fa142a}{Get\+Items\+By\+Stat}} (const int \&)
 \item 
 void \mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f52fc08106eb5e}{Print\+Item\+Vector}} ()
 \begin{DoxyCompactList}\small\item\em Function to print out the info on individual items. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -47,29 +51,56 @@ void \mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f
 \item 
 \mbox{\hyperlink{classitem_1_1_item_a7e7998679cac37adb8124f012d5dd39e}{Item}} ()
 \begin{DoxyCompactList}\small\item\em No-\/args constructor for \doxylink{classitem_1_1_item}{Item}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classitem_1_1_item_a30c1d4e226db309d759301e34f470a8f}{Item}} (const string \&, const int \&, const int \&, const int \&, const float \&)
+\mbox{\hyperlink{classitem_1_1_item_a14ee9b05136a5b9de38c3062ebe8dafb}{Item}} (const std\+::string \&, const int \&, const int \&, const int \&, const float \&)
 \item 
-\mbox{\hyperlink{classitem_1_1_item_a2876f055fdea599ec9c710096fc0abe4}{Item}} (const int \&, const string \&, const int \&, const int \&, const int \&, const float \&)
+\mbox{\hyperlink{classitem_1_1_item_ad1c5c8bf6e2e4ad186de64e3d5bff761}{Item}} (const int \&, const std\+::string \&, const int \&, const int \&, const int \&, const float \&)
+\item 
+int \mbox{\hyperlink{classitem_1_1_item_a2b97618ae2a65b92aa9967d81d5b97c4}{Ability\+\_\+\+Score\+\_\+\+Natural}} (int) override
+\begin{DoxyCompactList}\small\item\em Overriden function that is meant to use the wrappee\textquotesingle{}s function of the same name to then add on the enchantment bonus of the worn item. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classitem_1_1_item_aab6e419cfea26bdea0389095c0f336c6}{Get\+Decorator\+List}} () override
+\begin{DoxyCompactList}\small\item\em Overriden function that is meant to use the wrappee\textquotesingle{}s function of the same name and then push the decorator\textquotesingle{}s pointer to a list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classitem_1_1_item_acba3c38ca886da61f6e126fd3d707a1b}{Set\+Wrappee}} (\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*}\+\_\+wrappee)
+\item 
+int \mbox{\hyperlink{classitem_1_1_item_a5cb95828af94742b8156c53019081c9f}{Get\+Next\+Item\+ID}} ()
+\item 
+void \mbox{\hyperlink{classitem_1_1_item_a1c8dfcbb03747a46e476b4eda0814356}{Set\+Item\+IDCounter}} (int \+\_\+next\+ID)
 \item 
 int \mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{Get\+Item\+Id}} ()
 \item 
-string \mbox{\hyperlink{classitem_1_1_item_ac1ad3254799bbd2d6017f098b333d2b6}{Get\+Item\+Name}} ()
+void \mbox{\hyperlink{classitem_1_1_item_ad2fe719265cb340f8509a2c80fc2a0a8}{Set\+Item\+ID}} (int \+\_\+item\+ID)
+\item 
+std\+::string \mbox{\hyperlink{classitem_1_1_item_a5c0d5bc614f92b0f003e06477efbbd44}{Get\+Item\+Name}} ()
+\item 
+void \mbox{\hyperlink{classitem_1_1_item_a8e02b1615fec40bf61038c5c00a666ef}{Set\+Item\+Name}} (std\+::string \+\_\+item\+Name)
 \item 
 int \mbox{\hyperlink{classitem_1_1_item_a4ba1d561d9bc83cecb5786916667a675}{Get\+Enchantment\+Bonus}} ()
 \item 
+void \mbox{\hyperlink{classitem_1_1_item_a932456df4ea52c15e4d99d417409099f}{Set\+Enchantment\+Bonus}} (int \+\_\+bonus)
+\item 
 \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{Item\+Type}} \mbox{\hyperlink{classitem_1_1_item_a00609c418b85cc5fbae97d6f77739a42}{Get\+Item\+Type}} ()
+\item 
+void \mbox{\hyperlink{classitem_1_1_item_a1c93018654561042ad4a15489c021f5e}{Set\+Item\+Type}} (\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{Item\+Type}} \+\_\+type)
 \item 
 \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{Character\+Stats}} \mbox{\hyperlink{classitem_1_1_item_a74ebf5073f51301db65ddf10a07aaa25}{Get\+Enchantment\+Type}} ()
 \item 
+void \mbox{\hyperlink{classitem_1_1_item_a2ea77682b6a4948d7b51d90603a97410}{Set\+Enchantment\+Type}} (\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51c}{Character\+Stats}} \+\_\+type)
+\item 
 float \mbox{\hyperlink{classitem_1_1_item_a9e3c7d4fc49e628cf70536ccf59112d7}{Get\+Item\+Weight}} ()
+\item 
+void \mbox{\hyperlink{classitem_1_1_item_a5a6d267c7bdb55c2ce575fbc4777a38b}{Set\+Item\+Weight}} (float \+\_\+weight)
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Additional Inherited Members}
-\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classitem_1_1_item}{item\+::\+Item}}}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator}{componentdecorator\+::\+Component\+Decorator}}}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{classitem_1_1_item_a0a45dc09af85eadcaa3eb2f24b7606df}{item\+Type\+Strings}} \mbox{[}7\mbox{]} = \{ "{}Helmet"{}, "{}Armor"{}, "{}Shield"{}, "{}Ring"{}, "{}Belt"{}, "{}Boots"{}, "{}Weapon"{} \}
-\begin{DoxyCompactList}\small\item\em String array for formatting item name item type. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{classitem_1_1_item_af9289f984e8daa309c1d5c5eb92fadb5}{stat\+Strings}} \mbox{[}9\mbox{]}
+\mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_a79279acc3e72c89be2553ab45f03445d}{Component\+Decorator}} ()
+\begin{DoxyCompactList}\small\item\em No-\/args constructor for the \doxylink{classcomponentdecorator_1_1_component_decorator}{Component\+Decorator} class meant to be used for when Items are not equipped to a character. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_a6858c5f071ff3766ff47e10dfa62c337}{Component\+Decorator}} (\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*}\+\_\+wrappee)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator}{componentdecorator\+::\+Component\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_ad12ee7309bd6a59949eb9c7e396e7958}{wrappee}}
 \end{DoxyCompactItemize}
 
 
@@ -83,11 +114,11 @@ Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00048}{48}} of file
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classitemcontainer_1_1_item_container_adedc9248ad9b736ed02dcc7539ac6345}\label{classitemcontainer_1_1_item_container_adedc9248ad9b736ed02dcc7539ac6345} 
+\Hypertarget{classitemcontainer_1_1_item_container_ab1f37ce03210bd9835109c9841438a08}\label{classitemcontainer_1_1_item_container_ab1f37ce03210bd9835109c9841438a08} 
 \index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!ItemContainer@{ItemContainer}}
 \index{ItemContainer@{ItemContainer}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
 \doxysubsubsection{\texorpdfstring{ItemContainer()}{ItemContainer()}}
-{\footnotesize\ttfamily itemcontainer\+::\+Item\+Container\+::\+Item\+Container (\begin{DoxyParamCaption}\item[{const string \&}]{\+\_\+container\+Name,  }\item[{const int \&}]{\+\_\+container\+Type,  }\item[{const float \&}]{\+\_\+capacity }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily itemcontainer\+::\+Item\+Container\+::\+Item\+Container (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+container\+Name,  }\item[{const int \&}]{\+\_\+container\+Type,  }\item[{const float \&}]{\+\_\+capacity }\end{DoxyParamCaption})}
 
 
 
@@ -110,15 +141,15 @@ Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00023}{23}} of fi
 
 Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
 
-\Hypertarget{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61}\label{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61} 
+\Hypertarget{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}\label{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a} 
 \index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetAllItems@{GetAllItems}}
 \index{GetAllItems@{GetAllItems}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
 \doxysubsubsection{\texorpdfstring{GetAllItems()}{GetAllItems()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ itemcontainer\+::\+Item\+Container\+::\+Get\+All\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ itemcontainer\+::\+Item\+Container\+::\+Get\+All\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00057}{57}} of file \mbox{\hyperlink{itemcontainer_8h_source}{itemcontainer.\+h}}.
+Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00062}{62}} of file \mbox{\hyperlink{itemcontainer_8h_source}{itemcontainer.\+h}}.
 
 \Hypertarget{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}\label{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11} 
 \index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetCapacity@{GetCapacity}}
@@ -128,57 +159,67 @@ Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00057}{57}} of file
 
 
 
-Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00058}{58}} of file \mbox{\hyperlink{itemcontainer_8h_source}{itemcontainer.\+h}}.
+Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00056}{56}} of file \mbox{\hyperlink{itemcontainer_8h_source}{itemcontainer.\+h}}.
 
 \Hypertarget{classitemcontainer_1_1_item_container_a764aa3709415a62d38ce95a9b1a2bc62}\label{classitemcontainer_1_1_item_container_a764aa3709415a62d38ce95a9b1a2bc62} 
 \index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetItem@{GetItem}}
 \index{GetItem@{GetItem}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
-\doxysubsubsection{\texorpdfstring{GetItem()}{GetItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} itemcontainer\+::\+Item\+Container\+::\+Get\+Item (\begin{DoxyParamCaption}\item[{const int \&}]{item\+Type }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
-
-\Hypertarget{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}\label{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa} 
-\index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetItem@{GetItem}}
-\index{GetItem@{GetItem}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
-\doxysubsubsection{\texorpdfstring{GetItem()}{GetItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} itemcontainer\+::\+Item\+Container\+::\+Get\+Item (\begin{DoxyParamCaption}\item[{const string \&}]{name\+Key }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{GetItem()}{GetItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} itemcontainer\+::\+Item\+Container\+::\+Get\+Item (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+item\+ID }\end{DoxyParamCaption})}
 
 
 
 Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
 
-\Hypertarget{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}\label{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640} 
-\index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetItemsByEnchantmentBonus@{GetItemsByEnchantmentBonus}}
-\index{GetItemsByEnchantmentBonus@{GetItemsByEnchantmentBonus}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
-\doxysubsubsection{\texorpdfstring{GetItemsByEnchantmentBonus()}{GetItemsByEnchantmentBonus()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ itemcontainer\+::\+Item\+Container\+::\+Get\+Items\+By\+Enchantment\+Bonus (\begin{DoxyParamCaption}\item[{const int \&}]{enchantment\+Bonus }\end{DoxyParamCaption})}
+\Hypertarget{classitemcontainer_1_1_item_container_a3ce306b8b1afbeb6345824f9038d0ce1}\label{classitemcontainer_1_1_item_container_a3ce306b8b1afbeb6345824f9038d0ce1} 
+\index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetItem@{GetItem}}
+\index{GetItem@{GetItem}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
+\doxysubsubsection{\texorpdfstring{GetItem()}{GetItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} itemcontainer\+::\+Item\+Container\+::\+Get\+Item (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name\+Key }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
+
+\Hypertarget{classitemcontainer_1_1_item_container_ae7a99975aff31f86e754e714f098078c}\label{classitemcontainer_1_1_item_container_ae7a99975aff31f86e754e714f098078c} 
+\index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetItem@{GetItem}}
+\index{GetItem@{GetItem}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
+\doxysubsubsection{\texorpdfstring{GetItem()}{GetItem()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classitem_1_1_item}{Item}} \texorpdfstring{$\ast$}{*} itemcontainer\+::\+Item\+Container\+::\+Get\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{Item\+Type}}}]{item\+Type }\end{DoxyParamCaption})}
 
 
 
 Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00079}{79}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
 
-\Hypertarget{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}\label{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd} 
+\Hypertarget{classitemcontainer_1_1_item_container_a6245b725c1e0e48cebd0fff5376535e4}\label{classitemcontainer_1_1_item_container_a6245b725c1e0e48cebd0fff5376535e4} 
+\index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetItemsByEnchantmentBonus@{GetItemsByEnchantmentBonus}}
+\index{GetItemsByEnchantmentBonus@{GetItemsByEnchantmentBonus}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
+\doxysubsubsection{\texorpdfstring{GetItemsByEnchantmentBonus()}{GetItemsByEnchantmentBonus()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ itemcontainer\+::\+Item\+Container\+::\+Get\+Items\+By\+Enchantment\+Bonus (\begin{DoxyParamCaption}\item[{const int \&}]{enchantment\+Bonus }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
+
+\Hypertarget{classitemcontainer_1_1_item_container_ac6a6c6ae0bf9d3e9415294af0f311885}\label{classitemcontainer_1_1_item_container_ac6a6c6ae0bf9d3e9415294af0f311885} 
 \index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetItemsByItemType@{GetItemsByItemType}}
 \index{GetItemsByItemType@{GetItemsByItemType}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
 \doxysubsubsection{\texorpdfstring{GetItemsByItemType()}{GetItemsByItemType()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ itemcontainer\+::\+Item\+Container\+::\+Get\+Items\+By\+Item\+Type (\begin{DoxyParamCaption}\item[{const int \&}]{item\+Type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ itemcontainer\+::\+Item\+Container\+::\+Get\+Items\+By\+Item\+Type (\begin{DoxyParamCaption}\item[{const int \&}]{item\+Type }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
 
-\Hypertarget{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}\label{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901} 
+\Hypertarget{classitemcontainer_1_1_item_container_a85382839ced306f0ae70367165fa142a}\label{classitemcontainer_1_1_item_container_a85382839ced306f0ae70367165fa142a} 
 \index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetItemsByStat@{GetItemsByStat}}
 \index{GetItemsByStat@{GetItemsByStat}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
 \doxysubsubsection{\texorpdfstring{GetItemsByStat()}{GetItemsByStat()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ itemcontainer\+::\+Item\+Container\+::\+Get\+Items\+By\+Stat (\begin{DoxyParamCaption}\item[{const int \&}]{enchantment\+Type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$ itemcontainer\+::\+Item\+Container\+::\+Get\+Items\+By\+Stat (\begin{DoxyParamCaption}\item[{const int \&}]{enchantment\+Type }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
 
 \Hypertarget{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}\label{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401} 
 \index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!GetTotalItemWeight@{GetTotalItemWeight}}
@@ -202,7 +243,17 @@ Function to print out the info on individual items.
 
 
 
-Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{itemcontainer_8cpp_source}{itemcontainer.\+cpp}}.
+
+\Hypertarget{classitemcontainer_1_1_item_container_abe12c56a3f1565476d989a22797ca086}\label{classitemcontainer_1_1_item_container_abe12c56a3f1565476d989a22797ca086} 
+\index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!SetItems@{SetItems}}
+\index{SetItems@{SetItems}!itemcontainer::ItemContainer@{itemcontainer::ItemContainer}}
+\doxysubsubsection{\texorpdfstring{SetItems()}{SetItems()}}
+{\footnotesize\ttfamily void itemcontainer\+::\+Item\+Container\+::\+Set\+Items (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classitem_1_1_item}{Item}} $>$}]{\+\_\+items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00065}{65}} of file \mbox{\hyperlink{itemcontainer_8h_source}{itemcontainer.\+h}}.
 
 \Hypertarget{classitemcontainer_1_1_item_container_a235a66e485d5db021d81cf77c862fbc6}\label{classitemcontainer_1_1_item_container_a235a66e485d5db021d81cf77c862fbc6} 
 \index{itemcontainer::ItemContainer@{itemcontainer::ItemContainer}!SetWeightLimit@{SetWeightLimit}}
@@ -212,7 +263,7 @@ Definition at line \mbox{\hyperlink{itemcontainer_8cpp_source_l00109}{109}} of f
 
 
 
-Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00055}{55}} of file \mbox{\hyperlink{itemcontainer_8h_source}{itemcontainer.\+h}}.
+Definition at line \mbox{\hyperlink{itemcontainer_8h_source_l00058}{58}} of file \mbox{\hyperlink{itemcontainer_8h_source}{itemcontainer.\+h}}.
 
 
 

@@ -19,7 +19,7 @@
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00015}00015\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dice_8h}{Dice.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00018}00018\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00018}00018\ \textcolor{comment}{//\ using\ namespace\ std;}}
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00019}00019\ \textcolor{keyword}{using\ namespace\ }CppUnit;}
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00020}00020\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00021}\mbox{\hyperlink{class_test_dice}{00021}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_test_dice}{TestDice}}\ :\ \textcolor{keyword}{public}\ TestFixture\ \{}
@@ -48,17 +48,17 @@
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a4db65c972cef1cf28f4e8723f29b600f}{TestFullRoll}}(\textcolor{keywordtype}{void});}
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_acd8f62e1bbe756887b4116d4e140d7b6}{TestAllDice}}(\textcolor{keywordtype}{void});}
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00061}00061\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{string}\ easy\_query;}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{string}\ hard\_query;}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00064}00064\ \ \ \ \ \textcolor{keywordtype}{string}\ invalid\_query;}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{string}\ just\_add\_query;}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{string}\ just\_subtract\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00062}00062\ \ \ \ \ std::string\ easy\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00063}00063\ \ \ \ \ std::string\ hard\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00064}00064\ \ \ \ \ std::string\ invalid\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00065}00065\ \ \ \ \ std::string\ just\_add\_query;}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00066}00066\ \ \ \ \ std::string\ just\_subtract\_query;}
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00067}00067\ \};}
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00068}00068\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00069}\mbox{\hyperlink{test_dice_8h_ac230180df71d7288cc8738de351f5577}{00069}}\ \mbox{\hyperlink{test_dice_8h_ac230180df71d7288cc8738de351f5577}{CPPUNIT\_TEST\_SUITE\_REGISTRATION}}(\mbox{\hyperlink{class_test_dice}{TestDice}});}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00070}00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(\textcolor{keywordtype}{string}\ query,\ \textcolor{keywordtype}{int}\ count);}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00071}00071\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count);}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00072}00072\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(\textcolor{keywordtype}{string}\ query,\ \textcolor{keywordtype}{int}\ count);}
-\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00073}00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00070}00070\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(std::string\ query,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00071}00071\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00072}00072\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(std::string\ query,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{test_dice_8h_source_l00073}00073\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count);}
 
 \end{DoxyCode}

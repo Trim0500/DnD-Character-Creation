@@ -199,11 +199,19 @@ namespace Character {
 		*  \param t_item: Item pointer to the object that the character will equip
 		*  \return Returns true if equipping was performed succesfully, false otherwise
 		*/
-
-
 		bool Equip_Item(item::Item* t_item);
 
-		void Equip_Item_Decorator(item::Item* _itemToEquip);
+		/*!
+		* \fn Equip_Item_Decorator
+		*  \brief Equips an item into the character's corresponding equipment slot. Item must be contained within the 'inventory'
+		*  vector array to be equipped
+		* 
+		*  \param _itemToEquip: Item pointer to the object that the character will equip
+		* 
+		*  \throw std::invalid_argument
+		* \throw std::exception
+		*/
+		void Equip_Item_Decorator(item::Item*);
 
 		/*! \fn Unequip_Item()
 		*  \brief Equips an item into the character's corresponding equipment slot. Item must be contained within the 'inventory'
@@ -213,7 +221,16 @@ namespace Character {
 		*/
 		void Unequip_Item(Equipment_Slots t_slot);
 
-		void Unequip_Item_Decorator(item::Item* _itemToRemove);
+		/*!
+		* \fn Unequip_Item_Decorator
+		*  \brief Function that rebuilds the worn items decorator by excluding an item, unequiping it
+		* 
+		*  \param _itemToRemove Item pointer to the object that the character will remove
+		* 
+		*  \throw std::invalid_argument
+		* \throw std::exception
+		*/
+		void Unequip_Item_Decorator(item::Item*);
 
 		/*! \fn Max_Hit_Points()
 		*  \return Returns const int to the maxium number of hitpoints for this character
@@ -243,9 +260,13 @@ namespace Character {
 		*  \return Returns const int to desired modifier. Modifier is detremined using ability scores and item bonuses
 		*/
 		const int Modifier(Abilities_Stats t_ability);
-		/*! \fn Ability_Score_Natural()
-		*  \param t_ability: int/Ability enum indexing the desired ability score
-		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses
+		/*!
+		* \fn Ability_Score_Natural
+		* \brief Overriden function that is meant to get the raw ability score of a character based on the parameter specified
+		*
+		* \param _abilityScore Integer that represents the ability score targeted
+		*
+		* \return Integer that represents the raw ability score of the character
 		*/
 		int Ability_Score_Natural(int t_ability) override;
 		/*! \fn Ability_Score_Bonused()
@@ -286,6 +307,12 @@ namespace Character {
 		*/
 		bool Is_Multi_Classed(Character_Class t_class);
 
+		/*!
+		* \fn GetDecoratorList
+		* \brief Overriden function that is meant to simply create the vector of worn itens for decorators to push their pointers to
+		* 
+		* \return Empty vector of pointers to AbstractComponent instances that represent the list for decorators to update
+		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override { std::vector<AbstractComponent*> initDecorators; return initDecorators; };
 
 	private:
