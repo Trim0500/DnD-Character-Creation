@@ -26,7 +26,7 @@ namespace componentdecorator {
             * \fn ComponentDecorator
             * \brief No-args constructor for the ComponentDecorator class meant to be used for when Items are not equipped to a character
             */
-            ComponentDecorator() {};
+            ComponentDecorator() { wrappee = nullptr; };
 
             /*!
             * \fn ComponentDecorator

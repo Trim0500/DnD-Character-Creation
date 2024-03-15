@@ -331,6 +331,8 @@ void Character::Character::Unequip_Item_Decorator(item::Item* _itemToRemove) {
 	{
 		Item* decoratorItem = dynamic_cast<Item*>(decoratorList.at(i));
 		if (_itemToRemove->GetItemId() == decoratorItem->GetItemId()) {
+			_itemToRemove->SetWrappee(nullptr);
+
 			continue;
 		}
 
