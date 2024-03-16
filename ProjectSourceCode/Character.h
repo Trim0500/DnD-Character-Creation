@@ -303,6 +303,11 @@ namespace Character {
 		*  \return Returns pointer to item type object corresponding to the paramaters equipment slot. Retruns nullptr if no item is found
 		*/
 		const item::Item* Equipped_Items(Equipment_Slots t_item) { return equipment_slots.at(t_item); };
+
+		AbstractComponent* GetWornItems() { return wornItems; };
+
+		void SetWornItems(AbstractComponent* _wornItems) { wornItems = _wornItems; };
+
 		/*! \fn Is_Multi_Classed()
 		*  \brief Checks if the character is multi-classed with a particular character class
 		*/
