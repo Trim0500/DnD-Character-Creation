@@ -161,7 +161,7 @@ namespace item
 		*
 		* \return Integer that represents the calculated bonus for an ability score through item bonuses (recursive)
 		*/
-		int Ability_Score_Natural(int) override;
+		int Ability_Score_Natural(int, int) override;
 
 		/*!
 		* \fn GetDecoratorList

@@ -181,12 +181,12 @@ void TestItem::TestAbilityScoreNatural(void) {
 	testCharacter->Equip_Item_Decorator(bootsObject);
 
 	AbstractComponent* currentWornItems = testCharacter->GetWornItems();
-	CPPUNIT_ASSERT_EQUAL(6, currentWornItems->Ability_Score_Natural(0));
-	CPPUNIT_ASSERT_EQUAL(7, currentWornItems->Ability_Score_Natural(1));
-	CPPUNIT_ASSERT_EQUAL(5, currentWornItems->Ability_Score_Natural(2));
-	CPPUNIT_ASSERT_EQUAL(7, currentWornItems->Ability_Score_Natural(3));
-	CPPUNIT_ASSERT_EQUAL(6, currentWornItems->Ability_Score_Natural(4));
-	CPPUNIT_ASSERT_EQUAL(5, currentWornItems->Ability_Score_Natural(5));
+	CPPUNIT_ASSERT_EQUAL(6, currentWornItems->Ability_Score_Natural(0, 0));
+	CPPUNIT_ASSERT_EQUAL(7, currentWornItems->Ability_Score_Natural(1, 0));
+	CPPUNIT_ASSERT_EQUAL(5, currentWornItems->Ability_Score_Natural(2, 0));
+	CPPUNIT_ASSERT_EQUAL(7, currentWornItems->Ability_Score_Natural(3, 0));
+	CPPUNIT_ASSERT_EQUAL(6, currentWornItems->Ability_Score_Natural(4, 0));
+	CPPUNIT_ASSERT_EQUAL(5, currentWornItems->Ability_Score_Natural(5, 0));
 
 	delete testCharacter;
 	

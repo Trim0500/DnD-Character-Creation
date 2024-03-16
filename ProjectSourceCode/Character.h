@@ -268,7 +268,7 @@ namespace Character {
 		*
 		* \return Integer that represents the raw ability score of the character
 		*/
-		int Ability_Score_Natural(int t_ability) override;
+		int Ability_Score_Natural(int t_ability, int t_attack_number) override;
 		/*! \fn Ability_Score_Bonused()
 		*  \param t_ability: int/Ability enum indexing the desired ability score
 		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses

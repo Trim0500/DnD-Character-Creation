@@ -146,8 +146,8 @@ namespace item {
 		weight = _weight;
 	}
 
-	int Item::Ability_Score_Natural(int _abilityScore) {
-		int result = wrappee->Ability_Score_Natural(_abilityScore);
+	int Item::Ability_Score_Natural(int _abilityScore, int _attackTurnNumber) {
+		int result = wrappee->Ability_Score_Natural(_abilityScore, _attackTurnNumber);
 
 		if (enchantmentType == _abilityScore) {
 			result += enchantmentType;

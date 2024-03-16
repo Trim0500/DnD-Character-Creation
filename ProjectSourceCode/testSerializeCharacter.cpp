@@ -30,7 +30,7 @@ void TestSerializeCharacter::TestLoadCharacter(void)
 		CPPUNIT_ASSERT(record.level.at(i) == characterObject->Levels((Character::Character_Class)i));
 	}
 	for (int i{ 0 }; i < record.ability_scores.size(); i++) {
-		CPPUNIT_ASSERT(record.ability_scores.at(i) == characterObject->Ability_Score_Natural(i));
+		CPPUNIT_ASSERT(record.ability_scores.at(i) == characterObject->Ability_Score_Natural(i, 0));
 	}
 
 }

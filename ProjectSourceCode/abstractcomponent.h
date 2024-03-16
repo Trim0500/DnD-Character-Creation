@@ -25,7 +25,7 @@ namespace abstractcomponent
             * \fn Ability_Score_Natural
             * \brief Virtual function that is meant to be overriden to get the particular ability score of a character
             */
-            virtual int Ability_Score_Natural(int) { return 0; };
+            virtual int Ability_Score_Natural(int, int) { return 0; };
 
             /*!
             * \fn GetDecoratorList

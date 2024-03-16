@@ -394,11 +394,34 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 	return modifier;
 }
 
-int Character::Character::Ability_Score_Natural(int t_ability)
+int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_number)
 {
 	int score;
 	try {
-		score = ability_scores[(int)t_ability];
+		if (t_ability > 5) {
+			switch (t_ability) {
+				case 6:
+					score = 10;
+
+					break;
+				case 7:
+					if (t_attack_number == 1) {
+						score = Sum_Levels();
+					}
+					else {
+						score = Sum_Levels() - ((t_attack_number - 1) * 5);
+					}
+
+					break;
+				case 8:
+					score = ability_scores[0];
+
+					break;
+			}
+		}
+		else {
+			score = ability_scores[(int)t_ability];
+		}
 	}
 	catch (std::exception& e) {
 		std::cerr << &e << std::endl;
