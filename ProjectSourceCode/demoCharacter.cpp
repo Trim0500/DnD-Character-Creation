@@ -51,7 +51,7 @@ void demo_character()
 			}
 			std::cout << "Input character name: ";
 			std::cin >> demo_name;
-			demo_character = new Character::Character(demo_name,Character::Character_Class::Fighter, demo_attributes);
+			demo_character = new Character::Character(demo_name,Character::Character_Class::Fighter, demo_attributes,true);
 			std::cout << "Printing character sheet..." << std::endl;
 			demo_character->Print_Character_Sheet();
 			delete demo_character;

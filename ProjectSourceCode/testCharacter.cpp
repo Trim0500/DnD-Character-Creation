@@ -75,18 +75,22 @@ void TestCharacter::TestClasses(void)
 
 void TestCharacter::TestEquipItem(void)
 {
-	item::Item* testItem = new item::Item();
+	item::Item* testItem1 = new item::Item();
+	item::Item* testItem2 = new item::Item();
 
 	//testItemCurrentId += 1;
 
-	noArgsCharacterObject->Inventory().AddNewItem(testItem);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Equip_Item(testItem));
-	
-	customCharacterObject->Inventory().AddNewItem(testItem);
-	CPPUNIT_ASSERT(customCharacterObject->Equip_Item(testItem));
+	noArgsCharacterObject->Inventory().AddNewItem(testItem1);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Equip_Item(testItem1));
 
-	delete testItem;
-	testItem = nullptr;
+	
+	customCharacterObject->Inventory().AddNewItem(testItem2);
+	CPPUNIT_ASSERT(customCharacterObject->Equip_Item(testItem2));
+
+	delete testItem1;
+	testItem1 = nullptr;
+	delete testItem2;
+	testItem2 = nullptr;
 }
 
 void TestCharacter::TestUnequipItem(void)
@@ -165,11 +169,11 @@ void TestCharacter::TestArmourClass(void)
 
 void TestCharacter::TestAttackBonus(void)
 {
-	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus() <= 10);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus() >= -2);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus(1) <= 10);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus(1) >= -2);
 
-	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus() <= 6);
-	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus() >= -2);
+	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus(1) <= 6);
+	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus(1) >= -2);
 }
 
 void TestCharacter::TestProficiencyBonus(void)

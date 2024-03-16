@@ -6,17 +6,17 @@
 * 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon & tool proficiencies', 'Death saves', 'initiative' and 'saving throws'
 */
 #pragma once
-#include <iostream>
-#include <iomanip>
-#include <random>
-#include <chrono>
-#include <vector>
 #include <bitset>
+#include <chrono>
+#include <iomanip>
+#include <iostream>
+#include <random>
 #include <unordered_map>
+#include <vector>
 
+#include "Dice.h"
 #include "item.h"
 #include "itemcontainer.h"
-#include "Dice.h"
 #include "Observable.h"
 #include "serializeItem.h"
 #include "abstractcomponent.h"
@@ -155,7 +155,7 @@ namespace Character {
 		*  \param t_class Character class the character will be given a level for
 		*  \param t_ability_scores Set of desired ability scores {Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma}
 		*/
-		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores);
+		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp);
 		Character(const serializecharacter::CharacterRecord& t_record);
 		/* \fn ID()
 		*  \brief Unique Character ID
@@ -192,7 +192,7 @@ namespace Character {
 		*  \param t_class: Enum of type 'Character_Class' indicating which class a character will take a level in
 		*  \return Returns true if levelup was performed succesfully, false otherwise
 		*/
-		bool Levelup(Character_Class t_class);
+		bool Levelup(Character_Class t_class, bool t_average_hp);
 		/*! \fn Equip_Item()
 		*  \brief Equips an item into the character's corresponding equipment slot. Item must be contained within the 'inventory'
 		*  vector array to be equipped
@@ -280,10 +280,11 @@ namespace Character {
 		*/
 		const int Armour_Class();
 		/*! \fn Attack_Bonus()
-		*  \brief Calculates and returns attack bonus based off a character's ability scores & equipped items | Proficiency Bonus + Strength Modifier + Enchantments
+		*  \brief Calculates and returns attack bonus based off a character's level, equipped items and attack number (1st attack, 2nd attack, etc...)
+		*  \param t_attack_number: int representing 1st, 2nd, 3rd or 4th attack
 		*  \return Returns const int to attack bonus
 		*/
-		const int Attack_Bonus();
+		const int Attack_Bonus(int t_attack_number);
 		/*! \fn Proficiency_Bonus()
 		*  \brief Calculates and returns proficiency bonus based off a character's cumulative levels
 		*  \return Returns const int to proficiency bonus
@@ -306,6 +307,10 @@ namespace Character {
 		*  \brief Checks if the character is multi-classed with a particular character class
 		*/
 		bool Is_Multi_Classed(Character_Class t_class);
+		/*! \fn Attacks_Per_Turn()
+		*  \brief Return the number of attacks per turn based off level
+		*/
+		const int Attacks_Per_Turn();
 
 		/*!
 		* \fn GetDecoratorList
@@ -332,6 +337,7 @@ namespace Character {
 		std::vector<int> ability_scores = std::vector<int>(6);
 		int max_hit_points{0};
 		int hit_points{0};
+
 
 		std::unordered_map<Equipment_Slots,item::Item*> equipment_slots;
     
@@ -360,20 +366,38 @@ namespace Character {
 		*/
 		int setLevel(Character_Class t_class, int t_val);
 
-		bool Levelup_Barbarian();
-		bool Levelup_Bard();
-		bool Levelup_Cleric();
-		bool Levelup_Druid();
-		bool Levelup_Fighter();
-		bool Levelup_Monk();
-		bool Levelup_Paladin();
-		bool Levelup_Ranger();
-		bool Levelup_Rogue();
-		bool Levelup_Sorcerer();
-		bool Levelup_Warlock();
-		bool Levelup_Wizard();
+		bool Levelup_Barbarian(bool t_average_hp);
+		bool Levelup_Bard(bool t_average_hp);
+		bool Levelup_Cleric(bool t_average_hp);
+		bool Levelup_Druid(bool t_average_hp);
+		bool Levelup_Fighter(bool t_average_hp);
+		bool Levelup_Monk(bool t_average_hp);
+		bool Levelup_Paladin(bool t_average_hp);
+		bool Levelup_Ranger(bool t_average_hp);
+		bool Levelup_Rogue(bool t_average_hp);
+		bool Levelup_Sorcerer(bool t_average_hp);
+		bool Levelup_Warlock(bool t_average_hp);
+		bool Levelup_Wizard(bool t_average_hp);
 
 		AbstractComponent* wornItems;
 
 	};
+}
+/*! \namespace characterBuilder
+* \brief namespace used to encapsulate 'characterBuilder' class functionality
+*/
+namespace characterBuilder {
+	/*! \Enum Fighter_Sub_Class
+	*  \brief Enum used to index to fields from Fighter subclasses
+	*/
+	enum class Fighter_Sub_Class {
+		Bully,
+		Nimble,
+		Tank
+	};
+	/*! \fn Build_Fighter
+	*  \brief Function that allows to build a Fighter class character based off a Fighter subclass
+	*/
+	Character::Character Build_Fighter(characterBuilder::Fighter_Sub_Class t_subclass);
+
 }
