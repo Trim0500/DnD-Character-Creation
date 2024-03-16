@@ -169,11 +169,11 @@ void TestCharacter::TestArmourClass(void)
 
 void TestCharacter::TestAttackBonus(void)
 {
-	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus() <= 10);
-	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus() >= -2);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus(1) <= 10);
+	CPPUNIT_ASSERT(noArgsCharacterObject->Attack_Bonus(1) >= -2);
 
-	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus() <= 6);
-	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus() >= -2);
+	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus(1) <= 6);
+	CPPUNIT_ASSERT(customCharacterObject->Attack_Bonus(1) >= -2);
 }
 
 void TestCharacter::TestProficiencyBonus(void)
