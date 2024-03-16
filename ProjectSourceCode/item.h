@@ -171,6 +171,8 @@ namespace item
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override;
 
+		AbstractComponent* GetWrappee() { return wrappee; };
+		
 		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };
 
 		int GetNextItemID() { return nextItemId; };

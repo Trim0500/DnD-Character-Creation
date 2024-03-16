@@ -159,3 +159,39 @@ void TestItem::TestGetItemWeight(void) {
 			break;
 	}
 }
+
+void TestItem::TestAbilityScoreNatural(void) {
+	std::vector<int> abilityScores = { 5, 5, 5, 5, 5, 5 };
+	Character::Character* testCharacter = new Character::Character("Anristt", Character::Character_Class::Ranger, abilityScores, true);
+
+	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence, 5);
+	Item* ringObject = new Item("testRing", 1, Ring, Wisdom, 0.5);
+	Item* beltObject = new Item("testBelt", 1, Belt, Strength, 4.5);
+	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity, 5);
+
+	ItemContainer characterInventory = testCharacter->Inventory();
+	characterInventory.AddNewItem(helmetObject);
+	characterInventory.AddNewItem(ringObject);
+	characterInventory.AddNewItem(beltObject);
+	characterInventory.AddNewItem(bootsObject);
+
+	testCharacter->Equip_Item_Decorator(helmetObject);
+	testCharacter->Equip_Item_Decorator(ringObject);
+	testCharacter->Equip_Item_Decorator(beltObject);
+	testCharacter->Equip_Item_Decorator(bootsObject);
+
+	AbstractComponent* currentWornItems = testCharacter->GetWornItems();
+	CPPUNIT_ASSERT_EQUAL(6, currentWornItems->Ability_Score_Natural(0));
+	CPPUNIT_ASSERT_EQUAL(7, currentWornItems->Ability_Score_Natural(1));
+	CPPUNIT_ASSERT_EQUAL(5, currentWornItems->Ability_Score_Natural(2));
+	CPPUNIT_ASSERT_EQUAL(7, currentWornItems->Ability_Score_Natural(3));
+	CPPUNIT_ASSERT_EQUAL(6, currentWornItems->Ability_Score_Natural(4));
+	CPPUNIT_ASSERT_EQUAL(5, currentWornItems->Ability_Score_Natural(5));
+
+	delete testCharacter;
+	
+	delete helmetObject;
+	delete ringObject;
+	delete beltObject;
+	delete bootsObject;
+}

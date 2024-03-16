@@ -19,12 +19,10 @@
 #include <cppunit/XmlOutputter.h>
 
 #include "item.h"
-//#include "testitemidcounter.h"
+#include "Character.h"
 
-// using namespace std;
 using namespace CppUnit;
 using namespace item;
-//using namespace testitemidcounter;
 
 /*!
 * \class TestItem
@@ -40,6 +38,7 @@ class TestItem : public TestFixture {
 	CPPUNIT_TEST(TestGetItemType);
 	CPPUNIT_TEST(TestGetEnchantmentType);
 	CPPUNIT_TEST(TestGetItemWeight);
+	CPPUNIT_TEST(TestAbilityScoreNatural);
 	CPPUNIT_TEST_SUITE_END();
 
 	public:
@@ -48,6 +47,7 @@ class TestItem : public TestFixture {
 		* \brief Function that creates two Item objects before running a test
 		*/
 		void setUp(void);
+
 		/*!
 		* \fn tearDown
 		* \brief Function that deallocates the generated items
@@ -59,41 +59,50 @@ class TestItem : public TestFixture {
 		* \brief Function that tests the no args constructor overload for random generation
 		*/
 		void TestNoArgsItemConstructor(void);
+
 		/*!
 		* \fn TestItemConstructor
 		* \brief Function that tests the custom constructor overload for static ganeration
 		*/
 		void TestItemConstructor(void);
+
 		/*!
 		* \fn TestGetItemId
 		* \brief Function that tests GetItemId member function to verify the id increment is correct
 		*/
 		void TestGetItemId(void);
+		
 		/*!
 		* \fn TestGetItemName
 		* \brief Function that tests GetItemName member function to verify the created item's name is correct
 		*/
 		void TestGetItemName(void);
+		
 		/*!
 		* \fn TestGetEnchantmentBonus
 		* \brief Function that tests GetEnchantmentBonus member function to verify the created item's bonus is in the right range
 		*/
 		void TestGetEnchantmentBonus(void);
+
 		/*!
 		* \fn TestGetItemType
 		* \brief Function that tests GetItemType member function to verify the created item's type is in the right range
 		*/
 		void TestGetItemType(void);
+
 		/*!
 		* \fn TestGetEnchantmentType
 		* \brief Function that tests GetEnchantmentType member function to verify the created item's enchantment type is in the right range
 		*/
 		void TestGetEnchantmentType(void);
+
 		/*!
 		* \fn TestGetItemWeight
 		* \brief Function that tests GetItemWeight member function to verify the created item's weight is in the expected range
 		*/
 		void TestGetItemWeight(void);
+
+		void TestAbilityScoreNatural(void);
 	private:
 		/*!
 		* \var noArgsItemObject
