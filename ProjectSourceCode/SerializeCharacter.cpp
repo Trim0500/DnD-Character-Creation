@@ -11,7 +11,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     record.id = t_character->ID();
     //copy ability scores
     for (int i{ 0 }; i < 6; i++) {
-        record.ability_scores.at(i) = t_character->Ability_Score_Natural(i);
+        record.ability_scores.at(i) = t_character->Ability_Score_Natural(i, 0);
     }
     //copy levels
     for (int i{ 0 }; i < 12; i++) {
@@ -26,11 +26,22 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     //copy equipped item IDs
     for (int i{ 0 };i<8;i++) {
         try {
-            const item::Item* item_ptr = t_character->Equipped_Items((Character::Equipment_Slots)i);
-            if (item_ptr != nullptr) {
-                auto item_id = const_cast<item::Item*>(item_ptr)->GetItemId();
+            AbstractComponent* currentWornItems = t_character->GetWornItems();
+            std::vector<AbstractComponent*> itemDecoratorList = currentWornItems->GetDecoratorList();
+
+            for (int i = 0; i < (int)itemDecoratorList.size(); ++i)
+            {
+                Item* decoratorItem = dynamic_cast<Item*>(itemDecoratorList.at(i));
+                auto item_id = decoratorItem->GetItemId();
                 record.equipped_item_ids.push_back(item_id);
             }
+            
+
+            // const item::Item* item_ptr = t_character->Equipped_Items((Character::Equipment_Slots)i);
+            // if (item_ptr != nullptr) {
+            //     auto item_id = const_cast<item::Item*>(item_ptr)->GetItemId();
+            //     record.equipped_item_ids.push_back(item_id);
+            // }
         }
         catch (std::exception e) {
 

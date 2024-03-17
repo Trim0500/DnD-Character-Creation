@@ -93,6 +93,46 @@ void TestCharacter::TestEquipItem(void)
 	testItem2 = nullptr;
 }
 
+void TestCharacter::TestEquipItemDecorator(void) {
+	Item* notInInventoryObject = new Item("lostItem", 2, Weapon, AttackBonus, 3);
+
+	CPPUNIT_ASSERT_THROW_MESSAGE("[Character/Equip_Item_Decorator] -- Failed to find the item in the inventory to equip",
+									customCharacterObject->Equip_Item_Decorator(notInInventoryObject), std::invalid_argument);
+
+	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence, 5);
+	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass, 10);
+	Item* ringObject = new Item("testRing", 1, Ring, Wisdom, 0.5);
+	Item* beltObject = new Item("testBelt", 1, Belt, Strength, 4.5);
+	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity, 5);
+	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus, 3);
+
+	customCharacterObject->Inventory().AddNewItem(helmetObject);
+	customCharacterObject->Inventory().AddNewItem(shieldObject);
+	customCharacterObject->Inventory().AddNewItem(ringObject);
+	customCharacterObject->Inventory().AddNewItem(beltObject);
+	customCharacterObject->Inventory().AddNewItem(bootsObject);
+	customCharacterObject->Inventory().AddNewItem(weaponObject);
+
+	CPPUNIT_ASSERT_NO_THROW(customCharacterObject->Equip_Item_Decorator(helmetObject));
+	CPPUNIT_ASSERT_NO_THROW(customCharacterObject->Equip_Item_Decorator(shieldObject));
+	CPPUNIT_ASSERT_NO_THROW(customCharacterObject->Equip_Item_Decorator(ringObject));
+	CPPUNIT_ASSERT_NO_THROW(customCharacterObject->Equip_Item_Decorator(beltObject));
+	CPPUNIT_ASSERT_NO_THROW(customCharacterObject->Equip_Item_Decorator(bootsObject));
+	CPPUNIT_ASSERT_NO_THROW(customCharacterObject->Equip_Item_Decorator(weaponObject));
+
+	std::ostringstream excMessage;
+	excMessage << "[Character/Equip_Item_Decorator] -- Can't equip another " << itemTypeStrings[helmetObject->GetItemType() - 1];
+	CPPUNIT_ASSERT_THROW_MESSAGE(excMessage.str(), customCharacterObject->Equip_Item_Decorator(helmetObject), std::invalid_argument);
+
+	delete notInInventoryObject;
+	delete helmetObject;
+	delete shieldObject;
+	delete ringObject;
+	delete beltObject;
+	delete bootsObject;
+	delete weaponObject;
+}
+
 void TestCharacter::TestUnequipItem(void)
 {
 	item::Item* testItem = new item::Item("testItem", 3, item::ItemType::Ring, item::CharacterStats::Strength, 0.5);
@@ -111,6 +151,45 @@ void TestCharacter::TestUnequipItem(void)
 
 	delete testItem;
 	testItem = nullptr;
+}
+
+void TestCharacter::TestUnequipItemDecorator(void) {
+	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence, 5);
+	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass, 10);
+	Item* ringObject = new Item("testRing", 1, Ring, Wisdom, 0.5);
+	Item* beltObject = new Item("testBelt", 1, Belt, Strength, 4.5);
+	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity, 5);
+	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus, 3);
+
+	customCharacterObject->Inventory().AddNewItem(helmetObject);
+	customCharacterObject->Inventory().AddNewItem(shieldObject);
+	customCharacterObject->Inventory().AddNewItem(ringObject);
+	customCharacterObject->Inventory().AddNewItem(beltObject);
+	customCharacterObject->Inventory().AddNewItem(bootsObject);
+	customCharacterObject->Inventory().AddNewItem(weaponObject);
+
+	customCharacterObject->Equip_Item_Decorator(helmetObject);
+	customCharacterObject->Equip_Item_Decorator(shieldObject);
+	customCharacterObject->Equip_Item_Decorator(ringObject);
+	customCharacterObject->Equip_Item_Decorator(beltObject);
+	customCharacterObject->Equip_Item_Decorator(bootsObject);
+	customCharacterObject->Equip_Item_Decorator(weaponObject);
+
+	AbstractComponent* wornItems = customCharacterObject->GetWornItems();
+	int currentWornItemsSize = wornItems->GetDecoratorList().size();
+
+	customCharacterObject->Unequip_Item_Decorator(helmetObject);
+
+	CPPUNIT_ASSERT(helmetObject->GetWrappee() == nullptr);
+
+	CPPUNIT_ASSERT_EQUAL(currentWornItemsSize - 1, (int)wornItems->GetDecoratorList().size());
+
+	delete helmetObject;
+	delete shieldObject;
+	delete ringObject;
+	delete beltObject;
+	delete bootsObject;
+	delete weaponObject;
 }
 
 void TestCharacter::TestMaxHitPoints(void)

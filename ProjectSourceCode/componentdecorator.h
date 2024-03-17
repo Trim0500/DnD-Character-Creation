@@ -38,7 +38,7 @@ namespace componentdecorator {
             * \fn Ability_Score_Natural
             * \brief Overriden function that is meant to use the wrappee's function of the same name as a baseline for derived classes
             */
-            int Ability_Score_Natural(int) override;
+            int Ability_Score_Natural(int, int) override;
 
             /*!
             * \fn GetDecoratorList

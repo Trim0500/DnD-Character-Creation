@@ -209,7 +209,7 @@ namespace Character {
 		*  \param _itemToEquip: Item pointer to the object that the character will equip
 		* 
 		*  \throw std::invalid_argument
-		* \throw std::exception
+		* \throw std::out_of_range
 		*/
 		void Equip_Item_Decorator(item::Item*);
 
@@ -268,7 +268,7 @@ namespace Character {
 		*
 		* \return Integer that represents the raw ability score of the character
 		*/
-		int Ability_Score_Natural(int t_ability) override;
+		int Ability_Score_Natural(int t_ability, int t_attack_number) override;
 		/*! \fn Ability_Score_Bonused()
 		*  \param t_ability: int/Ability enum indexing the desired ability score
 		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses
@@ -303,6 +303,11 @@ namespace Character {
 		*  \return Returns pointer to item type object corresponding to the paramaters equipment slot. Retruns nullptr if no item is found
 		*/
 		const item::Item* Equipped_Items(Equipment_Slots t_item) { return equipment_slots.at(t_item); };
+
+		AbstractComponent* GetWornItems() { return wornItems; };
+
+		void SetWornItems(AbstractComponent* _wornItems) { wornItems = _wornItems; };
+
 		/*! \fn Is_Multi_Classed()
 		*  \brief Checks if the character is multi-classed with a particular character class
 		*/

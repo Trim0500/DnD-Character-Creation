@@ -305,7 +305,7 @@ void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
 	std::vector<AbstractComponent*> decoratorList = wornItems->GetDecoratorList();
 	int decoratorListSize = decoratorList.size();
 	if (decoratorListSize == 7) {
-		throw std::exception("[Character/Equip_Item_Decorator] -- Can't equip another item!");
+		throw std::out_of_range("[Character/Equip_Item_Decorator] -- Can't equip another item!");
 	}
 
 	for (int i = 0; i < (int)decoratorList.size(); ++i)
@@ -315,7 +315,7 @@ void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
 		if (_itemToEquip->GetItemType() == equippedItem->GetItemType()) {
 			std::ostringstream excMessage;
 			excMessage << "[Character/Equip_Item_Decorator] -- Can't equip another " << itemTypeStrings[_itemToEquip->GetItemType() - 1];
-			throw std::exception(excMessage.str().c_str());
+			throw std::invalid_argument(excMessage.str().c_str());
 		}
 	}
 	
@@ -394,11 +394,40 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 	return modifier;
 }
 
-int Character::Character::Ability_Score_Natural(int t_ability)
+int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_number)
 {
 	int score;
 	try {
-		score = ability_scores[(int)t_ability];
+		if (t_ability > 5) {
+			switch (t_ability) {
+				case 6:
+					score = 10;
+
+					break;
+				case 7:
+					if (t_attack_number == 1) {
+						score = Sum_Levels();
+					}
+					else {
+						score = Sum_Levels() - ((t_attack_number - 1) * 5);
+					}
+
+					break;
+				case 8:
+					/*
+					COMP345-A3-64:
+						Returning 0 as a baseline for dmg here because it is actually just the
+						strength stat w/modifiers for both strength and dmg bonus. Therefore, a call with the paraemter for dmg
+						is simply decorated if worn items match the type, and add that to a call for strength.
+					*/
+					score = 0;
+
+					break;
+			}
+		}
+		else {
+			score = ability_scores[(int)t_ability];
+		}
 	}
 	catch (std::exception& e) {
 		std::cerr << &e << std::endl;

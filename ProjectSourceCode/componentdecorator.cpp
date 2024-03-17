@@ -5,8 +5,8 @@ namespace {
 }
 
 namespace componentdecorator {
-    int ComponentDecorator::Ability_Score_Natural(int _anilityScore) {
-        return wrappee->Ability_Score_Natural(_anilityScore);
+    int ComponentDecorator::Ability_Score_Natural(int _anilityScore, int _attackTurnNumber) {
+        return wrappee->Ability_Score_Natural(_anilityScore, _attackTurnNumber);
     }
 
     std::vector<AbstractComponent*> ComponentDecorator::GetDecoratorList() {

@@ -161,7 +161,7 @@ namespace item
 		*
 		* \return Integer that represents the calculated bonus for an ability score through item bonuses (recursive)
 		*/
-		int Ability_Score_Natural(int) override;
+		int Ability_Score_Natural(int, int) override;
 
 		/*!
 		* \fn GetDecoratorList
@@ -171,6 +171,8 @@ namespace item
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override;
 
+		AbstractComponent* GetWrappee() { return wrappee; };
+		
 		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };
 
 		int GetNextItemID() { return nextItemId; };

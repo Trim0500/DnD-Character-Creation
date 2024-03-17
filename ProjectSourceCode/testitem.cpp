@@ -66,7 +66,7 @@ void TestItem::TestItemConstructor(void) {
 
 void TestItem::TestGetItemId(void) {
 	//CPPUNIT_ASSERT(noArgsItemObject->GetItemId() == testItemCurrentId - 1);
-	
+
 	//CPPUNIT_ASSERT(customItemObject->GetItemId() == testItemCurrentId);
 }
 
@@ -158,4 +158,54 @@ void TestItem::TestGetItemWeight(void) {
 		}
 			break;
 	}
+}
+
+void TestItem::TestAbilityScoreNatural(void) {
+	std::vector<int> abilityScores = { 5, 5, 5, 5, 5, 5 };
+	Character::Character* testCharacter = new Character::Character("Anristt",
+																	Character::Character_Class::Ranger,
+																	abilityScores,
+																	true);
+
+	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence, 5);
+	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass, 10);
+	Item* ringObject = new Item("testRing", 1, Ring, Wisdom, 0.5);
+	Item* beltObject = new Item("testBelt", 1, Belt, Strength, 4.5);
+	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity, 5);
+	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus, 3);
+
+	testCharacter->Inventory().AddNewItem(helmetObject);
+	testCharacter->Inventory().AddNewItem(shieldObject);
+	testCharacter->Inventory().AddNewItem(ringObject);
+	testCharacter->Inventory().AddNewItem(beltObject);
+	testCharacter->Inventory().AddNewItem(bootsObject);
+	testCharacter->Inventory().AddNewItem(weaponObject);
+
+	testCharacter->Equip_Item_Decorator(helmetObject);
+	testCharacter->Equip_Item_Decorator(shieldObject);
+	testCharacter->Equip_Item_Decorator(ringObject);
+	testCharacter->Equip_Item_Decorator(beltObject);
+	testCharacter->Equip_Item_Decorator(bootsObject);
+	testCharacter->Equip_Item_Decorator(weaponObject);
+
+	AbstractComponent* currentWornItems = testCharacter->GetWornItems();
+	CPPUNIT_ASSERT_EQUAL(6, currentWornItems->Ability_Score_Natural(0, 0));
+	CPPUNIT_ASSERT_EQUAL(7, currentWornItems->Ability_Score_Natural(1, 0));
+	CPPUNIT_ASSERT_EQUAL(5, currentWornItems->Ability_Score_Natural(2, 0));
+	CPPUNIT_ASSERT_EQUAL(7, currentWornItems->Ability_Score_Natural(3, 0));
+	CPPUNIT_ASSERT_EQUAL(6, currentWornItems->Ability_Score_Natural(4, 0));
+	CPPUNIT_ASSERT_EQUAL(5, currentWornItems->Ability_Score_Natural(5, 0));
+	CPPUNIT_ASSERT_EQUAL(19, (currentWornItems->Ability_Score_Natural(6, 0) + currentWornItems->Ability_Score_Natural(1, 0)));
+	CPPUNIT_ASSERT_EQUAL(3, currentWornItems->Ability_Score_Natural(7, 1));
+	CPPUNIT_ASSERT_EQUAL(-7, currentWornItems->Ability_Score_Natural(7, 3));
+	CPPUNIT_ASSERT_EQUAL(6, (currentWornItems->Ability_Score_Natural(8, 0) + currentWornItems->Ability_Score_Natural(0, 0)));
+
+	delete testCharacter;
+
+	delete helmetObject;
+	delete shieldObject;
+	delete ringObject;
+	delete beltObject;
+	delete bootsObject;
+	delete weaponObject;
 }
