@@ -150,7 +150,7 @@ namespace item {
 		int result = wrappee->Ability_Score_Natural(_abilityScore, _attackTurnNumber);
 
 		if (enchantmentType == _abilityScore) {
-			result += enchantmentType;
+			result += enchantmentBonus;
 		}
 
 		return result;

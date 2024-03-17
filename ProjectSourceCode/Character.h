@@ -209,7 +209,7 @@ namespace Character {
 		*  \param _itemToEquip: Item pointer to the object that the character will equip
 		* 
 		*  \throw std::invalid_argument
-		* \throw std::exception
+		* \throw std::out_of_range
 		*/
 		void Equip_Item_Decorator(item::Item*);
 

@@ -106,13 +106,12 @@ void TestCharacter::TestEquipItemDecorator(void) {
 	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity, 5);
 	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus, 3);
 
-	ItemContainer characterInventory = customCharacterObject->Inventory();
-	characterInventory.AddNewItem(helmetObject);
-	characterInventory.AddNewItem(shieldObject);
-	characterInventory.AddNewItem(ringObject);
-	characterInventory.AddNewItem(beltObject);
-	characterInventory.AddNewItem(bootsObject);
-	characterInventory.AddNewItem(weaponObject);
+	customCharacterObject->Inventory().AddNewItem(helmetObject);
+	customCharacterObject->Inventory().AddNewItem(shieldObject);
+	customCharacterObject->Inventory().AddNewItem(ringObject);
+	customCharacterObject->Inventory().AddNewItem(beltObject);
+	customCharacterObject->Inventory().AddNewItem(bootsObject);
+	customCharacterObject->Inventory().AddNewItem(weaponObject);
 
 	CPPUNIT_ASSERT_NO_THROW(customCharacterObject->Equip_Item_Decorator(helmetObject));
 	CPPUNIT_ASSERT_NO_THROW(customCharacterObject->Equip_Item_Decorator(shieldObject));
@@ -123,13 +122,15 @@ void TestCharacter::TestEquipItemDecorator(void) {
 
 	std::ostringstream excMessage;
 	excMessage << "[Character/Equip_Item_Decorator] -- Can't equip another " << itemTypeStrings[helmetObject->GetItemType() - 1];
-	CPPUNIT_ASSERT_THROW_MESSAGE(excMessage.str(), customCharacterObject->Equip_Item_Decorator(helmetObject), std::exception);
+	CPPUNIT_ASSERT_THROW_MESSAGE(excMessage.str(), customCharacterObject->Equip_Item_Decorator(helmetObject), std::invalid_argument);
 
 	delete notInInventoryObject;
 	delete helmetObject;
+	delete shieldObject;
 	delete ringObject;
 	delete beltObject;
 	delete bootsObject;
+	delete weaponObject;
 }
 
 void TestCharacter::TestUnequipItem(void)
@@ -154,20 +155,25 @@ void TestCharacter::TestUnequipItem(void)
 
 void TestCharacter::TestUnequipItemDecorator(void) {
 	Item* helmetObject = new Item("testHelmet", 2, Helmet, Intelligence, 5);
+	Item* shieldObject = new Item("testShield", 2, Shield, ArmorClass, 10);
 	Item* ringObject = new Item("testRing", 1, Ring, Wisdom, 0.5);
 	Item* beltObject = new Item("testBelt", 1, Belt, Strength, 4.5);
 	Item* bootsObject = new Item("testBoots", 2, Boots, Dexterity, 5);
+	Item* weaponObject = new Item("testWeapon", 2, Weapon, AttackBonus, 3);
 
-	ItemContainer characterInventory = customCharacterObject->Inventory();
-	characterInventory.AddNewItem(helmetObject);
-	characterInventory.AddNewItem(ringObject);
-	characterInventory.AddNewItem(beltObject);
-	characterInventory.AddNewItem(bootsObject);
+	customCharacterObject->Inventory().AddNewItem(helmetObject);
+	customCharacterObject->Inventory().AddNewItem(shieldObject);
+	customCharacterObject->Inventory().AddNewItem(ringObject);
+	customCharacterObject->Inventory().AddNewItem(beltObject);
+	customCharacterObject->Inventory().AddNewItem(bootsObject);
+	customCharacterObject->Inventory().AddNewItem(weaponObject);
 
 	customCharacterObject->Equip_Item_Decorator(helmetObject);
+	customCharacterObject->Equip_Item_Decorator(shieldObject);
 	customCharacterObject->Equip_Item_Decorator(ringObject);
 	customCharacterObject->Equip_Item_Decorator(beltObject);
 	customCharacterObject->Equip_Item_Decorator(bootsObject);
+	customCharacterObject->Equip_Item_Decorator(weaponObject);
 
 	AbstractComponent* wornItems = customCharacterObject->GetWornItems();
 	int currentWornItemsSize = wornItems->GetDecoratorList().size();
@@ -179,9 +185,11 @@ void TestCharacter::TestUnequipItemDecorator(void) {
 	CPPUNIT_ASSERT_EQUAL(currentWornItemsSize - 1, (int)wornItems->GetDecoratorList().size());
 
 	delete helmetObject;
+	delete shieldObject;
 	delete ringObject;
 	delete beltObject;
 	delete bootsObject;
+	delete weaponObject;
 }
 
 void TestCharacter::TestMaxHitPoints(void)
