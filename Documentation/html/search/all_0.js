@@ -2,7 +2,7 @@ var searchData=
 [
   ['abilities_5fstats_0',['Abilities_Stats',['../class_character.html#adc11299f73c335c725b36d6e85fc7edb',1,'Character']]],
   ['ability_5fscore_5fbonused_1',['Ability_Score_Bonused',['../class_character_1_1_character.html#ac6b19e6c60aa8f18daef0516b26cf336',1,'Character::Character']]],
-  ['ability_5fscore_5fnatural_2',['Ability_Score_Natural',['../classabstractcomponent_1_1_abstract_component.html#a56c06eb5c2af2dab3864628ebd1db3d0',1,'abstractcomponent::AbstractComponent::Ability_Score_Natural()'],['../class_character_1_1_character.html#a8521704b2f232ea2de75464b8b4cfc2f',1,'Character::Character::Ability_Score_Natural()'],['../classcomponentdecorator_1_1_component_decorator.html#a72ea5ebf2652b1989e03d405f11d6a37',1,'componentdecorator::ComponentDecorator::Ability_Score_Natural()'],['../classitem_1_1_item.html#a2b97618ae2a65b92aa9967d81d5b97c4',1,'item::Item::Ability_Score_Natural()']]],
+  ['ability_5fscore_5fnatural_2',['Ability_Score_Natural',['../classabstractcomponent_1_1_abstract_component.html#ae1acfe71e56c091537098ef02f249deb',1,'abstractcomponent::AbstractComponent::Ability_Score_Natural()'],['../class_character_1_1_character.html#a88d10934c27e536b892caf685d7bb7ab',1,'Character::Character::Ability_Score_Natural()'],['../classcomponentdecorator_1_1_component_decorator.html#a7dab287f9820a894d217e609052be9c9',1,'componentdecorator::ComponentDecorator::Ability_Score_Natural()'],['../classitem_1_1_item.html#afb9f81913b75fd4b93ac1e49dbfa5fa6',1,'item::Item::Ability_Score_Natural()']]],
   ['ability_5fscores_3',['ability_scores',['../structserializecharacter_1_1_character_record.html#ac70065580b8e9912bd4ef68e2683bcf3',1,'serializecharacter::CharacterRecord']]],
   ['abstractcomponent_4',['AbstractComponent',['../classabstractcomponent_1_1_abstract_component.html',1,'abstractcomponent']]],
   ['abstractcomponent_5',['abstractcomponent',['../namespaceabstractcomponent.html',1,'']]],
@@ -20,6 +20,7 @@ var searchData=
   ['armorclass_17',['ArmorClass',['../class_character.html#adc11299f73c335c725b36d6e85fc7edba0a9be59870ecbb7f97a7878a311b556d',1,'Character::ArmorClass'],['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0',1,'item::ArmorClass']]],
   ['armour_5fclass_18',['Armour_Class',['../class_character_1_1_character.html#a7ebee057ce2c701940a2426f595892a0',1,'Character::Character']]],
   ['attach_19',['attach',['../class_observable.html#a3b024352e50b06ce4e64aec9930618c8',1,'Observable']]],
-  ['attack_5fbonus_20',['Attack_Bonus',['../class_character_1_1_character.html#aad73dec46c5cdc552de4711caeddd14a',1,'Character::Character']]],
-  ['attackbonus_21',['AttackBonus',['../class_character.html#adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311',1,'Character::AttackBonus'],['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c',1,'item::AttackBonus']]]
+  ['attack_5fbonus_20',['Attack_Bonus',['../class_character_1_1_character.html#a4201304c94d05d6dd3cf2c34e3d0a491',1,'Character::Character']]],
+  ['attackbonus_21',['AttackBonus',['../class_character.html#adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311',1,'Character::AttackBonus'],['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c',1,'item::AttackBonus']]],
+  ['attacks_5fper_5fturn_22',['Attacks_Per_Turn',['../class_character_1_1_character.html#a985a59dec3d29a912625ed385c4829c0',1,'Character::Character']]]
 ];

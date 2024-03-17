@@ -25,5 +25,7 @@ var searchData=
   ['getmapsincampaign_22',['GetMapsInCampaign',['../classcampaign_1_1_campaign.html#a6e88e304a025488c77d69d33038d509d',1,'campaign::Campaign']]],
   ['getnextitemid_23',['GetNextItemID',['../classitem_1_1_item.html#a5cb95828af94742b8156c53019081c9f',1,'item::Item']]],
   ['gettotalitemweight_24',['GetTotalItemWeight',['../classitemcontainer_1_1_item_container.html#adaa78ba43583a872779f99282b882401',1,'itemcontainer::ItemContainer']]],
-  ['grid_25',['Grid',['../class_map_1_1_map.html#af687a2afa2744b88adf49f4cbe803a36',1,'Map::Map']]]
+  ['getwornitems_25',['GetWornItems',['../class_character_1_1_character.html#a08cdbd6174cdd3871b154f1995931c7c',1,'Character::Character']]],
+  ['getwrappee_26',['GetWrappee',['../classitem_1_1_item.html#ac965d3ac39cbc3dd472b6fd03082b43b',1,'item::Item']]],
+  ['grid_27',['Grid',['../class_map_1_1_map.html#af687a2afa2744b88adf49f4cbe803a36',1,'Map::Map']]]
 ];

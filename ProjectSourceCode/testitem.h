@@ -102,6 +102,10 @@ class TestItem : public TestFixture {
 		*/
 		void TestGetItemWeight(void);
 
+		/*!
+		* \fn TestAbilityScoreNatural
+		* \brief Function that tests Ability_Score_Natural overrided function to assure that the item augmentation works
+		*/
 		void TestAbilityScoreNatural(void);
 	private:
 		/*!

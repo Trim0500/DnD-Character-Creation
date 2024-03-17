@@ -102,9 +102,9 @@ Inheritance diagram for abstractcomponent::AbstractComponent:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a56c06eb5c2af2dab3864628ebd1db3d0" id="r_a56c06eb5c2af2dab3864628ebd1db3d0"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56c06eb5c2af2dab3864628ebd1db3d0">Ability_Score_Natural</a> (int)</td></tr>
-<tr class="memdesc:a56c06eb5c2af2dab3864628ebd1db3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function that is meant to be overriden to get the particular ability score of a character.  <br /></td></tr>
-<tr class="separator:a56c06eb5c2af2dab3864628ebd1db3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1acfe71e56c091537098ef02f249deb" id="r_ae1acfe71e56c091537098ef02f249deb"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1acfe71e56c091537098ef02f249deb">Ability_Score_Natural</a> (int, int)</td></tr>
+<tr class="memdesc:ae1acfe71e56c091537098ef02f249deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function that is meant to be overriden to get the particular ability score of a character.  <br /></td></tr>
+<tr class="separator:ae1acfe71e56c091537098ef02f249deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad76ada9fbc3f620ce6707dc578110734" id="r_ad76ada9fbc3f620ce6707dc578110734"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad76ada9fbc3f620ce6707dc578110734">GetDecoratorList</a> ()</td></tr>
 <tr class="memdesc:ad76ada9fbc3f620ce6707dc578110734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function that is meant to be overriden to establish the decorators in play.  <br /></td></tr>
 <tr class="separator:ad76ada9fbc3f620ce6707dc578110734"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,8 +114,8 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="abstractcomponent_8h_source.html#l00021">21</a> of file <a class="el" href="abstractcomponent_8h_source.html">abstractcomponent.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a56c06eb5c2af2dab3864628ebd1db3d0" name="a56c06eb5c2af2dab3864628ebd1db3d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56c06eb5c2af2dab3864628ebd1db3d0">&#9670;&#160;</a></span>Ability_Score_Natural()</h2>
+<a id="ae1acfe71e56c091537098ef02f249deb" name="ae1acfe71e56c091537098ef02f249deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1acfe71e56c091537098ef02f249deb">&#9670;&#160;</a></span>Ability_Score_Natural()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -126,8 +126,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">abstractcomponent::AbstractComponent::Ability_Score_Natural </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -139,7 +143,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Virtual function that is meant to be overriden to get the particular ability score of a character. </p>
 
-<p>Reimplemented in <a class="el" href="class_character_1_1_character.html#a8521704b2f232ea2de75464b8b4cfc2f">Character::Character</a>, <a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a72ea5ebf2652b1989e03d405f11d6a37">componentdecorator::ComponentDecorator</a>, and <a class="el" href="classitem_1_1_item.html#a2b97618ae2a65b92aa9967d81d5b97c4">item::Item</a>.</p>
+<p>Reimplemented in <a class="el" href="class_character_1_1_character.html#a88d10934c27e536b892caf685d7bb7ab">Character::Character</a>, <a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a7dab287f9820a894d217e609052be9c9">componentdecorator::ComponentDecorator</a>, and <a class="el" href="classitem_1_1_item.html#afb9f81913b75fd4b93ac1e49dbfa5fa6">item::Item</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="abstractcomponent_8h_source.html#l00028">28</a> of file <a class="el" href="abstractcomponent_8h_source.html">abstractcomponent.h</a>.</p>
 

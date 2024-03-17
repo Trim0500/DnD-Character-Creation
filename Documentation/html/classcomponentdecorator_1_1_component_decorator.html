@@ -107,9 +107,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a79279acc3e72c89be2553ab45f03445d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6858c5f071ff3766ff47e10dfa62c337" id="r_a6858c5f071ff3766ff47e10dfa62c337"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6858c5f071ff3766ff47e10dfa62c337">ComponentDecorator</a> (<a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> *_wrappee)</td></tr>
 <tr class="separator:a6858c5f071ff3766ff47e10dfa62c337"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72ea5ebf2652b1989e03d405f11d6a37" id="r_a72ea5ebf2652b1989e03d405f11d6a37"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72ea5ebf2652b1989e03d405f11d6a37">Ability_Score_Natural</a> (int) override</td></tr>
-<tr class="memdesc:a72ea5ebf2652b1989e03d405f11d6a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to use the wrappee's function of the same name as a baseline for derived classes.  <br /></td></tr>
-<tr class="separator:a72ea5ebf2652b1989e03d405f11d6a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dab287f9820a894d217e609052be9c9" id="r_a7dab287f9820a894d217e609052be9c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dab287f9820a894d217e609052be9c9">Ability_Score_Natural</a> (int, int) override</td></tr>
+<tr class="memdesc:a7dab287f9820a894d217e609052be9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to use the wrappee's function of the same name as a baseline for derived classes.  <br /></td></tr>
+<tr class="separator:a7dab287f9820a894d217e609052be9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72e4f92bcba76d839385bb4d3fdedeb9" id="r_a72e4f92bcba76d839385bb4d3fdedeb9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72e4f92bcba76d839385bb4d3fdedeb9">GetDecoratorList</a> () override</td></tr>
 <tr class="memdesc:a72e4f92bcba76d839385bb4d3fdedeb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to use the wrappee's function of the same name as a baseline for concete implementations.  <br /></td></tr>
 <tr class="separator:a72e4f92bcba76d839385bb4d3fdedeb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,8 +182,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a72ea5ebf2652b1989e03d405f11d6a37" name="a72ea5ebf2652b1989e03d405f11d6a37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72ea5ebf2652b1989e03d405f11d6a37">&#9670;&#160;</a></span>Ability_Score_Natural()</h2>
+<a id="a7dab287f9820a894d217e609052be9c9" name="a7dab287f9820a894d217e609052be9c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dab287f9820a894d217e609052be9c9">&#9670;&#160;</a></span>Ability_Score_Natural()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,8 +194,12 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">componentdecorator::ComponentDecorator::Ability_Score_Natural </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_anilityScore</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_anilityScore</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_attackTurnNumber</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -207,9 +211,9 @@ Protected Attributes</h2></td></tr>
 
 <p>Overriden function that is meant to use the wrappee's function of the same name as a baseline for derived classes. </p>
 
-<p>Reimplemented from <a class="el" href="classabstractcomponent_1_1_abstract_component.html#a56c06eb5c2af2dab3864628ebd1db3d0">abstractcomponent::AbstractComponent</a>.</p>
+<p>Reimplemented from <a class="el" href="classabstractcomponent_1_1_abstract_component.html#ae1acfe71e56c091537098ef02f249deb">abstractcomponent::AbstractComponent</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classitem_1_1_item.html#a2b97618ae2a65b92aa9967d81d5b97c4">item::Item</a>.</p>
+<p>Reimplemented in <a class="el" href="classitem_1_1_item.html#afb9f81913b75fd4b93ac1e49dbfa5fa6">item::Item</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="componentdecorator_8cpp_source.html#l00008">8</a> of file <a class="el" href="componentdecorator_8cpp_source.html">componentdecorator.cpp</a>.</p>
 

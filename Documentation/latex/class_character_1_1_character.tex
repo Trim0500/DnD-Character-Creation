@@ -21,7 +21,7 @@ Inheritance diagram for Character\+::Character\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_character_1_1_character_a8e15e5c459eaeac6e562032c2bc0dec1}{Character}} (Character\+\_\+\+Class t\+\_\+class)
 \item 
-\mbox{\hyperlink{class_character_1_1_character_aa94542ab961f19fe4d469ced38464e1f}{Character}} (std\+::string t\+\_\+name, Character\+\_\+\+Class t\+\_\+class, const std\+::vector$<$ int $>$ \&t\+\_\+ability\+\_\+scores)
+\mbox{\hyperlink{class_character_1_1_character_a08c04451b375a231604133ee759f3348}{Character}} (std\+::string t\+\_\+name, Character\+\_\+\+Class t\+\_\+class, const std\+::vector$<$ int $>$ \&t\+\_\+ability\+\_\+scores, bool t\+\_\+average\+\_\+hp)
 \item 
 \mbox{\hyperlink{class_character_1_1_character_a5eee59bf62b78c1fe3c6748fb26bbb9a}{Character}} (const \mbox{\hyperlink{structserializecharacter_1_1_character_record}{serializecharacter\+::\+Character\+Record}} \&t\+\_\+record)
 \item 
@@ -39,7 +39,7 @@ const int \mbox{\hyperlink{class_character_1_1_character_a249907bfc3e812dc8b2cf7
 \begin{DoxyCompactList}\small\item\em Returns the number of levels a chracter has taken in a corresponding class. \end{DoxyCompactList}\item 
 const std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_1_1_character_ad3ef6cdc8f864af7f7fe50ee486d819c}{Classes}} ()
 \begin{DoxyCompactList}\small\item\em Used to perform bitwise comparision with \textquotesingle{}is\+Barbarian\textquotesingle{}, \textquotesingle{}is\+Bard\textquotesingle{}, \textquotesingle{}is\+Cleric\textquotesingle{}, \textquotesingle{}is\+Druid\textquotesingle{}, \textquotesingle{}is\+Fighter\textquotesingle{}, \textquotesingle{}is\+Monk\textquotesingle{}, \textquotesingle{}is\+Paladin\textquotesingle{}, \textquotesingle{}is\+Ranger\textquotesingle{}, \textquotesingle{}is\+Rogue\textquotesingle{}, \textquotesingle{}is\+Sorcerer\textquotesingle{} and \textquotesingle{}is\+Wizard\textquotesingle{} constexpr bitsets. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_character_1_1_character_ac8ed00c91b7c01da4532f33cf2096d8d}{Levelup}} (Character\+\_\+\+Class t\+\_\+class)
+bool \mbox{\hyperlink{class_character_1_1_character_a4780283906a3493e740bf3e2c7340c5e}{Levelup}} (Character\+\_\+\+Class t\+\_\+class, bool t\+\_\+average\+\_\+hp)
 \begin{DoxyCompactList}\small\item\em Levels up the the character by one level in a given class. Note that ability score bonuses given by items are not considered when checking if a character is able to mult-\/class. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}{Equip\+\_\+\+Item}} (\mbox{\hyperlink{classitem_1_1_item}{item\+::\+Item}} \texorpdfstring{$\ast$}{*}t\+\_\+item)
 \begin{DoxyCompactList}\small\item\em Equips an item into the character\textquotesingle{}s corresponding equipment slot. Item must be contained within the \textquotesingle{}inventory\textquotesingle{} vector array to be equipped. \end{DoxyCompactList}\item 
@@ -61,14 +61,14 @@ const bool \mbox{\hyperlink{class_character_1_1_character_a408d26f83e7e9c76ae95e
 \item 
 const int \mbox{\hyperlink{class_character_1_1_character_ab88e0b933e20ec92ee06610e8f6d83fa}{Modifier}} (Abilities\+\_\+\+Stats t\+\_\+ability)
 \item 
-int \mbox{\hyperlink{class_character_1_1_character_a8521704b2f232ea2de75464b8b4cfc2f}{Ability\+\_\+\+Score\+\_\+\+Natural}} (int t\+\_\+ability) override
+int \mbox{\hyperlink{class_character_1_1_character_a88d10934c27e536b892caf685d7bb7ab}{Ability\+\_\+\+Score\+\_\+\+Natural}} (int t\+\_\+ability, int t\+\_\+attack\+\_\+number) override
 \begin{DoxyCompactList}\small\item\em Overriden function that is meant to get the raw ability score of a character based on the parameter specified. \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{class_character_1_1_character_ac6b19e6c60aa8f18daef0516b26cf336}{Ability\+\_\+\+Score\+\_\+\+Bonused}} (Abilities\+\_\+\+Stats t\+\_\+ability)
 \item 
 const int \mbox{\hyperlink{class_character_1_1_character_a7ebee057ce2c701940a2426f595892a0}{Armour\+\_\+\+Class}} ()
 \begin{DoxyCompactList}\small\item\em Calculates and returns AC(armour class) based off a character\textquotesingle{}s ability scores \& equipped items. \end{DoxyCompactList}\item 
-const int \mbox{\hyperlink{class_character_1_1_character_aad73dec46c5cdc552de4711caeddd14a}{Attack\+\_\+\+Bonus}} ()
-\begin{DoxyCompactList}\small\item\em Calculates and returns attack bonus based off a character\textquotesingle{}s ability scores \& equipped items \texorpdfstring{$\vert$}{|} Proficiency Bonus + Strength Modifier + Enchantments. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_character_1_1_character_a4201304c94d05d6dd3cf2c34e3d0a491}{Attack\+\_\+\+Bonus}} (int t\+\_\+attack\+\_\+number)
+\begin{DoxyCompactList}\small\item\em Calculates and returns attack bonus based off a character\textquotesingle{}s level, equipped items and attack number (1st attack, 2nd attack, etc...) \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{class_character_1_1_character_a76e63a8baa9ae9d421a45bf6b6cc6419}{Proficiency\+\_\+\+Bonus}} ()
 \begin{DoxyCompactList}\small\item\em Calculates and returns proficiency bonus based off a character\textquotesingle{}s cumulative levels. \end{DoxyCompactList}\item 
 const int \mbox{\hyperlink{class_character_1_1_character_aa8cdab53aa782606f9b175b3ee2ee518}{Damage\+\_\+\+Bonus}} ()
@@ -77,8 +77,14 @@ const int \mbox{\hyperlink{class_character_1_1_character_aa8cdab53aa782606f9b175
 \item 
 const \mbox{\hyperlink{classitem_1_1_item}{item\+::\+Item}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c}{Equipped\+\_\+\+Items}} (Equipment\+\_\+\+Slots t\+\_\+item)
 \item 
+\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c}{Get\+Worn\+Items}} ()
+\item 
+void \mbox{\hyperlink{class_character_1_1_character_a4ed1ae18a1f9ce195200ffe5f2e54688}{Set\+Worn\+Items}} (\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*}\+\_\+worn\+Items)
+\item 
 bool \mbox{\hyperlink{class_character_1_1_character_ad45a90c6b0ab4f00861caaa605e5aa50}{Is\+\_\+\+Multi\+\_\+\+Classed}} (Character\+\_\+\+Class t\+\_\+class)
 \begin{DoxyCompactList}\small\item\em Checks if the character is multi-\/classed with a particular character class. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_character_1_1_character_a985a59dec3d29a912625ed385c4829c0}{Attacks\+\_\+\+Per\+\_\+\+Turn}} ()
+\begin{DoxyCompactList}\small\item\em Return the number of attacks per turn based off level. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_character_1_1_character_ab5f6bde2164b04fc383361629a1bf65b}{Get\+Decorator\+List}} () override
 \begin{DoxyCompactList}\small\item\em Overriden function that is meant to simply create the vector of worn itens for decorators to push their pointers to. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
@@ -165,11 +171,11 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00053}{53}} of file 
 
 Definition at line \mbox{\hyperlink{_character_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
-\Hypertarget{class_character_1_1_character_aa94542ab961f19fe4d469ced38464e1f}\label{class_character_1_1_character_aa94542ab961f19fe4d469ced38464e1f} 
+\Hypertarget{class_character_1_1_character_a08c04451b375a231604133ee759f3348}\label{class_character_1_1_character_a08c04451b375a231604133ee759f3348} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
-{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{Character\+\_\+\+Class}]{t\+\_\+class,  }\item[{const std\+::vector$<$ int $>$ \&}]{t\+\_\+ability\+\_\+scores }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{Character\+\_\+\+Class}]{t\+\_\+class,  }\item[{const std\+::vector$<$ int $>$ \&}]{t\+\_\+ability\+\_\+scores,  }\item[{bool}]{t\+\_\+average\+\_\+hp }\end{DoxyParamCaption})}
 
 
 
@@ -183,7 +189,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00090}{90}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 
 
@@ -204,13 +210,13 @@ Returns const int to desired ability score. Returned value does not take into ac
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00400}{400}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00439}{439}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
-\Hypertarget{class_character_1_1_character_a8521704b2f232ea2de75464b8b4cfc2f}\label{class_character_1_1_character_a8521704b2f232ea2de75464b8b4cfc2f} 
+\Hypertarget{class_character_1_1_character_a88d10934c27e536b892caf685d7bb7ab}\label{class_character_1_1_character_a88d10934c27e536b892caf685d7bb7ab} 
 \index{Character::Character@{Character::Character}!Ability\_Score\_Natural@{Ability\_Score\_Natural}}
 \index{Ability\_Score\_Natural@{Ability\_Score\_Natural}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Ability\_Score\_Natural()}{Ability\_Score\_Natural()}}
-{\footnotesize\ttfamily Character\+::\+Character\+::\+Ability\+\_\+\+Score\+\_\+\+Natural (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+ability }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily Character\+::\+Character\+::\+Ability\+\_\+\+Score\+\_\+\+Natural (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+ability,  }\item[{int}]{t\+\_\+attack\+\_\+number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -226,11 +232,11 @@ Integer that represents the raw ability score of the character
 \end{DoxyReturn}
 
 
-Reimplemented from \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_a56c06eb5c2af2dab3864628ebd1db3d0}{abstractcomponent\+::\+Abstract\+Component}}.
+Reimplemented from \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_ae1acfe71e56c091537098ef02f249deb}{abstractcomponent\+::\+Abstract\+Component}}.
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00387}{387}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a7ebee057ce2c701940a2426f595892a0}\label{class_character_1_1_character_a7ebee057ce2c701940a2426f595892a0} 
 \index{Character::Character@{Character::Character}!Armour\_Class@{Armour\_Class}}
@@ -247,24 +253,43 @@ Returns const int AC
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00423}{423}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00462}{462}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
-\Hypertarget{class_character_1_1_character_aad73dec46c5cdc552de4711caeddd14a}\label{class_character_1_1_character_aad73dec46c5cdc552de4711caeddd14a} 
+\Hypertarget{class_character_1_1_character_a4201304c94d05d6dd3cf2c34e3d0a491}\label{class_character_1_1_character_a4201304c94d05d6dd3cf2c34e3d0a491} 
 \index{Character::Character@{Character::Character}!Attack\_Bonus@{Attack\_Bonus}}
 \index{Attack\_Bonus@{Attack\_Bonus}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Attack\_Bonus()}{Attack\_Bonus()}}
-{\footnotesize\ttfamily Character\+::\+Character\+::\+Attack\+\_\+\+Bonus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Character\+::\+Character\+::\+Attack\+\_\+\+Bonus (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+attack\+\_\+number }\end{DoxyParamCaption})}
 
 
 
-Calculates and returns attack bonus based off a character\textquotesingle{}s ability scores \& equipped items \texorpdfstring{$\vert$}{|} Proficiency Bonus + Strength Modifier + Enchantments. 
+Calculates and returns attack bonus based off a character\textquotesingle{}s level, equipped items and attack number (1st attack, 2nd attack, etc...) 
 
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+attack\+\_\+number} & int representing 1st, 2nd, 3rd or 4th attack \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Returns const int to attack bonus 
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00435}{435}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00474}{474}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+
+\Hypertarget{class_character_1_1_character_a985a59dec3d29a912625ed385c4829c0}\label{class_character_1_1_character_a985a59dec3d29a912625ed385c4829c0} 
+\index{Character::Character@{Character::Character}!Attacks\_Per\_Turn@{Attacks\_Per\_Turn}}
+\index{Attacks\_Per\_Turn@{Attacks\_Per\_Turn}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{Attacks\_Per\_Turn()}{Attacks\_Per\_Turn()}}
+{\footnotesize\ttfamily Character\+::\+Character\+::\+Attacks\+\_\+\+Per\+\_\+\+Turn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return the number of attacks per turn based off level. 
+
+
+
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00585}{585}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ad3ef6cdc8f864af7f7fe50ee486d819c}\label{class_character_1_1_character_ad3ef6cdc8f864af7f7fe50ee486d819c} 
 \index{Character::Character@{Character::Character}!Classes@{Classes}}
@@ -298,7 +323,7 @@ Returns const int to damage bonus
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00458}{458}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00501}{501}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}\label{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011} 
 \index{Character::Character@{Character::Character}!Equip\_Item@{Equip\_Item}}
@@ -320,7 +345,7 @@ Returns true if equipping was performed succesfully, false otherwise
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00252}{252}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00260}{260}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a5ffb5fc9d2437fdeb01de1c74c7e63a4}\label{class_character_1_1_character_a5ffb5fc9d2437fdeb01de1c74c7e63a4} 
 \index{Character::Character@{Character::Character}!Equip\_Item\_Decorator@{Equip\_Item\_Decorator}}
@@ -341,12 +366,12 @@ Equips an item into the character\textquotesingle{}s corresponding equipment slo
 \begin{DoxyExceptions}{Exceptions}
 {\em std\+::invalid\+\_\+argument} & \\
 \hline
-{\em std\+::exception} & \\
+{\em std\+::out\+\_\+of\+\_\+range} & \\
 \hline
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00292}{292}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00300}{300}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c}\label{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c} 
 \index{Character::Character@{Character::Character}!Equipped\_Items@{Equipped\_Items}}
@@ -356,7 +381,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00292}{292}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00304}{304}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00305}{305}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ab5f6bde2164b04fc383361629a1bf65b}\label{class_character_1_1_character_ab5f6bde2164b04fc383361629a1bf65b} 
 \index{Character::Character@{Character::Character}!GetDecoratorList@{GetDecoratorList}}
@@ -377,7 +402,17 @@ Reimplemented from \mbox{\hyperlink{classabstractcomponent_1_1_abstract_componen
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00316}{316}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00326}{326}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c}\label{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c} 
+\index{Character::Character@{Character::Character}!GetWornItems@{GetWornItems}}
+\index{GetWornItems@{GetWornItems}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{GetWornItems()}{GetWornItems()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*} Character\+::\+Character\+::\+Get\+Worn\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00307}{307}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ad1857f9f184b1eac2145cabfa14b5283}\label{class_character_1_1_character_ad1857f9f184b1eac2145cabfa14b5283} 
 \index{Character::Character@{Character::Character}!Hit\_Points@{Hit\_Points}}
@@ -413,7 +448,7 @@ Returns refrence to Item\+Container type object corresponding to the character\t
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00300}{300}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00301}{301}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a408d26f83e7e9c76ae95e795a2407df0}\label{class_character_1_1_character_a408d26f83e7e9c76ae95e795a2407df0} 
 \index{Character::Character@{Character::Character}!Is\_Alive@{Is\_Alive}}
@@ -423,7 +458,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00300}{300}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00364}{364}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00374}{374}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ad45a90c6b0ab4f00861caaa605e5aa50}\label{class_character_1_1_character_ad45a90c6b0ab4f00861caaa605e5aa50} 
 \index{Character::Character@{Character::Character}!Is\_Multi\_Classed@{Is\_Multi\_Classed}}
@@ -437,7 +472,7 @@ Checks if the character is multi-\/classed with a particular character class.
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00528}{528}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00571}{571}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a249907bfc3e812dc8b2cf7796bc21765}\label{class_character_1_1_character_a249907bfc3e812dc8b2cf7796bc21765} 
 \index{Character::Character@{Character::Character}!Levels@{Levels}}
@@ -458,11 +493,11 @@ Returns the number of levels a chracter has taken in a corresponding class.
 
 Definition at line \mbox{\hyperlink{_character_8h_source_l00182}{182}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
-\Hypertarget{class_character_1_1_character_ac8ed00c91b7c01da4532f33cf2096d8d}\label{class_character_1_1_character_ac8ed00c91b7c01da4532f33cf2096d8d} 
+\Hypertarget{class_character_1_1_character_a4780283906a3493e740bf3e2c7340c5e}\label{class_character_1_1_character_a4780283906a3493e740bf3e2c7340c5e} 
 \index{Character::Character@{Character::Character}!Levelup@{Levelup}}
 \index{Levelup@{Levelup}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Levelup()}{Levelup()}}
-{\footnotesize\ttfamily Character\+::\+Character\+::\+Levelup (\begin{DoxyParamCaption}\item[{Character\+\_\+\+Class}]{t\+\_\+class }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Character\+::\+Character\+::\+Levelup (\begin{DoxyParamCaption}\item[{Character\+\_\+\+Class}]{t\+\_\+class,  }\item[{bool}]{t\+\_\+average\+\_\+hp }\end{DoxyParamCaption})}
 
 
 
@@ -478,7 +513,7 @@ Returns true if levelup was performed succesfully, false otherwise
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00215}{215}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00223}{223}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ac9b33e76e10d4583d9270e616f81b74c}\label{class_character_1_1_character_ac9b33e76e10d4583d9270e616f81b74c} 
 \index{Character::Character@{Character::Character}!Max\_Hit\_Points@{Max\_Hit\_Points}}
@@ -509,7 +544,7 @@ Returns const int to desired modifier. Modifier is detremined using ability scor
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00374}{374}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00384}{384}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}\label{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc} 
 \index{Character::Character@{Character::Character}!Name@{Name}}
@@ -529,7 +564,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00167}{167}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00136}{136}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98}\label{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98} 
 \index{Character::Character@{Character::Character}!Print\_Character\_Sheet@{Print\_Character\_Sheet}}
@@ -539,7 +574,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00136}{136}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a76e63a8baa9ae9d421a45bf6b6cc6419}\label{class_character_1_1_character_a76e63a8baa9ae9d421a45bf6b6cc6419} 
 \index{Character::Character@{Character::Character}!Proficiency\_Bonus@{Proficiency\_Bonus}}
@@ -556,7 +591,7 @@ Returns const int to proficiency bonus
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00453}{453}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00496}{496}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a6151ceea4232a21c828c66a4b2dea9ca}\label{class_character_1_1_character_a6151ceea4232a21c828c66a4b2dea9ca} 
 \index{Character::Character@{Character::Character}!Receive\_Damage@{Receive\_Damage}}
@@ -579,7 +614,7 @@ Heal character;.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00342}{342}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00352}{352}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a012dd4525b3a888fa94264e88d8325d0}\label{class_character_1_1_character_a012dd4525b3a888fa94264e88d8325d0} 
 \index{Character::Character@{Character::Character}!Receive\_Healing@{Receive\_Healing}}
@@ -589,7 +624,17 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00342}{342}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00353}{353}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00363}{363}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+
+\Hypertarget{class_character_1_1_character_a4ed1ae18a1f9ce195200ffe5f2e54688}\label{class_character_1_1_character_a4ed1ae18a1f9ce195200ffe5f2e54688} 
+\index{Character::Character@{Character::Character}!SetWornItems@{SetWornItems}}
+\index{SetWornItems@{SetWornItems}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{SetWornItems()}{SetWornItems()}}
+{\footnotesize\ttfamily void Character\+::\+Character\+::\+Set\+Worn\+Items (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*}}]{\+\_\+worn\+Items }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00309}{309}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a7c3d98f7ada1f1ce18971267f38d2c63}\label{class_character_1_1_character_a7c3d98f7ada1f1ce18971267f38d2c63} 
 \index{Character::Character@{Character::Character}!Sum\_Levels@{Sum\_Levels}}
@@ -606,7 +651,7 @@ Returns const sum of elements in \textquotesingle{}level\textquotesingle{} vecto
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00206}{206}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ab3cf5f43ede3d781532514f47ea7914d}\label{class_character_1_1_character_ab3cf5f43ede3d781532514f47ea7914d} 
 \index{Character::Character@{Character::Character}!Unequip\_Item@{Unequip\_Item}}
@@ -628,7 +673,7 @@ Returns \textquotesingle{}true\textquotesingle{} if equipping was performed succ
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00319}{319}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00327}{327}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_af7a9f23a74e326d6d3d86de418dbe16c}\label{class_character_1_1_character_af7a9f23a74e326d6d3d86de418dbe16c} 
 \index{Character::Character@{Character::Character}!Unequip\_Item\_Decorator@{Unequip\_Item\_Decorator}}
@@ -654,7 +699,7 @@ Function that rebuilds the worn items decorator by excluding an item, unequiping
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00325}{325}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00333}{333}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 
 

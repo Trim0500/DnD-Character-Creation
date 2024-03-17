@@ -78,23 +78,25 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Character.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Header file containing <a class="el" href="class_character.html" title="Represents Character type entities.">Character</a> functionality definitions The character creation is based off of the 5th edition Dungeons &amp; Dragons! Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including but not limited to... 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon &amp; tool proficiencies', 'Death saves', 'initiative' and 'saving throws'.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;iomanip&gt;</code><br />
-<code>#include &lt;random&gt;</code><br />
+<div class="textblock"><code>#include &lt;bitset&gt;</code><br />
 <code>#include &lt;chrono&gt;</code><br />
-<code>#include &lt;vector&gt;</code><br />
-<code>#include &lt;bitset&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &quot;<a class="el" href="_dice_8h_source.html">Dice.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="item_8h_source.html">item.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_dice_8h_source.html">Dice.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_observable_8h_source.html">Observable.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="serialize_item_8h_source.html">serializeItem.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="abstractcomponent_8h_source.html">abstractcomponent.h</a>&quot;</code><br />
@@ -115,6 +117,23 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespace_character" id="r_namespace_character"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_character.html">Character</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecharacter_builder" id="r_namespacecharacter_builder"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecharacter_builder.html">characterBuilder</a></td></tr>
+<tr class="memdesc:namespacecharacter_builder"><td class="mdescLeft">&#160;</td><td class="mdescRight">namespace used to encapsulate '<a class="el" href="namespacecharacter_builder.html" title="namespace used to encapsulate &#39;characterBuilder&#39; class functionality">characterBuilder</a>' class functionality <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:af3d7d65962e68b41688360d8d264abe7" id="r_af3d7d65962e68b41688360d8d264abe7"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7">characterBuilder::Fighter_Sub_Class</a> { <a class="el" href="namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7a275370ef329a53d78342d8b3d2992e3e">characterBuilder::Bully</a>
+, <a class="el" href="namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7adcd9522b375ce622ac79412f7a5c6e2f">characterBuilder::Nimble</a>
+, <a class="el" href="namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7ae4419464d570c4b497ba1979e790b104">characterBuilder::Tank</a>
+ }</td></tr>
+<tr class="memdesc:af3d7d65962e68b41688360d8d264abe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum used to index to fields from Fighter subclasses.  <a href="namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7">More...</a><br /></td></tr>
+<tr class="separator:af3d7d65962e68b41688360d8d264abe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6ac75cad238ce4bfb23333e2d3263f5d" id="r_a6ac75cad238ce4bfb23333e2d3263f5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_character_1_1_character.html">Character::Character</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecharacter_builder.html#a6ac75cad238ce4bfb23333e2d3263f5d">characterBuilder::Build_Fighter</a> (<a class="el" href="namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7">characterBuilder::Fighter_Sub_Class</a> t_subclass)</td></tr>
+<tr class="separator:a6ac75cad238ce4bfb23333e2d3263f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file containing <a class="el" href="class_character.html" title="Represents Character type entities.">Character</a> functionality definitions The character creation is based off of the 5th edition Dungeons &amp; Dragons! Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including but not limited to... 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon &amp; tool proficiencies', 'Death saves', 'initiative' and 'saving throws'. </p>
