@@ -7,7 +7,6 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-using namespace std;
 using RMP = RawMapBuilder::RawMapBuilder;
 
 void RMP::buildRows(int rows) {
@@ -80,7 +79,7 @@ bool SaveMap(Map::Map* map, std::string& filename) {
 Map::Map* LoadMap(std::string& filename) {
 	//USE BUILD FUNCTIONS IN HERE
 
-	//Map::Map mapload = new
+	Map::Map mapload = Map::Map();
 
 	ifstream file(filename);
 
@@ -94,7 +93,7 @@ Map::Map* LoadMap(std::string& filename) {
 			//while there is content in the file
 			while (getline(file, line)) {
 
-
+				// hereee build 
 			}
 		}
 

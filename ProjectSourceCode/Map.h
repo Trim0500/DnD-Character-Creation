@@ -4,8 +4,10 @@
 *
 * @author Michelle Polonsky
 */
-
+#pragma once 
 #include "Interactable.h"
+#include "Character.h"
+#include "item.h"
 #include <vector>
 
 using namespace std;
@@ -74,34 +76,37 @@ namespace Map {
 		void setCols(int cols);
 		void setGrid();
 		void setEndCell();
-		void setCell(int row, int col, Interactable::Interactable& cell);
+
+		void setCell(int row, int col, Interactable::Interactable* cell);
+
 		void setEmpty(int row, int col);
 		void setWall(int row, int col);
-		void setCharacter(int row, int col, Character::Character cha);
+		void setCharacter(int row, int col, Character::Character* cha);
+		void setItem(int row, int col, item::Item* cha);
 
 		/*!
 		* \fn Create
 		* \brief Prompts user for map inputs
 		*/
-		static Map* Create();
+		//static Map* Create();
 
 		/*!
 		* \fn Customize
 		* \brief Let's user customize the map until they want to stop
 		*/
-		void Customize();
+		//void Customize();
 
 		/*!
 		* \fn KeepCustomizing
 		* \brief Checks if the user wants to keep customizing the map
 		*/
-		bool KeepCustomizing();
+		//bool KeepCustomizing();
 
 		/*!
 		* \fn Print
 		* \brief Print the grid with each cell type
 		*/
-		void Print();
+		//void Print();
 
 		/*!
 		* \fn IsTherePath
@@ -114,9 +119,6 @@ namespace Map {
 		* \brief Check if the given x,y coordinates are a valid cell to step on
 		*/
 		bool ValidCell(int row, int col, vector<vector<bool>> visitde);
-
-		//DEBUG ONLY
-		//void ChangeCell(int row, int col, Cell_Type);//
 
 	private:
 		/*!

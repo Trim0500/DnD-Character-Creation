@@ -23,7 +23,7 @@
 */
 
 #pragma once 
-
+#include "Interactable.h"
 #include <iostream>
 #include <string>
 
@@ -80,8 +80,10 @@ namespace item {
 	*
 	* Class that abstracts the Items available to a character that are put into a container or worn.
 	*/
-	class Item {
+	class Item : public Interactable::Interactable {
 		public:
+			bool passable() const { return true; };
+
 			/*!
 			* \var itemTypeStrings
 			* \brief String array for formatting item name item type

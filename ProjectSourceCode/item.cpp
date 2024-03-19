@@ -56,7 +56,7 @@ namespace {
 }
 
 namespace item {
-	Item::Item() {
+	Item::Item(){
 		nextItemId = nextItemId + 1;
 		itemId = nextItemId;
 		enchantmentBonus = GenerateRandomInt(1, 5);
