@@ -11,7 +11,7 @@
 #include <stack>
 #include <vector>
 
-using namespace std;
+// using namespace std;
 
 //default constructor
 Map::Map::Map() {
@@ -19,25 +19,9 @@ Map::Map::Map() {
 	this->mapID = nextMapID;
 }
 
-////basic constructor
-//Map::Map::Map(int r, int c) {
-//	nextMapID += 1;
-//	this->mapID = nextMapID;
-//	this->rows = r;
-//	this->cols = c;
-//	this->end_cell[0] = r - 1;
-//	this->end_cell[1] = c - 1;
-//
-//	for (int i = 0; i < rows; i++) {
-//		this->grid.push_back(vector<Cell_Type>(cols, Cell_Type::empty));
-//	}
-//}
-
-void Map::Map::setRows(int r) {
-	this->rows = r;
-}
-void Map::Map::setCols(int c) {
-	this->cols = c;
+	for (int i = 0; i < rows; i++) {
+		grid.push_back(std::vector<Cell_Type>(cols, Cell_Type::empty));
+	}
 }
 void Map::Map::setEndCell() {
 	this->endCell[0] = this->rows - 1;
@@ -277,6 +261,21 @@ void Map::Map::setItem(int row, int col, item::Item* item) {
 //}
 
 
+//convert a given letter to it's corresponding cell type
+Map::Cell_Type Map::ConvertToCellType(char letter) {
+
+	switch (letter) {
+	case 'e':
+		return Cell_Type::empty;
+	case 'w':
+		return Cell_Type::wall;
+	case 's':
+		return Cell_Type::special;
+	default:
+		std::cout << "Not a cell type. Defaults to 'empty'.";
+		return Cell_Type::empty;
+	}
+
 ////convert a given letter to it's corresponding cell type
 //Map::Cell_Type Map::ConvertToCellType(char letter) {
 //
@@ -300,10 +299,10 @@ bool Map::Map::IsTherePath() {
 	bool found = false;
 
 	//initial list of visited cells (none to begin with)
-	vector<vector<bool>> visited(rows, vector<bool>(cols, false));
+	std::vector<std::vector<bool>> visited(rows, std::vector<bool>(cols, false));
 
 	//BFS queue
-	queue<pair<int, int>> q;
+	std::queue<std::pair<int, int>> q;
 
 	//start cell is visited (0,0)
 	q.push({ 0,0 });
@@ -316,7 +315,7 @@ bool Map::Map::IsTherePath() {
 		//check if reach end cell
 		if (curr.first == endCell[0] && curr.second == endCell[1]) {
 			//if made it this far, there is a path.
-			cout << "There is a path." << endl;
+			std::cout << "There is a path." << std::endl;
 			return true;
 		}
 
@@ -325,7 +324,7 @@ bool Map::Map::IsTherePath() {
 			int nextRow = curr.first + dir.first;
 			int nextCol = curr.second + dir.second;
 
-			//DEBUG: cout << "nextrow: " << nextRow << " nextcol: " << nextCol << endl;
+			//DEBUG: std::cout << "nextrow: " << nextRow << " nextcol: " << nextCol << std::endl;
 
 			//check if next cell is not a wall or outside the map or been visited
 			if (ValidCell(nextRow, nextCol, visited)) {
@@ -334,7 +333,7 @@ bool Map::Map::IsTherePath() {
 			}
 		}
 	}
-	cout << "There is no path. Change your map." << endl;
+	std::cout << "There is no path. Change your map." << std::endl;
 	return false;
 }
 

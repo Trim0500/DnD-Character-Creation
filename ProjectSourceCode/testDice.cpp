@@ -16,14 +16,14 @@ void TestDice::tearDown(void) {
 
 }
 
-int testRollMin(string query, int count){
+int testRollMin(std::string query, int count){
 	int i = 1;
 	int r;
 	int min_rolled;
 	min_rolled = Dice::roll(query);
 	while (i< count) {
 		r = Dice::roll(query);
-		min_rolled = min(min_rolled, r);
+		min_rolled = std::min(min_rolled, r);
 		i++;
 	}
 	return min_rolled;
@@ -36,21 +36,21 @@ int testRollMin(Dice &d, int count){
 	min_rolled = d.roll();
 	while (i< count) {
 		r = d.roll();
-		min_rolled = min(min_rolled, r);
+		min_rolled = std::min(min_rolled, r);
 		i++;
 	}
 
 	return min_rolled;
 }
 
-int testRollMax(string query, int count){
+int testRollMax(std::string query, int count){
 	int i = 1;
 	int r;
 	int max_rolled;
 	max_rolled = Dice::roll(query);
 	while (i< count) {
 		r = Dice::roll(query);
-		max_rolled = max(max_rolled, r);
+		max_rolled = std::max(max_rolled, r);
 		i++;
 	}
 	return max_rolled;
@@ -63,7 +63,7 @@ int testRollMax(Dice &d, int count){
 	max_rolled  = d.roll();
 	while (i< count) {
 		r = d.roll();
-		max_rolled = max(max_rolled, r);
+		max_rolled = std::max(max_rolled, r);
 		i++;
 	}
 	return max_rolled;
@@ -141,7 +141,7 @@ void TestDice::TestInvalidQuery(void){
 	try {
 		Dice testDice(invalid_query);
 	}
-	catch (invalid_argument exc) {
+	catch (std::invalid_argument exc) {
 		dummy = true;
 	}
 

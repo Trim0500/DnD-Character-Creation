@@ -2,6 +2,11 @@
 \hypertarget{structserialize_item_1_1_item_container_record}{}\label{structserialize_item_1_1_item_container_record}\index{serializeItem::ItemContainerRecord@{serializeItem::ItemContainerRecord}}
 
 
+Struct that represents the format of the containers that are saved into csv files.  
+
+
+
+
 {\ttfamily \#include $<$serialize\+Item.\+h$>$}
 
 \doxysubsubsection*{Public Attributes}
@@ -9,7 +14,7 @@
 \item 
 int \mbox{\hyperlink{structserialize_item_1_1_item_container_record_a517b4239e1ebd9ffd6d2750e15516a03}{container\+Id}}
 \item 
-string \mbox{\hyperlink{structserialize_item_1_1_item_container_record_aef44b10e90901740f6afad6ff00cd5c2}{item\+Name}}
+std\+::string \mbox{\hyperlink{structserialize_item_1_1_item_container_record_abf971342c2548360d8ca1b69c7bbf4f4}{item\+Name}}
 \item 
 \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{Item\+Type}} \mbox{\hyperlink{structserialize_item_1_1_item_container_record_ae0354b06a3e0432068af3d7bdb1aec5f}{itemtype}}
 \item 
@@ -17,14 +22,14 @@ float \mbox{\hyperlink{structserialize_item_1_1_item_container_record_adb68cce2c
 \item 
 float \mbox{\hyperlink{structserialize_item_1_1_item_container_record_a38426ae3b2533ab53dbb733409d0b9ec}{capacity}}
 \item 
-vector$<$ int $>$ \mbox{\hyperlink{structserialize_item_1_1_item_container_record_a8bbd03a9d407497de47098421df81853}{item\+IDs}}
+std\+::vector$<$ int $>$ \mbox{\hyperlink{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841}{item\+IDs}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Struct that represents the format of the containers that are saved into csv files. 
 
-
-Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00026}{26}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
+Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00042}{42}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
 
 
 
@@ -37,7 +42,7 @@ Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00026}{26}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00032}{32}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
+Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00048}{48}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
 
 \Hypertarget{structserialize_item_1_1_item_container_record_a517b4239e1ebd9ffd6d2750e15516a03}\label{structserialize_item_1_1_item_container_record_a517b4239e1ebd9ffd6d2750e15516a03} 
 \index{serializeItem::ItemContainerRecord@{serializeItem::ItemContainerRecord}!containerId@{containerId}}
@@ -47,27 +52,27 @@ Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00032}{32}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00028}{28}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
+Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00044}{44}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
 
-\Hypertarget{structserialize_item_1_1_item_container_record_a8bbd03a9d407497de47098421df81853}\label{structserialize_item_1_1_item_container_record_a8bbd03a9d407497de47098421df81853} 
+\Hypertarget{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841}\label{structserialize_item_1_1_item_container_record_adee2471a223acafa55e193e3a4161841} 
 \index{serializeItem::ItemContainerRecord@{serializeItem::ItemContainerRecord}!itemIDs@{itemIDs}}
 \index{itemIDs@{itemIDs}!serializeItem::ItemContainerRecord@{serializeItem::ItemContainerRecord}}
 \doxysubsubsection{\texorpdfstring{itemIDs}{itemIDs}}
-{\footnotesize\ttfamily vector$<$int$>$ serialize\+Item\+::\+Item\+Container\+Record\+::item\+IDs}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ serialize\+Item\+::\+Item\+Container\+Record\+::item\+IDs}
 
 
 
-Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00033}{33}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
+Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00049}{49}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
 
-\Hypertarget{structserialize_item_1_1_item_container_record_aef44b10e90901740f6afad6ff00cd5c2}\label{structserialize_item_1_1_item_container_record_aef44b10e90901740f6afad6ff00cd5c2} 
+\Hypertarget{structserialize_item_1_1_item_container_record_abf971342c2548360d8ca1b69c7bbf4f4}\label{structserialize_item_1_1_item_container_record_abf971342c2548360d8ca1b69c7bbf4f4} 
 \index{serializeItem::ItemContainerRecord@{serializeItem::ItemContainerRecord}!itemName@{itemName}}
 \index{itemName@{itemName}!serializeItem::ItemContainerRecord@{serializeItem::ItemContainerRecord}}
 \doxysubsubsection{\texorpdfstring{itemName}{itemName}}
-{\footnotesize\ttfamily string serialize\+Item\+::\+Item\+Container\+Record\+::item\+Name}
+{\footnotesize\ttfamily std\+::string serialize\+Item\+::\+Item\+Container\+Record\+::item\+Name}
 
 
 
-Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00029}{29}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
+Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00045}{45}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
 
 \Hypertarget{structserialize_item_1_1_item_container_record_ae0354b06a3e0432068af3d7bdb1aec5f}\label{structserialize_item_1_1_item_container_record_ae0354b06a3e0432068af3d7bdb1aec5f} 
 \index{serializeItem::ItemContainerRecord@{serializeItem::ItemContainerRecord}!itemtype@{itemtype}}
@@ -77,7 +82,7 @@ Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00029}{29}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00030}{30}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
+Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00046}{46}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
 
 \Hypertarget{structserialize_item_1_1_item_container_record_adb68cce2c93666934431871d4555be9b}\label{structserialize_item_1_1_item_container_record_adb68cce2c93666934431871d4555be9b} 
 \index{serializeItem::ItemContainerRecord@{serializeItem::ItemContainerRecord}!weight@{weight}}
@@ -87,7 +92,7 @@ Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00030}{30}} of fil
 
 
 
-Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00031}{31}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
+Definition at line \mbox{\hyperlink{serialize_item_8h_source_l00047}{47}} of file \mbox{\hyperlink{serialize_item_8h_source}{serialize\+Item.\+h}}.
 
 
 

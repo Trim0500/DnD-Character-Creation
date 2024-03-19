@@ -193,7 +193,7 @@ void TestCampaign::TestLoadCampaign(void) {
 	fileNotFoundMessage << "Failed to open the file at: " << SAVED_CAMPAIGNS_INVALID_URI;
 	CPPUNIT_ASSERT_THROW_MESSAGE(fileNotFoundMessage.str(), campaign::LoadCampaign(newCampaignObject->GetCampaignID(), SAVED_CAMPAIGNS_INVALID_URI), std::invalid_argument);
 
-    std::string currentPath = filesystem::current_path().string();
+    std::string currentPath = std::filesystem::current_path().string();
 
     std::ostringstream folderURI;
 	folderURI << currentPath << SAVED_CAMPAIGNS_FOLDER_NAME;

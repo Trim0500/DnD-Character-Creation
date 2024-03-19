@@ -18,6 +18,12 @@
 #include <unordered_map>
 #include <vector>
 
+#include "item.h"
+#include "itemcontainer.h"
+#include "Dice.h"
+#include "Observable.h"
+#include "serializeItem.h"
+
 namespace serializecharacter {
 	struct CharacterRecord {
 		int id;
@@ -28,6 +34,8 @@ namespace serializecharacter {
 		int hit_points{ 0 };
 		std::vector<int> inventory_item_ids;
 		std::vector<int> equipped_item_ids;
+		std::string inventory_container_path;
+		int inventory_container_id;
 	};
 }
 
@@ -119,7 +127,7 @@ namespace Character {
 	/*! \class Character
 	* \brief Represents Character type entities
 	*/
-	class Character : public Interactable::Interactable {
+	class Character : public Observable{
 	public:
 		bool passable() const { return true; };
 
@@ -302,6 +310,23 @@ namespace Character {
 		std::string Get_Abilities_String(Abilities_Stats t_abilities);
 		std::string Get_Item_Type_String(item::ItemType t_type);
 		std::string Get_Equipment_Slot_String(Equipment_Slots t_slot);
+
+		/*! \fn setAttribute(Abilities_Stats t_ability, int t_val)
+		* \private function that allows attribute values to be set without leveling up 
+		*/
+		int setAttribute(Abilities_Stats t_ability, int t_val);
+		/*! \fn setMaxHitPoints(int t_val)
+		* \private function that allows max HP to be set without leveling up
+		*/
+		int setMaxHitPoints(int t_val);
+		/*! \fn setHitPoints(int t_val)
+		* \private function that allows HP to be set without leveling up
+		*/
+		int setHitPoints(int t_val);
+		/*! \fn setLevel(Character_Class t_class, int t_val)
+		* \private function that allows a characters level to be set without going through leveling-up.
+		*/
+		int setLevel(Character_Class t_class, int t_val);
 
 		bool Levelup_Barbarian();
 		bool Levelup_Bard();

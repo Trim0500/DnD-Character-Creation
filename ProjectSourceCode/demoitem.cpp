@@ -5,7 +5,7 @@
 #include "item.h"
 #include "itemcontainer.h"
 
-using namespace std;
+// using namespace std;
 using namespace item;
 using namespace itemcontainer;
 

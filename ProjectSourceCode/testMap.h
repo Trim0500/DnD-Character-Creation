@@ -126,14 +126,14 @@ private:
 	Map::Map* mapEmpty;
 	/*!
 	* \var visitedEmpty
-	* \brief variable for a vector of visited cells for mapEmpty used in ValidCell
+	* \brief variable for a std::vector of visited cells for mapEmpty used in ValidCell
 	*/
-	vector<vector<bool>> visitedEmpty;
+	std::vector<std::vector<bool>> visitedEmpty;
 	/*!
 	* \var visited
-	* \brief variable for a vector of visited cells for mapNoPath used in ValidCell
+	* \brief variable for a std::vector of visited cells for mapNoPath used in ValidCell
 	*/
-	vector<vector<bool>> visited;
+	std::vector<std::vector<bool>> visited;
 };
 
 CPPUNIT_TEST_SUITE_REGISTRATION(TestMap);
