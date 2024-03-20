@@ -134,7 +134,7 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 		bool found = false;
 		for (int j{ 0 }; j < this->Inventory().GetAllItems().size(); j++) {
 			if (this->Inventory().GetAllItems().at(j).GetItemId() == t_record.equipped_item_ids.at(i)) {
-				this->Equip_Item(&this->Inventory().GetAllItems().at(j));
+				this->Equip_Item_Decorator(&this->Inventory().GetAllItems().at(j));
 				found = true;
 			}
 		}
