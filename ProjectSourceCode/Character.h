@@ -22,10 +22,14 @@
 #include "abstractcomponent.h"
 #include "characteractionstrategy.h"
 #include "humanplayerstrategy.h"
+#include "aggressorstrategy.h"
+#include "friendlystrategy.h"
 
 using namespace abstractcomponent;
 using namespace characteractionstrategy;
 using namespace humanplayerstrategy;
+using namespace aggressorstrategy;
+using namespace friendlystrategy;
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -39,6 +43,8 @@ namespace serializecharacter {
 		std::vector<int> equipped_item_ids;
 		std::string inventory_container_path;
 		int inventory_container_id;
+		bool isPlayerControlled;
+		std::string actionStrategy;
 	};
 }
 
@@ -125,6 +131,10 @@ namespace Character {
 		Belt,
 		Bag,
 	};
+
+	const std::string HUMAN_PLAYER_STRATEGY_NAME = "human";
+	const std::string AGGRESSOR_STRATEGY_NAME = "aggressor";
+	const std::string FRIENDLY_STRATEGY_NAME = "friendly";
 
 
 	/*! \class Character
@@ -332,6 +342,8 @@ namespace Character {
 		bool GetIsPlayerControlled() { return isPlayerControlled; };
 
 		void SetIsPlayerControlled(bool _isPlayerControlled) { isPlayerControlled = _isPlayerControlled; };
+
+		CharacterActionStrategy* GetActionStrategy() { return actionStrategy; };
 
 		void SetActionStrategy(CharacterActionStrategy* _actionStrategy) { actionStrategy = _actionStrategy; };
 

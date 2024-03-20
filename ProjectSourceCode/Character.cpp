@@ -140,6 +140,13 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 		}
 	}
 
+	isPlayerControlled = t_record.isPlayerControlled;
+	
+	actionStrategy = isPlayerControlled ?
+						static_cast<CharacterActionStrategy*>(new HumanPlayerStrategy()) :
+						t_record.actionStrategy == FRIENDLY_STRATEGY_NAME ?
+							static_cast<CharacterActionStrategy*>(new FriendlyStrategy()) :
+							static_cast<CharacterActionStrategy*>(new AggressorStrategy());
 }
 
 
