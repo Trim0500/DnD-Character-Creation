@@ -45,28 +45,28 @@ void TestMap::tearDown(void)
 
 void TestMap::testConstructor(void)
 {
-	CPPUNIT_ASSERT(mapWithParams->Rows() == 5);
-	CPPUNIT_ASSERT(mapWithParams->Cols() == 4);
-	CPPUNIT_ASSERT(mapWithParams->End_Cell()[0] == 4);
-	CPPUNIT_ASSERT(mapWithParams->End_Cell()[1] == 3);
+	CPPUNIT_ASSERT(mapWithParams->getRows() == 5);
+	CPPUNIT_ASSERT(mapWithParams->getCols() == 4);
+	CPPUNIT_ASSERT(mapWithParams->getEnd_Cell()[0] == 4);
+	CPPUNIT_ASSERT(mapWithParams->getEnd_Cell()[1] == 3);
 	CPPUNIT_ASSERT(mapWithParams->Grid().size() == 5);
 	CPPUNIT_ASSERT(mapWithParams->Grid()[0].size() == 4);
 }
 
 void TestMap::testGetRows(void)
 {
-	CPPUNIT_ASSERT(mapWithParams->Rows() == 5);
+	CPPUNIT_ASSERT(mapWithParams->getRows() == 5);
 }
 
 void TestMap::testGetCols(void)
 {
-	CPPUNIT_ASSERT(mapWithParams->Cols() == 4);
+	CPPUNIT_ASSERT(mapWithParams->getCols() == 4);
 }
 
 void TestMap::testGetEnd_Cell(void)
 {
-	CPPUNIT_ASSERT(mapWithParams->End_Cell()[0] == 4);
-	CPPUNIT_ASSERT(mapWithParams->End_Cell()[1] == 3);
+	CPPUNIT_ASSERT(mapWithParams->getEnd_Cell()[0] == 4);
+	CPPUNIT_ASSERT(mapWithParams->getEnd_Cell()[1] == 3);
 }
 
 void TestMap::testGetGrid(void)

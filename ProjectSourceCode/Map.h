@@ -9,7 +9,9 @@
 #include <vector>
 #include <string>
 
-// using namespace std;
+#include "Interactable.h"
+#include "Character.h"
+#include "item.h"
 
 /*!
 * \namespace Map
@@ -17,20 +19,23 @@
 */
 namespace Map {
 
-	/*!
-	* \enum Cell_Type
-	* \brief Enum to represent the posible cell types on a map
-	*/
+	// DEPRECATED IN PHASE 2
+	//*!
+	//* \enum Cell_Type
+	//* \brief Enum to represent the posible cell types on a map
+	//*/
 	enum class Cell_Type {
-		empty='_',//empty cell, character can move through it.
-		wall='w',//wall cell, character cannot move through it.
-		special='s'//special cell, character has a special interraction, can move after interraction.
+		empty = '_',//empty cell, character can move through it.
+		wall = 'w',//wall cell, character cannot move through it.
+		special = 's'//special cell, character has a special interraction, can move after interraction.
 	};
 
 	/*!
 	* \fn ConvertToCellType
 	* \brief Free function to take a letter and attempt to map it to a cell type
 	*/
+	Interactable::Interactable ConvertToCellTypeInteractable(char letter);
+
 	Cell_Type ConvertToCellType(char letter);
 
 	/*!
@@ -45,17 +50,42 @@ namespace Map {
 	*/
 	class Map {
 	public: 
-		int GetMapID() {return mapID;};
+		/*!
+		* \fn Map
+		* \brief Constructor to build a basic map provided by user
+		*/
+		Map();
+
 		/*!
 		* \fn Map
 		* \brief Constructor to build a basic map provided by user
 		*/
 		Map(int rows, int cols);
 
-		const int Rows() { return rows; };
-		const int Cols() { return cols; };
-		const int* End_Cell() { return end_cell; };
-		const std::vector<std::vector<Cell_Type>>& Grid() { return grid; };
+		/*!
+		* \brief Getters
+		*/
+		int GetMapID() { return mapID; };
+		const int getRows() { return rows; };
+		const int getCols() { return cols; };
+		const int* getEnd_Cell() { return endCell; };
+		const std::vector<std::vector<Interactable::Interactable*>> getGrid() { return grid; };//TODO
+		const std::vector<std::vector<Cell_Type>>& Grid() { return cellTypeGrid; };
+
+		/*!
+		* \brief Setters
+		*/
+		void setRows(int rows) { rows = rows; };
+		void setCols(int cols) { cols = cols; };
+		void setGrid();
+		void setEndCell();
+
+		void setCell(int row, int col, Interactable::Interactable* cell);
+
+		void setEmpty(int row, int col);
+		void setWall(int row, int col);
+		void setCharacter(int row, int col, Character::Character* cha);
+		void setItem(int row, int col, item::Item* cha);
 
 		/*!
 		* \fn Create
@@ -92,6 +122,8 @@ namespace Map {
 		* \brief Check if the given x,y coordinates are a valid cell to step on
 		*/
 		bool ValidCell(int row, int col, std::vector<std::vector<bool>> visitde);
+		
+		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
 
 		//DEBUG ONLY
 		void ChangeCell(int row, int col, Cell_Type);
@@ -117,13 +149,15 @@ namespace Map {
 		* \var end_cell
 		* \brief start = upper right cell, ie: 0,0, end = lower left cell, ie: cols.length-1, rows.lenght-1
 		*/
-		int end_cell[2];
+		int endCell[2];
 
 		/*!
 		* \var grid
 		* \brief grid mapping out the cell types
 		*/
-		std::vector<std::vector<Cell_Type>> grid;
+		std::vector<std::vector<Interactable::Interactable*>> grid;
+
+		std::vector<std::vector<Cell_Type>> cellTypeGrid;
 	};
 
 }

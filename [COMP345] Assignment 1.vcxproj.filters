@@ -78,6 +78,24 @@
     <ClCompile Include="ProjectSourceCode\componentdecorator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectSourceCode\EmptyCell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\Interactable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\MapBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\MapDirector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\RawMapBuilder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\Wall.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="GUI\BaseEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -168,6 +186,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\componentdecorator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\EmptyCell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\Interactable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\MapBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\MapDirector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\RawMapBuilder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\Wall.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GUI\BaseEditor.h">

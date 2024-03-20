@@ -20,6 +20,7 @@
 #include "Observable.h"
 #include "serializeItem.h"
 #include "abstractcomponent.h"
+#include "Interactable.h"
 
 using namespace abstractcomponent;
 
@@ -126,7 +127,7 @@ namespace Character {
 	/*! \class Character
 	* \brief Represents Character type entities
 	*/
-	class Character : public Observable, public AbstractComponent {
+	class Character : public Observable, public AbstractComponent, public Interactable::Interactable {
 	public:
 		/*! \fn Character()
 		*  \brief Default character constructor that generates a character with random values for level, ability scores and maximum
@@ -157,6 +158,9 @@ namespace Character {
 		*/
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp);
 		Character(const serializecharacter::CharacterRecord& t_record);
+
+		bool passable() const override { return true; };
+
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
