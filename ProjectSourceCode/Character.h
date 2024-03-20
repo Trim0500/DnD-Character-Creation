@@ -20,8 +20,12 @@
 #include "Observable.h"
 #include "serializeItem.h"
 #include "abstractcomponent.h"
+#include "characteractionstrategy.h"
+#include "humanplayerstrategy.h"
 
 using namespace abstractcomponent;
+using namespace characteractionstrategy;
+using namespace humanplayerstrategy;
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -142,20 +146,20 @@ namespace Character {
 		*  \param t_name: Name for the character 
 		*  \param t_class: Character class the character will be given a level for
 		*/
-		Character(std::string t_name, Character_Class t_class);
+		Character(std::string t_name, Character_Class t_class, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		/*! \fn Character()
 		*  \brief Character Constructor. Initializes the character with one level in a given character class. Sets ability scores randomly
 		*  \param t_name: Name for the character
 		*  \param t_class: Character class the character will be given a level for
 		*/
-		Character(Character_Class t_class);
+		Character(Character_Class t_class, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		/*! \fn Character()
 		*  \brief Character Constructor. Initializes the character with one level in a given character class
 		*  \param t_name Name for the character
 		*  \param t_class Character class the character will be given a level for
 		*  \param t_ability_scores Set of desired ability scores {Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma}
 		*/
-		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp);
+		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
 		/* \fn ID()
 		*  \brief Unique Character ID
@@ -325,6 +329,12 @@ namespace Character {
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override { std::vector<AbstractComponent*> initDecorators; return initDecorators; };
 
+		bool GetIsPlayerControlled() { return isPlayerControlled; };
+
+		void SetIsPlayerControlled(bool _isPlayerControlled) { isPlayerControlled = _isPlayerControlled; };
+
+		void SetActionStrategy(CharacterActionStrategy* _actionStrategy) { actionStrategy = _actionStrategy; };
+
 	private:
 
 		static inline unsigned int id_gen{ 0 };
@@ -386,6 +396,9 @@ namespace Character {
 
 		AbstractComponent* wornItems;
 
+		bool isPlayerControlled;
+
+		CharacterActionStrategy* actionStrategy;
 	};
 }
 /*! \namespace characterBuilder
