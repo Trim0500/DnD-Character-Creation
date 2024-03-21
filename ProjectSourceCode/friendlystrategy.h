@@ -6,6 +6,7 @@ using namespace characteractionstrategy;
 
 namespace friendlystrategy {
     class FriendlyStrategy : public CharacterActionStrategy {
-        void UseMovementStrategy(std::vector<std::vector<Interactable::Interactable*>>&, const int&, const int&) const override;
+        public:
+            std::vector<CellActionInfo> UseMovementStrategy(std::vector<std::vector<Interactable::Interactable*>>&, const int&, const int&) const override;
     };
 }
