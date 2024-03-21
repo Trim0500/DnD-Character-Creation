@@ -36,9 +36,6 @@
     <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testCharacter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ProjectSourceCode\testDice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -189,6 +186,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GUI\MapViewWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\Observable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\Observer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

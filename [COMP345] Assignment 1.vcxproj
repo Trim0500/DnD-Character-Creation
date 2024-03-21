@@ -108,7 +108,6 @@
     <ClCompile Include="ProjectSourceCode\itemcontainer.cpp" />
     <ClCompile Include="ProjectSourceCode\Character.cpp" />
     <ClCompile Include="ProjectSourceCode\main.cpp" />
-    <ClCompile Include="ProjectSourceCode\testCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\testDice.cpp" />
     <ClCompile Include="ProjectSourceCode\testitem.cpp" />
     <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp" />
@@ -121,7 +120,12 @@
     <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
-    <!-- <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" /> -->
+	<ClCompile Include="ProjectSourceCode\MapBuilder.cpp" />
+	<ClCompile Include="ProjectSourceCode\RawMapBuilder.cpp" />
+	<ClCompile Include="ProjectSourceCode\MapDirector.cpp" />
+	<ClCompile Include="ProjectSourceCode\Wall.cpp" />
+	<ClCompile Include="ProjectSourceCode\EmptyCell.cpp" />
+	  <!-- <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" /> -->
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\BaseEditor.h" />
@@ -156,7 +160,12 @@
     <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\campaign.h" />
     <ClInclude Include="ProjectSourceCode\testcampaign.h" />
-    <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
+    <ClCompile Include="ProjectSourceCode\MapBuilder.h" />
+    <ClCompile Include="ProjectSourceCode\RawMapBuilder.h" />
+    <ClCompile Include="ProjectSourceCode\MapDirector.h" />
+    <ClCompile Include="ProjectSourceCode\Wall.h" />
+    <ClCompile Include="ProjectSourceCode\EmptyCell.h" />
+	  <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
