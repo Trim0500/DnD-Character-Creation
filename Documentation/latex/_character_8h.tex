@@ -5,16 +5,19 @@
 Header file containing \doxylink{class_character}{Character} functionality definitions The character creation is based off of the 5th edition Dungeons \& Dragons! Given the limited scope of assignment 1, several 5th edition specific features could not be implemented yet including but not limited to... \textquotesingle{}Feats\textquotesingle{}, \textquotesingle{}Race\textquotesingle{}, \textquotesingle{}Class Features\textquotesingle{}, \textquotesingle{}Backgrounds\textquotesingle{}, \textquotesingle{}spells\textquotesingle{}, \textquotesingle{}skills\textquotesingle{}, \textquotesingle{}Armour, Weapon \& tool proficiencies\textquotesingle{}, \textquotesingle{}Death saves\textquotesingle{}, \textquotesingle{}initiative\textquotesingle{} and \textquotesingle{}saving throws\textquotesingle{}.  
 
 
-{\ttfamily \#include $<$iostream$>$}\newline
-{\ttfamily \#include $<$iomanip$>$}\newline
-{\ttfamily \#include $<$random$>$}\newline
-{\ttfamily \#include $<$chrono$>$}\newline
-{\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include $<$bitset$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$random$>$}\newline
 {\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}Dice.\+h"{}}\newline
 {\ttfamily \#include "{}item.\+h"{}}\newline
 {\ttfamily \#include "{}itemcontainer.\+h"{}}\newline
-{\ttfamily \#include "{}Dice.\+h"{}}\newline
+{\ttfamily \#include "{}Observable.\+h"{}}\newline
+{\ttfamily \#include "{}serialize\+Item.\+h"{}}\newline
+{\ttfamily \#include "{}abstractcomponent.\+h"{}}\newline
 \doxysubsubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,8 +29,23 @@ class \mbox{\hyperlink{class_character_1_1_character}{Character\+::\+Character}}
 \begin{DoxyCompactItemize}
 \item 
 namespace \mbox{\hyperlink{namespaceserializecharacter}{serializecharacter}}
-\item 
+\begin{DoxyCompactList}\small\item\em namespace used to encapsulate character serrialization \end{DoxyCompactList}\item 
 namespace \mbox{\hyperlink{namespace_character}{Character}}
+\item 
+namespace \mbox{\hyperlink{namespacecharacter_builder}{character\+Builder}}
+\begin{DoxyCompactList}\small\item\em namespace used to encapsulate \textquotesingle{}\doxylink{namespacecharacter_builder}{character\+Builder}\textquotesingle{} class functionality \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacecharacter_builder_af3d7d65962e68b41688360d8d264abe7}{character\+Builder\+::\+Fighter\+\_\+\+Sub\+\_\+\+Class}} \{ \mbox{\hyperlink{namespacecharacter_builder_af3d7d65962e68b41688360d8d264abe7a275370ef329a53d78342d8b3d2992e3e}{character\+Builder\+::\+Bully}}
+, \mbox{\hyperlink{namespacecharacter_builder_af3d7d65962e68b41688360d8d264abe7adcd9522b375ce622ac79412f7a5c6e2f}{character\+Builder\+::\+Nimble}}
+, \mbox{\hyperlink{namespacecharacter_builder_af3d7d65962e68b41688360d8d264abe7ae4419464d570c4b497ba1979e790b104}{character\+Builder\+::\+Tank}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum used to index to fields from Fighter subclasses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_character_1_1_character}{Character\+::\+Character}} \mbox{\hyperlink{namespacecharacter_builder_a6ac75cad238ce4bfb23333e2d3263f5d}{character\+Builder\+::\+Build\+\_\+\+Fighter}} (\mbox{\hyperlink{namespacecharacter_builder_af3d7d65962e68b41688360d8d264abe7}{character\+Builder\+::\+Fighter\+\_\+\+Sub\+\_\+\+Class}} t\+\_\+subclass)
 \end{DoxyCompactItemize}
 
 

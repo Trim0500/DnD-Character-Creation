@@ -11,28 +11,41 @@
 \DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00030}00030\ }
 \DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00031}00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{item.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00033}00033\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00033}00033\ \textcolor{comment}{//\ using\ namespace\ std;}}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00034}00034\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitem}{item}};}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00035}00035\ }
 \DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00040}00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}}\ \{}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00048}\mbox{\hyperlink{classitemcontainer_1_1_item_container}{00048}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}\ \{}
 \DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container_adedc9248ad9b736ed02dcc7539ac6345}{ItemContainer}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00055}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a235a66e485d5db021d81cf77c862fbc6}{00055}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a235a66e485d5db021d81cf77c862fbc6}{SetWeightLimit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \_capacity)\ \{\ capacity\ =\ \_capacity;\ \};}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(\mbox{\hyperlink{classitem_1_1_item}{Item}}*);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00057}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61}{00057}}\ \ \ \ \ \ \ \ \ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61}{GetAllItems}}()\ \{\ \textcolor{keywordflow}{return}\ items;\ \};}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00058}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{00058}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{GetCapacity}}()\ \{\ \textcolor{keywordflow}{return}\ capacity;\ \};}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{GetTotalItemWeight}}();}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a5b571b65600f3cc8ee570429794b2ffa}{GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a8b283eb1eba96e2a01dfa974bef62640}{GetItemsByEnchantmentBonus}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a2d758d25f200781c24b9447163e2d2fd}{GetItemsByItemType}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_ae89d2f505c2fd076f7eac8f27735b901}{GetItemsByStat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f52fc08106eb5e}{PrintItemVector}}();}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ capacity;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ vector<Item>\ items;}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00111}00111\ \ \ \ \ \};}
-\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container_ab1f37ce03210bd9835109c9841438a08}{ItemContainer}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00056}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{00056}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{GetCapacity}}()\ \{\ \textcolor{keywordflow}{return}\ capacity;\ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00058}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a235a66e485d5db021d81cf77c862fbc6}{00058}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a235a66e485d5db021d81cf77c862fbc6}{SetWeightLimit}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\&\ \_capacity)\ \{\ capacity\ =\ \_capacity;\ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(\mbox{\hyperlink{classitem_1_1_item}{Item}}*);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00062}\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{00062}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}()\ \{\ \textcolor{keywordflow}{return}\ items;\ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00065}\mbox{\hyperlink{classitemcontainer_1_1_item_container_abe12c56a3f1565476d989a22797ca086}{00065}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_abe12c56a3f1565476d989a22797ca086}{SetItems}}(std::vector<Item>\ \_items)\ \{\ items\ =\ \_items;\ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{GetTotalItemWeight}}();}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a764aa3709415a62d38ce95a9b1a2bc62}{GetItem}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a764aa3709415a62d38ce95a9b1a2bc62}{GetItem}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a764aa3709415a62d38ce95a9b1a2bc62}{GetItem}}(\mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03}{ItemType}});}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a6245b725c1e0e48cebd0fff5376535e4}{GetItemsByEnchantmentBonus}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_ac6a6c6ae0bf9d3e9415294af0f311885}{GetItemsByItemType}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item>\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a85382839ced306f0ae70367165fa142a}{GetItemsByStat}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f52fc08106eb5e}{PrintItemVector}}();}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00112}00112\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ capacity;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item>\ items;}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00124}00124\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{itemcontainer_8h_source_l00125}00125\ \}}
 
 \end{DoxyCode}

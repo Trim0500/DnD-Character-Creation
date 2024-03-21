@@ -9,44 +9,58 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cppunit/CompilerOutputter.h>}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <cppunit/extensions/TestFactoryRegistry.h>}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <cppunit/ui/text/TestRunner.h>}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <filesystem>}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }CppUnit;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00012}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ top\ level\ suite\ from\ the\ registry}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \ \ \ \ Test*\ suite\ =\ TestFactoryRegistry::getRegistry().makeTest();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{Character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dice_8h}{Dice.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_8h}{Map.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{demoitem_8h}{demoitem.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_dice_demo_8h}{DiceDemo.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{demo_character_8h}{demoCharacter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \textcolor{preprocessor}{\#include\ "{}../GUI/MainMenu.h"{}}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Adds\ the\ test\ to\ the\ list\ of\ test\ to\ run}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \ \ \ \ TextUi::TestRunner\ runner;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \ \ \ \ runner.addTest(suite);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{comment}{//\ Change\ the\ default\ outputter\ to\ a\ compiler\ error\ format\ outputter}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ runner.setOutputter(\textcolor{keyword}{new}\ CompilerOutputter(\&runner.result(),}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ std::cerr));}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{comment}{//\ Run\ the\ tests.}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasSucessful\ =\ runner.run();}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Return\ error\ code\ 1\ if\ the\ one\ of\ test\ failed.}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (!wasSucessful)\ \{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ \ \ getchar();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ \textcolor{keyword}{using\ namespace\ }CppUnit;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitem}{item}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceitemcontainer}{itemcontainer}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacedemoitem}{demoitem}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \textcolor{keyword}{using\ namespace\ }CampaignEditor;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00025}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//\ Get\ the\ top\ level\ suite\ from\ the\ registry}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ Test*\ suite\ =\ TestFactoryRegistry::getRegistry().makeTest();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ Adds\ the\ test\ to\ the\ list\ of\ test\ to\ run}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ \ \ TextUi::TestRunner\ runner;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ \ \ runner.addTest(suite);}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \textcolor{comment}{//\ Run\ program:\ Ctrl\ +\ F5\ or\ Debug\ >\ Start\ Without\ Debugging\ menu}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \textcolor{comment}{//\ Debug\ program:\ F5\ or\ Debug\ >\ Start\ Debugging\ menu}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ Change\ the\ default\ outputter\ to\ a\ compiler\ error\ format\ outputter}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ runner.setOutputter(\textcolor{keyword}{new}\ CompilerOutputter(\&runner.result(),}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ std::cerr));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Run\ the\ tests.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ wasSucessful\ =\ runner.run();}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \textcolor{comment}{//\ Tips\ for\ Getting\ Started:\ }}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \textcolor{comment}{//\ \ \ 1.\ Use\ the\ Solution\ Explorer\ window\ to\ add/manage\ files}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \textcolor{comment}{//\ \ \ 2.\ Use\ the\ Team\ Explorer\ window\ to\ connect\ to\ source\ control}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \textcolor{comment}{//\ \ \ 3.\ Use\ the\ Output\ window\ to\ see\ build\ output\ and\ other\ messages}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \textcolor{comment}{//\ \ \ 4.\ Use\ the\ Error\ List\ window\ to\ view\ errors}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \textcolor{comment}{//\ \ \ 5.\ Go\ to\ Project\ >\ Add\ New\ Item\ to\ create\ new\ code\ files,\ or\ Project\ >\ Add\ Existing\ Item\ to\ add\ existing\ code\ files\ to\ the\ project}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \textcolor{comment}{//\ \ \ 6.\ In\ the\ future,\ to\ open\ this\ project\ again,\ go\ to\ File\ >\ Open\ >\ Project\ and\ select\ the\ .sln\ file}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ Return\ error\ code\ 1\ if\ the\ one\ of\ test\ failed.}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (!wasSucessful)\ \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ MainMenu\ *\ m\ =\ \textcolor{keyword}{new}\ MainMenu();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ m-\/>show();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ Fl::run();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ \ \ getchar();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \textcolor{comment}{//\ Run\ program:\ Ctrl\ +\ F5\ or\ Debug\ >\ Start\ Without\ Debugging\ menu}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \textcolor{comment}{//\ Debug\ program:\ F5\ or\ Debug\ >\ Start\ Debugging\ menu}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \textcolor{comment}{//\ Tips\ for\ Getting\ Started:\ }}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \textcolor{comment}{//\ \ \ 1.\ Use\ the\ Solution\ Explorer\ window\ to\ add/manage\ files}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \textcolor{comment}{//\ \ \ 2.\ Use\ the\ Team\ Explorer\ window\ to\ connect\ to\ source\ control}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \textcolor{comment}{//\ \ \ 3.\ Use\ the\ Output\ window\ to\ see\ build\ output\ and\ other\ messages}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \textcolor{comment}{//\ \ \ 4.\ Use\ the\ Error\ List\ window\ to\ view\ errors}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \textcolor{comment}{//\ \ \ 5.\ Go\ to\ Project\ >\ Add\ New\ Item\ to\ create\ new\ code\ files,\ or\ Project\ >\ Add\ Existing\ Item\ to\ add\ existing\ code\ files\ to\ the\ project}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \textcolor{comment}{//\ \ \ 6.\ In\ the\ future,\ to\ open\ this\ project\ again,\ go\ to\ File\ >\ Open\ >\ Project\ and\ select\ the\ .sln\ file}}
 
 \end{DoxyCode}

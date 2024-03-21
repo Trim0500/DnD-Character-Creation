@@ -99,7 +99,7 @@ void TestItemContainer::TestCustomConstructor(void) {
 
 void TestItemContainer::TestSetWeightCapacity(void) {
 	Character::Character* testCharacter = new Character::Character("testCharacter", Character::Character_Class::Fighter);
-	int strengthModifier = testCharacter->Ability_Score_Natural(Character::Abilities_Stats::Strength);
+	int strengthModifier = testCharacter->Ability_Score_Natural((int)Character::Abilities_Stats::Strength, 0);
 	inventoryObject->SetWeightLimit(strengthModifier * 20);
 	CPPUNIT_ASSERT(inventoryObject->GetCapacity() == strengthModifier * 20);
 }
@@ -148,7 +148,7 @@ void TestItemContainer::TestGetItemByItemType(void) {
 	Item* foundItem = wornItemsObject->GetItem(Weapon);
 	CPPUNIT_ASSERT(foundItem->GetItemType() == Weapon);
 
-	Item* nullPointer = wornItemsObject->GetItem(8);
+	Item* nullPointer = wornItemsObject->GetItem(Backpack);
 	CPPUNIT_ASSERT(nullPointer == nullptr);
 }
 

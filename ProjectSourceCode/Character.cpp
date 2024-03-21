@@ -1,3 +1,6 @@
+#include <sstream>
+#include <string>
+
 #include "Character.h"
 
 Character::Character::Character(){
@@ -6,7 +9,7 @@ Character::Character::Character(){
 
 	int t_num_levels = rd() % 20 + 1;
 	//First level & class
-	Levelup(Character_Class::Fighter);
+	Levelup(Character_Class::Fighter,true);
 	t_num_levels--;
 
 	//Generate ability scores
@@ -22,10 +25,11 @@ Character::Character::Character(){
 	for (int i{ 0 }; i < t_num_levels; i++) {
 
 		while (!t_level_taken) {
-			t_level_taken = Levelup(Character_Class::Fighter);
+			t_level_taken = Levelup(Character_Class::Fighter,true);
 		}
 	}
 	hit_points = max_hit_points;
+	wornItems = this;
 
 }
 
@@ -43,6 +47,7 @@ Character::Character::Character(const Character& t_character) : id(t_character.i
 	}
 	max_hit_points = t_character.max_hit_points;
 	hit_points = t_character.hit_points;
+	wornItems = t_character.wornItems;
 }
 
 Character::Character::Character(std::string t_name, Character_Class t_class)
@@ -50,8 +55,7 @@ Character::Character::Character(std::string t_name, Character_Class t_class)
 	std::random_device rd;
 
 	name = t_name;
-	//Set level
-	Levelup(t_class);
+
 	//Generate ability scores
 	for (int i{ 0 }; i < 6; i++) {
 		//roll 3d6 for each ability score
@@ -59,16 +63,15 @@ Character::Character::Character(std::string t_name, Character_Class t_class)
 			ability_scores[i] += rd() % 6 + 1;
 		}
 	}
-
+	//Set level
+	Levelup(t_class, true);
 	hit_points = max_hit_points;
+	wornItems = this;
 }
 
 Character::Character::Character(Character_Class t_class)
 {
 	std::random_device rd;
-
-	//Set level & class
-	Levelup(t_class);
 	//Generate ability scores
 	for (int i{ 0 }; i < 6; i++) {
 		//roll 3d6 for each ability score
@@ -76,23 +79,29 @@ Character::Character::Character(Character_Class t_class)
 			ability_scores[i] += rd() % 6 + 1;
 		}
 	}
+	//Set level & class
+	Levelup(t_class,true);
+
 
 	hit_points = max_hit_points;
+	wornItems = this;
 }
 
-Character::Character::Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores)
+Character::Character::Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores, bool t_average_hp)
 {
 	std::random_device rd;
 
 	name = t_name;
-	//Set level & class
-	Levelup(t_class);
 	//Generate ability scores
 	for (int i{ 0 }; i < 6; i++) {
 		ability_scores[i] = t_ability_scores[i];
 	}
+	//Set level & class
+	Levelup(t_class, t_average_hp);
+
 
 	hit_points = max_hit_points;
+	wornItems = this;
 }
 
 Character::Character::Character(const serializecharacter::CharacterRecord& t_record) : id(t_record.id)
@@ -103,7 +112,7 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 	}
 	for (int i{ 0 }; i < t_record.level.size(); i++) {
 		for (int j{ 0 }; j < t_record.level.at(i); j++) {
-			Levelup((Character_Class)i);
+			Levelup((Character_Class)i,true);
 		}
 	}
 	this->hit_points = t_record.hit_points;
@@ -146,7 +155,14 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(25) << "HP: " << Hit_Points()<<"/"<<Max_Hit_Points() << std::endl;
 	std::cout << std::right << std::setw(25) << "Proficiency Bonus: " << Proficiency_Bonus() << std::endl;
 	std::cout << std::right << std::setw(25) << "Armour Class: " << Armour_Class() << std::endl;
-	std::cout << std::right << std::setw(25) << "Attack Bonus: " << Attack_Bonus() << std::endl;
+	std::cout << std::right << std::setw(25) << "Attack Bonus: ";
+	for (int i{ 1 }; i <= Attacks_Per_Turn(); i++) {
+		std::cout << Attack_Bonus(i);
+		if (i != Attacks_Per_Turn()) {
+			std::cout << ", ";
+		}
+	}
+	std::cout << std::endl;
 	std::cout << std::right << std::setw(25) << "Damage Bonus: " << Damage_Bonus() << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(65) << "ABILITY SCORES" << std::endl;
@@ -204,35 +220,35 @@ const int Character::Character::Sum_Levels()
 	return sum;
 }
 
-bool Character::Character::Levelup(Character_Class t_class)
+bool Character::Character::Levelup(Character_Class t_class, bool t_average_hp)
 {
 	if (Sum_Levels() < 20) {
 		switch (t_class)
 		{
 		case Character_Class::Barbarian:
-			return Levelup_Barbarian();
+			return Levelup_Barbarian(t_average_hp);
 		case Character_Class::Bard:
-			return Levelup_Bard();
+			return Levelup_Bard(t_average_hp);
 		case Character_Class::Cleric:
-			return Levelup_Cleric();
+			return Levelup_Cleric(t_average_hp);
 		case Character_Class::Druid:
-			return Levelup_Druid();
+			return Levelup_Druid(t_average_hp);
 		case Character_Class::Fighter:
-			return Levelup_Fighter();
+			return Levelup_Fighter(t_average_hp);
 		case Character_Class::Monk:
-			return Levelup_Monk();
+			return Levelup_Monk(t_average_hp);
 		case Character_Class::Paladin:
-			return Levelup_Paladin();
+			return Levelup_Paladin(t_average_hp);
 		case Character_Class::Ranger:
-			return Levelup_Ranger();
+			return Levelup_Ranger(t_average_hp);
 		case Character_Class::Rogue:
-			return Levelup_Rogue();
+			return Levelup_Rogue(t_average_hp);
 		case Character_Class::Sorcerer:
-			return Levelup_Sorcerer();
+			return Levelup_Sorcerer(t_average_hp);
 		case Character_Class::Warlock:
-			return Levelup_Warlock();
+			return Levelup_Warlock(t_average_hp);
 		case Character_Class::Wizard:
-			return Levelup_Wizard();
+			return Levelup_Wizard(t_average_hp);
 		default:
 			std::cerr << "Could not take a level in '" << Get_Class_String(t_class) << "'" << std::endl;
 			return false;
@@ -281,10 +297,56 @@ bool Character::Character::Equip_Item(item::Item* t_item) {
 	return true;
 }
 
+void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
+	if (inventory.GetItem(_itemToEquip->GetItemId()) == nullptr) {
+		throw std::invalid_argument("[Character/Equip_Item_Decorator] -- Failed to find the item in the inventory to equip");
+	}
+
+	std::vector<AbstractComponent*> decoratorList = wornItems->GetDecoratorList();
+	int decoratorListSize = decoratorList.size();
+	if (decoratorListSize == 7) {
+		throw std::out_of_range("[Character/Equip_Item_Decorator] -- Can't equip another item!");
+	}
+
+	for (int i = 0; i < (int)decoratorList.size(); ++i)
+	{
+		Item* equippedItem = dynamic_cast<Item*>(decoratorList.at(i));
+
+		if (_itemToEquip->GetItemType() == equippedItem->GetItemType()) {
+			std::ostringstream excMessage;
+			excMessage << "[Character/Equip_Item_Decorator] -- Can't equip another " << itemTypeStrings[_itemToEquip->GetItemType() - 1];
+			throw std::invalid_argument(excMessage.str().c_str());
+		}
+	}
+	
+
+	_itemToEquip->SetWrappee(wornItems);	
+	wornItems = _itemToEquip;
+}
+
 void Character::Character::Unequip_Item(Equipment_Slots t_slot)
 {
 	equipment_slots.at(t_slot) = nullptr;
 	this->notify();
+}
+
+void Character::Character::Unequip_Item_Decorator(item::Item* _itemToRemove) {
+	std::vector<AbstractComponent*> decoratorList = wornItems->GetDecoratorList();
+	
+	wornItems = this;
+
+	for (int i = 0; i < (int)decoratorList.size(); ++i)
+	{
+		Item* decoratorItem = dynamic_cast<Item*>(decoratorList.at(i));
+		if (_itemToRemove->GetItemId() == decoratorItem->GetItemId()) {
+			_itemToRemove->SetWrappee(nullptr);
+
+			continue;
+		}
+
+		decoratorItem->SetWrappee(wornItems);	
+		wornItems = decoratorItem;
+	}
 }
 
 void Character::Character::Receive_Damage(int t_damage)
@@ -332,11 +394,40 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 	return modifier;
 }
 
-const int Character::Character::Ability_Score_Natural(Abilities_Stats t_ability)
+int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_number)
 {
 	int score;
 	try {
-		score = ability_scores[(int)t_ability];
+		if (t_ability > 5) {
+			switch (t_ability) {
+				case 6:
+					score = 10;
+
+					break;
+				case 7:
+					if (t_attack_number == 1) {
+						score = Sum_Levels();
+					}
+					else {
+						score = Sum_Levels() - ((t_attack_number - 1) * 5);
+					}
+
+					break;
+				case 8:
+					/*
+					COMP345-A3-64:
+						Returning 0 as a baseline for dmg here because it is actually just the
+						strength stat w/modifiers for both strength and dmg bonus. Therefore, a call with the paraemter for dmg
+						is simply decorated if worn items match the type, and add that to a call for strength.
+					*/
+					score = 0;
+
+					break;
+			}
+		}
+		else {
+			score = ability_scores[(int)t_ability];
+		}
 	}
 	catch (std::exception& e) {
 		std::cerr << &e << std::endl;
@@ -380,15 +471,19 @@ const int Character::Character::Armour_Class()
 	return armour_class;
 }
 
-const int Character::Character::Attack_Bonus()
+const int Character::Character::Attack_Bonus(int t_attack_number)
 {
-	int t_mod{ 0 };
-	if (Modifier(Abilities_Stats::Dexterity) > Modifier(Abilities_Stats::Strength))
-		t_mod = Modifier(Abilities_Stats::Dexterity);
-	else{
-		t_mod = Modifier(Abilities_Stats::Strength);
+	//Bonus for an attack number that character does not have yet
+	if (t_attack_number > Attacks_Per_Turn()) {
+		return 0;
 	}
-	int attack_bonus = t_mod + Proficiency_Bonus();
+	int attack_bonus = 0;
+	if (t_attack_number == 1) {
+		attack_bonus = Sum_Levels();
+	}
+	else {
+		attack_bonus = Sum_Levels() - ((t_attack_number - 1) * 5);;
+	}
 	for (auto& i : equipment_slots) {
 		// add any attack_bonus enchantments from other equipped items
 		if (i.second != nullptr && i.second->GetEnchantmentType() == CharacterStats::AttackBonus) {
@@ -485,6 +580,16 @@ bool Character::Character::Is_Multi_Classed(Character_Class t_class)
 		}
 	}
 	return false;
+}
+
+const int Character::Character::Attacks_Per_Turn()
+{
+	int sum_level = 0;
+	for (auto i : level) {
+		sum_level += i;
+	}
+	int num_attacks = std::ceil((double)(sum_level / 5.0));
+	return num_attacks;
 }
 
 std::string Character::Character::Get_Class_String(Character_Class t_class)
@@ -609,7 +714,7 @@ int Character::Character::setLevel(Character_Class t_class, int t_val)
 	return t_val;
 }
 
-bool Character::Character::Levelup_Barbarian()
+bool Character::Character::Levelup_Barbarian(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Barbarian;
 	//If first level of class
@@ -653,7 +758,7 @@ bool Character::Character::Levelup_Barbarian()
 	}
 }
 
-bool Character::Character::Levelup_Bard()
+bool Character::Character::Levelup_Bard(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Bard;
 	//If first level of class
@@ -697,7 +802,7 @@ bool Character::Character::Levelup_Bard()
 	}
 }
 
-bool Character::Character::Levelup_Cleric()
+bool Character::Character::Levelup_Cleric(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Cleric;
 	//If first level of class
@@ -741,7 +846,7 @@ bool Character::Character::Levelup_Cleric()
 	}
 }
 
-bool Character::Character::Levelup_Druid()
+bool Character::Character::Levelup_Druid(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Druid;
 	//If first level of class
@@ -785,7 +890,7 @@ bool Character::Character::Levelup_Druid()
 	}
 }
 
-bool Character::Character::Levelup_Fighter()
+bool Character::Character::Levelup_Fighter(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Fighter;
 	//If first level of class
@@ -794,7 +899,11 @@ bool Character::Character::Levelup_Fighter()
 		if (Is_Multi_Classed(t_class)) {
 			if (ability_scores[(int)Abilities_Stats::Strength] >= 13 || ability_scores[(int)Abilities_Stats::Dexterity] >= 13) {
 				//minimum requierments to multiclass pass!
-				max_hit_points += (10 + Modifier(Abilities_Stats::Constitution));
+				int base_hp_increase = 10;
+				if (!t_average_hp) {
+					base_hp_increase = Dice::roll("1d10");
+				}
+				max_hit_points += (base_hp_increase + Modifier(Abilities_Stats::Constitution));
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
@@ -811,7 +920,11 @@ bool Character::Character::Levelup_Fighter()
 		}
 		else {
 			//First level
-			max_hit_points += (10 + Modifier(Abilities_Stats::Constitution));
+			int base_hp_increase = 10;
+			if (!t_average_hp) {
+				base_hp_increase = Dice::roll("1d10");
+			}
+			max_hit_points += (base_hp_increase + Modifier(Abilities_Stats::Constitution));
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
@@ -822,14 +935,18 @@ bool Character::Character::Levelup_Fighter()
 	else {
 		//Not first level in this class! Taking an additional one
 		level.at((int)t_class) += 1;
-		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
+		int base_hp_increase = 5;
+		if (!t_average_hp) {
+			base_hp_increase = Dice::roll("1d10");
+		}
+		max_hit_points += (base_hp_increase + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
 		this->notify();
 		return true;
 	}
 }
 
-bool Character::Character::Levelup_Monk()
+bool Character::Character::Levelup_Monk(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Monk;
 	//If first level of class
@@ -873,7 +990,7 @@ bool Character::Character::Levelup_Monk()
 	}
 }
 
-bool Character::Character::Levelup_Paladin()
+bool Character::Character::Levelup_Paladin(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Paladin;
 	//If first level of class
@@ -917,7 +1034,7 @@ bool Character::Character::Levelup_Paladin()
 	}
 }
 
-bool Character::Character::Levelup_Ranger()
+bool Character::Character::Levelup_Ranger(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Ranger;
 	//If first level of class
@@ -961,7 +1078,7 @@ bool Character::Character::Levelup_Ranger()
 	}
 }
 
-bool Character::Character::Levelup_Rogue()
+bool Character::Character::Levelup_Rogue(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Rogue;
 	//If first level of class
@@ -1005,7 +1122,7 @@ bool Character::Character::Levelup_Rogue()
 	}
 }
 
-bool Character::Character::Levelup_Sorcerer()
+bool Character::Character::Levelup_Sorcerer(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Sorcerer;
 	//If first level of class
@@ -1049,7 +1166,7 @@ bool Character::Character::Levelup_Sorcerer()
 	}
 }
 
-bool Character::Character::Levelup_Warlock()
+bool Character::Character::Levelup_Warlock(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Warlock;
 	//If first level of class
@@ -1093,7 +1210,7 @@ bool Character::Character::Levelup_Warlock()
 	}
 }
 
-bool Character::Character::Levelup_Wizard()
+bool Character::Character::Levelup_Wizard(bool t_average_hp)
 {
 	Character_Class t_class = Character_Class::Wizard;
 	//If first level of class
@@ -1135,4 +1252,49 @@ bool Character::Character::Levelup_Wizard()
 		this->notify();
 		return true;
 	}
+}
+
+Character::Character characterBuilder::Build_Fighter(characterBuilder::Fighter_Sub_Class t_subclass)
+{
+	std::vector<int> generated_attributes = std::vector<int>(6);
+	for (int i{ 0 }; i < 6;i++) {
+		generated_attributes.at(i) = Dice::roll("3d6");
+	}
+	std::sort(generated_attributes.begin(), generated_attributes.end());
+	std::vector<int> assigned_attributes = std::vector<int>(6);
+	std::string assigned_name = "";
+	switch (t_subclass)
+	{
+	case characterBuilder::Fighter_Sub_Class::Bully:
+	{
+		assigned_attributes.at((int)Character::Abilities_Stats::Strength) = generated_attributes.at(5);
+		assigned_attributes.at((int)Character::Abilities_Stats::Constitution) = generated_attributes.at(4);
+		assigned_attributes.at((int)Character::Abilities_Stats::Dexterity) = generated_attributes.at(3);
+		assigned_attributes.at((int)Character::Abilities_Stats::Intelligence) = generated_attributes.at(2);
+		assigned_attributes.at((int)Character::Abilities_Stats::Charisma) = generated_attributes.at(1);
+		assigned_attributes.at((int)Character::Abilities_Stats::Wisdom) = generated_attributes.at(0);
+		assigned_name = "Bully";
+	}break;
+	case characterBuilder::Fighter_Sub_Class::Nimble:
+	{
+		assigned_attributes.at((int)Character::Abilities_Stats::Dexterity) = generated_attributes.at(5);
+		assigned_attributes.at((int)Character::Abilities_Stats::Constitution) = generated_attributes.at(4);
+		assigned_attributes.at((int)Character::Abilities_Stats::Strength) = generated_attributes.at(3);
+		assigned_attributes.at((int)Character::Abilities_Stats::Intelligence) = generated_attributes.at(2);
+		assigned_attributes.at((int)Character::Abilities_Stats::Charisma) = generated_attributes.at(1);
+		assigned_attributes.at((int)Character::Abilities_Stats::Wisdom) = generated_attributes.at(0);
+		assigned_name = "Nimble";
+	}break;
+	case characterBuilder::Fighter_Sub_Class::Tank:
+	{
+		assigned_attributes.at((int)Character::Abilities_Stats::Constitution) = generated_attributes.at(5);
+		assigned_attributes.at((int)Character::Abilities_Stats::Dexterity) = generated_attributes.at(4);
+		assigned_attributes.at((int)Character::Abilities_Stats::Strength) = generated_attributes.at(3);
+		assigned_attributes.at((int)Character::Abilities_Stats::Intelligence) = generated_attributes.at(2);
+		assigned_attributes.at((int)Character::Abilities_Stats::Charisma) = generated_attributes.at(1);
+		assigned_attributes.at((int)Character::Abilities_Stats::Wisdom) = generated_attributes.at(0);
+		assigned_name = "Tank";
+	}
+	}
+	return Character::Character(assigned_name, Character::Character_Class::Fighter, assigned_attributes, false);
 }

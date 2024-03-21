@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['unequip_5fitem_0',['Unequip_Item',['../class_character_1_1_character.html#ab3cf5f43ede3d781532514f47ea7914d',1,'Character::Character']]]
+  ['savecampaigns_0',['SaveCampaigns',['../namespacecampaign.html#a3f28ed2bf1bfc32b4d702a512394cec4',1,'campaign']]],
+  ['savecharacter_1',['SaveCharacter',['../namespaceserializecharacter.html#acd2e66e8066c296fe86627b2e57913d8',1,'serializecharacter']]],
+  ['saveitemcontainers_2',['SaveItemContainers',['../namespaceserialize_item.html#a0851a057bcbcbec83648d134c08a6231',1,'serializeItem']]],
+  ['saveitems_3',['SaveItems',['../namespaceserialize_item.html#a62e11cf99b2764370af7e341461babae',1,'serializeItem']]],
+  ['setenchantmentbonus_4',['SetEnchantmentBonus',['../classitem_1_1_item.html#a932456df4ea52c15e4d99d417409099f',1,'item::Item']]],
+  ['setenchantmenttype_5',['SetEnchantmentType',['../classitem_1_1_item.html#a2ea77682b6a4948d7b51d90603a97410',1,'item::Item']]],
+  ['setitemid_6',['SetItemID',['../classitem_1_1_item.html#ad2fe719265cb340f8509a2c80fc2a0a8',1,'item::Item']]],
+  ['setitemidcounter_7',['SetItemIDCounter',['../classitem_1_1_item.html#a1c8dfcbb03747a46e476b4eda0814356',1,'item::Item']]],
+  ['setitemname_8',['SetItemName',['../classitem_1_1_item.html#a8e02b1615fec40bf61038c5c00a666ef',1,'item::Item']]],
+  ['setitems_9',['SetItems',['../classitemcontainer_1_1_item_container.html#abe12c56a3f1565476d989a22797ca086',1,'itemcontainer::ItemContainer']]],
+  ['setitemtype_10',['SetItemType',['../classitem_1_1_item.html#a1c93018654561042ad4a15489c021f5e',1,'item::Item']]],
+  ['setitemweight_11',['SetItemWeight',['../classitem_1_1_item.html#a5a6d267c7bdb55c2ce575fbc4777a38b',1,'item::Item']]],
+  ['setup_12',['setUp',['../class_test_campaign.html#adb4e1012c3b1ba3266a34a57dc5d24db',1,'TestCampaign::setUp()'],['../class_test_character.html#abeb01e3e59669f6eea994b9f61116be3',1,'TestCharacter::setUp()'],['../class_test_dice.html#a93e9cf9a244623a3806f8d35413d1361',1,'TestDice::setUp()'],['../class_test_item.html#a60343f4931465a4add60a8dc74a4f4d3',1,'TestItem::setUp()'],['../class_test_item_container.html#a9fb451dba4cc0a848a8a446390e8fc45',1,'TestItemContainer::setUp()'],['../class_test_map.html#a2c6aee8fbf0bec9fecf0b5aa683e6450',1,'TestMap::setUp()'],['../class_test_serialize_character.html#a51e7b81a2102b2ad3f1f2f7753650f88',1,'TestSerializeCharacter::setUp()'],['../class_test_serialize_item.html#a1bdd6a8a168450885c97827a02c187e4',1,'TestSerializeItem::setUp()']]],
+  ['setweightlimit_13',['SetWeightLimit',['../classitemcontainer_1_1_item_container.html#a235a66e485d5db021d81cf77c862fbc6',1,'itemcontainer::ItemContainer']]],
+  ['setwornitems_14',['SetWornItems',['../class_character_1_1_character.html#a4ed1ae18a1f9ce195200ffe5f2e54688',1,'Character::Character']]],
+  ['setwrappee_15',['SetWrappee',['../classitem_1_1_item.html#acba3c38ca886da61f6e126fd3d707a1b',1,'item::Item']]],
+  ['showcaseitemcreation_16',['ShowCaseItemCreation',['../namespacedemoitem.html#abdce5414c19d04b5fa00f10d58298c0e',1,'demoitem']]],
+  ['sum_5flevels_17',['Sum_Levels',['../class_character_1_1_character.html#a7c3d98f7ada1f1ce18971267f38d2c63',1,'Character::Character']]]
 ];

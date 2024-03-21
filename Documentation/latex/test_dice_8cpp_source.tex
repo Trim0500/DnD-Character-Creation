@@ -20,54 +20,54 @@
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00016}00016\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00017}00017\ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00018}00018\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00019}\mbox{\hyperlink{test_dice_8cpp_a8dba41f8d36c0118e664a94c70ce57e5}{00019}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8cpp_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(\textcolor{keywordtype}{string}\ query,\ \textcolor{keywordtype}{int}\ count)\{}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00019}\mbox{\hyperlink{test_dice_8cpp_a06f21f4c319dc34541cfc7d5c1bad4e1}{00019}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8cpp_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(std::string\ query,\ \textcolor{keywordtype}{int}\ count)\{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 1;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordtype}{int}\ r;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{int}\ min\_rolled;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00023}00023\ \ \ \ \ min\_rolled\ =\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{Dice::roll}}(query);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{while}\ (i<\ count)\ \{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ r\ =\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{Dice::roll}}(query);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ min\_rolled\ =\ min(min\_rolled,\ r);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ min\_rolled\ =\ std::min(min\_rolled,\ r);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ i++;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00028}00028\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00029}00029\ \ \ \ \ \textcolor{keywordflow}{return}\ min\_rolled;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00030}00030\ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00032}\mbox{\hyperlink{test_dice_8cpp_a969b8682360b35dc3429a342057ad6ba}{00032}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8cpp_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count)\{}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00032}\mbox{\hyperlink{test_dice_8cpp_a969b8682360b35dc3429a342057ad6ba}{00032}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8cpp_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count)\{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 1;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{int}\ r;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{int}\ min\_rolled;}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00036}00036\ \ \ \ \ min\_rolled\ =\ d.\mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}}();}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00036}00036\ \ \ \ \ min\_rolled\ =\ d.\mbox{\hyperlink{class_dice_afa3e9a90a12b210370e708a79e67c715}{roll}}();}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{while}\ (i<\ count)\ \{}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ r\ =\ d.\mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}}();}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ min\_rolled\ =\ min(min\_rolled,\ r);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ r\ =\ d.\mbox{\hyperlink{class_dice_afa3e9a90a12b210370e708a79e67c715}{roll}}();}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ min\_rolled\ =\ std::min(min\_rolled,\ r);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ i++;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00041}00041\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00042}00042\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{return}\ min\_rolled;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00044}00044\ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00046}\mbox{\hyperlink{test_dice_8cpp_a3a25e324b94111702ed083b0bc2e5e79}{00046}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8cpp_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(\textcolor{keywordtype}{string}\ query,\ \textcolor{keywordtype}{int}\ count)\{}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00046}\mbox{\hyperlink{test_dice_8cpp_acb36736f255bd8dd14e94aae133cd704}{00046}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8cpp_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(std::string\ query,\ \textcolor{keywordtype}{int}\ count)\{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 1;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{int}\ r;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_rolled;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00050}00050\ \ \ \ \ max\_rolled\ =\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{Dice::roll}}(query);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{keywordflow}{while}\ (i<\ count)\ \{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ r\ =\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{Dice::roll}}(query);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ max\_rolled\ =\ max(max\_rolled,\ r);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ max\_rolled\ =\ std::max(max\_rolled,\ r);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ i++;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00055}00055\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ max\_rolled;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00057}00057\ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00059}\mbox{\hyperlink{test_dice_8cpp_a6972286da893703ef22fb586ecc501a8}{00059}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8cpp_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count)\{}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00059}\mbox{\hyperlink{test_dice_8cpp_a6972286da893703ef22fb586ecc501a8}{00059}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{test_dice_8cpp_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(\mbox{\hyperlink{class_dice}{Dice}}\ \&d,\ \textcolor{keywordtype}{int}\ count)\{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00060}00060\ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 1;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordtype}{int}\ r;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordtype}{int}\ max\_rolled;}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00063}00063\ \ \ \ \ max\_rolled\ \ =\ d.\mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}}();}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00063}00063\ \ \ \ \ max\_rolled\ \ =\ d.\mbox{\hyperlink{class_dice_afa3e9a90a12b210370e708a79e67c715}{roll}}();}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{while}\ (i<\ count)\ \{}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ r\ =\ d.\mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}}();}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ max\_rolled\ =\ max(max\_rolled,\ r);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ r\ =\ d.\mbox{\hyperlink{class_dice_afa3e9a90a12b210370e708a79e67c715}{roll}}();}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ max\_rolled\ =\ std::max(max\_rolled,\ r);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ i++;}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00068}00068\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{return}\ max\_rolled;}
@@ -99,23 +99,23 @@
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00095}00095\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00096}\mbox{\hyperlink{class_test_dice_a4db65c972cef1cf28f4e8723f29b600f}{00096}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a4db65c972cef1cf28f4e8723f29b600f}{TestDice::TestFullRoll}}(\textcolor{keywordtype}{void})\{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{int}\ test[2];}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00098}00098\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(easy\_query,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00099}00099\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(easy\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00098}00098\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(easy\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00099}00099\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(easy\_query,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00100}00100\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 2);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00101}00101\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 8);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00102}00102\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00103}00103\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(just\_add\_query,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00104}00104\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(just\_add\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00103}00103\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(just\_add\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00104}00104\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(just\_add\_query,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00105}00105\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ 3);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00106}00106\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ 3);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00107}00107\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00108}00108\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(hard\_query,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00109}00109\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(hard\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00108}00108\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(hard\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00109}00109\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(hard\_query,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00110}00110\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 116);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00111}00111\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 420);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00112}00112\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00113}00113\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(just\_subtract\_query,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00114}00114\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(just\_subtract\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00113}00113\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(just\_subtract\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00114}00114\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(just\_subtract\_query,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00115}00115\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ -\/4);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00116}00116\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ -\/4);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00117}00117\ \}}
@@ -145,7 +145,7 @@
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}\ testDice(invalid\_query);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00143}00143\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{catch}\ (invalid\_argument\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ exc)\ \{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ dummy\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00146}00146\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00147}00147\ }
@@ -168,38 +168,38 @@
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00164}00164\ \ \ \ \ d100\ =\ \mbox{\hyperlink{class_dice}{Dice}}(\textcolor{stringliteral}{"{}1d100"{}});}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00165}00165\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00166}00166\ \ \ \ \ \textcolor{keywordtype}{int}\ test[2];}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00167}00167\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d4,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00168}00168\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d4,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00167}00167\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d4,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00168}00168\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d4,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00169}00169\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 1);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00170}00170\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 4);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00171}00171\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00172}00172\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d6,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00173}00173\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d6,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00172}00172\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d6,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00173}00173\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d6,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00174}00174\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 1);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00175}00175\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 6);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00176}00176\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00177}00177\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d8,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00178}00178\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d8,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00177}00177\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d8,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00178}00178\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d8,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00179}00179\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 1);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00180}00180\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 8);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00181}00181\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00182}00182\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d10,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00183}00183\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d10,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00182}00182\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d10,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00183}00183\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d10,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00184}00184\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 1);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00185}00185\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 10);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00186}00186\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00187}00187\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d12,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00188}00188\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d12,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00187}00187\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d12,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00188}00188\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d12,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00189}00189\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 1);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00190}00190\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 12);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00191}00191\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00192}00192\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d20,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00193}00193\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d20,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00192}00192\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d20,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00193}00193\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d20,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00194}00194\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 1);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00195}00195\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 20);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00196}00196\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00197}00197\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d100,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00198}00198\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d100,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00197}00197\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d100,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00198}00198\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d100,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00199}00199\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ >=\ 1);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00200}00200\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ <=\ 100);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00201}00201\ }
@@ -208,54 +208,54 @@
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00204}\mbox{\hyperlink{class_test_dice_a1042c190dd5effe049de70f5658d466d}{00204}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a1042c190dd5effe049de70f5658d466d}{TestDice::TestAdditionNoRoll}}()\{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordtype}{int}\ test[2];}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00206}00206\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00207}00207\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(just\_add\_query,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00208}00208\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(just\_add\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00207}00207\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(just\_add\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00208}00208\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(just\_add\_query,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00209}00209\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ 3);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00210}00210\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ 3);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00211}00211\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00212}00212\ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}\ d1\ =\ \mbox{\hyperlink{class_dice}{Dice}}(just\_add\_query);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00213}00213\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00214}00214\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d1,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00215}00215\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d1,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00214}00214\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d1,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00215}00215\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d1,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00216}00216\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ 3);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00217}00217\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ 3);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00218}00218\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00219}00219\ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}\ d2\ =\ \mbox{\hyperlink{class_dice}{Dice}}(\textcolor{stringliteral}{"{}0d12"{}});}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00220}00220\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00221}00221\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d2,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00222}00222\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d2,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00221}00221\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d2,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00222}00222\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d2,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00223}00223\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00224}00224\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00225}00225\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00226}00226\ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}\ d3\ =\ \mbox{\hyperlink{class_dice}{Dice}}(\textcolor{stringliteral}{"{}0d12+10"{}});}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00227}00227\ }
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00228}00228\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d3,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00229}00229\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d3,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00228}00228\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d3,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00229}00229\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d3,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00230}00230\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ 10);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00231}00231\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ 10);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00232}00232\ \}}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00233}00233\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00234}\mbox{\hyperlink{class_test_dice_a2b9601f4b68e9d75030d1b3ecc91cdad}{00234}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_dice_a2b9601f4b68e9d75030d1b3ecc91cdad}{TestDice::TestSubtractionNoRoll}}()\{}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00235}00235\ \ \ \ \ \textcolor{keywordtype}{int}\ test[2]\ =\ \{0,0\};}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00236}00236\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(just\_subtract\_query,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00237}00237\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(just\_subtract\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00236}00236\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(just\_subtract\_query,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00237}00237\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(just\_subtract\_query,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00238}00238\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ -\/4);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00239}00239\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ -\/4);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00240}00240\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00241}00241\ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}\ d1\ =\ \mbox{\hyperlink{class_dice}{Dice}}(just\_subtract\_query);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00242}00242\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d1,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00243}00243\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d1,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00242}00242\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d1,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00243}00243\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d1,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00244}00244\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ -\/4);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00245}00245\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ -\/4);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00246}00246\ }
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}\ d2\ =\ \mbox{\hyperlink{class_dice}{Dice}}(\textcolor{stringliteral}{"{}0d12"{}});}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00248}00248\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d2,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00249}00249\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d2,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00248}00248\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d2,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00249}00249\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d2,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00250}00250\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00251}00251\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ 0);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00252}00252\ \ \ \ \ \mbox{\hyperlink{class_dice}{Dice}}\ d3\ =\ \mbox{\hyperlink{class_dice}{Dice}}(\textcolor{stringliteral}{"{}0d12-\/10"{}});}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00253}00253\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a8dba41f8d36c0118e664a94c70ce57e5}{testRollMin}}(d3,\ 30);}
-\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00254}00254\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_a3a25e324b94111702ed083b0bc2e5e79}{testRollMax}}(d3,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00253}00253\ \ \ \ \ test[0]\ =\ \mbox{\hyperlink{test_dice_8h_a06f21f4c319dc34541cfc7d5c1bad4e1}{testRollMin}}(d3,\ 30);}
+\DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00254}00254\ \ \ \ \ test[1]\ =\ \mbox{\hyperlink{test_dice_8h_acb36736f255bd8dd14e94aae133cd704}{testRollMax}}(d3,\ 30);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00255}00255\ \ \ \ \ CPPUNIT\_ASSERT(test[0]\ ==\ -\/10);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00256}00256\ \ \ \ \ CPPUNIT\_ASSERT(test[1]\ ==\ -\/10);}
 \DoxyCodeLine{\Hypertarget{test_dice_8cpp_source_l00257}00257\ \}}

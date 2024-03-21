@@ -66,6 +66,8 @@ namespace itemcontainer {
 
 			float GetTotalItemWeight();
 
+			Item* GetItem(const int&);
+
 			/*!
 			* \fn GetItem
 			* \brief Overloaded method to find an item by name
@@ -79,7 +81,7 @@ namespace itemcontainer {
 			*
 			* Overloaded method that uses an item type value (1-7) to find the specific item in the list and return it.
 			*/
-			Item* GetItem(const int&);
+			Item* GetItem(ItemType);
 
 			/*!
 			* \fn GetItems

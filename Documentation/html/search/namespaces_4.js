@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['serializecharacter_0',['serializecharacter',['../namespaceserializecharacter.html',1,'']]],
-  ['serializeitem_1',['serializeItem',['../namespaceserialize_item.html',1,'']]]
+  ['map_0',['Map',['../namespace_map.html',1,'']]]
 ];

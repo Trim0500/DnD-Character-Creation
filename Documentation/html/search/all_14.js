@@ -16,5 +16,6 @@ var searchData=
   ['worn_5fitems_5fplus_5fthree_5fitems_5fsize_13',['WORN_ITEMS_PLUS_THREE_ITEMS_SIZE',['../testitemcontainer_8cpp.html#a85035ca288ed604c6e891df3a0876ba6',1,'testitemcontainer.cpp']]],
   ['worn_5fitems_5fplus_5ftwo_5fitems_5fsize_14',['WORN_ITEMS_PLUS_TWO_ITEMS_SIZE',['../testitemcontainer_8cpp.html#aef7085d8ed31d885ffe823fee6b56459',1,'testitemcontainer.cpp']]],
   ['worn_5fitems_5fsize_15',['WORN_ITEMS_SIZE',['../testitemcontainer_8cpp.html#a2b3a4f43587451e4e99eaf94a4ab81a2',1,'testitemcontainer.cpp']]],
-  ['wornitems_16',['WornItems',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a5e5187a25bcb572f9755b15cb9e0d8b5',1,'item']]]
+  ['wornitems_16',['WornItems',['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a5e5187a25bcb572f9755b15cb9e0d8b5',1,'item']]],
+  ['wrappee_17',['wrappee',['../classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958',1,'componentdecorator::ComponentDecorator']]]
 ];

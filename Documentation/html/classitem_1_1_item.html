@@ -78,7 +78,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classitem_1_1_item-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">item::Item Class Reference</div></div>
@@ -95,7 +94,9 @@ Inheritance diagram for item::Item:</div>
  <div class="center">
   <img src="classitem_1_1_item.png" usemap="#item::Item_map" alt=""/>
   <map id="item::Item_map" name="item::Item_map">
-<area href="classitemcontainer_1_1_item_container.html" title="Class to abstract the different item containers." alt="itemcontainer::ItemContainer" shape="rect" coords="0,56,170,80"/>
+<area href="classcomponentdecorator_1_1_component_decorator.html" title="Class that implements the AbstractComponent interface." alt="componentdecorator::ComponentDecorator" shape="rect" coords="0,56,254,80"/>
+<area href="classabstractcomponent_1_1_abstract_component.html" title="Class that provides the virtual methods to override for the concrete implementations of the decorator..." alt="abstractcomponent::AbstractComponent" shape="rect" coords="0,0,254,24"/>
+<area href="classitemcontainer_1_1_item_container.html" title="Class to abstract the different item containers." alt="itemcontainer::ItemContainer" shape="rect" coords="0,168,254,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -104,41 +105,71 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e7998679cac37adb8124f012d5dd39e" id="r_a7e7998679cac37adb8124f012d5dd39e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e7998679cac37adb8124f012d5dd39e">Item</a> ()</td></tr>
 <tr class="memdesc:a7e7998679cac37adb8124f012d5dd39e"><td class="mdescLeft">&#160;</td><td class="mdescRight">No-args constructor for <a class="el" href="classitem_1_1_item.html" title="Class for the character items.">Item</a>.  <br /></td></tr>
 <tr class="separator:a7e7998679cac37adb8124f012d5dd39e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30c1d4e226db309d759301e34f470a8f" id="r_a30c1d4e226db309d759301e34f470a8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30c1d4e226db309d759301e34f470a8f">Item</a> (const string &amp;, const int &amp;, const int &amp;, const int &amp;, const float &amp;)</td></tr>
-<tr class="separator:a30c1d4e226db309d759301e34f470a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2876f055fdea599ec9c710096fc0abe4" id="r_a2876f055fdea599ec9c710096fc0abe4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2876f055fdea599ec9c710096fc0abe4">Item</a> (const int &amp;, const string &amp;, const int &amp;, const int &amp;, const int &amp;, const float &amp;)</td></tr>
-<tr class="separator:a2876f055fdea599ec9c710096fc0abe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14ee9b05136a5b9de38c3062ebe8dafb" id="r_a14ee9b05136a5b9de38c3062ebe8dafb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14ee9b05136a5b9de38c3062ebe8dafb">Item</a> (const std::string &amp;, const int &amp;, const int &amp;, const int &amp;, const float &amp;)</td></tr>
+<tr class="separator:a14ee9b05136a5b9de38c3062ebe8dafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1c5c8bf6e2e4ad186de64e3d5bff761" id="r_ad1c5c8bf6e2e4ad186de64e3d5bff761"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1c5c8bf6e2e4ad186de64e3d5bff761">Item</a> (const int &amp;, const std::string &amp;, const int &amp;, const int &amp;, const int &amp;, const float &amp;)</td></tr>
+<tr class="separator:ad1c5c8bf6e2e4ad186de64e3d5bff761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb9f81913b75fd4b93ac1e49dbfa5fa6" id="r_afb9f81913b75fd4b93ac1e49dbfa5fa6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb9f81913b75fd4b93ac1e49dbfa5fa6">Ability_Score_Natural</a> (int, int) override</td></tr>
+<tr class="memdesc:afb9f81913b75fd4b93ac1e49dbfa5fa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to use the wrappee's function of the same name to then add on the enchantment bonus of the worn item.  <br /></td></tr>
+<tr class="separator:afb9f81913b75fd4b93ac1e49dbfa5fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab6e419cfea26bdea0389095c0f336c6" id="r_aab6e419cfea26bdea0389095c0f336c6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab6e419cfea26bdea0389095c0f336c6">GetDecoratorList</a> () override</td></tr>
+<tr class="memdesc:aab6e419cfea26bdea0389095c0f336c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to use the wrappee's function of the same name and then push the decorator's pointer to a list.  <br /></td></tr>
+<tr class="separator:aab6e419cfea26bdea0389095c0f336c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac965d3ac39cbc3dd472b6fd03082b43b" id="r_ac965d3ac39cbc3dd472b6fd03082b43b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac965d3ac39cbc3dd472b6fd03082b43b">GetWrappee</a> ()</td></tr>
+<tr class="separator:ac965d3ac39cbc3dd472b6fd03082b43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba3c38ca886da61f6e126fd3d707a1b" id="r_acba3c38ca886da61f6e126fd3d707a1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acba3c38ca886da61f6e126fd3d707a1b">SetWrappee</a> (<a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> *_wrappee)</td></tr>
+<tr class="separator:acba3c38ca886da61f6e126fd3d707a1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb95828af94742b8156c53019081c9f" id="r_a5cb95828af94742b8156c53019081c9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cb95828af94742b8156c53019081c9f">GetNextItemID</a> ()</td></tr>
+<tr class="separator:a5cb95828af94742b8156c53019081c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8dfcbb03747a46e476b4eda0814356" id="r_a1c8dfcbb03747a46e476b4eda0814356"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c8dfcbb03747a46e476b4eda0814356">SetItemIDCounter</a> (int _nextID)</td></tr>
+<tr class="separator:a1c8dfcbb03747a46e476b4eda0814356"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1bc21c27d852361df5ae709eaac7720d" id="r_a1bc21c27d852361df5ae709eaac7720d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bc21c27d852361df5ae709eaac7720d">GetItemId</a> ()</td></tr>
 <tr class="separator:a1bc21c27d852361df5ae709eaac7720d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1ad3254799bbd2d6017f098b333d2b6" id="r_ac1ad3254799bbd2d6017f098b333d2b6"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1ad3254799bbd2d6017f098b333d2b6">GetItemName</a> ()</td></tr>
-<tr class="separator:ac1ad3254799bbd2d6017f098b333d2b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2fe719265cb340f8509a2c80fc2a0a8" id="r_ad2fe719265cb340f8509a2c80fc2a0a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2fe719265cb340f8509a2c80fc2a0a8">SetItemID</a> (int _itemID)</td></tr>
+<tr class="separator:ad2fe719265cb340f8509a2c80fc2a0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0d5bc614f92b0f003e06477efbbd44" id="r_a5c0d5bc614f92b0f003e06477efbbd44"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c0d5bc614f92b0f003e06477efbbd44">GetItemName</a> ()</td></tr>
+<tr class="separator:a5c0d5bc614f92b0f003e06477efbbd44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e02b1615fec40bf61038c5c00a666ef" id="r_a8e02b1615fec40bf61038c5c00a666ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e02b1615fec40bf61038c5c00a666ef">SetItemName</a> (std::string _itemName)</td></tr>
+<tr class="separator:a8e02b1615fec40bf61038c5c00a666ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ba1d561d9bc83cecb5786916667a675" id="r_a4ba1d561d9bc83cecb5786916667a675"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ba1d561d9bc83cecb5786916667a675">GetEnchantmentBonus</a> ()</td></tr>
 <tr class="separator:a4ba1d561d9bc83cecb5786916667a675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a932456df4ea52c15e4d99d417409099f" id="r_a932456df4ea52c15e4d99d417409099f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a932456df4ea52c15e4d99d417409099f">SetEnchantmentBonus</a> (int _bonus)</td></tr>
+<tr class="separator:a932456df4ea52c15e4d99d417409099f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00609c418b85cc5fbae97d6f77739a42" id="r_a00609c418b85cc5fbae97d6f77739a42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">ItemType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00609c418b85cc5fbae97d6f77739a42">GetItemType</a> ()</td></tr>
 <tr class="separator:a00609c418b85cc5fbae97d6f77739a42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c93018654561042ad4a15489c021f5e" id="r_a1c93018654561042ad4a15489c021f5e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c93018654561042ad4a15489c021f5e">SetItemType</a> (<a class="el" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">ItemType</a> _type)</td></tr>
+<tr class="separator:a1c93018654561042ad4a15489c021f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74ebf5073f51301db65ddf10a07aaa25" id="r_a74ebf5073f51301db65ddf10a07aaa25"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74ebf5073f51301db65ddf10a07aaa25">GetEnchantmentType</a> ()</td></tr>
 <tr class="separator:a74ebf5073f51301db65ddf10a07aaa25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea77682b6a4948d7b51d90603a97410" id="r_a2ea77682b6a4948d7b51d90603a97410"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ea77682b6a4948d7b51d90603a97410">SetEnchantmentType</a> (<a class="el" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a> _type)</td></tr>
+<tr class="separator:a2ea77682b6a4948d7b51d90603a97410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e3c7d4fc49e628cf70536ccf59112d7" id="r_a9e3c7d4fc49e628cf70536ccf59112d7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e3c7d4fc49e628cf70536ccf59112d7">GetItemWeight</a> ()</td></tr>
 <tr class="separator:a9e3c7d4fc49e628cf70536ccf59112d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a0a45dc09af85eadcaa3eb2f24b7606df" id="r_a0a45dc09af85eadcaa3eb2f24b7606df"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a45dc09af85eadcaa3eb2f24b7606df">itemTypeStrings</a> [7] = { &quot;Helmet&quot;, &quot;Armor&quot;, &quot;Shield&quot;, &quot;Ring&quot;, &quot;Belt&quot;, &quot;Boots&quot;, &quot;Weapon&quot; }</td></tr>
-<tr class="memdesc:a0a45dc09af85eadcaa3eb2f24b7606df"><td class="mdescLeft">&#160;</td><td class="mdescRight">String array for formatting item name item type.  <br /></td></tr>
-<tr class="separator:a0a45dc09af85eadcaa3eb2f24b7606df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9289f984e8daa309c1d5c5eb92fadb5" id="r_af9289f984e8daa309c1d5c5eb92fadb5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9289f984e8daa309c1d5c5eb92fadb5">statStrings</a> [9]</td></tr>
-<tr class="separator:af9289f984e8daa309c1d5c5eb92fadb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a6d267c7bdb55c2ce575fbc4777a38b" id="r_a5a6d267c7bdb55c2ce575fbc4777a38b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a6d267c7bdb55c2ce575fbc4777a38b">SetItemWeight</a> (float _weight)</td></tr>
+<tr class="separator:a5a6d267c7bdb55c2ce575fbc4777a38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classcomponentdecorator_1_1_component_decorator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classcomponentdecorator_1_1_component_decorator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcomponentdecorator_1_1_component_decorator.html">componentdecorator::ComponentDecorator</a></td></tr>
+<tr class="memitem:a79279acc3e72c89be2553ab45f03445d inherit pub_methods_classcomponentdecorator_1_1_component_decorator" id="r_a79279acc3e72c89be2553ab45f03445d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a79279acc3e72c89be2553ab45f03445d">ComponentDecorator</a> ()</td></tr>
+<tr class="memdesc:a79279acc3e72c89be2553ab45f03445d inherit pub_methods_classcomponentdecorator_1_1_component_decorator"><td class="mdescLeft">&#160;</td><td class="mdescRight">No-args constructor for the <a class="el" href="classcomponentdecorator_1_1_component_decorator.html" title="Class that implements the AbstractComponent interface.">ComponentDecorator</a> class meant to be used for when Items are not equipped to a character.  <br /></td></tr>
+<tr class="separator:a79279acc3e72c89be2553ab45f03445d inherit pub_methods_classcomponentdecorator_1_1_component_decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6858c5f071ff3766ff47e10dfa62c337 inherit pub_methods_classcomponentdecorator_1_1_component_decorator" id="r_a6858c5f071ff3766ff47e10dfa62c337"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a6858c5f071ff3766ff47e10dfa62c337">ComponentDecorator</a> (<a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> *_wrappee)</td></tr>
+<tr class="separator:a6858c5f071ff3766ff47e10dfa62c337 inherit pub_methods_classcomponentdecorator_1_1_component_decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:ab20effab31ea89b0bdb4c1e4ad94f2fd" id="r_ab20effab31ea89b0bdb4c1e4ad94f2fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab20effab31ea89b0bdb4c1e4ad94f2fd">operator==</a> (const <a class="el" href="classitem_1_1_item.html">Item</a> &amp;lhs, const <a class="el" href="classitem_1_1_item.html">Item</a> &amp;rhs)</td></tr>
 <tr class="separator:ab20effab31ea89b0bdb4c1e4ad94f2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classcomponentdecorator_1_1_component_decorator"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_attribs_classcomponentdecorator_1_1_component_decorator')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classcomponentdecorator_1_1_component_decorator.html">componentdecorator::ComponentDecorator</a></td></tr>
+<tr class="memitem:ad12ee7309bd6a59949eb9c7e396e7958 inherit pro_attribs_classcomponentdecorator_1_1_component_decorator" id="r_ad12ee7309bd6a59949eb9c7e396e7958"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">wrappee</a></td></tr>
+<tr class="separator:ad12ee7309bd6a59949eb9c7e396e7958 inherit pro_attribs_classcomponentdecorator_1_1_component_decorator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for the character items. </p>
 <p>Class that abstracts the Items available to a character that are put into a container or worn. </p>
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00083">83</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00109">109</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e7998679cac37adb8124f012d5dd39e" name="a7e7998679cac37adb8124f012d5dd39e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e7998679cac37adb8124f012d5dd39e">&#9670;&#160;</a></span>Item() <span class="overload">[1/3]</span></h2>
@@ -182,12 +213,12 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00059">59</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00060">60</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a30c1d4e226db309d759301e34f470a8f" name="a30c1d4e226db309d759301e34f470a8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30c1d4e226db309d759301e34f470a8f">&#9670;&#160;</a></span>Item() <span class="overload">[2/3]</span></h2>
+<a id="a14ee9b05136a5b9de38c3062ebe8dafb" name="a14ee9b05136a5b9de38c3062ebe8dafb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14ee9b05136a5b9de38c3062ebe8dafb">&#9670;&#160;</a></span>Item() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +226,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">item::Item::Item </td>
           <td>(</td>
-          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemName</em>, </span></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemName</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -220,12 +251,12 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00120">120</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00121">121</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a2876f055fdea599ec9c710096fc0abe4" name="a2876f055fdea599ec9c710096fc0abe4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2876f055fdea599ec9c710096fc0abe4">&#9670;&#160;</a></span>Item() <span class="overload">[3/3]</span></h2>
+<a id="ad1c5c8bf6e2e4ad186de64e3d5bff761" name="ad1c5c8bf6e2e4ad186de64e3d5bff761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1c5c8bf6e2e4ad186de64e3d5bff761">&#9670;&#160;</a></span>Item() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -233,41 +264,113 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">item::Item::Item </td>
           <td>(</td>
-          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemId</em>, </span></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemName</em>, </span></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_enchantmentBonus</em>, </span></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_itemType</em>, </span></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_enchantmentType</em>, </span></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const float &amp;</td>          <td class="paramname"><span class="paramname"><em>_weight</em></span>&#160;)</td>
+          <td class="paramtype">const float &amp;</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00130">130</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="afb9f81913b75fd4b93ac1e49dbfa5fa6" name="afb9f81913b75fd4b93ac1e49dbfa5fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb9f81913b75fd4b93ac1e49dbfa5fa6">&#9670;&#160;</a></span>Ability_Score_Natural()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">item::Item::Ability_Score_Natural </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_abilityScore</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_attackTurnNumber</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overriden function that is meant to use the wrappee's function of the same name to then add on the enchantment bonus of the worn item. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_abilityScore</td><td>Integer that represents the ability score targeted to calculate the ability score through worn item bonuses</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Integer that represents the calculated bonus for an ability score through item bonuses (recursive) </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a7dab287f9820a894d217e609052be9c9">componentdecorator::ComponentDecorator</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00149">149</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aab6e419cfea26bdea0389095c0f336c6" name="aab6e419cfea26bdea0389095c0f336c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab6e419cfea26bdea0389095c0f336c6">&#9670;&#160;</a></span>GetDecoratorList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">item::Item::GetDecoratorList </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Overriden function that is meant to use the wrappee's function of the same name and then push the decorator's pointer to a list. </p>
+<dl class="section return"><dt>Returns</dt><dd>Vector of pointers to AbstractComponent instances that represent the worn items in play </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">componentdecorator::ComponentDecorator</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00159">159</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a4ba1d561d9bc83cecb5786916667a675" name="a4ba1d561d9bc83cecb5786916667a675"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ba1d561d9bc83cecb5786916667a675">&#9670;&#160;</a></span>GetEnchantmentBonus()</h2>
 
@@ -291,7 +394,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00145">145</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00190">190</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -318,7 +421,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00147">147</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00198">198</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -345,12 +448,12 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00143">143</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00182">182</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
-<a id="ac1ad3254799bbd2d6017f098b333d2b6" name="ac1ad3254799bbd2d6017f098b333d2b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1ad3254799bbd2d6017f098b333d2b6">&#9670;&#160;</a></span>GetItemName()</h2>
+<a id="a5c0d5bc614f92b0f003e06477efbbd44" name="a5c0d5bc614f92b0f003e06477efbbd44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0d5bc614f92b0f003e06477efbbd44">&#9670;&#160;</a></span>GetItemName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -359,7 +462,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string item::Item::GetItemName </td>
+          <td class="memname">std::string item::Item::GetItemName </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -372,7 +475,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00144">144</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00186">186</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -399,7 +502,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00146">146</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00194">194</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -426,7 +529,277 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00148">148</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00202">202</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="a5cb95828af94742b8156c53019081c9f" name="a5cb95828af94742b8156c53019081c9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cb95828af94742b8156c53019081c9f">&#9670;&#160;</a></span>GetNextItemID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int item::Item::GetNextItemID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00178">178</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="ac965d3ac39cbc3dd472b6fd03082b43b" name="ac965d3ac39cbc3dd472b6fd03082b43b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac965d3ac39cbc3dd472b6fd03082b43b">&#9670;&#160;</a></span>GetWrappee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> * item::Item::GetWrappee </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00174">174</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="a932456df4ea52c15e4d99d417409099f" name="a932456df4ea52c15e4d99d417409099f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a932456df4ea52c15e4d99d417409099f">&#9670;&#160;</a></span>SetEnchantmentBonus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void item::Item::SetEnchantmentBonus </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_bonus</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00192">192</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="a2ea77682b6a4948d7b51d90603a97410" name="a2ea77682b6a4948d7b51d90603a97410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ea77682b6a4948d7b51d90603a97410">&#9670;&#160;</a></span>SetEnchantmentType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void item::Item::SetEnchantmentType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">CharacterStats</a></td>          <td class="paramname"><span class="paramname"><em>_type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00200">200</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="ad2fe719265cb340f8509a2c80fc2a0a8" name="ad2fe719265cb340f8509a2c80fc2a0a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fe719265cb340f8509a2c80fc2a0a8">&#9670;&#160;</a></span>SetItemID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void item::Item::SetItemID </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_itemID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00184">184</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c8dfcbb03747a46e476b4eda0814356" name="a1c8dfcbb03747a46e476b4eda0814356"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8dfcbb03747a46e476b4eda0814356">&#9670;&#160;</a></span>SetItemIDCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void item::Item::SetItemIDCounter </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_nextID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00180">180</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="a8e02b1615fec40bf61038c5c00a666ef" name="a8e02b1615fec40bf61038c5c00a666ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e02b1615fec40bf61038c5c00a666ef">&#9670;&#160;</a></span>SetItemName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void item::Item::SetItemName </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>_itemName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00188">188</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c93018654561042ad4a15489c021f5e" name="a1c93018654561042ad4a15489c021f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c93018654561042ad4a15489c021f5e">&#9670;&#160;</a></span>SetItemType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void item::Item::SetItemType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">ItemType</a></td>          <td class="paramname"><span class="paramname"><em>_type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00196">196</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a6d267c7bdb55c2ce575fbc4777a38b" name="a5a6d267c7bdb55c2ce575fbc4777a38b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6d267c7bdb55c2ce575fbc4777a38b">&#9670;&#160;</a></span>SetItemWeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void item::Item::SetItemWeight </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>_weight</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00204">204</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="acba3c38ca886da61f6e126fd3d707a1b" name="acba3c38ca886da61f6e126fd3d707a1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acba3c38ca886da61f6e126fd3d707a1b">&#9670;&#160;</a></span>SetWrappee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void item::Item::SetWrappee </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> *</td>          <td class="paramname"><span class="paramname"><em>_wrappee</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00176">176</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -458,52 +831,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00142">142</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a0a45dc09af85eadcaa3eb2f24b7606df" name="a0a45dc09af85eadcaa3eb2f24b7606df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a45dc09af85eadcaa3eb2f24b7606df">&#9670;&#160;</a></span>itemTypeStrings</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">item::Item::itemTypeStrings = { &quot;Helmet&quot;, &quot;Armor&quot;, &quot;Shield&quot;, &quot;Ring&quot;, &quot;Belt&quot;, &quot;Boots&quot;, &quot;Weapon&quot; }</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>String array for formatting item name item type. </p>
-<p>String array for formatting item name character stat. </p>
-
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00089">89</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
-
-</div>
-</div>
-<a id="af9289f984e8daa309c1d5c5eb92fadb5" name="af9289f984e8daa309c1d5c5eb92fadb5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9289f984e8daa309c1d5c5eb92fadb5">&#9670;&#160;</a></span>statStrings</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string item::Item::statStrings[9]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= { <span class="stringliteral">&quot;Strength&quot;</span>,</div>
-<div class="line">                                        <span class="stringliteral">&quot;Dexterity&quot;</span>,</div>
-<div class="line">                                        <span class="stringliteral">&quot;Constitution&quot;</span>,</div>
-<div class="line">                                        <span class="stringliteral">&quot;Intelligence&quot;</span>,</div>
-<div class="line">                                        <span class="stringliteral">&quot;Wisdom&quot;</span>,</div>
-<div class="line">                                        <span class="stringliteral">&quot;Charisma&quot;</span>,</div>
-<div class="line">                                        <span class="stringliteral">&quot;Armor Class&quot;</span>,</div>
-<div class="line">                                        <span class="stringliteral">&quot;Attack Bonus&quot;</span>,</div>
-<div class="line">                                        <span class="stringliteral">&quot;Damage Bonus&quot;</span> }</div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00094">94</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00154">154</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>

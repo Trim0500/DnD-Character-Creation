@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['receive_5fdamage_0',['Receive_Damage',['../class_character_1_1_character.html#a6151ceea4232a21c828c66a4b2dea9ca',1,'Character::Character']]],
-  ['receive_5fhealing_1',['Receive_Healing',['../class_character_1_1_character.html#a012dd4525b3a888fa94264e88d8325d0',1,'Character::Character']]],
-  ['roll_2',['roll',['../class_dice.html#a4f045c0acc89669ff5d5b4dcd4c78e2c',1,'Dice::roll(string query)'],['../class_dice.html#a612a16c434160895563d19099ca0b33b',1,'Dice::roll()']]],
-  ['roll_5fwith_5fadvantage_3',['roll_with_advantage',['../class_dice.html#ad659697f160ffc004fd52fe02a755f49',1,'Dice::roll_with_advantage(string query)'],['../class_dice.html#a4e3e806488c756347490a4b76c02ec10',1,'Dice::roll_with_advantage()']]],
-  ['roll_5fwith_5fdisadvantage_4',['roll_with_disadvantage',['../class_dice.html#a696f3cc0ec1effa65305a987a0904e7f',1,'Dice::roll_with_disadvantage(string query)'],['../class_dice.html#a870e25ee830b3aa4d0124014d9334961',1,'Dice::roll_with_disadvantage()']]],
-  ['rows_5',['Rows',['../class_map_1_1_map.html#a042fba6c495bf8772aeab91c5e4ace69',1,'Map::Map']]]
+  ['observable_0',['Observable',['../class_observable.html#af823886c69aa77b313c1d44b59fd7957',1,'Observable']]]
 ];

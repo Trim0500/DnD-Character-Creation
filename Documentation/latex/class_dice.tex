@@ -7,7 +7,7 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_dice_ab3d9afcf8fba8e379a729197df553036}{Dice}} (string query)
+\mbox{\hyperlink{class_dice_aee0e3d78e122bc22fcb4c187286134ee}{Dice}} (std\+::string query)
 \begin{DoxyCompactList}\small\item\em \doxylink{class_dice}{Dice} object constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
@@ -22,7 +22,7 @@ void \mbox{\hyperlink{class_dice_ae9d4338f5c38d6e264499ff933a15b7f}{add\+\_\+die
 void \mbox{\hyperlink{class_dice_a9745be8c524cefde005c9d8a21330d59}{add\+\_\+die}} (int amount)
 \begin{DoxyCompactList}\small\item\em increases the number of dice (x in query) by amount \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{class_dice_ad49a44f1558d483f55e4804402a7e983}{get\+\_\+string}} ()
-\begin{DoxyCompactList}\small\item\em generates a string representation of the dice \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em generates a std\+::string representation of the dice \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37}{get\+\_\+leading\+\_\+multiplier}} ()
 \begin{DoxyCompactList}\small\item\em leading\+\_\+multipler getter \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_dice_a5d113ad9251a8561dd3101010b7af452}{get\+\_\+die\+\_\+sides}} ()
@@ -32,11 +32,11 @@ int \mbox{\hyperlink{class_dice_a8bf495738034fb0e5461a6761f007506}{get\+\_\+addi
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static int \mbox{\hyperlink{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}{roll}} (string query)
+static int \mbox{\hyperlink{class_dice_afa3e9a90a12b210370e708a79e67c715}{roll}} (std\+::string query)
 \begin{DoxyCompactList}\small\item\em Rolls a given query. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{class_dice_ad659697f160ffc004fd52fe02a755f49}{roll\+\_\+with\+\_\+advantage}} (string query)
+static int \mbox{\hyperlink{class_dice_a99e41ee2cd9fb489c638799fbfb3c117}{roll\+\_\+with\+\_\+advantage}} (std\+::string query)
 \begin{DoxyCompactList}\small\item\em Rolls given query twice, keeping highest. \end{DoxyCompactList}\item 
-static int \mbox{\hyperlink{class_dice_a696f3cc0ec1effa65305a987a0904e7f}{roll\+\_\+with\+\_\+disadvantage}} (string query)
+static int \mbox{\hyperlink{class_dice_ac1d6d9974952c7fc3f4d110939cea798}{roll\+\_\+with\+\_\+disadvantage}} (std\+::string query)
 \begin{DoxyCompactList}\small\item\em Rolls given query twice, keeping lowest. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -48,11 +48,11 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00028}{28}} of file \mbox{\
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_dice_ab3d9afcf8fba8e379a729197df553036}\label{class_dice_ab3d9afcf8fba8e379a729197df553036} 
+\Hypertarget{class_dice_aee0e3d78e122bc22fcb4c187286134ee}\label{class_dice_aee0e3d78e122bc22fcb4c187286134ee} 
 \index{Dice@{Dice}!Dice@{Dice}}
 \index{Dice@{Dice}!Dice@{Dice}}
 \doxysubsubsection{\texorpdfstring{Dice()}{Dice()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Dice\+::\+Dice (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Dice\+::\+Dice (\begin{DoxyParamCaption}\item[{std\+::string}]{query }\end{DoxyParamCaption})}
 
 
 
@@ -176,10 +176,10 @@ Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00109}{109}} of file \mbo
 
 
 
-generates a string representation of the dice 
+generates a std\+::string representation of the dice 
 
 \begin{DoxyReturn}{Returns}
-string repr of die 
+std\+::string repr of die 
 \end{DoxyReturn}
 
 
@@ -202,11 +202,11 @@ value of the roll
 
 Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
-\Hypertarget{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c}\label{class_dice_a4f045c0acc89669ff5d5b4dcd4c78e2c} 
+\Hypertarget{class_dice_afa3e9a90a12b210370e708a79e67c715}\label{class_dice_afa3e9a90a12b210370e708a79e67c715} 
 \index{Dice@{Dice}!roll@{roll}}
 \index{roll@{roll}!Dice@{Dice}}
 \doxysubsubsection{\texorpdfstring{roll()}{roll()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily int Dice\+::roll (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int Dice\+::roll (\begin{DoxyParamCaption}\item[{std\+::string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -241,11 +241,11 @@ value of the roll
 
 Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
-\Hypertarget{class_dice_ad659697f160ffc004fd52fe02a755f49}\label{class_dice_ad659697f160ffc004fd52fe02a755f49} 
+\Hypertarget{class_dice_a99e41ee2cd9fb489c638799fbfb3c117}\label{class_dice_a99e41ee2cd9fb489c638799fbfb3c117} 
 \index{Dice@{Dice}!roll\_with\_advantage@{roll\_with\_advantage}}
 \index{roll\_with\_advantage@{roll\_with\_advantage}!Dice@{Dice}}
 \doxysubsubsection{\texorpdfstring{roll\_with\_advantage()}{roll\_with\_advantage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily int Dice\+::roll\+\_\+with\+\_\+advantage (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int Dice\+::roll\+\_\+with\+\_\+advantage (\begin{DoxyParamCaption}\item[{std\+::string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -280,11 +280,11 @@ value of the roll
 
 Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
-\Hypertarget{class_dice_a696f3cc0ec1effa65305a987a0904e7f}\label{class_dice_a696f3cc0ec1effa65305a987a0904e7f} 
+\Hypertarget{class_dice_ac1d6d9974952c7fc3f4d110939cea798}\label{class_dice_ac1d6d9974952c7fc3f4d110939cea798} 
 \index{Dice@{Dice}!roll\_with\_disadvantage@{roll\_with\_disadvantage}}
 \index{roll\_with\_disadvantage@{roll\_with\_disadvantage}!Dice@{Dice}}
 \doxysubsubsection{\texorpdfstring{roll\_with\_disadvantage()}{roll\_with\_disadvantage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily int Dice\+::roll\+\_\+with\+\_\+disadvantage (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily int Dice\+::roll\+\_\+with\+\_\+disadvantage (\begin{DoxyParamCaption}\item[{std\+::string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 

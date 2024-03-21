@@ -6,10 +6,6 @@
 * 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon & tool proficiencies', 'Death saves', 'initiative' and 'saving throws'
 */
 #pragma once
-#include "Dice.h"
-#include "Interactable.h"
-#include "item.h"
-#include "itemcontainer.h"
 #include <bitset>
 #include <chrono>
 #include <iomanip>
@@ -18,11 +14,14 @@
 #include <unordered_map>
 #include <vector>
 
+#include "Dice.h"
 #include "item.h"
 #include "itemcontainer.h"
-#include "Dice.h"
 #include "Observable.h"
 #include "serializeItem.h"
+#include "abstractcomponent.h"
+
+using namespace abstractcomponent;
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -127,7 +126,7 @@ namespace Character {
 	/*! \class Character
 	* \brief Represents Character type entities
 	*/
-	class Character : public Observable{
+	class Character : public Observable, public AbstractComponent {
 	public:
 		bool passable() const { return true; };
 
@@ -158,7 +157,11 @@ namespace Character {
 		*  \param t_class Character class the character will be given a level for
 		*  \param t_ability_scores Set of desired ability scores {Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma}
 		*/
+<<<<<<< HEAD
 		Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores);
+=======
+		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp);
+>>>>>>> 695af0146ef573093d87788a1391e0884ed6b7d5
 		Character(const serializecharacter::CharacterRecord& t_record);
 		/* \fn ID()
 		*  \brief Unique Character ID
@@ -195,16 +198,27 @@ namespace Character {
 		*  \param t_class: Enum of type 'Character_Class' indicating which class a character will take a level in
 		*  \return Returns true if levelup was performed succesfully, false otherwise
 		*/
-		bool Levelup(Character_Class t_class);
+		bool Levelup(Character_Class t_class, bool t_average_hp);
 		/*! \fn Equip_Item()
 		*  \brief Equips an item into the character's corresponding equipment slot. Item must be contained within the 'inventory'
 		*  vector array to be equipped
 		*  \param t_item: Item pointer to the object that the character will equip
 		*  \return Returns true if equipping was performed succesfully, false otherwise
 		*/
-
-
 		bool Equip_Item(item::Item* t_item);
+
+		/*!
+		* \fn Equip_Item_Decorator
+		*  \brief Equips an item into the character's corresponding equipment slot. Item must be contained within the 'inventory'
+		*  vector array to be equipped
+		* 
+		*  \param _itemToEquip: Item pointer to the object that the character will equip
+		* 
+		*  \throw std::invalid_argument
+		* \throw std::out_of_range
+		*/
+		void Equip_Item_Decorator(item::Item*);
+
 		/*! \fn Unequip_Item()
 		*  \brief Equips an item into the character's corresponding equipment slot. Item must be contained within the 'inventory'
 		*  vector array to be equipped
@@ -212,6 +226,18 @@ namespace Character {
 		*  \return Returns 'true' if equipping was performed succesfully, 'false' otherwise
 		*/
 		void Unequip_Item(Equipment_Slots t_slot);
+
+		/*!
+		* \fn Unequip_Item_Decorator
+		*  \brief Function that rebuilds the worn items decorator by excluding an item, unequiping it
+		* 
+		*  \param _itemToRemove Item pointer to the object that the character will remove
+		* 
+		*  \throw std::invalid_argument
+		* \throw std::exception
+		*/
+		void Unequip_Item_Decorator(item::Item*);
+
 		/*! \fn Max_Hit_Points()
 		*  \return Returns const int to the maxium number of hitpoints for this character
 		*/
@@ -240,11 +266,15 @@ namespace Character {
 		*  \return Returns const int to desired modifier. Modifier is detremined using ability scores and item bonuses
 		*/
 		const int Modifier(Abilities_Stats t_ability);
-		/*! \fn Ability_Score_Natural()
-		*  \param t_ability: int/Ability enum indexing the desired ability score
-		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses
+		/*!
+		* \fn Ability_Score_Natural
+		* \brief Overriden function that is meant to get the raw ability score of a character based on the parameter specified
+		*
+		* \param _abilityScore Integer that represents the ability score targeted
+		*
+		* \return Integer that represents the raw ability score of the character
 		*/
-		const int Ability_Score_Natural(Abilities_Stats t_ability);
+		int Ability_Score_Natural(int t_ability, int t_attack_number) override;
 		/*! \fn Ability_Score_Bonused()
 		*  \param t_ability: int/Ability enum indexing the desired ability score
 		*  \return Returns const int to desired ability score. Returned value does not take into account any item bonuses
@@ -256,10 +286,11 @@ namespace Character {
 		*/
 		const int Armour_Class();
 		/*! \fn Attack_Bonus()
-		*  \brief Calculates and returns attack bonus based off a character's ability scores & equipped items | Proficiency Bonus + Strength Modifier + Enchantments
+		*  \brief Calculates and returns attack bonus based off a character's level, equipped items and attack number (1st attack, 2nd attack, etc...)
+		*  \param t_attack_number: int representing 1st, 2nd, 3rd or 4th attack
 		*  \return Returns const int to attack bonus
 		*/
-		const int Attack_Bonus();
+		const int Attack_Bonus(int t_attack_number);
 		/*! \fn Proficiency_Bonus()
 		*  \brief Calculates and returns proficiency bonus based off a character's cumulative levels
 		*  \return Returns const int to proficiency bonus
@@ -278,10 +309,27 @@ namespace Character {
 		*  \return Returns pointer to item type object corresponding to the paramaters equipment slot. Retruns nullptr if no item is found
 		*/
 		const item::Item* Equipped_Items(Equipment_Slots t_item) { return equipment_slots.at(t_item); };
+
+		AbstractComponent* GetWornItems() { return wornItems; };
+
+		void SetWornItems(AbstractComponent* _wornItems) { wornItems = _wornItems; };
+
 		/*! \fn Is_Multi_Classed()
 		*  \brief Checks if the character is multi-classed with a particular character class
 		*/
 		bool Is_Multi_Classed(Character_Class t_class);
+		/*! \fn Attacks_Per_Turn()
+		*  \brief Return the number of attacks per turn based off level
+		*/
+		const int Attacks_Per_Turn();
+
+		/*!
+		* \fn GetDecoratorList
+		* \brief Overriden function that is meant to simply create the vector of worn itens for decorators to push their pointers to
+		* 
+		* \return Empty vector of pointers to AbstractComponent instances that represent the list for decorators to update
+		*/
+		std::vector<AbstractComponent*> GetDecoratorList() override { std::vector<AbstractComponent*> initDecorators; return initDecorators; };
 
 	private:
 
@@ -328,18 +376,38 @@ namespace Character {
 		*/
 		int setLevel(Character_Class t_class, int t_val);
 
-		bool Levelup_Barbarian();
-		bool Levelup_Bard();
-		bool Levelup_Cleric();
-		bool Levelup_Druid();
-		bool Levelup_Fighter();
-		bool Levelup_Monk();
-		bool Levelup_Paladin();
-		bool Levelup_Ranger();
-		bool Levelup_Rogue();
-		bool Levelup_Sorcerer();
-		bool Levelup_Warlock();
-		bool Levelup_Wizard();
+		bool Levelup_Barbarian(bool t_average_hp);
+		bool Levelup_Bard(bool t_average_hp);
+		bool Levelup_Cleric(bool t_average_hp);
+		bool Levelup_Druid(bool t_average_hp);
+		bool Levelup_Fighter(bool t_average_hp);
+		bool Levelup_Monk(bool t_average_hp);
+		bool Levelup_Paladin(bool t_average_hp);
+		bool Levelup_Ranger(bool t_average_hp);
+		bool Levelup_Rogue(bool t_average_hp);
+		bool Levelup_Sorcerer(bool t_average_hp);
+		bool Levelup_Warlock(bool t_average_hp);
+		bool Levelup_Wizard(bool t_average_hp);
+
+		AbstractComponent* wornItems;
 
 	};
+}
+/*! \namespace characterBuilder
+* \brief namespace used to encapsulate 'characterBuilder' class functionality
+*/
+namespace characterBuilder {
+	/*! \Enum Fighter_Sub_Class
+	*  \brief Enum used to index to fields from Fighter subclasses
+	*/
+	enum class Fighter_Sub_Class {
+		Bully,
+		Nimble,
+		Tank
+	};
+	/*! \fn Build_Fighter
+	*  \brief Function that allows to build a Fighter class character based off a Fighter subclass
+	*/
+	Character::Character Build_Fighter(characterBuilder::Fighter_Sub_Class t_subclass);
+
 }

@@ -12,17 +12,17 @@
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <regex>}}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00025}00025\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00025}00025\ \textcolor{comment}{//\ using\ namespace\ std;}}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00027}00027\ \textcolor{keyword}{static}\ regex\ DICE(\textcolor{stringliteral}{"{}\string^([0-\/9]+)d(4|6|8|10|12|20|100)((?:\(\backslash\)\(\backslash\)+|-\/)[0-\/9]*)*\$"{}});}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00027}00027\ \textcolor{keyword}{static}\ std::regex\ DICE(\textcolor{stringliteral}{"{}\string^([0-\/9]+)d(4|6|8|10|12|20|100)((?:\(\backslash\)\(\backslash\)+|-\/)[0-\/9]*)*\$"{}});}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00028}\mbox{\hyperlink{class_dice}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dice}{Dice}}\ \{}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}}(\textcolor{keywordtype}{string}\ query);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}}(std::string\ query);}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}}(\textcolor{keywordtype}{string}\ query);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}}(std::string\ query);}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00045}00045\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4e3e806488c756347490a4b76c02ec10}{roll\_with\_advantage}}(\textcolor{keywordtype}{string}\ query);}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a870e25ee830b3aa4d0124014d9334961}{roll\_with\_disadvantage}}(\textcolor{keywordtype}{string}\ query);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4e3e806488c756347490a4b76c02ec10}{roll\_with\_advantage}}(std::string\ query);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a870e25ee830b3aa4d0124014d9334961}{roll\_with\_disadvantage}}(std::string\ query);}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00058}00058\ }
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}}();}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00064}00064\ }

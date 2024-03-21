@@ -8,5 +8,7 @@ var searchData=
   ['belt_5',['Belt',['../class_character.html#a9f688397f56ff67e4bdb949a6939c0adad1d0518303e6170ce9bb8bc1bd54248c',1,'Character::Belt'],['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a1ec13bc0551b0b9b015ba22b6ff865d5',1,'item::Belt']]],
   ['boots_6',['Boots',['../class_character.html#a9f688397f56ff67e4bdb949a6939c0ada797e65b9c5cd0da25a932f2b0947b94b',1,'Character::Boots'],['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a83b45c40a0877d410d88a3d2bb572d0d',1,'item::Boots']]],
   ['boots_5fmax_5fweight_7',['BOOTS_MAX_WEIGHT',['../testitem_8cpp.html#a58b3d0e24110339040cf727496ce9872',1,'testitem.cpp']]],
-  ['boots_5fmin_5fweight_8',['BOOTS_MIN_WEIGHT',['../testitem_8cpp.html#a540acde2449837f18b49248751e24e51',1,'testitem.cpp']]]
+  ['boots_5fmin_5fweight_8',['BOOTS_MIN_WEIGHT',['../testitem_8cpp.html#a540acde2449837f18b49248751e24e51',1,'testitem.cpp']]],
+  ['build_5ffighter_9',['Build_Fighter',['../namespacecharacter_builder.html#a6ac75cad238ce4bfb23333e2d3263f5d',1,'characterBuilder']]],
+  ['bully_10',['Bully',['../namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7a275370ef329a53d78342d8b3d2992e3e',1,'characterBuilder']]]
 ];

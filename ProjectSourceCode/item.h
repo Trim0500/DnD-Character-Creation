@@ -27,6 +27,10 @@
 #include <iostream>
 #include <string>
 
+#include "componentdecorator.h"
+
+using namespace componentdecorator;
+
 // using namespace std;
 
 /*!!
@@ -110,7 +114,7 @@ namespace item
 	 *
 	 * Class that abstracts the Items available to a character that are put into a container or worn.
 	 */
-	class Item
+	class Item : public ComponentDecorator
 	{
 	public:
 		/*!
@@ -137,6 +141,7 @@ namespace item
 		 * @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 		 */
 		Item(const std::string &, const int &, const int &, const int &, const float &);
+
 		/*!
 		 * \fn Item
 		 * \brief Overloaded constructor for Item
@@ -153,7 +158,30 @@ namespace item
 		 * @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 		 */
 		Item(const int &, const std::string &, const int &, const int &, const int &, const float &);
+		
 		friend bool operator==(const Item &lhs, const Item &rhs) { return lhs.itemName == rhs.itemName; };
+
+		/*!
+		* \fn Ability_Score_Natural
+		* \brief Overriden function that is meant to use the wrappee's function of the same name to then add on the enchantment bonus of the worn item
+		*
+		* \param _abilityScore Integer that represents the ability score targeted to calculate the ability score through worn item bonuses 
+		*
+		* \return Integer that represents the calculated bonus for an ability score through item bonuses (recursive)
+		*/
+		int Ability_Score_Natural(int, int) override;
+
+		/*!
+		* \fn GetDecoratorList
+		* \brief Overriden function that is meant to use the wrappee's function of the same name and then push the decorator's pointer to a list
+		* 
+		* \return Vector of pointers to AbstractComponent instances that represent the worn items in play
+		*/
+		std::vector<AbstractComponent*> GetDecoratorList() override;
+
+		AbstractComponent* GetWrappee() { return wrappee; };
+		
+		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };
 
 		int GetNextItemID() { return nextItemId; };
 

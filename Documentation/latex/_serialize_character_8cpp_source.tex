@@ -4,7 +4,7 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_serialize_character_8h}{SerializeCharacter.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00003}\mbox{\hyperlink{namespaceserializecharacter_a1dbe94e0a5262963f5973b9d2ee9b0c9}{00003}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceserializecharacter_a1dbe94e0a5262963f5973b9d2ee9b0c9}{serializecharacter::SaveCharacter}}(\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ t\_character,\ \textcolor{keyword}{const}\ std::string\&\ t\_path\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00003}\mbox{\hyperlink{namespaceserializecharacter_acd2e66e8066c296fe86627b2e57913d8}{00003}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceserializecharacter_acd2e66e8066c296fe86627b2e57913d8}{serializecharacter::SaveCharacter}}(\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ t\_character,\ \textcolor{keyword}{const}\ std::string\&\ t\_path\ =\ \textcolor{stringliteral}{"{}"{}})}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00004}00004\ \{}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00005}00005\ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_character\ ==\ \textcolor{keyword}{nullptr})\ \{}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
@@ -15,7 +15,7 @@
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00011}00011\ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ab9be96ea6980b7f6f5688d8a3bb34b25}{id}}\ =\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_ac6787ac4d6fa28285fa3f7df1e502f26}{ID}}();}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00012}00012\ \ \ \ \ \textcolor{comment}{//copy\ ability\ scores}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ 6;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ac70065580b8e9912bd4ef68e2683bcf3}{ability\_scores}}.at(i)\ =\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a8d4aa130df56ab93cc4b75495b918869}{Ability\_Score\_Natural}}((Character::Abilities\_Stats)i);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ac70065580b8e9912bd4ef68e2683bcf3}{ability\_scores}}.at(i)\ =\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a88d10934c27e536b892caf685d7bb7ab}{Ability\_Score\_Natural}}(i,\ 0);}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00015}00015\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{comment}{//copy\ levels}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ 12;\ i++)\ \{}
@@ -24,154 +24,198 @@
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00020}00020\ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_aeffcd92a2be7e8f453c5f21d9791d255}{max\_hit\_points}}\ =\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_ac9b33e76e10d4583d9270e616f81b74c}{Max\_Hit\_Points}}();}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00021}00021\ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a2863db6732bd10509084ce0ad9d52e69}{hit\_points}}\ =\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_ad1857f9f184b1eac2145cabfa14b5283}{Hit\_Points}}();}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//copy\ inventory\ item\ IDs}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ :\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a21184a7baf42de78796109c07856ea61}{GetAllItems}}())\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ i\ :\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}())\ \{}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a847a9f9988cd689bffe5946e6b3408ae}{inventory\_item\_ids}}.push\_back(i.GetItemId());}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00025}00025\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//copy\ equipped\ item\ IDs}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};i<8;i++)\ \{}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classitem_1_1_item}{item::Item}}*\ item\_ptr\ =\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c}{Equipped\_Items}}((Character::Equipment\_Slots)i);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (item\_ptr\ !=\ \textcolor{keyword}{nullptr})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ item\_id\ =\ \textcolor{keyword}{const\_cast<}\mbox{\hyperlink{classitem_1_1_item}{item::Item}}*\textcolor{keyword}{>}(item\_ptr)-\/>GetItemId();}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_acd409f72d8fa7c06b5cb7e583a2f27d2}{equipped\_item\_ids}}.push\_back(item\_id);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{AbstractComponent}}*\ currentWornItems\ =\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c}{GetWornItems}}();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<AbstractComponent*>\ itemDecoratorList\ =\ currentWornItems-\/>\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_ad76ada9fbc3f620ce6707dc578110734}{GetDecoratorList}}();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)itemDecoratorList.size();\ ++i)}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ decoratorItem\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitem_1_1_item}{Item}}*\textcolor{keyword}{>}(itemDecoratorList.at(i));}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ item\_id\ =\ decoratorItem-\/>\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_acd409f72d8fa7c06b5cb7e583a2f27d2}{equipped\_item\_ids}}.push\_back(item\_id);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//opening\ file}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00041}00041\ \ \ \ \ std::string\ r\_path\ =\ std::filesystem::current\_path().string()\ +\ t\_path;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00042}00042\ \ \ \ \ std::string\ filename\ =\ r\_path\ +\ \textcolor{stringliteral}{"{}Character\_"{}}\ +\ std::to\_string(record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ab9be96ea6980b7f6f5688d8a3bb34b25}{id}})\ +\ \textcolor{stringliteral}{"{}.csv"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00043}00043\ \ \ \ \ std::ofstream\ outfile(filename);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (!outfile.is\_open())\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error!\ Could\ not\ open\ "{}}\ <<\ filename\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00047}00047\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00049}00049\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}ID,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ab9be96ea6980b7f6f5688d8a3bb34b25}{id}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00050}00050\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Name,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ad71a6292fa365b9682e5fd606b6ee3d7}{name}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00051}00051\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Ability\_scores(Str\_Dex\_Con\_Int\_Wis\_Cha),"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ac70065580b8e9912bd4ef68e2683bcf3}{ability\_scores}}.size();\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ outfile\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ac70065580b8e9912bd4ef68e2683bcf3}{ability\_scores}}[i]\ <<\ \textcolor{stringliteral}{"{},"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00054}00054\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00055}00055\ \ \ \ \ outfile\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00056}00056\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Levels(Barb\_Bard\_Cler\_Drui\_Figh\_Monk\_Pala\_Rang\_Rogu\_Sorc\_Warl\_Wizr),"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a7a76232e626e349cdb7a44a4d4436386}{level}}.size();\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ outfile\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a7a76232e626e349cdb7a44a4d4436386}{level}}[i]\ <<\ \textcolor{stringliteral}{"{},"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00059}00059\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00060}00060\ \ \ \ \ outfile\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00061}00061\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Max\_HP,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_aeffcd92a2be7e8f453c5f21d9791d255}{max\_hit\_points}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00062}00062\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Current\_HP,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a2863db6732bd10509084ce0ad9d52e69}{hit\_points}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00063}00063\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Inventroy\_Item\_IDs,"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a847a9f9988cd689bffe5946e6b3408ae}{inventory\_item\_ids}}.size();\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ outfile\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a847a9f9988cd689bffe5946e6b3408ae}{inventory\_item\_ids}}[i]\ <<\ \textcolor{stringliteral}{"{},"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00066}00066\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00067}00067\ \ \ \ \ outfile\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00068}00068\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Equipped\_Item\_IDs,"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_acd409f72d8fa7c06b5cb7e583a2f27d2}{equipped\_item\_ids}}.size();\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ outfile\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_acd409f72d8fa7c06b5cb7e583a2f27d2}{equipped\_item\_ids}}[i]\ <<\ \textcolor{stringliteral}{"{},"{}};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00071}00071\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00072}00072\ \ \ \ \ outfile\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00073}00073\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{comment}{//Closing\ file}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00075}00075\ \ \ \ \ outfile.close();}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00078}00078\ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00079}00079\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00080}\mbox{\hyperlink{namespaceserializecharacter_a44f08b33cb2d5c6a1fcfb6112d42fd08}{00080}}\ \mbox{\hyperlink{structserializecharacter_1_1_character_record}{serializecharacter::CharacterRecord}}\ \mbox{\hyperlink{namespaceserializecharacter_a44f08b33cb2d5c6a1fcfb6112d42fd08}{serializecharacter::LoadCharacter}}(\textcolor{keyword}{const}\ std::string\&\ filename)}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00081}00081\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00082}00082\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00083}00083\ \ \ \ \ std::ifstream\ file(filename);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error!\ Could\ not\ open\ file\ "{}}\ <<\ filename\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00087}00087\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{structserializecharacter_1_1_character_record}{serializecharacter::CharacterRecord}}\ record;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00090}00090\ \ \ \ \ std::string\ line;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00091}00091\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00093}00093\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ std::stringstream\ spliter(line);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ std::string\ field\_key;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ std::string\ data;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Extract\ the\ field\ name}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ std::getline(spliter,\ field\_key,\ \textcolor{charliteral}{','});}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}ID"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ab9be96ea6980b7f6f5688d8a3bb34b25}{id}}\ =\ std::stoi(data);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Name"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ad71a6292fa365b9682e5fd606b6ee3d7}{name}}\ =\ data;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Ability\_scores(Str\_Dex\_Con\_Int\_Wis\_Cha)"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ability\_index\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ac70065580b8e9912bd4ef68e2683bcf3}{ability\_scores}}[ability\_index]\ =\ std::stoi(data);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ability\_index++;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Levels(Barb\_Bard\_Cler\_Drui\_Figh\_Monk\_Pala\_Rang\_Rogu\_Sorc\_Warl\_Wizr)"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ class\_index\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a7a76232e626e349cdb7a44a4d4436386}{level}}[class\_index]\ =\ std::stoi(data);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_index++;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Max\_HP"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_aeffcd92a2be7e8f453c5f21d9791d255}{max\_hit\_points}}\ =\ std::stoi(data);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Current\_HP"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a2863db6732bd10509084ce0ad9d52e69}{hit\_points}}\ =\ std::stoi(data);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00132}00132\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Inventroy\_Item\_IDs"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ inventory\_index\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a847a9f9988cd689bffe5946e6b3408ae}{inventory\_item\_ids}}.push\_back(std::stoi(data));}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inventory\_index++;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Equipped\_Item\_IDs"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ equipped\_index\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_acd409f72d8fa7c06b5cb7e583a2f27d2}{equipped\_item\_ids}}.push\_back(std::stoi(data));}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ equipped\_index++;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00148}00148\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00149}00149\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00150}00150\ \ \ \ \ file.close();}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00151}00151\ \ \ \ \ \textcolor{keywordflow}{return}\ record;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00152}00152\ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00153}00153\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00154}\mbox{\hyperlink{namespaceserializecharacter_a5ea45c0435249abd38bfe61ba4bf7a1a}{00154}}\ std::string\ \mbox{\hyperlink{namespaceserializecharacter_a5ea45c0435249abd38bfe61ba4bf7a1a}{serializecharacter::FindCharacterFile}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ std::filesystem::path\ t\_path)}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00155}00155\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00156}00156\ \ \ \ \ std::string\ filename,\ temp;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00157}00157\ \ \ \ \ std::filesystem::path\ currentDir;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00158}00158\ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_path.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ currentDir\ =\ std::filesystem::current\_path();}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00160}00160\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ currentDir\ =\ t\_path;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00163}00163\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ std::filesystem::directory\_iterator(currentDir))\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ temp\ =\ entry.path().filename().string();}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp.find(std::to\_string(\textcolor{keywordtype}{id}))\ !=\ std::string::npos\ \&\&\ temp.find(\textcolor{stringliteral}{"{}Character\_"{}})\ !=\ std::string::npos)\ \{}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ filename\ =\ currentDir.string()+\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}+\ temp;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00169}00169\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordflow}{return}\ filename;}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ const\ item::Item*\ item\_ptr\ =\ t\_character-\/>Equipped\_Items((Character::Equipment\_Slots)i);}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ (item\_ptr\ !=\ nullptr)\ \{}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ auto\ item\_id\ =\ const\_cast<item::Item*>(item\_ptr)-\/>GetItemId();}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ record.equipped\_item\_ids.push\_back(item\_id);}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \}}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{comment}{//Save\ inventory}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00051}00051\ \ \ \ \ std::string\ currentPath\ =\ std::filesystem::current\_path().string();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00053}00053\ \ \ \ \ std::ostringstream\ fullURI;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00054}00054\ \ \ \ \ fullURI\ <<\ currentPath\ <<\ t\_path<<\ \textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)InventoryItemsCharacter\_"{}}\ <<std::to\_string(record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ab9be96ea6980b7f6f5688d8a3bb34b25}{id}})\ <<\ \textcolor{stringliteral}{"{}.csv"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00055}00055\ \ \ \ \ std::vector<Item*>\ inventoryVector;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{/*for\ (auto\ i\ :\ t\_character-\/>Inventory().GetAllItems())\ \{}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00058}00058\ \textcolor{comment}{\ \ \ \ \ \ \ \ item::Item*\ saved\_item\ =\ \&i;}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00059}00059\ \textcolor{comment}{\ \ \ \ \ \ \ \ inventoryVector.push\_back(saved\_item);}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00060}00060\ \textcolor{comment}{\ \ \ \ \}*/}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().GetAllItems().size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ inventoryVector.push\_back(\&t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().at(i));}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00064}00064\ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a17691a2b22c6b9e66b5b692d8723379f}{inventory\_container\_path}}\ =\ fullURI.str();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordflow}{if}(t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a7e7a292d06429c18a769509c95c14c11}{GetCapacity}}()\ >\ 0)}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceserialize_item_a62e11cf99b2764370af7e341461babae}{serializeItem::SaveItems}}(fullURI.str(),\ inventoryVector);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00068}00068\ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_aab0a801fb509369a4eb7c2d38f1b7c0f}{inventory\_container\_id}}\ =\ t\_character-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{comment}{//opening\ file}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00071}00071\ \ \ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00072}00072\ \ \ \ \ std::string\ filename\ =\ t\_path\ +\ \textcolor{stringliteral}{"{}Character\_"{}}\ +\ std::to\_string(record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ab9be96ea6980b7f6f5688d8a3bb34b25}{id}})\ +\ \textcolor{stringliteral}{"{}.csv"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00073}00073\ \ \ \ \ std::ofstream\ outfile(filename);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (!outfile.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error!\ Could\ not\ open\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00079}00079\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}ID,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ab9be96ea6980b7f6f5688d8a3bb34b25}{id}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00080}00080\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Name,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ad71a6292fa365b9682e5fd606b6ee3d7}{name}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00081}00081\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Ability\_scores(Str\_Dex\_Con\_Int\_Wis\_Cha),"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ac70065580b8e9912bd4ef68e2683bcf3}{ability\_scores}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ outfile\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ac70065580b8e9912bd4ef68e2683bcf3}{ability\_scores}}[i]\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00085}00085\ \ \ \ \ outfile\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00086}00086\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Levels(Barb\_Bard\_Cler\_Drui\_Figh\_Monk\_Pala\_Rang\_Rogu\_Sorc\_Warl\_Wizr),"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a7a76232e626e349cdb7a44a4d4436386}{level}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ outfile\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a7a76232e626e349cdb7a44a4d4436386}{level}}[i]\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00089}00089\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00090}00090\ \ \ \ \ outfile\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00091}00091\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Max\_HP,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_aeffcd92a2be7e8f453c5f21d9791d255}{max\_hit\_points}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00092}00092\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Current\_HP,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a2863db6732bd10509084ce0ad9d52e69}{hit\_points}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00093}00093\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Inventroy\_Item\_IDs,"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a847a9f9988cd689bffe5946e6b3408ae}{inventory\_item\_ids}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ outfile\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a847a9f9988cd689bffe5946e6b3408ae}{inventory\_item\_ids}}[i]\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00096}00096\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00097}00097\ \ \ \ \ outfile\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00098}00098\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Equipped\_Item\_IDs,"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_acd409f72d8fa7c06b5cb7e583a2f27d2}{equipped\_item\_ids}}.size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ outfile\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_acd409f72d8fa7c06b5cb7e583a2f27d2}{equipped\_item\_ids}}[i]\ <<\ \textcolor{stringliteral}{"{},"{}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00102}00102\ \ \ \ \ outfile\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00103}00103\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Inventory\_Container\_Path,"{}}\ <<record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a17691a2b22c6b9e66b5b692d8723379f}{inventory\_container\_path}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00104}00104\ \ \ \ \ outfile\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00105}00105\ \ \ \ \ outfile\ <<\ \textcolor{stringliteral}{"{}Inventory\_Container\_ID,"{}}\ <<\ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_aab0a801fb509369a4eb7c2d38f1b7c0f}{inventory\_container\_id}};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00106}00106\ \ \ \ \ outfile\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//Closing\ file}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00109}00109\ \ \ \ \ outfile.close();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00112}00112\ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00114}\mbox{\hyperlink{namespaceserializecharacter_a6b3126a56f8d097443c95a268e6ce223}{00114}}\ \mbox{\hyperlink{structserializecharacter_1_1_character_record}{serializecharacter::CharacterRecord}}\ \mbox{\hyperlink{namespaceserializecharacter_a6b3126a56f8d097443c95a268e6ce223}{serializecharacter::LoadCharacter}}(\textcolor{keyword}{const}\ std::string\&\ filename)}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00115}00115\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00116}00116\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00117}00117\ \ \ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error!\ Could\ not\ open\ file\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\};}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00123}00123\ \ \ \ \ \mbox{\hyperlink{structserializecharacter_1_1_character_record}{serializecharacter::CharacterRecord}}\ record;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00124}00124\ \ \ \ \ std::string\ line;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00125}00125\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00126}00126\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(file,\ line))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ std::stringstream\ spliter(line);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ std::string\ field\_key;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ std::string\ data;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Extract\ the\ field\ name}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ std::getline(spliter,\ field\_key,\ \textcolor{charliteral}{','});}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}ID"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ab9be96ea6980b7f6f5688d8a3bb34b25}{id}}\ =\ std::stoi(data);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Name"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ad71a6292fa365b9682e5fd606b6ee3d7}{name}}\ =\ data;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Ability\_scores(Str\_Dex\_Con\_Int\_Wis\_Cha)"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ ability\_index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_ac70065580b8e9912bd4ef68e2683bcf3}{ability\_scores}}[ability\_index]\ =\ std::stoi(data);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ability\_index++;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Levels(Barb\_Bard\_Cler\_Drui\_Figh\_Monk\_Pala\_Rang\_Rogu\_Sorc\_Warl\_Wizr)"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ class\_index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a7a76232e626e349cdb7a44a4d4436386}{level}}[class\_index]\ =\ std::stoi(data);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ class\_index++;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Max\_HP"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_aeffcd92a2be7e8f453c5f21d9791d255}{max\_hit\_points}}\ =\ std::stoi(data);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Current\_HP"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a2863db6732bd10509084ce0ad9d52e69}{hit\_points}}\ =\ std::stoi(data);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Inventroy\_Item\_IDs"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ inventory\_index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a847a9f9988cd689bffe5946e6b3408ae}{inventory\_item\_ids}}.push\_back(std::stoi(data));}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ inventory\_index++;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Equipped\_Item\_IDs"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ equipped\_index\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_acd409f72d8fa7c06b5cb7e583a2f27d2}{equipped\_item\_ids}}.push\_back(std::stoi(data));}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ equipped\_index++;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Inventory\_Container\_Path"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_a17691a2b22c6b9e66b5b692d8723379f}{inventory\_container\_path}}\ =\ data;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (field\_key\ ==\ \textcolor{stringliteral}{"{}Inventory\_Container\_ID"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(spliter,\ data,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.\mbox{\hyperlink{structserializecharacter_1_1_character_record_aab0a801fb509369a4eb7c2d38f1b7c0f}{inventory\_container\_id}}\ =\ std::stoi(data);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00192}00192\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00194}00194\ \ \ \ \ file.close();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{return}\ record;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00196}00196\ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00198}\mbox{\hyperlink{namespaceserializecharacter_afe9a9107cd9df5aa14eef5605768e51b}{00198}}\ std::string\ \mbox{\hyperlink{namespaceserializecharacter_afe9a9107cd9df5aa14eef5605768e51b}{serializecharacter::FindCharacterFile}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ std::filesystem::path\ t\_path)}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00199}00199\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00200}00200\ \ \ \ \ std::string\ filename,\ temp;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00201}00201\ \ \ \ \ std::filesystem::path\ currentDir;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00202}00202\ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_path.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ currentDir\ =\ std::filesystem::current\_path();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00204}00204\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00205}00205\ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ currentDir\ =\ t\_path;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ entry\ :\ std::filesystem::directory\_iterator(currentDir))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ temp\ =\ entry.path().filename().string();}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (temp.find(std::to\_string(\textcolor{keywordtype}{id}))\ !=\ std::string::npos\ \&\&\ temp.find(\textcolor{stringliteral}{"{}Character\_"{}})\ !=\ std::string::npos\ \&\&\ !(temp.find(\textcolor{stringliteral}{"{}InventoryItemsCharacter\_"{}})\ !=\ std::string::npos))\ \{}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ filename\ =\ currentDir.string()+\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)"{}}+\ temp;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00213}00213\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{return}\ filename;}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8cpp_source_l00215}00215\ \}}
 
 \end{DoxyCode}
