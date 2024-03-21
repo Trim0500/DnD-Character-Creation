@@ -84,7 +84,7 @@
     <ClCompile Include="ProjectSourceCode\aggressorstrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\friendlystrategy.cpp">.
+    <ClCompile Include="ProjectSourceCode\friendlystrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\EmptyCell.cpp">
