@@ -126,10 +126,8 @@ namespace Character {
 	/*! \class Character
 	* \brief Represents Character type entities
 	*/
-	class Character : public Observable, public AbstractComponent {
+	class Character : public Observable, public AbstractComponent, public Interactable::Interactable {
 	public:
-		bool passable() const { return true; };
-
 		/*! \fn Character()
 		*  \brief Default character constructor that generates a character with random values for level, ability scores and maximum
 		* hit points (By default will only give levels in the 'Fighter' class)
@@ -157,11 +155,7 @@ namespace Character {
 		*  \param t_class Character class the character will be given a level for
 		*  \param t_ability_scores Set of desired ability scores {Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma}
 		*/
-<<<<<<< HEAD
-		Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores);
-=======
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp);
->>>>>>> 695af0146ef573093d87788a1391e0884ed6b7d5
 		Character(const serializecharacter::CharacterRecord& t_record);
 		/* \fn ID()
 		*  \brief Unique Character ID
@@ -330,6 +324,8 @@ namespace Character {
 		* \return Empty vector of pointers to AbstractComponent instances that represent the list for decorators to update
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override { std::vector<AbstractComponent*> initDecorators; return initDecorators; };
+
+		bool passable() const { return true; };// can the MC pass through this cell
 
 	private:
 

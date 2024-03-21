@@ -11,8 +11,6 @@
 #include "item.h"
 #include <vector>
 
-// using namespace std;
-
 /*!
 * \namespace Map
 * \brief namespace to encapsulate Map navigation
@@ -34,7 +32,7 @@ namespace Map {
 	* \fn ConvertToCellType
 	* \brief Free function to take a letter and attempt to map it to a cell type
 	*/
-	Interactable::Interactable ConvertToCellType(char letter);
+	//Interactable::Interactable ConvertToCellType(char letter);
 
 	/*!
 	* \var dirs
@@ -68,10 +66,10 @@ namespace Map {
 		const int getRows() { return rows; };
 		const int getCols() { return cols; };
 		const int* getEnd_Cell() { return endCell; };
-		const vector<vector<Interactable::Interactable*>> getGrid() { return grid; };//TODO
+		const std::vector<std::vector<Interactable::Interactable*>> getGrid() { return grid; };
 
 		/*!
-		* \brief Setters
+		* \brief Setters 
 		*/
 		void setRows(int rows);
 		void setCols(int cols);
@@ -151,7 +149,7 @@ namespace Map {
 		* \var grid
 		* \brief grid mapping out the cell types
 		*/
-		std::vector<std::vector<Cell_Type>> grid;
+		std::vector<std::vector<Interactable::Interactable*>> grid;
 	};
 
 }

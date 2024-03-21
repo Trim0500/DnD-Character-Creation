@@ -11,25 +11,19 @@
 #include <stack>
 #include <vector>
 
-// using namespace std;
-
 //default constructor
 Map::Map::Map() {
 	nextMapID += 1;
-	this->mapID = nextMapID;
+this->mapID = nextMapID;
 }
 
-	for (int i = 0; i < rows; i++) {
-		grid.push_back(std::vector<Cell_Type>(cols, Cell_Type::empty));
-	}
-}
 void Map::Map::setEndCell() {
 	this->endCell[0] = this->rows - 1;
 	this->endCell[1] = this->cols - 1;
 }
 void Map::Map::setGrid() {
 	for (int i = 0; i < this->rows; i++) {
-		this->grid.push_back(vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
+		this->grid.push_back(std::vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
 	}
 }
 void Map::Map::setCell(int row, int col, Interactable::Interactable* cell) {
@@ -262,19 +256,19 @@ void Map::Map::setItem(int row, int col, item::Item* item) {
 
 
 //convert a given letter to it's corresponding cell type
-Map::Cell_Type Map::ConvertToCellType(char letter) {
-
-	switch (letter) {
-	case 'e':
-		return Cell_Type::empty;
-	case 'w':
-		return Cell_Type::wall;
-	case 's':
-		return Cell_Type::special;
-	default:
-		std::cout << "Not a cell type. Defaults to 'empty'.";
-		return Cell_Type::empty;
-	}
+//Map::Cell_Type Map::ConvertToCellType(char letter) {
+//
+//	switch (letter) {
+//	case 'e':
+//		return Cell_Type::empty;
+//	case 'w':
+//		return Cell_Type::wall;
+//	case 's':
+//		return Cell_Type::special;
+//	default:
+//		std::cout << "Not a cell type. Defaults to 'empty'.";
+//		return Cell_Type::empty;
+//	}
 
 ////convert a given letter to it's corresponding cell type
 //Map::Cell_Type Map::ConvertToCellType(char letter) {
@@ -338,7 +332,7 @@ bool Map::Map::IsTherePath() {
 }
 
 //validate the next cell
-bool Map::Map::ValidCell(int nextRow, int nextCol, vector<vector<bool>> visited) {
+bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>> visited) {
 	return (nextRow >= 0 && nextRow < rows &&
 		nextCol >= 0 && nextCol < cols &&
 		typeid(grid[nextRow][nextCol]) != typeid(Wall) &&

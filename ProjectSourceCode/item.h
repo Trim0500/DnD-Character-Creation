@@ -106,7 +106,7 @@ namespace item
 	 *
 	 * Class that abstracts the Items available to a character that are put into a container or worn.
 	 */
-	class Item : public ComponentDecorator
+	class Item : public ComponentDecorator, public Interactable::Interactable
 	{
 	public:
 		/*!
@@ -202,6 +202,8 @@ namespace item
 		float GetItemWeight() { return weight; };
 
 		void SetItemWeight(float _weight) { weight = _weight; };
+
+		bool passable() const { return true; };// can the MC pass through this cell
 
 	private:
 		static inline int nextItemId = 0;
