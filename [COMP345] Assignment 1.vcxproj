@@ -125,7 +125,8 @@
 	<ClCompile Include="ProjectSourceCode\MapDirector.cpp" />
 	<ClCompile Include="ProjectSourceCode\Wall.cpp" />
 	<ClCompile Include="ProjectSourceCode\EmptyCell.cpp" />
-	  <!-- <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" /> -->
+	<ClCompile Include="ProjectSourceCode\Interactable.cpp" />
+	<!-- <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" /> -->
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\BaseEditor.h" />
@@ -165,7 +166,8 @@
     <ClCompile Include="ProjectSourceCode\MapDirector.h" />
     <ClCompile Include="ProjectSourceCode\Wall.h" />
     <ClCompile Include="ProjectSourceCode\EmptyCell.h" />
-	  <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
+	<ClCompile Include="ProjectSourceCode\Interactable.h" />
+	<!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
