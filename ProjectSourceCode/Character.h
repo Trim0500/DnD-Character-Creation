@@ -410,10 +410,22 @@ namespace Character {
 		bool Levelup_Warlock(bool t_average_hp);
 		bool Levelup_Wizard(bool t_average_hp);
 
+		/*!
+		* \var wornItems
+		* \brief A pointer to an AbstractComponent instance that represents the character's equipped items
+		*/
 		AbstractComponent* wornItems;
 
+		/*!
+		* \var isPlayerControlled
+		* \brief Player character or NPC?
+		*/
 		bool isPlayerControlled;
 
+		/*!
+		* \var actionStrategy
+		* \brief Pointer to a CharacterActionStrategy instance that represents the character's actions on a map
+		*/
 		CharacterActionStrategy* actionStrategy;
 	};
 }
