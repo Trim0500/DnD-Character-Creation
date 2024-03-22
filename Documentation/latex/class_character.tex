@@ -82,6 +82,28 @@ constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a598f797fbd81
 constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a2b73cffb972ec39f482568a2390edd48}{is\+Warlock}} \{ 0b0100\textquotesingle{}0000\textquotesingle{}0000 \}
 \item 
 constexpr std\+::bitset$<$ 12 $>$ \mbox{\hyperlink{class_character_a83261e8d9ba2c3475bce2a448b5ca4da}{is\+Wizard}} \{ 0b1000\textquotesingle{}0000\textquotesingle{}0000 \}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a5aeef75ac39acdeb74a3260e45f8ad0b}{HUMAN\+\_\+\+PLAYER\+\_\+\+STRATEGY\+\_\+\+NAME}} = "{}human"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a4de83de6a3cc193ce5cb2b68572e39bb}{AGGRESSOR\+\_\+\+STRATEGY\+\_\+\+NAME}} = "{}aggressor"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a1d6f03f6f32c972f664744c890f7f26b}{FRIENDLY\+\_\+\+STRATEGY\+\_\+\+NAME}} = "{}friendly"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a9e83619022ab8db901c0f25eb634d222}{EMPTY\+\_\+\+CELL\+\_\+\+COLOR}} = "{}blue"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a6d97c6606446525dd352ef5208c7c79c}{ATTACK\+\_\+\+CELL\+\_\+\+COLOR}} = "{}red"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a7fdaece65e771d79a92da24d90f9d31e}{PICKUP\+\_\+\+CELL\+\_\+\+COLOR}} = "{}green"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a71bbdb4a7fdf8c84a41a5cb9858dac2e}{WALL\+\_\+\+CELL\+\_\+\+COLOR}} = "{}none"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a4bf6d1a0125d983c8d12c91631d39296}{WALL\+\_\+\+CELL\+\_\+\+ACTION}} = "{}n/a"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a8b423d7d069b9f92e5f3c37ffaf2290f}{EMPTY\+\_\+\+CELL\+\_\+\+ACTION}} = "{}move"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a858550c79f05844f29741a07841815ba}{ATTACK\+\_\+\+CELL\+\_\+\+ACTION}} = "{}attack"{}
+\item 
+const std\+::string \mbox{\hyperlink{class_character_a58f8aa321713af9cd5353a8558add87d}{PICKUP\+\_\+\+CELL\+\_\+\+ACTION}} = "{}pickup"{}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -148,7 +170,7 @@ NA&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00081}{81}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00092}{92}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_afed4352e48176e367ea1a8299f6aee42}\label{class_character_afed4352e48176e367ea1a8299f6aee42} 
 \index{Character@{Character}!Character\_Class@{Character\_Class}}
@@ -212,7 +234,7 @@ Wizard&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00050}{50}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00061}{61}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a9f688397f56ff67e4bdb949a6939c0ad}\label{class_character_a9f688397f56ff67e4bdb949a6939c0ad} 
 \index{Character@{Character}!Equipment\_Slots@{Equipment\_Slots}}
@@ -260,11 +282,81 @@ Bag&\\
 \end{DoxyEnumFields}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00114}{114}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00125}{125}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_character_a4de83de6a3cc193ce5cb2b68572e39bb}\label{class_character_a4de83de6a3cc193ce5cb2b68572e39bb} 
+\index{Character@{Character}!AGGRESSOR\_STRATEGY\_NAME@{AGGRESSOR\_STRATEGY\_NAME}}
+\index{AGGRESSOR\_STRATEGY\_NAME@{AGGRESSOR\_STRATEGY\_NAME}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{AGGRESSOR\_STRATEGY\_NAME}{AGGRESSOR\_STRATEGY\_NAME}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+AGGRESSOR\+\_\+\+STRATEGY\+\_\+\+NAME = "{}aggressor"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00137}{137}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a858550c79f05844f29741a07841815ba}\label{class_character_a858550c79f05844f29741a07841815ba} 
+\index{Character@{Character}!ATTACK\_CELL\_ACTION@{ATTACK\_CELL\_ACTION}}
+\index{ATTACK\_CELL\_ACTION@{ATTACK\_CELL\_ACTION}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{ATTACK\_CELL\_ACTION}{ATTACK\_CELL\_ACTION}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+ATTACK\+\_\+\+CELL\+\_\+\+ACTION = "{}attack"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00145}{145}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a6d97c6606446525dd352ef5208c7c79c}\label{class_character_a6d97c6606446525dd352ef5208c7c79c} 
+\index{Character@{Character}!ATTACK\_CELL\_COLOR@{ATTACK\_CELL\_COLOR}}
+\index{ATTACK\_CELL\_COLOR@{ATTACK\_CELL\_COLOR}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{ATTACK\_CELL\_COLOR}{ATTACK\_CELL\_COLOR}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+ATTACK\+\_\+\+CELL\+\_\+\+COLOR = "{}red"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00140}{140}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a8b423d7d069b9f92e5f3c37ffaf2290f}\label{class_character_a8b423d7d069b9f92e5f3c37ffaf2290f} 
+\index{Character@{Character}!EMPTY\_CELL\_ACTION@{EMPTY\_CELL\_ACTION}}
+\index{EMPTY\_CELL\_ACTION@{EMPTY\_CELL\_ACTION}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{EMPTY\_CELL\_ACTION}{EMPTY\_CELL\_ACTION}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+EMPTY\+\_\+\+CELL\+\_\+\+ACTION = "{}move"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00144}{144}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a9e83619022ab8db901c0f25eb634d222}\label{class_character_a9e83619022ab8db901c0f25eb634d222} 
+\index{Character@{Character}!EMPTY\_CELL\_COLOR@{EMPTY\_CELL\_COLOR}}
+\index{EMPTY\_CELL\_COLOR@{EMPTY\_CELL\_COLOR}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{EMPTY\_CELL\_COLOR}{EMPTY\_CELL\_COLOR}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+EMPTY\+\_\+\+CELL\+\_\+\+COLOR = "{}blue"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00139}{139}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a1d6f03f6f32c972f664744c890f7f26b}\label{class_character_a1d6f03f6f32c972f664744c890f7f26b} 
+\index{Character@{Character}!FRIENDLY\_STRATEGY\_NAME@{FRIENDLY\_STRATEGY\_NAME}}
+\index{FRIENDLY\_STRATEGY\_NAME@{FRIENDLY\_STRATEGY\_NAME}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{FRIENDLY\_STRATEGY\_NAME}{FRIENDLY\_STRATEGY\_NAME}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+FRIENDLY\+\_\+\+STRATEGY\+\_\+\+NAME = "{}friendly"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00138}{138}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a5aeef75ac39acdeb74a3260e45f8ad0b}\label{class_character_a5aeef75ac39acdeb74a3260e45f8ad0b} 
+\index{Character@{Character}!HUMAN\_PLAYER\_STRATEGY\_NAME@{HUMAN\_PLAYER\_STRATEGY\_NAME}}
+\index{HUMAN\_PLAYER\_STRATEGY\_NAME@{HUMAN\_PLAYER\_STRATEGY\_NAME}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{HUMAN\_PLAYER\_STRATEGY\_NAME}{HUMAN\_PLAYER\_STRATEGY\_NAME}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+HUMAN\+\_\+\+PLAYER\+\_\+\+STRATEGY\+\_\+\+NAME = "{}human"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00136}{136}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
 \Hypertarget{class_character_a00b5cdecff11125460d6b315e95cdeb3}\label{class_character_a00b5cdecff11125460d6b315e95cdeb3} 
 \index{Character@{Character}!isBarbarian@{isBarbarian}}
 \index{isBarbarian@{isBarbarian}!Character@{Character}}
@@ -273,7 +365,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00114}{114}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00065}{65}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00076}{76}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_ae470b8104e39dd0062fc2bb73f0b29f6}\label{class_character_ae470b8104e39dd0062fc2bb73f0b29f6} 
 \index{Character@{Character}!isBard@{isBard}}
@@ -283,7 +375,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00065}{65}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00066}{66}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00077}{77}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_ae1452f04c4a6d2b9d92820077901a74f}\label{class_character_ae1452f04c4a6d2b9d92820077901a74f} 
 \index{Character@{Character}!isCleric@{isCleric}}
@@ -293,7 +385,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00066}{66}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00067}{67}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00078}{78}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_aa71f9e67ef0b41fea2e39476d659ea97}\label{class_character_aa71f9e67ef0b41fea2e39476d659ea97} 
 \index{Character@{Character}!isDruid@{isDruid}}
@@ -303,7 +395,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00067}{67}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00068}{68}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00079}{79}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_ae8342c69dddc0b72ae97940abc0b89f1}\label{class_character_ae8342c69dddc0b72ae97940abc0b89f1} 
 \index{Character@{Character}!isFighter@{isFighter}}
@@ -313,7 +405,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00068}{68}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00069}{69}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00080}{80}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_ad47be3c083a7f54c72fe9a756bf5bd4c}\label{class_character_ad47be3c083a7f54c72fe9a756bf5bd4c} 
 \index{Character@{Character}!isMonk@{isMonk}}
@@ -323,7 +415,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00069}{69}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00070}{70}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00081}{81}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a60aa5b15e5d991bb24c68f7849c38949}\label{class_character_a60aa5b15e5d991bb24c68f7849c38949} 
 \index{Character@{Character}!isPaladin@{isPaladin}}
@@ -333,7 +425,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00070}{70}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00071}{71}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00082}{82}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a337f4cc2a738d4433e1692d0532465f6}\label{class_character_a337f4cc2a738d4433e1692d0532465f6} 
 \index{Character@{Character}!isRanger@{isRanger}}
@@ -343,7 +435,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00071}{71}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00072}{72}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00083}{83}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_af46d588138d500d3cec393eceda50be1}\label{class_character_af46d588138d500d3cec393eceda50be1} 
 \index{Character@{Character}!isRogue@{isRogue}}
@@ -353,7 +445,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00072}{72}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00073}{73}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00084}{84}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a598f797fbd8149540e35ae308f41b960}\label{class_character_a598f797fbd8149540e35ae308f41b960} 
 \index{Character@{Character}!isSorcerer@{isSorcerer}}
@@ -363,7 +455,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00073}{73}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00074}{74}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00085}{85}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a2b73cffb972ec39f482568a2390edd48}\label{class_character_a2b73cffb972ec39f482568a2390edd48} 
 \index{Character@{Character}!isWarlock@{isWarlock}}
@@ -373,7 +465,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00074}{74}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00075}{75}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00086}{86}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a83261e8d9ba2c3475bce2a448b5ca4da}\label{class_character_a83261e8d9ba2c3475bce2a448b5ca4da} 
 \index{Character@{Character}!isWizard@{isWizard}}
@@ -383,7 +475,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00075}{75}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00076}{76}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00087}{87}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_a290a8d7d18b31d69a68f4ffbcf90b16e}\label{class_character_a290a8d7d18b31d69a68f4ffbcf90b16e} 
 \index{Character@{Character}!item\_stat\_TO\_character\_stat@{item\_stat\_TO\_character\_stat}}
@@ -413,7 +505,47 @@ Unordered map used to map values from \doxylink{namespaceitem_aca40f9fb092a0a654
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00098}{98}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00109}{109}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a58f8aa321713af9cd5353a8558add87d}\label{class_character_a58f8aa321713af9cd5353a8558add87d} 
+\index{Character@{Character}!PICKUP\_CELL\_ACTION@{PICKUP\_CELL\_ACTION}}
+\index{PICKUP\_CELL\_ACTION@{PICKUP\_CELL\_ACTION}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{PICKUP\_CELL\_ACTION}{PICKUP\_CELL\_ACTION}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+PICKUP\+\_\+\+CELL\+\_\+\+ACTION = "{}pickup"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00146}{146}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a7fdaece65e771d79a92da24d90f9d31e}\label{class_character_a7fdaece65e771d79a92da24d90f9d31e} 
+\index{Character@{Character}!PICKUP\_CELL\_COLOR@{PICKUP\_CELL\_COLOR}}
+\index{PICKUP\_CELL\_COLOR@{PICKUP\_CELL\_COLOR}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{PICKUP\_CELL\_COLOR}{PICKUP\_CELL\_COLOR}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+PICKUP\+\_\+\+CELL\+\_\+\+COLOR = "{}green"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00141}{141}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a4bf6d1a0125d983c8d12c91631d39296}\label{class_character_a4bf6d1a0125d983c8d12c91631d39296} 
+\index{Character@{Character}!WALL\_CELL\_ACTION@{WALL\_CELL\_ACTION}}
+\index{WALL\_CELL\_ACTION@{WALL\_CELL\_ACTION}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{WALL\_CELL\_ACTION}{WALL\_CELL\_ACTION}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+WALL\+\_\+\+CELL\+\_\+\+ACTION = "{}n/a"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00143}{143}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_a71bbdb4a7fdf8c84a41a5cb9858dac2e}\label{class_character_a71bbdb4a7fdf8c84a41a5cb9858dac2e} 
+\index{Character@{Character}!WALL\_CELL\_COLOR@{WALL\_CELL\_COLOR}}
+\index{WALL\_CELL\_COLOR@{WALL\_CELL\_COLOR}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{WALL\_CELL\_COLOR}{WALL\_CELL\_COLOR}}
+{\footnotesize\ttfamily const std\+::string Character\+::\+WALL\+\_\+\+CELL\+\_\+\+COLOR = "{}none"{}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00142}{142}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 
 

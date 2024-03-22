@@ -1,6 +1,7 @@
 #include "MapBuilder.h"
 #include "MapDirector.h"
 
+
 using MD = MapDirector::MapDirector;
 using MB = MapBuilder::MapBuilder;
 
@@ -15,4 +16,5 @@ Map::Map* MD::getMap() {
 void MD::constructMap() {
 	m_mapBuilder->createnewMap();
 	//more to come?
+
 }

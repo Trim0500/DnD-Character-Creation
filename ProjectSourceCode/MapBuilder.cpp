@@ -2,7 +2,9 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-using namespace std;
+
+// using namespace std; // we cam't use this with the GUI
+
 
 using namespace MapBuilder;
 

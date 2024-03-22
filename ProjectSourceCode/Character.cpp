@@ -30,7 +30,8 @@ Character::Character::Character(){
 	}
 	hit_points = max_hit_points;
 	wornItems = this;
-
+	isPlayerControlled = true;
+	actionStrategy = new HumanPlayerStrategy();
 }
 
 Character::Character::Character(const Character& t_character) : id(t_character.id)
@@ -48,9 +49,11 @@ Character::Character::Character(const Character& t_character) : id(t_character.i
 	max_hit_points = t_character.max_hit_points;
 	hit_points = t_character.hit_points;
 	wornItems = t_character.wornItems;
+	isPlayerControlled = t_character.isPlayerControlled;
+	actionStrategy = t_character.actionStrategy;
 }
 
-Character::Character::Character(std::string t_name, Character_Class t_class)
+Character::Character::Character(std::string t_name, Character_Class t_class, bool _isPlayerControlled, CharacterActionStrategy* _actionStrategy)
 {
 	std::random_device rd;
 
@@ -67,9 +70,11 @@ Character::Character::Character(std::string t_name, Character_Class t_class)
 	Levelup(t_class, true);
 	hit_points = max_hit_points;
 	wornItems = this;
+	isPlayerControlled = _isPlayerControlled;
+	actionStrategy = _actionStrategy;
 }
 
-Character::Character::Character(Character_Class t_class)
+Character::Character::Character(Character_Class t_class, bool _isPlayerControlled, CharacterActionStrategy* _actionStrategy)
 {
 	std::random_device rd;
 	//Generate ability scores
@@ -85,9 +90,11 @@ Character::Character::Character(Character_Class t_class)
 
 	hit_points = max_hit_points;
 	wornItems = this;
+	isPlayerControlled = _isPlayerControlled;
+	actionStrategy = _actionStrategy;
 }
 
-Character::Character::Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores, bool t_average_hp)
+Character::Character::Character(std::string t_name, Character_Class t_class, const std::vector<int>& t_ability_scores, bool t_average_hp, bool _isPlayerControlled, CharacterActionStrategy* _actionStrategy)
 {
 	std::random_device rd;
 
@@ -102,6 +109,8 @@ Character::Character::Character(std::string t_name, Character_Class t_class, con
 
 	hit_points = max_hit_points;
 	wornItems = this;
+	isPlayerControlled = _isPlayerControlled;
+	actionStrategy = _actionStrategy;
 }
 
 Character::Character::Character(const serializecharacter::CharacterRecord& t_record) : id(t_record.id)
@@ -125,12 +134,19 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 		bool found = false;
 		for (int j{ 0 }; j < this->Inventory().GetAllItems().size(); j++) {
 			if (this->Inventory().GetAllItems().at(j).GetItemId() == t_record.equipped_item_ids.at(i)) {
-				this->Equip_Item(&this->Inventory().GetAllItems().at(j));
+				this->Equip_Item_Decorator(&this->Inventory().GetAllItems().at(j));
 				found = true;
 			}
 		}
 	}
 
+	isPlayerControlled = t_record.isPlayerControlled;
+	
+	actionStrategy = isPlayerControlled ?
+						static_cast<CharacterActionStrategy*>(new HumanPlayerStrategy()) :
+						t_record.actionStrategy == FRIENDLY_STRATEGY_NAME ?
+							static_cast<CharacterActionStrategy*>(new FriendlyStrategy()) :
+							static_cast<CharacterActionStrategy*>(new AggressorStrategy());
 }
 
 

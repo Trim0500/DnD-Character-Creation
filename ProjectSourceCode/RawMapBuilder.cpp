@@ -104,4 +104,3 @@ Map::Map RawMapBuilder::RawMapBuilder::LoadMap(std::string& filename) {
 
 	return mapload;
 }
-

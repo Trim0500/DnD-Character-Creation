@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hit_5fpoints_0',['hit_points',['../structserializecharacter_1_1_character_record.html#a2863db6732bd10509084ce0ad9d52e69',1,'serializecharacter::CharacterRecord']]]
+  ['friendly_5fstrategy_5fname_0',['FRIENDLY_STRATEGY_NAME',['../class_character.html#a1d6f03f6f32c972f664744c890f7f26b',1,'Character']]]
 ];

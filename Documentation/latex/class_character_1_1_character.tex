@@ -7,7 +7,7 @@
 Inheritance diagram for Character\+::Character\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_character_1_1_character}
+\includegraphics[height=1.542700cm]{class_character_1_1_character}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Public Member Functions}
@@ -17,13 +17,15 @@ Inheritance diagram for Character\+::Character\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Default character constructor that generates a character with random values for level, ability scores and maximum hit points (By default will only give levels in the \textquotesingle{}Fighter\textquotesingle{} class) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_character_1_1_character_ae44cbb0cffa98b04a4e5953dc03b0395}{Character}} (const \mbox{\hyperlink{class_character_1_1_character}{Character}} \&t\+\_\+character)
 \item 
-\mbox{\hyperlink{class_character_1_1_character_a0031e30d656396a8be160d6b1a02648b}{Character}} (std\+::string t\+\_\+name, Character\+\_\+\+Class t\+\_\+class)
+\mbox{\hyperlink{class_character_1_1_character_a4a7919b337a568dfe554b83b3ac05e43}{Character}} (std\+::string t\+\_\+name, Character\+\_\+\+Class t\+\_\+class, bool \+\_\+is\+Player\+Controlled=true, \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*}\+\_\+action\+Strategy=new \mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy}{Human\+Player\+Strategy}}())
 \item 
-\mbox{\hyperlink{class_character_1_1_character_a8e15e5c459eaeac6e562032c2bc0dec1}{Character}} (Character\+\_\+\+Class t\+\_\+class)
+\mbox{\hyperlink{class_character_1_1_character_a1c0ba8a00f8b91ee226c6f2c9ae310c0}{Character}} (Character\+\_\+\+Class t\+\_\+class, bool \+\_\+is\+Player\+Controlled=true, \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*}\+\_\+action\+Strategy=new \mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy}{Human\+Player\+Strategy}}())
 \item 
-\mbox{\hyperlink{class_character_1_1_character_a08c04451b375a231604133ee759f3348}{Character}} (std\+::string t\+\_\+name, Character\+\_\+\+Class t\+\_\+class, const std\+::vector$<$ int $>$ \&t\+\_\+ability\+\_\+scores, bool t\+\_\+average\+\_\+hp)
+\mbox{\hyperlink{class_character_1_1_character_a50b21c797bdba73a7356263ddb73a7bf}{Character}} (std\+::string t\+\_\+name, Character\+\_\+\+Class t\+\_\+class, const std\+::vector$<$ int $>$ \&t\+\_\+ability\+\_\+scores, bool t\+\_\+average\+\_\+hp, bool \+\_\+is\+Player\+Controlled=true, \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*}\+\_\+action\+Strategy=new \mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy}{Human\+Player\+Strategy}}())
 \item 
 \mbox{\hyperlink{class_character_1_1_character_a5eee59bf62b78c1fe3c6748fb26bbb9a}{Character}} (const \mbox{\hyperlink{structserializecharacter_1_1_character_record}{serializecharacter\+::\+Character\+Record}} \&t\+\_\+record)
+\item 
+bool \mbox{\hyperlink{class_character_1_1_character_a158b452f59de5d19d5b5d52c8852f273}{passable}} () const override
 \item 
 const int \mbox{\hyperlink{class_character_1_1_character_ac6787ac4d6fa28285fa3f7df1e502f26}{ID}} ()
 \item 
@@ -86,7 +88,15 @@ bool \mbox{\hyperlink{class_character_1_1_character_ad45a90c6b0ab4f00861caaa605e
 const int \mbox{\hyperlink{class_character_1_1_character_a985a59dec3d29a912625ed385c4829c0}{Attacks\+\_\+\+Per\+\_\+\+Turn}} ()
 \begin{DoxyCompactList}\small\item\em Return the number of attacks per turn based off level. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classabstractcomponent_1_1_abstract_component}{Abstract\+Component}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_character_1_1_character_ab5f6bde2164b04fc383361629a1bf65b}{Get\+Decorator\+List}} () override
-\begin{DoxyCompactList}\small\item\em Overriden function that is meant to simply create the vector of worn itens for decorators to push their pointers to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overriden function that is meant to simply create the vector of worn itens for decorators to push their pointers to. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_character_1_1_character_a814b1a2f0d847111554f2977390f5fb2}{Get\+Is\+Player\+Controlled}} ()
+\item 
+void \mbox{\hyperlink{class_character_1_1_character_a240cda23171eca268eb87fa80819d2ce}{Set\+Is\+Player\+Controlled}} (bool \+\_\+is\+Player\+Controlled)
+\item 
+\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_character_1_1_character_aa327083e76843f88529c195eaa1d9390}{Get\+Action\+Strategy}} ()
+\item 
+void \mbox{\hyperlink{class_character_1_1_character_a51c8e5fd87fd285ee04c13d879236cb4}{Set\+Action\+Strategy}} (\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*}\+\_\+action\+Strategy)
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_observable}{Observable}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -103,7 +113,7 @@ void \mbox{\hyperlink{class_observable_a099bf851e05bb8c1a25e83f2a1389e58}{notify
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00129}{129}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00152}{152}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 
 
@@ -149,37 +159,37 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00006}{6}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
-\Hypertarget{class_character_1_1_character_a0031e30d656396a8be160d6b1a02648b}\label{class_character_1_1_character_a0031e30d656396a8be160d6b1a02648b} 
+\Hypertarget{class_character_1_1_character_a4a7919b337a568dfe554b83b3ac05e43}\label{class_character_1_1_character_a4a7919b337a568dfe554b83b3ac05e43} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
-{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{Character\+\_\+\+Class}]{t\+\_\+class }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{Character\+\_\+\+Class}]{t\+\_\+class,  }\item[{bool}]{\+\_\+is\+Player\+Controlled = {\ttfamily true},  }\item[{\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*}}]{\+\_\+action\+Strategy = {\ttfamily new~\mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy}{Human\+Player\+Strategy}}()} }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
-\Hypertarget{class_character_1_1_character_a8e15e5c459eaeac6e562032c2bc0dec1}\label{class_character_1_1_character_a8e15e5c459eaeac6e562032c2bc0dec1} 
+\Hypertarget{class_character_1_1_character_a1c0ba8a00f8b91ee226c6f2c9ae310c0}\label{class_character_1_1_character_a1c0ba8a00f8b91ee226c6f2c9ae310c0} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
-{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{Character\+\_\+\+Class}]{t\+\_\+class }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{Character\+\_\+\+Class}]{t\+\_\+class,  }\item[{bool}]{\+\_\+is\+Player\+Controlled = {\ttfamily true},  }\item[{\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*}}]{\+\_\+action\+Strategy = {\ttfamily new~\mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy}{Human\+Player\+Strategy}}()} }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00072}{72}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
-\Hypertarget{class_character_1_1_character_a08c04451b375a231604133ee759f3348}\label{class_character_1_1_character_a08c04451b375a231604133ee759f3348} 
+\Hypertarget{class_character_1_1_character_a50b21c797bdba73a7356263ddb73a7bf}\label{class_character_1_1_character_a50b21c797bdba73a7356263ddb73a7bf} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
 \index{Character@{Character}!Character::Character@{Character::Character}}
 \doxysubsubsection{\texorpdfstring{Character()}{Character()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
-{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{Character\+\_\+\+Class}]{t\+\_\+class,  }\item[{const std\+::vector$<$ int $>$ \&}]{t\+\_\+ability\+\_\+scores,  }\item[{bool}]{t\+\_\+average\+\_\+hp }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Character\+::\+Character\+::\+Character (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+\_\+name,  }\item[{Character\+\_\+\+Class}]{t\+\_\+class,  }\item[{const std\+::vector$<$ int $>$ \&}]{t\+\_\+ability\+\_\+scores,  }\item[{bool}]{t\+\_\+average\+\_\+hp,  }\item[{bool}]{\+\_\+is\+Player\+Controlled = {\ttfamily true},  }\item[{\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*}}]{\+\_\+action\+Strategy = {\ttfamily new~\mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy}{Human\+Player\+Strategy}}()} }\end{DoxyParamCaption})}
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a5eee59bf62b78c1fe3c6748fb26bbb9a}\label{class_character_1_1_character_a5eee59bf62b78c1fe3c6748fb26bbb9a} 
 \index{Character::Character@{Character::Character}!Character@{Character}}
@@ -189,7 +199,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00090}{90}} of file 
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 
 
@@ -210,7 +220,7 @@ Returns const int to desired ability score. Returned value does not take into ac
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00439}{439}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00455}{455}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a88d10934c27e536b892caf685d7bb7ab}\label{class_character_1_1_character_a88d10934c27e536b892caf685d7bb7ab} 
 \index{Character::Character@{Character::Character}!Ability\_Score\_Natural@{Ability\_Score\_Natural}}
@@ -236,7 +246,7 @@ Reimplemented from \mbox{\hyperlink{classabstractcomponent_1_1_abstract_componen
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00397}{397}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00413}{413}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a7ebee057ce2c701940a2426f595892a0}\label{class_character_1_1_character_a7ebee057ce2c701940a2426f595892a0} 
 \index{Character::Character@{Character::Character}!Armour\_Class@{Armour\_Class}}
@@ -253,7 +263,7 @@ Returns const int AC
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00462}{462}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00478}{478}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a4201304c94d05d6dd3cf2c34e3d0a491}\label{class_character_1_1_character_a4201304c94d05d6dd3cf2c34e3d0a491} 
 \index{Character::Character@{Character::Character}!Attack\_Bonus@{Attack\_Bonus}}
@@ -275,7 +285,7 @@ Returns const int to attack bonus
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00474}{474}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00490}{490}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a985a59dec3d29a912625ed385c4829c0}\label{class_character_1_1_character_a985a59dec3d29a912625ed385c4829c0} 
 \index{Character::Character@{Character::Character}!Attacks\_Per\_Turn@{Attacks\_Per\_Turn}}
@@ -289,7 +299,7 @@ Return the number of attacks per turn based off level.
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00585}{585}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00601}{601}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ad3ef6cdc8f864af7f7fe50ee486d819c}\label{class_character_1_1_character_ad3ef6cdc8f864af7f7fe50ee486d819c} 
 \index{Character::Character@{Character::Character}!Classes@{Classes}}
@@ -306,7 +316,7 @@ Returns const bitset$<$11$>$ of \textquotesingle{}character\+\_\+class\textquote
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00188}{188}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00214}{214}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_aa8cdab53aa782606f9b175b3ee2ee518}\label{class_character_1_1_character_aa8cdab53aa782606f9b175b3ee2ee518} 
 \index{Character::Character@{Character::Character}!Damage\_Bonus@{Damage\_Bonus}}
@@ -323,7 +333,7 @@ Returns const int to damage bonus
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00501}{501}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00517}{517}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011}\label{class_character_1_1_character_a32194dcd8247e58b270bcf67a5275011} 
 \index{Character::Character@{Character::Character}!Equip\_Item@{Equip\_Item}}
@@ -345,7 +355,7 @@ Returns true if equipping was performed succesfully, false otherwise
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00260}{260}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00276}{276}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a5ffb5fc9d2437fdeb01de1c74c7e63a4}\label{class_character_1_1_character_a5ffb5fc9d2437fdeb01de1c74c7e63a4} 
 \index{Character::Character@{Character::Character}!Equip\_Item\_Decorator@{Equip\_Item\_Decorator}}
@@ -371,7 +381,7 @@ Equips an item into the character\textquotesingle{}s corresponding equipment slo
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00300}{300}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00316}{316}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c}\label{class_character_1_1_character_aa5c47e27bdca5b45bbda9c64e323ff4c} 
 \index{Character::Character@{Character::Character}!Equipped\_Items@{Equipped\_Items}}
@@ -381,7 +391,17 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00300}{300}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00305}{305}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00331}{331}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_1_1_character_aa327083e76843f88529c195eaa1d9390}\label{class_character_1_1_character_aa327083e76843f88529c195eaa1d9390} 
+\index{Character::Character@{Character::Character}!GetActionStrategy@{GetActionStrategy}}
+\index{GetActionStrategy@{GetActionStrategy}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{GetActionStrategy()}{GetActionStrategy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*} Character\+::\+Character\+::\+Get\+Action\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00358}{358}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ab5f6bde2164b04fc383361629a1bf65b}\label{class_character_1_1_character_ab5f6bde2164b04fc383361629a1bf65b} 
 \index{Character::Character@{Character::Character}!GetDecoratorList@{GetDecoratorList}}
@@ -402,7 +422,17 @@ Reimplemented from \mbox{\hyperlink{classabstractcomponent_1_1_abstract_componen
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00326}{326}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00352}{352}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_1_1_character_a814b1a2f0d847111554f2977390f5fb2}\label{class_character_1_1_character_a814b1a2f0d847111554f2977390f5fb2} 
+\index{Character::Character@{Character::Character}!GetIsPlayerControlled@{GetIsPlayerControlled}}
+\index{GetIsPlayerControlled@{GetIsPlayerControlled}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{GetIsPlayerControlled()}{GetIsPlayerControlled()}}
+{\footnotesize\ttfamily bool Character\+::\+Character\+::\+Get\+Is\+Player\+Controlled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00354}{354}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c}\label{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c} 
 \index{Character::Character@{Character::Character}!GetWornItems@{GetWornItems}}
@@ -412,7 +442,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00326}{326}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00307}{307}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00333}{333}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ad1857f9f184b1eac2145cabfa14b5283}\label{class_character_1_1_character_ad1857f9f184b1eac2145cabfa14b5283} 
 \index{Character::Character@{Character::Character}!Hit\_Points@{Hit\_Points}}
@@ -425,7 +455,7 @@ Returns const int to the current number of hitpoints for this character
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00242}{242}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00268}{268}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ac6787ac4d6fa28285fa3f7df1e502f26}\label{class_character_1_1_character_ac6787ac4d6fa28285fa3f7df1e502f26} 
 \index{Character::Character@{Character::Character}!ID@{ID}}
@@ -435,7 +465,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00242}{242}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00163}{163}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00189}{189}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}\label{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657} 
 \index{Character::Character@{Character::Character}!Inventory@{Inventory}}
@@ -448,7 +478,7 @@ Returns refrence to Item\+Container type object corresponding to the character\t
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00301}{301}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00327}{327}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a408d26f83e7e9c76ae95e795a2407df0}\label{class_character_1_1_character_a408d26f83e7e9c76ae95e795a2407df0} 
 \index{Character::Character@{Character::Character}!Is\_Alive@{Is\_Alive}}
@@ -458,7 +488,7 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00301}{301}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00374}{374}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00390}{390}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ad45a90c6b0ab4f00861caaa605e5aa50}\label{class_character_1_1_character_ad45a90c6b0ab4f00861caaa605e5aa50} 
 \index{Character::Character@{Character::Character}!Is\_Multi\_Classed@{Is\_Multi\_Classed}}
@@ -472,7 +502,7 @@ Checks if the character is multi-\/classed with a particular character class.
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00571}{571}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00587}{587}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a249907bfc3e812dc8b2cf7796bc21765}\label{class_character_1_1_character_a249907bfc3e812dc8b2cf7796bc21765} 
 \index{Character::Character@{Character::Character}!Levels@{Levels}}
@@ -491,7 +521,7 @@ Returns the number of levels a chracter has taken in a corresponding class.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00182}{182}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00208}{208}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a4780283906a3493e740bf3e2c7340c5e}\label{class_character_1_1_character_a4780283906a3493e740bf3e2c7340c5e} 
 \index{Character::Character@{Character::Character}!Levelup@{Levelup}}
@@ -513,7 +543,7 @@ Returns true if levelup was performed succesfully, false otherwise
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00223}{223}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00239}{239}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ac9b33e76e10d4583d9270e616f81b74c}\label{class_character_1_1_character_ac9b33e76e10d4583d9270e616f81b74c} 
 \index{Character::Character@{Character::Character}!Max\_Hit\_Points@{Max\_Hit\_Points}}
@@ -526,7 +556,7 @@ Returns const int to the maxium number of hitpoints for this character
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00238}{238}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00264}{264}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ab88e0b933e20ec92ee06610e8f6d83fa}\label{class_character_1_1_character_ab88e0b933e20ec92ee06610e8f6d83fa} 
 \index{Character::Character@{Character::Character}!Modifier@{Modifier}}
@@ -544,7 +574,7 @@ Returns const int to desired modifier. Modifier is detremined using ability scor
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00384}{384}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00400}{400}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}\label{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc} 
 \index{Character::Character@{Character::Character}!Name@{Name}}
@@ -554,7 +584,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00384}{384}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00167}{167}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00193}{193}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a8908a77d38fe0249cd2b08d9faca94b1}\label{class_character_1_1_character_a8908a77d38fe0249cd2b08d9faca94b1} 
 \index{Character::Character@{Character::Character}!Name@{Name}}
@@ -564,7 +594,21 @@ Definition at line \mbox{\hyperlink{_character_8h_source_l00167}{167}} of file \
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00137}{137}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+
+\Hypertarget{class_character_1_1_character_a158b452f59de5d19d5b5d52c8852f273}\label{class_character_1_1_character_a158b452f59de5d19d5b5d52c8852f273} 
+\index{Character::Character@{Character::Character}!passable@{passable}}
+\index{passable@{passable}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{passable()}{passable()}}
+{\footnotesize\ttfamily bool Character\+::\+Character\+::passable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_interactable_1_1_interactable_ab35ba80b5c0ef1d749cd64deabd2ec3d}{Interactable\+::\+Interactable}}.
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00184}{184}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98}\label{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98} 
 \index{Character::Character@{Character::Character}!Print\_Character\_Sheet@{Print\_Character\_Sheet}}
@@ -574,7 +618,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00137}{137}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a76e63a8baa9ae9d421a45bf6b6cc6419}\label{class_character_1_1_character_a76e63a8baa9ae9d421a45bf6b6cc6419} 
 \index{Character::Character@{Character::Character}!Proficiency\_Bonus@{Proficiency\_Bonus}}
@@ -591,7 +635,7 @@ Returns const int to proficiency bonus
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00496}{496}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00512}{512}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a6151ceea4232a21c828c66a4b2dea9ca}\label{class_character_1_1_character_a6151ceea4232a21c828c66a4b2dea9ca} 
 \index{Character::Character@{Character::Character}!Receive\_Damage@{Receive\_Damage}}
@@ -614,7 +658,7 @@ Heal character;.
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00352}{352}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00368}{368}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_a012dd4525b3a888fa94264e88d8325d0}\label{class_character_1_1_character_a012dd4525b3a888fa94264e88d8325d0} 
 \index{Character::Character@{Character::Character}!Receive\_Healing@{Receive\_Healing}}
@@ -624,7 +668,27 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00352}{352}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00363}{363}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00379}{379}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+
+\Hypertarget{class_character_1_1_character_a51c8e5fd87fd285ee04c13d879236cb4}\label{class_character_1_1_character_a51c8e5fd87fd285ee04c13d879236cb4} 
+\index{Character::Character@{Character::Character}!SetActionStrategy@{SetActionStrategy}}
+\index{SetActionStrategy@{SetActionStrategy}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{SetActionStrategy()}{SetActionStrategy()}}
+{\footnotesize\ttfamily void Character\+::\+Character\+::\+Set\+Action\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{Character\+Action\+Strategy}} \texorpdfstring{$\ast$}{*}}]{\+\_\+action\+Strategy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00360}{360}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+
+\Hypertarget{class_character_1_1_character_a240cda23171eca268eb87fa80819d2ce}\label{class_character_1_1_character_a240cda23171eca268eb87fa80819d2ce} 
+\index{Character::Character@{Character::Character}!SetIsPlayerControlled@{SetIsPlayerControlled}}
+\index{SetIsPlayerControlled@{SetIsPlayerControlled}!Character::Character@{Character::Character}}
+\doxysubsubsection{\texorpdfstring{SetIsPlayerControlled()}{SetIsPlayerControlled()}}
+{\footnotesize\ttfamily void Character\+::\+Character\+::\+Set\+Is\+Player\+Controlled (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+is\+Player\+Controlled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_character_8h_source_l00356}{356}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a4ed1ae18a1f9ce195200ffe5f2e54688}\label{class_character_1_1_character_a4ed1ae18a1f9ce195200ffe5f2e54688} 
 \index{Character::Character@{Character::Character}!SetWornItems@{SetWornItems}}
@@ -634,7 +698,7 @@ Definition at line \mbox{\hyperlink{_character_8cpp_source_l00363}{363}} of file
 
 
 
-Definition at line \mbox{\hyperlink{_character_8h_source_l00309}{309}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
+Definition at line \mbox{\hyperlink{_character_8h_source_l00335}{335}} of file \mbox{\hyperlink{_character_8h_source}{Character.\+h}}.
 
 \Hypertarget{class_character_1_1_character_a7c3d98f7ada1f1ce18971267f38d2c63}\label{class_character_1_1_character_a7c3d98f7ada1f1ce18971267f38d2c63} 
 \index{Character::Character@{Character::Character}!Sum\_Levels@{Sum\_Levels}}
@@ -651,7 +715,7 @@ Returns const sum of elements in \textquotesingle{}level\textquotesingle{} vecto
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00214}{214}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00230}{230}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_ab3cf5f43ede3d781532514f47ea7914d}\label{class_character_1_1_character_ab3cf5f43ede3d781532514f47ea7914d} 
 \index{Character::Character@{Character::Character}!Unequip\_Item@{Unequip\_Item}}
@@ -673,7 +737,7 @@ Returns \textquotesingle{}true\textquotesingle{} if equipping was performed succ
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00327}{327}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00343}{343}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 \Hypertarget{class_character_1_1_character_af7a9f23a74e326d6d3d86de418dbe16c}\label{class_character_1_1_character_af7a9f23a74e326d6d3d86de418dbe16c} 
 \index{Character::Character@{Character::Character}!Unequip\_Item\_Decorator@{Unequip\_Item\_Decorator}}
@@ -699,7 +763,7 @@ Function that rebuilds the worn items decorator by excluding an item, unequiping
 \end{DoxyExceptions}
 
 
-Definition at line \mbox{\hyperlink{_character_8cpp_source_l00333}{333}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
+Definition at line \mbox{\hyperlink{_character_8cpp_source_l00349}{349}} of file \mbox{\hyperlink{_character_8cpp_source}{Character.\+cpp}}.
 
 
 

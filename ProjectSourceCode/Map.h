@@ -11,6 +11,13 @@
 #include "item.h"
 #include <vector>
 
+#include <string>
+
+#include "Interactable.h"
+#include "Character.h"
+#include "item.h"
+
+
 /*!
 * \namespace Map
 * \brief namespace to encapsulate Map navigation
@@ -18,6 +25,7 @@
 namespace Map {
 
 	// DEPRECATED IN PHASE 2
+
 	///*!
 	//* \enum Cell_Type
 	//* \brief Enum to represent the posible cell types on a map
@@ -28,11 +36,13 @@ namespace Map {
 	//	special = 's'//special cell, character has a special interraction, can move after interraction.
 	//};
 
+
 	/*!
 	* \fn ConvertToCellType
 	* \brief Free function to take a letter and attempt to map it to a cell type
-	*/
+
 	//Interactable::Interactable ConvertToCellType(char letter);
+
 
 	/*!
 	* \var dirs
@@ -46,7 +56,6 @@ namespace Map {
 	*/
 	class Map {
 	public:
-
 		/*!
 		* \fn Map
 		* \brief Constructor to build a basic map provided by user
@@ -73,6 +82,7 @@ namespace Map {
 		*/
 		void setRows(int rows);
 		void setCols(int cols);
+
 		void setGrid();
 		void setEndCell();
 
@@ -118,6 +128,8 @@ namespace Map {
 		* \brief Check if the given x,y coordinates are a valid cell to step on
 		*/
 		bool ValidCell(int row, int col, std::vector<std::vector<bool>> visitde);
+		
+		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
 
 	private:
 		/*!
@@ -150,6 +162,7 @@ namespace Map {
 		* \brief grid mapping out the cell types
 		*/
 		std::vector<std::vector<Interactable::Interactable*>> grid;
+
 	};
 
 }

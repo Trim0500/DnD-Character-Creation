@@ -37,6 +37,7 @@ void Map::Map::setEndCell() {
 void Map::Map::setGrid() {
 	for (int i = 0; i < this->rows; i++) {
 		this->grid.push_back(std::vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
+
 	}
 }
 void Map::Map::setCell(int row, int col, Interactable::Interactable* cell) {
@@ -344,6 +345,13 @@ bool Map::Map::IsTherePath() {
 }
 
 //validate the next cell
+bool Map::Map::ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited) {
+	return (nextRow >= 0 && nextRow < rows &&
+		nextCol >= 0 && nextCol < cols &&
+		typeid(grid[nextRow][nextCol]) != typeid(Wall) &&
+		!visited[nextRow][nextCol]);
+}
+
 bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>> visited) {
 	return (nextRow >= 0 && nextRow < rows &&
 		nextCol >= 0 && nextCol < cols &&
@@ -368,4 +376,5 @@ bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>
 //		cout << endl;
 //	}
 //}
+
 

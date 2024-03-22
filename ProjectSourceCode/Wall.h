@@ -8,4 +8,3 @@ public:
 
 	bool passable() const { return false; }
 };
-

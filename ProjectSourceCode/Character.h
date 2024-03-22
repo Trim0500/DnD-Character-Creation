@@ -20,8 +20,17 @@
 #include "Observable.h"
 #include "serializeItem.h"
 #include "abstractcomponent.h"
+#include "characteractionstrategy.h"
+#include "humanplayerstrategy.h"
+#include "aggressorstrategy.h"
+#include "friendlystrategy.h"
+#include "Interactable.h"
 
 using namespace abstractcomponent;
+using namespace characteractionstrategy;
+using namespace humanplayerstrategy;
+using namespace aggressorstrategy;
+using namespace friendlystrategy;
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -35,6 +44,8 @@ namespace serializecharacter {
 		std::vector<int> equipped_item_ids;
 		std::string inventory_container_path;
 		int inventory_container_id;
+		bool isPlayerControlled;
+		std::string actionStrategy;
 	};
 }
 
@@ -122,6 +133,18 @@ namespace Character {
 		Bag,
 	};
 
+	const std::string HUMAN_PLAYER_STRATEGY_NAME = "human";
+	const std::string AGGRESSOR_STRATEGY_NAME = "aggressor";
+	const std::string FRIENDLY_STRATEGY_NAME = "friendly";
+	const std::string EMPTY_CELL_COLOR = "blue";
+	const std::string ATTACK_CELL_COLOR = "red";
+	const std::string PICKUP_CELL_COLOR = "green";
+	const std::string WALL_CELL_COLOR = "none";
+	const std::string WALL_CELL_ACTION = "n/a";
+	const std::string EMPTY_CELL_ACTION = "move";
+	const std::string ATTACK_CELL_ACTION = "attack";
+	const std::string PICKUP_CELL_ACTION = "pickup";
+
 
 	/*! \class Character
 	* \brief Represents Character type entities
@@ -142,21 +165,24 @@ namespace Character {
 		*  \param t_name: Name for the character
 		*  \param t_class: Character class the character will be given a level for
 		*/
-		Character(std::string t_name, Character_Class t_class);
+		Character(std::string t_name, Character_Class t_class, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		/*! \fn Character()
 		*  \brief Character Constructor. Initializes the character with one level in a given character class. Sets ability scores randomly
 		*  \param t_name: Name for the character
 		*  \param t_class: Character class the character will be given a level for
 		*/
-		Character(Character_Class t_class);
+		Character(Character_Class t_class, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		/*! \fn Character()
 		*  \brief Character Constructor. Initializes the character with one level in a given character class
 		*  \param t_name Name for the character
 		*  \param t_class Character class the character will be given a level for
 		*  \param t_ability_scores Set of desired ability scores {Strength,Dexterity,Constitution,Intelligence,Wisdom,Charisma}
 		*/
-		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp);
+		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
+
+		bool passable() const override { return true; };
+
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
@@ -327,6 +353,14 @@ namespace Character {
 
 		bool passable() const { return true; };// can the MC pass through this cell
 
+		bool GetIsPlayerControlled() { return isPlayerControlled; };
+
+		void SetIsPlayerControlled(bool _isPlayerControlled) { isPlayerControlled = _isPlayerControlled; };
+
+		CharacterActionStrategy* GetActionStrategy() { return actionStrategy; };
+
+		void SetActionStrategy(CharacterActionStrategy* _actionStrategy) { actionStrategy = _actionStrategy; };
+
 	private:
 
 		static inline unsigned int id_gen{ 0 };
@@ -385,8 +419,23 @@ namespace Character {
 		bool Levelup_Warlock(bool t_average_hp);
 		bool Levelup_Wizard(bool t_average_hp);
 
+		/*!
+		* \var wornItems
+		* \brief A pointer to an AbstractComponent instance that represents the character's equipped items
+		*/
 		AbstractComponent* wornItems;
 
+		/*!
+		* \var isPlayerControlled
+		* \brief Player character or NPC?
+		*/
+		bool isPlayerControlled;
+
+		/*!
+		* \var actionStrategy
+		* \brief Pointer to a CharacterActionStrategy instance that represents the character's actions on a map
+		*/
+		CharacterActionStrategy* actionStrategy;
 	};
 }
 /*! \namespace characterBuilder

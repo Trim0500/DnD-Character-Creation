@@ -120,13 +120,18 @@
     <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
-	<ClCompile Include="ProjectSourceCode\MapBuilder.cpp" />
-	<ClCompile Include="ProjectSourceCode\RawMapBuilder.cpp" />
-	<ClCompile Include="ProjectSourceCode\MapDirector.cpp" />
-	<ClCompile Include="ProjectSourceCode\Wall.cpp" />
-	<ClCompile Include="ProjectSourceCode\EmptyCell.cpp" />
-	<ClCompile Include="ProjectSourceCode\Interactable.cpp" />
 	<!-- <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" /> -->
+    <ClCompile Include="ProjectSourceCode\componentdecorator.cpp" />
+    <ClCompile Include="ProjectSourceCode\humanplayerstrategy.cpp" />
+    <ClCompile Include="ProjectSourceCode\aggressorstrategy.cpp" />
+    <ClCompile Include="ProjectSourceCode\friendlystrategy.cpp" />
+    <!-- <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" /> -->
+    <ClCompile Include="ProjectSourceCode\EmptyCell.cpp" />
+    <ClCompile Include="ProjectSourceCode\Interactable.cpp" />
+    <ClCompile Include="ProjectSourceCode\MapBuilder.cpp" />
+    <ClCompile Include="ProjectSourceCode\MapDirector.cpp" />
+    <ClCompile Include="ProjectSourceCode\RawMapBuilder.cpp" />
+    <ClCompile Include="ProjectSourceCode\Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\BaseEditor.h" />
@@ -161,13 +166,20 @@
     <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\campaign.h" />
     <ClInclude Include="ProjectSourceCode\testcampaign.h" />
-    <ClCompile Include="ProjectSourceCode\MapBuilder.h" />
-    <ClCompile Include="ProjectSourceCode\RawMapBuilder.h" />
-    <ClCompile Include="ProjectSourceCode\MapDirector.h" />
-    <ClCompile Include="ProjectSourceCode\Wall.h" />
-    <ClCompile Include="ProjectSourceCode\EmptyCell.h" />
-	<ClCompile Include="ProjectSourceCode\Interactable.h" />
-	<!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
+
+    <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
+    <ClInclude Include="ProjectSourceCode\abstractcomponent.h" />
+    <ClInclude Include="ProjectSourceCode\componentdecorator.h" />
+    <ClInclude Include="ProjectSourceCode\characteractionstrategy.h" />
+    <ClInclude Include="ProjectSourceCode\humanplayerstrategy.h" />
+    <ClInclude Include="ProjectSourceCode\aggressorstrategy.h" />
+    <ClInclude Include="ProjectSourceCode\friendlystrategy.h" />
+    <ClInclude Include="ProjectSourceCode\EmptyCell.h" />
+    <ClInclude Include="ProjectSourceCode\Interactable.h" />
+    <ClInclude Include="ProjectSourceCode\MapBuilder.h" />
+    <ClInclude Include="ProjectSourceCode\MapDirector.h" />
+    <ClInclude Include="ProjectSourceCode\RawMapBuilder.h" />
+    <ClInclude Include="ProjectSourceCode\Wall.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,329 +2,373 @@
 \hypertarget{_map_8cpp_source}{}\label{_map_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Map.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Map.cpp}}
 \mbox{\hyperlink{_map_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_8h}{Map.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stack>}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <list>}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <queue>}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <regex>}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00008}00008\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00009}00009\ \textcolor{comment}{//\ using\ namespace\ std;}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00011}00011\ \textcolor{comment}{//basic\ constructor}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00012}\mbox{\hyperlink{class_map_1_1_map_a2d6bd8ea0c22c0524a9c13e86e3387ec}{00012}}\ \mbox{\hyperlink{class_map_1_1_map_a2d6bd8ea0c22c0524a9c13e86e3387ec}{Map::Map::Map}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00013}00013\ \ \ \ \ nextMapID\ +=\ 1;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00014}00014\ \ \ \ \ mapID\ =\ nextMapID;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00015}00015\ \ \ \ \ rows\ =\ r;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00016}00016\ \ \ \ \ cols\ =\ c;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00017}00017\ \ \ \ \ end\_cell[0]\ =\ r\ -\/\ 1;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00018}00018\ \ \ \ \ end\_cell[1]\ =\ c\ -\/\ 1;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ grid.push\_back(std::vector<Cell\_Type>(cols,\ Cell\_Type::empty));}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00022}00022\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00023}00023\ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00025}\mbox{\hyperlink{class_map_1_1_map_a2affecbecdee0a0c6ed995e205f12f21}{00025}}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \mbox{\hyperlink{class_map_1_1_map_a2affecbecdee0a0c6ed995e205f12f21}{Map::Map::Create}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{int}\ rows,\ cols;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00028}00028\ \ \ \ \ std::string\ rowInput,\ colInput;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{Character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_empty_cell_8h}{EmptyCell.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interactable_8h}{Interactable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{item.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_8h}{Map.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_wall_8h}{Wall.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <list>}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00014}00014\ \textcolor{comment}{//\ using\ namespace\ std;}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00016}00016\ \textcolor{comment}{//default\ constructor}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00017}\mbox{\hyperlink{class_map_1_1_map_a6cde022f6d2c065f195eaae7fc1162ce}{00017}}\ \mbox{\hyperlink{class_map_1_1_map_a6cde022f6d2c065f195eaae7fc1162ce}{Map::Map::Map}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00018}00018\ \ \ \ \ nextMapID\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00019}00019\ \ \ \ \ this-\/>mapID\ =\ nextMapID;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00022}\mbox{\hyperlink{class_map_1_1_map_a2d6bd8ea0c22c0524a9c13e86e3387ec}{00022}}\ \mbox{\hyperlink{class_map_1_1_map_a6cde022f6d2c065f195eaae7fc1162ce}{Map::Map::Map}}(\textcolor{keywordtype}{int}\ r,\ \textcolor{keywordtype}{int}\ c)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00023}00023\ \ \ \ \ nextMapID\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00024}00024\ \ \ \ \ mapID\ =\ nextMapID;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00025}00025\ \ \ \ \ rows\ =\ r;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00026}00026\ \ \ \ \ cols\ =\ c;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00027}00027\ \ \ \ \ endCell[0]\ =\ r\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00028}00028\ \ \ \ \ endCell[1]\ =\ c\ -\/\ 1;}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00030}00030\ \ \ \ \ std::regex\ numRgx(\textcolor{stringliteral}{"{}\string^[1-\/9][0-\/9]*\$"{}});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00031}00031\ \ \ \ \ std::regex\ answerRgx(\textcolor{stringliteral}{"{}[y|n]"{}});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00032}00032\ \ \ \ \ std::smatch\ rowNumMatch,\ colNumMatch,\ answerMatch;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00033}00033\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ number\ of\ rows\ in\ your\ map:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ std::cin\ >>\ rowInput;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!regex\_match(rowInput,\ rowNumMatch,\ numRgx))\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Invalid\ input!"{}});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ rows\ =\ stoi(rowInput);}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ rows\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ rows\ <\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ positive\ number:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ rows;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ number\ of\ columns\ in\ your\ map:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ std::cin\ >>\ colInput;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!regex\_match(colInput,\ colNumMatch,\ numRgx))\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Invalid\ input!"{}});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ cols\ =\ stoi(rowInput);}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ cellTypeGrid.push\_back(std::vector<Cell\_Type>(cols,\ Cell\_Type::empty));}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00035}\mbox{\hyperlink{class_map_1_1_map_a665cee9ac491962f048721c4fe7c2178}{00035}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a665cee9ac491962f048721c4fe7c2178}{Map::Map::setEndCell}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00036}00036\ \ \ \ \ this-\/>endCell[0]\ =\ this-\/>rows\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00037}00037\ \ \ \ \ this-\/>endCell[1]\ =\ this-\/>cols\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00038}00038\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00040}\mbox{\hyperlink{class_map_1_1_map_a47297609547499e83abeb5d607e8568d}{00040}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a47297609547499e83abeb5d607e8568d}{Map::Map::setGrid}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ this-\/>rows;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ this-\/>grid.push\_back(std::vector<Interactable::Interactable*>(this-\/>cols,\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_empty_cell}{EmptyCell}}()));}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00045}\mbox{\hyperlink{class_map_1_1_map_a9e381c126b47f285ef3b5f4ac697fd09}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a9e381c126b47f285ef3b5f4ac697fd09}{Map::Map::setCell}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable::Interactable}}*\ cell)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00046}00046\ \ \ \ \ this-\/>grid[row][col]\ =\ cell;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00049}\mbox{\hyperlink{class_map_1_1_map_a5f1cd403927600211b2d86fd34862396}{00049}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a5f1cd403927600211b2d86fd34862396}{Map::Map::setEmpty}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00050}00050\ \ \ \ \ this-\/>grid[row][col]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_empty_cell}{EmptyCell}}();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00051}00051\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00052}\mbox{\hyperlink{class_map_1_1_map_ac3b201f1245557ad0bb86c4408b1cd61}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_ac3b201f1245557ad0bb86c4408b1cd61}{Map::Map::setWall}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00053}00053\ \ \ \ \ this-\/>grid[row][col]\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_wall}{Wall}}();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00055}\mbox{\hyperlink{class_map_1_1_map_a5e2be3723bbf905e13d789cc3407fc94}{00055}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a5e2be3723bbf905e13d789cc3407fc94}{Map::Map::setCharacter}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ cha)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00056}00056\ \ \ \ \ this-\/>grid[row][col]\ =\ cha;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00058}\mbox{\hyperlink{class_map_1_1_map_a2e962033b641a409745ece3785c712e6}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a2e962033b641a409745ece3785c712e6}{Map::Map::setItem}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ \mbox{\hyperlink{classitem_1_1_item}{item::Item}}*\ \mbox{\hyperlink{namespaceitem}{item}})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00059}00059\ \ \ \ \ this-\/>grid[row][col]\ =\ \mbox{\hyperlink{namespaceitem}{item}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00060}00060\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00062}\mbox{\hyperlink{class_map_1_1_map_a2affecbecdee0a0c6ed995e205f12f21}{00062}}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \mbox{\hyperlink{class_map_1_1_map_a2affecbecdee0a0c6ed995e205f12f21}{Map::Map::Create}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{int}\ rows,\ cols;}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ columns\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ cols\ <\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ positive\ number:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ cols;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00065}00065\ \ \ \ \ std::string\ rowInput,\ colInput;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00067}00067\ \ \ \ \ std::regex\ numRgx(\textcolor{stringliteral}{"{}\string^[1-\/9][0-\/9]*\$"{}});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00068}00068\ \ \ \ \ std::regex\ answerRgx(\textcolor{stringliteral}{"{}[y|n]"{}});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00069}00069\ \ \ \ \ std::smatch\ rowNumMatch,\ colNumMatch,\ answerMatch;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ number\ of\ rows\ in\ your\ map:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ std::cin\ >>\ rowInput;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!regex\_match(rowInput,\ rowNumMatch,\ numRgx))\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Invalid\ input!"{}});}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_map}{Map}}*\ map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_map}{Map}}(rows,\ cols);}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ map-\/>\mbox{\hyperlink{class_map_1_1_map_a06578ebbd08a07dc9f742ff8793a4cae}{Print}}();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ std::string\ answer;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Leave\ as\ is?\ (y/n):\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ std::cin\ >>\ answer;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!regex\_match(answer,\ answerMatch,\ answerRgx))\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Invalid\ Input!"{}});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00088}00088\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ custm\ =\ answer[0];}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00090}00090\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail())\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Not\ a\ valid\ answer.\ Leave\ the\ map\ as\ is?\ (y/n):\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ custm;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (custm\ ==\ \textcolor{charliteral}{'y'}\ ||\ custm\ ==\ \textcolor{charliteral}{'n'})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Not\ a\ valid\ answer.\ Leave\ the\ map\ as\ is?\ (y/n):\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ custm;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00108}00108\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (custm\ ==\ \textcolor{charliteral}{'n'})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ path\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!path)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Let\ the\ user\ customize\ the\ map\ how\ they\ want}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ map-\/>\mbox{\hyperlink{class_map_1_1_map_a0c7ce8393dc351af0a61058fea8e7f40}{Customize}}();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ map-\/>\mbox{\hyperlink{class_map_1_1_map_a06578ebbd08a07dc9f742ff8793a4cae}{Print}}();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ there\ is\ at\ least\ one\ path\ from\ start\ to\ end}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Checking\ if\ there\ is\ a\ possible\ path\ ...\ "{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ map-\/>\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{IsTherePath}}();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00120}00120\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ map;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00122}00122\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00123}00123\ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\ exc)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input!"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00125}00125\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00126}00126\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00127}00127\ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00128}00128\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00129}\mbox{\hyperlink{class_map_1_1_map_a0c7ce8393dc351af0a61058fea8e7f40}{00129}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a0c7ce8393dc351af0a61058fea8e7f40}{Map::Map::Customize}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ stop\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordtype}{int}\ row;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00132}00132\ \ \ \ \ \textcolor{keywordtype}{int}\ col;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{char}\ celltype;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00134}00134\ \ \ \ \ Cell\_Type\ type;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00135}00135\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00136}00136\ \ \ \ \ \textcolor{keywordflow}{while}\ (!stop)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00137}00137\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ row\ and\ column\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Get\ row\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ the\ cell\ row\ you\ want\ to\ change:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ row;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ row\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ row\ <\ 0\ ||\ row\ >=\ rows)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ positive\ number:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ row;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00155}00155\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Get\ column\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ cell\ column\ you\ want\ to\ change:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ col;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ column\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ col\ <\ 0\ ||\ col\ >=\ cols)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ positive\ number:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ col;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00171}00171\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ the\ cell\ selected\ is\ the\ start\ or\ end}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((row\ ==\ 0\ \&\&\ col\ ==\ 0)\ ||\ (row\ ==\ end\_cell[0]\ \&\&\ col\ ==\ end\_cell[1]))\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ cannot\ change\ the\ type\ of\ the\ start\ or\ end\ cell."{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//valid\ cell\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \}\textcolor{comment}{//end\ row\ and\ column\ input\ loop}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00181}00181\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ cell\ type\ you\ want\ to\ change\ it\ to\ ([e]mpty,\ [w]all,\ [s]pecial):\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ std::cin\ >>\ celltype;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ input}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail())\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Enter\ only\ 1\ letter\ please:\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ row;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ rows\ =\ stoi(rowInput);}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ rows\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ rows\ <\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ positive\ number:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ rows;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ number\ of\ columns\ in\ your\ map:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ std::cin\ >>\ colInput;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!regex\_match(colInput,\ colNumMatch,\ numRgx))\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Invalid\ input!"{}});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ cols\ =\ stoi(rowInput);}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ columns\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ cols\ <\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ positive\ number:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ cols;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespace_map}{Map}}*\ map\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_map}{Map}}(rows,\ cols);}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ map-\/>\mbox{\hyperlink{class_map_1_1_map_a06578ebbd08a07dc9f742ff8793a4cae}{Print}}();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ std::string\ answer;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Leave\ as\ is?\ (y/n):\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ std::cin\ >>\ answer;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!regex\_match(answer,\ answerMatch,\ answerRgx))\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::exception(\textcolor{stringliteral}{"{}Invalid\ Input!"{}});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ custm\ =\ answer[0];}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail())\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Not\ a\ valid\ answer.\ Leave\ the\ map\ as\ is?\ (y/n):\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ custm;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (custm\ ==\ \textcolor{charliteral}{'y'}\ ||\ custm\ ==\ \textcolor{charliteral}{'n'})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Not\ a\ valid\ answer.\ Leave\ the\ map\ as\ is?\ (y/n):\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ custm;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (custm\ ==\ \textcolor{charliteral}{'n'})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ path\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!path)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Let\ the\ user\ customize\ the\ map\ how\ they\ want}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ map-\/>\mbox{\hyperlink{class_map_1_1_map_a0c7ce8393dc351af0a61058fea8e7f40}{Customize}}();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ map-\/>\mbox{\hyperlink{class_map_1_1_map_a06578ebbd08a07dc9f742ff8793a4cae}{Print}}();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Check\ that\ there\ is\ at\ least\ one\ path\ from\ start\ to\ end}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Checking\ if\ there\ is\ a\ possible\ path\ ...\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ path\ =\ map-\/>\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{IsTherePath}}();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ map;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00160}00160\ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00162}00162\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00164}00164\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00166}\mbox{\hyperlink{class_map_1_1_map_a0c7ce8393dc351af0a61058fea8e7f40}{00166}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a0c7ce8393dc351af0a61058fea8e7f40}{Map::Map::Customize}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00167}00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ stop\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00168}00168\ \ \ \ \ \textcolor{keywordtype}{int}\ row;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00169}00169\ \ \ \ \ \textcolor{keywordtype}{int}\ col;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00170}00170\ \ \ \ \ \textcolor{keywordtype}{char}\ celltype;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00171}00171\ \ \ \ \ Cell\_Type\ type;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00173}00173\ \ \ \ \ \textcolor{keywordflow}{while}\ (!stop)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ row\ and\ column\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Get\ row\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ the\ cell\ row\ you\ want\ to\ change:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ row;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ row\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ row\ <\ 0\ ||\ row\ >=\ rows)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ positive\ number:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ row;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \textcolor{comment}{//convert\ input\ to\ celltype}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ type\ =\ \mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{ConvertToCellType}}(celltype);}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \textcolor{comment}{//assign\ cell\ to\ its\ new\ type}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ grid[row][col]\ =\ type;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//print\ results}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Your\ map\ looks\ like\ this:\ "{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ Print();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00203}00203\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ stop\ =\ KeepCustomizing();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00205}00205\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00206}00206\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00207}00207\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Get\ column\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ cell\ column\ you\ want\ to\ change:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ col;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ column\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail()\ ||\ col\ <\ 0\ ||\ col\ >=\ cols)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Please\ enter\ a\ positive\ number:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ col;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00208}00208\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00209}\mbox{\hyperlink{class_map_1_1_map_a96cb05e317d15ec1566c1838077d3e8a}{00209}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_map_1_1_map_a96cb05e317d15ec1566c1838077d3e8a}{Map::Map::KeepCustomizing}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00210}00210\ \ \ \ \ \textcolor{keywordtype}{char}\ ans\ =\ \textcolor{charliteral}{'a'};\ \textcolor{comment}{//answer}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00211}00211\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Do\ you\ want\ to\ keep\ customizing?\ (y/n):\ "{}};\ \textcolor{comment}{//yes/no}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ std::cin\ >>\ ans;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::cin.fail())\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ans\ ==\ \textcolor{charliteral}{'y'}\ ||\ ans\ ==\ \textcolor{charliteral}{'n'})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ std::cin.clear();}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Not\ a\ valid\ answer."{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00222}00222\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00223}00223\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00224}00224\ \ \ \ \ \textcolor{comment}{//doesn't\ want\ to\ stop}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00225}00225\ \ \ \ \ \textcolor{keywordflow}{if}\ (ans\ ==\ \textcolor{charliteral}{'y'})\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00227}00227\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00228}00228\ \ \ \ \ \textcolor{comment}{//wants\ to\ stop}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00229}00229\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00230}00230\ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00231}00231\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00232}00232\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00233}00233\ \textcolor{comment}{//convert\ a\ given\ letter\ to\ it's\ corresponding\ cell\ type}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00234}00234\ Map::Cell\_Type\ \mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{keywordtype}{char}\ letter)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00235}00235\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00236}00236\ \ \ \ \ \textcolor{keywordflow}{switch}\ (letter)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00237}00237\ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'e'}:}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cell\_Type::empty;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00239}00239\ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'w'}:}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cell\_Type::wall;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00241}00241\ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'s'}:}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cell\_Type::special;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00243}00243\ \ \ \ \ \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00244}00244\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Not\ a\ cell\ type.\ Defaults\ to\ 'empty'."{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cell\_Type::empty;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00246}00246\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00247}00247\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00248}00248\ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00249}00249\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00250}\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{00250}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{Map::Map::IsTherePath}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00251}00251\ \ \ \ \ \textcolor{comment}{//\ start\ =\ 0,0}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00252}00252\ \ \ \ \ \textcolor{comment}{//\ end\_cell\ =\ \{r-\/1,\ c-\/1\}}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00253}00253\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00254}00254\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00255}00255\ \ \ \ \ \textcolor{comment}{//initial\ list\ of\ visited\ cells\ (none\ to\ begin\ with)}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00256}00256\ \ \ \ \ std::vector<std::vector<bool>>\ visited(rows,\ std::vector<bool>(cols,\ \textcolor{keyword}{false}));}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00257}00257\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{comment}{//BFS\ queue}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00259}00259\ \ \ \ \ std::queue<std::pair<int,\ int>>\ q;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ the\ cell\ selected\ is\ the\ start\ or\ end}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((row\ ==\ 0\ \&\&\ col\ ==\ 0)\ ||\ (row\ ==\ endCell[0]\ \&\&\ col\ ==\ endCell[1]))\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ cannot\ change\ the\ type\ of\ the\ start\ or\ end\ cell."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//valid\ cell\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \}\textcolor{comment}{//end\ row\ and\ column\ input\ loop}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ the\ cell\ type\ you\ want\ to\ change\ it\ to\ ([e]mpty,\ [w]all,\ [s]pecial):\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ std::cin\ >>\ celltype;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00221}00221\ \ \ \ \ \ \ \ \ \textcolor{comment}{//validate\ input}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (std::cin.fail())\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ input.\ Enter\ only\ 1\ letter\ please:\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cin\ >>\ row;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00233}00233\ \ \ \ \ \ \ \ \ \textcolor{comment}{//convert\ input\ to\ celltype}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ type\ =\ \mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{ConvertToCellType}}(celltype);}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00235}00235\ \ \ \ \ \ \ \ \ \textcolor{comment}{//assign\ cell\ to\ its\ new\ type}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ cellTypeGrid[row][col]\ =\ type;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \textcolor{comment}{//print\ results}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Your\ map\ looks\ like\ this:\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ Print();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ stop\ =\ KeepCustomizing();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00242}00242\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00244}00244\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00245}00245\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00246}\mbox{\hyperlink{class_map_1_1_map_a96cb05e317d15ec1566c1838077d3e8a}{00246}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_map_1_1_map_a96cb05e317d15ec1566c1838077d3e8a}{Map::Map::KeepCustomizing}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00247}00247\ \ \ \ \ \textcolor{keywordtype}{char}\ ans\ =\ \textcolor{charliteral}{'a'};\ \textcolor{comment}{//answer}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00248}00248\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Do\ you\ want\ to\ keep\ customizing?\ (y/n):\ "{}};\ \textcolor{comment}{//yes/no}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ std::cin\ >>\ ans;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!std::cin.fail())\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ans\ ==\ \textcolor{charliteral}{'y'}\ ||\ ans\ ==\ \textcolor{charliteral}{'n'})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ std::cin.clear();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Not\ a\ valid\ answer."{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00259}00259\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00260}00260\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{comment}{//start\ cell\ is\ visited\ (0,0)}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00262}00262\ \ \ \ \ q.push(\{\ 0,0\ \});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00263}00263\ \ \ \ \ visited[0][0]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00264}00264\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00265}00265\ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ curr\ =\ q.front();\ \textcolor{comment}{//\ current\ checking\ cell}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00267}00267\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00261}00261\ \ \ \ \ \textcolor{comment}{//doesn't\ want\ to\ stop}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00262}00262\ \ \ \ \ \textcolor{keywordflow}{if}\ (ans\ ==\ \textcolor{charliteral}{'y'})\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00264}00264\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00265}00265\ \ \ \ \ \textcolor{comment}{//wants\ to\ stop}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00267}00267\ \}}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00268}00268\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00269}00269\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ reach\ end\ cell}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr.first\ ==\ end\_cell[0]\ \&\&\ curr.second\ ==\ end\_cell[1])\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ made\ it\ this\ far,\ there\ is\ a\ path.}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}There\ is\ a\ path."{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00275}00275\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \textcolor{comment}{//keep\ searching}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ dir\ :\ dirs)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextRow\ =\ curr.first\ +\ dir.first;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextCol\ =\ curr.second\ +\ dir.second;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00280}00280\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//DEBUG:\ std::cout\ <<\ "{}nextrow:\ "{}\ <<\ nextRow\ <<\ "{}\ nextcol:\ "{}\ <<\ nextCol\ <<\ std::endl;}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00282}00282\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ next\ cell\ is\ not\ a\ wall\ or\ outside\ the\ map\ or\ been\ visited}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ValidCell(nextRow,\ nextCol,\ visited))\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.push(\{\ nextRow,\ nextCol\ \});}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visited[nextRow][nextCol]\ =\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00289}00289\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00290}00290\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}There\ is\ no\ path.\ Change\ your\ map."{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00291}00291\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00292}00292\ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00293}00293\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00294}00294\ \textcolor{comment}{//validate\ the\ next\ cell}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00295}\mbox{\hyperlink{class_map_1_1_map_aac6b461ff88fed2116c341231e05f4b2}{00295}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_map_1_1_map_aac6b461ff88fed2116c341231e05f4b2}{Map::Map::ValidCell}}(\textcolor{keywordtype}{int}\ nextRow,\ \textcolor{keywordtype}{int}\ nextCol,\ std::vector<std::vector<bool>>\ visited)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00296}00296\ \ \ \ \ \textcolor{keywordflow}{return}\ (nextRow\ >=\ 0\ \&\&\ nextRow\ <\ rows\&\&}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ nextCol\ >=\ 0\ \&\&\ nextCol\ <\ cols\&\&}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ grid[nextRow][nextCol]\ !=\ Cell\_Type::wall\ \&\&}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ !visited[nextRow][nextCol]);}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00300}00300\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00270}00270\ \textcolor{comment}{//convert\ a\ given\ letter\ to\ it's\ corresponding\ cell\ type}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00271}00271\ Map::Cell\_Type\ \mbox{\hyperlink{namespace_map_a97efe42efa0347ff3314b55913db77d0}{Map::ConvertToCellType}}(\textcolor{keywordtype}{char}\ letter)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00272}00272\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00273}00273\ \ \ \ \ \textcolor{keywordflow}{switch}\ (letter)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00274}00274\ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'e'}:}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cell\_Type::empty;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00276}00276\ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'w'}:}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cell\_Type::wall;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00278}00278\ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'s'}:}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cell\_Type::special;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00280}00280\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Not\ a\ cell\ type.\ Defaults\ to\ 'empty'."{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Cell\_Type::empty;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00283}00283\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00284}00284\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00285}00285\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00286}00286\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00287}\mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{00287}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_map_1_1_map_a620c5f75d452ff1af6fa45747d714798}{Map::Map::IsTherePath}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00288}00288\ \ \ \ \ \textcolor{comment}{//\ start\ =\ 0,0}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00289}00289\ \ \ \ \ \textcolor{comment}{//\ end\_cell\ =\ \{r-\/1,\ c-\/1\}}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00290}00290\ \ \ \ \ \textcolor{keywordtype}{bool}\ found\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00292}00292\ \ \ \ \ \textcolor{comment}{//initial\ list\ of\ visited\ cells\ (none\ to\ begin\ with)}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00293}00293\ \ \ \ \ std::vector<std::vector<bool>>\ visited(rows,\ std::vector<bool>(cols,\ \textcolor{keyword}{false}));}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00295}00295\ \ \ \ \ \textcolor{comment}{//BFS\ queue}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00296}00296\ \ \ \ \ std::queue<std::pair<int,\ int>>\ q;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00297}00297\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00298}00298\ \ \ \ \ \textcolor{comment}{//start\ cell\ is\ visited\ (0,0)}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00299}00299\ \ \ \ \ q.push(\{\ 0,0\ \});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00300}00300\ \ \ \ \ visited[0][0]\ =\ \textcolor{keyword}{true};}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00301}00301\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00302}00302\ \textcolor{comment}{//print\ the\ grid}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00303}\mbox{\hyperlink{class_map_1_1_map_a06578ebbd08a07dc9f742ff8793a4cae}{00303}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a06578ebbd08a07dc9f742ff8793a4cae}{Map::Map::Print}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00304}00304\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0\ \&\&\ j\ ==\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}O"{}}\ <<\ \textcolor{stringliteral}{"{}\ "{}};\ \textcolor{comment}{//spawn\ point,\ ie\ start}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ rows\ -\/\ 1\ \&\&\ j\ ==\ cols\ -\/\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}X"{}}\ <<\ \textcolor{stringliteral}{"{}\ "{}};\ \textcolor{comment}{//end\ goal}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ static\_cast<char>(grid[i][j])\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00317}00317\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00318}00318\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00302}00302\ \ \ \ \ \textcolor{keywordflow}{while}\ (!q.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ curr\ =\ q.front();\ \textcolor{comment}{//\ current\ checking\ cell}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ q.pop();}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ reach\ end\ cell}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr.first\ ==\ endCell[0]\ \&\&\ curr.second\ ==\ endCell[1])\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ made\ it\ this\ far,\ there\ is\ a\ path.}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}There\ is\ a\ path."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00312}00312\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \textcolor{comment}{//keep\ searching}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ dir\ :\ dirs)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextRow\ =\ curr.first\ +\ dir.first;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextCol\ =\ curr.second\ +\ dir.second;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00317}00317\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//DEBUG:\ std::cout\ <<\ "{}nextrow:\ "{}\ <<\ nextRow\ <<\ "{}\ nextcol:\ "{}\ <<\ nextCol\ <<\ std::endl;}}
 \DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00319}00319\ }
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00320}00320\ \textcolor{comment}{//USE\ ONLY\ IN\ DEBUG}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00321}\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{00321}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{Map::Map::ChangeCell}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ Cell\_Type\ type)\ \{}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00322}00322\ \ \ \ \ grid[row][col]\ =\ type;}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00323}00323\ \}}
-\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//check\ if\ next\ cell\ is\ not\ a\ wall\ or\ outside\ the\ map\ or\ been\ visited}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ValidCell(nextRow,\ nextCol,\ visited))\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ q.push(\{\ nextRow,\ nextCol\ \});}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visited[nextRow][nextCol]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00326}00326\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00327}00327\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}There\ is\ no\ path.\ Change\ your\ map."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00328}00328\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00329}00329\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00331}00331\ \textcolor{comment}{//validate\ the\ next\ cell}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00332}\mbox{\hyperlink{class_map_1_1_map_a8ef461deedb913a65430eafd6dee3c40}{00332}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_map_1_1_map_a8ef461deedb913a65430eafd6dee3c40}{Map::Map::ValidCellInteractable}}(\textcolor{keywordtype}{int}\ nextRow,\ \textcolor{keywordtype}{int}\ nextCol,\ std::vector<std::vector<bool>>\ visited)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00333}00333\ \ \ \ \ \textcolor{keywordflow}{return}\ (nextRow\ >=\ 0\ \&\&\ nextRow\ <\ rows\ \&\&}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ nextCol\ >=\ 0\ \&\&\ nextCol\ <\ cols\ \&\&}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \textcolor{keyword}{typeid}(grid[nextRow][nextCol])\ !=\ \textcolor{keyword}{typeid}(\mbox{\hyperlink{class_wall}{Wall}})\ \&\&}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ !visited[nextRow][nextCol]);}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00337}00337\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00339}\mbox{\hyperlink{class_map_1_1_map_aac6b461ff88fed2116c341231e05f4b2}{00339}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_map_1_1_map_aac6b461ff88fed2116c341231e05f4b2}{Map::Map::ValidCell}}(\textcolor{keywordtype}{int}\ nextRow,\ \textcolor{keywordtype}{int}\ nextCol,\ std::vector<std::vector<bool>>\ visited)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00340}00340\ \ \ \ \ \textcolor{keywordflow}{return}\ (nextRow\ >=\ 0\ \&\&\ nextRow\ <\ rows\ \&\&}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ nextCol\ >=\ 0\ \&\&\ nextCol\ <\ cols\ \&\&}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ cellTypeGrid[nextRow][nextCol]\ !=\ Cell\_Type::wall\ \&\&}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ !visited[nextRow][nextCol]);}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00344}00344\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00346}00346\ \textcolor{comment}{//print\ the\ grid}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00347}\mbox{\hyperlink{class_map_1_1_map_a06578ebbd08a07dc9f742ff8793a4cae}{00347}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_a06578ebbd08a07dc9f742ff8793a4cae}{Map::Map::Print}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00348}00348\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ rows;\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00349}00349\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ cols;\ j++)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0\ \&\&\ j\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}O"{}}\ <<\ \textcolor{stringliteral}{"{}\ "{}};\ \textcolor{comment}{//spawn\ point,\ ie\ start}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00353}00353\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ rows\ -\/\ 1\ \&\&\ j\ ==\ cols\ -\/\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}X"{}}\ <<\ \textcolor{stringliteral}{"{}\ "{}};\ \textcolor{comment}{//end\ goal}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ static\_cast<char>(cellTypeGrid[i][j])\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00359}00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00361}00361\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00362}00362\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00364}00364\ \textcolor{comment}{//USE\ ONLY\ IN\ DEBUG}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00365}\mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{00365}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_1_1_map_ae47ed684ec9c708a2a11f3e34757eb52}{Map::Map::ChangeCell}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ col,\ Cell\_Type\ type)\ \{}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00366}00366\ \ \ \ \ cellTypeGrid[row][col]\ =\ type;}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00367}00367\ \}}
+\DoxyCodeLine{\Hypertarget{_map_8cpp_source_l00368}00368\ }
 
 \end{DoxyCode}

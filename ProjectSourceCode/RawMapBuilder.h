@@ -1,7 +1,8 @@
 #pragma once
 
 #include "MapBuilder.h"
-using namespace std;
+// using namespace std; cannot be used with GUI
+
 
 namespace RawMapBuilder {
 
@@ -11,7 +12,9 @@ namespace RawMapBuilder {
 		//save map object to a file
 		virtual bool SaveMap(Map::Map* map, std::string& filename);
 		//load map from a text file
+
 		virtual Map::Map LoadMap(std::string& filename);
+
 
 		virtual void buildRows(int rows);
 
@@ -22,6 +25,7 @@ namespace RawMapBuilder {
 		virtual void buildGrid();
 
 		//virtual void buildTypes();
+
 	};
 
 }
