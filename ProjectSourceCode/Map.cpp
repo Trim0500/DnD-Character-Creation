@@ -14,7 +14,20 @@
 //default constructor
 Map::Map::Map() {
 	nextMapID += 1;
-this->mapID = nextMapID;
+	this->mapID = nextMapID;
+}
+
+Map::Map::Map(int r, int c) {
+	nextMapID += 1;
+	this->mapID = nextMapID;
+	this->rows = r;
+	this->cols = c;
+	this->endCell[0] = r - 1;
+	this->endCell[1] = c - 1;
+
+	for (int i = 0; i < rows; i++) {
+		this->grid.push_back(std::vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
+	}
 }
 
 void Map::Map::setEndCell() {
@@ -29,7 +42,6 @@ void Map::Map::setGrid() {
 void Map::Map::setCell(int row, int col, Interactable::Interactable* cell) {
 	this->grid[row][col] = cell;
 }
-
 void Map::Map::setEmpty(int row, int col) {
 	this->grid[row][col] = new EmptyCell();
 }

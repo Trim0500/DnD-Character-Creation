@@ -57,7 +57,7 @@ namespace Map {
 		* \fn Map
 		* \brief Constructor to build a basic map provided by user
 		*/
-		//Map(int rows, int cols);
+		Map(int rows, int cols);
 
 		/*!
 		* \brief Getters
