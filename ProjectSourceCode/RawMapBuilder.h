@@ -9,9 +9,9 @@ namespace RawMapBuilder {
 
 	public:
 		//save map object to a file
-		virtual bool SaveMap(Map::Map* map);
+		virtual bool SaveMap(Map::Map* map, std::string& filename);
 		//load map from a text file
-		virtual Map::Map* LoadMap(std::string& filename);
+		virtual Map::Map LoadMap(std::string& filename);
 
 		virtual void buildRows(int rows);
 
@@ -21,7 +21,7 @@ namespace RawMapBuilder {
 
 		virtual void buildGrid();
 
-		virtual void buildTypes();
+		//virtual void buildTypes();
 	};
 
 }

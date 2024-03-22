@@ -16,7 +16,7 @@ namespace MapBuilder {
 		//save map object to a file
 		virtual bool SaveMap(Map::Map* map);
 		//load map from a text file
-		virtual Map::Map* LoadMap(std::string& filename);
+		virtual Map::Map LoadMap(std::string& filename);
 
 		//create all parts
 		virtual void buildRows() = 0;

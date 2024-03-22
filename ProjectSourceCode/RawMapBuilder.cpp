@@ -7,29 +7,28 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-using RMP = RawMapBuilder::RawMapBuilder;
 
-void RMP::buildRows(int rows) {
+void  RawMapBuilder::RawMapBuilder::buildRows(int rows) {
 	m_map->setRows(rows);
 }
 
-void RMP::buildCols(int cols) {
+void  RawMapBuilder::RawMapBuilder::buildCols(int cols) {
 	m_map->setCols(cols);
 }
 
-void RMP::buildEndCell() {
+void  RawMapBuilder::RawMapBuilder::buildEndCell() {
 	m_map->setEndCell();
 }
 
-void RMP::buildGrid() {
+void  RawMapBuilder::RawMapBuilder::buildGrid() {
 	m_map->setGrid();
 }
 
-void RMP::buildTypes() {
-	//TODO
-}
+//void RMP::buildTypes() {
+//	
+//}
 
-bool SaveMap(Map::Map* map, std::string& filename) {
+bool RawMapBuilder::RawMapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 	//create file
 	ofstream file(filename);
 	try {
@@ -76,7 +75,7 @@ bool SaveMap(Map::Map* map, std::string& filename) {
 	return true;
 }
 
-Map::Map* LoadMap(std::string& filename) {
+Map::Map RawMapBuilder::RawMapBuilder::LoadMap(std::string& filename) {
 	//USE BUILD FUNCTIONS IN HERE
 
 	Map::Map mapload = Map::Map();
@@ -102,5 +101,7 @@ Map::Map* LoadMap(std::string& filename) {
 	catch (const ifstream::failure& e) {
 		cout << "Exception caught while opening file: " << filename << endl;
 	}
+
+	return mapload;
 }
 
