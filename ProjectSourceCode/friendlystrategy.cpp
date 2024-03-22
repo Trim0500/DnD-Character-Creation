@@ -1,3 +1,9 @@
+/*!
+* \file friendlystrategy.cpp
+* \brief File that contains the forward declarations for the movement strategy pattern for non-hostile NPC characters
+* \author Tristan Lafleur
+*/
+
 #include "friendlystrategy.h"
 #include "Character.h"
 #include "Wall.h"

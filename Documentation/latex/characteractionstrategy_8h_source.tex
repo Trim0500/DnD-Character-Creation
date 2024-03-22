@@ -1,0 +1,29 @@
+\doxysection{characteractionstrategy.\+h}
+\hypertarget{characteractionstrategy_8h_source}{}\label{characteractionstrategy_8h_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/characteractionstrategy.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/characteractionstrategy.h}}
+\mbox{\hyperlink{characteractionstrategy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00007}00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interactable_8h}{Interactable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00018}00018\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacecharacteractionstrategy}{characteractionstrategy}}\ \{}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00023}\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{00023}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ \{}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00028}\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{00028}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00033}\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{00033}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00038}\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{00038}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00043}\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{00043}}\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00044}00044\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00050}\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{00050}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy}{CharacterActionStrategy}}\ \{}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00056}\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_ac455b516413baec15f598b599da64f8c}{00056}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_ac455b516413baec15f598b599da64f8c}{\string~CharacterActionStrategy}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00068}\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_aa1874c5794e0a192a777979999de5e81}{00068}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::vector<CellActionInfo>\ \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_aa1874c5794e0a192a777979999de5e81}{UseMovementStrategy}}(std::vector<std::vector<Interactable::Interactable*>>\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00069}00069\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{characteractionstrategy_8h_source_l00070}00070\ \}}
+
+\end{DoxyCode}

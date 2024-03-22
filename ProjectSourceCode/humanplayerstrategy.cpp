@@ -1,3 +1,9 @@
+/*!
+* \file humanplayerstrategy.cpp
+* \brief File that contains the implementations for the movement strategy pattern for player characters
+* \author Tristan Lafleur
+*/
+
 #include "humanplayerstrategy.h"
 #include "Character.h"
 #include "Wall.h"

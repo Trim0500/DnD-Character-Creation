@@ -1,3 +1,9 @@
+/*!
+* \file aggressorstrategy.cpp
+* \brief File that contains the implementations for the movement strategy pattern for hostile NPC characters
+* \author Tristan Lafleur
+*/
+
 #include "aggressorstrategy.h"
 #include "Character.h"
 #include "Wall.h"
