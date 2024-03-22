@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['row_0',['row',['../structcharacteractionstrategy_1_1_cell_action_info.html#aa73e8080a5e4e99886269cffc3fdf4fc',1,'characteractionstrategy::CellActionInfo']]]
+  ['pickup_5fcell_5faction_0',['PICKUP_CELL_ACTION',['../class_character.html#a58f8aa321713af9cd5353a8558add87d',1,'Character']]],
+  ['pickup_5fcell_5fcolor_1',['PICKUP_CELL_COLOR',['../class_character.html#a7fdaece65e771d79a92da24d90f9d31e',1,'Character']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['statstrings_0',['statStrings',['../namespaceitem.html#a322c65f5a2c476554a678038e084b235',1,'item']]]
+  ['row_0',['row',['../structcharacteractionstrategy_1_1_cell_action_info.html#aa73e8080a5e4e99886269cffc3fdf4fc',1,'characteractionstrategy::CellActionInfo']]]
 ];

@@ -20,7 +20,7 @@ Inheritance diagram for characteractionstrategy\+::Character\+Action\+Strategy\+
 \item 
 virtual \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_ac455b516413baec15f598b599da64f8c}{\texorpdfstring{$\sim$}{\string~}\+Character\+Action\+Strategy}} ()=default
 \begin{DoxyCompactList}\small\item\em default virtual destructor \end{DoxyCompactList}\item 
-virtual std\+::vector$<$ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{Cell\+Action\+Info}} $>$ \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_aa1874c5794e0a192a777979999de5e81}{Use\+Movement\+Strategy}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable\+::\+Interactable}} \texorpdfstring{$\ast$}{*} $>$ $>$ \&, const int \&, const int \&) const =0
+virtual std\+::vector$<$ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{Cell\+Action\+Info}} $>$ \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31}{Use\+Movement\+Strategy}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable\+::\+Interactable}} \texorpdfstring{$\ast$}{*} $>$ $>$, const int \&, const int \&) const =0
 \begin{DoxyCompactList}\small\item\em Abstract function that is meant to be implemented by other classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -45,11 +45,11 @@ default virtual destructor
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classcharacteractionstrategy_1_1_character_action_strategy_aa1874c5794e0a192a777979999de5e81}\label{classcharacteractionstrategy_1_1_character_action_strategy_aa1874c5794e0a192a777979999de5e81} 
+\Hypertarget{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31}\label{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31} 
 \index{characteractionstrategy::CharacterActionStrategy@{characteractionstrategy::CharacterActionStrategy}!UseMovementStrategy@{UseMovementStrategy}}
 \index{UseMovementStrategy@{UseMovementStrategy}!characteractionstrategy::CharacterActionStrategy@{characteractionstrategy::CharacterActionStrategy}}
 \doxysubsubsection{\texorpdfstring{UseMovementStrategy()}{UseMovementStrategy()}}
-{\footnotesize\ttfamily characteractionstrategy\+::\+Character\+Action\+Strategy\+::\+Use\+Movement\+Strategy (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable\+::\+Interactable}} \texorpdfstring{$\ast$}{*} $>$ $>$ \&}]{,  }\item[{const int \&}]{,  }\item[{const int \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily characteractionstrategy\+::\+Character\+Action\+Strategy\+::\+Use\+Movement\+Strategy (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable\+::\+Interactable}} \texorpdfstring{$\ast$}{*} $>$ $>$}]{,  }\item[{const int \&}]{,  }\item[{const int \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -59,9 +59,9 @@ Abstract function that is meant to be implemented by other classes.
 \begin{DoxyParams}{Parameters}
 {\em \+\_\+current\+Map} & A 2D grid that represents the map the character finds themselves in \\
 \hline
-{\em \+\_\+row} & Integer that represents the current row index of the character location \\
+{\em \+\_\+row} & Integer that represents the current row index of the character location (1-\/indexed) \\
 \hline
-{\em \+\_\+col} & Integer that represents the current column index of the character location\\
+{\em \+\_\+col} & Integer that represents the current column index of the character location (1-\/indexed)\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -69,7 +69,7 @@ Vector of \doxylink{structcharacteractionstrategy_1_1_cell_action_info}{Cell\+Ac
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classaggressorstrategy_1_1_aggressor_strategy_a5c047e5a53074c0f23ad8534f0012b91}{aggressorstrategy\+::\+Aggressor\+Strategy}}, \mbox{\hyperlink{classfriendlystrategy_1_1_friendly_strategy_a16a03743f7458f3c5105f81bcf8a10cf}{friendlystrategy\+::\+Friendly\+Strategy}}, and \mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy_a3f74f8ea57109d13f206fed713d9037c}{humanplayerstrategy\+::\+Human\+Player\+Strategy}}.
+Implemented in \mbox{\hyperlink{classaggressorstrategy_1_1_aggressor_strategy_a8877d0945415c8392d6d44cf1bce2e75}{aggressorstrategy\+::\+Aggressor\+Strategy}}, \mbox{\hyperlink{classfriendlystrategy_1_1_friendly_strategy_a8f3b146067a3386f7cffc4911198b1c2}{friendlystrategy\+::\+Friendly\+Strategy}}, and \mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy_a3f67195f1ffa001320d978956aa39296}{humanplayerstrategy\+::\+Human\+Player\+Strategy}}.
 
 
 

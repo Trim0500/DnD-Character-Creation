@@ -16,60 +16,64 @@
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00017}00017\ \}}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00018}00018\ }
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00019}\mbox{\hyperlink{namespacehumanplayerstrategy}{00019}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacehumanplayerstrategy}{humanplayerstrategy}}\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00020}\mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy_a3f74f8ea57109d13f206fed713d9037c}{00020}}\ \ \ \ \ std::vector<CellActionInfo>\ \mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy_a3f74f8ea57109d13f206fed713d9037c}{HumanPlayerStrategy::UseMovementStrategy}}(std::vector<std::vector<Interactable::Interactable*>>\&\ \_currentMap,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_row,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_col)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00020}\mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy_a3f67195f1ffa001320d978956aa39296}{00020}}\ \ \ \ \ std::vector<CellActionInfo>\ \mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy_a3f67195f1ffa001320d978956aa39296}{HumanPlayerStrategy::UseMovementStrategy}}(std::vector<std::vector<Interactable::Interactable*>>\ \_currentMap,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_row,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_col)\textcolor{keyword}{\ const\ }\{}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ std::vector<CellActionInfo>\ actions;}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00022}00022\ }
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rowToCheck\ =\ \_row;}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ colToCheck\ =\ \_col;}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ =\ 0)\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colToCheck\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rowToCheck\ -\/=\ 1;}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ =\ 1)\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rowToCheck\ +=\ 1;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 1)\ \{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colToCheck\ +=\ 1;}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ =\ 2)\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colToCheck\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rowToCheck\ +=\ 1;}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rowToCheck\ -\/=\ 1;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colToCheck\ -\/=\ 1;}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00040}00040\ }
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable::Interactable}}*\ valueAtCell\ =\ \_currentMap[rowToCheck][colToCheck];}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ actionInfo;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_wall}{Wall}}*\textcolor{keyword}{>}(valueAtCell))\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ rowToCheck;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ colToCheck;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ \textcolor{stringliteral}{"{}N/A"{}};}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ \textcolor{stringliteral}{"{}None"{}};}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(valueAtCell))\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ rowToCheck;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ colToCheck;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ \textcolor{stringliteral}{"{}Red"{}};}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ \textcolor{stringliteral}{"{}Attack"{}};}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\textcolor{keyword}{>}(valueAtCell))\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ rowToCheck;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ colToCheck;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ \textcolor{stringliteral}{"{}Green"{}};}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ \textcolor{stringliteral}{"{}PickUp"{}};}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ rowToCheck;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ colToCheck;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ \textcolor{stringliteral}{"{}Blue"{}};}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ \textcolor{stringliteral}{"{}Move"{}};}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00068}00068\ }
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ actions.push\_back(actionInfo);}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ actions;}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00073}00073\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rowToCheck\ <\ 1\ ||\ rowToCheck\ >\ \_currentMap.size()\ ||\ colToCheck\ <\ 1\ ||\ colToCheck\ >\ \_currentMap[0].size())\ \{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable::Interactable}}*\ valueAtCell\ =\ \_currentMap[rowToCheck\ -\/\ 1][colToCheck\ -\/\ 1];}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ actionInfo;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_wall}{Wall}}*\textcolor{keyword}{>}(valueAtCell))\ \{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ rowToCheck;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ colToCheck;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ Character::WALL\_CELL\_COLOR;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ Character::WALL\_CELL\_ACTION;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(valueAtCell))\ \{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ rowToCheck;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ colToCheck;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ Character::ATTACK\_CELL\_COLOR;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ Character::ATTACK\_CELL\_ACTION;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\textcolor{keyword}{>}(valueAtCell))\ \{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ rowToCheck;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ colToCheck;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ Character::PICKUP\_CELL\_COLOR;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ Character::PICKUP\_CELL\_ACTION;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aa73e8080a5e4e99886269cffc3fdf4fc}{row}}\ =\ rowToCheck;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a4f9c287555407beb4c281d802c52cfd7}{col}}\ =\ colToCheck;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_a91475c9f8ce2b054d4c2a7f85128d030}{cellColor}}\ =\ Character::EMPTY\_CELL\_COLOR;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionInfo.\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info_aac4736092def792298845b599902c0e8}{actionName}}\ =\ Character::EMPTY\_CELL\_ACTION;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ actions.push\_back(actionInfo);}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ actions;}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{humanplayerstrategy_8cpp_source_l00078}00078\ \}}
 
 \end{DoxyCode}

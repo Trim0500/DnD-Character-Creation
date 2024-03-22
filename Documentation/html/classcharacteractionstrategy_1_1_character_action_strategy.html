@@ -104,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac455b516413baec15f598b599da64f8c" id="r_ac455b516413baec15f598b599da64f8c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac455b516413baec15f598b599da64f8c">~CharacterActionStrategy</a> ()=default</td></tr>
 <tr class="memdesc:ac455b516413baec15f598b599da64f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">default virtual destructor  <br /></td></tr>
 <tr class="separator:ac455b516413baec15f598b599da64f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1874c5794e0a192a777979999de5e81" id="r_aa1874c5794e0a192a777979999de5e81"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="structcharacteractionstrategy_1_1_cell_action_info.html">CellActionInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1874c5794e0a192a777979999de5e81">UseMovementStrategy</a> (std::vector&lt; std::vector&lt; <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a> * &gt; &gt; &amp;, const int &amp;, const int &amp;) const =0</td></tr>
-<tr class="memdesc:aa1874c5794e0a192a777979999de5e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract function that is meant to be implemented by other classes.  <br /></td></tr>
-<tr class="separator:aa1874c5794e0a192a777979999de5e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fa78d654df941fa406092dd62150a31" id="r_a9fa78d654df941fa406092dd62150a31"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="structcharacteractionstrategy_1_1_cell_action_info.html">CellActionInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fa78d654df941fa406092dd62150a31">UseMovementStrategy</a> (std::vector&lt; std::vector&lt; <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a> * &gt; &gt;, const int &amp;, const int &amp;) const =0</td></tr>
+<tr class="memdesc:a9fa78d654df941fa406092dd62150a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract function that is meant to be implemented by other classes.  <br /></td></tr>
+<tr class="separator:a9fa78d654df941fa406092dd62150a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>interface to be implemented by other classes that has the declaration of the strategy algo </p>
@@ -141,8 +141,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa1874c5794e0a192a777979999de5e81" name="aa1874c5794e0a192a777979999de5e81"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1874c5794e0a192a777979999de5e81">&#9670;&#160;</a></span>UseMovementStrategy()</h2>
+<a id="a9fa78d654df941fa406092dd62150a31" name="a9fa78d654df941fa406092dd62150a31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fa78d654df941fa406092dd62150a31">&#9670;&#160;</a></span>UseMovementStrategy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +153,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">characteractionstrategy::CharacterActionStrategy::UseMovementStrategy </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a> * &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname">, </span></td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a> * &gt; &gt;</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -177,14 +177,14 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">_currentMap</td><td>A 2D grid that represents the map the character finds themselves in </td></tr>
-    <tr><td class="paramname">_row</td><td>Integer that represents the current row index of the character location </td></tr>
-    <tr><td class="paramname">_col</td><td>Integer that represents the current column index of the character location</td></tr>
+    <tr><td class="paramname">_row</td><td>Integer that represents the current row index of the character location (1-indexed) </td></tr>
+    <tr><td class="paramname">_col</td><td>Integer that represents the current column index of the character location (1-indexed)</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of <a class="el" href="structcharacteractionstrategy_1_1_cell_action_info.html" title="struct to represent the necessary info to inform the game about the actions a character may take">CellActionInfo</a> structs that represents the possible actions that can be done in the cardinal directions </dd></dl>
 
-<p>Implemented in <a class="el" href="classaggressorstrategy_1_1_aggressor_strategy.html#a5c047e5a53074c0f23ad8534f0012b91">aggressorstrategy::AggressorStrategy</a>, <a class="el" href="classfriendlystrategy_1_1_friendly_strategy.html#a16a03743f7458f3c5105f81bcf8a10cf">friendlystrategy::FriendlyStrategy</a>, and <a class="el" href="classhumanplayerstrategy_1_1_human_player_strategy.html#a3f74f8ea57109d13f206fed713d9037c">humanplayerstrategy::HumanPlayerStrategy</a>.</p>
+<p>Implemented in <a class="el" href="classaggressorstrategy_1_1_aggressor_strategy.html#a8877d0945415c8392d6d44cf1bce2e75">aggressorstrategy::AggressorStrategy</a>, <a class="el" href="classfriendlystrategy_1_1_friendly_strategy.html#a8f3b146067a3386f7cffc4911198b1c2">friendlystrategy::FriendlyStrategy</a>, and <a class="el" href="classhumanplayerstrategy_1_1_human_player_strategy.html#a3f67195f1ffa001320d978956aa39296">humanplayerstrategy::HumanPlayerStrategy</a>.</p>
 
 </div>
 </div>

@@ -28,6 +28,8 @@ var searchData=
   ['armour_5fclass_25',['Armour_Class',['../class_character_1_1_character.html#a7ebee057ce2c701940a2426f595892a0',1,'Character::Character']]],
   ['attach_26',['attach',['../class_observable.html#a3b024352e50b06ce4e64aec9930618c8',1,'Observable']]],
   ['attack_5fbonus_27',['Attack_Bonus',['../class_character_1_1_character.html#a4201304c94d05d6dd3cf2c34e3d0a491',1,'Character::Character']]],
-  ['attackbonus_28',['AttackBonus',['../class_character.html#adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311',1,'Character::AttackBonus'],['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c',1,'item::AttackBonus']]],
-  ['attacks_5fper_5fturn_29',['Attacks_Per_Turn',['../class_character_1_1_character.html#a985a59dec3d29a912625ed385c4829c0',1,'Character::Character']]]
+  ['attack_5fcell_5faction_28',['ATTACK_CELL_ACTION',['../class_character.html#a858550c79f05844f29741a07841815ba',1,'Character']]],
+  ['attack_5fcell_5fcolor_29',['ATTACK_CELL_COLOR',['../class_character.html#a6d97c6606446525dd352ef5208c7c79c',1,'Character']]],
+  ['attackbonus_30',['AttackBonus',['../class_character.html#adc11299f73c335c725b36d6e85fc7edba024d7a2554a540559d2a2db537090311',1,'Character::AttackBonus'],['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51caf963f1f716dbad946260f1e3df60cf7c',1,'item::AttackBonus']]],
+  ['attacks_5fper_5fturn_31',['Attacks_Per_Turn',['../class_character_1_1_character.html#a985a59dec3d29a912625ed385c4829c0',1,'Character::Character']]]
 ];

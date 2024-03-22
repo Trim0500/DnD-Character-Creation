@@ -60,8 +60,8 @@ namespace characteractionstrategy {
             * \brief Abstract function that is meant to be implemented by other classes
             * 
             * \param _currentMap A 2D grid that represents the map the character finds themselves in
-            * \param _row Integer that represents the current row index of the character location
-            * \param _col Integer that represents the current column index of the character location
+            * \param _row Integer that represents the current row index of the character location (1-indexed)
+            * \param _col Integer that represents the current column index of the character location (1-indexed)
             * 
             * \return Vector of CellActionInfo structs that represents the possible actions that can be done in the cardinal directions
             */
