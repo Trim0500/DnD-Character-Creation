@@ -28,6 +28,7 @@
 #include <string>
 
 #include "componentdecorator.h"
+#include "Interactable.h"
 
 using namespace componentdecorator;
 
@@ -106,7 +107,7 @@ namespace item
 	 *
 	 * Class that abstracts the Items available to a character that are put into a container or worn.
 	 */
-	class Item : public ComponentDecorator
+	class Item : public ComponentDecorator, public  Interactable::Interactable
 	{
 	public:
 		/*!
@@ -170,6 +171,8 @@ namespace item
 		* \return Vector of pointers to AbstractComponent instances that represent the worn items in play
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override;
+
+		bool passable() const override { return false; }
 
 		AbstractComponent* GetWrappee() { return wrappee; };
 		

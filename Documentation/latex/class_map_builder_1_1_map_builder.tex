@@ -1,0 +1,144 @@
+\doxysection{Map\+Builder\+::Map\+Builder Class Reference}
+\hypertarget{class_map_builder_1_1_map_builder}{}\label{class_map_builder_1_1_map_builder}\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+
+
+{\ttfamily \#include $<$Map\+Builder.\+h$>$}
+
+Inheritance diagram for Map\+Builder\+::Map\+Builder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_builder_1_1_map_builder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_builder_1_1_map_builder_acb1a7d384f1a3f88917263fc064114ee}{get\+Map}} ()
+\item 
+void \mbox{\hyperlink{class_map_builder_1_1_map_builder_a4d19ef7b6d2735bccc1e9b30ea44c74b}{createnew\+Map}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_map_builder_1_1_map_builder_aaacebe24cbf1c45c507718d88931650c}{Save\+Map}} (\mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*}map)
+\item 
+virtual \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_builder_1_1_map_builder_ab21510b0cce08edee7ec9a10528f0260}{Load\+Map}} (std\+::string \&filename)
+\item 
+virtual void \mbox{\hyperlink{class_map_builder_1_1_map_builder_a80b0465400d8f8bbfb09ed381ece3623}{build\+Rows}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_map_builder_1_1_map_builder_a0356b0796a9282bfedc2d6547b3cbcc5}{build\+Cols}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_map_builder_1_1_map_builder_ab9bfb20120d8ad388f43a20e9ebe7fbd}{build\+Grid}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_map_builder_1_1_map_builder_ade14ef7d25fd4c842ce19a58e7623d38}{build\+End\+Cell}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_map_builder_1_1_map_builder_a5e1b257186ad05d3c3304a2097be3f24}{build\+Types}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_map_builder_1_1_map_builder_a0e6adc1a1cf12139903f565c5179d5e3}{m\+\_\+map}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_map_builder_8h_source_l00007}{7}} of file \mbox{\hyperlink{_map_builder_8h_source}{Map\+Builder.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_map_builder_1_1_map_builder_a0356b0796a9282bfedc2d6547b3cbcc5}\label{class_map_builder_1_1_map_builder_a0356b0796a9282bfedc2d6547b3cbcc5} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!buildCols@{buildCols}}
+\index{buildCols@{buildCols}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildCols()}{buildCols()}}
+{\footnotesize\ttfamily virtual void Map\+Builder\+::\+Map\+Builder\+::build\+Cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{class_map_builder_1_1_map_builder_ade14ef7d25fd4c842ce19a58e7623d38}\label{class_map_builder_1_1_map_builder_ade14ef7d25fd4c842ce19a58e7623d38} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!buildEndCell@{buildEndCell}}
+\index{buildEndCell@{buildEndCell}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildEndCell()}{buildEndCell()}}
+{\footnotesize\ttfamily virtual void Map\+Builder\+::\+Map\+Builder\+::build\+End\+Cell (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a2c6c99bdf8d9be99a8699b34ee603c4e}{Raw\+Map\+Builder\+::\+Raw\+Map\+Builder}}.
+
+\Hypertarget{class_map_builder_1_1_map_builder_ab9bfb20120d8ad388f43a20e9ebe7fbd}\label{class_map_builder_1_1_map_builder_ab9bfb20120d8ad388f43a20e9ebe7fbd} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!buildGrid@{buildGrid}}
+\index{buildGrid@{buildGrid}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildGrid()}{buildGrid()}}
+{\footnotesize\ttfamily virtual void Map\+Builder\+::\+Map\+Builder\+::build\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a637c9e86ce606dbc60b38afd593d4dda}{Raw\+Map\+Builder\+::\+Raw\+Map\+Builder}}.
+
+\Hypertarget{class_map_builder_1_1_map_builder_a80b0465400d8f8bbfb09ed381ece3623}\label{class_map_builder_1_1_map_builder_a80b0465400d8f8bbfb09ed381ece3623} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!buildRows@{buildRows}}
+\index{buildRows@{buildRows}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildRows()}{buildRows()}}
+{\footnotesize\ttfamily virtual void Map\+Builder\+::\+Map\+Builder\+::build\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{class_map_builder_1_1_map_builder_a5e1b257186ad05d3c3304a2097be3f24}\label{class_map_builder_1_1_map_builder_a5e1b257186ad05d3c3304a2097be3f24} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!buildTypes@{buildTypes}}
+\index{buildTypes@{buildTypes}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{buildTypes()}{buildTypes()}}
+{\footnotesize\ttfamily virtual void Map\+Builder\+::\+Map\+Builder\+::build\+Types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a0c6a8e7116ab87428260d87c375b3517}{Raw\+Map\+Builder\+::\+Raw\+Map\+Builder}}.
+
+\Hypertarget{class_map_builder_1_1_map_builder_a4d19ef7b6d2735bccc1e9b30ea44c74b}\label{class_map_builder_1_1_map_builder_a4d19ef7b6d2735bccc1e9b30ea44c74b} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!createnewMap@{createnewMap}}
+\index{createnewMap@{createnewMap}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{createnewMap()}{createnewMap()}}
+{\footnotesize\ttfamily void Map\+Builder\+::\+Map\+Builder\+::createnew\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_builder_8h_source_l00013}{13}} of file \mbox{\hyperlink{_map_builder_8h_source}{Map\+Builder.\+h}}.
+
+\Hypertarget{class_map_builder_1_1_map_builder_acb1a7d384f1a3f88917263fc064114ee}\label{class_map_builder_1_1_map_builder_acb1a7d384f1a3f88917263fc064114ee} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!getMap@{getMap}}
+\index{getMap@{getMap}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{getMap()}{getMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} Map\+Builder\+::\+Map\+Builder\+::get\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_builder_8h_source_l00011}{11}} of file \mbox{\hyperlink{_map_builder_8h_source}{Map\+Builder.\+h}}.
+
+\Hypertarget{class_map_builder_1_1_map_builder_ab21510b0cce08edee7ec9a10528f0260}\label{class_map_builder_1_1_map_builder_ab21510b0cce08edee7ec9a10528f0260} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!LoadMap@{LoadMap}}
+\index{LoadMap@{LoadMap}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{LoadMap()}{LoadMap()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} Map\+Builder\+::\+Map\+Builder\+::\+Load\+Map (\begin{DoxyParamCaption}\item[{std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a618b39476412856f7d63b977f61752eb}{Raw\+Map\+Builder\+::\+Raw\+Map\+Builder}}.
+
+\Hypertarget{class_map_builder_1_1_map_builder_aaacebe24cbf1c45c507718d88931650c}\label{class_map_builder_1_1_map_builder_aaacebe24cbf1c45c507718d88931650c} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!SaveMap@{SaveMap}}
+\index{SaveMap@{SaveMap}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{SaveMap()}{SaveMap()}}
+{\footnotesize\ttfamily virtual bool Map\+Builder\+::\+Map\+Builder\+::\+Save\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_map_builder_1_1_map_builder_a0e6adc1a1cf12139903f565c5179d5e3}\label{class_map_builder_1_1_map_builder_a0e6adc1a1cf12139903f565c5179d5e3} 
+\index{MapBuilder::MapBuilder@{MapBuilder::MapBuilder}!m\_map@{m\_map}}
+\index{m\_map@{m\_map}!MapBuilder::MapBuilder@{MapBuilder::MapBuilder}}
+\doxysubsubsection{\texorpdfstring{m\_map}{m\_map}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}}\texorpdfstring{$\ast$}{*} Map\+Builder\+::\+Map\+Builder\+::m\+\_\+map\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_map_builder_8h_source_l00031}{31}} of file \mbox{\hyperlink{_map_builder_8h_source}{Map\+Builder.\+h}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{_map_builder_8h}{Map\+Builder.\+h}}\end{DoxyCompactItemize}

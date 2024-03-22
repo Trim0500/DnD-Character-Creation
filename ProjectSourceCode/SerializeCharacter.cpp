@@ -67,6 +67,19 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
         serializeItem::SaveItems(fullURI.str(), inventoryVector);
     record.inventory_container_id = t_character->Inventory().GetItemId();
 
+    record.isPlayerControlled = t_character->GetIsPlayerControlled();
+    
+    CharacterActionStrategy* actionStrategy = t_character->GetActionStrategy();
+    if (record.isPlayerControlled) {
+        record.actionStrategy = Character::HUMAN_PLAYER_STRATEGY_NAME;
+    }
+    else if (dynamic_cast<HumanPlayerStrategy*>(actionStrategy) == nullptr && dynamic_cast<AggressorStrategy*>(actionStrategy) == nullptr) {
+        record.actionStrategy = Character::FRIENDLY_STRATEGY_NAME;
+    }
+    else {
+        record.actionStrategy = Character::AGGRESSOR_STRATEGY_NAME;
+    }
+
     //opening file
   
     std::string filename = t_path + "Character_" + std::to_string(record.id) + ".csv";
@@ -104,6 +117,10 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     outfile << std::endl;
     outfile << "Inventory_Container_ID," << record.inventory_container_id;
     outfile << std::endl;
+
+    outfile << "isPlayerControlled," << record.isPlayerControlled;
+    outfile << std::endl;
+    outfile << "actionStrategy," << record.actionStrategy;
 
     //Closing file
     outfile.close();
@@ -187,6 +204,16 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
         else if (field_key == "Inventory_Container_ID") {
             while (std::getline(spliter, data, ',')) {
                 record.inventory_container_id = std::stoi(data);
+            }
+        }
+        else if (field_key == "isPlayerControlled") {
+            while (std::getline(spliter, data, ',')) {
+                record.isPlayerControlled = data == "true" ? true : false;
+            }
+        }
+        else if (field_key == "actionStrategy") {
+            while (std::getline(spliter, data, ',')) {
+                record.actionStrategy = data;
             }
         }
     }

@@ -1,4 +1,9 @@
+#include "Character.h"
+#include "EmptyCell.h"
+#include "Interactable.h"
+#include "item.h"
 #include "Map.h"
+#include "Wall.h"
 #include <iostream>
 #include <vector>
 #include <stack>
@@ -8,18 +13,50 @@
 
 // using namespace std;
 
-//basic constructor
+//default constructor
+Map::Map::Map() {
+	nextMapID += 1;
+	this->mapID = nextMapID;
+}
+
 Map::Map::Map(int r, int c) {
 	nextMapID += 1;
 	mapID = nextMapID;
 	rows = r;
 	cols = c;
-	end_cell[0] = r - 1;
-	end_cell[1] = c - 1;
+	endCell[0] = r - 1;
+	endCell[1] = c - 1;
 
 	for (int i = 0; i < rows; i++) {
-		grid.push_back(std::vector<Cell_Type>(cols, Cell_Type::empty));
+		cellTypeGrid.push_back(std::vector<Cell_Type>(cols, Cell_Type::empty));
 	}
+}
+
+void Map::Map::setEndCell() {
+	this->endCell[0] = this->rows - 1;
+	this->endCell[1] = this->cols - 1;
+}
+
+void Map::Map::setGrid() {
+	for (int i = 0; i < this->rows; i++) {
+		this->grid.push_back(std::vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
+	}
+}
+void Map::Map::setCell(int row, int col, Interactable::Interactable* cell) {
+	this->grid[row][col] = cell;
+}
+
+void Map::Map::setEmpty(int row, int col) {
+	this->grid[row][col] = new EmptyCell();
+}
+void Map::Map::setWall(int row, int col) {
+	this->grid[row][col] = new Wall();
+}
+void Map::Map::setCharacter(int row, int col, Character::Character* cha) {
+	this->grid[row][col] = cha;
+}
+void Map::Map::setItem(int row, int col, item::Item* item) {
+	this->grid[row][col] = item;
 }
 
 Map::Map* Map::Map::Create() {
@@ -170,7 +207,7 @@ void Map::Map::Customize() {
 			}
 
 			//if the cell selected is the start or end
-			if ((row == 0 && col == 0) || (row == end_cell[0] && col == end_cell[1])) {
+			if ((row == 0 && col == 0) || (row == endCell[0] && col == endCell[1])) {
 				std::cout << "You cannot change the type of the start or end cell." << std::endl;
 			}
 			//valid cell input
@@ -196,7 +233,7 @@ void Map::Map::Customize() {
 		//convert input to celltype
 		type = ConvertToCellType(celltype);
 		//assign cell to its new type
-		grid[row][col] = type;
+		cellTypeGrid[row][col] = type;
 		//print results
 		std::cout << "Your map looks like this: " << std::endl;
 		Print();
@@ -267,7 +304,7 @@ bool Map::Map::IsTherePath() {
 		q.pop();
 
 		//check if reach end cell
-		if (curr.first == end_cell[0] && curr.second == end_cell[1]) {
+		if (curr.first == endCell[0] && curr.second == endCell[1]) {
 			//if made it this far, there is a path.
 			std::cout << "There is a path." << std::endl;
 			return true;
@@ -292,10 +329,17 @@ bool Map::Map::IsTherePath() {
 }
 
 //validate the next cell
+bool Map::Map::ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited) {
+	return (nextRow >= 0 && nextRow < rows &&
+		nextCol >= 0 && nextCol < cols &&
+		typeid(grid[nextRow][nextCol]) != typeid(Wall) &&
+		!visited[nextRow][nextCol]);
+}
+
 bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>> visited) {
-	return (nextRow >= 0 && nextRow < rows&&
-		nextCol >= 0 && nextCol < cols&&
-		grid[nextRow][nextCol] != Cell_Type::wall &&
+	return (nextRow >= 0 && nextRow < rows &&
+		nextCol >= 0 && nextCol < cols &&
+		cellTypeGrid[nextRow][nextCol] != Cell_Type::wall &&
 		!visited[nextRow][nextCol]);
 }
 
@@ -310,7 +354,7 @@ void Map::Map::Print() {
 				std::cout << "X" << " "; //end goal
 			}
 			else {
-				std::cout << static_cast<char>(grid[i][j]) << " ";
+				std::cout << static_cast<char>(cellTypeGrid[i][j]) << " ";
 			}
 		}
 		std::cout << std::endl;
@@ -319,6 +363,6 @@ void Map::Map::Print() {
 
 //USE ONLY IN DEBUG
 void Map::Map::ChangeCell(int row, int col, Cell_Type type) {
-	grid[row][col] = type;
+	cellTypeGrid[row][col] = type;
 }
 

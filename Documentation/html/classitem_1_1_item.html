@@ -95,8 +95,9 @@ Inheritance diagram for item::Item:</div>
   <img src="classitem_1_1_item.png" usemap="#item::Item_map" alt=""/>
   <map id="item::Item_map" name="item::Item_map">
 <area href="classcomponentdecorator_1_1_component_decorator.html" title="Class that implements the AbstractComponent interface." alt="componentdecorator::ComponentDecorator" shape="rect" coords="0,56,254,80"/>
+<area href="class_interactable_1_1_interactable.html" alt="Interactable::Interactable" shape="rect" coords="264,56,518,80"/>
 <area href="classabstractcomponent_1_1_abstract_component.html" title="Class that provides the virtual methods to override for the concrete implementations of the decorator..." alt="abstractcomponent::AbstractComponent" shape="rect" coords="0,0,254,24"/>
-<area href="classitemcontainer_1_1_item_container.html" title="Class to abstract the different item containers." alt="itemcontainer::ItemContainer" shape="rect" coords="0,168,254,192"/>
+<area href="classitemcontainer_1_1_item_container.html" title="Class to abstract the different item containers." alt="itemcontainer::ItemContainer" shape="rect" coords="132,168,386,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -115,6 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aab6e419cfea26bdea0389095c0f336c6" id="r_aab6e419cfea26bdea0389095c0f336c6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab6e419cfea26bdea0389095c0f336c6">GetDecoratorList</a> () override</td></tr>
 <tr class="memdesc:aab6e419cfea26bdea0389095c0f336c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to use the wrappee's function of the same name and then push the decorator's pointer to a list.  <br /></td></tr>
 <tr class="separator:aab6e419cfea26bdea0389095c0f336c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022d81d31588d24bb24024a32b6837ab" id="r_a022d81d31588d24bb24024a32b6837ab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a022d81d31588d24bb24024a32b6837ab">passable</a> () const override</td></tr>
+<tr class="separator:a022d81d31588d24bb24024a32b6837ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac965d3ac39cbc3dd472b6fd03082b43b" id="r_ac965d3ac39cbc3dd472b6fd03082b43b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac965d3ac39cbc3dd472b6fd03082b43b">GetWrappee</a> ()</td></tr>
 <tr class="separator:ac965d3ac39cbc3dd472b6fd03082b43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acba3c38ca886da61f6e126fd3d707a1b" id="r_acba3c38ca886da61f6e126fd3d707a1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acba3c38ca886da61f6e126fd3d707a1b">SetWrappee</a> (<a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> *_wrappee)</td></tr>
@@ -169,7 +172,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><p>Class for the character items. </p>
 <p>Class that abstracts the Items available to a character that are put into a container or worn. </p>
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00109">109</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00110">110</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7e7998679cac37adb8124f012d5dd39e" name="a7e7998679cac37adb8124f012d5dd39e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e7998679cac37adb8124f012d5dd39e">&#9670;&#160;</a></span>Item() <span class="overload">[1/3]</span></h2>
@@ -251,7 +254,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00121">121</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00122">122</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -335,7 +338,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a7dab287f9820a894d217e609052be9c9">componentdecorator::ComponentDecorator</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00149">149</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00152">152</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -367,7 +370,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">componentdecorator::ComponentDecorator</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00159">159</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8cpp_source.html#l00162">162</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -394,7 +397,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00190">190</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00193">193</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -421,7 +424,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00198">198</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00201">201</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -448,7 +451,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00182">182</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00185">185</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -475,7 +478,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00186">186</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00189">189</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -502,7 +505,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00194">194</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00197">197</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -529,7 +532,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00202">202</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00205">205</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -556,7 +559,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00178">178</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00181">181</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -583,7 +586,36 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00174">174</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00177">177</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+
+</div>
+</div>
+<a id="a022d81d31588d24bb24024a32b6837ab" name="a022d81d31588d24bb24024a32b6837ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a022d81d31588d24bb24024a32b6837ab">&#9670;&#160;</a></span>passable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool item::Item::passable </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_interactable_1_1_interactable.html#ab35ba80b5c0ef1d749cd64deabd2ec3d">Interactable::Interactable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00175">175</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -610,7 +642,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00192">192</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00195">195</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -637,7 +669,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00200">200</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00203">203</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -664,7 +696,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00184">184</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00187">187</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -691,7 +723,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00180">180</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00183">183</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -718,7 +750,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00188">188</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00191">191</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -745,7 +777,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00196">196</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00199">199</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -772,7 +804,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00204">204</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00207">207</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -799,7 +831,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00176">176</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00179">179</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>
@@ -831,7 +863,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00154">154</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="item_8h_source.html#l00155">155</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 
 </div>
 </div>

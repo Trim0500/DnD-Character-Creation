@@ -3,11 +3,19 @@
 #include <sstream>
 
 #include "testCharacter.h"
+#include "Interactable.h"
+#include "EmptyCell.h"
+#include "Wall.h"
+#include "characteractionstrategy.h"
+
+#define CHEST_ITEM_SIZE 250
+
+using namespace characteractionstrategy;
 
 void TestCharacter::setUp(void)
 {
 	noArgsCharacterObject = new Character::Character();
-	customCharacterObject = new Character::Character("Testaniel Unitoph",Character::Character_Class::Fighter);
+	customCharacterObject = new Character::Character("Testaniel Unitoph",Character::Character_Class::Fighter, false, new AggressorStrategy());
 }
 
 void TestCharacter::tearDown(void)
@@ -25,6 +33,8 @@ void TestCharacter::TestNoArgsCharacterConstructor(void)
 	CPPUNIT_ASSERT(noArgsCharacterObject->Levels(Character::Character_Class::Fighter) <= 20);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Max_Hit_Points() > 0);
 	CPPUNIT_ASSERT(noArgsCharacterObject->Max_Hit_Points() <= 280);
+	CPPUNIT_ASSERT(noArgsCharacterObject->GetIsPlayerControlled());
+	CPPUNIT_ASSERT(dynamic_cast<HumanPlayerStrategy*>(noArgsCharacterObject->GetActionStrategy()));
 }
 
 void TestCharacter::TestCharacterConstructor(void)
@@ -35,6 +45,8 @@ void TestCharacter::TestCharacterConstructor(void)
 	CPPUNIT_ASSERT(customCharacterObject->Levels(Character::Character_Class::Fighter) == 1);
 	CPPUNIT_ASSERT(customCharacterObject->Max_Hit_Points() > 0);
 	CPPUNIT_ASSERT(customCharacterObject->Max_Hit_Points() <= 14);
+	CPPUNIT_ASSERT(!customCharacterObject->GetIsPlayerControlled());
+	CPPUNIT_ASSERT(dynamic_cast<AggressorStrategy*>(customCharacterObject->GetActionStrategy()));
 }
 
 void TestCharacter::TestGetCharacterID(void)
@@ -270,4 +282,127 @@ void TestCharacter::TestDamageBonus(void)
 
 	CPPUNIT_ASSERT(customCharacterObject->Damage_Bonus() <= 4);
 	CPPUNIT_ASSERT(customCharacterObject->Damage_Bonus() >= -4);
+}
+
+void TestCharacter::TestActionStrategy(void) {
+	std::vector<std::vector<Interactable::Interactable*>> testGrid;
+
+	ItemContainer* chestObject = new ItemContainer("testChest", TreasureChest, CHEST_ITEM_SIZE);
+
+	float chestItemWeightTotal = 0.0;
+	while (true) {
+		if (chestItemWeightTotal >= CHEST_ITEM_SIZE / 2) {
+			break;
+		}
+
+		Item* newitem = new Item();
+		chestObject->AddNewItem(newitem);
+		chestItemWeightTotal += newitem->GetItemWeight();
+	}
+
+	for (int i = 0; i < 3; ++i)
+	{
+		std::vector<Interactable::Interactable*> testRow;
+
+		for (int j = 0; j < 3; ++j)
+		{
+			Interactable::Interactable* testInteractable;
+
+			if ((i == 0 && j == 0) || (i == 2 && j == 2)) {
+				testInteractable = new Wall();
+			}
+			else if (i == 1 && j == 1) {
+				testInteractable = noArgsCharacterObject;
+			}
+			else if (i == 1 && j == 0) {
+				testInteractable = chestObject;
+			}
+			else if (i == 1 && j == 2) {
+				testInteractable = customCharacterObject;
+			}
+			else {
+				testInteractable = new EmptyCell();
+			}
+
+			testRow.push_back(testInteractable);
+		}
+
+		testGrid.push_back(testRow);
+	}
+	
+	CharacterActionStrategy* playerActionStrategy = noArgsCharacterObject->GetActionStrategy();
+	std::vector<CellActionInfo> playerActionInfo = playerActionStrategy->UseMovementStrategy(testGrid, 2, 2);
+	CPPUNIT_ASSERT_EQUAL(4, (int)playerActionInfo.size());
+
+	CellActionInfo upCellInfo = playerActionInfo[0];
+	CPPUNIT_ASSERT_EQUAL(1, upCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(2, upCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::EMPTY_CELL_COLOR, upCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::EMPTY_CELL_ACTION, upCellInfo.actionName);
+	
+	CellActionInfo rightCellInfo = playerActionInfo[1];
+	CPPUNIT_ASSERT_EQUAL(2, rightCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(3, rightCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::ATTACK_CELL_COLOR, rightCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::ATTACK_CELL_ACTION, rightCellInfo.actionName);
+	
+	CellActionInfo downCellInfo = playerActionInfo[2];
+	CPPUNIT_ASSERT_EQUAL(3, downCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(2, downCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::EMPTY_CELL_COLOR, downCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::EMPTY_CELL_ACTION, downCellInfo.actionName);
+	
+	CellActionInfo leftCellInfo = playerActionInfo[3];
+	CPPUNIT_ASSERT_EQUAL(2, leftCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(1, leftCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::PICKUP_CELL_COLOR, leftCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::PICKUP_CELL_ACTION, leftCellInfo.actionName);
+	
+	CharacterActionStrategy* hostileActionStrategy = customCharacterObject->GetActionStrategy();
+	std::vector<CellActionInfo> hostileActionInfo = hostileActionStrategy->UseMovementStrategy(testGrid, 2, 3);
+	CPPUNIT_ASSERT_EQUAL(3, (int)hostileActionInfo.size());
+
+	upCellInfo = hostileActionInfo[0];
+	CPPUNIT_ASSERT_EQUAL(1, upCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(3, upCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::EMPTY_CELL_COLOR, upCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::EMPTY_CELL_ACTION, upCellInfo.actionName);
+	
+	downCellInfo = hostileActionInfo[1];
+	CPPUNIT_ASSERT_EQUAL(3, downCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(3, downCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::WALL_CELL_COLOR, downCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::WALL_CELL_ACTION, downCellInfo.actionName);
+	
+	leftCellInfo = hostileActionInfo[2];
+	CPPUNIT_ASSERT_EQUAL(2, leftCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(2, leftCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::ATTACK_CELL_COLOR, leftCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::ATTACK_CELL_ACTION, leftCellInfo.actionName);
+
+	customCharacterObject->SetActionStrategy(new FriendlyStrategy());
+	CharacterActionStrategy* friendlyActionStrategy = customCharacterObject->GetActionStrategy();
+	std::vector<CellActionInfo> friendlyActionInfo = friendlyActionStrategy->UseMovementStrategy(testGrid, 2, 3);
+	CPPUNIT_ASSERT_EQUAL(3, (int)friendlyActionInfo.size());
+
+	upCellInfo = friendlyActionInfo[0];
+	CPPUNIT_ASSERT_EQUAL(1, upCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(3, upCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::EMPTY_CELL_COLOR, upCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::EMPTY_CELL_ACTION, upCellInfo.actionName);
+	
+	downCellInfo = friendlyActionInfo[1];
+	CPPUNIT_ASSERT_EQUAL(3, downCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(3, downCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::WALL_CELL_COLOR, downCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::WALL_CELL_ACTION, downCellInfo.actionName);
+	
+	leftCellInfo = friendlyActionInfo[2];
+	CPPUNIT_ASSERT_EQUAL(2, leftCellInfo.row);
+	CPPUNIT_ASSERT_EQUAL(2, leftCellInfo.col);
+	CPPUNIT_ASSERT_EQUAL(Character::WALL_CELL_COLOR, leftCellInfo.cellColor);
+	CPPUNIT_ASSERT_EQUAL(Character::WALL_CELL_ACTION, leftCellInfo.actionName);
+
+	testGrid.clear();
+	delete chestObject;
 }

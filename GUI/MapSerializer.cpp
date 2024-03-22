@@ -43,9 +43,9 @@ namespace CampaignEditor {
 	bool MapSerializer::save_map(std::string&filename, Map::Map *m){
 		std::ofstream MapFile(filename);
 		MapFile << m->GetMapID() << std::endl;
-		MapFile << m->Cols() << "," << m->Rows() << std::endl;
-		for (int j = 0; j < m->Rows(); j++){
-			for (int i = 0; i<m->Cols(); i++){
+		MapFile << m->getCols() << "," << m->getRows() << std::endl;
+		for (int j = 0; j < m->getRows(); j++){
+			for (int i = 0; i<m->getCols(); i++){
 				MapFile << i << "," << j << "," << static_cast<int>(m->Grid()[j][i]) << std::endl;
 			}
 		}

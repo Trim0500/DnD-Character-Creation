@@ -104,8 +104,8 @@ void MapEditor::load_data()
 
 void MapEditor::update_data()
 {
-	_grid_x = current_map->Cols();
-	_grid_y = current_map->Rows();
+	_grid_x = current_map->getCols();
+	_grid_y = current_map->getRows();
 	redraw_map();
 }
 void MapEditor::create()
