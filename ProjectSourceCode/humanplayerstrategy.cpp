@@ -38,6 +38,10 @@ namespace humanplayerstrategy {
                 rowToCheck -= 1;
             }
 
+            if (rowToCheck < 0 || rowToCheck > _currentMap.size() || colToCheck < 0 || colToCheck > _currentMap[0].size()) {
+                continue;
+            }
+
             Interactable::Interactable* valueAtCell = _currentMap[rowToCheck][colToCheck];
             CellActionInfo actionInfo;
             
