@@ -173,7 +173,7 @@ namespace item
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override;
 
-		bool passable() const override { return false; }
+		bool passable() const { return false; }
 
 		AbstractComponent* GetWrappee() { return wrappee; };
 

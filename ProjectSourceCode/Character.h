@@ -181,7 +181,7 @@ namespace Character {
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
 
-		bool passable() const override { return true; };
+		bool passable() const { return true; };
 
 		/* \fn ID()
 		*  \brief Unique Character ID

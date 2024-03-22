@@ -57,7 +57,7 @@ namespace CampaignEditor
 				for (Map::Map *_m: *me->maps){
 					fs::create_directories(me->filepath + "/Maps");
 					fp = me->filepath + "/Maps/Map" + std::to_string(_m->GetMapID()) + ".csv";
-					MapSerializer::save_map(fp, _m);
+					//MapSerializer::save_map(fp, _m);
 				}
 				me->filepath = temp;
 				
