@@ -15,9 +15,6 @@
 #include <cppunit/XmlOutputter.h>
 
 #include "Character.h"
-//#include "testitemidcounter.h"
-
-//using namespace testitemidcounter;
 
 class TestCharacter : public CppUnit::TestFixture
 {
@@ -39,6 +36,7 @@ class TestCharacter : public CppUnit::TestFixture
 		CPPUNIT_TEST(TestAttackBonus);
 		CPPUNIT_TEST(TestProficiencyBonus);
 		CPPUNIT_TEST(TestDamageBonus);
+		CPPUNIT_TEST(TestActionStrategy);
 		CPPUNIT_TEST_SUITE_END();
 
 	public:
@@ -81,6 +79,8 @@ class TestCharacter : public CppUnit::TestFixture
 		void TestProficiencyBonus(void);
 
 		void TestDamageBonus(void);
+
+		void TestActionStrategy(void);
 	private:
 		Character::Character* noArgsCharacterObject;
 

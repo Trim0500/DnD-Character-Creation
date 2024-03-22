@@ -136,6 +136,14 @@ namespace Character {
 	const std::string HUMAN_PLAYER_STRATEGY_NAME = "human";
 	const std::string AGGRESSOR_STRATEGY_NAME = "aggressor";
 	const std::string FRIENDLY_STRATEGY_NAME = "friendly";
+	const std::string EMPTY_CELL_COLOR = "blue";
+	const std::string ATTACK_CELL_COLOR = "red";
+	const std::string PICKUP_CELL_COLOR = "green";
+	const std::string WALL_CELL_COLOR = "none";
+	const std::string WALL_CELL_ACTION = "n/a";
+	const std::string EMPTY_CELL_ACTION = "move";
+	const std::string ATTACK_CELL_ACTION = "attack";
+	const std::string PICKUP_CELL_ACTION = "pickup";
 
 
 	/*! \class Character

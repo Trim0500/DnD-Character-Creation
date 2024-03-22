@@ -31,6 +31,6 @@ namespace aggressorstrategy {
             * 
             * \return Vector of CellActionInfo structs that represents the possible actions that can be done in the cardinal directions
             */
-            std::vector<CellActionInfo> UseMovementStrategy(std::vector<std::vector<Interactable::Interactable*>>&, const int&, const int&) const override;
+            std::vector<CellActionInfo> UseMovementStrategy(std::vector<std::vector<Interactable::Interactable*>>, const int&, const int&) const override;
     };
 }

@@ -17,41 +17,45 @@ namespace {
 }
 
 namespace friendlystrategy {
-    std::vector<CellActionInfo> FriendlyStrategy::UseMovementStrategy(std::vector<std::vector<Interactable::Interactable*>>& _currentMap, const int& _row, const int& _col) const {
+    std::vector<CellActionInfo> FriendlyStrategy::UseMovementStrategy(std::vector<std::vector<Interactable::Interactable*>> _currentMap, const int& _row, const int& _col) const {
         std::vector<CellActionInfo> actions;
 
-        for (int i = 0; i < 4; ++i)
+        for (int i = 0; i < 4; i++)
         {
             int rowToCheck = _row;
             int colToCheck = _col;
             
-            if (i = 0) {
-                colToCheck += 1;
-            }
-            else if (i = 1) {
-                rowToCheck += 1;
-            }
-            else if (i = 2) {
-                colToCheck -= 1;
-            }
-            else {
+            if (i == 0) {
                 rowToCheck -= 1;
             }
+            else if (i == 1) {
+                colToCheck += 1;
+            }
+            else if (i == 2) {
+                rowToCheck += 1;
+            }
+            else {
+                colToCheck -= 1;
+            }
 
-            Interactable::Interactable* valueAtCell = _currentMap[rowToCheck][colToCheck];
+            if (rowToCheck < 1 || rowToCheck > _currentMap.size() || colToCheck < 1 || colToCheck > _currentMap[0].size()) {
+                continue;
+            }
+
+            Interactable::Interactable* valueAtCell = _currentMap[rowToCheck - 1][colToCheck - 1];
             CellActionInfo actionInfo;
             
-            if (dynamic_cast<Wall*>(valueAtCell)) {
+            if (dynamic_cast<Wall*>(valueAtCell) || dynamic_cast<Character::Character*>(valueAtCell) || dynamic_cast<ItemContainer*>(valueAtCell)) {
                 actionInfo.row = rowToCheck;
                 actionInfo.col = colToCheck;
-                actionInfo.cellColor = "N/A";
-                actionInfo.actionName = "None";
+                actionInfo.cellColor = Character::WALL_CELL_COLOR;
+                actionInfo.actionName = Character::WALL_CELL_ACTION;
             }
             else {
                 actionInfo.row = rowToCheck;
                 actionInfo.col = colToCheck;
-                actionInfo.cellColor = "Blue";
-                actionInfo.actionName = "Move";
+                actionInfo.cellColor = Character::EMPTY_CELL_COLOR;
+                actionInfo.actionName = Character::EMPTY_CELL_ACTION;
             }
 
             actions.push_back(actionInfo);
