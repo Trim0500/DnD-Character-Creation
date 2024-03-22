@@ -24,10 +24,10 @@ namespace CampaignEditor
 		MapCellButton(int x, int y, int w, int h, int _x, int _y);
 
 		//void cell_type(Map::Cell_Type ct) { this->ct = ct; };
-		void cell_type(Interactable::Interactable ct) { this->ct = ct; };
+		void cell_type(Interactable::Interactable* ct) { this->ct = ct; };
 
 		//Map::Cell_Type cell_type() { return ct; }
-		Interactable::Interactable cell_type() { return ct; }
+		Interactable::Interactable * cell_type() { return ct; }
 
 		int X() { return x; }
 		int Y() { return y; }
@@ -35,7 +35,7 @@ namespace CampaignEditor
 
 	private:
 		//Map::Cell_Type ct;
-		Interactable::Interactable ct;
+		Interactable::Interactable * ct;
 
 		int x, y;
 		int current_l = 0;

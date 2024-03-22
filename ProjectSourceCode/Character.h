@@ -351,7 +351,7 @@ namespace Character {
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override { std::vector<AbstractComponent*> initDecorators; return initDecorators; };
 
-		bool passable() const { return true; };// can the MC pass through this cell
+		// bool passable() const { return true; };// can the MC pass through this cell
 
 		bool GetIsPlayerControlled() { return isPlayerControlled; };
 
