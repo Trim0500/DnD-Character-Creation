@@ -119,6 +119,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     outfile << std::endl;
 
     outfile << "isPlayerControlled," << record.isPlayerControlled;
+    outfile << std::endl;
     outfile << "actionStrategy," << record.actionStrategy;
 
     //Closing file
