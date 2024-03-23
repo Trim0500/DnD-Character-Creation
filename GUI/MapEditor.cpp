@@ -11,6 +11,7 @@
 #include "../ProjectSourceCode/EmptyCell.h"
 #include "../ProjectSourceCode/Character.h"
 #include "../ProjectSourceCode/item.h"
+#include "../ProjectSourceCode/MapBuilder.h"
 using namespace CampaignEditor;
 
 MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
@@ -194,7 +195,8 @@ void MapEditor::save_as()
 	{
 		try
 		{
-			MapSerializer::save_map(filepath, current_map);
+			//MapSerializer::save_map(filepath, current_map);
+			MapBuilder::MapBuilder::SaveMap(current_map, filepath);
 		}
 		catch (const std::exception &e)
 		{
@@ -216,7 +218,8 @@ void MapEditor::populate_browser()
 
 void MapEditor::open(std::string s)
 {
-	Map::Map m = MapSerializer::load_map(filepath);
+	//Map::Map m = MapSerializer::load_map(filepath);
+	Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
 	maps->push_back(&m);
 	populate_browser();
 	browser->bottomline(browser->size());
@@ -228,7 +231,8 @@ void MapEditor::open()
 {
 	if (BaseEditor::open())
 	{
-		Map::Map m = MapSerializer::load_map(filepath);
+		//Map::Map m = MapSerializer::load_map(filepath);
+		Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
 		maps->push_back(&m);
 		populate_browser();
 		browser->bottomline(browser->size());
