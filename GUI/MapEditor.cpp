@@ -12,6 +12,11 @@
 #include "../ProjectSourceCode/Character.h"
 #include "../ProjectSourceCode/item.h"
 #include "../ProjectSourceCode/MapBuilder.h"
+<<<<<<< HEAD
+=======
+#include "../ProjectSourceCode/RawMapBuilder.h"
+
+>>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 using namespace CampaignEditor;
 
 MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
@@ -195,8 +200,12 @@ void MapEditor::save_as()
 	{
 		try
 		{
+<<<<<<< HEAD
 			//MapSerializer::save_map(filepath, current_map);
 			MapBuilder::MapBuilder::SaveMap(current_map, filepath);
+=======
+			//MapSerializer::save_map(filepath, current_map); // TODO: SAVE MAP
+>>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 		}
 		catch (const std::exception &e)
 		{
@@ -219,8 +228,15 @@ void MapEditor::populate_browser()
 void MapEditor::open(std::string s)
 {
 	//Map::Map m = MapSerializer::load_map(filepath);
+<<<<<<< HEAD
 	Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
 	maps->push_back(&m);
+=======
+	//Map::Map* m = RawMapBuilder::RawMapBuilder(); // TODO: LOAD MAPS
+	
+	Map::Map* m = new Map::Map();
+	maps->push_back(m);
+>>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 	populate_browser();
 	browser->bottomline(browser->size());
 	browser->select(browser->size());
@@ -232,8 +248,13 @@ void MapEditor::open()
 	if (BaseEditor::open())
 	{
 		//Map::Map m = MapSerializer::load_map(filepath);
+<<<<<<< HEAD
 		Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
 		maps->push_back(&m);
+=======
+		Map::Map* m = new Map::Map();
+		maps->push_back(m);
+>>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 		populate_browser();
 		browser->bottomline(browser->size());
 		browser->select(browser->size());

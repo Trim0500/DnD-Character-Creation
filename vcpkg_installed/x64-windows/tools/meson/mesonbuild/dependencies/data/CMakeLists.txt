@@ -1,5 +1,5 @@
 # fail noisily if attempt to use this file without setting:
-# cmake_minimum_required(VERSION ${CMAKE_VERSION})
+cmake_minimum_required(VERSION ${CMAKE_VERSION})
 # project(... LANGUAGES ...)
 
 cmake_policy(SET CMP0000 NEW)

@@ -108,7 +108,12 @@ namespace item
 	 * Class that abstracts the Items available to a character that are put into a container or worn.
 	 */
 	class Item : public ComponentDecorator, public Interactable::Interactable
+<<<<<<< HEAD
 {
+=======
+
+	{
+>>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 	public:
 		/*!
 		 * \fn Item
@@ -172,6 +177,11 @@ namespace item
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override;
 
+<<<<<<< HEAD
+=======
+		bool passable() const { return false; }
+
+>>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 		AbstractComponent* GetWrappee() { return wrappee; };
 
 		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };
@@ -204,7 +214,7 @@ namespace item
 
 		void SetItemWeight(float _weight) { weight = _weight; };
 
-		bool passable() const { return true; };// can the MC pass through this cell
+		//bool passable() const { return true; };// can the MC pass through this cell
 
 	private:
 		static inline int nextItemId = 0;
