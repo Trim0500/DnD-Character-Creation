@@ -181,11 +181,6 @@ namespace Character {
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
 
-<<<<<<< HEAD
-=======
-		bool passable() const { return true; };
-
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
@@ -354,11 +349,7 @@ namespace Character {
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override { std::vector<AbstractComponent*> initDecorators; return initDecorators; };
 
-<<<<<<< HEAD
 		bool passable() const { return true; };// can the MC pass through this cell
-=======
-		// bool passable() const { return true; };// can the MC pass through this cell
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 
 		bool GetIsPlayerControlled() { return isPlayerControlled; };
 

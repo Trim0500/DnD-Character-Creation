@@ -10,19 +10,8 @@
 #include "Character.h"
 #include "item.h"
 #include <vector>
-<<<<<<< HEAD
 #include <string>
 
-=======
-
-#include <string>
-
-#include "Interactable.h"
-#include "Character.h"
-#include "item.h"
-
-
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 /*!
 * \namespace Map
 * \brief namespace to encapsulate Map navigation
@@ -30,10 +19,6 @@
 namespace Map {
 
 	// DEPRECATED IN PHASE 2
-<<<<<<< HEAD
-=======
-
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 	///*!
 	//* \enum Cell_Type
 	//* \brief Enum to represent the posible cell types on a map
@@ -43,22 +28,13 @@ namespace Map {
 	//	wall = 'w',//wall cell, character cannot move through it.
 	//	special = 's'//special cell, character has a special interraction, can move after interraction.
 	//};
-<<<<<<< HEAD
-=======
 
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 
 	/*!
 	* \fn ConvertToCellType
 	* \brief Free function to take a letter and attempt to map it to a cell type
-<<<<<<< HEAD
 	*/
 	//Interactable::Interactable ConvertToCellType(char letter);
-=======
-
-	//Interactable::Interactable ConvertToCellType(char letter);
-
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 
 	/*!
 	* \var dirs
@@ -98,10 +74,6 @@ namespace Map {
 		*/
 		void setRows(int rows);
 		void setCols(int cols);
-<<<<<<< HEAD
-=======
-
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 		void setGrid();
 		void setEndCell();
 
@@ -181,10 +153,6 @@ namespace Map {
 		* \brief grid mapping out the cell types
 		*/
 		std::vector<std::vector<Interactable::Interactable*>> grid;
-<<<<<<< HEAD
-=======
-
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 	};
 
 }

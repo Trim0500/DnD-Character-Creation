@@ -34,22 +34,16 @@ void Map::Map::setEndCell() {
 	this->endCell[0] = this->rows - 1;
 	this->endCell[1] = this->cols - 1;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 void Map::Map::setGrid() {
 	for (int i = 0; i < this->rows; i++) {
 		this->grid.push_back(std::vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
-
-<<<<<<< HEAD
-=======
 	}
 }
 void Map::Map::setCell(int row, int col, Interactable::Interactable* cell) {
 	this->grid[row][col] = cell;
 }
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
+
 void Map::Map::setEmpty(int row, int col) {
 	this->grid[row][col] = new EmptyCell();
 }
@@ -273,10 +267,6 @@ void Map::Map::setItem(int row, int col, item::Item* item) {
 //	//wants to stop
 //	return true;
 //}
-<<<<<<< HEAD
-=======
-
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 
 //convert a given letter to it's corresponding cell type
 //Map::Cell_Type Map::ConvertToCellType(char letter) {
@@ -362,25 +352,4 @@ bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>
 		!visited[nextRow][nextCol]);
 }
 
-<<<<<<< HEAD
-=======
-////print the grid
-//void Map::Map::Print() {
-//	for (int i = 0; i < rows; i++) {
-//		for (int j = 0; j < cols; j++) {
-//			if (i == 0 && j == 0) {
-//				cout << "O" << " "; //spawn point, ie start
-//			}
-//			else if (i == rows - 1 && j == cols - 1) {
-//				cout << "X" << " "; //end goal
-//			}
-//			else {
-//				cout << static_cast<char>(grid[i][j]) << " ";
-//			}
-//		}
-//		cout << endl;
-//	}
-//}
-
->>>>>>> e48c3efde6b37d850058987a2bdc28da07358e64
 
