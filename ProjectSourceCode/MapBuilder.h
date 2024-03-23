@@ -13,18 +13,16 @@ namespace MapBuilder {
 		void createnewMap() { m_map = new Map::Map(); }
 
 		//save map object to a file
-		virtual bool SaveMap(Map::Map* map);
+		static bool SaveMap(Map::Map* map, std::string& filename);
 		//load map from a text file
-		virtual Map::Map LoadMap(std::string& filename);
+		static Map::Map LoadMap(std::string& filename);
 
 		//create all parts
-		virtual void buildRows() = 0;
-		virtual void buildCols() = 0;
-		virtual void buildGrid() = 0;
-		virtual void buildEndCell() = 0;
-		virtual void buildTypes() = 0;
-		//virtual void buildWalls() = 0;
-		//virtual void buildSpecials() = 0;
+		void buildRows();
+		void buildCols();
+		void buildGrid();
+		void buildEndCell();
+		void buildTypes();
 
 	protected:
 		//Product built by Builder
