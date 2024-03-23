@@ -1,0 +1,78 @@
+\doxysection{characteractionstrategy\+::Character\+Action\+Strategy Class Reference}
+\hypertarget{classcharacteractionstrategy_1_1_character_action_strategy}{}\label{classcharacteractionstrategy_1_1_character_action_strategy}\index{characteractionstrategy::CharacterActionStrategy@{characteractionstrategy::CharacterActionStrategy}}
+
+
+interface to be implemented by other classes that has the declaration of the strategy algo  
+
+
+
+
+{\ttfamily \#include $<$characteractionstrategy.\+h$>$}
+
+Inheritance diagram for characteractionstrategy\+::Character\+Action\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.244444cm]{classcharacteractionstrategy_1_1_character_action_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_ac455b516413baec15f598b599da64f8c}{\texorpdfstring{$\sim$}{\string~}\+Character\+Action\+Strategy}} ()=default
+\begin{DoxyCompactList}\small\item\em default virtual destructor \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ \mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{Cell\+Action\+Info}} $>$ \mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31}{Use\+Movement\+Strategy}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable\+::\+Interactable}} \texorpdfstring{$\ast$}{*} $>$ $>$, const int \&, const int \&) const =0
+\begin{DoxyCompactList}\small\item\em Abstract function that is meant to be implemented by other classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+interface to be implemented by other classes that has the declaration of the strategy algo 
+
+Definition at line \mbox{\hyperlink{characteractionstrategy_8h_source_l00050}{50}} of file \mbox{\hyperlink{characteractionstrategy_8h_source}{characteractionstrategy.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classcharacteractionstrategy_1_1_character_action_strategy_ac455b516413baec15f598b599da64f8c}\label{classcharacteractionstrategy_1_1_character_action_strategy_ac455b516413baec15f598b599da64f8c} 
+\index{characteractionstrategy::CharacterActionStrategy@{characteractionstrategy::CharacterActionStrategy}!````~CharacterActionStrategy@{\texorpdfstring{$\sim$}{\string~}CharacterActionStrategy}}
+\index{````~CharacterActionStrategy@{\texorpdfstring{$\sim$}{\string~}CharacterActionStrategy}!characteractionstrategy::CharacterActionStrategy@{characteractionstrategy::CharacterActionStrategy}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CharacterActionStrategy()}{\string~CharacterActionStrategy()}}
+{\footnotesize\ttfamily characteractionstrategy\+::\+Character\+Action\+Strategy\+::\texorpdfstring{$\sim$}{\string~}\+Character\+Action\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+default virtual destructor 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31}\label{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31} 
+\index{characteractionstrategy::CharacterActionStrategy@{characteractionstrategy::CharacterActionStrategy}!UseMovementStrategy@{UseMovementStrategy}}
+\index{UseMovementStrategy@{UseMovementStrategy}!characteractionstrategy::CharacterActionStrategy@{characteractionstrategy::CharacterActionStrategy}}
+\doxysubsubsection{\texorpdfstring{UseMovementStrategy()}{UseMovementStrategy()}}
+{\footnotesize\ttfamily characteractionstrategy\+::\+Character\+Action\+Strategy\+::\+Use\+Movement\+Strategy (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable\+::\+Interactable}} \texorpdfstring{$\ast$}{*} $>$ $>$}]{,  }\item[{const int \&}]{,  }\item[{const int \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract function that is meant to be implemented by other classes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+current\+Map} & A 2D grid that represents the map the character finds themselves in \\
+\hline
+{\em \+\_\+row} & Integer that represents the current row index of the character location (1-\/indexed) \\
+\hline
+{\em \+\_\+col} & Integer that represents the current column index of the character location (1-\/indexed)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of \doxylink{structcharacteractionstrategy_1_1_cell_action_info}{Cell\+Action\+Info} structs that represents the possible actions that can be done in the cardinal directions 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classaggressorstrategy_1_1_aggressor_strategy_a8877d0945415c8392d6d44cf1bce2e75}{aggressorstrategy\+::\+Aggressor\+Strategy}}, \mbox{\hyperlink{classfriendlystrategy_1_1_friendly_strategy_a8f3b146067a3386f7cffc4911198b1c2}{friendlystrategy\+::\+Friendly\+Strategy}}, and \mbox{\hyperlink{classhumanplayerstrategy_1_1_human_player_strategy_a3f67195f1ffa001320d978956aa39296}{humanplayerstrategy\+::\+Human\+Player\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{characteractionstrategy_8h}{characteractionstrategy.\+h}}\end{DoxyCompactItemize}

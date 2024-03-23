@@ -116,6 +116,7 @@ namespace item {
 		std::ostringstream name;
 		name << itemTypeStrings[itemType - 1] << " +" << std::to_string(enchantmentBonus) << " (" << statStrings[enchantmentType] << ")";
 		itemName = name.str();
+		wrappee = nullptr;
 	}
 
 	Item::Item(const std::string& _itemName,
@@ -130,6 +131,7 @@ namespace item {
 		itemType = (ItemType)_itemType;
 		enchantmentType = (CharacterStats)_enchantmentType;
 		weight = _weight;
+		wrappee = nullptr;
 	}
 
 	Item::Item(const int& _itemId,
@@ -144,6 +146,7 @@ namespace item {
 		itemType = (ItemType)_itemType;
 		enchantmentType = (CharacterStats)_enchantmentType;
 		weight = _weight;
+		wrappee = nullptr;
 	}
 
 	int Item::Ability_Score_Natural(int _abilityScore, int _attackTurnNumber) {

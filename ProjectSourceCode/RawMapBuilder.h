@@ -1,7 +1,6 @@
 #pragma once
 
 #include "MapBuilder.h"
-using namespace std;
 
 namespace RawMapBuilder {
 
@@ -20,8 +19,5 @@ namespace RawMapBuilder {
 		virtual void buildEndCell();
 
 		virtual void buildGrid();
-
-		//virtual void buildTypes();
 	};
-
 }

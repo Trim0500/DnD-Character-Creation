@@ -60,12 +60,12 @@ protected:
 	void testConstructor(void);
 	/*!
 	* \fn testGetRows
-	* \brief function to test the rows getter: Rows()
+	* \brief function to test the rows getter: getRows()
 	*/
 	void testGetRows(void);
 	/*!
 	* \fn testGetCols
-	* \brief function to test the columns getter: Cols()
+	* \brief function to test the columns getter: getCols()
 	*/
 	void testGetCols(void);
 	/*!

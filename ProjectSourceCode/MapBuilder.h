@@ -1,7 +1,6 @@
 #pragma once
 #include "Map.h"
 #include <string>
-using namespace std;
 
 namespace MapBuilder {
 
@@ -11,7 +10,7 @@ namespace MapBuilder {
 		// get built Map from Builder
 		Map::Map* getMap() { return m_map; }
 		//build generic void Map
-		void createnewMap() { m_map = new Map::Map; }
+		void createnewMap() { m_map = new Map::Map(); }
 
 		//save map object to a file
 		virtual bool SaveMap(Map::Map* map);

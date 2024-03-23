@@ -10,6 +10,7 @@
 #include "Character.h"
 #include "item.h"
 #include <vector>
+#include <string>
 
 /*!
 * \namespace Map
@@ -46,7 +47,6 @@ namespace Map {
 	*/
 	class Map {
 	public:
-
 		/*!
 		* \fn Map
 		* \brief Constructor to build a basic map provided by user
@@ -118,6 +118,8 @@ namespace Map {
 		* \brief Check if the given x,y coordinates are a valid cell to step on
 		*/
 		bool ValidCell(int row, int col, std::vector<std::vector<bool>> visitde);
+		
+		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
 
 	private:
 		/*!

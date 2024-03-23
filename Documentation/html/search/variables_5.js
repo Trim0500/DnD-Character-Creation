@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['id_0',['id',['../structserializecharacter_1_1_character_record.html#ab9be96ea6980b7f6f5688d8a3bb34b25',1,'serializecharacter::CharacterRecord']]],
-  ['inventory_5fcontainer_5fid_1',['inventory_container_id',['../structserializecharacter_1_1_character_record.html#aab0a801fb509369a4eb7c2d38f1b7c0f',1,'serializecharacter::CharacterRecord']]],
-  ['inventory_5fcontainer_5fpath_2',['inventory_container_path',['../structserializecharacter_1_1_character_record.html#a17691a2b22c6b9e66b5b692d8723379f',1,'serializecharacter::CharacterRecord']]],
-  ['inventory_5fitem_5fids_3',['inventory_item_ids',['../structserializecharacter_1_1_character_record.html#a847a9f9988cd689bffe5946e6b3408ae',1,'serializecharacter::CharacterRecord']]],
-  ['isbarbarian_4',['isBarbarian',['../class_character.html#a00b5cdecff11125460d6b315e95cdeb3',1,'Character']]],
-  ['isbard_5',['isBard',['../class_character.html#ae470b8104e39dd0062fc2bb73f0b29f6',1,'Character']]],
-  ['iscleric_6',['isCleric',['../class_character.html#ae1452f04c4a6d2b9d92820077901a74f',1,'Character']]],
-  ['isdruid_7',['isDruid',['../class_character.html#aa71f9e67ef0b41fea2e39476d659ea97',1,'Character']]],
-  ['isfighter_8',['isFighter',['../class_character.html#ae8342c69dddc0b72ae97940abc0b89f1',1,'Character']]],
-  ['ismonk_9',['isMonk',['../class_character.html#ad47be3c083a7f54c72fe9a756bf5bd4c',1,'Character']]],
-  ['ispaladin_10',['isPaladin',['../class_character.html#a60aa5b15e5d991bb24c68f7849c38949',1,'Character']]],
-  ['isranger_11',['isRanger',['../class_character.html#a337f4cc2a738d4433e1692d0532465f6',1,'Character']]],
-  ['isrogue_12',['isRogue',['../class_character.html#af46d588138d500d3cec393eceda50be1',1,'Character']]],
-  ['issorcerer_13',['isSorcerer',['../class_character.html#a598f797fbd8149540e35ae308f41b960',1,'Character']]],
-  ['iswarlock_14',['isWarlock',['../class_character.html#a2b73cffb972ec39f482568a2390edd48',1,'Character']]],
-  ['iswizard_15',['isWizard',['../class_character.html#a83261e8d9ba2c3475bce2a448b5ca4da',1,'Character']]],
-  ['item_5fstat_5fto_5fcharacter_5fstat_16',['item_stat_TO_character_stat',['../class_character.html#a290a8d7d18b31d69a68f4ffbcf90b16e',1,'Character']]],
-  ['itemid_17',['itemId',['../structserialize_item_1_1_item_record.html#a177e46f264fb07b755579655d458a2d2',1,'serializeItem::ItemRecord']]],
-  ['itemids_18',['itemIDs',['../structserialize_item_1_1_item_container_record.html#adee2471a223acafa55e193e3a4161841',1,'serializeItem::ItemContainerRecord']]],
-  ['itemname_19',['itemName',['../structserialize_item_1_1_item_record.html#a5897ab1077852befefcab44cd5b615af',1,'serializeItem::ItemRecord::itemName'],['../structserialize_item_1_1_item_container_record.html#abf971342c2548360d8ca1b69c7bbf4f4',1,'serializeItem::ItemContainerRecord::itemName']]],
-  ['itemtype_20',['itemtype',['../structserialize_item_1_1_item_record.html#a63e11d12012788dc85e0b2015371db7d',1,'serializeItem::ItemRecord::itemtype'],['../structserialize_item_1_1_item_container_record.html#ae0354b06a3e0432068af3d7bdb1aec5f',1,'serializeItem::ItemContainerRecord::itemtype']]],
-  ['itemtypestrings_21',['itemTypeStrings',['../namespaceitem.html#a2253f9eb5765081cd2a4130418e1c79e',1,'item']]]
+  ['hit_5fpoints_0',['hit_points',['../structserializecharacter_1_1_character_record.html#a2863db6732bd10509084ce0ad9d52e69',1,'serializecharacter::CharacterRecord']]],
+  ['human_5fplayer_5fstrategy_5fname_1',['HUMAN_PLAYER_STRATEGY_NAME',['../class_character.html#a5aeef75ac39acdeb74a3260e45f8ad0b',1,'Character']]]
 ];

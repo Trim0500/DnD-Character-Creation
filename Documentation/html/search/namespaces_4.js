@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['map_0',['Map',['../namespace_map.html',1,'']]]
+  ['humanplayerstrategy_0',['humanplayerstrategy',['../namespacehumanplayerstrategy.html',1,'']]]
 ];
