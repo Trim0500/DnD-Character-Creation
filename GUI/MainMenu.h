@@ -13,7 +13,7 @@
 #include <fstream>
 #include <iostream>
 #include "../ProjectSourceCode/Map.h"
-#include "../ProjectSourceCode/RawMapBuilder.h"
+#include "../ProjectSourceCode/MapBuilder.h"
 
 
 namespace fs = std::filesystem;

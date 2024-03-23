@@ -21,11 +21,11 @@ namespace MapBuilder {
 		static Map::Map LoadMap(std::string& filename);
 
 		//create all parts
-		void buildRows();
-		void buildCols();
+		void buildRows(int r);
+		void buildCols(int c);
 		void buildGrid();
 		void buildEndCell();
-		void buildTypes();
+		//void buildTypes();
 
 	protected:
 		//Product built by Builder

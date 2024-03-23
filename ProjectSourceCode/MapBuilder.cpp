@@ -9,19 +9,19 @@
 #include <iostream>
 #include <string>
 
-void  RawMapBuilder::RawMapBuilder::buildRows(int rows) {
+void  MapBuilder::MapBuilder::buildRows(int rows) {
 	m_map->setRows(rows);
 }
 
-void  RawMapBuilder::RawMapBuilder::buildCols(int cols) {
+void  MapBuilder::MapBuilder::buildCols(int cols) {
 	m_map->setCols(cols);
 }
 
-void  RawMapBuilder::RawMapBuilder::buildEndCell() {
+void  MapBuilder::MapBuilder::buildEndCell() {
 	m_map->setEndCell();
 }
 
-void  RawMapBuilder::RawMapBuilder::buildGrid() {
+void  MapBuilder::MapBuilder::buildGrid() {
 	m_map->setGrid();
 }
 
@@ -72,7 +72,7 @@ bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 	return true;
 }
 
-Map::Map RawMapBuilder::RawMapBuilder::LoadMap(std::string& filename) {
+Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 
 	Map::Map mapload = Map::Map();
 
