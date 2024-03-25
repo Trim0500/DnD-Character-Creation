@@ -86,12 +86,12 @@ namespace item
 	 * \var itemTypeStrings
 	 * \brief String array for formatting item name item type
 	 */
-	const std::string itemTypeStrings[7] = {"Helmet", "Armor", "Shield", "Ring", "Belt", "Boots", "Weapon"};
+	const std::string itemTypeStrings[7] = { "Helmet", "Armor", "Shield", "Ring", "Belt", "Boots", "Weapon" };
 	/*!
 	 * \var itemTypeStrings
 	 * \brief String array for formatting item name character stat
 	 */
-	const std::string statStrings[9] = {"Strength",
+	const std::string statStrings[9] = { "Strength",
 										"Dexterity",
 										"Constitution",
 										"Intelligence",
@@ -99,7 +99,7 @@ namespace item
 										"Charisma",
 										"Armor Class",
 										"Attack Bonus",
-										"Damage Bonus"};
+										"Damage Bonus" };
 
 	/*!
 	 * \class Item
@@ -107,8 +107,8 @@ namespace item
 	 *
 	 * Class that abstracts the Items available to a character that are put into a container or worn.
 	 */
-	class Item : public ComponentDecorator, public  Interactable::Interactable
-	{
+	class Item : public ComponentDecorator, public Interactable::Interactable
+{
 	public:
 		/*!
 		 * \fn Item
@@ -133,7 +133,7 @@ namespace item
 		 * @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (0-9)
 		 * @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 		 */
-		Item(const std::string &, const int &, const int &, const int &, const float &);
+		Item(const std::string&, const int&, const int&, const int&, const float&);
 
 		/*!
 		 * \fn Item
@@ -150,15 +150,15 @@ namespace item
 		 * @param _enchantmentType The reference to a constant integer representing the chosen enchantment type value. (0-9)
 		 * @param _weight The reference to a constant float representing the chosen weight vaule. This weight depends on the item type.
 		 */
-		Item(const int &, const std::string &, const int &, const int &, const int &, const float &);
-		
-		friend bool operator==(const Item &lhs, const Item &rhs) { return lhs.itemName == rhs.itemName; };
+		Item(const int&, const std::string&, const int&, const int&, const int&, const float&);
+
+		friend bool operator==(const Item& lhs, const Item& rhs) { return lhs.itemName == rhs.itemName; };
 
 		/*!
 		* \fn Ability_Score_Natural
 		* \brief Overriden function that is meant to use the wrappee's function of the same name to then add on the enchantment bonus of the worn item
 		*
-		* \param _abilityScore Integer that represents the ability score targeted to calculate the ability score through worn item bonuses 
+		* \param _abilityScore Integer that represents the ability score targeted to calculate the ability score through worn item bonuses
 		*
 		* \return Integer that represents the calculated bonus for an ability score through item bonuses (recursive)
 		*/
@@ -167,15 +167,13 @@ namespace item
 		/*!
 		* \fn GetDecoratorList
 		* \brief Overriden function that is meant to use the wrappee's function of the same name and then push the decorator's pointer to a list
-		* 
+		*
 		* \return Vector of pointers to AbstractComponent instances that represent the worn items in play
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override;
 
-		bool passable() const override { return false; }
-
 		AbstractComponent* GetWrappee() { return wrappee; };
-		
+
 		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };
 
 		int GetNextItemID() { return nextItemId; };
@@ -205,6 +203,8 @@ namespace item
 		float GetItemWeight() { return weight; };
 
 		void SetItemWeight(float _weight) { weight = _weight; };
+
+		bool passable() const override { return true; };// can the MC pass through this cell
 
 	private:
 		static inline int nextItemId = 0;

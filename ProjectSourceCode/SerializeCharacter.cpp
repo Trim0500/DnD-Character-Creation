@@ -24,7 +24,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
         record.inventory_item_ids.push_back(i.GetItemId());
     }
     //copy equipped item IDs
-    for (int i{ 0 };i<8;i++) {
+    for (int i{ 0 }; i < 8; i++) {
         try {
             AbstractComponent* currentWornItems = t_character->GetWornItems();
             std::vector<AbstractComponent*> itemDecoratorList = currentWornItems->GetDecoratorList();
@@ -35,7 +35,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
                 auto item_id = decoratorItem->GetItemId();
                 record.equipped_item_ids.push_back(item_id);
             }
-            
+
 
             // const item::Item* item_ptr = t_character->Equipped_Items((Character::Equipment_Slots)i);
             // if (item_ptr != nullptr) {
@@ -51,7 +51,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     std::string currentPath = std::filesystem::current_path().string();
 
     std::ostringstream fullURI;
-    fullURI << currentPath << t_path<< "\\InventoryItemsCharacter_" <<std::to_string(record.id) << ".csv";
+    fullURI << currentPath << t_path << "\\InventoryItemsCharacter_" << std::to_string(record.id) << ".csv";
     std::vector<Item*> inventoryVector;
 
     /*for (auto i : t_character->Inventory().GetAllItems()) {
@@ -63,12 +63,12 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     }
     record.inventory_container_path = fullURI.str();
 
-    if(t_character->Inventory().GetCapacity() > 0)
+    if (t_character->Inventory().GetCapacity() > 0)
         serializeItem::SaveItems(fullURI.str(), inventoryVector);
     record.inventory_container_id = t_character->Inventory().GetItemId();
 
     record.isPlayerControlled = t_character->GetIsPlayerControlled();
-    
+
     CharacterActionStrategy* actionStrategy = t_character->GetActionStrategy();
     if (record.isPlayerControlled) {
         record.actionStrategy = Character::HUMAN_PLAYER_STRATEGY_NAME;
@@ -81,7 +81,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     }
 
     //opening file
-  
+
     std::string filename = t_path + "Character_" + std::to_string(record.id) + ".csv";
     std::ofstream outfile(filename);
     if (!outfile.is_open()) {
@@ -113,7 +113,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
         outfile << record.equipped_item_ids[i] << ",";
     }
     outfile << std::endl;
-    outfile << "Inventory_Container_Path," <<record.inventory_container_path;
+    outfile << "Inventory_Container_Path," << record.inventory_container_path;
     outfile << std::endl;
     outfile << "Inventory_Container_ID," << record.inventory_container_id;
     outfile << std::endl;
@@ -130,7 +130,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
 
 serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std::string& filename)
 {
-    
+
     std::ifstream file(filename);
     if (!file.is_open()) {
         std::cerr << "Error! Could not open file " << filename << std::endl;
@@ -139,7 +139,7 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
 
     serializecharacter::CharacterRecord record;
     std::string line;
-    
+
     while (std::getline(file, line)) {
 
         std::stringstream spliter(line);
@@ -235,7 +235,7 @@ std::string serializecharacter::FindCharacterFile(int id, std::filesystem::path 
     for (const auto& entry : std::filesystem::directory_iterator(currentDir)) {
         temp = entry.path().filename().string();
         if (temp.find(std::to_string(id)) != std::string::npos && temp.find("Character_") != std::string::npos && !(temp.find("InventoryItemsCharacter_") != std::string::npos)) {
-            filename = currentDir.string()+"\\"+ temp;
+            filename = currentDir.string() + "\\" + temp;
         }
     }
     return filename;

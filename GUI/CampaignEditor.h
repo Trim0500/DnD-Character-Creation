@@ -48,7 +48,7 @@ namespace CampaignEditor
 			map_grid->end();
 			g->resizable(map_grid);
 			g->end();
-			maps = new vector<Map::Map *>();
+			maps = new std::vector<Map::Map *>();
 			_c_x = _c_y = 1;
 			sidebar->begin();
 
@@ -109,7 +109,7 @@ namespace CampaignEditor
 		std::vector<Map::Map *> *maps;
 		Map::Map *current_map;
 		int _grid_x, _grid_y;
-		vector<vector<MapButton *>> mbs;
+		std::vector<std::vector<MapButton *>> mbs;
 		int _c_x, _c_y; // Current x and y values. set by buttons
 		Campaign *campaign;
 		Fl_Input_Choice * map_list;

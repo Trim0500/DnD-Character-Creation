@@ -13,22 +13,30 @@
 #include <vector>
 #include "BaseEditor.h"
 #include "../ProjectSourceCode/Map.h"
+#include "../ProjectSourceCode/Interactable.h"
 
 namespace CampaignEditor
 {
-	const std::string Cell_Labels[3] = {" ", "w", "s"};
+	const std::string Cell_Labels[4] = {" ", "w", "i", "c"};
 	class MapCellButton : public Fl_Button
 	{
 	public:
 		MapCellButton(int x, int y, int w, int h, int _x, int _y);
-		void cell_type(Map::Cell_Type ct) { this->ct = ct; };
-		Map::Cell_Type cell_type() { return ct; }
+
+		//void cell_type(Map::Cell_Type ct) { this->ct = ct; };
+		void cell_type(Interactable::Interactable* ct) { this->ct = ct; };
+
+		//Map::Cell_Type cell_type() { return ct; }
+		Interactable::Interactable * cell_type() { return ct; }
+
 		int X() { return x; }
 		int Y() { return y; }
 		int handle(int e);
 
 	private:
-		Map::Cell_Type ct;
+		//Map::Cell_Type ct;
+		Interactable::Interactable * ct;
+
 		int x, y;
 		int current_l = 0;
 	};
@@ -51,7 +59,8 @@ namespace CampaignEditor
 		void update_data();
 		void delete_entry();
 		void save_data();
-		void update_cell(int x, int y, Map::Cell_Type ct);
+		//void update_cell(int x, int y, Map::Cell_Type ct);
+		void update_cell(int x, int y, Interactable::Interactable* ct);
 		void update_cell(int x, int y, std::string ct);
 		void update_cell(int x, int y, char ct);
 		void set_maps(std::vector<Map::Map *> *m) { maps = m; }

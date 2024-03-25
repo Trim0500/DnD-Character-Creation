@@ -1,17 +1,17 @@
 #include "MapBuilder.h"
 #include "MapDirector.h"
 
-namespace MapDirector {
-	void MapDirector::setMapBuilder(MapBuilder::MapBuilder* mb) {
-		m_mapBuilder = mb;
-	}
+using MB = MapBuilder::MapBuilder;
 
-	Map::Map* MapDirector::getMap() {
-		return m_mapBuilder->getMap();
-	}
+void MapDirector::MapDirector::setMapBuilder(MB* mb) {
+	m_mapBuilder = mb;
+}
 
-	void MapDirector::constructMap() {
-		m_mapBuilder->createnewMap();
-		//more to come?
-	}
+Map::Map* MapDirector::MapDirector::getMap() {
+	return m_mapBuilder->getMap();
+}
+
+void MapDirector::MapDirector::constructMap() {
+	m_mapBuilder->createnewMap();
+	//more to come?
 }

@@ -13,6 +13,7 @@
 #include <fstream>
 #include <iostream>
 #include "../ProjectSourceCode/Map.h"
+#include "../ProjectSourceCode/MapBuilder.h"
 
 
 namespace fs = std::filesystem;
@@ -57,7 +58,8 @@ namespace CampaignEditor
 				for (Map::Map *_m: *me->maps){
 					fs::create_directories(me->filepath + "/Maps");
 					fp = me->filepath + "/Maps/Map" + std::to_string(_m->GetMapID()) + ".csv";
-					MapSerializer::save_map(fp, _m);
+					MapBuilder::MapBuilder::SaveMap(_m, fp);
+					//MapSerializer::save_map(fp, _m);
 				}
 				me->filepath = temp;
 				

@@ -6,6 +6,12 @@
 #include <FL/Fl_Return_Button.H>
 #include "MapEditor.h"
 #include "MapSerializer.h"
+#include "../ProjectSourceCode/Interactable.h"
+#include "../ProjectSourceCode/Wall.h"
+#include "../ProjectSourceCode/EmptyCell.h"
+#include "../ProjectSourceCode/Character.h"
+#include "../ProjectSourceCode/item.h"
+#include "../ProjectSourceCode/MapBuilder.h"
 using namespace CampaignEditor;
 
 MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
@@ -24,20 +30,37 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 	g->end();
 }
 
-std::string cttos(Map::Cell_Type ct)
+//std::string cttos(Map::Cell_Type ct)
+std::string cttos(Interactable::Interactable* ct)
 {
-	switch (ct)
-	{
-	case Map::Cell_Type::special:
-		return "s";
-		break;
-	case Map::Cell_Type::wall:
-		return "w";
-	default:
-		return " ";
+	//switch (typeid(ct))
+	//{
+	////case Map::Cell_Type::special:
+	//case Map::Cell_Type::special:
+	//	return "s";
+	//	break;
+	////case Map::Cell_Type::wall:
+	//case typeid(Wall) == typeid(ct):
+	//	return "w";
+	//default:
+	//	return " ";
 
-		break;
+	//	break;
+	//}
+
+	if (typeid(*ct) == typeid(Wall)) {
+		return "w";
 	}
+	else if(typeid(*ct) == typeid(item::Item)) {
+		return "i";
+	}	
+	else if(typeid(*ct) == typeid(Character::Character)) {
+		return "c";
+	}
+	else {
+		return " ";
+	}
+
 }
 
 int MapCellButton::handle(int e)
@@ -76,7 +99,7 @@ void MapEditor::redraw_map()
 		for (int i = 0; i < _grid_x; i++)
 		{
 			MapCellButton *m = new MapCellButton(30 + 30 * i, 30 + 30 * j, 30, 30, i, j);
-			m->copy_label(cttos(current_map->Grid()[j][i]).c_str());
+			//m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());//TODO. error here.
 			mcbs[j].push_back(m);
 		}
 		// r->end();
@@ -172,7 +195,8 @@ void MapEditor::save_as()
 	{
 		try
 		{
-			MapSerializer::save_map(filepath, current_map);
+			//MapSerializer::save_map(filepath, current_map);
+			MapBuilder::MapBuilder::SaveMap(current_map, filepath);
 		}
 		catch (const std::exception &e)
 		{
@@ -194,7 +218,8 @@ void MapEditor::populate_browser()
 
 void MapEditor::open(std::string s)
 {
-	Map::Map m = MapSerializer::load_map(filepath);
+	//Map::Map m = MapSerializer::load_map(filepath);
+	Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
 	maps->push_back(&m);
 	populate_browser();
 	browser->bottomline(browser->size());
@@ -206,7 +231,8 @@ void MapEditor::open()
 {
 	if (BaseEditor::open())
 	{
-		Map::Map m = MapSerializer::load_map(filepath);
+		//Map::Map m = MapSerializer::load_map(filepath);
+		Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
 		maps->push_back(&m);
 		populate_browser();
 		browser->bottomline(browser->size());
@@ -231,6 +257,10 @@ void MapEditor::delete_entry()
 	populate_browser();
 }
 
-void MapEditor::update_cell(int x, int y, Map::Cell_Type ct) { current_map->ChangeCell(x, y, ct); }
-void MapEditor::update_cell(int x, int y, char ct) { current_map->ChangeCell(x, y, Map::ConvertToCellType(ct)); }
-void MapEditor::update_cell(int x, int y, std::string ct) { current_map->ChangeCell(x, y, Map::ConvertToCellType(ct[0])); }
+//void MapEditor::update_cell(int x, int y, Map::Cell_Type ct) { current_map->ChangeCell(x, y, ct); }
+//void MapEditor::update_cell(int x, int y, char ct) { current_map->ChangeCell(x, y, Map::ConvertToCellType(ct)); }
+//void MapEditor::update_cell(int x, int y, std::string ct) { current_map->ChangeCell(x, y, Map::ConvertToCellType(ct[0])); }
+
+void MapEditor::update_cell(int x, int y, Interactable::Interactable* ct) { current_map->setCell(x, y, ct); }
+//void MapEditor::update_cell(int x, int y, char ct) { current_map->setCell(x, y, Map::ConvertToCellType(ct)); } // deprecated
+//void MapEditor::update_cell(int x, int y, std::string ct) { current_map->ChangeCell(x, y, Map::ConvertToCellType(ct[0])); } //deprecated
