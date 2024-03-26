@@ -74,9 +74,9 @@ namespace campaign {
             */
             Campaign(int, const int&, const int&, std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
 
-            int GetCurrentCampaignID() { return nextCampaignID; };
+            static int GetCurrentCampaignID() { return nextCampaignID; };
 
-            void SetCurrentCampaignID(int _nextCampaignID) { nextCampaignID = _nextCampaignID; };
+            static void SetCurrentCampaignID(int _nextCampaignID) { nextCampaignID = _nextCampaignID; };
 
             int GetCampaignID() { return campaignID; };
 

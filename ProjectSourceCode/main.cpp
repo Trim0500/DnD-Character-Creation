@@ -9,10 +9,12 @@
 #include "item.h"
 #include "Character.h"
 #include "Map.h"
+#include "campaign.h"
 #include "../GUI/MainMenu.h"
 
-using namespace item;
 using namespace CppUnit;
+using namespace item;
+using namespace campaign;
 using namespace CampaignEditor;
 
 int main()
@@ -40,6 +42,8 @@ int main()
 	Character::Character::SetIDGen(0);
 
 	Map::Map::SetNextMapID(0);
+
+	Campaign::SetCurrentCampaignID(0);
 
 	MainMenu * m = new MainMenu();
 	m->show();
