@@ -228,6 +228,8 @@ namespace campaign {
     Campaign::Campaign(const int& _rows, const int& _cols) {
         nextCampaignID += 1;
         campaignID = nextCampaignID;
+        gridRows = _rows;
+        gridCols = _cols;
 
         std::vector<std::vector<int>> newMapIDMatrix;
         for (int i = 0; i < _rows; ++i)
@@ -249,10 +251,14 @@ namespace campaign {
     }
 
     Campaign::Campaign(int _existingCampaignID,
+                        const int& _rows,
+                        const int& _cols,
                         std::vector<std::vector<int>> _mapMatrix,
                         CampaignMap _currentMap,
                         std::vector<Map::Map*> _mapsInCampaign) {
         campaignID = _existingCampaignID;
+        gridRows = _rows;
+        gridCols = _cols;
         mapIDs = _mapMatrix;
         currentMap = _currentMap;
         mapsInCampaign = _mapsInCampaign;
