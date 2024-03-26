@@ -338,6 +338,8 @@ void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
 
 	_itemToEquip->SetWrappee(wornItems);	
 	wornItems = _itemToEquip;
+
+	notify();
 }
 
 void Character::Character::Unequip_Item(Equipment_Slots t_slot)
@@ -363,6 +365,8 @@ void Character::Character::Unequip_Item_Decorator(item::Item* _itemToRemove) {
 		decoratorItem->SetWrappee(wornItems);	
 		wornItems = decoratorItem;
 	}
+
+	notify();
 }
 
 void Character::Character::Receive_Damage(int t_damage)
@@ -556,6 +560,8 @@ void Character::Character::TakeItems(itemcontainer::ItemContainer* _targetContai
 	}
 
 	_targetContainer->RemoveItems(_selectedItems);
+
+	notify();
 }
 
 void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, const int& _targetContainerID) {
@@ -569,6 +575,8 @@ void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, c
 	}
 
 	targetContainer->RemoveItems(_selectedItems);
+
+	notify();
 }
 
 std::string Character::Character::Get_Abilities_String(Abilities_Stats t_abilities)
