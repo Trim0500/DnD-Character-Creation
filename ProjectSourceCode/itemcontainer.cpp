@@ -44,7 +44,7 @@ namespace itemcontainer {
 	}
 
 	void ItemContainer::RemoveItems(std::vector<Item*> _itemToRemove) {
-		for (int i = 0; i < (int)items.size(); i++)
+		for (int i = 0; i < (int)_itemToRemove.size(); i++)
 		{
 			Item itemToRemove = *_itemToRemove[i];
 			if (GetItem(itemToRemove.GetItemId()) != nullptr) {

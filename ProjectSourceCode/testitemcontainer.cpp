@@ -136,6 +136,26 @@ void TestItemContainer::TestAddNewItem(void) {
 	CPPUNIT_ASSERT(chestObject->GetAllItems().back() == *newItem);
 }
 
+void TestItemContainer::TestRemoveItems(void) {
+	std::vector<Item> backpackItems = backpackObject->GetAllItems();
+	std::vector<Item*> backpackItemsToRemove;
+	backpackItemsToRemove.push_back(&backpackItems[0]);
+	backpackObject->RemoveItems(backpackItemsToRemove);
+
+	CPPUNIT_ASSERT_EQUAL(1, (int)backpackObject->GetAllItems().size());
+
+	std::vector<Item> chestItems = chestObject->GetAllItems();
+	int chestItemsCount = chestItems.size();
+
+	std::vector<Item*> chestItemsToRemove;
+	chestItemsToRemove.push_back(&chestItems[0]);
+	chestItemsToRemove.push_back(&chestItems[1]);
+	chestItemsToRemove.push_back(&chestItems[2]);
+	chestObject->RemoveItems(chestItemsToRemove);
+
+	CPPUNIT_ASSERT_EQUAL(chestItemsCount - 3, (int)chestObject->GetAllItems().size());
+}
+
 void TestItemContainer::TestGetItemByName(void) {
 	Item* foundItem = wornItemsObject->GetItem("testHelmet");
 	CPPUNIT_ASSERT(foundItem->GetItemName() == "testHelmet");
