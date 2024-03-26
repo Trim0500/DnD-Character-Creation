@@ -60,6 +60,10 @@ namespace Map {
 		*/
 		Map(int rows, int cols);
 
+		static int GetNextMapID() { return nextMapID; };
+		
+		static void SetNextMapID(int _nextMapID) { nextMapID = _nextMapID; };
+
 		/*!
 		* \brief Getters
 		*/

@@ -181,6 +181,10 @@ namespace Character {
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
 
+		static int GetIDGen() { return id_gen; };
+		
+		static void SetIDGen(int _idGen) { id_gen = _idGen; };
+
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
