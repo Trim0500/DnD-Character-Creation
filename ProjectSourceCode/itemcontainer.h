@@ -64,6 +64,13 @@ namespace itemcontainer {
 
 			void SetItems(std::vector<Item> _items) { items = _items; };
 
+			/*!
+			* \fn RemoveItems
+			* \brief Method to remove some items from a container
+			* \param _itemToRemove Vector of Item instance pointers representing the items selected for removal
+			*/
+			void RemoveItems(std::vector<Item*>);
+
 			float GetTotalItemWeight();
 
 			Item* GetItem(const int&);

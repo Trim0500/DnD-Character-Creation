@@ -35,6 +35,7 @@ class TestItemContainer : public TestFixture {
 	CPPUNIT_TEST(TestCustomConstructor);
 	CPPUNIT_TEST(TestSetWeightCapacity);
 	CPPUNIT_TEST(TestAddNewItem);
+	CPPUNIT_TEST(TestRemoveItems);
 	CPPUNIT_TEST(TestGetItemWeightTotal);
 	CPPUNIT_TEST(TestGetItemByName);
 	CPPUNIT_TEST(TestGetItemByItemType);
@@ -71,6 +72,11 @@ class TestItemContainer : public TestFixture {
 		* \brief Function that tests adding in a new item to the list and ensuring the capacity is respected
 		*/
 		void TestAddNewItem(void);
+		/*!
+		* \fn TestRemoveItems
+		* \brief Function that tests removing items ensuring the expected list is generated
+		*/
+		void TestRemoveItems(void);
 		/*!
 		* \fn TestGetItemWeightTotal
 		* \brief Function that tests summing up the weights of the items in a container to ensure they don't fall outside the boundaries

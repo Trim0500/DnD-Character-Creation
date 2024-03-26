@@ -526,6 +526,51 @@ const int Character::Character::Damage_Bonus()
 	return damage_bonus;
 }
 
+void Character::Character::TakeItems(itemcontainer::ItemContainer* _targetContainer,
+									const std::vector<Item*>& _selectedItems,
+									const int& _destinationContainerID)
+{
+	ItemContainer* destinationContainer = inventory.GetItemId() == _destinationContainerID ?
+											&inventory :
+											static_cast<ItemContainer*>(inventory.GetItem(_destinationContainerID));
+	if (destinationContainer == nullptr) {
+		std::ostringstream excMsg;
+		excMsg << "[Character/TakeItems] -- Failed to find the destination container at ID " << _destinationContainerID;
+		throw std::invalid_argument(excMsg.str().c_str());
+	}
+
+	for (int i = 0; i < (int)_selectedItems.size(); i++)
+	{
+		if (_targetContainer->GetItem(_selectedItems[i]->GetItemId()) == nullptr) {
+			std::ostringstream excMsg;
+			excMsg << "[Character/TakeItems] -- Failed to find the item " << _selectedItems[i]->GetItemName() << " in the target container " << _targetContainer->GetItemName();
+			throw std::invalid_argument(excMsg.str().c_str());
+		}
+
+		int addResult = destinationContainer->AddNewItem(_selectedItems[i]);
+		if (addResult == -1) {
+			std::ostringstream excMsg;
+			excMsg << "[Character/TakeItems] -- Failed to add the item " << _selectedItems[i]->GetItemName() << " in the destiantion container " << destinationContainer->GetItemName();
+			throw std::overflow_error(excMsg.str().c_str());
+		}
+	}
+
+	_targetContainer->RemoveItems(_selectedItems);
+}
+
+void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, const int& _targetContainerID) {
+	ItemContainer* targetContainer = inventory.GetItemId() == _targetContainerID ?
+										&inventory :
+										static_cast<ItemContainer*>(inventory.GetItem(_targetContainerID));
+	if (targetContainer == nullptr) {
+		std::ostringstream excMsg;
+		excMsg << "[Character/DropItems] -- Failed to find the target container at ID " << _targetContainerID;
+		throw std::invalid_argument(excMsg.str().c_str());
+	}
+
+	targetContainer->RemoveItems(_selectedItems);
+}
+
 std::string Character::Character::Get_Abilities_String(Abilities_Stats t_abilities)
 {
 	switch (t_abilities)
