@@ -43,6 +43,16 @@ namespace itemcontainer {
 		return 1;
 	}
 
+	void ItemContainer::RemoveItems(std::vector<Item*> _itemToRemove) {
+		for (int i = 0; i < (int)items.size(); i++)
+		{
+			Item itemToRemove = *_itemToRemove[i];
+			if (GetItem(itemToRemove.GetItemId()) != nullptr) {
+				items.erase(std::remove(items.begin(), items.end(), itemToRemove), items.end());
+			}
+		}
+	}
+
 	float ItemContainer::GetTotalItemWeight() {
 		float total = 0.0;
 

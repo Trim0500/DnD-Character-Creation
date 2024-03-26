@@ -554,6 +554,21 @@ void Character::Character::TakeItems(itemcontainer::ItemContainer* _targetContai
 			throw std::overflow_error(excMsg.str().c_str());
 		}
 	}
+
+	_targetContainer->RemoveItems(_selectedItems);
+}
+
+void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, const int& _targetContainerID) {
+	ItemContainer* targetContainer = inventory.GetItemId() == _targetContainerID ?
+										&inventory :
+										static_cast<ItemContainer*>(inventory.GetItem(_targetContainerID));
+	if (targetContainer == nullptr) {
+		std::ostringstream excMsg;
+		excMsg << "[Character/DropItems] -- Failed to find the target container at ID " << _targetContainerID;
+		throw std::invalid_argument(excMsg.str().c_str());
+	}
+
+	targetContainer->RemoveItems(_selectedItems);
 }
 
 std::string Character::Character::Get_Abilities_String(Abilities_Stats t_abilities)

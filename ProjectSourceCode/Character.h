@@ -335,6 +335,16 @@ namespace Character {
 		*/
 		void TakeItems(itemcontainer::ItemContainer*, const std::vector<Item*>&, const int&);
 
+		/*!
+		* \fn DropItems
+		* \brief Method meant to implement a character action of dropping items from a given item container
+		* \param _selectedItems Vector of Item instance pointers representing the items to drop
+		* \param _targetContainerID Integer representing the ItemContainer instance to drop items from
+		* \throw invalid_argument
+		* \throw overflow_error
+		*/
+		void DropItems(const std::vector<Item*>&, const int&);
+
 		/*! \fn Get_Equiped_Item()
 		*  \return Returns pointer to item type object corresponding to the paramaters equipment slot. Retruns nullptr if no item is found
 		*/
