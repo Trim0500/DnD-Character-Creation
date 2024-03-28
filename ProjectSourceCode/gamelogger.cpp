@@ -5,7 +5,7 @@ namespace {
 }
 
 namespace gamelogger {
-    void GameLogger::update(std::string) {
-        // Some business logic here...
+    void GameLogger::update(std::string _receivedMessage) {
+        
     }
 }
