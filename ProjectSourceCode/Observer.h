@@ -1,6 +1,12 @@
+#include <string>
+
 #pragma once
 
-class Observer {
-	public:
-		void virtual update(void * f) = 0;
-};
+namespace observer {
+	class Observer {
+		public:
+			virtual ~Observer() {};
+
+			virtual void update(std::string) const = 0;
+	};
+}

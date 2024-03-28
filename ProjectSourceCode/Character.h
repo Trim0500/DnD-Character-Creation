@@ -31,6 +31,7 @@ using namespace characteractionstrategy;
 using namespace humanplayerstrategy;
 using namespace aggressorstrategy;
 using namespace friendlystrategy;
+using namespace observable;
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -180,6 +181,16 @@ namespace Character {
 		*/
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
+
+		virtual ~Character() {};
+
+		void Attach (Observer* _observer) override { observers.push_back(_observer); };
+
+		void Detach (Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+
+		void Notify() override;
+
+		void CreateObserverMessage(std::string);
 
 		/* \fn ID()
 		*  \brief Unique Character ID
@@ -382,6 +393,9 @@ namespace Character {
 		void SetActionStrategy(CharacterActionStrategy* _actionStrategy) { actionStrategy = _actionStrategy; };
 
 	private:
+		std::vector<Observer*> observers;
+
+		std::string observerMessage;
 
 		static inline unsigned int id_gen{ 0 };
 		const int id = id_gen++;
