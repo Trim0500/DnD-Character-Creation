@@ -7,6 +7,6 @@ namespace observer {
 		public:
 			virtual ~Observer() {};
 
-			virtual void update(std::string) const = 0;
+			virtual void update(std::string) = 0;
 	};
 }

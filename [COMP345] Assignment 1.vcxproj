@@ -130,6 +130,8 @@
     <ClCompile Include="ProjectSourceCode\MapDirector.cpp" />
     <ClCompile Include="ProjectSourceCode\RawMapBuilder.cpp" />
     <ClCompile Include="ProjectSourceCode\Wall.cpp" />
+    <ClCompile Include="ProjectSourceCode\game.cpp" />
+    <ClCompile Include="ProjectSourceCode\gamelogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\BaseEditor.h" />
@@ -176,6 +178,8 @@
     <ClInclude Include="ProjectSourceCode\MapDirector.h" />
     <ClInclude Include="ProjectSourceCode\RawMapBuilder.h" />
     <ClInclude Include="ProjectSourceCode\Wall.h" />
+    <ClInclude Include="ProjectSourceCode\game.h" />
+    <ClInclude Include="ProjectSourceCode\gamelogger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
