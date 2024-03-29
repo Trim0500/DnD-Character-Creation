@@ -5,12 +5,18 @@
 *
 * @author Michelle Polonsky
 */
+
 #pragma once 
+
+#include <vector>
+#include <string>
+
 #include "Interactable.h"
 #include "Character.h"
 #include "item.h"
-#include <vector>
-#include <string>
+#include "Observable.h"
+
+using namespace observable;
 
 /*!
 * \namespace Map
@@ -46,7 +52,7 @@ namespace Map {
 	* \class Map
 	* \brief Class to encapsulate the map functionality
 	*/
-	class Map {
+	class Map : public Observable {
 	public:
 		/*!
 		* \fn Map
@@ -59,6 +65,14 @@ namespace Map {
 		* \brief Constructor to build a basic map provided by user
 		*/
 		Map(int rows, int cols);
+
+		void Attach (Observer* _observer) override { observers.push_back(_observer); };
+
+		void Detach (Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+
+		void Notify() override;
+
+		void CreateObserverMessage(std::string);
 
 		/*!
 		* \brief Getters
@@ -122,7 +136,12 @@ namespace Map {
 		
 		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
 
+		void MoveCharacter(const int&, const int&, Character::Character*);
 	private:
+		std::vector<Observer*> observers;
+
+		std::string observerMessage;
+
 		/*!
 		*
 		*/

@@ -1,15 +1,31 @@
-#include "Character.h"
-#include "EmptyCell.h"
-#include "Interactable.h"
-#include "item.h"
-#include "Map.h"
-#include "Wall.h"
 #include <iostream>
 #include <list>
 #include <queue>
 #include <regex>
 #include <stack>
 #include <vector>
+#include <string>
+#include <sstream>
+
+#include "Character.h"
+#include "EmptyCell.h"
+#include "Interactable.h"
+#include "item.h"
+#include "Map.h"
+#include "Wall.h"
+
+void Map::Map::Notify() {
+	for (int i = 0; i < (int)observers.size(); i++)
+	{
+		observers[i]->update(observerMessage);
+	}
+}
+
+void Map::Map::CreateObserverMessage(std::string _message = "Empty") {
+	observerMessage = _message;
+	
+	Notify();
+}
 
 //default constructor
 Map::Map::Map() {
@@ -350,6 +366,14 @@ bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>
 		nextCol >= 0 && nextCol < cols &&
 		typeid(grid[nextRow][nextCol]) != typeid(Wall) &&
 		!visited[nextRow][nextCol]);
+}
+
+void Map::Map::MoveCharacter(const int& _targetX, const int& _targetY, Character::Character* _targetCharacter) {
+	// Some logic here to swap character positions based on coordiantes
+
+	std::ostringstream logMessage;
+	logMessage << "[Map/MoveCharacter] -- " << _targetCharacter->Name() << " is moving to location (" << _targetX << "," << _targetY << ") on map " << mapID;
+	CreateObserverMessage(logMessage.str());
 }
 
 
