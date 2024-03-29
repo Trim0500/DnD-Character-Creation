@@ -12,12 +12,14 @@ namespace gamelogger
 {
     class GameLogger : public Observer {
         public:
-            GameLogger(Observable* _observable) { _observable->Attach(this); };
+            GameLogger(Observable* _observable) { _observable->Attach(this); firstMessageOfSession = false; };
 
             virtual ~GameLogger(){};
 
             void update(std::string) override;
         private:
             std::string messageFromObservable;
+
+            bool firstMessageOfSession;
     };
 }

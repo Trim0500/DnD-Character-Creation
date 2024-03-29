@@ -5,6 +5,8 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
+#include <chrono>
+#include <ctime>
 
 #include "Character.h"
 #include "Dice.h"
