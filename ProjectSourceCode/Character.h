@@ -392,6 +392,8 @@ namespace Character {
 
 		void SetActionStrategy(CharacterActionStrategy* _actionStrategy) { actionStrategy = _actionStrategy; };
 
+		bool AttemptAttack(Character*);
+
 	private:
 		std::vector<Observer*> observers;
 
