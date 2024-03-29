@@ -192,6 +192,14 @@ namespace Character {
 
 		void CreateObserverMessage(std::string);
 
+		std::vector<Observer*> GetObservers() { return observers; };
+
+		void SetObservers(const std::vector<Observer*>& _observers) { observers = _observers; };
+
+		std::string GetObserverMessage() { return observerMessage; };
+
+		void SetObserverMessage(const std::string& _observerMessage) { observerMessage = _observerMessage; };
+
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/

@@ -12,7 +12,7 @@ using namespace campaign;
 namespace game {
     class Game : public Observable {
         public:
-            Game(){};
+            Game() {};
 
             virtual ~Game(){};
 
@@ -23,6 +23,18 @@ namespace game {
             void Notify() override;
 
             void CreateObserverMessage(std::string);
+
+            std::vector<Observer*> GetObservers() { return observers; };
+
+            void SetObservers(const std::vector<Observer*>& _observers) { observers = _observers; };
+
+            std::string GetObserverMessage() { return observerMessage; };
+
+            void SetObserverMessage(const std::string& _observerMessage) { observerMessage = _observerMessage; };
+
+            Campaign* GetGameCampaign() { return gameCampaign; };
+
+            void SetGameCampaign(Campaign* _gameCampaign) { gameCampaign = _gameCampaign; };
 
             // Load in a save file likely and update campaign member(?)
             void GameSetup(const std::string&);

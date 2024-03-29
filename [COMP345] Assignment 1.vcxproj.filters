@@ -105,6 +105,9 @@
     <ClCompile Include="ProjectSourceCode\gamelogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectSourceCode\testgamelogger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="GUI\BaseEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -264,6 +267,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\gamelogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\testgamelogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
