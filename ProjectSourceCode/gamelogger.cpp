@@ -10,6 +10,14 @@
 #define LOG_FILE_DIR "\\Game Log\\Game_Log.txt"
 
 namespace {
+    /*!
+    * \fn CreateLogMessage
+    * \brief Helper function that prepends a timestamp onto the log message
+    * 
+    * \param _observableMessage String representing the core message to log into a file passed to this logger instance
+    * 
+    * \return String representing the complete log message to output into a log file
+    */
     std::string CreateLogMessage(const std::string& _observableMessage) {
         time_t now = time(NULL);
         char dateTimeString[26] = {};
