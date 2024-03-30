@@ -23,7 +23,7 @@ class TestGameLogger : public TestFixture {
     CPPUNIT_TEST_SUITE(TestGameLogger);
     CPPUNIT_TEST(TestNoArgsLoggerConstructor);
     CPPUNIT_TEST(TestLoggerConstructor);
-    //CPPUNIT_TEST(TestUpdate);
+    CPPUNIT_TEST(TestUpdate);
 	CPPUNIT_TEST_SUITE_END();
 
     public:

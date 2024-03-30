@@ -20,6 +20,8 @@ namespace gamelogger
 
             void update(std::string) override;
 
+            void update(void*) const override {};
+
             std::string GetMessageFromObservable() { return messageFromObservable; };
 
             void SetMessageFromObservable (const std::string& _messageFromObservable) { messageFromObservable = _messageFromObservable; };

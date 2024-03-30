@@ -15,6 +15,8 @@ namespace {
         char dateTimeString[26] = {};
         ctime_s(dateTimeString, 26, &now);
 
+        dateTimeString[24] = '\0';
+
         std::ostringstream logMessage;
         logMessage <<  "[" << dateTimeString << "] " << _observableMessage;
 

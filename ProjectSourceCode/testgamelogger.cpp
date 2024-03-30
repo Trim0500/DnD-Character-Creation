@@ -9,8 +9,7 @@
 
 #define MAP_ROW_COUNT 5
 #define MAP_COL_COUNT 5
-#define LOG_FILE_DIR "\\Test Game Log\\Test_Game_Log.txt"
-#define LOG_FILE_2_DIR "\\Test Game Log\\Test_Game_Log_2.txt"
+#define LOG_FILE_DIR "\\Game Log\\Game_Log.txt"
 
 void TestGameLogger::setUp(void) {
     noArgsLoggerObject = new GameLogger();
@@ -60,7 +59,8 @@ void TestGameLogger::TestUpdate(void) {
     std::ostringstream existingLogFilePath;
     existingLogFilePath << folderURI.str();
 
-    noArgsLoggerObject->update("[TestGameLogger/TestUpdate] -- This is random ass text");
+    std::string testMessage = "[TestGameLogger/TestUpdate] -- This is random ass text";
+    noArgsLoggerObject->update(testMessage);
     
     struct stat existingLogFileBuffer;
 	CPPUNIT_ASSERT(stat(existingLogFilePath.str().c_str(), &existingLogFileBuffer) == 0);
