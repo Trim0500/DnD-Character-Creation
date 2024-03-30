@@ -1,0 +1,69 @@
+\doxysection{game.\+cpp}
+\hypertarget{game_8cpp_source}{}\label{game_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/game.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/game.cpp}}
+\mbox{\hyperlink{game_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game_8h}{game.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00003}00003\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00005}00005\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00007}\mbox{\hyperlink{namespacegame}{00007}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegame}{game}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00009}\mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{00009}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{Game::Notify}}()\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)observers.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ observers[i]-\/>update(observerMessage);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00014}00014\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00016}\mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{00016}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{Game::CreateObserverMessage}}(std::string\ \_message\ =\ \textcolor{stringliteral}{"{}Empty"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ observerMessage\ =\ \_message;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{Notify}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00022}\mbox{\hyperlink{classgame_1_1_game_a3e7dd20d65b6aa7c01d2d579487e59ca}{00022}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a3e7dd20d65b6aa7c01d2d579487e59ca}{Game::GameSetup}}(\textcolor{keyword}{const}\ std::string\&\ \_saveFileDir)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Fetching\ Campaign\ save\ data...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ campaign...}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Loading\ map\ data...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ generate\ maps...}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Loading\ characters...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ generate\ characters...}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ campaign\ memeber\ variables...}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Game\ setup\ complete!\ Ready\ to\ Play!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00040}\mbox{\hyperlink{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}{00040}}\ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \mbox{\hyperlink{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}{Game::LoadMap}}(\textcolor{comment}{/*\ Door\ or\ ID\ */})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/LoadMap]\ -\/-\/\ Door\ used,\ finding\ which\ map\ to\ bring\ up...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ door\ or\ ID\ to\ find\ map\ to\ load\ through\ the\ campaign\ member\ variable...}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/LoadMap]\ -\/-\/\ Found\ the\ map\ the\ player\ is\ in!\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00050}\mbox{\hyperlink{classgame_1_1_game_a2cb3ae613451081fdfedf53e5d8e4d1d}{00050}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a2cb3ae613451081fdfedf53e5d8e4d1d}{Game::EndTurn}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}\&)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ A\ character\ ended\ their\ turn,\ need\ to\ update\ game\ data...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Look\ through\ each\ cell\ to\ update\ the\ game's\ campaign\ member\ variable...}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ Map\ updates\ complete!\ moving\ on\ to\ characters...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ the\ map's\ cells\ to\ identify\ characters\ and\ update\ to\ game's\ campaign\ member\ variable}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ Character\ updates\ complete!\ Updating\ turn...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ turn\ info...}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00063}00063\ \}}
+
+\end{DoxyCode}

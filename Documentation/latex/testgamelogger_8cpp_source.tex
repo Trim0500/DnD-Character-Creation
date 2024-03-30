@@ -1,0 +1,108 @@
+\doxysection{testgamelogger.\+cpp}
+\hypertarget{testgamelogger_8cpp_source}{}\label{testgamelogger_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testgamelogger.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testgamelogger.cpp}}
+\mbox{\hyperlink{testgamelogger_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <sys/stat.h>}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{testgamelogger_8h}{testgamelogger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00011}\mbox{\hyperlink{testgamelogger_8cpp_a66d53a78fa462e4a98838bb6b4811ac2}{00011}}\ \textcolor{preprocessor}{\#define\ LOG\_FILE\_DIR\ "{}\(\backslash\)\(\backslash\)Game\ Log\(\backslash\)\(\backslash\)Game\_Log.txt"{}}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00012}\mbox{\hyperlink{testgamelogger_8cpp_a6ad2852982992d896e7da4d3abaec680}{00012}}\ \textcolor{preprocessor}{\#define\ TEST\_MESSAGE\_1\ "{}[TestGameLogger/TestUpdate]\ -\/-\/\ This\ is\ random\ ass\ text"{}}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00013}\mbox{\hyperlink{testgamelogger_8cpp_a4c2bf4077b58ca18fd76ad4e8e0bdd15}{00013}}\ \textcolor{preprocessor}{\#define\ TEST\_MESSAGE\_2\ "{}[TestGameLogger/TestUpdate]\ -\/-\/\ This\ is\ another\ random\ ass\ text"{}}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00014}\mbox{\hyperlink{testgamelogger_8cpp_a36c78703a8ebfc93dfb9697025c329ee}{00014}}\ \textcolor{preprocessor}{\#define\ TEST\_MESSAGE\_3\ "{}[TestGameLogger/TestUpdate]\ -\/-\/\ This\ is\ the\ last\ random\ ass\ text"{}}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00016}\mbox{\hyperlink{class_test_game_logger_a22e5504f62617a4e65803af780234871}{00016}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_game_logger_a22e5504f62617a4e65803af780234871}{TestGameLogger::setUp}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00017}00017\ \ \ \ \ noArgsLoggerObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger}{GameLogger}}();}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00019}00019\ \ \ \ \ gameObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classgame_1_1_game}{Game}}();}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00021}00021\ \ \ \ \ customLoggerObject\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger}{GameLogger}}(gameObject);}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00022}00022\ \}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00024}\mbox{\hyperlink{class_test_game_logger_a1924ec41bf92bde24ac4e81168b76ea9}{00024}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_game_logger_a1924ec41bf92bde24ac4e81168b76ea9}{TestGameLogger::tearDown}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{delete}\ noArgsLoggerObject;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00026}00026\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00027}00027\ \ \ \ \ gameObject-\/>\mbox{\hyperlink{classgame_1_1_game_a31bb627bd7bb45ff8446f92e6a89b59a}{Detach}}(customLoggerObject);}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{delete}\ gameObject;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{delete}\ customLoggerObject;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00033}\mbox{\hyperlink{class_test_game_logger_a1101fd1874b5cf176a53fa8b7bb8bf29}{00033}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_game_logger_a1101fd1874b5cf176a53fa8b7bb8bf29}{TestGameLogger::TestNoArgsLoggerConstructor}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00034}00034\ \ \ \ \ CPPUNIT\_ASSERT(noArgsLoggerObject-\/>\mbox{\hyperlink{classgamelogger_1_1_game_logger_aba29658451d895fec2ae5365c5a3d893}{GetMessageFromObservable}}()\ ==\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00035}00035\ \ \ \ \ CPPUNIT\_ASSERT(noArgsLoggerObject-\/>\mbox{\hyperlink{classgamelogger_1_1_game_logger_a01ea3680850ae95d9344ce1807785cb0}{GetFirstMessageOfSession}}()\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00036}00036\ \}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00038}\mbox{\hyperlink{class_test_game_logger_a37cacc6b63f443bd31b74811082e51cf}{00038}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_game_logger_a37cacc6b63f443bd31b74811082e51cf}{TestGameLogger::TestLoggerConstructor}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00039}00039\ \ \ \ \ std::vector<Observer*>\ gameObservers\ =\ gameObject-\/>\mbox{\hyperlink{classgame_1_1_game_aaf2be49dd20a067539d87de8ce599814}{GetObservers}}();}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00040}00040\ \ \ \ \ CPPUNIT\_ASSERT(customLoggerObject\ ==\ gameObservers[0]);}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00041}00041\ \ \ \ \ CPPUNIT\_ASSERT(customLoggerObject-\/>\mbox{\hyperlink{classgamelogger_1_1_game_logger_aba29658451d895fec2ae5365c5a3d893}{GetMessageFromObservable}}()\ ==\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00042}00042\ \ \ \ \ CPPUNIT\_ASSERT(customLoggerObject-\/>\mbox{\hyperlink{classgamelogger_1_1_game_logger_a01ea3680850ae95d9344ce1807785cb0}{GetFirstMessageOfSession}}()\ ==\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00043}00043\ \}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00045}\mbox{\hyperlink{class_test_game_logger_ae31382a8fdacfef76602ecf2db435dce}{00045}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_game_logger_ae31382a8fdacfef76602ecf2db435dce}{TestGameLogger::TestUpdate}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00046}00046\ \ \ \ \ std::string\ currentPath\ =\ std::filesystem::current\_path().string();}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00048}00048\ \ \ \ \ std::ostringstream\ folderURI;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00049}00049\ \ \ \ \ folderURI\ <<\ currentPath\ <<\ \mbox{\hyperlink{gamelogger_8cpp_a66d53a78fa462e4a98838bb6b4811ac2}{LOG\_FILE\_DIR}};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00050}00050\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00051}00051\ \ \ \ \ std::ostringstream\ existingLogFilePath;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00052}00052\ \ \ \ \ existingLogFilePath\ <<\ folderURI.str();}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00054}00054\ \ \ \ \ std::string\ testMessage\ =\ \mbox{\hyperlink{testgamelogger_8cpp_a6ad2852982992d896e7da4d3abaec680}{TEST\_MESSAGE\_1}};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00055}00055\ \ \ \ \ noArgsLoggerObject-\/>\mbox{\hyperlink{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72}{update}}(testMessage);}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00056}00056\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{struct\ }stat\ existingLogFileBuffer;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00058}00058\ \ \ \ \ CPPUNIT\_ASSERT(stat(existingLogFilePath.str().c\_str(),\ \&existingLogFileBuffer)\ ==\ 0);}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00060}00060\ \ \ \ \ std::string\ testMessage2\ =\ \mbox{\hyperlink{testgamelogger_8cpp_a4c2bf4077b58ca18fd76ad4e8e0bdd15}{TEST\_MESSAGE\_2}};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00061}00061\ \ \ \ \ noArgsLoggerObject-\/>\mbox{\hyperlink{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72}{update}}(testMessage2);}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00062}00062\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00063}00063\ \ \ \ \ std::string\ testMessage3\ =\ \mbox{\hyperlink{testgamelogger_8cpp_a36c78703a8ebfc93dfb9697025c329ee}{TEST\_MESSAGE\_3}};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00064}00064\ \ \ \ \ noArgsLoggerObject-\/>\mbox{\hyperlink{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72}{update}}(testMessage3);}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00066}00066\ \ \ \ \ std::smatch\ match;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00068}00068\ \ \ \ \ std::regex\ logMessage1Rgx(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)[TestGameLogger\(\backslash\)\(\backslash\)/TestUpdate\(\backslash\)\(\backslash\)]\ -\/-\/\ This\ is\ random\ ass\ text"{}});}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00069}00069\ \ \ \ \ std::regex\ logMessage2Rgx(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)[TestGameLogger\(\backslash\)\(\backslash\)/TestUpdate\(\backslash\)\(\backslash\)]\ -\/-\/\ This\ is\ another\ random\ ass\ text"{}});}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00070}00070\ \ \ \ \ std::regex\ logMessage3Rgx(\textcolor{stringliteral}{"{}\(\backslash\)\(\backslash\)[TestGameLogger\(\backslash\)\(\backslash\)/TestUpdate\(\backslash\)\(\backslash\)]\ -\/-\/\ This\ is\ the\ last\ random\ ass\ text"{}});}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordtype}{int}\ lineCount\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00074}00074\ \ \ \ \ std::ifstream\ campaignFileInputStream(existingLogFilePath.str());}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{while}\ (!campaignFileInputStream.eof())\ \{}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ std::string\ nextLine\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ std::getline(campaignFileInputStream,\ nextLine);}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextLine.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (lineCount)\ \{}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT(regex\_search(nextLine,\ match,\ logMessage1Rgx));}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT(regex\_search(nextLine,\ match,\ logMessage2Rgx));}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CPPUNIT\_ASSERT(regex\_search(nextLine,\ match,\ logMessage3Rgx));}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ lineCount++;}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testgamelogger_8cpp_source_l00102}00102\ \}}
+
+\end{DoxyCode}

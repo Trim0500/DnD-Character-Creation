@@ -78,22 +78,14 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_map_builder_1_1_map_builder-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">MapBuilder::MapBuilder Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">MapBuilder::MapBuilder Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for MapBuilder::MapBuilder:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="class_map_builder_1_1_map_builder.png" usemap="#MapBuilder::MapBuilder_map" alt=""/>
-  <map id="MapBuilder::MapBuilder_map" name="MapBuilder::MapBuilder_map">
-<area href="class_raw_map_builder_1_1_raw_map_builder.html" alt="RawMapBuilder::RawMapBuilder" shape="rect" coords="0,56,196,80"/>
-  </map>
-</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -101,20 +93,21 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acb1a7d384f1a3f88917263fc064114ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d19ef7b6d2735bccc1e9b30ea44c74b" id="r_a4d19ef7b6d2735bccc1e9b30ea44c74b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d19ef7b6d2735bccc1e9b30ea44c74b">createnewMap</a> ()</td></tr>
 <tr class="separator:a4d19ef7b6d2735bccc1e9b30ea44c74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaacebe24cbf1c45c507718d88931650c" id="r_aaacebe24cbf1c45c507718d88931650c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaacebe24cbf1c45c507718d88931650c">SaveMap</a> (<a class="el" href="class_map_1_1_map.html">Map::Map</a> *map)</td></tr>
-<tr class="separator:aaacebe24cbf1c45c507718d88931650c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab21510b0cce08edee7ec9a10528f0260" id="r_ab21510b0cce08edee7ec9a10528f0260"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_map_1_1_map.html">Map::Map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab21510b0cce08edee7ec9a10528f0260">LoadMap</a> (std::string &amp;filename)</td></tr>
-<tr class="separator:ab21510b0cce08edee7ec9a10528f0260"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80b0465400d8f8bbfb09ed381ece3623" id="r_a80b0465400d8f8bbfb09ed381ece3623"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80b0465400d8f8bbfb09ed381ece3623">buildRows</a> ()=0</td></tr>
-<tr class="separator:a80b0465400d8f8bbfb09ed381ece3623"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0356b0796a9282bfedc2d6547b3cbcc5" id="r_a0356b0796a9282bfedc2d6547b3cbcc5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0356b0796a9282bfedc2d6547b3cbcc5">buildCols</a> ()=0</td></tr>
-<tr class="separator:a0356b0796a9282bfedc2d6547b3cbcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9bfb20120d8ad388f43a20e9ebe7fbd" id="r_ab9bfb20120d8ad388f43a20e9ebe7fbd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9bfb20120d8ad388f43a20e9ebe7fbd">buildGrid</a> ()=0</td></tr>
-<tr class="separator:ab9bfb20120d8ad388f43a20e9ebe7fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade14ef7d25fd4c842ce19a58e7623d38" id="r_ade14ef7d25fd4c842ce19a58e7623d38"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade14ef7d25fd4c842ce19a58e7623d38">buildEndCell</a> ()=0</td></tr>
-<tr class="separator:ade14ef7d25fd4c842ce19a58e7623d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e1b257186ad05d3c3304a2097be3f24" id="r_a5e1b257186ad05d3c3304a2097be3f24"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e1b257186ad05d3c3304a2097be3f24">buildTypes</a> ()=0</td></tr>
-<tr class="separator:a5e1b257186ad05d3c3304a2097be3f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eedd0794726d83c135be655ee92a3ab" id="r_a5eedd0794726d83c135be655ee92a3ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5eedd0794726d83c135be655ee92a3ab">buildRows</a> (int r)</td></tr>
+<tr class="separator:a5eedd0794726d83c135be655ee92a3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1aafcf8fc74a3bb18cf4219fb9db8e" id="r_a5d1aafcf8fc74a3bb18cf4219fb9db8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d1aafcf8fc74a3bb18cf4219fb9db8e">buildCols</a> (int c)</td></tr>
+<tr class="separator:a5d1aafcf8fc74a3bb18cf4219fb9db8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac978bd0a64b1eff4c700a69fe516448e" id="r_ac978bd0a64b1eff4c700a69fe516448e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac978bd0a64b1eff4c700a69fe516448e">buildGrid</a> ()</td></tr>
+<tr class="separator:ac978bd0a64b1eff4c700a69fe516448e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadedc56fcaa5bae00ce4b546cef0756f" id="r_aadedc56fcaa5bae00ce4b546cef0756f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadedc56fcaa5bae00ce4b546cef0756f">buildEndCell</a> ()</td></tr>
+<tr class="separator:aadedc56fcaa5bae00ce4b546cef0756f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9314fbeb123bf3ba4d852e5409ccb2bb" id="r_a9314fbeb123bf3ba4d852e5409ccb2bb"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9314fbeb123bf3ba4d852e5409ccb2bb">SaveMap</a> (<a class="el" href="class_map_1_1_map.html">Map::Map</a> *map, std::string &amp;filename)</td></tr>
+<tr class="separator:a9314fbeb123bf3ba4d852e5409ccb2bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68e4bee80de11f73d239d927322521d9" id="r_a68e4bee80de11f73d239d927322521d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_map_1_1_map.html">Map::Map</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68e4bee80de11f73d239d927322521d9">LoadMap</a> (std::string &amp;filename)</td></tr>
+<tr class="separator:a68e4bee80de11f73d239d927322521d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -123,136 +116,81 @@ Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_map_builder_8h_source.html#l00007">7</a> of file <a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_builder_8h_source.html#l00010">10</a> of file <a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0356b0796a9282bfedc2d6547b3cbcc5" name="a0356b0796a9282bfedc2d6547b3cbcc5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0356b0796a9282bfedc2d6547b3cbcc5">&#9670;&#160;</a></span>buildCols()</h2>
+<a id="a5d1aafcf8fc74a3bb18cf4219fb9db8e" name="a5d1aafcf8fc74a3bb18cf4219fb9db8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d1aafcf8fc74a3bb18cf4219fb9db8e">&#9670;&#160;</a></span>buildCols()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void MapBuilder::MapBuilder::buildCols </td>
+          <td class="memname">void MapBuilder::MapBuilder::buildCols </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_builder_8cpp_source.html#l00016">16</a> of file <a class="el" href="_map_builder_8cpp_source.html">MapBuilder.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aadedc56fcaa5bae00ce4b546cef0756f" name="aadedc56fcaa5bae00ce4b546cef0756f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadedc56fcaa5bae00ce4b546cef0756f">&#9670;&#160;</a></span>buildEndCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MapBuilder::MapBuilder::buildEndCell </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_builder_8cpp_source.html#l00020">20</a> of file <a class="el" href="_map_builder_8cpp_source.html">MapBuilder.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ade14ef7d25fd4c842ce19a58e7623d38" name="ade14ef7d25fd4c842ce19a58e7623d38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade14ef7d25fd4c842ce19a58e7623d38">&#9670;&#160;</a></span>buildEndCell()</h2>
+<a id="ac978bd0a64b1eff4c700a69fe516448e" name="ac978bd0a64b1eff4c700a69fe516448e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac978bd0a64b1eff4c700a69fe516448e">&#9670;&#160;</a></span>buildGrid()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void MapBuilder::MapBuilder::buildEndCell </td>
+          <td class="memname">void MapBuilder::MapBuilder::buildGrid </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_raw_map_builder_1_1_raw_map_builder.html#a2c6c99bdf8d9be99a8699b34ee603c4e">RawMapBuilder::RawMapBuilder</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_builder_8cpp_source.html#l00024">24</a> of file <a class="el" href="_map_builder_8cpp_source.html">MapBuilder.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab9bfb20120d8ad388f43a20e9ebe7fbd" name="ab9bfb20120d8ad388f43a20e9ebe7fbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9bfb20120d8ad388f43a20e9ebe7fbd">&#9670;&#160;</a></span>buildGrid()</h2>
+<a id="a5eedd0794726d83c135be655ee92a3ab" name="a5eedd0794726d83c135be655ee92a3ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eedd0794726d83c135be655ee92a3ab">&#9670;&#160;</a></span>buildRows()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void MapBuilder::MapBuilder::buildGrid </td>
+          <td class="memname">void MapBuilder::MapBuilder::buildRows </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>r</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_raw_map_builder_1_1_raw_map_builder.html#a637c9e86ce606dbc60b38afd593d4dda">RawMapBuilder::RawMapBuilder</a>.</p>
-
-</div>
-</div>
-<a id="a80b0465400d8f8bbfb09ed381ece3623" name="a80b0465400d8f8bbfb09ed381ece3623"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80b0465400d8f8bbfb09ed381ece3623">&#9670;&#160;</a></span>buildRows()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void MapBuilder::MapBuilder::buildRows </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5e1b257186ad05d3c3304a2097be3f24" name="a5e1b257186ad05d3c3304a2097be3f24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e1b257186ad05d3c3304a2097be3f24">&#9670;&#160;</a></span>buildTypes()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void MapBuilder::MapBuilder::buildTypes </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implemented in <a class="el" href="class_raw_map_builder_1_1_raw_map_builder.html#a0c6a8e7116ab87428260d87c375b3517">RawMapBuilder::RawMapBuilder</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_builder_8cpp_source.html#l00012">12</a> of file <a class="el" href="_map_builder_8cpp_source.html">MapBuilder.cpp</a>.</p>
 
 </div>
 </div>
@@ -279,7 +217,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_builder_8h_source.html#l00013">13</a> of file <a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_builder_8h_source.html#l00016">16</a> of file <a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>.</p>
 
 </div>
 </div>
@@ -306,12 +244,12 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_builder_8h_source.html#l00011">11</a> of file <a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_builder_8h_source.html#l00014">14</a> of file <a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>.</p>
 
 </div>
 </div>
-<a id="ab21510b0cce08edee7ec9a10528f0260" name="ab21510b0cce08edee7ec9a10528f0260"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab21510b0cce08edee7ec9a10528f0260">&#9670;&#160;</a></span>LoadMap()</h2>
+<a id="a68e4bee80de11f73d239d927322521d9" name="a68e4bee80de11f73d239d927322521d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68e4bee80de11f73d239d927322521d9">&#9670;&#160;</a></span>LoadMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,7 +258,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="class_map_1_1_map.html">Map::Map</a> * MapBuilder::MapBuilder::LoadMap </td>
+          <td class="memname"><a class="el" href="class_map_1_1_map.html">Map::Map</a> MapBuilder::MapBuilder::LoadMap </td>
           <td>(</td>
           <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
           <td></td>
@@ -328,17 +266,17 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="class_raw_map_builder_1_1_raw_map_builder.html#a618b39476412856f7d63b977f61752eb">RawMapBuilder::RawMapBuilder</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_builder_8cpp_source.html#l00075">75</a> of file <a class="el" href="_map_builder_8cpp_source.html">MapBuilder.cpp</a>.</p>
 
 </div>
 </div>
-<a id="aaacebe24cbf1c45c507718d88931650c" name="aaacebe24cbf1c45c507718d88931650c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaacebe24cbf1c45c507718d88931650c">&#9670;&#160;</a></span>SaveMap()</h2>
+<a id="a9314fbeb123bf3ba4d852e5409ccb2bb" name="a9314fbeb123bf3ba4d852e5409ccb2bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9314fbeb123bf3ba4d852e5409ccb2bb">&#9670;&#160;</a></span>SaveMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,18 +285,24 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool MapBuilder::MapBuilder::SaveMap </td>
+          <td class="memname">bool MapBuilder::MapBuilder::SaveMap </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_map_1_1_map.html">Map::Map</a> *</td>          <td class="paramname"><span class="paramname"><em>map</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_map_1_1_map.html">Map::Map</a> *</td>          <td class="paramname"><span class="paramname"><em>map</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_builder_8cpp_source.html#l00028">28</a> of file <a class="el" href="_map_builder_8cpp_source.html">MapBuilder.cpp</a>.</p>
 
 </div>
 </div>
@@ -383,12 +327,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_builder_8h_source.html#l00031">31</a> of file <a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_builder_8h_source.html#l00032">32</a> of file <a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="_map_builder_8h_source.html">MapBuilder.h</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="_map_builder_8cpp_source.html">MapBuilder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

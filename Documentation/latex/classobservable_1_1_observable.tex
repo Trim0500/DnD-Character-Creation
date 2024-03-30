@@ -1,0 +1,102 @@
+\doxysection{observable\+::Observable Class Reference}
+\hypertarget{classobservable_1_1_observable}{}\label{classobservable_1_1_observable}\index{observable::Observable@{observable::Observable}}
+
+
+Class to abstract the observable functionality.  
+
+
+
+
+{\ttfamily \#include $<$Observable.\+h$>$}
+
+Inheritance diagram for observable\+::Observable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.806452cm]{classobservable_1_1_observable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classobservable_1_1_observable_ae66f3001b8162f0cfdf10dd204384099}{\texorpdfstring{$\sim$}{\string~}\+Observable}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classobservable_1_1_observable}{Observable}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classobservable_1_1_observable_aa7d5a047ae56adf7c50395c4a81e9ec1}{Attach}} (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*})=0
+\begin{DoxyCompactList}\small\item\em Abstract function to provide concrete implementations a way to override. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classobservable_1_1_observable_a08934a0b93c48c10e340f2d02e65e406}{Detach}} (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*})=0
+\begin{DoxyCompactList}\small\item\em Abstract function to provide concrete implementations a way to override. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classobservable_1_1_observable_abb62ad46189f0d309c039a5c4b0c6f0a}{Notify}} ()=0
+\begin{DoxyCompactList}\small\item\em Abstract function to provide concrete implementations a way to override. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to abstract the observable functionality. 
+
+Definition at line \mbox{\hyperlink{_observable_8h_source_l00025}{25}} of file \mbox{\hyperlink{_observable_8h_source}{Observable.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classobservable_1_1_observable_ae66f3001b8162f0cfdf10dd204384099}\label{classobservable_1_1_observable_ae66f3001b8162f0cfdf10dd204384099} 
+\index{observable::Observable@{observable::Observable}!````~Observable@{\texorpdfstring{$\sim$}{\string~}Observable}}
+\index{````~Observable@{\texorpdfstring{$\sim$}{\string~}Observable}!observable::Observable@{observable::Observable}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Observable()}{\string~Observable()}}
+{\footnotesize\ttfamily observable\+::\+Observable\+::\texorpdfstring{$\sim$}{\string~}\+Observable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor for \doxylink{classobservable_1_1_observable}{Observable}. 
+
+
+
+Definition at line \mbox{\hyperlink{_observable_8h_source_l00031}{31}} of file \mbox{\hyperlink{_observable_8h_source}{Observable.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classobservable_1_1_observable_aa7d5a047ae56adf7c50395c4a81e9ec1}\label{classobservable_1_1_observable_aa7d5a047ae56adf7c50395c4a81e9ec1} 
+\index{observable::Observable@{observable::Observable}!Attach@{Attach}}
+\index{Attach@{Attach}!observable::Observable@{observable::Observable}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily observable\+::\+Observable\+::\+Attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract function to provide concrete implementations a way to override. 
+
+
+
+Implemented in \mbox{\hyperlink{class_character_1_1_character_ae285eb20b676e43c1e5e715700f21fa4}{Character\+::\+Character}}, \mbox{\hyperlink{class_dice_af1140bfeac3db1d43f14d816ef9cfb6f}{Dice}}, \mbox{\hyperlink{classgame_1_1_game_ac2ee5ba3da3e8033ebd8b2cad47be423}{game\+::\+Game}}, and \mbox{\hyperlink{class_map_1_1_map_a26028931b3932bf0c656fc15dbd34ce6}{Map\+::\+Map}}.
+
+\Hypertarget{classobservable_1_1_observable_a08934a0b93c48c10e340f2d02e65e406}\label{classobservable_1_1_observable_a08934a0b93c48c10e340f2d02e65e406} 
+\index{observable::Observable@{observable::Observable}!Detach@{Detach}}
+\index{Detach@{Detach}!observable::Observable@{observable::Observable}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily observable\+::\+Observable\+::\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract function to provide concrete implementations a way to override. 
+
+
+
+Implemented in \mbox{\hyperlink{class_character_1_1_character_a520be06a13ec240540c9e5626da32e4f}{Character\+::\+Character}}, \mbox{\hyperlink{class_dice_a320c67992ea4ff94420e182539a8258b}{Dice}}, \mbox{\hyperlink{classgame_1_1_game_a31bb627bd7bb45ff8446f92e6a89b59a}{game\+::\+Game}}, and \mbox{\hyperlink{class_map_1_1_map_af6d4aab9a355fcdd8cbcd348bb9c2f55}{Map\+::\+Map}}.
+
+\Hypertarget{classobservable_1_1_observable_abb62ad46189f0d309c039a5c4b0c6f0a}\label{classobservable_1_1_observable_abb62ad46189f0d309c039a5c4b0c6f0a} 
+\index{observable::Observable@{observable::Observable}!Notify@{Notify}}
+\index{Notify@{Notify}!observable::Observable@{observable::Observable}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily observable\+::\+Observable\+::\+Notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Abstract function to provide concrete implementations a way to override. 
+
+
+
+Implemented in \mbox{\hyperlink{class_character_1_1_character_acebb5c721b4bcc5606484aea573b60b4}{Character\+::\+Character}}, \mbox{\hyperlink{class_dice_a972fe189f32621a199a69ceb7cf43d14}{Dice}}, \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{game\+::\+Game}}, and \mbox{\hyperlink{class_map_1_1_map_ae0b199d07fc33735ddac16907e585f27}{Map\+::\+Map}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{_observable_8h}{Observable.\+h}}\end{DoxyCompactItemize}

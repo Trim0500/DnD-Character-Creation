@@ -31,6 +31,8 @@ void \mbox{\hyperlink{class_test_item_container_a1f0745e6fbe999f0789899802f16482
 \begin{DoxyCompactList}\small\item\em Function that tests the alteration to a container\textquotesingle{}s weight capacity specified by character strength. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_test_item_container_aca65346e923682365a41eceeed3f2085}{Test\+Add\+New\+Item}} (void)
 \begin{DoxyCompactList}\small\item\em Function that tests adding in a new item to the list and ensuring the capacity is respected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_test_item_container_a1be32682a208a3b148e2cde63d4f9798}{Test\+Remove\+Items}} (void)
+\begin{DoxyCompactList}\small\item\em Function that tests removing items ensuring the expected list is generated. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_test_item_container_ab8bcfb4c80800c3ba9c22ffdfd425d31}{Test\+Get\+Item\+Weight\+Total}} (void)
 \begin{DoxyCompactList}\small\item\em Function that tests summing up the weights of the items in a container to ensure they don\textquotesingle{}t fall outside the boundaries. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_test_item_container_a5ab6a2e7bc8391c8f2f844f6ac8ee845}{Test\+Get\+Item\+By\+Name}} (void)
@@ -123,7 +125,7 @@ Function that tests getting all the items in the list and verifying that the cou
 
 
 
-Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00163}{163}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00183}{183}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
 
 \Hypertarget{class_test_item_container_a31e90993b942b27d9ef93d0ea710cac5}\label{class_test_item_container_a31e90993b942b27d9ef93d0ea710cac5} 
 \index{TestItemContainer@{TestItemContainer}!TestGetItemByItemType@{TestGetItemByItemType}}
@@ -137,7 +139,7 @@ Function that tests finding an item by item tyoe in the list of items (Worn Item
 
 
 
-Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00167}{167}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
 
 \Hypertarget{class_test_item_container_a5ab6a2e7bc8391c8f2f844f6ac8ee845}\label{class_test_item_container_a5ab6a2e7bc8391c8f2f844f6ac8ee845} 
 \index{TestItemContainer@{TestItemContainer}!TestGetItemByName@{TestGetItemByName}}
@@ -151,7 +153,7 @@ Function that tests finding an item by name in the list of items (Worn Items)
 
 
 
-Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00159}{159}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
 
 \Hypertarget{class_test_item_container_a62cd2ccaed60a3fd2233c57c73338955}\label{class_test_item_container_a62cd2ccaed60a3fd2233c57c73338955} 
 \index{TestItemContainer@{TestItemContainer}!TestGetItemsByBonus@{TestGetItemsByBonus}}
@@ -165,7 +167,7 @@ Function that tests getting all the items in the list that match the bonus crite
 
 
 
-Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00174}{174}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00194}{194}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
 
 \Hypertarget{class_test_item_container_ab26151ecd1e8849ffb7127888b25c535}\label{class_test_item_container_ab26151ecd1e8849ffb7127888b25c535} 
 \index{TestItemContainer@{TestItemContainer}!TestGetItemsByStat@{TestGetItemsByStat}}
@@ -179,7 +181,7 @@ Function that tests getting all the items in the list that match the character s
 
 
 
-Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00286}{286}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00306}{306}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
 
 \Hypertarget{class_test_item_container_a85681b03417b885c0d9a846eb80849ad}\label{class_test_item_container_a85681b03417b885c0d9a846eb80849ad} 
 \index{TestItemContainer@{TestItemContainer}!TestGetItemsByType@{TestGetItemsByType}}
@@ -193,7 +195,7 @@ Function that tests getting all the items in the list that match the item type.
 
 
 
-Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00221}{221}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00241}{241}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
 
 \Hypertarget{class_test_item_container_ab8bcfb4c80800c3ba9c22ffdfd425d31}\label{class_test_item_container_ab8bcfb4c80800c3ba9c22ffdfd425d31} 
 \index{TestItemContainer@{TestItemContainer}!TestGetItemWeightTotal@{TestGetItemWeightTotal}}
@@ -207,7 +209,21 @@ Function that tests summing up the weights of the items in a container to ensure
 
 
 
-Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00155}{155}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
+Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00175}{175}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
+
+\Hypertarget{class_test_item_container_a1be32682a208a3b148e2cde63d4f9798}\label{class_test_item_container_a1be32682a208a3b148e2cde63d4f9798} 
+\index{TestItemContainer@{TestItemContainer}!TestRemoveItems@{TestRemoveItems}}
+\index{TestRemoveItems@{TestRemoveItems}!TestItemContainer@{TestItemContainer}}
+\doxysubsubsection{\texorpdfstring{TestRemoveItems()}{TestRemoveItems()}}
+{\footnotesize\ttfamily Test\+Item\+Container\+::\+Test\+Remove\+Items (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Function that tests removing items ensuring the expected list is generated. 
+
+
+
+Definition at line \mbox{\hyperlink{testitemcontainer_8cpp_source_l00139}{139}} of file \mbox{\hyperlink{testitemcontainer_8cpp_source}{testitemcontainer.\+cpp}}.
 
 \Hypertarget{class_test_item_container_a1f0745e6fbe999f0789899802f164820}\label{class_test_item_container_a1f0745e6fbe999f0789899802f164820} 
 \index{TestItemContainer@{TestItemContainer}!TestSetWeightCapacity@{TestSetWeightCapacity}}

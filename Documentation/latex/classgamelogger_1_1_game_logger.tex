@@ -1,0 +1,175 @@
+\doxysection{gamelogger\+::Game\+Logger Class Reference}
+\hypertarget{classgamelogger_1_1_game_logger}{}\label{classgamelogger_1_1_game_logger}\index{gamelogger::GameLogger@{gamelogger::GameLogger}}
+
+
+Class to abstract the game logger functionality, implements the Observer interface as a concrete observer.  
+
+
+
+
+{\ttfamily \#include $<$gamelogger.\+h$>$}
+
+Inheritance diagram for gamelogger\+::Game\+Logger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgamelogger_1_1_game_logger}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgamelogger_1_1_game_logger_a71c7fc35101abcb28e4697cbc5f1cb0f}{Game\+Logger}} ()
+\begin{DoxyCompactList}\small\item\em No args constructor for \doxylink{classgamelogger_1_1_game_logger}{Game\+Logger}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classgamelogger_1_1_game_logger_a2d814817beb036127e64a7d3956e7395}{Game\+Logger}} (\mbox{\hyperlink{classobservable_1_1_observable}{Observable}} \texorpdfstring{$\ast$}{*}\+\_\+observable)
+\item 
+virtual \mbox{\hyperlink{classgamelogger_1_1_game_logger_a01a446b89d3b45584a4e1a46fe4f943f}{\texorpdfstring{$\sim$}{\string~}\+Game\+Logger}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classgamelogger_1_1_game_logger}{Game\+Logger}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72}{update}} (std\+::string) override
+\item 
+void \mbox{\hyperlink{classgamelogger_1_1_game_logger_afbcff661e55db7d6a5ae347ddb77b8a6}{update}} (void \texorpdfstring{$\ast$}{*}) const override
+\item 
+std\+::string \mbox{\hyperlink{classgamelogger_1_1_game_logger_aba29658451d895fec2ae5365c5a3d893}{Get\+Message\+From\+Observable}} ()
+\item 
+void \mbox{\hyperlink{classgamelogger_1_1_game_logger_a8aff4fda1ad37e0612710e9a41ac5393}{Set\+Message\+From\+Observable}} (const std\+::string \&\+\_\+message\+From\+Observable)
+\item 
+bool \mbox{\hyperlink{classgamelogger_1_1_game_logger_a01ea3680850ae95d9344ce1807785cb0}{Get\+First\+Message\+Of\+Session}} ()
+\item 
+void \mbox{\hyperlink{classgamelogger_1_1_game_logger_adef3ca907d7ad9cc32d1839ec6ac67a5}{Set\+First\+Message\+Of\+Session}} (bool \+\_\+first\+Message\+Of\+Session)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classobserver_1_1_observer}{observer\+::\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classobserver_1_1_observer_a0eb4f0a1f57787f8f90bdee0944ce343}{\texorpdfstring{$\sim$}{\string~}\+Observer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classobserver_1_1_observer}{Observer}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to abstract the game logger functionality, implements the Observer interface as a concrete observer. 
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00028}{28}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgamelogger_1_1_game_logger_a71c7fc35101abcb28e4697cbc5f1cb0f}\label{classgamelogger_1_1_game_logger_a71c7fc35101abcb28e4697cbc5f1cb0f} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!GameLogger@{GameLogger}}
+\index{GameLogger@{GameLogger}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{GameLogger()}{GameLogger()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily gamelogger\+::\+Game\+Logger\+::\+Game\+Logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+No args constructor for \doxylink{classgamelogger_1_1_game_logger}{Game\+Logger}. 
+
+Custom constructor for \doxylink{classgamelogger_1_1_game_logger}{Game\+Logger}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+observable} & Pointer to an observable instance to attach this object to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00034}{34}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+\Hypertarget{classgamelogger_1_1_game_logger_a2d814817beb036127e64a7d3956e7395}\label{classgamelogger_1_1_game_logger_a2d814817beb036127e64a7d3956e7395} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!GameLogger@{GameLogger}}
+\index{GameLogger@{GameLogger}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{GameLogger()}{GameLogger()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily gamelogger\+::\+Game\+Logger\+::\+Game\+Logger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classobservable_1_1_observable}{Observable}} \texorpdfstring{$\ast$}{*}}]{\+\_\+observable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00042}{42}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+\Hypertarget{classgamelogger_1_1_game_logger_a01a446b89d3b45584a4e1a46fe4f943f}\label{classgamelogger_1_1_game_logger_a01a446b89d3b45584a4e1a46fe4f943f} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!````~GameLogger@{\texorpdfstring{$\sim$}{\string~}GameLogger}}
+\index{````~GameLogger@{\texorpdfstring{$\sim$}{\string~}GameLogger}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GameLogger()}{\string~GameLogger()}}
+{\footnotesize\ttfamily gamelogger\+::\+Game\+Logger\+::\texorpdfstring{$\sim$}{\string~}\+Game\+Logger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor for \doxylink{classgamelogger_1_1_game_logger}{Game\+Logger}. 
+
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00048}{48}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgamelogger_1_1_game_logger_a01ea3680850ae95d9344ce1807785cb0}\label{classgamelogger_1_1_game_logger_a01ea3680850ae95d9344ce1807785cb0} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!GetFirstMessageOfSession@{GetFirstMessageOfSession}}
+\index{GetFirstMessageOfSession@{GetFirstMessageOfSession}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{GetFirstMessageOfSession()}{GetFirstMessageOfSession()}}
+{\footnotesize\ttfamily bool gamelogger\+::\+Game\+Logger\+::\+Get\+First\+Message\+Of\+Session (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00064}{64}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+\Hypertarget{classgamelogger_1_1_game_logger_aba29658451d895fec2ae5365c5a3d893}\label{classgamelogger_1_1_game_logger_aba29658451d895fec2ae5365c5a3d893} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!GetMessageFromObservable@{GetMessageFromObservable}}
+\index{GetMessageFromObservable@{GetMessageFromObservable}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{GetMessageFromObservable()}{GetMessageFromObservable()}}
+{\footnotesize\ttfamily std\+::string gamelogger\+::\+Game\+Logger\+::\+Get\+Message\+From\+Observable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00060}{60}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+\Hypertarget{classgamelogger_1_1_game_logger_adef3ca907d7ad9cc32d1839ec6ac67a5}\label{classgamelogger_1_1_game_logger_adef3ca907d7ad9cc32d1839ec6ac67a5} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!SetFirstMessageOfSession@{SetFirstMessageOfSession}}
+\index{SetFirstMessageOfSession@{SetFirstMessageOfSession}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{SetFirstMessageOfSession()}{SetFirstMessageOfSession()}}
+{\footnotesize\ttfamily void gamelogger\+::\+Game\+Logger\+::\+Set\+First\+Message\+Of\+Session (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+first\+Message\+Of\+Session }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00066}{66}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+\Hypertarget{classgamelogger_1_1_game_logger_a8aff4fda1ad37e0612710e9a41ac5393}\label{classgamelogger_1_1_game_logger_a8aff4fda1ad37e0612710e9a41ac5393} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!SetMessageFromObservable@{SetMessageFromObservable}}
+\index{SetMessageFromObservable@{SetMessageFromObservable}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{SetMessageFromObservable()}{SetMessageFromObservable()}}
+{\footnotesize\ttfamily void gamelogger\+::\+Game\+Logger\+::\+Set\+Message\+From\+Observable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+message\+From\+Observable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00062}{62}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+\Hypertarget{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72}\label{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!update@{update}}
+\index{update@{update}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void gamelogger\+::\+Game\+Logger\+::update (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+received\+Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classobserver_1_1_observer_ae11bbd40c528d2184572ef9187fcfa8a}{observer\+::\+Observer}}.
+
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{gamelogger_8cpp_source}{gamelogger.\+cpp}}.
+
+\Hypertarget{classgamelogger_1_1_game_logger_afbcff661e55db7d6a5ae347ddb77b8a6}\label{classgamelogger_1_1_game_logger_afbcff661e55db7d6a5ae347ddb77b8a6} 
+\index{gamelogger::GameLogger@{gamelogger::GameLogger}!update@{update}}
+\index{update@{update}!gamelogger::GameLogger@{gamelogger::GameLogger}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void gamelogger\+::\+Game\+Logger\+::update (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classobserver_1_1_observer_a4826ab910d778bf73d540f102336ba4a}{observer\+::\+Observer}}.
+
+
+
+Definition at line \mbox{\hyperlink{gamelogger_8h_source_l00058}{58}} of file \mbox{\hyperlink{gamelogger_8h_source}{gamelogger.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{gamelogger_8h}{gamelogger.\+h}}\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{gamelogger_8cpp}{gamelogger.\+cpp}}\end{DoxyCompactItemize}
