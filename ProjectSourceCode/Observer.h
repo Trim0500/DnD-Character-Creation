@@ -1,6 +1,6 @@
 /*!
 * \file Observer.h
-* \brief File that establishes the interface for concrete implementations
+* \brief File that establishes the interface for observer concrete implementations
 *
 * @author Tristan Lafleur (40245238)
 */
@@ -22,7 +22,7 @@ namespace observer {
 		public:
 			/*!
             * \fn ~Observer
-            * \brief Destructor for Campaign
+            * \brief Destructor for Observer
             */
 			virtual ~Observer() {};
 
