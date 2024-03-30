@@ -43,7 +43,7 @@ namespace gamelogger {
         }
         else {
             std::ofstream logFile(fullURI.str(), std::ios::app);
-            logFile << messageFromObservable;
+            logFile << '\n' << messageFromObservable;
 
             logFile.close();
         }

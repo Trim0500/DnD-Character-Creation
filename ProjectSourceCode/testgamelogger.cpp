@@ -4,36 +4,28 @@
 #include <filesystem>
 #include <sstream>
 #include <sys/stat.h>
+#include <regex>
 
 #include "testgamelogger.h"
 
-#define MAP_ROW_COUNT 5
-#define MAP_COL_COUNT 5
 #define LOG_FILE_DIR "\\Game Log\\Game_Log.txt"
+#define TEST_MESSAGE_1 "[TestGameLogger/TestUpdate] -- This is random ass text"
+#define TEST_MESSAGE_2 "[TestGameLogger/TestUpdate] -- This is another random ass text"
+#define TEST_MESSAGE_3 "[TestGameLogger/TestUpdate] -- This is the last random ass text"
 
 void TestGameLogger::setUp(void) {
     noArgsLoggerObject = new GameLogger();
     
     gameObject = new Game();
 
-    mapObject = new Map::Map(MAP_ROW_COUNT, MAP_COL_COUNT);
-
-    characterObject = new Character::Character("Testaniel Unitoph",Character::Character_Class::Fighter, false, new AggressorStrategy());
-
     customLoggerObject = new GameLogger(gameObject);
-    mapObject->Attach(customLoggerObject);
-    characterObject->Attach(customLoggerObject);
 }
 
 void TestGameLogger::tearDown(void) {
+    delete noArgsLoggerObject;
+    
     gameObject->Detach(customLoggerObject);
     delete gameObject;
-
-    mapObject->Detach(customLoggerObject);
-    delete mapObject;
-
-    characterObject->Detach(customLoggerObject);
-    delete characterObject;
 
     delete customLoggerObject;
 }
@@ -59,9 +51,52 @@ void TestGameLogger::TestUpdate(void) {
     std::ostringstream existingLogFilePath;
     existingLogFilePath << folderURI.str();
 
-    std::string testMessage = "[TestGameLogger/TestUpdate] -- This is random ass text";
+    std::string testMessage = TEST_MESSAGE_1;
     noArgsLoggerObject->update(testMessage);
     
     struct stat existingLogFileBuffer;
 	CPPUNIT_ASSERT(stat(existingLogFilePath.str().c_str(), &existingLogFileBuffer) == 0);
+
+    std::string testMessage2 = TEST_MESSAGE_2;
+    noArgsLoggerObject->update(testMessage2);
+    
+    std::string testMessage3 = TEST_MESSAGE_3;
+    noArgsLoggerObject->update(testMessage3);
+
+    std::smatch match;
+
+    std::regex logMessage1Rgx("\\[TestGameLogger\\/TestUpdate\\] -- This is random ass text");
+    std::regex logMessage2Rgx("\\[TestGameLogger\\/TestUpdate\\] -- This is another random ass text");
+    std::regex logMessage3Rgx("\\[TestGameLogger\\/TestUpdate\\] -- This is the last random ass text");
+
+    int lineCount = 1;
+
+    std::ifstream campaignFileInputStream(existingLogFilePath.str());
+    while (!campaignFileInputStream.eof()) {
+        std::string nextLine = "";
+        std::getline(campaignFileInputStream, nextLine);
+
+        if (nextLine.empty()) {
+            continue;
+        }
+        
+        switch (lineCount) {
+            case 1:
+                CPPUNIT_ASSERT(regex_search(nextLine, match, logMessage1Rgx));
+
+                break;
+            case 2:
+                CPPUNIT_ASSERT(regex_search(nextLine, match, logMessage2Rgx));
+
+                break;
+            case 3:
+                CPPUNIT_ASSERT(regex_search(nextLine, match, logMessage3Rgx));
+
+                break;
+            default:
+                break;
+        }
+
+        lineCount++;
+    }
 }

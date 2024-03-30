@@ -62,10 +62,6 @@ class TestGameLogger : public TestFixture {
         GameLogger* customLoggerObject;
 
         Game* gameObject;
-
-        Map::Map* mapObject;
-
-        Character::Character* characterObject;
 };
 
 CPPUNIT_TEST_SUITE_REGISTRATION(TestGameLogger);
