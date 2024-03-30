@@ -1,0 +1,61 @@
+\doxysection{game.\+h}
+\hypertarget{game_8h_source}{}\label{game_8h_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/game.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/game.h}}
+\mbox{\hyperlink{game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_observable_8h}{Observable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{campaign_8h}{campaign.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceobservable}{observable}};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00017}00017\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacecampaign}{campaign}};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00023}00023\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegame}{game}}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00028}\mbox{\hyperlink{classgame_1_1_game}{00028}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgame_1_1_game}{Game}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classobservable_1_1_observable}{Observable}}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00034}\mbox{\hyperlink{classgame_1_1_game_a74cd9697144c5bb5ccf1d2cb71d56e41}{00034}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_a74cd9697144c5bb5ccf1d2cb71d56e41}{Game}}()\ \{\};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00040}\mbox{\hyperlink{classgame_1_1_game_a9fd96a37b55d908071105879d015df8c}{00040}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classgame_1_1_game_a9fd96a37b55d908071105879d015df8c}{\string~Game}}()\{\};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00042}\mbox{\hyperlink{classgame_1_1_game_ac2ee5ba3da3e8033ebd8b2cad47be423}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_ac2ee5ba3da3e8033ebd8b2cad47be423}{Attach}}\ (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}}*\ \_observer)\textcolor{keyword}{\ override\ }\{\ observers.push\_back(\_observer);\ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00044}\mbox{\hyperlink{classgame_1_1_game_a31bb627bd7bb45ff8446f92e6a89b59a}{00044}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a31bb627bd7bb45ff8446f92e6a89b59a}{Detach}}\ (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}}*\ \_observer)\textcolor{keyword}{\ override\ }\{\ observers.erase(std::remove(observers.begin(),\ observers.end(),\ \_observer),\ observers.end());\ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{Notify}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(std::string);}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00060}\mbox{\hyperlink{classgame_1_1_game_aaf2be49dd20a067539d87de8ce599814}{00060}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Observer*>\ \mbox{\hyperlink{classgame_1_1_game_aaf2be49dd20a067539d87de8ce599814}{GetObservers}}()\ \{\ \textcolor{keywordflow}{return}\ observers;\ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00062}\mbox{\hyperlink{classgame_1_1_game_a143e89f37c6c995bbb618396ede2618c}{00062}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a143e89f37c6c995bbb618396ede2618c}{SetObservers}}(\textcolor{keyword}{const}\ std::vector<Observer*>\&\ \_observers)\ \{\ observers\ =\ \_observers;\ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00064}\mbox{\hyperlink{classgame_1_1_game_ab33abe67c38bf621c8b9952bbdcf2716}{00064}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classgame_1_1_game_ab33abe67c38bf621c8b9952bbdcf2716}{GetObserverMessage}}()\ \{\ \textcolor{keywordflow}{return}\ observerMessage;\ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00066}\mbox{\hyperlink{classgame_1_1_game_abaf5a979be2bca391c6a45ea191fda59}{00066}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_abaf5a979be2bca391c6a45ea191fda59}{SetObserverMessage}}(\textcolor{keyword}{const}\ std::string\&\ \_observerMessage)\ \{\ observerMessage\ =\ \_observerMessage;\ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00068}\mbox{\hyperlink{classgame_1_1_game_a7b9d57d02cd131b5fd3fdc551010062f}{00068}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}*\ \mbox{\hyperlink{classgame_1_1_game_a7b9d57d02cd131b5fd3fdc551010062f}{GetGameCampaign}}()\ \{\ \textcolor{keywordflow}{return}\ gameCampaign;\ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00070}\mbox{\hyperlink{classgame_1_1_game_a52075ca9bbb9b49588904f24cd488722}{00070}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a52075ca9bbb9b49588904f24cd488722}{SetGameCampaign}}(\mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}*\ \_gameCampaign)\ \{\ gameCampaign\ =\ \_gameCampaign;\ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Load\ in\ a\ save\ file\ likely\ and\ update\ campaign\ member(?)}}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a3e7dd20d65b6aa7c01d2d579487e59ca}{GameSetup}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Good\ candidate\ to\ incorporate\ doors\ (pass\ a\ reference\ to\ the\ object\ just\ an\ ID\ to\ know\ what\ map\ to\ load\ from\ campaign\ member)}}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \mbox{\hyperlink{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}{LoadMap}}(\textcolor{comment}{/*\ Door\ or\ ID\ */});}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Essentially\ use\ this\ to\ update\ the\ game\ data\ based\ on\ an\ action\ taken\ by\ the\ player\ or\ an\ NPC}}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a2cb3ae613451081fdfedf53e5d8e4d1d}{EndTurn}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}\&);}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Observer*>\ observers;}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ observerMessage;}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}*\ gameCampaign;}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00094}00094\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{game_8h_source_l00095}00095\ \}}
+
+\end{DoxyCode}

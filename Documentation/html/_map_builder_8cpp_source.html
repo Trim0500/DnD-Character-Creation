@@ -85,15 +85,139 @@ $(function() { codefold.init(0); });
 </div><!--header-->
 <div class="contents">
 <a href="_map_builder_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_map_builder_8h.html">MapBuilder.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespace_map_builder.html">MapBuilder</a>;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//no implementation. generic class. </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_character_8h.html">Character.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="_empty_cell_8h.html">EmptyCell.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="item_8h.html">Item.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="_map_builder_8h.html">MapBuilder.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_raw_map_builder_8h.html">RawMapBuilder.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_wall_8h.html">Wall.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_map_builder_1_1_map_builder.html#a5eedd0794726d83c135be655ee92a3ab">   12</a></span><span class="keywordtype">void</span>  <a class="code hl_function" href="class_map_builder_1_1_map_builder.html#a5eedd0794726d83c135be655ee92a3ab">MapBuilder::MapBuilder::buildRows</a>(<span class="keywordtype">int</span> rows) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    m_map-&gt;setRows(rows);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
+</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="class_map_builder_1_1_map_builder.html#a5d1aafcf8fc74a3bb18cf4219fb9db8e">   16</a></span><span class="keywordtype">void</span>  <a class="code hl_function" href="class_map_builder_1_1_map_builder.html#a5d1aafcf8fc74a3bb18cf4219fb9db8e">MapBuilder::MapBuilder::buildCols</a>(<span class="keywordtype">int</span> cols) {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    m_map-&gt;setCols(cols);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_map_builder_1_1_map_builder.html#aadedc56fcaa5bae00ce4b546cef0756f">   20</a></span><span class="keywordtype">void</span>  <a class="code hl_function" href="class_map_builder_1_1_map_builder.html#aadedc56fcaa5bae00ce4b546cef0756f">MapBuilder::MapBuilder::buildEndCell</a>() {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    m_map-&gt;setEndCell();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_map_builder_1_1_map_builder.html#ac978bd0a64b1eff4c700a69fe516448e">   24</a></span><span class="keywordtype">void</span>  <a class="code hl_function" href="class_map_builder_1_1_map_builder.html#ac978bd0a64b1eff4c700a69fe516448e">MapBuilder::MapBuilder::buildGrid</a>() {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    m_map-&gt;setGrid();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_map_builder_1_1_map_builder.html#a9314fbeb123bf3ba4d852e5409ccb2bb">   28</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_map_builder_1_1_map_builder.html#a9314fbeb123bf3ba4d852e5409ccb2bb">MapBuilder::MapBuilder::SaveMap</a>(<a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* map, std::string&amp; filename) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">//create file</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::ofstream file(filename);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="comment">//open file</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">if</span> (!file.is_open()) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Could not open file: &quot;</span> &lt;&lt; filename &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            file &lt;&lt; map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a5de97b7d5aecec9621d8cb559201b1d1">getRows</a>() &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#aa168b7728d21400c359179866d49f444">getCols</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <span class="comment">//loop throug the map and save each non-empty cell</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a>().size(); i++) {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a>()[i].size(); j++) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                    <span class="comment">//if wall: write the row,col and celltype</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                    <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a>()[i][j]) == <span class="keyword">typeid</span>(<a class="code hl_class" href="class_wall.html">Wall</a>)) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                        file &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;w&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                        <span class="comment">//row,col,w</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                    <span class="comment">//if item</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a>()[i][j]) == <span class="keyword">typeid</span>(<a class="code hl_class" href="classitem_1_1_item.html">Item</a>)) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                        file &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;i&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classitem_1_1_item.html">Item</a>*<span class="keyword">&gt;</span>(map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a>()[i][j])-&gt;GetItemId() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                        <span class="comment">//row,col,i,ID</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                    <span class="comment">// if character </span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a>()[i][j]) == <span class="keyword">typeid</span>(<a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>)) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                        file &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;c&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>*<span class="keyword">&gt;</span>(map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a>()[i][j])-&gt;ID() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                        <span class="comment">//row,col,c</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                    <span class="comment">//if the cell type is empty: do nothing</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(map-&gt;<a class="code hl_function" href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a>()[i][j]) == <span class="keyword">typeid</span>(<a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>)) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                        file &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; j &lt;&lt; <span class="stringliteral">&quot;e&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            }<span class="comment">//end loop</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        }<span class="comment">//end file writing</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::ofstream::failure&amp; e) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Exception caught while opening file: &quot;</span> &lt;&lt; filename &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    file.close();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_map_builder_1_1_map_builder.html#a68e4bee80de11f73d239d927322521d9">   75</a></span><a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a> <a class="code hl_function" href="class_map_builder_1_1_map_builder.html#a68e4bee80de11f73d239d927322521d9">MapBuilder::MapBuilder::LoadMap</a>(std::string&amp; filename) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a> mapload = <a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    std::ifstream file(filename);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">//open file</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keywordflow">if</span> (!file.is_open()) {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;Could not open file: &quot;</span> &lt;&lt; filename &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            std::string line;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            <span class="comment">//while there is content in the file</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            <span class="keywordflow">while</span> (getline(file, line)) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>                <span class="comment">// hereee build </span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::ifstream::failure&amp; e) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Exception caught while opening file: &quot;</span> &lt;&lt; filename &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">return</span> mapload;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+</div>
+<div class="ttc" id="a_character_8h_html"><div class="ttname"><a href="_character_8h.html">Character.h</a></div><div class="ttdoc">Header file containing Character functionality definitions The character creation is based off of the...</div></div>
+<div class="ttc" id="a_empty_cell_8h_html"><div class="ttname"><a href="_empty_cell_8h.html">EmptyCell.h</a></div></div>
 <div class="ttc" id="a_map_builder_8h_html"><div class="ttname"><a href="_map_builder_8h.html">MapBuilder.h</a></div></div>
-<div class="ttc" id="anamespace_map_builder_html"><div class="ttname"><a href="namespace_map_builder.html">MapBuilder</a></div><div class="ttdef"><b>Definition</b> <a href="_map_builder_8h_source.html#l00005">MapBuilder.h:5</a></div></div>
+<div class="ttc" id="a_raw_map_builder_8h_html"><div class="ttname"><a href="_raw_map_builder_8h.html">RawMapBuilder.h</a></div></div>
+<div class="ttc" id="a_wall_8h_html"><div class="ttname"><a href="_wall_8h.html">Wall.h</a></div></div>
+<div class="ttc" id="aclass_character_1_1_character_html"><div class="ttname"><a href="class_character_1_1_character.html">Character::Character</a></div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00153">Character.h:153</a></div></div>
+<div class="ttc" id="aclass_empty_cell_html"><div class="ttname"><a href="class_empty_cell.html">EmptyCell</a></div><div class="ttdef"><b>Definition</b> <a href="_empty_cell_8h_source.html#l00005">EmptyCell.h:6</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html"><div class="ttname"><a href="class_map_1_1_map.html">Map::Map</a></div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00055">Map.h:55</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a26e2cfceaea46cb4401fd3a47935deaf"><div class="ttname"><a href="class_map_1_1_map.html#a26e2cfceaea46cb4401fd3a47935deaf">Map::Map::getGrid</a></div><div class="ttdeci">const std::vector&lt; std::vector&lt; Interactable::Interactable * &gt; &gt; getGrid()</div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00102">Map.h:102</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a5de97b7d5aecec9621d8cb559201b1d1"><div class="ttname"><a href="class_map_1_1_map.html#a5de97b7d5aecec9621d8cb559201b1d1">Map::Map::getRows</a></div><div class="ttdeci">const int getRows()</div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00099">Map.h:99</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_aa168b7728d21400c359179866d49f444"><div class="ttname"><a href="class_map_1_1_map.html#aa168b7728d21400c359179866d49f444">Map::Map::getCols</a></div><div class="ttdeci">const int getCols()</div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00100">Map.h:100</a></div></div>
+<div class="ttc" id="aclass_map_builder_1_1_map_builder_html_a5d1aafcf8fc74a3bb18cf4219fb9db8e"><div class="ttname"><a href="class_map_builder_1_1_map_builder.html#a5d1aafcf8fc74a3bb18cf4219fb9db8e">MapBuilder::MapBuilder::buildCols</a></div><div class="ttdeci">void buildCols(int c)</div><div class="ttdef"><b>Definition</b> <a href="#l00016">MapBuilder.cpp:16</a></div></div>
+<div class="ttc" id="aclass_map_builder_1_1_map_builder_html_a5eedd0794726d83c135be655ee92a3ab"><div class="ttname"><a href="class_map_builder_1_1_map_builder.html#a5eedd0794726d83c135be655ee92a3ab">MapBuilder::MapBuilder::buildRows</a></div><div class="ttdeci">void buildRows(int r)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">MapBuilder.cpp:12</a></div></div>
+<div class="ttc" id="aclass_map_builder_1_1_map_builder_html_a68e4bee80de11f73d239d927322521d9"><div class="ttname"><a href="class_map_builder_1_1_map_builder.html#a68e4bee80de11f73d239d927322521d9">MapBuilder::MapBuilder::LoadMap</a></div><div class="ttdeci">static Map::Map LoadMap(std::string &amp;filename)</div><div class="ttdef"><b>Definition</b> <a href="#l00075">MapBuilder.cpp:75</a></div></div>
+<div class="ttc" id="aclass_map_builder_1_1_map_builder_html_a9314fbeb123bf3ba4d852e5409ccb2bb"><div class="ttname"><a href="class_map_builder_1_1_map_builder.html#a9314fbeb123bf3ba4d852e5409ccb2bb">MapBuilder::MapBuilder::SaveMap</a></div><div class="ttdeci">static bool SaveMap(Map::Map *map, std::string &amp;filename)</div><div class="ttdef"><b>Definition</b> <a href="#l00028">MapBuilder.cpp:28</a></div></div>
+<div class="ttc" id="aclass_map_builder_1_1_map_builder_html_aadedc56fcaa5bae00ce4b546cef0756f"><div class="ttname"><a href="class_map_builder_1_1_map_builder.html#aadedc56fcaa5bae00ce4b546cef0756f">MapBuilder::MapBuilder::buildEndCell</a></div><div class="ttdeci">void buildEndCell()</div><div class="ttdef"><b>Definition</b> <a href="#l00020">MapBuilder.cpp:20</a></div></div>
+<div class="ttc" id="aclass_map_builder_1_1_map_builder_html_ac978bd0a64b1eff4c700a69fe516448e"><div class="ttname"><a href="class_map_builder_1_1_map_builder.html#ac978bd0a64b1eff4c700a69fe516448e">MapBuilder::MapBuilder::buildGrid</a></div><div class="ttdeci">void buildGrid()</div><div class="ttdef"><b>Definition</b> <a href="#l00024">MapBuilder.cpp:24</a></div></div>
+<div class="ttc" id="aclass_wall_html"><div class="ttname"><a href="class_wall.html">Wall</a></div><div class="ttdef"><b>Definition</b> <a href="_wall_8h_source.html#l00005">Wall.h:6</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html"><div class="ttname"><a href="classitem_1_1_item.html">item::Item</a></div><div class="ttdoc">Class for the character items.</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00110">item.h:111</a></div></div>
+<div class="ttc" id="aitem_8h_html"><div class="ttname"><a href="item_8h.html">item.h</a></div><div class="ttdoc">Header file for the Item class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

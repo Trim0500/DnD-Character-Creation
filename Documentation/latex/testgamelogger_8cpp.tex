@@ -1,0 +1,64 @@
+\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/testgamelogger.cpp File Reference}
+\hypertarget{testgamelogger_8cpp}{}\label{testgamelogger_8cpp}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testgamelogger.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testgamelogger.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include "{}testgamelogger.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{testgamelogger_8cpp_a66d53a78fa462e4a98838bb6b4811ac2}{LOG\+\_\+\+FILE\+\_\+\+DIR}}~"{}\textbackslash{}\textbackslash{}Game Log\textbackslash{}\textbackslash{}\+Game\+\_\+\+Log.\+txt"{}
+\item 
+\#define \mbox{\hyperlink{testgamelogger_8cpp_a6ad2852982992d896e7da4d3abaec680}{TEST\+\_\+\+MESSAGE\+\_\+1}}~"{}\mbox{[}Test\+Game\+Logger/Test\+Update\mbox{]} -\/-\/ This is random ass text"{}
+\item 
+\#define \mbox{\hyperlink{testgamelogger_8cpp_a4c2bf4077b58ca18fd76ad4e8e0bdd15}{TEST\+\_\+\+MESSAGE\+\_\+2}}~"{}\mbox{[}Test\+Game\+Logger/Test\+Update\mbox{]} -\/-\/ This is another random ass text"{}
+\item 
+\#define \mbox{\hyperlink{testgamelogger_8cpp_a36c78703a8ebfc93dfb9697025c329ee}{TEST\+\_\+\+MESSAGE\+\_\+3}}~"{}\mbox{[}Test\+Game\+Logger/Test\+Update\mbox{]} -\/-\/ This is the last random ass text"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{testgamelogger_8cpp_a66d53a78fa462e4a98838bb6b4811ac2}\label{testgamelogger_8cpp_a66d53a78fa462e4a98838bb6b4811ac2} 
+\index{testgamelogger.cpp@{testgamelogger.cpp}!LOG\_FILE\_DIR@{LOG\_FILE\_DIR}}
+\index{LOG\_FILE\_DIR@{LOG\_FILE\_DIR}!testgamelogger.cpp@{testgamelogger.cpp}}
+\doxysubsubsection{\texorpdfstring{LOG\_FILE\_DIR}{LOG\_FILE\_DIR}}
+{\footnotesize\ttfamily \#define LOG\+\_\+\+FILE\+\_\+\+DIR~"{}\textbackslash{}\textbackslash{}Game Log\textbackslash{}\textbackslash{}\+Game\+\_\+\+Log.\+txt"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testgamelogger_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{testgamelogger_8cpp_source}{testgamelogger.\+cpp}}.
+
+\Hypertarget{testgamelogger_8cpp_a6ad2852982992d896e7da4d3abaec680}\label{testgamelogger_8cpp_a6ad2852982992d896e7da4d3abaec680} 
+\index{testgamelogger.cpp@{testgamelogger.cpp}!TEST\_MESSAGE\_1@{TEST\_MESSAGE\_1}}
+\index{TEST\_MESSAGE\_1@{TEST\_MESSAGE\_1}!testgamelogger.cpp@{testgamelogger.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_MESSAGE\_1}{TEST\_MESSAGE\_1}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+MESSAGE\+\_\+1~"{}\mbox{[}Test\+Game\+Logger/Test\+Update\mbox{]} -\/-\/ This is random ass text"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testgamelogger_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{testgamelogger_8cpp_source}{testgamelogger.\+cpp}}.
+
+\Hypertarget{testgamelogger_8cpp_a4c2bf4077b58ca18fd76ad4e8e0bdd15}\label{testgamelogger_8cpp_a4c2bf4077b58ca18fd76ad4e8e0bdd15} 
+\index{testgamelogger.cpp@{testgamelogger.cpp}!TEST\_MESSAGE\_2@{TEST\_MESSAGE\_2}}
+\index{TEST\_MESSAGE\_2@{TEST\_MESSAGE\_2}!testgamelogger.cpp@{testgamelogger.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_MESSAGE\_2}{TEST\_MESSAGE\_2}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+MESSAGE\+\_\+2~"{}\mbox{[}Test\+Game\+Logger/Test\+Update\mbox{]} -\/-\/ This is another random ass text"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testgamelogger_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{testgamelogger_8cpp_source}{testgamelogger.\+cpp}}.
+
+\Hypertarget{testgamelogger_8cpp_a36c78703a8ebfc93dfb9697025c329ee}\label{testgamelogger_8cpp_a36c78703a8ebfc93dfb9697025c329ee} 
+\index{testgamelogger.cpp@{testgamelogger.cpp}!TEST\_MESSAGE\_3@{TEST\_MESSAGE\_3}}
+\index{TEST\_MESSAGE\_3@{TEST\_MESSAGE\_3}!testgamelogger.cpp@{testgamelogger.cpp}}
+\doxysubsubsection{\texorpdfstring{TEST\_MESSAGE\_3}{TEST\_MESSAGE\_3}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+MESSAGE\+\_\+3~"{}\mbox{[}Test\+Game\+Logger/Test\+Update\mbox{]} -\/-\/ This is the last random ass text"{}}
+
+
+
+Definition at line \mbox{\hyperlink{testgamelogger_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{testgamelogger_8cpp_source}{testgamelogger.\+cpp}}.
+

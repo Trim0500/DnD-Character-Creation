@@ -73,7 +73,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_map-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Map Class Reference</div></div>
@@ -85,14 +84,6 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="_map_8h_source.html">Map.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:aa1da1578fd3d40c69f3546de3ba3bc6f" id="r_aa1da1578fd3d40c69f3546de3ba3bc6f"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1da1578fd3d40c69f3546de3ba3bc6f">Cell_Type</a> { <a class="el" href="#aa1da1578fd3d40c69f3546de3ba3bc6faa2e4822a98337283e39f7b60acf85ec9">empty</a> = '_'
-, <a class="el" href="#aa1da1578fd3d40c69f3546de3ba3bc6fa2d86bdac01a3315b95794ffa7360edc3">wall</a> = 'w'
-, <a class="el" href="#aa1da1578fd3d40c69f3546de3ba3bc6fa0bd6506986ec42e732ffb866d33bb14e">special</a> = 's'
- }</td></tr>
-<tr class="separator:aa1da1578fd3d40c69f3546de3ba3bc6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5472a8cbabd535b6c0fc89de49302ee2" id="r_a5472a8cbabd535b6c0fc89de49302ee2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::pair&lt; int, int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5472a8cbabd535b6c0fc89de49302ee2">dirs</a> = { {0, 1}, {1, 0}, {0, -1}, {-1, 0} }</td></tr>
@@ -101,37 +92,7 @@ Public Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to encapsulate the map functionality. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="aa1da1578fd3d40c69f3546de3ba3bc6f" name="aa1da1578fd3d40c69f3546de3ba3bc6f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1da1578fd3d40c69f3546de3ba3bc6f">&#9670;&#160;</a></span>Cell_Type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum class Map::Cell_Type</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa1da1578fd3d40c69f3546de3ba3bc6faa2e4822a98337283e39f7b60acf85ec9" name="aa1da1578fd3d40c69f3546de3ba3bc6faa2e4822a98337283e39f7b60acf85ec9"></a>empty&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa1da1578fd3d40c69f3546de3ba3bc6fa2d86bdac01a3315b95794ffa7360edc3" name="aa1da1578fd3d40c69f3546de3ba3bc6fa2d86bdac01a3315b95794ffa7360edc3"></a>wall&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa1da1578fd3d40c69f3546de3ba3bc6fa0bd6506986ec42e732ffb866d33bb14e" name="aa1da1578fd3d40c69f3546de3ba3bc6fa0bd6506986ec42e732ffb866d33bb14e"></a>special&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00027">27</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a5472a8cbabd535b6c0fc89de49302ee2" name="a5472a8cbabd535b6c0fc89de49302ee2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5472a8cbabd535b6c0fc89de49302ee2">&#9670;&#160;</a></span>dirs</h2>
 
@@ -145,8 +106,15 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>all possible directions to look in : down, right, up, back </p>
-
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00045">45</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<pre class="fragment">    \enum Cell_Type
+    \brief Enum to represent the posible cell types on a map
+   &amp;zwj;/
+</pre><p> enum class Cell_Type { empty = '_',//empty cell, character can move through it. wall = 'w',//wall cell, character cannot move through it. special = 's'//special cell, character has a special interraction, can move after interraction. };</p>
+<pre class="fragment">/*!
+  \fn ConvertToCellType
+  \brief Free function to take a letter and attempt to map it to a cell type
+</pre> 
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00049">49</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>

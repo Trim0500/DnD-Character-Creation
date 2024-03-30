@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rawmapbuilder_0',['RawMapBuilder',['../class_raw_map_builder_1_1_raw_map_builder.html',1,'RawMapBuilder']]]
+  ['observable_0',['Observable',['../classobservable_1_1_observable.html',1,'observable']]],
+  ['observer_1',['Observer',['../classobserver_1_1_observer.html',1,'observer']]]
 ];

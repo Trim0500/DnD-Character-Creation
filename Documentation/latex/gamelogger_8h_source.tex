@@ -1,0 +1,44 @@
+\doxysection{gamelogger.\+h}
+\hypertarget{gamelogger_8h_source}{}\label{gamelogger_8h_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/gamelogger.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/gamelogger.h}}
+\mbox{\hyperlink{gamelogger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00008}00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_observer_8h}{Observer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_observable_8h}{Observable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00015}00015\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceobserver}{observer}};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceobservable}{observable}};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00022}00022\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegamelogger}{gamelogger}}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00023}00023\ \{}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00028}\mbox{\hyperlink{classgamelogger_1_1_game_logger}{00028}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classgamelogger_1_1_game_logger}{GameLogger}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classobserver_1_1_observer}{Observer}}\ \{}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00034}\mbox{\hyperlink{classgamelogger_1_1_game_logger_a71c7fc35101abcb28e4697cbc5f1cb0f}{00034}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgamelogger_1_1_game_logger_a71c7fc35101abcb28e4697cbc5f1cb0f}{GameLogger}}()\ \{\ messageFromObservable\ =\ \textcolor{stringliteral}{"{}"{}};\ firstMessageOfSession\ =\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00042}\mbox{\hyperlink{classgamelogger_1_1_game_logger_a2d814817beb036127e64a7d3956e7395}{00042}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgamelogger_1_1_game_logger_a2d814817beb036127e64a7d3956e7395}{GameLogger}}(\mbox{\hyperlink{classobservable_1_1_observable}{Observable}}*\ \_observable)\ \{\ \_observable-\/>\mbox{\hyperlink{classobservable_1_1_observable_aa7d5a047ae56adf7c50395c4a81e9ec1}{Attach}}(\textcolor{keyword}{this});\ messageFromObservable\ =\ \textcolor{stringliteral}{"{}"{}};\ firstMessageOfSession\ =\ \textcolor{keyword}{false};\ \};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00048}\mbox{\hyperlink{classgamelogger_1_1_game_logger_a01a446b89d3b45584a4e1a46fe4f943f}{00048}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger_a01a446b89d3b45584a4e1a46fe4f943f}{\string~GameLogger}}()\{\};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72}{update}}(std::string)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00058}\mbox{\hyperlink{classgamelogger_1_1_game_logger_afbcff661e55db7d6a5ae347ddb77b8a6}{00058}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger_afbcff661e55db7d6a5ae347ddb77b8a6}{update}}(\textcolor{keywordtype}{void}*)\textcolor{keyword}{\ const\ override\ }\{\};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00060}\mbox{\hyperlink{classgamelogger_1_1_game_logger_aba29658451d895fec2ae5365c5a3d893}{00060}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classgamelogger_1_1_game_logger_aba29658451d895fec2ae5365c5a3d893}{GetMessageFromObservable}}()\ \{\ \textcolor{keywordflow}{return}\ messageFromObservable;\ \};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00062}\mbox{\hyperlink{classgamelogger_1_1_game_logger_a8aff4fda1ad37e0612710e9a41ac5393}{00062}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger_a8aff4fda1ad37e0612710e9a41ac5393}{SetMessageFromObservable}}\ (\textcolor{keyword}{const}\ std::string\&\ \_messageFromObservable)\ \{\ messageFromObservable\ =\ \_messageFromObservable;\ \};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00064}\mbox{\hyperlink{classgamelogger_1_1_game_logger_a01ea3680850ae95d9344ce1807785cb0}{00064}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger_a01ea3680850ae95d9344ce1807785cb0}{GetFirstMessageOfSession}}()\ \{\ \textcolor{keywordflow}{return}\ firstMessageOfSession;\ \};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00066}\mbox{\hyperlink{classgamelogger_1_1_game_logger_adef3ca907d7ad9cc32d1839ec6ac67a5}{00066}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger_adef3ca907d7ad9cc32d1839ec6ac67a5}{SetFirstMessageOfSession}}(\textcolor{keywordtype}{bool}\ \_firstMessageOfSession)\ \{\ firstMessageOfSession\ =\ \_firstMessageOfSession;\ \};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ messageFromObservable;}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ firstMessageOfSession;}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00079}00079\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8h_source_l00080}00080\ \}}
+
+\end{DoxyCode}

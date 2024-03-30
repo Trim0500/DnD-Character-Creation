@@ -390,7 +390,10 @@ void Character::Character::Receive_Damage(int t_damage)
 	else {
 		hit_points -= t_damage;
 	}
-	CreateObserverMessage();
+
+	std::ostringstream logMessage;
+	logMessage << "[Character/Receive_Damage] -- " << name << " took " << t_damage << " damage! Current HP: " << hit_points << "/" << max_hit_points;
+	CreateObserverMessage(logMessage.str());
 }
 
 void Character::Character::Receive_Healing(int t_heal)
@@ -407,9 +410,17 @@ void Character::Character::Receive_Healing(int t_heal)
 const bool Character::Character::Is_Alive()
 {
 	if (hit_points <= 0) {
+		std::ostringstream logMessage;
+		logMessage << "[Character/Receive_Damage] -- " << name << " died!";
+		CreateObserverMessage(logMessage.str());
+
 		return false;
 	}
 	else {
+		std::ostringstream logMessage;
+		logMessage << "[Character/Receive_Damage] -- " << name << " lives on!";
+		CreateObserverMessage(logMessage.str());
+
 		return true;
 	}
 }
@@ -672,6 +683,28 @@ const int Character::Character::Attacks_Per_Turn()
 	}
 	int num_attacks = std::ceil((double)(sum_level / 5.0));
 	return num_attacks;
+}
+
+bool Character::Character::AttemptAttack(Character* _target) {
+	std::ostringstream logMessage;
+	logMessage << "[Character/AttemptAttack] -- " << name << " is attacking " << _target->name << Attacks_Per_Turn() << " times.";
+	CreateObserverMessage(logMessage.str());
+
+	// Some logic here...
+
+	// Maybe a miss..
+
+	logMessage.clear();
+	logMessage << "[Character/AttemptAttack] -- " << name << " missed!";
+	CreateObserverMessage(logMessage.str());
+
+	// Maybe a hit..
+
+	logMessage.clear();
+	logMessage << "[Character/AttemptAttack] -- " << name << " attacked successfully!";
+	CreateObserverMessage(logMessage.str());
+
+	return false;
 }
 
 std::string Character::Character::Get_Class_String(Character_Class t_class)

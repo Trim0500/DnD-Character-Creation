@@ -5,12 +5,18 @@
 *
 * @author Michelle Polonsky
 */
+
 #pragma once 
+
+#include <vector>
+#include <string>
+
 #include "Interactable.h"
 #include "Character.h"
 #include "item.h"
-#include <vector>
-#include <string>
+#include "Observable.h"
+
+using namespace observable;
 
 /*!
 * \namespace Map
@@ -46,7 +52,7 @@ namespace Map {
 	* \class Map
 	* \brief Class to encapsulate the map functionality
 	*/
-	class Map {
+	class Map : public Observable {
 	public:
 		/*!
 		* \fn Map
@@ -59,6 +65,32 @@ namespace Map {
 		* \brief Constructor to build a basic map provided by user
 		*/
 		Map(int rows, int cols);
+
+		void Attach (Observer* _observer) override { observers.push_back(_observer); };
+
+		void Detach (Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+
+		/*!
+		* \fn Notify
+		* \brief Implemented function that will use the list of this observers and call their update functions using the instances observer message
+		*/
+		void Notify() override;
+
+		/*!
+		* \fn CreateObserverMessage
+		* \brief Function that will take in a message from a calling object and use it to notify the observers with that message
+		* 
+		* \param _message String representing the message to pass to the observers of this game instance. Default of "Empty"
+		*/
+		void CreateObserverMessage(std::string);
+
+		std::vector<Observer*> GetObservers() { return observers; };
+
+		void SetObservers(const std::vector<Observer*>& _observers) { observers = _observers; };
+
+		std::string GetObserverMessage() { return observerMessage; };
+
+		void SetObserverMessage(const std::string& _observerMessage) { observerMessage = _observerMessage; };
 
 		/*!
 		* \brief Getters
@@ -122,7 +154,20 @@ namespace Map {
 		
 		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
 
+		void MoveCharacter(const int&, const int&, Character::Character*);
 	private:
+		/*!
+		* \var observers
+		* \brief Vector of pointers to Observer instances representing the attached objects that are to be notified of state changes
+		*/
+		std::vector<Observer*> observers;
+
+		/*!
+		* \var observerMessage
+		* \brief String representing the message to pass to the observers
+		*/
+		std::string observerMessage;
+
 		/*!
 		*
 		*/

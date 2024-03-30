@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['humanplayerstrategy_0',['humanplayerstrategy',['../namespacehumanplayerstrategy.html',1,'']]]
+  ['game_0',['game',['../namespacegame.html',1,'']]],
+  ['gamelogger_1',['gamelogger',['../namespacegamelogger.html',1,'']]]
 ];

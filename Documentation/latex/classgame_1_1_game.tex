@@ -1,0 +1,265 @@
+\doxysection{game\+::Game Class Reference}
+\hypertarget{classgame_1_1_game}{}\label{classgame_1_1_game}\index{game::Game@{game::Game}}
+
+
+Class to abstract the game functionality, implements the Observable interface as a concrete obserable.  
+
+
+
+
+{\ttfamily \#include $<$game.\+h$>$}
+
+Inheritance diagram for game\+::Game\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classgame_1_1_game}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classgame_1_1_game_a74cd9697144c5bb5ccf1d2cb71d56e41}{Game}} ()
+\begin{DoxyCompactList}\small\item\em No args constructor for \doxylink{classgame_1_1_game}{Game}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classgame_1_1_game_a9fd96a37b55d908071105879d015df8c}{\texorpdfstring{$\sim$}{\string~}\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classgame_1_1_game}{Game}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1_game_ac2ee5ba3da3e8033ebd8b2cad47be423}{Attach}} (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}\+\_\+observer) override
+\begin{DoxyCompactList}\small\item\em Abstract function to provide concrete implementations a way to override. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1_game_a31bb627bd7bb45ff8446f92e6a89b59a}{Detach}} (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}\+\_\+observer) override
+\begin{DoxyCompactList}\small\item\em Abstract function to provide concrete implementations a way to override. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{Notify}} () override
+\begin{DoxyCompactList}\small\item\em Implemented function that will use the list of this observers and call their update functions using the instances observer message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{Create\+Observer\+Message}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Function that will take in a message from a calling object and use it to notify the observers with that message. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classgame_1_1_game_aaf2be49dd20a067539d87de8ce599814}{Get\+Observers}} ()
+\item 
+void \mbox{\hyperlink{classgame_1_1_game_a143e89f37c6c995bbb618396ede2618c}{Set\+Observers}} (const std\+::vector$<$ \mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ \&\+\_\+observers)
+\item 
+std\+::string \mbox{\hyperlink{classgame_1_1_game_ab33abe67c38bf621c8b9952bbdcf2716}{Get\+Observer\+Message}} ()
+\item 
+void \mbox{\hyperlink{classgame_1_1_game_abaf5a979be2bca391c6a45ea191fda59}{Set\+Observer\+Message}} (const std\+::string \&\+\_\+observer\+Message)
+\item 
+\mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame_1_1_game_a7b9d57d02cd131b5fd3fdc551010062f}{Get\+Game\+Campaign}} ()
+\item 
+void \mbox{\hyperlink{classgame_1_1_game_a52075ca9bbb9b49588904f24cd488722}{Set\+Game\+Campaign}} (\mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}} \texorpdfstring{$\ast$}{*}\+\_\+game\+Campaign)
+\item 
+void \mbox{\hyperlink{classgame_1_1_game_a3e7dd20d65b6aa7c01d2d579487e59ca}{Game\+Setup}} (const std\+::string \&)
+\item 
+\mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}{Load\+Map}} ()
+\item 
+void \mbox{\hyperlink{classgame_1_1_game_a2cb3ae613451081fdfedf53e5d8e4d1d}{End\+Turn}} (const \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classobservable_1_1_observable}{observable\+::\+Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classobservable_1_1_observable_ae66f3001b8162f0cfdf10dd204384099}{\texorpdfstring{$\sim$}{\string~}\+Observable}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classobservable_1_1_observable}{Observable}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to abstract the game functionality, implements the Observable interface as a concrete obserable. 
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00028}{28}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classgame_1_1_game_a74cd9697144c5bb5ccf1d2cb71d56e41}\label{classgame_1_1_game_a74cd9697144c5bb5ccf1d2cb71d56e41} 
+\index{game::Game@{game::Game}!Game@{Game}}
+\index{Game@{Game}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily game\+::\+Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+No args constructor for \doxylink{classgame_1_1_game}{Game}. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00034}{34}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+\Hypertarget{classgame_1_1_game_a9fd96a37b55d908071105879d015df8c}\label{classgame_1_1_game_a9fd96a37b55d908071105879d015df8c} 
+\index{game::Game@{game::Game}!````~Game@{\texorpdfstring{$\sim$}{\string~}Game}}
+\index{````~Game@{\texorpdfstring{$\sim$}{\string~}Game}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Game()}{\string~Game()}}
+{\footnotesize\ttfamily game\+::\+Game\+::\texorpdfstring{$\sim$}{\string~}\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destructor for \doxylink{classgame_1_1_game}{Game}. 
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00040}{40}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classgame_1_1_game_ac2ee5ba3da3e8033ebd8b2cad47be423}\label{classgame_1_1_game_ac2ee5ba3da3e8033ebd8b2cad47be423} 
+\index{game::Game@{game::Game}!Attach@{Attach}}
+\index{Attach@{Attach}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily void game\+::\+Game\+::\+Attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Abstract function to provide concrete implementations a way to override. 
+
+
+
+Implements \mbox{\hyperlink{classobservable_1_1_observable_aa7d5a047ae56adf7c50395c4a81e9ec1}{observable\+::\+Observable}}.
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00042}{42}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+\Hypertarget{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}\label{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8} 
+\index{game::Game@{game::Game}!CreateObserverMessage@{CreateObserverMessage}}
+\index{CreateObserverMessage@{CreateObserverMessage}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{CreateObserverMessage()}{CreateObserverMessage()}}
+{\footnotesize\ttfamily game\+::\+Game\+::\+Create\+Observer\+Message (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+message = {\ttfamily "{}Empty"{}} }\end{DoxyParamCaption})}
+
+
+
+Function that will take in a message from a calling object and use it to notify the observers with that message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+message} & String representing the message to pass to the observers of this game instance. Default of "{}\+Empty"{} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+\Hypertarget{classgame_1_1_game_a31bb627bd7bb45ff8446f92e6a89b59a}\label{classgame_1_1_game_a31bb627bd7bb45ff8446f92e6a89b59a} 
+\index{game::Game@{game::Game}!Detach@{Detach}}
+\index{Detach@{Detach}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily void game\+::\+Game\+::\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Abstract function to provide concrete implementations a way to override. 
+
+
+
+Implements \mbox{\hyperlink{classobservable_1_1_observable_a08934a0b93c48c10e340f2d02e65e406}{observable\+::\+Observable}}.
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00044}{44}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+\Hypertarget{classgame_1_1_game_a2cb3ae613451081fdfedf53e5d8e4d1d}\label{classgame_1_1_game_a2cb3ae613451081fdfedf53e5d8e4d1d} 
+\index{game::Game@{game::Game}!EndTurn@{EndTurn}}
+\index{EndTurn@{EndTurn}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{EndTurn()}{EndTurn()}}
+{\footnotesize\ttfamily void game\+::\+Game\+::\+End\+Turn (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \&}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00050}{50}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+\Hypertarget{classgame_1_1_game_a3e7dd20d65b6aa7c01d2d579487e59ca}\label{classgame_1_1_game_a3e7dd20d65b6aa7c01d2d579487e59ca} 
+\index{game::Game@{game::Game}!GameSetup@{GameSetup}}
+\index{GameSetup@{GameSetup}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{GameSetup()}{GameSetup()}}
+{\footnotesize\ttfamily void game\+::\+Game\+::\+Game\+Setup (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+save\+File\+Dir }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+\Hypertarget{classgame_1_1_game_a7b9d57d02cd131b5fd3fdc551010062f}\label{classgame_1_1_game_a7b9d57d02cd131b5fd3fdc551010062f} 
+\index{game::Game@{game::Game}!GetGameCampaign@{GetGameCampaign}}
+\index{GetGameCampaign@{GetGameCampaign}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{GetGameCampaign()}{GetGameCampaign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}} \texorpdfstring{$\ast$}{*} game\+::\+Game\+::\+Get\+Game\+Campaign (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00068}{68}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+\Hypertarget{classgame_1_1_game_ab33abe67c38bf621c8b9952bbdcf2716}\label{classgame_1_1_game_ab33abe67c38bf621c8b9952bbdcf2716} 
+\index{game::Game@{game::Game}!GetObserverMessage@{GetObserverMessage}}
+\index{GetObserverMessage@{GetObserverMessage}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{GetObserverMessage()}{GetObserverMessage()}}
+{\footnotesize\ttfamily std\+::string game\+::\+Game\+::\+Get\+Observer\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00064}{64}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+\Hypertarget{classgame_1_1_game_aaf2be49dd20a067539d87de8ce599814}\label{classgame_1_1_game_aaf2be49dd20a067539d87de8ce599814} 
+\index{game::Game@{game::Game}!GetObservers@{GetObservers}}
+\index{GetObservers@{GetObservers}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{GetObservers()}{GetObservers()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ game\+::\+Game\+::\+Get\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00060}{60}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+\Hypertarget{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}\label{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a} 
+\index{game::Game@{game::Game}!LoadMap@{LoadMap}}
+\index{LoadMap@{LoadMap}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{LoadMap()}{LoadMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} game\+::\+Game\+::\+Load\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+\Hypertarget{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}\label{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8} 
+\index{game::Game@{game::Game}!Notify@{Notify}}
+\index{Notify@{Notify}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily game\+::\+Game\+::\+Notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implemented function that will use the list of this observers and call their update functions using the instances observer message. 
+
+
+
+Implements \mbox{\hyperlink{classobservable_1_1_observable_abb62ad46189f0d309c039a5c4b0c6f0a}{observable\+::\+Observable}}.
+
+
+
+Definition at line \mbox{\hyperlink{game_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{game_8cpp_source}{game.\+cpp}}.
+
+\Hypertarget{classgame_1_1_game_a52075ca9bbb9b49588904f24cd488722}\label{classgame_1_1_game_a52075ca9bbb9b49588904f24cd488722} 
+\index{game::Game@{game::Game}!SetGameCampaign@{SetGameCampaign}}
+\index{SetGameCampaign@{SetGameCampaign}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{SetGameCampaign()}{SetGameCampaign()}}
+{\footnotesize\ttfamily void game\+::\+Game\+::\+Set\+Game\+Campaign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}} \texorpdfstring{$\ast$}{*}}]{\+\_\+game\+Campaign }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00070}{70}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+\Hypertarget{classgame_1_1_game_abaf5a979be2bca391c6a45ea191fda59}\label{classgame_1_1_game_abaf5a979be2bca391c6a45ea191fda59} 
+\index{game::Game@{game::Game}!SetObserverMessage@{SetObserverMessage}}
+\index{SetObserverMessage@{SetObserverMessage}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{SetObserverMessage()}{SetObserverMessage()}}
+{\footnotesize\ttfamily void game\+::\+Game\+::\+Set\+Observer\+Message (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+observer\+Message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00066}{66}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+\Hypertarget{classgame_1_1_game_a143e89f37c6c995bbb618396ede2618c}\label{classgame_1_1_game_a143e89f37c6c995bbb618396ede2618c} 
+\index{game::Game@{game::Game}!SetObservers@{SetObservers}}
+\index{SetObservers@{SetObservers}!game::Game@{game::Game}}
+\doxysubsubsection{\texorpdfstring{SetObservers()}{SetObservers()}}
+{\footnotesize\ttfamily void game\+::\+Game\+::\+Set\+Observers (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ \&}]{\+\_\+observers }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{game_8h_source_l00062}{62}} of file \mbox{\hyperlink{game_8h_source}{game.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{game_8h}{game.\+h}}\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{game_8cpp}{game.\+cpp}}\end{DoxyCompactItemize}

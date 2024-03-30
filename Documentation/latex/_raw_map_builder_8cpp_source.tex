@@ -2,111 +2,109 @@
 \hypertarget{_raw_map_builder_8cpp_source}{}\label{_raw_map_builder_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/RawMapBuilder.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/RawMapBuilder.cpp}}
 \mbox{\hyperlink{_raw_map_builder_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{Character.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_empty_cell_8h}{EmptyCell.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{Item.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_builder_8h}{MapBuilder.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_raw_map_builder_8h}{RawMapBuilder.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_wall_8h}{Wall.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00010}00010\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00011}\mbox{\hyperlink{namespace_raw_map_builder}{00011}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_raw_map_builder}{RawMapBuilder}}\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00012}\mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_ab5ff2f66f8d372eb0e36cc829fb92d5e}{00012}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_builder_1_1_map_builder_a80b0465400d8f8bbfb09ed381ece3623}{RawMapBuilder::buildRows}}(\textcolor{keywordtype}{int}\ rows)\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ m\_map-\/>setRows(rows);}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00014}00014\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00016}\mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a42f5ae938b0ba949faa47bc48a27ddfc}{00016}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_map_builder_1_1_map_builder_a0356b0796a9282bfedc2d6547b3cbcc5}{RawMapBuilder::buildCols}}(\textcolor{keywordtype}{int}\ cols)\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ m\_map-\/>setCols(cols);}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00018}00018\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00020}\mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a2c6c99bdf8d9be99a8699b34ee603c4e}{00020}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a2c6c99bdf8d9be99a8699b34ee603c4e}{RawMapBuilder::buildEndCell}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ m\_map-\/>setEndCell();}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00022}00022\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00024}\mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a637c9e86ce606dbc60b38afd593d4dda}{00024}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a637c9e86ce606dbc60b38afd593d4dda}{RawMapBuilder::buildGrid}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ m\_map-\/>setGrid();}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00026}00026\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00028}\mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a0c6a8e7116ab87428260d87c375b3517}{00028}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a0c6a8e7116ab87428260d87c375b3517}{RawMapBuilder::buildTypes}}()\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//TODO}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00030}00030\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00031}00031\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00032}\mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a2ee4c91292f7ce203a82848919c871c3}{00032}}\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a2ee4c91292f7ce203a82848919c871c3}{RawMapBuilder::SaveMap}}(\mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ map,\ std::string\&\ filename)\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//create\ file}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ std::ofstream\ file(filename);}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//open\ file}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Could\ not\ open\ file:\ "{}}\ <<\ filename\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ map-\/>\mbox{\hyperlink{class_map_1_1_map_a5de97b7d5aecec9621d8cb559201b1d1}{getRows}}()\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ map-\/>\mbox{\hyperlink{class_map_1_1_map_aa168b7728d21400c359179866d49f444}{getCols}}()\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//loop\ throug\ the\ map\ and\ save\ each\ non-\/empty\ cell}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00045}00045\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ map-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}().size();\ i++)\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ map-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}()[i].size();\ j++)\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ wall:\ write\ the\ row,col\ and\ celltype}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{typeid}(map-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}()[i][j])\ ==\ \textcolor{keyword}{typeid}(\mbox{\hyperlink{class_wall}{Wall}}))\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ j\ <<\ \textcolor{stringliteral}{"{}w"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//row,col,w}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ item}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{typeid}(map-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}()[i][j])\ ==\ \textcolor{keyword}{typeid}(\mbox{\hyperlink{classitem_1_1_item}{Item}}))\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ j\ <<\ \textcolor{stringliteral}{"{}i"{}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitem_1_1_item}{Item}}*\textcolor{keyword}{>}(map-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}()[i][j])-\/>GetItemId()\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//row,col,i,ID}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ character\ }}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{typeid}(map-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}()[i][j])\ ==\ \textcolor{keyword}{typeid}(\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}))\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ j\ <<\ \textcolor{stringliteral}{"{}c"{}}\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(map-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}()[i][j])-\/>ID()\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//row,col,c}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//if\ the\ cell\ type\ is\ empty:\ do\ nothing}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{typeid}(map-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}()[i][j])\ ==\ \textcolor{keyword}{typeid}(\mbox{\hyperlink{class_empty_cell}{EmptyCell}}))\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ j\ <<\ \textcolor{stringliteral}{"{}e"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{comment}{//end\ loop}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{comment}{//end\ file\ writing}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::ofstream::failure\&\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exception\ caught\ while\ opening\ file:\ "{}}\ <<\ filename\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ file.close();}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00077}00077\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00079}\mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a618b39476412856f7d63b977f61752eb}{00079}}\ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \mbox{\hyperlink{class_raw_map_builder_1_1_raw_map_builder_a618b39476412856f7d63b977f61752eb}{RawMapBuilder::LoadMap}}(std::string\&\ filename)\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//USE\ BUILD\ FUNCTIONS\ IN\ HERE}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00081}00081\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}\ mapload\ =\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}();}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00083}00083\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ std::ifstream\ file(filename);}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00085}00085\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//open\ file}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!file.is\_open())\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Could\ not\ open\ file:\ "{}}\ <<\ filename\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ line;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//while\ there\ is\ content\ in\ the\ file}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (getline(file,\ line))\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00095}00095\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ hereee\ build\ }}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \&mapload;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::ifstream::failure\&\ e)\ \{}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Exception\ caught\ while\ opening\ file:\ "{}}\ <<\ filename\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00105}00105\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00106}00106\ \}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00001}00001\ \textcolor{comment}{//\#include\ "{}Character.h"{}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00002}00002\ \textcolor{comment}{//\#include\ "{}EmptyCell.h"{}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00003}00003\ \textcolor{comment}{//\#include\ "{}Item.h"{}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00004}00004\ \textcolor{comment}{//\#include\ "{}MapBuilder.h"{}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00005}00005\ \textcolor{comment}{//\#include\ "{}RawMapBuilder.h"{}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00006}00006\ \textcolor{comment}{//\#include\ "{}Wall.h"{}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00007}00007\ \textcolor{comment}{//\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00008}00008\ \textcolor{comment}{//\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00009}00009\ \textcolor{comment}{//\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00010}00010\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00011}00011\ \textcolor{comment}{//void\ \ RawMapBuilder::RawMapBuilder::buildRows(int\ rows)\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00012}00012\ \textcolor{comment}{//\ \ m\_map-\/>setRows(rows);}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00013}00013\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00014}00014\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00015}00015\ \textcolor{comment}{//void\ \ RawMapBuilder::RawMapBuilder::buildCols(int\ cols)\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00016}00016\ \textcolor{comment}{//\ \ m\_map-\/>setCols(cols);}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00017}00017\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00018}00018\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00019}00019\ \textcolor{comment}{//void\ \ RawMapBuilder::RawMapBuilder::buildEndCell()\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00020}00020\ \textcolor{comment}{//\ \ m\_map-\/>setEndCell();}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00021}00021\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00022}00022\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00023}00023\ \textcolor{comment}{//void\ \ RawMapBuilder::RawMapBuilder::buildGrid()\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00024}00024\ \textcolor{comment}{//\ \ m\_map-\/>setGrid();}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00025}00025\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00026}00026\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00030}00030\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00031}00031\ \textcolor{comment}{//bool\ RawMapBuilder::RawMapBuilder::SaveMap(Map::Map*\ map,\ std::string\&\ filename)\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00032}00032\ \textcolor{comment}{//\ \ //create\ file}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00033}00033\ \textcolor{comment}{//\ \ ofstream\ file(filename);}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00034}00034\ \textcolor{comment}{//\ \ try\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00035}00035\ \textcolor{comment}{//\ \ \ \ \ \ //open\ file}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00036}00036\ \textcolor{comment}{//\ \ \ \ \ \ if\ (!file.is\_open())\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00037}00037\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ cout\ <<\ "{}Could\ not\ open\ file:\ "{}\ <<\ filename\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00038}00038\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ return\ false;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00039}00039\ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00040}00040\ \textcolor{comment}{//\ \ \ \ \ \ else\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00041}00041\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ file\ <<\ map-\/>getRows()\ <<\ "{},"{}\ <<\ map-\/>getCols()\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00042}00042\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00043}00043\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ //loop\ throug\ the\ map\ and\ save\ each\ non-\/empty\ cell}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00044}00044\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00045}00045\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ for\ (int\ i\ =\ 0;\ i\ <\ map-\/>getGrid().size();\ i++)\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00046}00046\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ for\ (int\ j\ =\ 0;\ j\ <\ map-\/>getGrid()[i].size();\ j++)\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00047}00047\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //if\ wall:\ write\ the\ row,col\ and\ celltype}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00048}00048\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (typeid(map-\/>getGrid()[i][j])\ ==\ typeid(Wall))\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00049}00049\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i\ <<\ "{},"{}\ <<\ j\ <<\ "{}w"{}\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00050}00050\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //row,col,w}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00051}00051\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00052}00052\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //if\ item}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00053}00053\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (typeid(map-\/>getGrid()[i][j])\ ==\ typeid(Item))\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00054}00054\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i\ <<\ "{},"{}\ <<\ j\ <<\ "{}i"{}\ <<\ "{},"{}\ <<\ dynamic\_cast<Item*>(map-\/>getGrid()[i][j])-\/>GetItemId()\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00055}00055\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //row,col,i,ID}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00056}00056\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00057}00057\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ if\ character\ }}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00058}00058\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (typeid(map-\/>getGrid()[i][j])\ ==\ typeid(Character::Character))\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00059}00059\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i\ <<\ "{},"{}\ <<\ j\ <<\ "{}c"{}\ <<\ "{},"{}\ <<\ dynamic\_cast<Character::Character*>(map-\/>getGrid()[i][j])-\/>ID()\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00060}00060\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //row,col,c}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00061}00061\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00062}00062\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ //if\ the\ cell\ type\ is\ empty:\ do\ nothing}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00063}00063\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else\ if\ (typeid(map-\/>getGrid()[i][j])\ ==\ typeid(EmptyCell))\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00064}00064\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ <<\ i\ <<\ "{},"{}\ <<\ j\ <<\ "{}e"{}\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00065}00065\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00066}00066\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00067}00067\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \}//end\ loop}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00068}00068\ \textcolor{comment}{//\ \ \ \ \ \ \}//end\ file\ writing}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00069}00069\ \textcolor{comment}{//\ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00070}00070\ \textcolor{comment}{//\ \ catch\ (const\ ofstream::failure\&\ e)\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00071}00071\ \textcolor{comment}{//\ \ \ \ \ \ cout\ <<\ "{}Exception\ caught\ while\ opening\ file:\ "{}\ <<\ filename\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00072}00072\ \textcolor{comment}{//\ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00073}00073\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00074}00074\ \textcolor{comment}{//\ \ file.close();}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00075}00075\ \textcolor{comment}{//\ \ return\ true;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00076}00076\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00077}00077\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00078}00078\ \textcolor{comment}{//Map::Map\ RawMapBuilder::RawMapBuilder::LoadMap(std::string\&\ filename)\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00079}00079\ \textcolor{comment}{//\ \ //USE\ BUILD\ FUNCTIONS\ IN\ HERE}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00080}00080\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00081}00081\ \textcolor{comment}{//\ \ Map::Map\ mapload\ =\ Map::Map();}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00082}00082\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00083}00083\ \textcolor{comment}{//\ \ ifstream\ file(filename);}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00084}00084\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00085}00085\ \textcolor{comment}{//\ \ try\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00086}00086\ \textcolor{comment}{//\ \ \ \ \ \ //open\ file}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00087}00087\ \textcolor{comment}{//\ \ \ \ \ \ if\ (!file.is\_open())\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00088}00088\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ cout\ <<\ "{}Could\ not\ open\ file:\ "{}\ <<\ filename\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00089}00089\ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00090}00090\ \textcolor{comment}{//\ \ \ \ \ \ else\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00091}00091\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ string\ line;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00092}00092\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ //while\ there\ is\ content\ in\ the\ file}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00093}00093\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ while\ (getline(file,\ line))\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00094}00094\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00095}00095\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ //\ hereee\ build\ }}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00096}00096\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00097}00097\ \textcolor{comment}{//\ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00098}00098\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00099}00099\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00100}00100\ \textcolor{comment}{//\ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00101}00101\ \textcolor{comment}{//\ \ catch\ (const\ ifstream::failure\&\ e)\ \{}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00102}00102\ \textcolor{comment}{//\ \ \ \ \ \ cout\ <<\ "{}Exception\ caught\ while\ opening\ file:\ "{}\ <<\ filename\ <<\ endl;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00103}00103\ \textcolor{comment}{//\ \ \}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00104}00104\ \textcolor{comment}{//}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00105}00105\ \textcolor{comment}{//\ \ return\ mapload;}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00106}00106\ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_raw_map_builder_8cpp_source_l00107}00107\ \textcolor{comment}{//}}
 
 \end{DoxyCode}
