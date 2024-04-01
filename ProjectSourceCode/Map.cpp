@@ -371,10 +371,6 @@ bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>
 void Map::Map::MoveCharacter(const int& _targetX, const int& _targetY, Character::Character* _targetCharacter) {
 	// Some logic here to swap character positions based on coordiantes, x and y coor should be 1-indexed
 
-	// Validate the character can move here
-
-	// Perform a swap
-
 	if (_targetX < 1 || _targetX > grid.size() || _targetY < 1 || _targetY > grid[0].size()) {
 		throw std::invalid_argument("[Map/MoveCharacter] -- Invalid coordiantes");
 	}
