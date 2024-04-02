@@ -690,21 +690,38 @@ bool Character::Character::AttemptAttack(Character* _target) {
 	logMessage << "[Character/AttemptAttack] -- " << name << " is attacking " << _target->name << Attacks_Per_Turn() << " times.";
 	CreateObserverMessage(logMessage.str());
 
-	// Some logic here...
+	AbstractComponent* opponentWornItems = _target->GetWornItems();
+	int opponentArmorClass = opponentWornItems->Ability_Score_Natural(6, 0);
 
-	// Maybe a miss..
+	bool characterHit = Dice::roll("1d20") +
+						wornItems->Ability_Score_Natural(0, 0) +
+						wornItems->Ability_Score_Natural(8, 0) >= opponentArmorClass;
 
-	logMessage.clear();
-	logMessage << "[Character/AttemptAttack] -- " << name << " missed!";
-	CreateObserverMessage(logMessage.str());
+	bool targetDied = false;
 
-	// Maybe a hit..
+	for (int i = 0; i < Attacks_Per_Turn(); i++)
+	{
+		if (characterHit) {
+			logMessage.clear();
+			logMessage << "[Character/AttemptAttack] -- " << name << " attacked successfully!";
+			CreateObserverMessage(logMessage.str());
 
-	logMessage.clear();
-	logMessage << "[Character/AttemptAttack] -- " << name << " attacked successfully!";
-	CreateObserverMessage(logMessage.str());
+			int damageValue = wornItems->Ability_Score_Natural(7, i + 1);
+			_target->Receive_Damage(damageValue);
+			if (!_target->Is_Alive()) {
+				targetDied = true;
 
-	return false;
+				break;
+			}
+		}
+		else {
+			logMessage.clear();
+			logMessage << "[Character/AttemptAttack] -- " << name << " missed!";
+			CreateObserverMessage(logMessage.str());
+		}
+	}
+	
+	return targetDied;
 }
 
 std::string Character::Character::Get_Class_String(Character_Class t_class)
