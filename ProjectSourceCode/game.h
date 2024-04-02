@@ -69,6 +69,14 @@ namespace game {
 
             void SetGameCampaign(Campaign* _gameCampaign) { gameCampaign = _gameCampaign; };
 
+            Character::Character* GetActiveCharacter() { return activeCharacter; };
+
+            void SetActiveCharacter(Character::Character* _activeCharacter) { activeCharacter = _activeCharacter; };
+
+            std::vector<Character::Character*> GetCharactersInMap() { return charactersInMap; };
+
+            void SetCharactersInMap(std::vector<Character::Character*> _charactersInMap) { charactersInMap = _charactersInMap; };
+
             // Load in a save file likely and update campaign member(?)
             void GameSetup(const std::string&);
 
@@ -76,7 +84,7 @@ namespace game {
             Map::Map* LoadMap(/* Door or ID */);
 
             // Essentially use this to update the game data based on an action taken by the player or an NPC
-            void EndTurn(const Map::Map&);
+            void EndTurn(const std::string&, const int&, const int&);
         private:
             /*!
             * \var observers
@@ -91,5 +99,9 @@ namespace game {
 		    std::string observerMessage;
 
             Campaign* gameCampaign;
+
+            Character::Character* activeCharacter;
+
+            std::vector<Character::Character*> charactersInMap;
     };
 }

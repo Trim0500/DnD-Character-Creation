@@ -369,11 +369,56 @@ bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>
 }
 
 void Map::Map::MoveCharacter(const int& _targetX, const int& _targetY, Character::Character* _targetCharacter) {
-	// Some logic here to swap character positions based on coordiantes
+	// Some logic here to swap character positions based on coordiantes, x and y coor should be 1-indexed
+
+	if (_targetX < 1 || _targetX > grid.size() || _targetY < 1 || _targetY > grid[0].size()) {
+		throw std::invalid_argument("[Map/MoveCharacter] -- Invalid coordiantes");
+	}
+
+	Interactable::Interactable* valueAtCell = grid[_targetX - 1][_targetY - 1];
+
+	if (!dynamic_cast<EmptyCell*>(valueAtCell)) {
+		throw std::invalid_argument("[Map/MoveCharacter] -- Can't move to this cell");
+	}
+
+	int sourceLocationX = 0;
+	int sourceLocationY = 0;
+
+	for (int i = 0; i < (int)grid.size(); i++)
+	{
+		for (int j = 0; j < (int)grid[i].size(); j++)
+		{
+			Interactable::Interactable* currentCellValue = grid[i][j];
+			if (_targetCharacter == currentCellValue) {
+				sourceLocationX = i;
+				sourceLocationY = j;
+			}
+		}
+	}
+
+
+	Interactable::Interactable* temp = grid[_targetX - 1][_targetY - 1];
+	setCell(_targetX - 1, _targetY - 1, _targetCharacter);
+	setCell(sourceLocationX, sourceLocationY, temp);
 
 	std::ostringstream logMessage;
 	logMessage << "[Map/MoveCharacter] -- " << _targetCharacter->Name() << " is moving to location (" << _targetX << "," << _targetY << ") on map " << mapID;
 	CreateObserverMessage(logMessage.str());
 }
 
+std::vector<Character::Character*> Map::Map::GetCharactersInMap() {
+	std::vector<Character::Character*> result;
+	
+	for (int i = 0; i < (int)grid.size(); i++)
+	{
+		for (int j = 0; j < (int)grid[i].size(); j++)
+		{
+			Interactable::Interactable* currentCellValue = grid[i][j];
+			if (dynamic_cast<Character::Character*>(currentCellValue)) {
+				result.push_back(dynamic_cast<Character::Character*>(currentCellValue));
+			}
+		}
+	}
 
+	return result;
+}
