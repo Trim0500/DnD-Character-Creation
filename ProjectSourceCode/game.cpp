@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "game.h"
 
 namespace {
@@ -47,17 +49,33 @@ namespace game
         return new Map::Map();
     }
 
-    void Game::EndTurn(const Map::Map&) {
+    void Game::EndTurn(const std::string& _actionTaken, const int& _targetX, const int& _targetY) {
         CreateObserverMessage("[Game/EndTurn] -- A character ended their turn, need to update game data...\n");
 
-        // Look through each cell to update the game's campaign member variable...
+        CampaignMap currentMapInCampaign = gameCampaign->GetCurrentMap();
+        Map::Map* currentLoadedMap = gameCampaign->GetMap(currentMapInCampaign.coorX, currentMapInCampaign.coorY);
 
-        CreateObserverMessage("[Game/EndTurn] -- Map updates complete! moving on to characters...\n");
+        if (_actionTaken == Character::EMPTY_CELL_ACTION) {
+            currentLoadedMap->MoveCharacter(_targetX, _targetY, activeCharacter);
+        }
+        else if (_actionTaken == Character::ATTACK_CELL_ACTION) {
+            std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentLoadedMap->getGrid();
+            Character::Character* target = static_cast<Character::Character*>(mapGrid[_targetX - 1][_targetY - 1]);
+            bool targetDied = activeCharacter->AttemptAttack(target);
+            if (targetDied) {
+                charactersInMap.erase(std::remove(charactersInMap.begin(), charactersInMap.end(), target), charactersInMap.end());
+                
+                Interactable::Interactable* targetsItems = &target->Inventory();
+                currentLoadedMap->setCell(_targetX - 1, _targetY - 1, targetsItems);
+            }
+        }
 
-        // Use the map's cells to identify characters and update to game's campaign member variable
+        CreateObserverMessage("[Game/EndTurn] -- Game campaign updates complete! Updating turn...\n");
 
-        CreateObserverMessage("[Game/EndTurn] -- Character updates complete! Updating turn...\n");
-
-        // Update turn info...
+        Character::Character* activeCharacterPointer = activeCharacter;
+        std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
+                                                                                            charactersInMap.end(),
+                                                                                            [activeCharacterPointer](Character::Character* character){ character == activeCharacterPointer; });
+        activeCharacter = (*currentActiveCharacter);
     }
 }

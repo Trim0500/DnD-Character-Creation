@@ -155,6 +155,8 @@ namespace Map {
 		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
 
 		void MoveCharacter(const int&, const int&, Character::Character*);
+
+		std::vector<Character::Character*> GetCharactersInMap();
 	private:
 		/*!
 		* \var observers

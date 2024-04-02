@@ -398,12 +398,27 @@ void Map::Map::MoveCharacter(const int& _targetX, const int& _targetY, Character
 
 
 	Interactable::Interactable* temp = grid[_targetX - 1][_targetY - 1];
-	grid[_targetX - 1][_targetY - 1] = _targetCharacter;
-	grid[sourceLocationX][sourceLocationY] = temp;
+	setCell(_targetX - 1, _targetY - 1, _targetCharacter);
+	setCell(sourceLocationX, sourceLocationY, temp);
 
 	std::ostringstream logMessage;
 	logMessage << "[Map/MoveCharacter] -- " << _targetCharacter->Name() << " is moving to location (" << _targetX << "," << _targetY << ") on map " << mapID;
 	CreateObserverMessage(logMessage.str());
 }
 
+std::vector<Character::Character*> Map::Map::GetCharactersInMap() {
+	std::vector<Character::Character*> result;
+	
+	for (int i = 0; i < (int)grid.size(); i++)
+	{
+		for (int j = 0; j < (int)grid[i].size(); j++)
+		{
+			Interactable::Interactable* currentCellValue = grid[i][j];
+			if (dynamic_cast<Character::Character*>(currentCellValue)) {
+				result.push_back(dynamic_cast<Character::Character*>(currentCellValue));
+			}
+		}
+	}
 
+	return result;
+}
