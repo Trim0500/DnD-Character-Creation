@@ -75,7 +75,7 @@ namespace game
         Character::Character* activeCharacterPointer = activeCharacter;
         std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
                                                                                             charactersInMap.end(),
-                                                                                            [activeCharacterPointer](Character::Character* character){ character == activeCharacterPointer; });
+                                                                                            [activeCharacterPointer](Character::Character* character){ return character == activeCharacterPointer; });
         activeCharacter = (*currentActiveCharacter);
     }
 }
