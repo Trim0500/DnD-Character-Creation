@@ -38,16 +38,17 @@ namespace {
 		return result;
 	}
 
-	CellActionInfo DecideAction(const std::vector<int>& _playerLocation, const std::vector<CellActionInfo>& _npcActionInfo, const int& _posX, const int& _posY) {
+	CellActionInfo DecideAction(const std::vector<int>& _playerLocation,
+								const std::vector<CellActionInfo>& _npcActionInfo,
+								const int& _posX,
+								const int& _posY,
+								CharacterActionStrategy* _actionStrategy) {
 		CellActionInfo result;
 
 		// Decide what to do based on that info
 		if (_playerLocation.size() == 0) {
-			do {
-				int actionIndex = rand() % _npcActionInfo.size() - 1;
-				result = _npcActionInfo[actionIndex];
-			}
-			while (result.actionName == Character::WALL_CELL_ACTION);
+			int actionIndex = rand() % _npcActionInfo.size() - 1;
+			result = _npcActionInfo[actionIndex];
 		}
 		else {
 			// Calculate the absolute difference for vertical and horizontal movement, if same move to next phase, other wise deteremine which dir to go to
@@ -57,7 +58,7 @@ namespace {
 			int horizontalDifference = playerX - _posX;
 			int verticalDifference = playerY - _posY;
 
-			if (abs(verticalDifference) == 1 || abs(horizontalDifference) == 1) {
+			if ((abs(verticalDifference) == 1 || abs(horizontalDifference) == 1) && dynamic_cast<AggressorStrategy*>(_actionStrategy)) {
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
 					if (_npcActionInfo[i].actionName == Character::ATTACK_CELL_ACTION) {
@@ -842,7 +843,7 @@ CellActionInfo Character::Character::DecideNPCAction(const std::vector<std::vect
 	std::vector<int> playerLocation = DetectPlayer(_mapGrid, _posX, _posY);
 
 	// Note cell action info choice will have the coordiantes 1-indexed as well
-	return DecideAction(playerLocation, npcActionInfo, _posX, _posY);
+	return DecideAction(playerLocation, npcActionInfo, _posX, _posY, actionStrategy);
 }
 
 std::string Character::Character::Get_Class_String(Character_Class t_class)
