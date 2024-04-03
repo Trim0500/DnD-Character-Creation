@@ -31,7 +31,7 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 }
 
 //std::string cttos(Map::Cell_Type ct)
-std::string cttos(Interactable::Interactable ct)
+std::string cttos(Interactable::Interactable* ct)
 {
 	//switch (typeid(ct))
 	//{
@@ -48,13 +48,13 @@ std::string cttos(Interactable::Interactable ct)
 	//	break;
 	//}
 
-	if (typeid(ct) == typeid(Wall)) {
+	if (typeid(*ct) == typeid(Wall)) {
 		return "w";
 	}
-	else if(typeid(ct) == typeid(item::Item)) {
+	else if(typeid(*ct) == typeid(item::Item)) {
 		return "i";
 	}	
-	else if(typeid(ct) == typeid(Character::Character)) {
+	else if(typeid(*ct) == typeid(Character::Character)) {
 		return "c";
 	}
 	else {

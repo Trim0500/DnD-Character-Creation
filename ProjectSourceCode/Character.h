@@ -349,7 +349,7 @@ namespace Character {
 		*/
 		std::vector<AbstractComponent*> GetDecoratorList() override { std::vector<AbstractComponent*> initDecorators; return initDecorators; };
 
-		bool passable() const { return true; };// can the MC pass through this cell
+		bool passable() const override { return true; };// can the MC pass through this cell
 
 		std::string serialize();
 

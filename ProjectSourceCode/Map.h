@@ -54,8 +54,8 @@ namespace Map {
 		/*!
 		* \brief Setters 
 		*/
-		void setRows(int rows);
-		void setCols(int cols);
+		void setRows(int _rows) { rows = _rows; };
+		void setCols(int _cols) { cols = _cols; };
 		void setGrid();
 		void setEndCell();
 
