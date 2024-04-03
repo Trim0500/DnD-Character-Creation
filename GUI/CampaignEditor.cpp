@@ -186,6 +186,8 @@ namespace CampaignEditor
 				maps = new std::vector<Map::Map*>();
 				campaign = new Campaign(
 					cr->campaignID,
+					cr->numRows,
+					cr->numCols,
 					cr->mapIDs,
 					cp,
 					*maps

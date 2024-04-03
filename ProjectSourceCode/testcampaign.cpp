@@ -56,7 +56,7 @@ void TestCampaign::setUp(void) {
     currentMap.coorX = EXISTING_CAMPAIGN_CURRENT_X_COOR;
     currentMap.coorY = EXISTING_CAMPAIGN_CURRENT_Y_COOR;
 
-    existingCampaignObject = new Campaign(99999, existingMapIDs, currentMap, campaignMaps);
+    existingCampaignObject = new Campaign(99999, EXISTING_CAMPAIGN_MAPIDS_ROW_COUNT, EXISTING_CAMPAIGN_MAPIDS_COL_COUNT, existingMapIDs, currentMap, campaignMaps);
 }
 
 void TestCampaign::tearDown(void) {
