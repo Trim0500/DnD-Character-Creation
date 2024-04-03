@@ -5,8 +5,9 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
-
+#include "game.h"
 #include "../GUI/MainMenu.h"
+#include "Wall.h"
 
 using namespace CppUnit;
 using namespace CampaignEditor;
@@ -31,12 +32,48 @@ int main()
 			return 1;
 	}
 
-	MainMenu * m = new MainMenu();
-	m->show();
+	//MainMenu * m = new MainMenu();
+	//m->show();
 
-	Fl::run();
+	//Fl::run();
 
 	getchar();
+
+	//create random machine
+	std::random_device rd;
+
+	//hardcode maps and campaing here
+	//creare player Character
+	Character::Character* playerCharacter = new Character::Character();
+	//Create map
+	Map::Map* currentMap = new Map::Map(20,20);
+	//add player to map
+	currentMap->setCharacter(9, 9, playerCharacter);
+	//add walls to map
+	for (int i = 0; i < currentMap->getRows(); i++) {
+		currentMap->setCell(i, 0, new Wall);
+	}
+	for (int i = 0; i < currentMap->getRows(); i++) {
+		currentMap->setCell(i, currentMap->getCols()-1, new Wall);
+	}
+	//add items to map
+	//between 0 and 5 items
+	int numOfItems = rd() % 5;
+	for (int i = 0; i < numOfItems; i++) {
+		currentMap->setCell(rd() % (currentMap->getRows()), rd() % (currentMap->getRows())+1, new item::Item());
+	}
+	//Create campaign
+	campaign::Campaign* currentCampaign = new campaign::Campaign(1,1);
+	//Add map to campaing
+	currentCampaign->AddMapToCampaign(1, 1, *currentMap);
+	//Create game instance	
+	game::Game* currentGame = new game::Game();
+	//set currentCampaiogn in currentGame
+	currentGame->SetGameCampaign(currentCampaign);
+	//Print map
+	currentMap->printMap();
+	//set player character 
+	currentGame->SetActiveCharacter(playerCharacter);
 
 	return 0;
 }

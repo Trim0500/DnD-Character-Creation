@@ -10,6 +10,7 @@
 
 #include <vector>
 #include <string>
+#include <typeinfo>
 
 #include "Interactable.h"
 #include "Character.h"
@@ -155,6 +156,8 @@ namespace Map {
 		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
 
 		void MoveCharacter(const int&, const int&, Character::Character*);
+
+		void printMap();
 
 		std::vector<Character::Character*> GetCharactersInMap();
 	private:
