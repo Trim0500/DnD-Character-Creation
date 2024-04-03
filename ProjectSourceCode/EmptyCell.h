@@ -6,6 +6,6 @@ class EmptyCell : public Interactable::Interactable
 {
 public:
 
-	bool passable() const override { return true; }
+	bool passable() { return true; }
 };
 
