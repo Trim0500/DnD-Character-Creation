@@ -159,6 +159,8 @@ namespace Map {
 
 		void printMap();
 
+		void GetCharacterCoordinates(int& x, int& y, Character::Character* t_character);
+
 		std::vector<Character::Character*> GetCharactersInMap();
 	private:
 		/*!

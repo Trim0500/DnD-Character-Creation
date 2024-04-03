@@ -74,7 +74,17 @@ int main()
 	currentMap->printMap();
 	//set player character 
 	currentGame->SetActiveCharacter(playerCharacter);
+	bool exited = false;
 
+
+	//Main gameplay loop
+	char userInput = ' ';
+	currentGame->PrintActionMenu();
+	while (userInput != 'E') {
+		currentGame->GetUserSelection(userInput);
+		currentGame->ProcessUserAction(userInput,playerCharacter);
+		currentGame->PrintActionMenu();
+	}
 	return 0;
 }
 
