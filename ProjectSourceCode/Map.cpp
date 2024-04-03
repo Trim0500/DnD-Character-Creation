@@ -31,6 +31,8 @@ void Map::Map::CreateObserverMessage(std::string _message = "Empty") {
 Map::Map::Map() {
 	nextMapID += 1;
 	this->mapID = nextMapID;
+	//creates an empty map
+	//will need to initilize all variables explicitly: setRows, setCols, setGrid, setEndCell, setStartCell
 }
 
 Map::Map::Map(int r, int c) {
@@ -113,7 +115,7 @@ bool Map::Map::IsTherePath() {
 		q.pop();
 
 		//check if reach end cell
-		if (curr.first == endCell[0] && curr.second == endCell[1]) {
+		if (curr.first == this->endCell[0] && curr.second == this->endCell[1]) {
 			//if made it this far, there is a path.
 			std::cout << "There is a path." << std::endl;
 			return true;
@@ -139,10 +141,8 @@ bool Map::Map::IsTherePath() {
 
 //validate the next cell
 bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>> visited) {
-	return (nextRow >= 0 && nextRow < rows &&
-		nextCol >= 0 && nextCol < cols &&
-		typeid(grid[nextRow][nextCol]) != typeid(Wall) &&
-		!visited[nextRow][nextCol]);
+	return (nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols &&
+		this->grid[nextRow][nextCol]->serialize()[0] != 'w' &&	!visited[nextRow][nextCol]);
 }
 
 void Map::Map::MoveCharacter(const int& _targetX, const int& _targetY, Character::Character* _targetCharacter) {
@@ -198,4 +198,21 @@ std::vector<Character::Character*> Map::Map::GetCharactersInMap() {
 	}
 
 	return result;
+}
+
+void Map::Map::Print() {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+
+			char cell = grid[i][j]->serialize()[0];
+			if (cell == 'e') {
+				std::cout << "_" << " ";
+			}
+			else {
+				std::cout << cell  << " ";
+			}
+			std::cout << "| ";
+		}
+		std::cout << std::endl;
+	}
 }

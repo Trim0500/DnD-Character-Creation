@@ -19,6 +19,7 @@
 
 using namespace observable;
 
+
 /*!
 * \namespace Map
 * \brief namespace to encapsulate Map navigation
@@ -111,10 +112,12 @@ namespace Map {
 		* \brief Check if the given x,y coordinates are a valid cell to step on
 		*/
 		bool ValidCell(int row, int col, std::vector<std::vector<bool>> visitde);
-		
+
 		void MoveCharacter(const int&, const int&, Character::Character*);
 
 		std::vector<Character::Character*> GetCharactersInMap();
+
+		void Print();
 
 	private:
 		/*!
