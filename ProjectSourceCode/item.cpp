@@ -165,4 +165,11 @@ namespace item {
 
 		return decoratorList;
 	}
+
+	std::string item::Item::serialize() {
+		std::string str = "i,";
+		str += std::to_string(this->itemId);
+		return str;
+		//i,id
+	}
 }

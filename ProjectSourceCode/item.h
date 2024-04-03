@@ -204,7 +204,9 @@ namespace item
 
 		void SetItemWeight(float _weight) { weight = _weight; };
 
-		//bool passable() const { return true; };// can the MC pass through this cell
+		bool passable() const { return true; };// can the MC pass through this cell
+
+		std::string serialize();
 
 	private:
 		static inline int nextItemId = 0;

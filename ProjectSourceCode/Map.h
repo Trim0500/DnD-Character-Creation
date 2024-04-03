@@ -18,24 +18,6 @@
 */
 namespace Map {
 
-	// DEPRECATED IN PHASE 2
-	///*!
-	//* \enum Cell_Type
-	//* \brief Enum to represent the posible cell types on a map
-	//*/
-	//enum class Cell_Type {
-	//	empty = '_',//empty cell, character can move through it.
-	//	wall = 'w',//wall cell, character cannot move through it.
-	//	special = 's'//special cell, character has a special interraction, can move after interraction.
-	//};
-
-
-	/*!
-	* \fn ConvertToCellType
-	* \brief Free function to take a letter and attempt to map it to a cell type
-	*/
-	//Interactable::Interactable ConvertToCellType(char letter);
-
 	/*!
 	* \var dirs
 	* \brief all possible directions to look in : down, right, up, back

@@ -351,6 +351,8 @@ namespace Character {
 
 		bool passable() const { return true; };// can the MC pass through this cell
 
+		std::string serialize();
+
 		bool GetIsPlayerControlled() { return isPlayerControlled; };
 
 		void SetIsPlayerControlled(bool _isPlayerControlled) { isPlayerControlled = _isPlayerControlled; };

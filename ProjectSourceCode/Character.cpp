@@ -149,6 +149,13 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 							static_cast<CharacterActionStrategy*>(new AggressorStrategy());
 }
 
+std::string Character::Character::serialize() {
+	std::string str = "c,";
+	str += std::to_string(this->id);
+	return str;
+	//c,id
+}
+
 
 std::string Character::Character::Name(const std::string& t_name)
 {
