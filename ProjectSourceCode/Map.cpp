@@ -65,12 +65,16 @@ void Map::Map::setCols(int cols)
 void Map::Map::setEndCell(int row, int col) {
 	this->endCell[0] = row;
 	this->endCell[1] = col;
+	//if its the end cell, it has to be empty
+	this->setEmpty(row, col);
 }
 
 void Map::Map::setStartCell(int row, int col)
 {
 	this->startCell[0] = row;
 	this->startCell[1] = col;
+	//if its the starting cell, it has to be empty
+	this->setEmpty(row, col);
 }
 
 void Map::Map::setGrid() {
@@ -79,20 +83,68 @@ void Map::Map::setGrid() {
 	}
 }
 void Map::Map::setCell(int row, int col, Interactable::Interactable* cell) {
-	this->grid[row][col] = cell;
+
+	try {//if you are trying to put an empty cell on the start/end cell
+		if ((row == this->startCell[0] && col == this->startCell[1]) || (row == this->endCell[0] && col == this->endCell[1])) {
+			throw(1);
+		}
+		this->grid[row][col] = cell;
+	}
+	catch (...) {
+		std::cout << "Can't change the cell on the starting/ending point." << std::endl;
+	}
 }
 
 void Map::Map::setEmpty(int row, int col) {
-	this->grid[row][col] = new EmptyCell();
+
+	try {//if you are trying to put an empty cell on the start/end cell
+		if ((row == this->startCell[0] && col == this->startCell[1]) || (row == this->endCell[0] && col == this->endCell[1])) {
+			throw(1);
+		}
+		this->grid[row][col] = new EmptyCell();
+	}
+	catch (...) {
+		std::cout << "Can't put an empty cell on the starting/ending point." << std::endl;
+	}
 }
+
 void Map::Map::setWall(int row, int col) {
-	this->grid[row][col] = new Wall();
+
+	try {//if you are trying to put a wall on the start/end cell
+		if ((row == this->startCell[0] && col == this->startCell[1]) || (row == this->endCell[0] && col == this->endCell[1])){
+			throw(1);
+		}
+		this->grid[row][col] = new Wall();
+	}
+	catch (...) {
+		std::cout << "Can't put a wall on the starting/ending point." <<std::endl;
+	}
 }
+
 void Map::Map::setCharacter(int row, int col, Character::Character* cha) {
-	this->grid[row][col] = cha;
+
+	try {//if you are trying to put an empty cell on the start/end cell
+		if ((row == this->startCell[0] && col == this->startCell[1]) || (row == this->endCell[0] && col == this->endCell[1])) {
+			throw(1);
+		}
+		this->grid[row][col] = cha;
+	}
+	catch (...) {
+		std::cout << "Can't put a character on the starting/ending point." << std::endl;
+	}
 }
+
 void Map::Map::setItem(int row, int col, item::Item* item) {
-	this->grid[row][col] = item;
+
+	try {//if you are trying to put an empty cell on the start/end cell
+		if ((row == this->startCell[0] && col == this->startCell[1]) || (row == this->endCell[0] && col == this->endCell[1])) {
+			throw(1);
+		}
+		this->grid[row][col] = item;
+	}
+	catch (...) {
+		std::cout << "Can't put an item on the starting/ending point." << std::endl;
+	}
 }
 
 bool Map::Map::IsTherePath() {
@@ -107,7 +159,8 @@ bool Map::Map::IsTherePath() {
 	std::queue<std::pair<int, int>> q;
 
 	//start cell is visited (0,0)
-	q.push({ 0,0 });
+	//q.push({ 0,0 });
+	q.push({ this->startCell[0], this->startCell[1] });
 	visited[0][0] = true;
 
 	while (!q.empty()) {
@@ -173,7 +226,6 @@ void Map::Map::MoveCharacter(const int& _targetX, const int& _targetY, Character
 		}
 	}
 
-
 	Interactable::Interactable* temp = grid[_targetX - 1][_targetY - 1];
 	setCell(_targetX - 1, _targetY - 1, _targetCharacter);
 	setCell(sourceLocationX, sourceLocationY, temp);
@@ -203,9 +255,14 @@ std::vector<Character::Character*> Map::Map::GetCharactersInMap() {
 void Map::Map::Print() {
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-
 			char cell = grid[i][j]->serialize()[0];
-			if (cell == 'e') {
+			if (i == this->startCell[0] && j == this->startCell[1]) {
+				std::cout << "S" << " ";
+			}
+			else if (i == this->endCell[0] && j == this->endCell[1]) {
+				std::cout << "X" << " ";
+			}
+			else if (cell == 'e') {
 				std::cout << "_" << " ";
 			}
 			else {
