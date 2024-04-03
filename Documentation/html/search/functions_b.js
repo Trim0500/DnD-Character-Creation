@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['map_1',['Map',['../class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce',1,'Map::Map::Map()'],['../class_map_1_1_map.html#a2d6bd8ea0c22c0524a9c13e86e3387ec',1,'Map::Map::Map(int rows, int cols)']]],
-  ['max_5fhit_5fpoints_2',['Max_Hit_Points',['../class_character_1_1_character.html#ac9b33e76e10d4583d9270e616f81b74c',1,'Character::Character']]],
-  ['modifier_3',['Modifier',['../class_character_1_1_character.html#ab88e0b933e20ec92ee06610e8f6d83fa',1,'Character::Character']]]
+  ['name_0',['Name',['../class_character_1_1_character.html#afd2974653e0fb67eb2694331718eb1fc',1,'Character::Character::Name() const'],['../class_character_1_1_character.html#a8908a77d38fe0249cd2b08d9faca94b1',1,'Character::Character::Name(const std::string &amp;t_name)']]],
+  ['notify_1',['Notify',['../class_character_1_1_character.html#acebb5c721b4bcc5606484aea573b60b4',1,'Character::Character::Notify()'],['../class_dice.html#a972fe189f32621a199a69ceb7cf43d14',1,'Dice::Notify()'],['../classgame_1_1_game.html#a194b57944f6149b1df53dfbc5658a0b8',1,'game::Game::Notify()'],['../class_map_1_1_map.html#ae0b199d07fc33735ddac16907e585f27',1,'Map::Map::Notify()'],['../classobservable_1_1_observable.html#abb62ad46189f0d309c039a5c4b0c6f0a',1,'observable::Observable::Notify()']]]
 ];

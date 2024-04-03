@@ -6,7 +6,8 @@ var searchData=
   ['addmaptocampaign_3',['AddMapToCampaign',['../classcampaign_1_1_campaign.html#ae9f04d113a7961c08dcb4df38dfb8798',1,'campaign::Campaign']]],
   ['addnewitem_4',['AddNewItem',['../classitemcontainer_1_1_item_container.html#a80be76423cae293d2f74f5a7b8756582',1,'itemcontainer::ItemContainer']]],
   ['armour_5fclass_5',['Armour_Class',['../class_character_1_1_character.html#a7ebee057ce2c701940a2426f595892a0',1,'Character::Character']]],
-  ['attach_6',['attach',['../class_observable.html#a3b024352e50b06ce4e64aec9930618c8',1,'Observable']]],
+  ['attach_6',['Attach',['../class_character_1_1_character.html#ae285eb20b676e43c1e5e715700f21fa4',1,'Character::Character::Attach()'],['../class_dice.html#af1140bfeac3db1d43f14d816ef9cfb6f',1,'Dice::Attach()'],['../classgame_1_1_game.html#ac2ee5ba3da3e8033ebd8b2cad47be423',1,'game::Game::Attach()'],['../class_map_1_1_map.html#a26028931b3932bf0c656fc15dbd34ce6',1,'Map::Map::Attach()'],['../classobservable_1_1_observable.html#aa7d5a047ae56adf7c50395c4a81e9ec1',1,'observable::Observable::Attach()']]],
   ['attack_5fbonus_7',['Attack_Bonus',['../class_character_1_1_character.html#a4201304c94d05d6dd3cf2c34e3d0a491',1,'Character::Character']]],
-  ['attacks_5fper_5fturn_8',['Attacks_Per_Turn',['../class_character_1_1_character.html#a985a59dec3d29a912625ed385c4829c0',1,'Character::Character']]]
+  ['attacks_5fper_5fturn_8',['Attacks_Per_Turn',['../class_character_1_1_character.html#a985a59dec3d29a912625ed385c4829c0',1,'Character::Character']]],
+  ['attemptattack_9',['AttemptAttack',['../class_character_1_1_character.html#a7e82158b51ab6708a9c282e08f9abcc0',1,'Character::Character']]]
 ];

@@ -1,22 +1,13 @@
 var searchData=
 [
-  ['m_5fmap_0',['m_map',['../class_map_builder_1_1_map_builder.html#a0e6adc1a1cf12139903f565c5179d5e3',1,'MapBuilder::MapBuilder']]],
-  ['main_1',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_2',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['map_3',['Map',['../class_map.html',1,'Map'],['../class_map_1_1_map.html',1,'Map::Map'],['../namespace_map.html',1,'Map'],['../class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce',1,'Map::Map::Map()'],['../class_map_1_1_map.html#a2d6bd8ea0c22c0524a9c13e86e3387ec',1,'Map::Map::Map(int rows, int cols)']]],
-  ['map_2ecpp_4',['Map.cpp',['../_map_8cpp.html',1,'']]],
-  ['map_2eh_5',['Map.h',['../_map_8h.html',1,'']]],
-  ['mapbuilder_6',['MapBuilder',['../class_map_builder_1_1_map_builder.html',1,'MapBuilder::MapBuilder'],['../namespace_map_builder.html',1,'MapBuilder']]],
-  ['mapbuilder_2ecpp_7',['MapBuilder.cpp',['../_map_builder_8cpp.html',1,'']]],
-  ['mapbuilder_2eh_8',['MapBuilder.h',['../_map_builder_8h.html',1,'']]],
-  ['mapdirector_9',['MapDirector',['../class_map_director_1_1_map_director.html',1,'MapDirector::MapDirector'],['../namespace_map_director.html',1,'MapDirector']]],
-  ['mapdirector_2ecpp_10',['MapDirector.cpp',['../_map_director_8cpp.html',1,'']]],
-  ['mapdirector_2eh_11',['MapDirector.h',['../_map_director_8h.html',1,'']]],
-  ['mapid_12',['mapID',['../structcampaign_1_1_campaign_map.html#ab8b61de70b140436e4a0a0aa73812046',1,'campaign::CampaignMap']]],
-  ['mapids_13',['mapIDs',['../structcampaign_1_1_campaign_record.html#a23fa59a8b27dc3a96901bbd67f682151',1,'campaign::CampaignRecord']]],
-  ['mapsincampaign_14',['mapsInCampaign',['../structcampaign_1_1_campaign_record.html#af4bbd4ea1c2a33063a9c64879a193429',1,'campaign::CampaignRecord']]],
-  ['max_5fhit_5fpoints_15',['max_hit_points',['../structserializecharacter_1_1_character_record.html#aeffcd92a2be7e8f453c5f21d9791d255',1,'serializecharacter::CharacterRecord']]],
-  ['max_5fhit_5fpoints_16',['Max_Hit_Points',['../class_character_1_1_character.html#ac9b33e76e10d4583d9270e616f81b74c',1,'Character::Character']]],
-  ['modifier_17',['Modifier',['../class_character_1_1_character.html#ab88e0b933e20ec92ee06610e8f6d83fa',1,'Character::Character']]],
-  ['monk_18',['Monk',['../class_character.html#afed4352e48176e367ea1a8299f6aee42a844a2b0ce474227509eb629bc56c1359',1,'Character']]]
+  ['na_0',['NA',['../class_character.html#adc11299f73c335c725b36d6e85fc7edbad4cd0dabcf4caa22ad92fab40844c786',1,'Character::NA'],['../namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca44125f26a1f7fbb82e6756ddd5e5bfce',1,'item::NA']]],
+  ['name_1',['Name',['../class_character_1_1_character.html#afd2974653e0fb67eb2694331718eb1fc',1,'Character::Character::Name() const'],['../class_character_1_1_character.html#a8908a77d38fe0249cd2b08d9faca94b1',1,'Character::Character::Name(const std::string &amp;t_name)']]],
+  ['name_2',['name',['../structserializecharacter_1_1_character_record.html#ad71a6292fa365b9682e5fd606b6ee3d7',1,'serializecharacter::CharacterRecord']]],
+  ['new_5fcampaign_5fmapids_5fcell_5fvalue_3',['NEW_CAMPAIGN_MAPIDS_CELL_VALUE',['../testcampaign_8cpp.html#a7f895162e5d478f9e6dd7ceb21cf22a4',1,'testcampaign.cpp']]],
+  ['new_5fcampaign_5fmapids_5fcol_5fcount_4',['NEW_CAMPAIGN_MAPIDS_COL_COUNT',['../testcampaign_8cpp.html#a3c6f24e35ef9c7896f84a38d60bd8034',1,'testcampaign.cpp']]],
+  ['new_5fcampaign_5fmapids_5frow_5fcount_5',['NEW_CAMPAIGN_MAPIDS_ROW_COUNT',['../testcampaign_8cpp.html#a08e427f1fa510f4264afd3effa5af1ad',1,'testcampaign.cpp']]],
+  ['nimble_6',['Nimble',['../namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7adcd9522b375ce622ac79412f7a5c6e2f',1,'characterBuilder']]],
+  ['notify_7',['Notify',['../class_character_1_1_character.html#acebb5c721b4bcc5606484aea573b60b4',1,'Character::Character::Notify()'],['../class_dice.html#a972fe189f32621a199a69ceb7cf43d14',1,'Dice::Notify()'],['../classgame_1_1_game.html#a194b57944f6149b1df53dfbc5658a0b8',1,'game::Game::Notify()'],['../class_map_1_1_map.html#ae0b199d07fc33735ddac16907e585f27',1,'Map::Map::Notify()'],['../classobservable_1_1_observable.html#abb62ad46189f0d309c039a5c4b0c6f0a',1,'observable::Observable::Notify()']]],
+  ['numcols_8',['numCols',['../structcampaign_1_1_campaign_record.html#a26d80d71ebfaedfa784858b2c0c1b5d6',1,'campaign::CampaignRecord']]],
+  ['numrows_9',['numRows',['../structcampaign_1_1_campaign_record.html#aef49d993812d9b721179efd6af5b19e2',1,'campaign::CampaignRecord']]]
 ];

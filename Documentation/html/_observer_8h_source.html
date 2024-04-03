@@ -84,16 +84,28 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">Observer.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_observer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00003" data-start="{" data-end="};">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="class_observer.html">    3</a></span><span class="keyword">class </span><a class="code hl_class" href="class_observer.html">Observer</a> {</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="class_observer.html#a712e6dfd4964b3804657661a1d00a0fa">    5</a></span>        <span class="keywordtype">void</span> <span class="keyword">virtual</span> <a class="code hl_function" href="class_observer.html#a712e6dfd4964b3804657661a1d00a0fa">update</a>(<span class="keywordtype">void</span> * f) = 0;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>};</div>
+<a href="_observer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceobserver.html">observer</a> {</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classobserver_1_1_observer.html">   21</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classobserver_1_1_observer.html">Observer</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classobserver_1_1_observer.html#a0eb4f0a1f57787f8f90bdee0944ce343">   27</a></span>            <span class="keyword">virtual</span> <a class="code hl_function" href="classobserver_1_1_observer.html#a0eb4f0a1f57787f8f90bdee0944ce343">~Observer</a>() {};</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classobserver_1_1_observer.html#ae11bbd40c528d2184572ef9187fcfa8a">   33</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classobserver_1_1_observer.html#ae11bbd40c528d2184572ef9187fcfa8a">update</a>(std::string) = 0;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classobserver_1_1_observer.html#a4826ab910d778bf73d540f102336ba4a">   39</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classobserver_1_1_observer.html#a4826ab910d778bf73d540f102336ba4a">update</a>(<span class="keywordtype">void</span>*) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    };</div>
 </div>
-<div class="ttc" id="aclass_observer_html"><div class="ttname"><a href="class_observer.html">Observer</a></div><div class="ttdef"><b>Definition</b> <a href="#l00003">Observer.h:3</a></div></div>
-<div class="ttc" id="aclass_observer_html_a712e6dfd4964b3804657661a1d00a0fa"><div class="ttname"><a href="class_observer.html#a712e6dfd4964b3804657661a1d00a0fa">Observer::update</a></div><div class="ttdeci">virtual void update(void *f)=0</div></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="ttc" id="aclassobserver_1_1_observer_html"><div class="ttname"><a href="classobserver_1_1_observer.html">observer::Observer</a></div><div class="ttdoc">Class to abstract the observer functionality.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">Observer.h:21</a></div></div>
+<div class="ttc" id="aclassobserver_1_1_observer_html_a0eb4f0a1f57787f8f90bdee0944ce343"><div class="ttname"><a href="classobserver_1_1_observer.html#a0eb4f0a1f57787f8f90bdee0944ce343">observer::Observer::~Observer</a></div><div class="ttdeci">virtual ~Observer()</div><div class="ttdoc">Destructor for Observer.</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Observer.h:27</a></div></div>
+<div class="ttc" id="aclassobserver_1_1_observer_html_a4826ab910d778bf73d540f102336ba4a"><div class="ttname"><a href="classobserver_1_1_observer.html#a4826ab910d778bf73d540f102336ba4a">observer::Observer::update</a></div><div class="ttdeci">virtual void update(void *) const =0</div></div>
+<div class="ttc" id="aclassobserver_1_1_observer_html_ae11bbd40c528d2184572ef9187fcfa8a"><div class="ttname"><a href="classobserver_1_1_observer.html#ae11bbd40c528d2184572ef9187fcfa8a">observer::Observer::update</a></div><div class="ttdeci">virtual void update(std::string)=0</div></div>
+<div class="ttc" id="anamespaceobserver_html"><div class="ttname"><a href="namespaceobserver.html">observer</a></div><div class="ttdoc">Namespace to partition the Observer functionality.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

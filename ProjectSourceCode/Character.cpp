@@ -3,6 +3,115 @@
 
 #include "Character.h"
 
+namespace {
+	std::vector<int> DetectPlayer(const std::vector<std::vector<Interactable::Interactable*>>& _mapGrid, const int& _posX, const int& _posY) {
+		std::vector<int> result;
+
+		// Range set to 5 rows and 5 columns centered on current npc position
+		int minX = _posX - 2;
+		int minY = _posY - 2;
+		int maxX = _posX + 2;
+		int maxY = _posY + 2;
+
+		for (int i = minX; i < maxX; i++)
+		{
+			if (i < 1 || i > _mapGrid.size()) {
+				continue;
+			}
+
+			for (int j = minY; j < maxY; j++)
+			{
+				if (j < 1 || j > _mapGrid[i].size() || (i == _posX && j == _posY)) {
+					continue;
+				}
+
+				Interactable::Interactable* valueAtCell = _mapGrid[i - 1][j - 1];
+				if (dynamic_cast<Character::Character*>(valueAtCell)) {
+					if (static_cast<Character::Character*>(valueAtCell)->GetIsPlayerControlled()) {
+						result.push_back(i);
+						result.push_back(j);
+					}
+				}
+			}
+		}
+
+		return result;
+	}
+
+	CellActionInfo DecideAction(const std::vector<int>& _playerLocation,
+								const std::vector<CellActionInfo>& _npcActionInfo,
+								const int& _posX,
+								const int& _posY,
+								CharacterActionStrategy* _actionStrategy) {
+		CellActionInfo result;
+
+		// Decide what to do based on that info
+		if (_playerLocation.size() == 0) {
+			int actionIndex = rand() % _npcActionInfo.size() - 1;
+			result = _npcActionInfo[actionIndex];
+		}
+		else {
+			// Calculate the absolute difference for vertical and horizontal movement, if same move to next phase, other wise deteremine which dir to go to
+			int playerX = _playerLocation[0];
+			int playerY = _playerLocation[1];
+
+			int horizontalDifference = playerX - _posX;
+			int verticalDifference = playerY - _posY;
+
+			if ((abs(verticalDifference) == 1 || abs(horizontalDifference) == 1) && dynamic_cast<AggressorStrategy*>(_actionStrategy)) {
+				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
+				{
+					if (_npcActionInfo[i].actionName == Character::ATTACK_CELL_ACTION) {
+						result = _npcActionInfo[i];
+					}
+				}
+				
+			}
+			else if(abs(verticalDifference) < abs(horizontalDifference)) {
+				int targetY;
+
+				if (verticalDifference < 0) {
+					targetY = _posY - 1;
+				}
+				else {
+					targetY = _posY + 1;
+				}
+
+				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
+				{
+					if (_npcActionInfo[i].col == targetY) {
+						result = _npcActionInfo[i];
+					}
+				}
+			}
+			else {
+				int targetX;
+
+				if (horizontalDifference < 0) {
+					targetX = _posX - 1;
+				}
+				else {
+					targetX = _posX + 1;
+				}
+
+				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
+				{
+					if (_npcActionInfo[i].col == targetX) {
+						result = _npcActionInfo[i];
+					}
+				}
+			}
+
+			// based on direction, compare player's x or y against npc (hori: if +, move right, left otherwise, vert: if +, move down, up otherwise)
+			// If diff is 1 or -1 choose attack
+		}
+
+		// Return the decision
+
+		return result;
+	}
+}
+
 Character::Character::Character(){
 	//create random number generator
 	std::random_device rd;
@@ -154,13 +263,25 @@ std::string Character::Character::serialize() {
 	str += std::to_string(this->id);
 	return str;
 	//c,id
+ }
+void Character::Character::Notify() {
+	for (int i = 0; i < (int)observers.size(); i++)
+	{
+		observers[i]->update(observerMessage);
+	}
+}
+
+void Character::Character::CreateObserverMessage(std::string _message = "Empty") {
+	observerMessage = _message;
+	
+	Notify();
 }
 
 
 std::string Character::Character::Name(const std::string& t_name)
 {
 	name = t_name;
-	this->notify();
+	CreateObserverMessage();
 	return name;
 }
 
@@ -316,7 +437,7 @@ bool Character::Character::Equip_Item(item::Item* t_item) {
 		std::cerr << "Could not equipe '" << t_item->GetItemName() << "'. No corresponding equipment slot" << std::endl;
 		return false;
 	}
-	this->notify();
+	CreateObserverMessage();
 	return true;
 }
 
@@ -345,12 +466,14 @@ void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
 
 	_itemToEquip->SetWrappee(wornItems);	
 	wornItems = _itemToEquip;
+
+	CreateObserverMessage();
 }
 
 void Character::Character::Unequip_Item(Equipment_Slots t_slot)
 {
 	equipment_slots.at(t_slot) = nullptr;
-	this->notify();
+	CreateObserverMessage();
 }
 
 void Character::Character::Unequip_Item_Decorator(item::Item* _itemToRemove) {
@@ -370,6 +493,8 @@ void Character::Character::Unequip_Item_Decorator(item::Item* _itemToRemove) {
 		decoratorItem->SetWrappee(wornItems);	
 		wornItems = decoratorItem;
 	}
+
+	CreateObserverMessage();
 }
 
 void Character::Character::Receive_Damage(int t_damage)
@@ -380,7 +505,10 @@ void Character::Character::Receive_Damage(int t_damage)
 	else {
 		hit_points -= t_damage;
 	}
-	this->notify();
+
+	std::ostringstream logMessage;
+	logMessage << "[Character/Receive_Damage] -- " << name << " took " << t_damage << " damage! Current HP: " << hit_points << "/" << max_hit_points;
+	CreateObserverMessage(logMessage.str());
 }
 
 void Character::Character::Receive_Healing(int t_heal)
@@ -391,15 +519,23 @@ void Character::Character::Receive_Healing(int t_heal)
 	else {
 		hit_points += t_heal;
 	}
-	this->notify();
+	CreateObserverMessage();
 }
 
 const bool Character::Character::Is_Alive()
 {
 	if (hit_points <= 0) {
+		std::ostringstream logMessage;
+		logMessage << "[Character/Receive_Damage] -- " << name << " died!";
+		CreateObserverMessage(logMessage.str());
+
 		return false;
 	}
 	else {
+		std::ostringstream logMessage;
+		logMessage << "[Character/Receive_Damage] -- " << name << " lives on!";
+		CreateObserverMessage(logMessage.str());
+
 		return true;
 	}
 }
@@ -533,6 +669,55 @@ const int Character::Character::Damage_Bonus()
 	return damage_bonus;
 }
 
+void Character::Character::TakeItems(itemcontainer::ItemContainer* _targetContainer,
+									const std::vector<Item*>& _selectedItems,
+									const int& _destinationContainerID)
+{
+	ItemContainer* destinationContainer = inventory.GetItemId() == _destinationContainerID ?
+											&inventory :
+											static_cast<ItemContainer*>(inventory.GetItem(_destinationContainerID));
+	if (destinationContainer == nullptr) {
+		std::ostringstream excMsg;
+		excMsg << "[Character/TakeItems] -- Failed to find the destination container at ID " << _destinationContainerID;
+		throw std::invalid_argument(excMsg.str().c_str());
+	}
+
+	for (int i = 0; i < (int)_selectedItems.size(); i++)
+	{
+		if (_targetContainer->GetItem(_selectedItems[i]->GetItemId()) == nullptr) {
+			std::ostringstream excMsg;
+			excMsg << "[Character/TakeItems] -- Failed to find the item " << _selectedItems[i]->GetItemName() << " in the target container " << _targetContainer->GetItemName();
+			throw std::invalid_argument(excMsg.str().c_str());
+		}
+
+		int addResult = destinationContainer->AddNewItem(_selectedItems[i]);
+		if (addResult == -1) {
+			std::ostringstream excMsg;
+			excMsg << "[Character/TakeItems] -- Failed to add the item " << _selectedItems[i]->GetItemName() << " in the destiantion container " << destinationContainer->GetItemName();
+			throw std::overflow_error(excMsg.str().c_str());
+		}
+	}
+
+	_targetContainer->RemoveItems(_selectedItems);
+
+	CreateObserverMessage();
+}
+
+void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, const int& _targetContainerID) {
+	ItemContainer* targetContainer = inventory.GetItemId() == _targetContainerID ?
+										&inventory :
+										static_cast<ItemContainer*>(inventory.GetItem(_targetContainerID));
+	if (targetContainer == nullptr) {
+		std::ostringstream excMsg;
+		excMsg << "[Character/DropItems] -- Failed to find the target container at ID " << _targetContainerID;
+		throw std::invalid_argument(excMsg.str().c_str());
+	}
+
+	targetContainer->RemoveItems(_selectedItems);
+
+	CreateObserverMessage();
+}
+
 std::string Character::Character::Get_Abilities_String(Abilities_Stats t_abilities)
 {
 	switch (t_abilities)
@@ -613,6 +798,58 @@ const int Character::Character::Attacks_Per_Turn()
 	}
 	int num_attacks = std::ceil((double)(sum_level / 5.0));
 	return num_attacks;
+}
+
+bool Character::Character::AttemptAttack(Character* _target) {
+	std::ostringstream logMessage;
+	logMessage << "[Character/AttemptAttack] -- " << name << " is attacking " << _target->name << Attacks_Per_Turn() << " times.";
+	CreateObserverMessage(logMessage.str());
+
+	AbstractComponent* opponentWornItems = _target->GetWornItems();
+	int opponentArmorClass = opponentWornItems->Ability_Score_Natural(6, 0);
+
+	bool characterHit = Dice::roll("1d20") +
+						wornItems->Ability_Score_Natural(0, 0) +
+						wornItems->Ability_Score_Natural(8, 0) >= opponentArmorClass;
+
+	bool targetDied = false;
+
+	for (int i = 0; i < Attacks_Per_Turn(); i++)
+	{
+		if (characterHit) {
+			logMessage.clear();
+			logMessage << "[Character/AttemptAttack] -- " << name << " attacked successfully!";
+			CreateObserverMessage(logMessage.str());
+
+			int damageValue = wornItems->Ability_Score_Natural(7, i + 1);
+			_target->Receive_Damage(damageValue);
+			if (!_target->Is_Alive()) {
+				targetDied = true;
+
+				break;
+			}
+		}
+		else {
+			logMessage.clear();
+			logMessage << "[Character/AttemptAttack] -- " << name << " missed!";
+			CreateObserverMessage(logMessage.str());
+		}
+	}
+	
+	return targetDied;
+}
+
+CellActionInfo Character::Character::DecideNPCAction(const std::vector<std::vector<Interactable*>>& _mapGrid, const int& _posX, const int& _posY) {
+	// Note _posX and _posY are 1-indexed
+	
+	// Use the action strategy to get options
+	std::vector<CellActionInfo> npcActionInfo = actionStrategy->UseMovementStrategy(_mapGrid, _posX, _posY);
+
+	// Use search algo to see if the player is in range
+	std::vector<int> playerLocation = DetectPlayer(_mapGrid, _posX, _posY);
+
+	// Note cell action info choice will have the coordiantes 1-indexed as well
+	return DecideAction(playerLocation, npcActionInfo, _posX, _posY, actionStrategy);
 }
 
 std::string Character::Character::Get_Class_String(Character_Class t_class)
@@ -712,28 +949,28 @@ std::string Character::Character::Get_Equipment_Slot_String(Equipment_Slots t_sl
 int Character::Character::setAttribute(Abilities_Stats t_ability, int t_val)
 {
 	this->ability_scores.at((int)t_ability) = t_val;
-	this->notify();
+	CreateObserverMessage();
 	return t_val;
 }
 
 int Character::Character::setMaxHitPoints(int t_val)
 {
 	this->max_hit_points = t_val;
-	this->notify();
+	CreateObserverMessage();
 	return t_val;
 }
 
 int Character::Character::setHitPoints(int t_val)
 {
 	this->hit_points = t_val;
-	this->notify();
+	CreateObserverMessage();
 	return t_val;
 }
 
 int Character::Character::setLevel(Character_Class t_class, int t_val)
 {
 	this->level.at((int)t_class) = t_val;
-	this->notify();
+	CreateObserverMessage();
 	return t_val;
 }
 
@@ -750,7 +987,7 @@ bool Character::Character::Levelup_Barbarian(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -767,7 +1004,7 @@ bool Character::Character::Levelup_Barbarian(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -776,7 +1013,7 @@ bool Character::Character::Levelup_Barbarian(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (7 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -794,7 +1031,7 @@ bool Character::Character::Levelup_Bard(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -811,7 +1048,7 @@ bool Character::Character::Levelup_Bard(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -820,7 +1057,7 @@ bool Character::Character::Levelup_Bard(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -838,7 +1075,7 @@ bool Character::Character::Levelup_Cleric(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -855,7 +1092,7 @@ bool Character::Character::Levelup_Cleric(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -864,7 +1101,7 @@ bool Character::Character::Levelup_Cleric(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -882,7 +1119,7 @@ bool Character::Character::Levelup_Druid(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -899,7 +1136,7 @@ bool Character::Character::Levelup_Druid(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -908,7 +1145,7 @@ bool Character::Character::Levelup_Druid(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -930,7 +1167,7 @@ bool Character::Character::Levelup_Fighter(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -951,7 +1188,7 @@ bool Character::Character::Levelup_Fighter(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -964,7 +1201,7 @@ bool Character::Character::Levelup_Fighter(bool t_average_hp)
 		}
 		max_hit_points += (base_hp_increase + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -982,7 +1219,7 @@ bool Character::Character::Levelup_Monk(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -999,7 +1236,7 @@ bool Character::Character::Levelup_Monk(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -1008,7 +1245,7 @@ bool Character::Character::Levelup_Monk(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -1026,7 +1263,7 @@ bool Character::Character::Levelup_Paladin(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -1043,7 +1280,7 @@ bool Character::Character::Levelup_Paladin(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -1052,7 +1289,7 @@ bool Character::Character::Levelup_Paladin(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -1070,7 +1307,7 @@ bool Character::Character::Levelup_Ranger(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -1087,7 +1324,7 @@ bool Character::Character::Levelup_Ranger(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -1096,7 +1333,7 @@ bool Character::Character::Levelup_Ranger(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (6 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -1114,7 +1351,7 @@ bool Character::Character::Levelup_Rogue(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -1131,7 +1368,7 @@ bool Character::Character::Levelup_Rogue(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -1140,7 +1377,7 @@ bool Character::Character::Levelup_Rogue(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -1158,7 +1395,7 @@ bool Character::Character::Levelup_Sorcerer(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -1175,7 +1412,7 @@ bool Character::Character::Levelup_Sorcerer(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -1184,7 +1421,7 @@ bool Character::Character::Levelup_Sorcerer(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (4 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -1202,7 +1439,7 @@ bool Character::Character::Levelup_Warlock(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -1219,7 +1456,7 @@ bool Character::Character::Levelup_Warlock(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -1228,7 +1465,7 @@ bool Character::Character::Levelup_Warlock(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (5 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }
@@ -1246,7 +1483,7 @@ bool Character::Character::Levelup_Wizard(bool t_average_hp)
 				level.at((int)t_class) = 1;
 				character_class.set((int)t_class);
 				hit_points = max_hit_points;
-				this->notify();
+				CreateObserverMessage();
 				return true;
 			}
 			else
@@ -1263,7 +1500,7 @@ bool Character::Character::Levelup_Wizard(bool t_average_hp)
 			level.at((int)t_class) = 1;
 			character_class.set((int)t_class);
 			hit_points = max_hit_points;
-			this->notify();
+			CreateObserverMessage();
 			return true;
 		}
 	}
@@ -1272,7 +1509,7 @@ bool Character::Character::Levelup_Wizard(bool t_average_hp)
 		level.at((int)t_class) += 1;
 		max_hit_points += (4 + Modifier(Abilities_Stats::Constitution));
 		hit_points = max_hit_points;
-		this->notify();
+		CreateObserverMessage();
 		return true;
 	}
 }

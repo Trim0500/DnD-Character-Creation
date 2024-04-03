@@ -1,0 +1,57 @@
+\doxysection{gamelogger.\+cpp}
+\hypertarget{gamelogger_8cpp_source}{}\label{gamelogger_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/gamelogger.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/gamelogger.cpp}}
+\mbox{\hyperlink{gamelogger_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <time.h>}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gamelogger_8h}{gamelogger.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00010}\mbox{\hyperlink{gamelogger_8cpp_a66d53a78fa462e4a98838bb6b4811ac2}{00010}}\ \textcolor{preprocessor}{\#define\ LOG\_FILE\_DIR\ "{}\(\backslash\)\(\backslash\)Game\ Log\(\backslash\)\(\backslash\)Game\_Log.txt"{}}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00012}00012\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00021}00021\ \ \ \ \ std::string\ CreateLogMessage(\textcolor{keyword}{const}\ std::string\&\ \_observableMessage)\ \{}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ time\_t\ now\ =\ time(NULL);}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ dateTimeString[26]\ =\ \{\};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ ctime\_s(dateTimeString,\ 26,\ \&now);}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ dateTimeString[24]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ std::ostringstream\ logMessage;}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ logMessage\ <<\ \ \textcolor{stringliteral}{"{}["{}}\ <<\ dateTimeString\ <<\ \textcolor{stringliteral}{"{}]\ "{}}\ <<\ \_observableMessage;}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ logMessage.str();}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00035}\mbox{\hyperlink{namespacegamelogger}{00035}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegamelogger}{gamelogger}}\ \{}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00036}\mbox{\hyperlink{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72}{00036}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgamelogger_1_1_game_logger_a02e78429abff7deca4a3f87d87d76a72}{GameLogger::update}}(std::string\ \_receivedMessage)\ \{}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ messageFromObservable\ =\ CreateLogMessage(\_receivedMessage);}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ std::string\ currentPath\ =\ std::filesystem::current\_path().string();}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ std::ostringstream\ fullURI;}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ fullURI\ <<\ currentPath\ <<\ \mbox{\hyperlink{gamelogger_8cpp_a66d53a78fa462e4a98838bb6b4811ac2}{LOG\_FILE\_DIR}};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!firstMessageOfSession)\ \{}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ logFile(fullURI.str());}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ logFile\ <<\ messageFromObservable;}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ logFile.close();}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ firstMessageOfSession\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ std::ofstream\ logFile(fullURI.str(),\ std::ios::app);}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ logFile\ <<\ \textcolor{charliteral}{'\(\backslash\)n'}\ <<\ messageFromObservable;}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ logFile.close();}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{gamelogger_8cpp_source_l00059}00059\ \}}
+
+\end{DoxyCode}

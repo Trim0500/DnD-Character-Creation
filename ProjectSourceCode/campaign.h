@@ -72,9 +72,23 @@ namespace campaign {
             * \param _currentMap Instance of a CampaignMap struct loaded from serialization
             * \param _mapsInCampaign Vector that represents a loaded list of pointers to Map instances 
             */
-            Campaign(int, std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
+            Campaign(int, const int&, const int&, std::vector<std::vector<int>>, CampaignMap, std::vector<Map::Map*>);
+
+            int GetCurrentCampaignID() { return nextCampaignID; };
+
+            void SetCurrentCampaignID(int _nextCampaignID) { nextCampaignID = _nextCampaignID; };
 
             int GetCampaignID() { return campaignID; };
+
+            void SetCampaignID(int _campaignID) { campaignID = _campaignID; };
+
+            int GetGridRows() { return gridRows; };
+
+            void SetGridRows(int _gridRows) { gridRows = _gridRows; };
+
+            int GetGridCols() { return gridCols; };
+
+            void SetGridCols(int _gridCols) { gridCols = _gridCols; };
 
             std::vector<std::vector<int>> GetMapIDs() {return mapIDs;};
 
@@ -116,6 +130,18 @@ namespace campaign {
             * \brief Integer representing the unique ID for a Campaign
             */
             int campaignID;
+
+            /*!
+            * \var gridRows
+            * \brief Integer representing the number of rows in the campaign grid
+            */
+            int gridRows;
+
+            /*!
+            * \var gridCols
+            * \brief Integer representing the number of cols in the campaign grid
+            */
+            int gridCols;
 
             /*!
             * \var mapIDs

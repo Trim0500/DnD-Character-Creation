@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['paladin_0',['Paladin',['../class_character.html#afed4352e48176e367ea1a8299f6aee42af4c17b587a99337e4f5a8e37cdb2a858',1,'Character']]],
-  ['passable_1',['passable',['../class_character_1_1_character.html#a158b452f59de5d19d5b5d52c8852f273',1,'Character::Character::passable()'],['../class_empty_cell.html#aa9ad9b552d09d4bdc7a21647f16f89f4',1,'EmptyCell::passable()'],['../class_interactable_1_1_interactable.html#ab35ba80b5c0ef1d749cd64deabd2ec3d',1,'Interactable::Interactable::passable()'],['../classitem_1_1_item.html#a022d81d31588d24bb24024a32b6837ab',1,'item::Item::passable()'],['../class_wall.html#ae22801776411990266d30be524e2f9ef',1,'Wall::passable()']]],
-  ['pickup_5fcell_5faction_2',['PICKUP_CELL_ACTION',['../class_character.html#a58f8aa321713af9cd5353a8558add87d',1,'Character']]],
-  ['pickup_5fcell_5fcolor_3',['PICKUP_CELL_COLOR',['../class_character.html#a7fdaece65e771d79a92da24d90f9d31e',1,'Character']]],
-  ['print_4',['Print',['../class_map_1_1_map.html#a06578ebbd08a07dc9f742ff8793a4cae',1,'Map::Map']]],
-  ['print_5fcharacter_5fsheet_5',['Print_Character_Sheet',['../class_character_1_1_character.html#ac038bc962c9e6051555b994ebbf56a98',1,'Character::Character']]],
-  ['printitemvector_6',['PrintItemVector',['../classitemcontainer_1_1_item_container.html#a18b253936a64879265f52fc08106eb5e',1,'itemcontainer::ItemContainer']]],
-  ['proficiency_5fbonus_7',['Proficiency_Bonus',['../class_character_1_1_character.html#a76e63a8baa9ae9d421a45bf6b6cc6419',1,'Character::Character']]]
+  ['ranger_0',['Ranger',['../class_character.html#afed4352e48176e367ea1a8299f6aee42ab23f665210a1914cab61bc8eba4c9ae0',1,'Character']]],
+  ['rawmapbuilder_2ecpp_1',['RawMapBuilder.cpp',['../_raw_map_builder_8cpp.html',1,'']]],
+  ['rawmapbuilder_2eh_2',['RawMapBuilder.h',['../_raw_map_builder_8h.html',1,'']]],
+  ['receive_5fdamage_3',['Receive_Damage',['../class_character_1_1_character.html#a6151ceea4232a21c828c66a4b2dea9ca',1,'Character::Character']]],
+  ['receive_5fhealing_4',['Receive_Healing',['../class_character_1_1_character.html#a012dd4525b3a888fa94264e88d8325d0',1,'Character::Character']]],
+  ['removeitems_5',['RemoveItems',['../classitemcontainer_1_1_item_container.html#a788a4cadcf8dd469aa6547f3a79da197',1,'itemcontainer::ItemContainer']]],
+  ['ring_6',['Ring',['../class_character.html#a9f688397f56ff67e4bdb949a6939c0adad4db177c94738b72bf9ce61e988ab1f1',1,'Character::Ring'],['../namespaceitem.html#ada202f1c932727de8eef0227d4b35e03a29b049c1fdb18205212c6724d9e3a6b7',1,'item::Ring']]],
+  ['rogue_7',['Rogue',['../class_character.html#afed4352e48176e367ea1a8299f6aee42aae412534db3879501923fa67e0ea0174',1,'Character']]],
+  ['roll_8',['roll',['../class_dice.html#afa3e9a90a12b210370e708a79e67c715',1,'Dice::roll(std::string query)'],['../class_dice.html#a612a16c434160895563d19099ca0b33b',1,'Dice::roll()']]],
+  ['roll_5fwith_5fadvantage_9',['roll_with_advantage',['../class_dice.html#a99e41ee2cd9fb489c638799fbfb3c117',1,'Dice::roll_with_advantage(std::string query)'],['../class_dice.html#a4e3e806488c756347490a4b76c02ec10',1,'Dice::roll_with_advantage()']]],
+  ['roll_5fwith_5fdisadvantage_10',['roll_with_disadvantage',['../class_dice.html#ac1d6d9974952c7fc3f4d110939cea798',1,'Dice::roll_with_disadvantage(std::string query)'],['../class_dice.html#a870e25ee830b3aa4d0124014d9334961',1,'Dice::roll_with_disadvantage()']]],
+  ['row_11',['row',['../structcharacteractionstrategy_1_1_cell_action_info.html#aa73e8080a5e4e99886269cffc3fdf4fc',1,'characteractionstrategy::CellActionInfo']]]
 ];

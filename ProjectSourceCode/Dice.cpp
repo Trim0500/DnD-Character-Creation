@@ -1,3 +1,6 @@
+#include <string>
+#include <sstream>
+
 #include "Dice.h"
 
 Dice::Dice(std::string query) {
@@ -24,6 +27,19 @@ Dice::Dice(std::string query) {
 
 }
 
+void Dice::Notify() {
+	for (int i = 0; i < (int)observers.size(); i++)
+	{
+		observers[i]->update(observerMessage);
+	}
+}
+
+void Dice::CreateObserverMessage(std::string _message = "Empty") {
+	observerMessage = _message;
+	
+	Notify();
+}
+
 int Dice::roll() {
 	int rolls = 0;
 	// roll the `die_sides` sided dice `leading_multiplier` times
@@ -31,11 +47,19 @@ int Dice::roll() {
 		rolls += (rand() % die_sides + 1);
 	}
 	// then add the addition value
-	return rolls + addition;
+
+	int result = rolls + addition;
+
+	std::ostringstream logMessage;
+	logMessage << "[Dice/roll] -- Rolled " << result << " for " << die_sides << "-sided die " << leading_multiplier << " times.";
+	CreateObserverMessage(logMessage.str());
+
+	return result;
 }
 Dice::Dice() {
 	srand(time(nullptr));
 }
+
 int Dice::roll(std::string query) {
 	// same as constructor. Used for single dice rolls, not associated with other existing objects.
 	std::smatch values_mathed;
@@ -58,7 +82,19 @@ int Dice::roll(std::string query) {
 	for (int i = 0; i < leading_multiplier; i++) {
 		rolls += (rand() % die_sides + 1);
 	}
-	return rolls + addition;
+
+	int result = rolls + addition;
+	
+	std::ostringstream logMessage;
+	logMessage << "[Dice/roll] -- Rolled " << result << " for " << die_sides << "-sided die " << leading_multiplier << " times.";
+	observerMessage = logMessage.str();
+	
+	for (int i = 0; i < (int)observers.size(); i++)
+	{
+		observers[i]->update(observerMessage);
+	}
+
+	return result;
 }
 
 int Dice::roll_with_advantage() {

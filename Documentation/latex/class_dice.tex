@@ -4,6 +4,12 @@
 
 {\ttfamily \#include $<$Dice.\+h$>$}
 
+Inheritance diagram for Dice\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_dice}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,6 +17,16 @@
 \begin{DoxyCompactList}\small\item\em \doxylink{class_dice}{Dice} object constructor. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_dice_a4dccb6c89e5ee4597c685d2645c92da2}{\texorpdfstring{$\sim$}{\string~}\+Dice}} ()
+\item 
+void \mbox{\hyperlink{class_dice_af1140bfeac3db1d43f14d816ef9cfb6f}{Attach}} (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}\+\_\+observer) override
+\begin{DoxyCompactList}\small\item\em Abstract function to provide concrete implementations a way to override. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dice_a320c67992ea4ff94420e182539a8258b}{Detach}} (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}\+\_\+observer) override
+\begin{DoxyCompactList}\small\item\em Abstract function to provide concrete implementations a way to override. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dice_a972fe189f32621a199a69ceb7cf43d14}{Notify}} () override
+\begin{DoxyCompactList}\small\item\em Abstract function to provide concrete implementations a way to override. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dice_aefd8e53a790bad499ae0e4164721f18f}{Create\+Observer\+Message}} (std\+::string)
+\item 
 int \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}} ()
 \begin{DoxyCompactList}\small\item\em Roll the dice object. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_dice_a4e3e806488c756347490a4b76c02ec10}{roll\+\_\+with\+\_\+advantage}} ()
@@ -29,6 +45,11 @@ int \mbox{\hyperlink{class_dice_a5d113ad9251a8561dd3101010b7af452}{get\+\_\+die\
 \begin{DoxyCompactList}\small\item\em die\+\_\+sides getter \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_dice_a8bf495738034fb0e5461a6761f007506}{get\+\_\+addition}} ()
 \begin{DoxyCompactList}\small\item\em addition getter \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classobservable_1_1_observable}{observable\+::\+Observable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classobservable_1_1_observable_ae66f3001b8162f0cfdf10dd204384099}{\texorpdfstring{$\sim$}{\string~}\+Observable}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classobservable_1_1_observable}{Observable}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,7 +64,7 @@ static int \mbox{\hyperlink{class_dice_ac1d6d9974952c7fc3f4d110939cea798}{roll\+
 \doxysubsection{Detailed Description}
 
 
-Definition at line \mbox{\hyperlink{_dice_8h_source_l00028}{28}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00031}{31}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
 
 
 
@@ -65,7 +86,7 @@ Definition at line \mbox{\hyperlink{_dice_8h_source_l00028}{28}} of file \mbox{\
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}\label{class_dice_a6b9eadd945ad8fd3840379c8824e5d48} 
 \index{Dice@{Dice}!Dice@{Dice}}
@@ -79,7 +100,17 @@ Default constructor.
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a4dccb6c89e5ee4597c685d2645c92da2}\label{class_dice_a4dccb6c89e5ee4597c685d2645c92da2} 
+\index{Dice@{Dice}!````~Dice@{\texorpdfstring{$\sim$}{\string~}Dice}}
+\index{````~Dice@{\texorpdfstring{$\sim$}{\string~}Dice}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Dice()}{\string~Dice()}}
+{\footnotesize\ttfamily virtual Dice\+::\texorpdfstring{$\sim$}{\string~}\+Dice (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00043}{43}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
 
 
 
@@ -96,7 +127,7 @@ increases the number of die (x in query) by 1
 
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00091}{91}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a9745be8c524cefde005c9d8a21330d59}\label{class_dice_a9745be8c524cefde005c9d8a21330d59} 
 \index{Dice@{Dice}!add\_die@{add\_die}}
@@ -115,7 +146,53 @@ increases the number of dice (x in query) by amount
 \end{DoxyParams}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_af1140bfeac3db1d43f14d816ef9cfb6f}\label{class_dice_af1140bfeac3db1d43f14d816ef9cfb6f} 
+\index{Dice@{Dice}!Attach@{Attach}}
+\index{Attach@{Attach}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
+{\footnotesize\ttfamily void Dice\+::\+Attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Abstract function to provide concrete implementations a way to override. 
+
+
+
+Implements \mbox{\hyperlink{classobservable_1_1_observable_aa7d5a047ae56adf7c50395c4a81e9ec1}{observable\+::\+Observable}}.
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00045}{45}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
+
+\Hypertarget{class_dice_aefd8e53a790bad499ae0e4164721f18f}\label{class_dice_aefd8e53a790bad499ae0e4164721f18f} 
+\index{Dice@{Dice}!CreateObserverMessage@{CreateObserverMessage}}
+\index{CreateObserverMessage@{CreateObserverMessage}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{CreateObserverMessage()}{CreateObserverMessage()}}
+{\footnotesize\ttfamily void Dice\+::\+Create\+Observer\+Message (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+message = {\ttfamily "{}Empty"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00037}{37}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a320c67992ea4ff94420e182539a8258b}\label{class_dice_a320c67992ea4ff94420e182539a8258b} 
+\index{Dice@{Dice}!Detach@{Detach}}
+\index{Detach@{Detach}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
+{\footnotesize\ttfamily void Dice\+::\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classobserver_1_1_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Abstract function to provide concrete implementations a way to override. 
+
+
+
+Implements \mbox{\hyperlink{classobservable_1_1_observable_a08934a0b93c48c10e340f2d02e65e406}{observable\+::\+Observable}}.
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8h_source_l00047}{47}} of file \mbox{\hyperlink{_dice_8h_source}{Dice.\+h}}.
 
 \Hypertarget{class_dice_a8bf495738034fb0e5461a6761f007506}\label{class_dice_a8bf495738034fb0e5461a6761f007506} 
 \index{Dice@{Dice}!get\_addition@{get\_addition}}
@@ -132,7 +209,7 @@ number to add after roll
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00107}{107}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00143}{143}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a5d113ad9251a8561dd3101010b7af452}\label{class_dice_a5d113ad9251a8561dd3101010b7af452} 
 \index{Dice@{Dice}!get\_die\_sides@{get\_die\_sides}}
@@ -149,7 +226,7 @@ dice\textquotesingle{}s number of sides
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00144}{144}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37}\label{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37} 
 \index{Dice@{Dice}!get\_leading\_multiplier@{get\_leading\_multiplier}}
@@ -166,7 +243,7 @@ leading multipler
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_ad49a44f1558d483f55e4804402a7e983}\label{class_dice_ad49a44f1558d483f55e4804402a7e983} 
 \index{Dice@{Dice}!get\_string@{get\_string}}
@@ -183,7 +260,25 @@ std\+::string repr of die
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00134}{134}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+
+\Hypertarget{class_dice_a972fe189f32621a199a69ceb7cf43d14}\label{class_dice_a972fe189f32621a199a69ceb7cf43d14} 
+\index{Dice@{Dice}!Notify@{Notify}}
+\index{Notify@{Notify}!Dice@{Dice}}
+\doxysubsubsection{\texorpdfstring{Notify()}{Notify()}}
+{\footnotesize\ttfamily void Dice\+::\+Notify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Abstract function to provide concrete implementations a way to override. 
+
+
+
+Implements \mbox{\hyperlink{classobservable_1_1_observable_abb62ad46189f0d309c039a5c4b0c6f0a}{observable\+::\+Observable}}.
+
+
+
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a612a16c434160895563d19099ca0b33b}\label{class_dice_a612a16c434160895563d19099ca0b33b} 
 \index{Dice@{Dice}!roll@{roll}}
@@ -200,7 +295,7 @@ value of the roll
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00027}{27}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_afa3e9a90a12b210370e708a79e67c715}\label{class_dice_afa3e9a90a12b210370e708a79e67c715} 
 \index{Dice@{Dice}!roll@{roll}}
@@ -222,7 +317,7 @@ result of the dice roll
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00063}{63}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a4e3e806488c756347490a4b76c02ec10}\label{class_dice_a4e3e806488c756347490a4b76c02ec10} 
 \index{Dice@{Dice}!roll\_with\_advantage@{roll\_with\_advantage}}
@@ -239,7 +334,7 @@ value of the roll
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a99e41ee2cd9fb489c638799fbfb3c117}\label{class_dice_a99e41ee2cd9fb489c638799fbfb3c117} 
 \index{Dice@{Dice}!roll\_with\_advantage@{roll\_with\_advantage}}
@@ -261,7 +356,7 @@ result of dice roll
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00078}{78}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00114}{114}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_a870e25ee830b3aa4d0124014d9334961}\label{class_dice_a870e25ee830b3aa4d0124014d9334961} 
 \index{Dice@{Dice}!roll\_with\_disadvantage@{roll\_with\_disadvantage}}
@@ -278,7 +373,7 @@ value of the roll
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 \Hypertarget{class_dice_ac1d6d9974952c7fc3f4d110939cea798}\label{class_dice_ac1d6d9974952c7fc3f4d110939cea798} 
 \index{Dice@{Dice}!roll\_with\_disadvantage@{roll\_with\_disadvantage}}
@@ -300,7 +395,7 @@ result of dice roll
 \end{DoxyReturn}
 
 
-Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00084}{84}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
+Definition at line \mbox{\hyperlink{_dice_8cpp_source_l00120}{120}} of file \mbox{\hyperlink{_dice_8cpp_source}{Dice.\+cpp}}.
 
 
 

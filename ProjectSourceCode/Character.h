@@ -31,6 +31,7 @@ using namespace characteractionstrategy;
 using namespace humanplayerstrategy;
 using namespace aggressorstrategy;
 using namespace friendlystrategy;
+using namespace observable;
 
 namespace serializecharacter {
 	struct CharacterRecord {
@@ -181,6 +182,34 @@ namespace Character {
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
 
+		virtual ~Character() {};
+
+		void Attach (Observer* _observer) override { observers.push_back(_observer); };
+
+		void Detach (Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+
+		/*!
+		* \fn Notify
+		* \brief Implemented function that will use the list of this observers and call their update functions using the instances observer message
+		*/
+		void Notify() override;
+
+		/*!
+		* \fn CreateObserverMessage
+		* \brief Function that will take in a message from a calling object and use it to notify the observers with that message
+		* 
+		* \param _message String representing the message to pass to the observers of this game instance. Default of "Empty"
+		*/
+		void CreateObserverMessage(std::string);
+
+		std::vector<Observer*> GetObservers() { return observers; };
+
+		void SetObservers(const std::vector<Observer*>& _observers) { observers = _observers; };
+
+		std::string GetObserverMessage() { return observerMessage; };
+
+		void SetObserverMessage(const std::string& _observerMessage) { observerMessage = _observerMessage; };
+
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
@@ -323,6 +352,28 @@ namespace Character {
 		*  \return Returns refrence to ItemContainer type object corresponding to the character's inventory
 		*/
 		itemcontainer::ItemContainer& Inventory() { return inventory; };
+
+		/*!
+		* \fn TakeItems
+		* \brief Method meant to implement a character action of taking a selection of items from an item container
+		* \param _targetContainer Pointer to an ItemContainer instance representing the container to pull items from
+		* \param _selectedItems Vector of Item instance pointers representing the items to transfer over
+		* \param _destinationContainerID Integer representing the ItemContainer instance to put the items into 
+		* \throw invalid_argument
+		* \throw overflow_error
+		*/
+		void TakeItems(itemcontainer::ItemContainer*, const std::vector<Item*>&, const int&);
+
+		/*!
+		* \fn DropItems
+		* \brief Method meant to implement a character action of dropping items from a given item container
+		* \param _selectedItems Vector of Item instance pointers representing the items to drop
+		* \param _targetContainerID Integer representing the ItemContainer instance to drop items from
+		* \throw invalid_argument
+		* \throw overflow_error
+		*/
+		void DropItems(const std::vector<Item*>&, const int&);
+
 		/*! \fn Get_Equiped_Item()
 		*  \return Returns pointer to item type object corresponding to the paramaters equipment slot. Retruns nullptr if no item is found
 		*/
@@ -361,7 +412,22 @@ namespace Character {
 
 		void SetActionStrategy(CharacterActionStrategy* _actionStrategy) { actionStrategy = _actionStrategy; };
 
+		bool AttemptAttack(Character*);
+
+		CellActionInfo DecideNPCAction(const std::vector<std::vector<Interactable*>>&, const int&, const int&);
+
 	private:
+		/*!
+		* \var observers
+		* \brief Vector of pointers to Observer instances representing the attached objects that are to be notified of state changes
+		*/
+		std::vector<Observer*> observers;
+
+		/*!
+		* \var observerMessage
+		* \brief String representing the message to pass to the observers
+		*/
+		std::string observerMessage;
 
 		static inline unsigned int id_gen{ 0 };
 		const int id = id_gen++;

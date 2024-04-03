@@ -12,35 +12,60 @@
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00022}00022\ \textcolor{preprocessor}{\#include\ <regex>}}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00025}00025\ \textcolor{comment}{//\ using\ namespace\ std;}}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_observable_8h}{Observable.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_dice_8h_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00027}00027\ \textcolor{keyword}{static}\ std::regex\ DICE(\textcolor{stringliteral}{"{}\string^([0-\/9]+)d(4|6|8|10|12|20|100)((?:\(\backslash\)\(\backslash\)+|-\/)[0-\/9]*)*\$"{}});}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00028}\mbox{\hyperlink{class_dice}{00028}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dice}{Dice}}\ \{}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00029}00029\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}}(std::string\ query);}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}}(std::string\ query);}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00045}00045\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4e3e806488c756347490a4b76c02ec10}{roll\_with\_advantage}}(std::string\ query);}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a870e25ee830b3aa4d0124014d9334961}{roll\_with\_disadvantage}}(std::string\ query);}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00063}00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00064}00064\ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00069}00069\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4e3e806488c756347490a4b76c02ec10}{roll\_with\_advantage}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a870e25ee830b3aa4d0124014d9334961}{roll\_with\_disadvantage}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00078}00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_ae9d4338f5c38d6e264499ff933a15b7f}{add\_die}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00083}00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_ae9d4338f5c38d6e264499ff933a15b7f}{add\_die}}(\textcolor{keywordtype}{int}\ amount);}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00088}00088\ \ \ \ \ std::string\ \mbox{\hyperlink{class_dice_ad49a44f1558d483f55e4804402a7e983}{get\_string}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37}{get\_leading\_multiplier}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a5d113ad9251a8561dd3101010b7af452}{get\_die\_sides}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00103}00103\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a8bf495738034fb0e5461a6761f007506}{get\_addition}}();}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00104}00104\ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00105}00105\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{int}\ leading\_multiplier=1;}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{int}\ die\_sides=4;}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00117}00117\ \ \ \ \ \textcolor{keywordtype}{int}\ addition=0;}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00118}00118\ \};}
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00119}00119\ }
-\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00120}00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00027}00027\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceobservable}{observable}};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00029}00029\ \textcolor{keyword}{static}\ std::regex\ DICE(\textcolor{stringliteral}{"{}\string^([0-\/9]+)d(4|6|8|10|12|20|100)((?:\(\backslash\)\(\backslash\)+|-\/)[0-\/9]*)*\$"{}});}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00031}\mbox{\hyperlink{class_dice}{00031}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dice}{Dice}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classobservable_1_1_observable}{Observable}}\ \{}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}}(std::string\ query);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dice_a6b9eadd945ad8fd3840379c8824e5d48}{Dice}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00043}\mbox{\hyperlink{class_dice_a4dccb6c89e5ee4597c685d2645c92da2}{00043}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dice_a4dccb6c89e5ee4597c685d2645c92da2}{\string~Dice}}()\{\};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00045}\mbox{\hyperlink{class_dice_af1140bfeac3db1d43f14d816ef9cfb6f}{00045}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_af1140bfeac3db1d43f14d816ef9cfb6f}{Attach}}\ (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}}*\ \_observer)\textcolor{keyword}{\ override\ }\{\ observers.push\_back(\_observer);\ \};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00047}\mbox{\hyperlink{class_dice_a320c67992ea4ff94420e182539a8258b}{00047}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_a320c67992ea4ff94420e182539a8258b}{Detach}}\ (\mbox{\hyperlink{classobserver_1_1_observer}{Observer}}*\ \_observer)\textcolor{keyword}{\ override\ }\{\ observers.erase(std::remove(observers.begin(),\ observers.end(),\ \_observer),\ observers.end());\ \};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_a972fe189f32621a199a69ceb7cf43d14}{Notify}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_aefd8e53a790bad499ae0e4164721f18f}{CreateObserverMessage}}(std::string);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}}(std::string\ query);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4e3e806488c756347490a4b76c02ec10}{roll\_with\_advantage}}(std::string\ query);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a870e25ee830b3aa4d0124014d9334961}{roll\_with\_disadvantage}}(std::string\ query);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a612a16c434160895563d19099ca0b33b}{roll}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a4e3e806488c756347490a4b76c02ec10}{roll\_with\_advantage}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a870e25ee830b3aa4d0124014d9334961}{roll\_with\_disadvantage}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_ae9d4338f5c38d6e264499ff933a15b7f}{add\_die}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dice_ae9d4338f5c38d6e264499ff933a15b7f}{add\_die}}(\textcolor{keywordtype}{int}\ amount);}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00107}00107\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{class_dice_ad49a44f1558d483f55e4804402a7e983}{get\_string}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a0ed26bfb56a0adcabd96f76c1dc8df37}{get\_leading\_multiplier}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a5d113ad9251a8561dd3101010b7af452}{get\_die\_sides}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00125}00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dice_a8bf495738034fb0e5461a6761f007506}{get\_addition}}();}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00126}00126\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00127}00127\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::vector<Observer*>\ observers;}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::string\ observerMessage;}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ leading\_multiplier=1;}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00138}00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ die\_sides=4;}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ addition=0;}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00143}00143\ \};}
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{_dice_8h_source_l00145}00145\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
