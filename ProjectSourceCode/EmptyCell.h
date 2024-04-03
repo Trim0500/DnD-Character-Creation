@@ -5,7 +5,6 @@
 class EmptyCell : public Interactable::Interactable
 {
 public:
-
 	bool passable() { return true; }
 };
 

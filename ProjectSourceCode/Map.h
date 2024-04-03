@@ -9,6 +9,7 @@
 #include "Interactable.h"
 #include "Character.h"
 #include "item.h"
+#include "EmptyCell.h"
 #include <vector>
 #include <string>
 
@@ -57,7 +58,8 @@ namespace Map {
 		void setRows(int rows);
 		void setCols(int cols);
 		void setGrid();
-		void setEndCell();
+		void setEndCell(int row, int col);
+		void setStartCell(int row, int col);
 
 		void setCell(int row, int col, Interactable::Interactable* cell);
 
@@ -65,30 +67,6 @@ namespace Map {
 		void setWall(int row, int col);
 		void setCharacter(int row, int col, Character::Character* cha);
 		void setItem(int row, int col, item::Item* cha);
-
-		/*!
-		* \fn Create
-		* \brief Prompts user for map inputs
-		*/
-		//static Map* Create();
-
-		/*!
-		* \fn Customize
-		* \brief Let's user customize the map until they want to stop
-		*/
-		//void Customize();
-
-		/*!
-		* \fn KeepCustomizing
-		* \brief Checks if the user wants to keep customizing the map
-		*/
-		//bool KeepCustomizing();
-
-		/*!
-		* \fn Print
-		* \brief Print the grid with each cell type
-		*/
-		//void Print();
 
 		/*!
 		* \fn IsTherePath
@@ -102,12 +80,7 @@ namespace Map {
 		*/
 		bool ValidCell(int row, int col, std::vector<std::vector<bool>> visitde);
 		
-		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
-
 	private:
-		/*!
-		*
-		*/
 		static inline int nextMapID = 0;
 		/*!
 		* \var mapID
@@ -129,6 +102,8 @@ namespace Map {
 		* \brief start = upper right cell, ie: 0,0, end = lower left cell, ie: cols.length-1, rows.lenght-1
 		*/
 		int endCell[2];
+
+		int startCell[2];
 
 		/*!
 		* \var grid

@@ -11,22 +11,6 @@
 #include<vector>
 #include<sstream>
 
-//void  MapBuilder::MapBuilder::buildRows(int rows) {
-//	m_map->setRows(rows);
-//}
-//
-//void  MapBuilder::MapBuilder::buildCols(int cols) {
-//	m_map->setCols(cols);
-//}
-//
-//void  MapBuilder::MapBuilder::buildEndCell() {
-//	m_map->setEndCell();
-//}
-//
-//void  MapBuilder::MapBuilder::buildGrid() {
-//	m_map->setGrid();
-//}
-
 bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 	//create file
 	std::ofstream file(filename);
@@ -96,6 +80,7 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 
 					mapload.setCols(col);
 					mapload.setRows(row);
+					mapload.setGrid();
 				}
 
 				else {
@@ -115,11 +100,8 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 					if (type == "w") {
 						mapload.setWall(row, col);
 					}
-					else if (type == "e") {
-						mapload.setEmpty(row, col);
-					}
 					/*else if (type == "c") {
-						
+						//TODO? handled outside of here
 					}*/
 
 				}

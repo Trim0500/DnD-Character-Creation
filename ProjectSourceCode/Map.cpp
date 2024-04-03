@@ -22,8 +22,12 @@ Map::Map::Map(int r, int c) {
 	this->mapID = nextMapID;
 	this->rows = r;
 	this->cols = c;
+	//set end cell by default to bottom-right
 	this->endCell[0] = r - 1;
 	this->endCell[1] = c - 1;
+	//set start cell by default to top-left
+	this->startCell[0] = 0;
+	this->startCell[1] = 0;
 
 	for (int i = 0; i < rows; i++) {
 		this->grid.push_back(std::vector<Interactable::Interactable*>(this->cols, new EmptyCell()));
@@ -40,9 +44,15 @@ void Map::Map::setCols(int cols)
 	this->cols = cols;
 }
 
-void Map::Map::setEndCell() {
-	this->endCell[0] = this->rows - 1;
-	this->endCell[1] = this->cols - 1;
+void Map::Map::setEndCell(int row, int col) {
+	this->endCell[0] = row;
+	this->endCell[1] = col;
+}
+
+void Map::Map::setStartCell(int row, int col)
+{
+	this->startCell[0] = row;
+	this->startCell[1] = col;
 }
 
 void Map::Map::setGrid() {
