@@ -3,6 +3,114 @@
 
 #include "Character.h"
 
+namespace {
+	std::vector<int> DetectPlayer(const std::vector<std::vector<Interactable::Interactable*>>& _mapGrid, const int& _posX, const int& _posY) {
+		std::vector<int> result;
+
+		// Range set to 5 rows and 5 columns centered on current npc position
+		int minX = _posX - 2;
+		int minY = _posY - 2;
+		int maxX = _posX + 2;
+		int maxY = _posY + 2;
+
+		for (int i = minX; i < maxX; i++)
+		{
+			if (i < 1 || i > _mapGrid.size()) {
+				continue;
+			}
+
+			for (int j = minY; j < maxY; j++)
+			{
+				if (j < 1 || j > _mapGrid[i].size() || (i == _posX && j == _posY)) {
+					continue;
+				}
+
+				Interactable::Interactable* valueAtCell = _mapGrid[i - 1][j - 1];
+				if (dynamic_cast<Character::Character*>(valueAtCell)) {
+					if (static_cast<Character::Character*>(valueAtCell)->GetIsPlayerControlled()) {
+						result.push_back(i);
+						result.push_back(j);
+					}
+				}
+			}
+		}
+
+		return result;
+	}
+
+	CellActionInfo DecideAction(const std::vector<int>& _playerLocation, const std::vector<CellActionInfo>& _npcActionInfo, const int& _posX, const int& _posY) {
+		CellActionInfo result;
+
+		// Decide what to do based on that info
+		if (_playerLocation.size() == 0) {
+			do {
+				int actionIndex = rand() % _npcActionInfo.size() - 1;
+				result = _npcActionInfo[actionIndex];
+			}
+			while (result.actionName == Character::WALL_CELL_ACTION);
+		}
+		else {
+			// Calculate the absolute difference for vertical and horizontal movement, if same move to next phase, other wise deteremine which dir to go to
+			int playerX = _playerLocation[0];
+			int playerY = _playerLocation[1];
+
+			int horizontalDifference = playerX - _posX;
+			int verticalDifference = playerY - _posY;
+
+			if (abs(verticalDifference) == 1 || abs(horizontalDifference) == 1) {
+				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
+				{
+					if (_npcActionInfo[i].actionName == Character::ATTACK_CELL_ACTION) {
+						result = _npcActionInfo[i];
+					}
+				}
+				
+			}
+			else if(abs(verticalDifference) < abs(horizontalDifference)) {
+				int targetY;
+
+				if (verticalDifference < 0) {
+					targetY = _posY - 1;
+				}
+				else {
+					targetY = _posY + 1;
+				}
+
+				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
+				{
+					if (_npcActionInfo[i].col == targetY) {
+						result = _npcActionInfo[i];
+					}
+				}
+			}
+			else {
+				int targetX;
+
+				if (horizontalDifference < 0) {
+					targetX = _posX - 1;
+				}
+				else {
+					targetX = _posX + 1;
+				}
+
+				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
+				{
+					if (_npcActionInfo[i].col == targetX) {
+						result = _npcActionInfo[i];
+					}
+				}
+			}
+
+			// based on direction, compare player's x or y against npc (hori: if +, move right, left otherwise, vert: if +, move down, up otherwise)
+			// If diff is 1 or -1 choose attack
+		}
+
+		// Return the decision
+
+		return result;
+	}
+}
+
 Character::Character::Character(){
 	//create random number generator
 	std::random_device rd;
@@ -722,6 +830,19 @@ bool Character::Character::AttemptAttack(Character* _target) {
 	}
 	
 	return targetDied;
+}
+
+CellActionInfo Character::Character::DecideNPCAction(const std::vector<std::vector<Interactable*>>& _mapGrid, const int& _posX, const int& _posY) {
+	// Note _posX and _posY are 1-indexed
+	
+	// Use the action strategy to get options
+	std::vector<CellActionInfo> npcActionInfo = actionStrategy->UseMovementStrategy(_mapGrid, _posX, _posY);
+
+	// Use search algo to see if the player is in range
+	std::vector<int> playerLocation = DetectPlayer(_mapGrid, _posX, _posY);
+
+	// Note cell action info choice will have the coordiantes 1-indexed as well
+	return DecideAction(playerLocation, npcActionInfo, _posX, _posY);
 }
 
 std::string Character::Character::Get_Class_String(Character_Class t_class)

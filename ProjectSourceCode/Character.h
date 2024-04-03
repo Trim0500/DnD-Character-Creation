@@ -412,6 +412,8 @@ namespace Character {
 
 		bool AttemptAttack(Character*);
 
+		CellActionInfo DecideNPCAction(const std::vector<std::vector<Interactable*>>&, const int&, const int&);
+
 	private:
 		/*!
 		* \var observers
