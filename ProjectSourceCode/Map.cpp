@@ -232,8 +232,87 @@ void Map::Map::MoveCharacter(const int& _targetX, const int& _targetY, Character
 	setCell(sourceLocationX, sourceLocationY, temp);
 
 	std::ostringstream logMessage;
-	logMessage << "[Map/MoveCharacter] -- " << _targetCharacter->Name() << " is moving to location (" << _targetX << "," << _targetY << ") on map " << mapID;
+	logMessage << "[Map/MoveCharacter] -- " << _targetCharacter->Name() << " is moving to location (" << _targetX - 1 << "," << _targetY - 1 << ") on map " << mapID;
 	CreateObserverMessage(logMessage.str());
+}
+
+void Map::Map::printMap()
+{
+	//print grid col cumbers
+	for (int i = 0; i < cols; i++) {
+		std::cout<<" " << i << " ";
+	}
+	std::cout << std::endl;
+	//Print top col 
+	for (int i = 0; i < cols; i++) {
+		std::cout << "___";
+		int extraSpaces = i / 10;
+		for (int j = 0; j < extraSpaces; j++) {
+			std::cout << "_";
+		}
+	}
+	std::cout << std::endl;
+	for (int i = 0; i < rows; i++) {
+
+		for (int j = 0; j < cols; j++) {
+			//std::cout << "|";
+			Character::Character* characterCell = dynamic_cast<Character::Character*>(grid[i][j]);
+			EmptyCell* emptyCell = dynamic_cast<EmptyCell*>(grid[i][j]);
+			Wall* wallCell = dynamic_cast<Wall*>(grid[i][j]);
+			item::Item* itemCell = dynamic_cast<item::Item*>(grid[i][j]);
+			itemcontainer::ItemContainer* itemContainerCell = dynamic_cast<itemcontainer::ItemContainer*>(grid[i][j]);
+
+			if (characterCell && characterCell->GetIsPlayerControlled()) {
+				std::cout << "C ";
+			}
+			else if (characterCell) {
+				std::cout << "N ";
+			}
+			else if(emptyCell){
+				std::cout << "  ";
+			}
+			else if (wallCell) {
+				std::cout <<char(178) << " ";
+			}
+			else if (itemContainerCell) {
+				std::cout << "Co ";
+			}
+			else if (itemCell) {
+				std::cout <<char(233) << " ";
+			}
+
+			int extraSpaces = j / 10;
+			for (int j = 0; j < extraSpaces; j++) {
+				std::cout << " ";
+			}
+			std::cout << "|";
+		}
+		std::cout << i;
+		std::cout << std::endl;
+	}
+	for (int i = 0; i < cols; i++) {
+		std::cout << "---";
+		int extraSpaces = i / 10;
+		for (int j = 0; j < extraSpaces; j++) {
+			std::cout << " ";
+		}
+	}
+	
+}
+
+void Map::Map::GetCharacterCoordinates(int& x, int& y, Character::Character* t_character)
+{
+	int id = t_character->ID();
+	for (int i = 0; i < cols; i++) {
+		for (int j = 0; j < rows; j++) {
+			Character::Character* characterCell = dynamic_cast<Character::Character*>(grid[i][j]);
+			if (characterCell != nullptr && characterCell->ID() == id) {
+				x = i;
+				y = j;
+				return;
+			}
+		}
+	}
 }
 
 std::vector<Character::Character*> Map::Map::GetCharactersInMap() {
