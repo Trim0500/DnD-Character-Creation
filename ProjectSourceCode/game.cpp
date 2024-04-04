@@ -149,8 +149,12 @@ namespace game
             break;
         case '4':
             //Print player character location
-            std::cout << "Player Location: " << x << "," << y << std::endl;
+            std::cout << "Player Location: " << y << "," << x << std::endl;
             break;
+        case 'I':
+            //Inspect item
+
+
         case 'M':
             int xOld, yOld;
             xOld = x;
@@ -165,24 +169,24 @@ namespace game
             if (direction == "up") {
                 currentMap->MoveCharacter(x-1, y, t_playerCharacter);
                 currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
+                std::cout << "Moved from: (" << yOld << "," << xOld << ") -> (" << y << "," << x << ")" << std::endl;
             }
             else if (direction == "down") {
                 currentMap->MoveCharacter(x+1, y, t_playerCharacter);
                 currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
+                std::cout << "Moved from: (" << yOld << "," << xOld << ") -> (" << y << "," << x << ")" << std::endl;
 
             }
             else if (direction == "left") {
                 currentMap->MoveCharacter(x, y-1, t_playerCharacter);
                 currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
+                std::cout << "Moved from: (" << yOld << "," << xOld << ") -> (" << y << "," << x << ")" << std::endl;
 
             }
             else if (direction == "right") {
                 currentMap->MoveCharacter(x, y+1, t_playerCharacter);
                 currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
+                std::cout << "Moved from: (" << xOld << "," << xOld << ") -> (" << y << "," << x << ")" << std::endl;
             }else{
                 std::cout << "Invalid direction!" << std::endl;
             }
@@ -215,7 +219,6 @@ namespace game
                 killUpdateMessage << target->Name() << " killed! Inventory dropped. " << std::endl;
                 std::cout << killUpdateMessage.str();
             }
-
             break;
         }
         case 'E':
