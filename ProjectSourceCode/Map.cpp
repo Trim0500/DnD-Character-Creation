@@ -63,18 +63,18 @@ void Map::Map::setCols(int cols)
 }
 
 void Map::Map::setEndCell(int row, int col) {
+	this->setEmpty(row, col);
 	this->endCell[0] = row;
 	this->endCell[1] = col;
 	//if its the end cell, it has to be empty
-	this->setEmpty(row, col);
 }
 
 void Map::Map::setStartCell(int row, int col)
 {
+	this->setEmpty(row, col);
 	this->startCell[0] = row;
 	this->startCell[1] = col;
 	//if its the starting cell, it has to be empty
-	this->setEmpty(row, col);
 }
 
 void Map::Map::setGrid() {
@@ -161,12 +161,12 @@ bool Map::Map::IsTherePath() {
 	//start cell is visited (0,0)
 	//q.push({ 0,0 });
 	q.push({ this->startCell[0], this->startCell[1] });
-	visited[0][0] = true;
 
 	while (!q.empty()) {
 		auto curr = q.front(); // current checking cell
 		q.pop();
 
+		//std::cout << curr.first << ", " << curr.second << std::endl;
 		//check if reach end cell
 		if (curr.first == this->endCell[0] && curr.second == this->endCell[1]) {
 			//if made it this far, there is a path.
@@ -179,7 +179,7 @@ bool Map::Map::IsTherePath() {
 			int nextRow = curr.first + dir.first;
 			int nextCol = curr.second + dir.second;
 
-			//DEBUG: std::cout << "nextrow: " << nextRow << " nextcol: " << nextCol << std::endl;
+			//std::cout << "nextrow: " << nextRow << " nextcol: " << nextCol << std::endl;
 
 			//check if next cell is not a wall or outside the map or been visited
 			if (ValidCell(nextRow, nextCol, visited)) {
@@ -194,6 +194,7 @@ bool Map::Map::IsTherePath() {
 
 //validate the next cell
 bool Map::Map::ValidCell(int nextRow, int nextCol, std::vector<std::vector<bool>> visited) {
+	//std::cout << nextRow << ", " << nextCol << std::endl;
 	return (nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols &&
 		this->grid[nextRow][nextCol]->serialize()[0] != 'w' &&	!visited[nextRow][nextCol]);
 }
