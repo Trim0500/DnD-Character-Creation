@@ -52,6 +52,8 @@ int main()
 	Map::Map* currentMap = new Map::Map(20,20);
 
 	GameLogger* gameLogger = new GameLogger(currentMap);
+	playerCharacter->Attach(gameLogger);
+	enemyCharacter->Attach(gameLogger);
 
 	//add player to map
 	currentMap->setCharacter(9, 9, playerCharacter);
@@ -81,6 +83,10 @@ int main()
 	currentMap->printMap();
 	//set player character 
 	currentGame->SetActiveCharacter(playerCharacter);
+	std::vector<Character::Character*> charactersInGame;
+	charactersInGame.push_back(playerCharacter);
+	charactersInGame.push_back(enemyCharacter);
+	currentGame->SetCharactersInMap(charactersInGame);
 	bool exited = false;
 
 

@@ -1,4 +1,6 @@
 #include <algorithm>
+#include <sstream>
+
 #include "EmptyCell.h"
 #include "game.h"
 
@@ -186,18 +188,36 @@ namespace game
             }
             
             break;
-        /*case 'A':
+        case 'A':
+        {
             std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentMap->getGrid();
-            Character::Character* target = static_cast<Character::Character*>(mapGrid[x - 1][y - 1]);
-            bool targetDied = activeCharacter->AttemptAttack(target);
+
+            std::vector<CellActionInfo> playerActions = t_playerCharacter->GetActionStrategy()->UseMovementStrategy(mapGrid, x + 1, y + 1);
+
+            auto attackAction = std::find_if(playerActions.begin(),
+                                                playerActions.end(),
+                                                [](CellActionInfo playerAction) { return playerAction.actionName == Character::ATTACK_CELL_ACTION; });
+
+            Character::Character* target = static_cast<Character::Character*>(mapGrid[(*attackAction).row - 1][(*attackAction).col - 1]);
+            bool targetDied = t_playerCharacter->AttemptAttack(target);
+
+            std::ostringstream attackUpdateMessage;
+            attackUpdateMessage << "Attack results: " << target->Name() << " now at " << target->Hit_Points() << std::endl;
+            std::cout << attackUpdateMessage.str();
+
             if (targetDied) {
                 charactersInMap.erase(std::remove(charactersInMap.begin(), charactersInMap.end(), target), charactersInMap.end());
 
                 Interactable::Interactable* targetsItems = &target->Inventory();
-                currentMap->setCell(x - 1, y - 1, targetsItems);
+                currentMap->setCell((*attackAction).row - 1, (*attackAction).col - 1, targetsItems);
+
+                std::ostringstream killUpdateMessage;
+                killUpdateMessage << target->Name() << " killed! Inventory dropped. " << std::endl;
+                std::cout << killUpdateMessage.str();
             }
 
-            break;*/
+            break;
+        }
         case 'E':
             std::cout << "Goodbye!" << std::endl;
             break;
