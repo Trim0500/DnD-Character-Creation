@@ -5,11 +5,14 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
-
+#include "game.h"
 #include "../GUI/MainMenu.h"
+#include "Wall.h"
+#include "gamelogger.h"
 
 using namespace CppUnit;
 using namespace CampaignEditor;
+using namespace gamelogger;
 
 int main()
 {
@@ -31,13 +34,70 @@ int main()
 			return 1;
 	}
 
-	MainMenu * m = new MainMenu();
-	m->show();
+	//MainMenu * m = new MainMenu();
+	//m->show();
 
-	Fl::run();
+	//Fl::run();
 
 	getchar();
 
+	//create random machine
+	std::random_device rd;
+
+	//hardcode maps and campaing here
+	//creare player Character
+	Character::Character* playerCharacter = new Character::Character();
+	Character::Character* enemyCharacter = new Character::Character("Testaniel Unitoph", Character::Character_Class::Fighter, false, new AggressorStrategy());
+	//Create map
+	Map::Map* currentMap = new Map::Map(20,20);
+
+	GameLogger* gameLogger = new GameLogger(currentMap);
+	playerCharacter->Attach(gameLogger);
+	enemyCharacter->Attach(gameLogger);
+
+	//add player to map
+	currentMap->setCharacter(9, 9, playerCharacter);
+	currentMap->setCharacter(9, 12, enemyCharacter);
+	//add walls to map
+	for (int i = 0; i < currentMap->getRows(); i++) {
+		currentMap->setCell(i, 0, new Wall);
+	}
+	for (int i = 0; i < currentMap->getRows(); i++) {
+		currentMap->setCell(i, currentMap->getCols()-1, new Wall);
+	}
+	//add items to map
+	//between 0 and 5 items
+	int numOfItems = rd() % 5;
+	for (int i = 0; i < numOfItems; i++) {
+		currentMap->setCell(rd() % (currentMap->getRows()), rd() % (currentMap->getRows())+1, new item::Item());
+	}
+	//Create campaign
+	campaign::Campaign* currentCampaign = new campaign::Campaign(1,1);
+	//Add map to campaing
+	currentCampaign->AddMapToCampaign(1, 1, *currentMap);
+	//Create game instance	
+	game::Game* currentGame = new game::Game();
+	//set currentCampaiogn in currentGame
+	currentGame->SetGameCampaign(currentCampaign);
+	//Print map
+	currentMap->printMap();
+	//set player character 
+	currentGame->SetActiveCharacter(playerCharacter);
+	std::vector<Character::Character*> charactersInGame;
+	charactersInGame.push_back(playerCharacter);
+	charactersInGame.push_back(enemyCharacter);
+	currentGame->SetCharactersInMap(charactersInGame);
+	bool exited = false;
+
+
+	//Main gameplay loop
+	char userInput = ' ';
+	currentGame->PrintActionMenu(playerCharacter);
+	while (userInput != 'E') {
+		currentGame->GetUserSelection(userInput);
+		currentGame->ProcessUserAction(userInput,playerCharacter);
+		currentGame->PrintActionMenu(playerCharacter);
+	}
 	return 0;
 }
 

@@ -57,7 +57,7 @@ namespace humanplayerstrategy {
                 actionInfo.cellColor = Character::ATTACK_CELL_COLOR;
                 actionInfo.actionName = Character::ATTACK_CELL_ACTION;
             }
-            else if (dynamic_cast<ItemContainer*>(valueAtCell)) {
+            else if (dynamic_cast<Item*>(valueAtCell)) {
                 actionInfo.row = rowToCheck;
                 actionInfo.col = colToCheck;
                 actionInfo.cellColor = Character::PICKUP_CELL_COLOR;
