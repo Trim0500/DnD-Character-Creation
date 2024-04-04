@@ -8,9 +8,11 @@
 #include "game.h"
 #include "../GUI/MainMenu.h"
 #include "Wall.h"
+#include "gamelogger.h"
 
 using namespace CppUnit;
 using namespace CampaignEditor;
+using namespace gamelogger;
 
 int main()
 {
@@ -47,6 +49,9 @@ int main()
 	Character::Character* playerCharacter = new Character::Character();
 	//Create map
 	Map::Map* currentMap = new Map::Map(20,20);
+
+	GameLogger* gameLogger = new GameLogger(currentMap);
+
 	//add player to map
 	currentMap->setCharacter(9, 9, playerCharacter);
 	//add walls to map

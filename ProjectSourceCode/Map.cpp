@@ -402,7 +402,7 @@ void Map::Map::MoveCharacter(const int& _targetX, const int& _targetY, Character
 	setCell(sourceLocationX, sourceLocationY, temp);
 
 	std::ostringstream logMessage;
-	logMessage << "[Map/MoveCharacter] -- " << _targetCharacter->Name() << " is moving to location (" << _targetX << "," << _targetY << ") on map " << mapID;
+	logMessage << "[Map/MoveCharacter] -- " << _targetCharacter->Name() << " is moving to location (" << _targetX - 1 << "," << _targetY - 1 << ") on map " << mapID;
 	CreateObserverMessage(logMessage.str());
 }
 
