@@ -6,5 +6,7 @@ class Wall : public Interactable::Interactable
 {
 public:
 
-	bool passable() const override { return false; }
+	bool passable() const { return false; }
+	std::string serialize() { return "w"; };
+
 };

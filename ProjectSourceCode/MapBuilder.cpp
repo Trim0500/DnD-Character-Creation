@@ -3,27 +3,13 @@
 #include "EmptyCell.h"
 #include "Item.h"
 #include "MapBuilder.h"
-#include "RawMapBuilder.h"
 #include "Wall.h"
 #include <fstream>
 #include <iostream>
 #include <string>
-
-void  MapBuilder::MapBuilder::buildRows(int rows) {
-	m_map->setRows(rows);
-}
-
-void  MapBuilder::MapBuilder::buildCols(int cols) {
-	m_map->setCols(cols);
-}
-
-void  MapBuilder::MapBuilder::buildEndCell() {
-	m_map->setEndCell();
-}
-
-void  MapBuilder::MapBuilder::buildGrid() {
-	m_map->setGrid();
-}
+#include<iostream>
+#include<vector>
+#include<sstream>
 
 bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 	//create file
@@ -41,25 +27,7 @@ bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 
 			for (int i = 0; i < map->getGrid().size(); i++) {
 				for (int j = 0; j < map->getGrid()[i].size(); j++) {
-					//if wall: write the row,col and celltype
-					if (typeid(map->getGrid()[i][j]) == typeid(Wall)) {
-						file << i << "," << j << "w" << std::endl;
-						//row,col,w
-					}
-					//if item
-					else if (typeid(map->getGrid()[i][j]) == typeid(Item)) {
-						file << i << "," << j << "i" << "," << dynamic_cast<Item*>(map->getGrid()[i][j])->GetItemId() << std::endl;
-						//row,col,i,ID
-					}
-					// if character	
-					else if (typeid(map->getGrid()[i][j]) == typeid(Character::Character)) {
-						file << i << "," << j << "c" << "," << dynamic_cast<Character::Character*>(map->getGrid()[i][j])->ID() << std::endl;
-						//row,col,c
-					}
-					//if the cell type is empty: do nothing
-					else if (typeid(map->getGrid()[i][j]) == typeid(EmptyCell)) {
-						file << i << "," << j << "e" << std::endl;
-					}
+					file << i << "," << j << "," << (map->getGrid()[i][j])->serialize() << std::endl;
 				}
 			}//end loop
 		}//end file writing
@@ -78,6 +46,11 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 
 	std::ifstream file(filename);
 
+	int lines = 0; //number of lines read
+	int row = 0;
+	int col = 0;
+	std::string type;
+
 	try {
 		//open file
 		if (!file.is_open()) {
@@ -87,8 +60,52 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 			std::string line;
 			//while there is content in the file
 			while (getline(file, line)) {
+				std::cout << line << std::endl;
 
-				// hereee build 
+				lines++;
+
+				//first line create the num of rows and cols
+				if (lines == 1) {
+					std::vector<std::string> split;
+					std::stringstream ss(line);
+
+					while (ss.good()) {
+						std::string sub;
+						getline(ss, sub, ',');
+						split.push_back(sub);
+					}
+
+					row = std::stoi(split[0]);
+					col = std::stoi(split[1]);
+
+					mapload.setCols(col);
+					mapload.setRows(row);
+					mapload.setGrid();
+				}
+
+				else {
+					std::vector<std::string> split;
+					std::stringstream ss(line);
+
+					while (ss.good()) {
+						std::string sub;
+						getline(ss, sub, ',');
+						split.push_back(sub);
+					}
+
+					row = std::stoi(split[0]);
+					col = std::stoi(split[1]);
+					type = split[2];
+
+					if (type == "w") {
+						mapload.setWall(row, col);
+					}
+					/*else if (type == "c") {
+						//TODO? handled outside of here
+					}*/
+
+				}
+
 			}
 		}
 

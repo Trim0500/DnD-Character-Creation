@@ -16,32 +16,16 @@
 #include "Character.h"
 #include "item.h"
 #include "Observable.h"
+#include "EmptyCell.h"
 
 using namespace observable;
+
 
 /*!
 * \namespace Map
 * \brief namespace to encapsulate Map navigation
 */
 namespace Map {
-
-	// DEPRECATED IN PHASE 2
-	///*!
-	//* \enum Cell_Type
-	//* \brief Enum to represent the posible cell types on a map
-	//*/
-	//enum class Cell_Type {
-	//	empty = '_',//empty cell, character can move through it.
-	//	wall = 'w',//wall cell, character cannot move through it.
-	//	special = 's'//special cell, character has a special interraction, can move after interraction.
-	//};
-
-
-	/*!
-	* \fn ConvertToCellType
-	* \brief Free function to take a letter and attempt to map it to a cell type
-	*/
-	//Interactable::Interactable ConvertToCellType(char letter);
 
 	/*!
 	* \var dirs
@@ -105,10 +89,11 @@ namespace Map {
 		/*!
 		* \brief Setters 
 		*/
-		void setRows(int _rows) { rows = _rows; };
-		void setCols(int _cols) { cols = _cols; };
+		void setRows(int rows);
+		void setCols(int cols);
 		void setGrid();
-		void setEndCell();
+		void setEndCell(int row, int col);
+		void setStartCell(int row, int col);
 
 		void setCell(int row, int col, Interactable::Interactable* cell);
 
@@ -116,30 +101,6 @@ namespace Map {
 		void setWall(int row, int col);
 		void setCharacter(int row, int col, Character::Character* cha);
 		void setItem(int row, int col, item::Item* cha);
-
-		/*!
-		* \fn Create
-		* \brief Prompts user for map inputs
-		*/
-		//static Map* Create();
-
-		/*!
-		* \fn Customize
-		* \brief Let's user customize the map until they want to stop
-		*/
-		//void Customize();
-
-		/*!
-		* \fn KeepCustomizing
-		* \brief Checks if the user wants to keep customizing the map
-		*/
-		//bool KeepCustomizing();
-
-		/*!
-		* \fn Print
-		* \brief Print the grid with each cell type
-		*/
-		//void Print();
 
 		/*!
 		* \fn IsTherePath
@@ -152,8 +113,6 @@ namespace Map {
 		* \brief Check if the given x,y coordinates are a valid cell to step on
 		*/
 		bool ValidCell(int row, int col, std::vector<std::vector<bool>> visitde);
-		
-		bool ValidCellInteractable(int nextRow, int nextCol, std::vector<std::vector<bool>> visited);
 
 		void MoveCharacter(const int&, const int&, Character::Character*);
 
@@ -162,6 +121,9 @@ namespace Map {
 		void GetCharacterCoordinates(int& x, int& y, Character::Character* t_character);
 
 		std::vector<Character::Character*> GetCharactersInMap();
+
+		void Print();
+
 	private:
 		/*!
 		* \var observers
@@ -199,6 +161,8 @@ namespace Map {
 		* \brief start = upper right cell, ie: 0,0, end = lower left cell, ie: cols.length-1, rows.lenght-1
 		*/
 		int endCell[2];
+
+		int startCell[2];
 
 		/*!
 		* \var grid

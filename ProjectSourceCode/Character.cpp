@@ -258,6 +258,12 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 							static_cast<CharacterActionStrategy*>(new AggressorStrategy());
 }
 
+std::string Character::Character::serialize() {
+	std::string str = "c,";
+	str += std::to_string(this->id);
+	return str;
+	//c,id
+ }
 void Character::Character::Notify() {
 	for (int i = 0; i < (int)observers.size(); i++)
 	{

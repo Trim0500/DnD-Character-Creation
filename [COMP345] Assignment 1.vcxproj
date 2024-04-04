@@ -127,8 +127,6 @@
     <ClCompile Include="ProjectSourceCode\EmptyCell.cpp" />
     <ClCompile Include="ProjectSourceCode\Interactable.cpp" />
     <ClCompile Include="ProjectSourceCode\MapBuilder.cpp" />
-    <ClCompile Include="ProjectSourceCode\MapDirector.cpp" />
-    <ClCompile Include="ProjectSourceCode\RawMapBuilder.cpp" />
     <ClCompile Include="ProjectSourceCode\Wall.cpp" />
     <ClCompile Include="ProjectSourceCode\game.cpp" />
     <ClCompile Include="ProjectSourceCode\gamelogger.cpp" />
@@ -176,8 +174,6 @@
     <ClInclude Include="ProjectSourceCode\EmptyCell.h" />
     <ClInclude Include="ProjectSourceCode\Interactable.h" />
     <ClInclude Include="ProjectSourceCode\MapBuilder.h" />
-    <ClInclude Include="ProjectSourceCode\MapDirector.h" />
-    <ClInclude Include="ProjectSourceCode\RawMapBuilder.h" />
     <ClInclude Include="ProjectSourceCode\Wall.h" />
     <ClInclude Include="ProjectSourceCode\game.h" />
     <ClInclude Include="ProjectSourceCode\gamelogger.h" />
