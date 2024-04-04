@@ -86,7 +86,7 @@ namespace game {
             // Essentially use this to update the game data based on an action taken by the player or an NPC
             void EndTurn(const std::string&, const int&, const int&);
 
-            void PrintActionMenu();
+            void PrintActionMenu(Character::Character*);
             void GetUserSelection(char& t_selection);
             void ProcessUserAction(const char& t_selection,Character::Character* t_playerCharacter);
 

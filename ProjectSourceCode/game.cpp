@@ -78,8 +78,16 @@ namespace game
                                                                                             [activeCharacterPointer](Character::Character* character){ return character == activeCharacterPointer; });
         activeCharacter = (*currentActiveCharacter);
     }
-    void Game::PrintActionMenu()
+    void Game::PrintActionMenu(Character::Character* _player)
     {
+        Map::Map* currnetMapGrid;
+        currnetMapGrid = gameCampaign->GetMapsInCampaign().at(0);
+
+        int playerX, playerY;
+        currnetMapGrid->GetCharacterCoordinates(playerX, playerY, _player);
+
+        std::vector<CellActionInfo> playerActions = _player->GetActionStrategy()->UseMovementStrategy(currnetMapGrid->getGrid(), playerX + 1, playerY + 1);
+
         std::cout << std::endl;
         std::cout << "---------- Action Menu ----------" << std::endl;
         std::cout << "(Select number and press 'Enter')" << std::endl;
@@ -87,8 +95,24 @@ namespace game
         std::cout << "2. Print Player character sheet" << std::endl;
         std::cout << "3. Print List of Characters" << std::endl;
         std::cout << "4. Print Player Coordinates" << std::endl;
+
+        auto pickUpAction = std::find_if(playerActions.begin(),
+                                            playerActions.end(),
+                                            [](CellActionInfo playerAction) { return playerAction.actionName == Character::PICKUP_CELL_ACTION; });
+        if (pickUpAction != playerActions.end()) {
+            std::cout << "I. Inspect Item" << std::endl;
+        }
+
         std::cout << "---------- Turn Ending Actions ----------" << std::endl;
         std::cout << "M. Move" << std::endl;
+
+        auto attackAction = std::find_if(playerActions.begin(),
+                                            playerActions.end(),
+                                            [](CellActionInfo playerAction) { return playerAction.actionName == Character::ATTACK_CELL_ACTION; });
+        if (attackAction != playerActions.end()) {
+            std::cout << "A. Attack Character" << std::endl;
+        }
+
         std::cout << "---------- Systems Actions ----------" << std::endl;
         std::cout << "Press 'E' and 'Enter' to exit" << std::endl;
 
@@ -162,6 +186,18 @@ namespace game
             }
             
             break;
+        /*case 'A':
+            std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentMap->getGrid();
+            Character::Character* target = static_cast<Character::Character*>(mapGrid[x - 1][y - 1]);
+            bool targetDied = activeCharacter->AttemptAttack(target);
+            if (targetDied) {
+                charactersInMap.erase(std::remove(charactersInMap.begin(), charactersInMap.end(), target), charactersInMap.end());
+
+                Interactable::Interactable* targetsItems = &target->Inventory();
+                currentMap->setCell(x - 1, y - 1, targetsItems);
+            }
+
+            break;*/
         case 'E':
             std::cout << "Goodbye!" << std::endl;
             break;

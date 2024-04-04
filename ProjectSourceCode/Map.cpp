@@ -431,8 +431,11 @@ void Map::Map::printMap()
 			Wall* wallCell = dynamic_cast<Wall*>(grid[i][j]);
 			item::Item* itemCell = dynamic_cast<item::Item*>(grid[i][j]);
 
-			if (characterCell) {
+			if (characterCell && characterCell->GetIsPlayerControlled()) {
 				std::cout << "C ";
+			}
+			else if (characterCell) {
+				std::cout << "N ";
 			}
 			else if(emptyCell){
 				std::cout << "  ";

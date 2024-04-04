@@ -47,6 +47,7 @@ int main()
 	//hardcode maps and campaing here
 	//creare player Character
 	Character::Character* playerCharacter = new Character::Character();
+	Character::Character* enemyCharacter = new Character::Character("Testaniel Unitoph", Character::Character_Class::Fighter, false, new AggressorStrategy());
 	//Create map
 	Map::Map* currentMap = new Map::Map(20,20);
 
@@ -54,6 +55,7 @@ int main()
 
 	//add player to map
 	currentMap->setCharacter(9, 9, playerCharacter);
+	currentMap->setCharacter(9, 12, enemyCharacter);
 	//add walls to map
 	for (int i = 0; i < currentMap->getRows(); i++) {
 		currentMap->setCell(i, 0, new Wall);
@@ -84,11 +86,11 @@ int main()
 
 	//Main gameplay loop
 	char userInput = ' ';
-	currentGame->PrintActionMenu();
+	currentGame->PrintActionMenu(playerCharacter);
 	while (userInput != 'E') {
 		currentGame->GetUserSelection(userInput);
 		currentGame->ProcessUserAction(userInput,playerCharacter);
-		currentGame->PrintActionMenu();
+		currentGame->PrintActionMenu(playerCharacter);
 	}
 	return 0;
 }
