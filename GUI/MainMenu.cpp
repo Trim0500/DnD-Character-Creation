@@ -3,14 +3,21 @@
 #define WINDOW_HEIGHT 640
 #define WINDOW_WIDTH 800
 #define GROUP_SETTINGS 20, 90, WINDOW_WIDTH, (WINDOW_HEIGHT - 30)*.8
-#define EDITOR_SETTINGS 30, 90, WINDOW_WIDTH*.8, (WINDOW_HEIGHT - 60)*.8
+#define EDITOR_SETTINGS 30, 90, floor(WINDOW_WIDTH*.8), floor((WINDOW_HEIGHT - 60)*.8)
 #include "MainMenu.h"
 
 using namespace CampaignEditor;
-
+bool hasEnding(std::string const& fullString, std::string const& ending) {
+	if (fullString.length() >= ending.length()) {
+		return (0 == fullString.compare(fullString.length() - ending.length(), ending.length(), ending));
+	}
+	else {
+		return false;
+	}
+}
 
 MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor") {
-	
+	maps = new vector<Map::Map*>();
 	menu = new Fl_Menu_Bar(0,0, WINDOW_WIDTH, 30, "Campaign Editor");
 	menu->add("@fileopen open", FL_CTRL+'o', MainMenu::static_open, (void*)this);
 	menu->add("@filesave save", FL_CTRL+'s', MainMenu::static_save, (void*)this);

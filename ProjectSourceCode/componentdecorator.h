@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "abstractcomponent.h";
+#include "abstractcomponent.h"
 
 using namespace abstractcomponent;
 

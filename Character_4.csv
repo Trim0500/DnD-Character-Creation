@@ -1,0 +1,12 @@
+ID,4
+Name,Cirian
+Ability_scores(Str_Dex_Con_Int_Wis_Cha),13,11,8,8,14,12,
+Levels(Barb_Bard_Cler_Drui_Figh_Monk_Pala_Rang_Rogu_Sorc_Warl_Wizr),0,0,0,0,2,0,0,0,0,0,0,0,
+Max_HP,9
+Current_HP,9
+Inventroy_Item_IDs,
+Equipped_Item_IDs,
+Inventory_Container_Path,D:\Desktop\DnD-Character-Creation\InventoryItemsCharacter_4.csv
+Inventory_Container_ID,310
+isPlayerControlled,1
+actionStrategy,human

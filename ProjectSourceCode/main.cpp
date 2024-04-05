@@ -43,8 +43,8 @@ int main()
 	}
 	MainMenu * m = new MainMenu();
 	m->show();
-  Fl::run();
-	getchar();
+	Fl::run();
+	// getchar();
 	return 0;
 }
 

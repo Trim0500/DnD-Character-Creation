@@ -5,6 +5,7 @@
 using std::cout;
 using std::endl;
 using std::to_string;
+namespace fs = std::filesystem;
 
 namespace CampaignEditor
 {
@@ -184,7 +185,7 @@ namespace CampaignEditor
 		{
 			try
 			{
-				serializeItem::SaveItems(this->filepath, items);
+				serializeItem::SaveItems(this->filepath.string(), items);
 			}
 			catch (const std::exception &e)
 			{
@@ -192,7 +193,7 @@ namespace CampaignEditor
 			}
 			try
 			{
-				items = serializeItem::LoadItems(filepath);
+				items = serializeItem::LoadItems(filepath.string());
 				populate_browser();
 				/* code */
 			}
@@ -202,12 +203,12 @@ namespace CampaignEditor
 			}
 		}
 	}
-	void ItemEditor::open(std::string s)
+	void ItemEditor::open(fs::path s)
 	{
 		filepath = s;
 		try
 		{
-			items = serializeItem::LoadItems(filepath);
+			items = serializeItem::LoadItems(filepath.string());
 			/* code */
 		}
 		catch (const std::exception &e)
@@ -230,7 +231,7 @@ namespace CampaignEditor
 		{
 			try
 			{
-				items = serializeItem::LoadItems(filepath);
+				items = serializeItem::LoadItems(filepath.string());
 				/* code */
 			}
 			catch (const std::exception &e)
@@ -261,11 +262,11 @@ namespace CampaignEditor
 			}
 		};
 	}
-	void ItemEditor::save_as(std::string s)
+	void ItemEditor::save_as(fs::path s)
 	{
 		try
 		{
-			serializeItem::SaveItems(s, items);
+			serializeItem::SaveItems(s.string(), items);
 		}
 		catch (const std::exception &e)
 		{

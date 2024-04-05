@@ -4,6 +4,7 @@
 #include <FL/Fl_Scroll.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Return_Button.H>
+#include <filesystem>
 #include "MapEditor.h"
 #include "MapSerializer.h"
 #include "../ProjectSourceCode/Interactable.h"
@@ -13,6 +14,8 @@
 #include "../ProjectSourceCode/item.h"
 #include "../ProjectSourceCode/MapBuilder.h"
 using namespace CampaignEditor;
+
+namespace fs = std::filesystem;
 
 MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 {
@@ -196,13 +199,23 @@ void MapEditor::save_as()
 		try
 		{
 			//MapSerializer::save_map(filepath, current_map);
-			MapBuilder::MapBuilder::SaveMap(current_map, filepath);
+			std::string s = filepath.string();
+			MapBuilder::MapBuilder::SaveMap(current_map, s);
 		}
 		catch (const std::exception &e)
 		{
 			std::cerr << e.what() << '\n';
 		}
 	};
+}
+
+
+bool MapEditor::save_all_maps(const std::string fp) {
+	for (int i = 0; i < maps->size(); i++) {
+		std::string file_name = fp + "Map_"+ std::to_string(i) + ".csv";
+		MapBuilder::MapBuilder::SaveMap((*maps)[i], file_name);
+	}
+	return true;
 }
 
 void MapEditor::populate_browser()
@@ -219,7 +232,7 @@ void MapEditor::populate_browser()
 void MapEditor::open(std::string s)
 {
 	//Map::Map m = MapSerializer::load_map(filepath);
-	Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
+	Map::Map m = MapBuilder::MapBuilder::LoadMap(s);
 	maps->push_back(&m);
 	populate_browser();
 	browser->bottomline(browser->size());
@@ -232,7 +245,9 @@ void MapEditor::open()
 	if (BaseEditor::open())
 	{
 		//Map::Map m = MapSerializer::load_map(filepath);
-		Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
+		std::string s = filepath.string();
+
+		Map::Map m = MapBuilder::MapBuilder::LoadMap(s);
 		maps->push_back(&m);
 		populate_browser();
 		browser->bottomline(browser->size());

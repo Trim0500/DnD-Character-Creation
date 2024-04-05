@@ -150,12 +150,17 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 }
 
 void Character::Character::Notify() {
-	for (int i = 0; i < (int)observers.size(); i++)
+	for (int i = 0; i < (int)_observers.size(); i++)
 	{
-		observers[i]->update(observerMessage);
+		_observers[i]->update(observerMessage);
 	}
 }
-
+void Character::Character::Notify(void * f) {
+	for (int i = 0; i < (int)_observers.size(); i++)
+	{
+		_observers[i]->update(f);
+	}
+}
 void Character::Character::CreateObserverMessage(std::string _message = "Empty") {
 	observerMessage = _message;
 	

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <filesystem>
 #include <FL/Fl.H>
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Window.H>
@@ -23,6 +24,8 @@
 
 #include "BaseEditor.h"
 
+namespace fs = std::filesystem;
+
 namespace CampaignEditor
 {
 	class ItemEditor : public BaseEditor
@@ -34,10 +37,10 @@ namespace CampaignEditor
 		void load_data();
 		void create();
 		void save();
-		void open(std::string);
+		void open(fs::path);
 		void open();
 		void save_as();
-		void save_as(std::string s);
+		void save_as(fs::path);
 		void save_data();
 		void delete_entry();
 		void update_data();

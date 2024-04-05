@@ -1,11 +1,15 @@
 #pragma once
 
 #include <iostream>
+#include <filesystem>
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Hold_Browser.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Native_File_Chooser.H>
 #include <FL/Fl_File_Input.H>
+
+namespace fs = std::filesystem;
+
 
 namespace CampaignEditor {
 	class BaseEditor :
@@ -19,21 +23,21 @@ namespace CampaignEditor {
 			int c_y = 10;
 			this->type(Fl_Pack::HORIZONTAL);
 			this->spacing(100);
-			_g = new Fl_Pack(10, 45, w * .2, (h) * .9);
+			_g = new Fl_Pack(10, 45, floor(w * .2), floor((h) * .9));
 
-			browser = new Fl_Hold_Browser(0, 20, w / 2, (h) * .5);
+			browser = new Fl_Hold_Browser(0, 20, floor(w / 2), floor((h) * .5));
 			Fl_Pack* _b = new Fl_Pack(0,0, w * .2, 30);
 			_b->type(Fl_Pack::HORIZONTAL);
-			delete_button = new Fl_Button(0, 0, w * .1, 30, "Delete");
+			delete_button = new Fl_Button(0, 0, floor(w * .1), 30, "Delete");
 			delete_button->callback(static_delete, (void*)this);
-			create_new = new Fl_Button(0, 0, w* .1, 30, "New");
+			create_new = new Fl_Button(0, 0, floor(w* .1), 30, "New");
 			create_new->callback(static_create_new, (void*)this);
 			_b->end();
 			_g->end();
-			g = new Fl_Pack(0, 0, w * .6, (h));
+			g = new Fl_Pack(0, 0, floor(w * .6), (h));
 
 			g->end();
-			sidebar = new Fl_Pack(0, 0, w * .2, (h));
+			sidebar = new Fl_Pack(0, 0, floor(w * .2), (h));
 			sidebar->end();
 			browser->callback(static_load_data,(void *)this);
 
@@ -69,7 +73,7 @@ namespace CampaignEditor {
 		Fl_Button* create_new;
 		Fl_Button* delete_button;
 		bool unsaved_data = true;
-		std::string filepath;
+		fs::path filepath;
 		Fl_File_Input * fp;
 		// virtual vector<
 	};

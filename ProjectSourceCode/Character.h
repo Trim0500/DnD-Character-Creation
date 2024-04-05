@@ -184,11 +184,13 @@ namespace Character {
 
 		virtual ~Character() {};
 
-		void Attach (Observer* _observer) override { observers.push_back(_observer); };
+		void Attach (Observer* _observer) override { _observers.push_back(_observer); };
 
-		void Detach (Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+		void Detach (Observer* _observer) override { _observers.erase(std::remove(_observers.begin(), _observers.end(), _observer), _observers.end()); };
 
 		void Notify() override;
+		void Notify(void *) override;
+
 
 		void CreateObserverMessage(std::string);
 
@@ -393,7 +395,6 @@ namespace Character {
 		void SetActionStrategy(CharacterActionStrategy* _actionStrategy) { actionStrategy = _actionStrategy; };
 
 	private:
-		std::vector<Observer*> observers;
 
 		std::string observerMessage;
 

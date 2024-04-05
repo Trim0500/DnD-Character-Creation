@@ -1,5 +1,5 @@
 #pragma once
-
+#include <filesystem>
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Scroll.H>
 #include "BaseEditor.h"
@@ -10,6 +10,7 @@
 
 using namespace campaign;
 using std::vector;
+
 namespace CampaignEditor
 {
 	class MapButton : public Fl_Button
@@ -40,7 +41,7 @@ namespace CampaignEditor
 			_g->hide();
 			g->begin();
 			// Fl_Box *box = new Fl_Box(20, 40, 50, 50, "Map");
-			map_grid = new Fl_Scroll(0, 0, w * .6, h * .8);
+			map_grid = new Fl_Scroll(0, 0, floor(w * .6), floor(h * .8));
 			map_grid->type(Fl_Scroll::BOTH_ALWAYS);
 			_grid_y = _grid_x = 5;
 			campaign = new Campaign(_grid_x, _grid_y);
@@ -52,11 +53,11 @@ namespace CampaignEditor
 			_c_x = _c_y = 1;
 			sidebar->begin();
 
-			sidebar_title = new Fl_Box(0,0,w*.2, 30);
+			sidebar_title = new Fl_Box(0,0, floor(w*.2), 30);
 			std::string label;
 			label = "Map: " + std::to_string(_c_x) + ", " + std::to_string(_c_y);
 			sidebar_title->copy_label(label.c_str());
-			map_list = new Fl_Input_Choice(0, 0, w*.1, 30, "Map ID");
+			map_list = new Fl_Input_Choice(0, 0, floor(w*.1), 30, "Map ID");
 			
 			map_list->callback(dropdown_cb, (void*)this);
 			sidebar->end();
@@ -66,9 +67,9 @@ namespace CampaignEditor
 		void populate_browser();
 		MapButton *get_cell(int x, int y) { return mbs[y][x]; }
 		void create();
-		void open();
-		void save();
-		void save_as();
+		bool open();
+		bool save();
+		bool save_as();
 		void load_data();
 		void update_data();
 		void delete_entry();

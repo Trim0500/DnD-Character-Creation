@@ -1,5 +1,6 @@
 #pragma once
 
+#include <filesystem>
 #include <FL/Fl.H>
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Button.H>
@@ -59,6 +60,7 @@ namespace CampaignEditor
 		void update_data();
 		void delete_entry();
 		void save_data();
+		bool save_all_maps(const std::string);
 		//void update_cell(int x, int y, Map::Cell_Type ct);
 		void update_cell(int x, int y, Interactable::Interactable* ct);
 		void update_cell(int x, int y, std::string ct);

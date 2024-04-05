@@ -135,18 +135,22 @@ namespace CampaignEditor
 
 		// redraw_map();
 	}
-	void CampaignEditor::save(){
+	bool CampaignEditor::save(){
+		std::cout << "Saving Campaign function" << std::endl;
 		if (filepath.empty())
 		{
+			std::cout << "Filepath empty, triggering save as" << std::endl;
 			save_as();
 		} else {
 			try
 			{
-				SaveCampaigns(this->filepath, *campaign);
+				std::cout << "Saving for real" << std::endl;
+				SaveCampaigns(this->filepath.string(), *campaign);
 			}
 			catch (const std::exception &e)
 			{
 				fl_alert("There was an error saving the file. Try using 'save as'");
+				return false;
 			}
 			try
 			{
@@ -158,28 +162,33 @@ namespace CampaignEditor
 			catch (const std::exception &e)
 			{
 				std::cerr << e.what() << '\n';
+				return false;
 			}
 		}
+		return true;
 	}
 
-	void CampaignEditor::save_as() {
-		if (BaseEditor::File_Chooser("Save as", Fl_Native_File_Chooser::BROWSE_SAVE_DIRECTORY))
+	bool CampaignEditor::save_as() {
+		if (BaseEditor::File_Chooser("Save Campaign As...", Fl_Native_File_Chooser::BROWSE_SAVE_DIRECTORY))
 		{
+			std::cout << "new file path selected, saving" << std::endl;
 			try
 			{
 				save();
+				return true;
 			}
 			catch (const std::exception &e)
 			{
 				std::cerr << e.what() << '\n';
 			}
 		};
+		return false;
 	} 
-	void CampaignEditor::open() {
-		if (BaseEditor::File_Chooser("Open", Fl_Native_File_Chooser::BROWSE_DIRECTORY))
+	bool CampaignEditor::open() {
+		if (BaseEditor::File_Chooser("Open Campaign Folder...", Fl_Native_File_Chooser::BROWSE_DIRECTORY))
 		{
 			try {
-				CampaignRecord *cr = campaign::LoadCampaign(1, filepath);
+				CampaignRecord *cr = campaign::LoadCampaign(1, filepath.string());
 				CampaignMap cp;
 				cp.mapID = 0;
 				cp.coorX = cp.coorY = 0;
@@ -193,10 +202,12 @@ namespace CampaignEditor
 					*maps
 				);
 				redraw_map();
+				return true;
 			} catch (const std::exception &e) {
 
 			}
 		}
+		return false;
 	}
 	void CampaignEditor::save_all(){
 		for (Map::Map *_m: *maps){
