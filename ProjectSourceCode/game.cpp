@@ -8,7 +8,99 @@
 #include "game.h"
 
 namespace {
+    void ProcessContainerAction(Item* _target, Character::Character* _playerCharacter, const bool& dropItems = false) {
+        ItemContainer* containerTarget = static_cast<ItemContainer*>(_target);
+        containerTarget->PrintItemVector();
+        
+        std::cout << "Enter a comma seperated list wo/spaces (ex. 1,2,3) or enter \'Back\' to exit." << std::endl;
 
+        std::string containerSelection;
+        std::cin >> containerSelection;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+        std::remove_if(containerSelection.begin(),
+                        containerSelection.end(),
+                        [](unsigned char x) { return std::isspace(x); });
+
+        std::transform(containerSelection.begin(),
+                        containerSelection.end(),
+                        containerSelection.begin(),
+                        [](unsigned char c) { return std::tolower(c); });
+        if (containerSelection != "back") {
+            std::vector<Item> containerItems = containerTarget->GetAllItems();
+
+            std::stringstream lineStream(containerSelection);
+
+            std::vector<Item*> segmentList;
+
+            std::string segment = "";
+            while (std::getline(lineStream, segment, ',')) {
+                int indexForItem = std::stoi(segment) - 1;
+                segmentList.push_back(&containerItems[indexForItem]);
+            }
+            
+            if (!dropItems) {
+                try {
+                    _playerCharacter->TakeItems(containerTarget, segmentList, _playerCharacter->Inventory().GetItemId());
+
+                    std::cout << _playerCharacter->Name() << " added items to their inventory!" << std::endl;
+                }
+                catch (std::invalid_argument exc) {
+                    std::cout << exc.what() << std::endl;
+                }
+                catch (std::overflow_error exc) {
+                    std::cout << "Can't add the items to the inventory! Try changing your selection!" << std::endl;
+                }
+            }
+            else {
+                try {
+                    _playerCharacter->DropItems(segmentList, _target->GetItemId());
+
+                    std::cout << _playerCharacter->Name() << " dropped items from their inventory!" << std::endl;
+                }
+                catch (std::invalid_argument exc) {
+                    std::cout << exc.what() << std::endl;
+                }
+            }
+        }
+    }
+
+    void ProcessUserItemAction(Map::Map* _currentMap,
+                                Character::Character* _playerCharacter,
+                                const int& _playerX,
+                                const int& _playerY,
+                                const bool& dropItems = false) {
+        std::vector<std::vector<Interactable::Interactable*>> mapGrid = _currentMap->getGrid();
+
+        std::vector<CellActionInfo> playerActions = _playerCharacter->GetActionStrategy()->UseMovementStrategy(mapGrid, _playerX + 1, _playerY + 1);
+
+        auto pickUpAction = std::find_if(playerActions.begin(),
+                                            playerActions.end(),
+                                            [](CellActionInfo playerAction) { return playerAction.actionName == Character::PICKUP_CELL_ACTION; });
+        Item* target = static_cast<Item*>(mapGrid[(*pickUpAction).row - 1][(*pickUpAction).col - 1]);
+        if (dynamic_cast<ItemContainer*>(target)) {
+            ProcessContainerAction(target, _playerCharacter, dropItems);
+        }
+        else {
+            std::cout << "Item details: " << target->GetItemName() << std::endl;
+            std::cout << "Pickup item? (y/Y or n/N)" << std::endl;
+            char pickUpSelection = ' ';
+            std::cin.get(pickUpSelection);
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            if ((char)tolower(pickUpSelection) == 'y') {
+                ItemContainer* playerInventory = &_playerCharacter->Inventory();
+                int addResult = playerInventory->AddNewItem(target);
+                if (addResult == -1) {
+                    std::cout << "Can't add the item to the inventory! Try dropping an item to free up space!" << std::endl;
+                }
+                else {
+                    std::cout << _playerCharacter->Name() << " added " << target->GetItemName() << " to their inventory!" << std::endl;
+
+                    _currentMap->setEmpty((*pickUpAction).row - 1, (*pickUpAction).col - 1);
+                }
+            }
+        }
+    }
 }
 
 namespace game
@@ -97,6 +189,7 @@ namespace game
 
         activeCharacter = (*currentActiveCharacter);
     }
+
     void Game::PrintActionMenu(Character::Character* _player)
     {
         Map::Map* currnetMapGrid;
@@ -122,6 +215,10 @@ namespace game
             std::cout << "I. Inspect Item" << std::endl;
         }
 
+        if (_player->Inventory().GetAllItems().size() != 0) {
+            std::cout << "R. Drop Items" << std::endl;
+        }
+
         std::cout << "---------- Turn Ending Actions ----------" << std::endl;
         std::cout << "M. Move" << std::endl;
 
@@ -138,12 +235,14 @@ namespace game
         std::cout << "Press 'E' and 'Enter' to exit" << std::endl;
 
     }
+
     void Game::GetUserSelection(char& t_selection)
     {
         std::cin.get(t_selection);
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     }
+
     void Game::ProcessUserAction(const char& t_selection, Character::Character* t_playerCharacter)
     {
         //hold current character
@@ -172,82 +271,19 @@ namespace game
             break;
         case 'I':
         {
-            std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentMap->getGrid();
-
-            std::vector<CellActionInfo> playerActions = t_playerCharacter->GetActionStrategy()->UseMovementStrategy(mapGrid, x + 1, y + 1);
-
-            auto pickUpAction = std::find_if(playerActions.begin(),
-                                                playerActions.end(),
-                                                [](CellActionInfo playerAction) { return playerAction.actionName == Character::PICKUP_CELL_ACTION; });
-            Item* target = static_cast<Item*>(mapGrid[(*pickUpAction).row - 1][(*pickUpAction).col - 1]);
-            if (dynamic_cast<ItemContainer*>(target)) {
-                ItemContainer* containerTarget = static_cast<ItemContainer*>(target);
-                containerTarget->PrintItemVector();
-                
-                std::cout << "Enter a comma seperated list wo/spaces (ex. 1,2,3) or enter \'Back\' to exit." << std::endl;
-
-                std::string containerSelection;
-                std::cin >> containerSelection;
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-                std::remove_if(containerSelection.begin(),
-                                containerSelection.end(),
-                                [](unsigned char x) { return std::isspace(x); });
-
-                std::transform(containerSelection.begin(),
-                                containerSelection.end(),
-                                containerSelection.begin(),
-                                [](unsigned char c) { return std::tolower(c); });
-                if (containerSelection != "back") {
-                    std::vector<Item> containerItems = containerTarget->GetAllItems();
-
-                    std::stringstream lineStream(containerSelection);
-
-                    std::vector<Item*> segmentList;
-
-                    std::string segment = "";
-                    while (std::getline(lineStream, segment, ',')) {
-                        int indexForItem = std::stoi(segment) - 1;
-                        segmentList.push_back(&containerItems[indexForItem]);
-                    }
-
-                    try {
-                        t_playerCharacter->TakeItems(containerTarget, segmentList, t_playerCharacter->Inventory().GetItemId());
-
-                        std::cout << t_playerCharacter->Name() << " added items to their inventory!" << std::endl;
-                    }
-                    catch (std::invalid_argument exc) {
-                        std::cout << exc.what() << std::endl;
-                    }
-                    catch (std::overflow_error exc) {
-                        std::cout << "Can't add the items to the inventory! Try changing your selection!" << std::endl;
-                    }
-                }
-            }
-            else {
-                std::cout << "Item details: " << target->GetItemName() << std::endl;
-                std::cout << "Pickup item? (y/Y or n/N)" << std::endl;
-                char pickUpSelection = ' ';
-                std::cin.get(pickUpSelection);
-                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                if ((char)tolower(pickUpSelection) == 'y') {
-                    ItemContainer* playerInventory = &t_playerCharacter->Inventory();
-                    int addResult = playerInventory->AddNewItem(target);
-                    if (addResult == -1) {
-                        std::cout << "Can't add the item to the inventory! Try dropping an item to free up space!" << std::endl;
-                    }
-                    else {
-                        std::cout << t_playerCharacter->Name() << " added " << target->GetItemName() << " to their inventory!" << std::endl;
-
-                        currentMap->setEmpty((*pickUpAction).row - 1, (*pickUpAction).col - 1);
-                    }
-                }
-            }
+            ProcessUserItemAction(currentMap, t_playerCharacter, x, y);
 
             CreateObserverMessage("[Game/ProcessUserAction] -- Player interacted with items!");
 
             break;
         }
+        case 'R':
+            ProcessContainerAction(&t_playerCharacter->Inventory(),
+                                    t_playerCharacter, true);
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- Player dropped items!");
+
+            break;
         case 'M':
             int xOld, yOld;
             xOld = x;

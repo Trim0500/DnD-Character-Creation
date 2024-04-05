@@ -714,7 +714,9 @@ void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, c
 
 	targetContainer->RemoveItems(_selectedItems);
 
-	CreateObserverMessage();
+	std::ostringstream observerMessage;
+	observerMessage << "[Character/DropItems] -- " << name << " dropped some items from " << targetContainer->GetItemName() << ". Inventory updated.";
+	CreateObserverMessage(observerMessage.str());
 }
 
 std::string Character::Character::Get_Abilities_String(Abilities_Stats t_abilities)
