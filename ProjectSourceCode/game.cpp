@@ -1,6 +1,8 @@
 #include <algorithm>
 #include <sstream>
 #include <iterator>
+#include <string>
+#include <cctype>
 
 #include "EmptyCell.h"
 #include "game.h"
@@ -25,35 +27,35 @@ namespace game
     }
 
     void Game::GameSetup(const std::string& _saveFileDir) {
-        CreateObserverMessage("[Game/GameSetup] -- Fetching Campaign save data...\n");
+        CreateObserverMessage("[Game/GameSetup] -- Fetching Campaign save data...");
 
         // Find campaign...
 
-        CreateObserverMessage("[Game/GameSetup] -- Loading map data...\n");
+        CreateObserverMessage("[Game/GameSetup] -- Loading map data...");
 
         // Find generate maps...
 
-        CreateObserverMessage("[Game/GameSetup] -- Loading characters...\n");
+        CreateObserverMessage("[Game/GameSetup] -- Loading characters...");
 
         // Find generate characters...
 
         // Set campaign memeber variables...
 
-        CreateObserverMessage("[Game/GameSetup] -- Game setup complete! Ready to Play!\n");
+        CreateObserverMessage("[Game/GameSetup] -- Game setup complete! Ready to Play!");
     }
 
     Map::Map* Game::LoadMap(/* Door or ID */) {
-        CreateObserverMessage("[Game/LoadMap] -- Door used, finding which map to bring up...\n");
+        CreateObserverMessage("[Game/LoadMap] -- Door used, finding which map to bring up...");
 
         // Use door or ID to find map to load through the campaign member variable...
 
-        CreateObserverMessage("[Game/LoadMap] -- Found the map the player is in!\n");
+        CreateObserverMessage("[Game/LoadMap] -- Found the map the player is in!");
 
         return new Map::Map();
     }
 
     void Game::EndTurn(const std::string& _actionTaken, const int& _targetX, const int& _targetY) {
-        CreateObserverMessage("[Game/EndTurn] -- A character ended their turn, need to update game data...\n");
+        CreateObserverMessage("[Game/EndTurn] -- A character ended their turn, need to update game data...");
 
         CampaignMap currentMapInCampaign = gameCampaign->GetCurrentMap();
         Map::Map* currentLoadedMap = gameCampaign->GetMap(currentMapInCampaign.coorX, currentMapInCampaign.coorY);
@@ -82,7 +84,7 @@ namespace game
             }
         }
 
-        CreateObserverMessage("[Game/EndTurn] -- Game campaign updates complete! Updating turn...\n");
+        CreateObserverMessage("[Game/EndTurn] -- Game campaign updates complete! Updating turn...");
 
         Character::Character* activeCharacterPointer = activeCharacter;
         std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
@@ -179,7 +181,48 @@ namespace game
                                                 [](CellActionInfo playerAction) { return playerAction.actionName == Character::PICKUP_CELL_ACTION; });
             Item* target = static_cast<Item*>(mapGrid[(*pickUpAction).row - 1][(*pickUpAction).col - 1]);
             if (dynamic_cast<ItemContainer*>(target)) {
-                // Some things...
+                ItemContainer* containerTarget = static_cast<ItemContainer*>(target);
+                containerTarget->PrintItemVector();
+                
+                std::cout << "Enter a comma seperated list wo/spaces (ex. 1,2,3) or enter \'Back\' to exit." << std::endl;
+
+                std::string containerSelection;
+                std::cin >> containerSelection;
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+                std::remove_if(containerSelection.begin(),
+                                containerSelection.end(),
+                                [](unsigned char x) { return std::isspace(x); });
+
+                std::transform(containerSelection.begin(),
+                                containerSelection.end(),
+                                containerSelection.begin(),
+                                [](unsigned char c) { return std::tolower(c); });
+                if (containerSelection != "back") {
+                    std::vector<Item> containerItems = containerTarget->GetAllItems();
+
+                    std::stringstream lineStream(containerSelection);
+
+                    std::vector<Item*> segmentList;
+
+                    std::string segment = "";
+                    while (std::getline(lineStream, segment, ',')) {
+                        int indexForItem = std::stoi(segment) - 1;
+                        segmentList.push_back(&containerItems[indexForItem]);
+                    }
+
+                    try {
+                        t_playerCharacter->TakeItems(containerTarget, segmentList, t_playerCharacter->Inventory().GetItemId());
+
+                        std::cout << t_playerCharacter->Name() << " added items to their inventory!" << std::endl;
+                    }
+                    catch (std::invalid_argument exc) {
+                        std::cout << exc.what() << std::endl;
+                    }
+                    catch (std::overflow_error exc) {
+                        std::cout << "Can't add the items to the inventory! Try changing your selection!" << std::endl;
+                    }
+                }
             }
             else {
                 std::cout << "Item details: " << target->GetItemName() << std::endl;
@@ -200,6 +243,8 @@ namespace game
                     }
                 }
             }
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- Player interacted with items!");
 
             break;
         }
@@ -238,6 +283,8 @@ namespace game
             }else{
                 std::cout << "Invalid direction!" << std::endl;
             }
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- Player moved!");
             
             break;
         case 'A':
@@ -267,10 +314,16 @@ namespace game
                 killUpdateMessage << target->Name() << " killed! Inventory dropped. " << std::endl;
                 std::cout << killUpdateMessage.str();
             }
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- Player attacked an enemy!");
+
             break;
         }
         case 'E':
             std::cout << "Goodbye!" << std::endl;
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- User exited the game session!");
+
             break;
         default:
             std::cout << "Unkown Action!" << std::endl;
@@ -288,6 +341,8 @@ namespace game
             }
 
             activeCharacter = (*currentActiveCharacter);
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!");
         }
 
         //this->SetActiveCharacter(current_character_buffer);

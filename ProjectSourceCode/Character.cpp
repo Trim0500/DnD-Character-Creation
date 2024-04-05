@@ -697,7 +697,9 @@ void Character::Character::TakeItems(itemcontainer::ItemContainer* _targetContai
 
 	_targetContainer->RemoveItems(_selectedItems);
 
-	CreateObserverMessage();
+	std::ostringstream observerMessage;
+	observerMessage << "[Character/TakeItems] -- " << name << " took some items from " << _targetContainer->GetItemName() << ". Inventory updated.";
+	CreateObserverMessage(observerMessage.str());
 }
 
 void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, const int& _targetContainerID) {

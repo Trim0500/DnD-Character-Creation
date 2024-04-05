@@ -75,6 +75,16 @@ int main()
 
 	currentMap->setCell(9, 8, new Item());
 
+	ItemContainer* backpackObject = new ItemContainer("Wanderer's Backpack", Backpack, 30.0);
+	
+	Item* backpackShieldItem = new Item("Sturdy Shield", 4, Shield, ArmorClass, 12);
+	Item* backpackBootsItem = new Item("Traveler's Boots", 4, Boots, Dexterity, 5);
+
+	backpackObject->AddNewItem(backpackShieldItem);
+	backpackObject->AddNewItem(backpackBootsItem);
+
+	currentMap->setCell(8, 8, backpackObject);
+
 	//Create campaign
 	campaign::Campaign* currentCampaign = new campaign::Campaign(1,1);
 	//Add map to campaing
@@ -95,6 +105,7 @@ int main()
 	charactersInGame.push_back(playerCharacter);
 	charactersInGame.push_back(enemyCharacter);
 	currentGame->SetCharactersInMap(charactersInGame);
+	currentGame->Attach(gameLogger);
 
 	char userInput = ' ';
 	while (userInput != 'E') {
