@@ -216,6 +216,7 @@ namespace game
         }
         
         std::cout << "P. Equip item" << std::endl;
+        std::cout << "K. Unequip item" << std::endl;
 
         if (_player->Inventory().GetAllItems().size() != 0) {
             std::cout << "R. Drop Items" << std::endl;
@@ -314,6 +315,46 @@ namespace game
             }
             else{
                 std::cout << "Could not equip item!" << std::endl;
+            }
+            break;
+        }
+        case 'K': {
+            //unequip item
+            if (t_playerCharacter->GetWornItems()->GetDecoratorList().size() <= 0) {
+                std::cout << "No items in inventory to equip!" << std::endl;
+                return;
+            }
+            std::vector<item::Item*> equipped_items;
+            item::Item* item;
+            std::cout << std::right << std::setw(65) << "EQUIPPED ITEMS" << std::endl;
+            std::cout << std::right << std::setw(35) << "Equipment slot" << " | " << std::left << std::setw(35) << " Name (ID)"
+                << " | " << std::left << std::setw(35) << "Enchantment" << std::endl;
+            std::cout << std::string(100, '-') << std::endl;
+            int count = 0;
+            for (int i{ 0 }; i < t_playerCharacter->GetWornItems()->GetDecoratorList().size(); i++) {
+                item = dynamic_cast<item::Item*>(t_playerCharacter->GetWornItems()->GetDecoratorList().at(i));
+                equipped_items.push_back(item);
+                std::cout << count << ". ";
+                std::cout << std::right << std::setw(35) << item->GetItemName() << " | "
+                    << std::left << std::setw(35) << item->GetItemType() << " | ";
+                if (item->GetEnchantmentBonus() > 0) {
+                    std::cout << "+";
+                }
+                std::cout << item->GetEnchantmentBonus() << " "
+                    << t_playerCharacter->Get_Abilities_String(Character::item_stat_TO_character_stat.at(item->GetEnchantmentType())) << std::endl;
+                count++;
+            }
+            std::cout << "unequip item number :";
+            std::string item_number_s;
+            int item_number_i;
+            std::getline(std::cin, item_number_s);
+            item_number_i = std::stoi(item_number_s);
+            if (item_number_i >= 0 && item_number_i < count) {
+                t_playerCharacter->Unequip_Item_Decorator(equipped_items.at(item_number_i));
+                std::cout << "Item unequipped!" << std::endl;
+            }
+            else {
+                std::cout << "Could not unequip item!" << std::endl;
             }
             break;
         }
