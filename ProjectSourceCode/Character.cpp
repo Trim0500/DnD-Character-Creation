@@ -550,6 +550,10 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 	return modifier;
 }
 
+int Character::Character::ModifierDecorator(int t_ability) {
+	return Ability_Score_Natural(t_ability, 0);
+}
+
 int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_number)
 {
 	int score;
@@ -582,7 +586,7 @@ int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_numb
 			}
 		}
 		else {
-			score = ability_scores[(int)t_ability];
+			score = ability_scores[t_ability];
 		}
 	}
 	catch (std::exception& e) {

@@ -159,6 +159,28 @@ namespace item {
 		return result;
 	}
 
+	int Item::ModifierDecorator(int _abilityScore) {
+		if (_abilityScore == 6) {
+			int armorResult = 10 + ModifierDecorator(CharacterStats::Dexterity) + Ability_Score_Natural(_abilityScore, 0);
+
+			return armorResult;
+		}
+
+		int scoreResult = Ability_Score_Natural(_abilityScore, 0);
+
+		int modifier{ 0 };
+		try {
+			modifier = std::floor(((float)(scoreResult - 10) / 2));
+		}
+		catch (std::exception& e) {
+			std::cerr << &e << std::endl;
+			
+			return 0;
+		}
+
+		return modifier;
+	}
+
 	std::vector<AbstractComponent*> Item::GetDecoratorList() {
 		std::vector<AbstractComponent*> decoratorList = wrappee->GetDecoratorList();
 		decoratorList.push_back(this);
