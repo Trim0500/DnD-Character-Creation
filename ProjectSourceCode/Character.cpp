@@ -97,7 +97,7 @@ namespace {
 
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
-					if (_npcActionInfo[i].col == targetX) {
+					if (_npcActionInfo[i].row == targetX) {
 						return _npcActionInfo[i];
 					}
 				}
@@ -697,7 +697,9 @@ void Character::Character::TakeItems(itemcontainer::ItemContainer* _targetContai
 
 	_targetContainer->RemoveItems(_selectedItems);
 
-	CreateObserverMessage();
+	std::ostringstream observerMessage;
+	observerMessage << "[Character/TakeItems] -- " << name << " took some items from " << _targetContainer->GetItemName() << ". Inventory updated.";
+	CreateObserverMessage(observerMessage.str());
 }
 
 void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, const int& _targetContainerID) {
@@ -712,7 +714,9 @@ void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, c
 
 	targetContainer->RemoveItems(_selectedItems);
 
-	CreateObserverMessage();
+	std::ostringstream observerMessage;
+	observerMessage << "[Character/DropItems] -- " << name << " dropped some items from " << targetContainer->GetItemName() << ". Inventory updated.";
+	CreateObserverMessage(observerMessage.str());
 }
 
 std::string Character::Character::Get_Abilities_String(Abilities_Stats t_abilities)
