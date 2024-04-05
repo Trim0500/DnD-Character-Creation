@@ -551,7 +551,25 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 }
 
 int Character::Character::ModifierDecorator(int t_ability) {
-	return Ability_Score_Natural(t_ability, 0);
+	if (t_ability == 6) {
+		int armorResult = Ability_Score_Natural(t_ability, 0) + ModifierDecorator(CharacterStats::Dexterity);
+
+		return armorResult;
+	}
+
+	int scoreResult = Ability_Score_Natural(t_ability, 0);
+
+	int modifier{ 0 };
+	try {
+		modifier = std::floor(((float)(scoreResult - 10) / 2));
+	}
+	catch (std::exception& e) {
+		std::cerr << &e << std::endl;
+
+		return 0;
+	}
+
+	return modifier;
 }
 
 int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_number)

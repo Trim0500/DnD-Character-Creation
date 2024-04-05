@@ -161,7 +161,7 @@ namespace item {
 
 	int Item::ModifierDecorator(int _abilityScore) {
 		if (_abilityScore == 6) {
-			int armorResult = 10 + ModifierDecorator(CharacterStats::Dexterity) + Ability_Score_Natural(_abilityScore, 0);
+			int armorResult = Ability_Score_Natural(_abilityScore, 0) + ModifierDecorator(CharacterStats::Dexterity);
 
 			return armorResult;
 		}
