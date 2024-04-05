@@ -164,6 +164,8 @@ namespace item
 		*/
 		int Ability_Score_Natural(int, int) override;
 
+		int ModifierDecorator(int) override;
+
 		/*!
 		* \fn GetDecoratorList
 		* \brief Overriden function that is meant to use the wrappee's function of the same name and then push the decorator's pointer to a list

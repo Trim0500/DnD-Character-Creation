@@ -313,6 +313,9 @@ namespace Character {
 		*  \return Returns const int to desired modifier. Modifier is detremined using ability scores and item bonuses
 		*/
 		const int Modifier(Abilities_Stats t_ability);
+
+		int ModifierDecorator(int) override;
+
 		/*!
 		* \fn Ability_Score_Natural
 		* \brief Overriden function that is meant to get the raw ability score of a character based on the parameter specified

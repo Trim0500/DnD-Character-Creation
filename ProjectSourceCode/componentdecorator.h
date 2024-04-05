@@ -40,6 +40,8 @@ namespace componentdecorator {
             */
             int Ability_Score_Natural(int, int) override;
 
+            virtual int ModifierDecorator(int) override;
+
             /*!
             * \fn GetDecoratorList
             * \brief Overriden function that is meant to use the wrappee's function of the same name as a baseline for concete implementations

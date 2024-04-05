@@ -295,28 +295,27 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(25) << "Level: " << Sum_Levels() << std::endl;
 	std::cout << std::right << std::setw(25) << "HP: " << Hit_Points()<<"/"<<Max_Hit_Points() << std::endl;
 	std::cout << std::right << std::setw(25) << "Proficiency Bonus: " << Proficiency_Bonus() << std::endl;
-	//std::cout << std::right << std::setw(25) << "Armour Class: " << Armour_Class() << std::endl;
-	std::cout << std::right << std::setw(25) << "Armour Class: " << wornItems->Ability_Score_Natural(ArmorClass,0)<< std::endl;
+	std::cout << std::right << std::setw(25) << "Armour Class: " << wornItems->ModifierDecorator(ArmorClass) << std::endl;
 	std::cout << std::right << std::setw(25) << "Attack Bonus: ";
 	for (int i{ 1 }; i <= Attacks_Per_Turn(); i++) {
-		std::cout << wornItems->Ability_Score_Natural(AttackBonus,i);
+		std::cout << wornItems->Ability_Score_Natural(AttackBonus, i);
 		if (i != Attacks_Per_Turn()) {
 			std::cout << ", ";
 		}
 	}
 	std::cout << std::endl;
-	std::cout << std::right << std::setw(25) << "Damage Bonus: " << wornItems->Ability_Score_Natural(DamageBonus,0) << std::endl;
+	std::cout << std::right << std::setw(25) << "Damage Bonus: " << wornItems->Ability_Score_Natural(DamageBonus, 0) << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(65) << "ABILITY SCORES" << std::endl;
 	std::cout << std::right << std::setw(35) << "Ability" << " | " << std::left << std::setw(35) << "Score"
 	<< " | " << std::left << std::setw(35) << "Modifier" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
-	std::cout << std::right << std::setw(35) << "Strength" <<" | "<< std::left << std::setw(35) << wornItems->Ability_Score_Natural(Strength,0)<<" | "<<std::right<<std::setw(2) << Modifier(Abilities_Stats::Strength) << std::endl;
-	std::cout << std::right << std::setw(35) << "Dexterity" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Dexterity,0) <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Dexterity) << std::endl;
-	std::cout << std::right << std::setw(35) << "Constitution" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Constitution,0) <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Constitution) << std::endl;
-	std::cout << std::right << std::setw(35) << "Intelligence" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Intelligence,0) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Intelligence) << std::endl;
-	std::cout << std::right << std::setw(35) << "Wisdom" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Wisdom,0) << std::left <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Wisdom) << std::endl;
-	std::cout << std::right << std::setw(35) << "Charisma" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Charisma,0) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Charisma) << std::endl;
+	std::cout << std::right << std::setw(35) << "Strength" <<" | "<< std::left << std::setw(35) << wornItems->Ability_Score_Natural(Strength, 0)<<" | "<<std::right<<std::setw(2) << wornItems->ModifierDecorator(Strength) << std::endl;
+	std::cout << std::right << std::setw(35) << "Dexterity" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Dexterity, 0) <<" | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Dexterity) << std::endl;
+	std::cout << std::right << std::setw(35) << "Constitution" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Constitution, 0) <<" | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Constitution) << std::endl;
+	std::cout << std::right << std::setw(35) << "Intelligence" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Intelligence, 0) << " | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Intelligence) << std::endl;
+	std::cout << std::right << std::setw(35) << "Wisdom" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Wisdom, 0) << std::left <<" | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Wisdom) << std::endl;
+	std::cout << std::right << std::setw(35) << "Charisma" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Charisma, 0) << " | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Charisma) << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(65) << "EQUIPPED ITEMS" << std::endl;
 	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name (ID)" 
@@ -561,6 +560,28 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 	return modifier;
 }
 
+int Character::Character::ModifierDecorator(int t_ability) {
+	if (t_ability == 6) {
+		int armorResult = Ability_Score_Natural(t_ability, 0) + ModifierDecorator(CharacterStats::Dexterity);
+
+		return armorResult;
+	}
+
+	int scoreResult = Ability_Score_Natural(t_ability, 0);
+
+	int modifier{ 0 };
+	try {
+		modifier = std::floor(((float)(scoreResult - 10) / 2));
+	}
+	catch (std::exception& e) {
+		std::cerr << &e << std::endl;
+
+		return 0;
+	}
+
+	return modifier;
+}
+
 int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_number)
 {
 	int score;
@@ -593,7 +614,7 @@ int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_numb
 			}
 		}
 		else {
-			score = ability_scores[(int)t_ability];
+			score = ability_scores[t_ability];
 		}
 	}
 	catch (std::exception& e) {
