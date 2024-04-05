@@ -97,7 +97,7 @@ namespace {
 
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
-					if (_npcActionInfo[i].col == targetX) {
+					if (_npcActionInfo[i].row == targetX) {
 						return _npcActionInfo[i];
 					}
 				}
