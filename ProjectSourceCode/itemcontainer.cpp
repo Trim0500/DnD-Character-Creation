@@ -133,7 +133,9 @@ namespace itemcontainer {
 		
 		for (int i = 0; i < items.size(); i++)
 		{
-			std::cout << items[i].GetItemName()
+			std::cout << i + 1
+					<< ". "
+					<< items[i].GetItemName()
 					<< "\t"
 					<< itemTypeStrings[items[i].GetItemType() - 1]
 					<< "\t"
