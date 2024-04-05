@@ -322,16 +322,17 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name (ID)" 
 	<< " | "  << std::left << std::setw(35) << "Enchantment" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
-	for (auto i : equipment_slots) {
-		if (i.second != nullptr) {
-			std::cout << std::right << std::setw(35) << Get_Equipment_Slot_String(i.first) << " | ";
-			std::cout << std::left << std::setw(35) << i.second->GetItemName() <<" ("<<i.second->GetItemId()<<")";
+	for (int j{ 0 }; j < wornItems->GetDecoratorList().size(); j++) {
+		item::Item* i = dynamic_cast<item::Item*>(wornItems->GetDecoratorList().at(j));
+		if (i != nullptr) {
+			std::cout << std::right << std::setw(35) << item::itemTypeStrings[i->GetItemType()] << " | ";
+			std::cout << std::left << std::setw(35) << i->GetItemName() <<" ("<<i->GetItemId()<<")";
 			std::cout<< std::right << std::setw(3) << " | ";
-			if (i.second->GetEnchantmentBonus() > 0) {
+			if (i->GetEnchantmentBonus() > 0) {
 				std::cout << "+";
 			}
-			std::cout << i.second->GetEnchantmentBonus()<<" ";
-			std::cout << Get_Abilities_String(item_stat_TO_character_stat.at(i.second->GetEnchantmentType())) << std::endl;
+			std::cout << i->GetEnchantmentBonus()<<" ";
+			std::cout << Get_Abilities_String(item_stat_TO_character_stat.at(i->GetEnchantmentType())) << std::endl;
 		}
 	}
 	std::cout << std::string(100, '-') << std::endl;
