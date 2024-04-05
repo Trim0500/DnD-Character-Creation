@@ -321,16 +321,17 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name (ID)" 
 	<< " | "  << std::left << std::setw(35) << "Enchantment" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
-	for (auto i : equipment_slots) {
-		if (i.second != nullptr) {
-			std::cout << std::right << std::setw(35) << Get_Equipment_Slot_String(i.first) << " | ";
-			std::cout << std::left << std::setw(35) << i.second->GetItemName() <<" ("<<i.second->GetItemId()<<")";
+	for (int j{ 0 }; j < wornItems->GetDecoratorList().size(); j++) {
+		item::Item* i = dynamic_cast<item::Item*>(wornItems->GetDecoratorList().at(j));
+		if (i != nullptr) {
+			std::cout << std::right << std::setw(35) << item::itemTypeStrings[i->GetItemType()] << " | ";
+			std::cout << std::left << std::setw(35) << i->GetItemName() <<" ("<<i->GetItemId()<<")";
 			std::cout<< std::right << std::setw(3) << " | ";
-			if (i.second->GetEnchantmentBonus() > 0) {
+			if (i->GetEnchantmentBonus() > 0) {
 				std::cout << "+";
 			}
-			std::cout << i.second->GetEnchantmentBonus()<<" ";
-			std::cout << Get_Abilities_String(item_stat_TO_character_stat.at(i.second->GetEnchantmentType())) << std::endl;
+			std::cout << i->GetEnchantmentBonus()<<" ";
+			std::cout << Get_Abilities_String(item_stat_TO_character_stat.at(i->GetEnchantmentType())) << std::endl;
 		}
 	}
 	std::cout << std::string(100, '-') << std::endl;
@@ -400,35 +401,44 @@ bool Character::Character::Levelup(Character_Class t_class, bool t_average_hp)
 
 bool Character::Character::Equip_Item(item::Item* t_item) {
 	
+	item::Item* pointer_to_item = nullptr;
 	if (inventory.GetItem(t_item->GetItemName()) == nullptr) {
 		std::cout << "Could not equipe '" << t_item->GetItemName() << "'. Item could not be found in inventory" << std::endl;
 		return false;
 	}
+	else {
+		for (int i{ 0 }; i < inventory.GetAllItems().size(); i++) {
+			if (inventory.GetAllItems().at(i).GetItemId() == t_item->GetItemId()) {
+				pointer_to_item = &inventory.GetAllItems().at(i);
+			}
+		}
+	}
+
 	switch (t_item->GetItemType())
 	{
 	case Helmet:
-		equipment_slots[Equipment_Slots::Helmet] = t_item;
+		equipment_slots[Equipment_Slots::Helmet] = pointer_to_item;
 		break;
 	case Armor:
-		equipment_slots[Equipment_Slots::Armor] = t_item;
+		equipment_slots[Equipment_Slots::Armor] = pointer_to_item;
 		break;
 	case Shield:
-		equipment_slots[Equipment_Slots::Shield] = t_item;
+		equipment_slots[Equipment_Slots::Shield] = pointer_to_item;
 		break;
 	case Ring:
-		equipment_slots[Equipment_Slots::Ring] = t_item;
+		equipment_slots[Equipment_Slots::Ring] = pointer_to_item;
 		break;
 	case Belt:
-		equipment_slots[Equipment_Slots::Belt] = t_item;
+		equipment_slots[Equipment_Slots::Belt] = pointer_to_item;
 		break;
 	case Boots:
-		equipment_slots[Equipment_Slots::Boots] = t_item;
+		equipment_slots[Equipment_Slots::Boots] = pointer_to_item;
 		break;
 	case Weapon:
-		equipment_slots[Equipment_Slots::Weapon] = t_item;
+		equipment_slots[Equipment_Slots::Weapon] = pointer_to_item;
 		break;
 	case Backpack:
-		equipment_slots[Equipment_Slots::Bag] = t_item;
+		equipment_slots[Equipment_Slots::Bag] = pointer_to_item;
 		break;
 	default:
 		std::cerr << "Could not equipe '" << t_item->GetItemName() << "'. No corresponding equipment slot" << std::endl;
@@ -456,7 +466,7 @@ void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
 		if (_itemToEquip->GetItemType() == equippedItem->GetItemType()) {
 			std::ostringstream excMessage;
 			excMessage << "[Character/Equip_Item_Decorator] -- Can't equip another " << itemTypeStrings[_itemToEquip->GetItemType() - 1];
-			throw std::invalid_argument(excMessage.str().c_str());
+ 			throw std::invalid_argument(excMessage.str().c_str());
 		}
 	}
 	
@@ -625,9 +635,10 @@ const int Character::Character::Ability_Score_Bonused(Abilities_Stats t_ability)
 		return 0;
 	}
 	for (auto i : equipment_slots) {
+		item::Item* equipped_item = i.second;
 		try {
-			if (i.second != nullptr && item_stat_TO_character_stat.at(i.second->GetEnchantmentType()) == t_ability) {
-				score += i.second->GetEnchantmentBonus();
+			if (equipped_item != nullptr && item_stat_TO_character_stat.at(i.second->GetEnchantmentType()) == t_ability) {
+				score += equipped_item->GetEnchantmentBonus();
 			}
 		}
 		catch (std::exception& e) {
