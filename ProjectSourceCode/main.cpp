@@ -36,10 +36,10 @@ int main()
 		return 1;
 	}
 
-	//MainMenu * m = new MainMenu();
-	//m->show();
+	MainMenu * m = new MainMenu();
+	m->show();
 
-	//Fl::run();
+	Fl::run();
 
 	getchar();
 
@@ -47,6 +47,7 @@ int main()
 	//creare player Character
 	Character::Character* playerCharacter = new Character::Character();
 	Character::Character* enemyCharacter = new Character::Character("Testaniel Unitoph", Character::Character_Class::Fighter, false, new AggressorStrategy());
+	playerCharacter->Inventory().AddNewItem(new item::Item("testShield", 2, Shield, ArmorClass, 10));
 	//Create map
 	Map::Map* currentMap = new Map::Map(20,20);
 
