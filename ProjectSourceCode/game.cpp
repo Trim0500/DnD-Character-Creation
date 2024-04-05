@@ -104,7 +104,7 @@ namespace game
         if (pickUpAction != playerActions.end()) {
             std::cout << "I. Inspect Item" << std::endl;
         }
-
+        std::cout << "P. Equip item" << std::endl;
         std::cout << "---------- Turn Ending Actions ----------" << std::endl;
         std::cout << "M. Move" << std::endl;
 
@@ -145,16 +145,54 @@ namespace game
             break;
         case '2':
             //Print player Character sheet
-            this->GetActiveCharacter()->Print_Character_Sheet();
+            t_playerCharacter->Print_Character_Sheet();
             break;
         case '4':
             //Print player character location
             std::cout << "Player Location: " << y << "," << x << std::endl;
             break;
+
         case 'I':
             //Inspect item
 
-
+            break;
+        case 'P': {
+            //Equip item
+            if (t_playerCharacter->Inventory().GetAllItems().size() <= 0) {
+                std::cout << "No items in inventory to equip!" << std::endl;
+                return;
+            }
+            std::vector<item::Item*> inventory;
+            std::cout << std::right << std::setw(63) << "INVENTORY" << std::endl;
+            std::cout << std::right << std::setw(35) << "Name" << " | " << std::left << std::setw(35) << "Type"
+                << " | " << std::left << std::setw(35) << "Enchantment" << std::endl;
+            std::cout << std::string(100, '-') << std::endl;
+            int count = 0;
+            for (int i{ 0 }; i<t_playerCharacter->Inventory().GetAllItems().size(); i++) {
+                std::cout << count << ". ";
+                std::cout << std::right << std::setw(35) << t_playerCharacter->Inventory().GetAllItems().at(i).GetItemName() << " | "
+                    << std::left << std::setw(35) << t_playerCharacter->Get_Item_Type_String(t_playerCharacter->Inventory().GetAllItems().at(i).GetItemType()) << " | ";
+                if (t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentBonus() > 0) {
+                    std::cout << "+";
+                }
+                std::cout << t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentBonus() << " "
+                    << t_playerCharacter->Get_Abilities_String(Character::item_stat_TO_character_stat.at(t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentType())) << std::endl;
+                count++;
+            }
+            std::cout << "Equip item number :";
+            std::string item_number_s;
+            int item_number_i;
+            std::getline(std::cin, item_number_s);
+            item_number_i = std::stoi(item_number_s);
+            if (item_number_i >= 0 && item_number_i < count) {
+                t_playerCharacter->Equip_Item_Decorator(&t_playerCharacter->Inventory().GetAllItems().at(item_number_i));
+                std::cout << "Item equppied!" << std::endl;
+            }
+            else{
+                std::cout << "Could not equip item!" << std::endl;
+            }
+            break;
+        }
         case 'M':
             int xOld, yOld;
             xOld = x;

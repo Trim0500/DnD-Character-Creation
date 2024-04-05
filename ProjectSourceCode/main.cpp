@@ -48,6 +48,7 @@ int main()
 	//creare player Character
 	Character::Character* playerCharacter = new Character::Character();
 	Character::Character* enemyCharacter = new Character::Character("Testaniel Unitoph", Character::Character_Class::Fighter, false, new AggressorStrategy());
+	playerCharacter->Inventory().AddNewItem(new item::Item());
 	//Create map
 	Map::Map* currentMap = new Map::Map(20,20);
 
