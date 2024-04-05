@@ -73,6 +73,8 @@ int main()
 		currentMap->setCell(rd() % (currentMap->getRows()), rd() % (currentMap->getRows())+1, new item::Item());
 	}
 
+	currentMap->setCell(9, 8, new Item());
+
 	//Create campaign
 	campaign::Campaign* currentCampaign = new campaign::Campaign(1,1);
 	//Add map to campaing

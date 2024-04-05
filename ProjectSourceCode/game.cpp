@@ -169,9 +169,40 @@ namespace game
             std::cout << "Player Location: " << y << "," << x << std::endl;
             break;
         case 'I':
-            //Inspect item
+        {
+            std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentMap->getGrid();
 
+            std::vector<CellActionInfo> playerActions = t_playerCharacter->GetActionStrategy()->UseMovementStrategy(mapGrid, x + 1, y + 1);
 
+            auto pickUpAction = std::find_if(playerActions.begin(),
+                                                playerActions.end(),
+                                                [](CellActionInfo playerAction) { return playerAction.actionName == Character::PICKUP_CELL_ACTION; });
+            Item* target = static_cast<Item*>(mapGrid[(*pickUpAction).row - 1][(*pickUpAction).col - 1]);
+            if (dynamic_cast<ItemContainer*>(target)) {
+                // Some things...
+            }
+            else {
+                std::cout << "Item details: " << target->GetItemName() << std::endl;
+                std::cout << "Pickup item? (y/Y or n/N)" << std::endl;
+                char pickUpSelection = ' ';
+                std::cin.get(pickUpSelection);
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                if ((char)tolower(pickUpSelection) == 'y') {
+                    ItemContainer* playerInventory = &t_playerCharacter->Inventory();
+                    int addResult = playerInventory->AddNewItem(target);
+                    if (addResult == -1) {
+                        std::cout << "Can't add the item to the inventory! Try dropping an item to free up space!" << std::endl;
+                    }
+                    else {
+                        std::cout << t_playerCharacter->Name() << " added " << target->GetItemName() << " to their inventory!" << std::endl;
+
+                        currentMap->setEmpty((*pickUpAction).row - 1, (*pickUpAction).col - 1);
+                    }
+                }
+            }
+
+            break;
+        }
         case 'M':
             int xOld, yOld;
             xOld = x;
@@ -186,24 +217,24 @@ namespace game
             if (direction == "up") {
                 currentMap->MoveCharacter(x-1, y, t_playerCharacter);
                 currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << yOld << "," << xOld << ") -> (" << y << "," << x << ")" << std::endl;
+                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
             }
             else if (direction == "down") {
                 currentMap->MoveCharacter(x+1, y, t_playerCharacter);
                 currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << yOld << "," << xOld << ") -> (" << y << "," << x << ")" << std::endl;
+                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
 
             }
             else if (direction == "left") {
                 currentMap->MoveCharacter(x, y-1, t_playerCharacter);
                 currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << yOld << "," << xOld << ") -> (" << y << "," << x << ")" << std::endl;
+                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
 
             }
             else if (direction == "right") {
                 currentMap->MoveCharacter(x, y+1, t_playerCharacter);
                 currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << xOld << ") -> (" << y << "," << x << ")" << std::endl;
+                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
             }else{
                 std::cout << "Invalid direction!" << std::endl;
             }
