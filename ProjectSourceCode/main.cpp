@@ -75,6 +75,11 @@ int main()
 	campaign::Campaign* currentCampaign = new campaign::Campaign(1,1);
 	//Add map to campaing
 	currentCampaign->AddMapToCampaign(1, 1, *currentMap);
+	CampaignMap currentCampaignMap;
+	currentCampaignMap.coorX = 1;
+	currentCampaignMap.coorY = 1;
+	currentCampaignMap.mapID = currentMap->GetMapID();
+	currentCampaign->SetCurrentMap(currentCampaignMap);
 	//Create game instance	
 	game::Game* currentGame = new game::Game();
 	//set currentCampaiogn in currentGame
@@ -96,6 +101,15 @@ int main()
 	while (userInput != 'E') {
 		currentGame->GetUserSelection(userInput);
 		currentGame->ProcessUserAction(userInput,playerCharacter);
+
+		if (currentGame->GetActiveCharacter() != playerCharacter) {
+			int x, y;
+			currentMap->GetCharacterCoordinates(x, y, currentGame->GetActiveCharacter());
+
+			CellActionInfo npcCellAction = currentGame->GetActiveCharacter()->DecideNPCAction(currentMap->getGrid(), x + 1, y + 1);
+			currentGame->EndTurn(npcCellAction.actionName, npcCellAction.row, npcCellAction.col);
+		}
+
 		currentGame->PrintActionMenu(playerCharacter);
 	}
 	return 0;

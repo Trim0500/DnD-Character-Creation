@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <sstream>
+#include <iterator>
 
 #include "EmptyCell.h"
 #include "game.h"
@@ -64,11 +65,20 @@ namespace game
             std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentLoadedMap->getGrid();
             Character::Character* target = static_cast<Character::Character*>(mapGrid[_targetX - 1][_targetY - 1]);
             bool targetDied = activeCharacter->AttemptAttack(target);
+
+            std::ostringstream attackUpdateMessage;
+            attackUpdateMessage << "Attack results: " << target->Name() << " now at " << target->Hit_Points() << std::endl;
+            std::cout << attackUpdateMessage.str();
+
             if (targetDied) {
                 charactersInMap.erase(std::remove(charactersInMap.begin(), charactersInMap.end(), target), charactersInMap.end());
                 
                 Interactable::Interactable* targetsItems = &target->Inventory();
                 currentLoadedMap->setCell(_targetX - 1, _targetY - 1, targetsItems);
+
+                std::ostringstream killUpdateMessage;
+                killUpdateMessage << target->Name() << " killed! Inventory dropped. " << std::endl;
+                std::cout << killUpdateMessage.str();
             }
         }
 
@@ -78,6 +88,11 @@ namespace game
         std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
                                                                                             charactersInMap.end(),
                                                                                             [activeCharacterPointer](Character::Character* character){ return character == activeCharacterPointer; });
+        currentActiveCharacter = std::next(currentActiveCharacter, 1);
+        if (currentActiveCharacter == charactersInMap.end()) {
+            currentActiveCharacter = charactersInMap.begin();
+        }
+
         activeCharacter = (*currentActiveCharacter);
     }
     void Game::PrintActionMenu(Character::Character* _player)
@@ -115,6 +130,8 @@ namespace game
             std::cout << "A. Attack Character" << std::endl;
         }
 
+        std::cout << "D. Do Nothing" << std::endl;
+
         std::cout << "---------- Systems Actions ----------" << std::endl;
         std::cout << "Press 'E' and 'Enter' to exit" << std::endl;
 
@@ -128,9 +145,9 @@ namespace game
     void Game::ProcessUserAction(const char& t_selection, Character::Character* t_playerCharacter)
     {
         //hold current character
-        Character::Character* current_character_buffer = this->GetActiveCharacter();
+        //Character::Character* current_character_buffer = this->GetActiveCharacter();
         //set active character to player character
-        this->SetActiveCharacter(t_playerCharacter);
+        //this->SetActiveCharacter(t_playerCharacter);
         //get current map
         int x, y;
         Map::Map* currentMap = GetGameCampaign()->GetMapsInCampaign()[0];
@@ -228,6 +245,20 @@ namespace game
             std::cout << "Unkown Action!" << std::endl;
             break;
         }
-        this->SetActiveCharacter(current_character_buffer);
+
+        if (t_selection == 'M' || t_selection == 'A' || t_selection == 'D') {
+            Character::Character* activeCharacterPointer = activeCharacter;
+            std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
+                                                                                                charactersInMap.end(),
+                                                                                                [activeCharacterPointer](Character::Character* character){ return character == activeCharacterPointer; });
+            currentActiveCharacter = std::next(currentActiveCharacter, 1);
+            if (currentActiveCharacter == charactersInMap.end()) {
+                currentActiveCharacter = charactersInMap.begin();
+            }
+
+            activeCharacter = (*currentActiveCharacter);
+        }
+
+        //this->SetActiveCharacter(current_character_buffer);
     }
 }

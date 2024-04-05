@@ -94,6 +94,8 @@ namespace campaign {
 
             CampaignMap GetCurrentMap() {return currentMap;};
 
+            void SetCurrentMap(CampaignMap _currentMap) { currentMap = _currentMap; };
+
             /*!
             * \fn AddMapToCampaign
             * \brief Function to add a new Map instance to the campaign and set the ID at the cell

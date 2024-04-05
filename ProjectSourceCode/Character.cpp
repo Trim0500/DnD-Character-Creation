@@ -21,7 +21,7 @@ namespace {
 
 			for (int j = minY; j < maxY; j++)
 			{
-				if (j < 1 || j > _mapGrid[i].size() || (i == _posX && j == _posY)) {
+				if (j < 1 || j > _mapGrid[0].size() || (i == _posX && j == _posY)) {
 					continue;
 				}
 
@@ -42,35 +42,36 @@ namespace {
 								const std::vector<CellActionInfo>& _npcActionInfo,
 								const int& _posX,
 								const int& _posY,
-								CharacterActionStrategy* _actionStrategy) {
-		CellActionInfo result;
-
+								CharacterActionStrategy* _actionStrategy)
+	{
 		// Decide what to do based on that info
 		if (_playerLocation.size() == 0) {
 			int actionIndex = rand() % _npcActionInfo.size() - 1;
-			result = _npcActionInfo[actionIndex];
+			return _npcActionInfo[actionIndex];
 		}
 		else {
 			// Calculate the absolute difference for vertical and horizontal movement, if same move to next phase, other wise deteremine which dir to go to
 			int playerX = _playerLocation[0];
 			int playerY = _playerLocation[1];
 
-			int horizontalDifference = playerX - _posX;
-			int verticalDifference = playerY - _posY;
+			int rowDifference = playerX - _posX;
+			int colDifference = playerY - _posY;
 
-			if ((abs(verticalDifference) == 1 || abs(horizontalDifference) == 1) && dynamic_cast<AggressorStrategy*>(_actionStrategy)) {
+			if (((abs(colDifference) == 1 && rowDifference == 0) ||
+				(abs(rowDifference) == 1 && colDifference == 0))
+				&& dynamic_cast<AggressorStrategy*>(_actionStrategy)) {
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
 					if (_npcActionInfo[i].actionName == Character::ATTACK_CELL_ACTION) {
-						result = _npcActionInfo[i];
+						return _npcActionInfo[i];
 					}
 				}
 				
 			}
-			else if(abs(verticalDifference) < abs(horizontalDifference)) {
+			else if(abs(rowDifference) < abs(colDifference)) {
 				int targetY;
 
-				if (verticalDifference < 0) {
+				if (colDifference < 0) {
 					targetY = _posY - 1;
 				}
 				else {
@@ -80,14 +81,14 @@ namespace {
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
 					if (_npcActionInfo[i].col == targetY) {
-						result = _npcActionInfo[i];
+						return _npcActionInfo[i];
 					}
 				}
 			}
 			else {
 				int targetX;
 
-				if (horizontalDifference < 0) {
+				if (rowDifference < 0) {
 					targetX = _posX - 1;
 				}
 				else {
@@ -97,7 +98,7 @@ namespace {
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
 					if (_npcActionInfo[i].col == targetX) {
-						result = _npcActionInfo[i];
+						return _npcActionInfo[i];
 					}
 				}
 			}
@@ -105,10 +106,6 @@ namespace {
 			// based on direction, compare player's x or y against npc (hori: if +, move right, left otherwise, vert: if +, move down, up otherwise)
 			// If diff is 1 or -1 choose attack
 		}
-
-		// Return the decision
-
-		return result;
 	}
 }
 
