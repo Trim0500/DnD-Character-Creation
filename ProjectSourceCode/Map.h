@@ -83,7 +83,8 @@ namespace Map {
 		int GetMapID() { return mapID; };
 		const int getRows() { return rows; };
 		const int getCols() { return cols; };
-		const int* getEnd_Cell() { return endCell; };
+		const int* getStartCell() { return startCell; };
+		const int* getEndCell() { return endCell; };
 		const std::vector<std::vector<Interactable::Interactable*>> getGrid() { return grid; };
 
 		/*!
@@ -158,7 +159,6 @@ namespace Map {
 		int cols;
 		/*!
 		* \var end_cell
-		* \brief start = upper right cell, ie: 0,0, end = lower left cell, ie: cols.length-1, rows.lenght-1
 		*/
 		int endCell[2];
 

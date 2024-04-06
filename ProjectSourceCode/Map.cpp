@@ -62,7 +62,8 @@ void Map::Map::setCols(int cols)
 	this->cols = cols;
 }
 
-void Map::Map::setEndCell(int row, int col) {
+void Map::Map::setEndCell(int row, int col) 
+{
 	this->setEmpty(row, col);
 	this->endCell[0] = row;
 	this->endCell[1] = col;
