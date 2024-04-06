@@ -304,8 +304,8 @@ void Map::Map::printMap()
 void Map::Map::GetCharacterCoordinates(int& x, int& y, Character::Character* t_character)
 {
 	int id = t_character->ID();
-	for (int i = 0; i < cols; i++) {
-		for (int j = 0; j < rows; j++) {
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
 			Character::Character* characterCell = dynamic_cast<Character::Character*>(grid[i][j]);
 			if (characterCell != nullptr && characterCell->ID() == id) {
 				x = i;

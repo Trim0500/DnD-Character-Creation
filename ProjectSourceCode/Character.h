@@ -317,6 +317,9 @@ namespace Character {
 		*  \return Returns const int to desired modifier. Modifier is detremined using ability scores and item bonuses
 		*/
 		const int Modifier(Abilities_Stats t_ability);
+
+		int ModifierDecorator(int) override;
+
 		/*!
 		* \fn Ability_Score_Natural
 		* \brief Overriden function that is meant to get the raw ability score of a character based on the parameter specified
@@ -420,6 +423,12 @@ namespace Character {
 
 		CellActionInfo DecideNPCAction(const std::vector<std::vector<Interactable*>>&, const int&, const int&);
 
+		std::string Get_Class_String(Character_Class t_class);
+		std::string Get_Class_String(int t_class);
+		std::string Get_Abilities_String(Abilities_Stats t_abilities);
+		std::string Get_Item_Type_String(item::ItemType t_type);
+		std::string Get_Equipment_Slot_String(Equipment_Slots t_slot);
+
 	private:
 		/*!
 		* \var observers
@@ -455,11 +464,7 @@ namespace Character {
 
 		itemcontainer::ItemContainer inventory = itemcontainer::ItemContainer("Inventory", Backpack, 30);
 
-		std::string Get_Class_String(Character_Class t_class);
-		std::string Get_Class_String(int t_class);
-		std::string Get_Abilities_String(Abilities_Stats t_abilities);
-		std::string Get_Item_Type_String(item::ItemType t_type);
-		std::string Get_Equipment_Slot_String(Equipment_Slots t_slot);
+
 
 		/*! \fn setAttribute(Abilities_Stats t_ability, int t_val)
 		* \private function that allows attribute values to be set without leveling up 

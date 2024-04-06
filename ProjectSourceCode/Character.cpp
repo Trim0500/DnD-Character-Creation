@@ -21,7 +21,7 @@ namespace {
 
 			for (int j = minY; j < maxY; j++)
 			{
-				if (j < 1 || j > _mapGrid[i].size() || (i == _posX && j == _posY)) {
+				if (j < 1 || j > _mapGrid[0].size() || (i == _posX && j == _posY)) {
 					continue;
 				}
 
@@ -42,35 +42,36 @@ namespace {
 								const std::vector<CellActionInfo>& _npcActionInfo,
 								const int& _posX,
 								const int& _posY,
-								CharacterActionStrategy* _actionStrategy) {
-		CellActionInfo result;
-
+								CharacterActionStrategy* _actionStrategy)
+	{
 		// Decide what to do based on that info
 		if (_playerLocation.size() == 0) {
 			int actionIndex = rand() % _npcActionInfo.size() - 1;
-			result = _npcActionInfo[actionIndex];
+			return _npcActionInfo[actionIndex];
 		}
 		else {
 			// Calculate the absolute difference for vertical and horizontal movement, if same move to next phase, other wise deteremine which dir to go to
 			int playerX = _playerLocation[0];
 			int playerY = _playerLocation[1];
 
-			int horizontalDifference = playerX - _posX;
-			int verticalDifference = playerY - _posY;
+			int rowDifference = playerX - _posX;
+			int colDifference = playerY - _posY;
 
-			if ((abs(verticalDifference) == 1 || abs(horizontalDifference) == 1) && dynamic_cast<AggressorStrategy*>(_actionStrategy)) {
+			if (((abs(colDifference) == 1 && rowDifference == 0) ||
+				(abs(rowDifference) == 1 && colDifference == 0))
+				&& dynamic_cast<AggressorStrategy*>(_actionStrategy)) {
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
 					if (_npcActionInfo[i].actionName == Character::ATTACK_CELL_ACTION) {
-						result = _npcActionInfo[i];
+						return _npcActionInfo[i];
 					}
 				}
 				
 			}
-			else if(abs(verticalDifference) < abs(horizontalDifference)) {
+			else if(abs(rowDifference) < abs(colDifference)) {
 				int targetY;
 
-				if (verticalDifference < 0) {
+				if (colDifference < 0) {
 					targetY = _posY - 1;
 				}
 				else {
@@ -80,14 +81,14 @@ namespace {
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
 					if (_npcActionInfo[i].col == targetY) {
-						result = _npcActionInfo[i];
+						return _npcActionInfo[i];
 					}
 				}
 			}
 			else {
 				int targetX;
 
-				if (horizontalDifference < 0) {
+				if (rowDifference < 0) {
 					targetX = _posX - 1;
 				}
 				else {
@@ -96,8 +97,8 @@ namespace {
 
 				for (int i = 0; i < (int)_npcActionInfo.size(); i++)
 				{
-					if (_npcActionInfo[i].col == targetX) {
-						result = _npcActionInfo[i];
+					if (_npcActionInfo[i].row == targetX) {
+						return _npcActionInfo[i];
 					}
 				}
 			}
@@ -105,10 +106,6 @@ namespace {
 			// based on direction, compare player's x or y against npc (hori: if +, move right, left otherwise, vert: if +, move down, up otherwise)
 			// If diff is 1 or -1 choose attack
 		}
-
-		// Return the decision
-
-		return result;
 	}
 }
 
@@ -302,42 +299,43 @@ void Character::Character::Print_Character_Sheet()
 	std::cout << std::right << std::setw(25) << "Level: " << Sum_Levels() << std::endl;
 	std::cout << std::right << std::setw(25) << "HP: " << Hit_Points()<<"/"<<Max_Hit_Points() << std::endl;
 	std::cout << std::right << std::setw(25) << "Proficiency Bonus: " << Proficiency_Bonus() << std::endl;
-	std::cout << std::right << std::setw(25) << "Armour Class: " << Armour_Class() << std::endl;
+	std::cout << std::right << std::setw(25) << "Armour Class: " << wornItems->ModifierDecorator(ArmorClass) << std::endl;
 	std::cout << std::right << std::setw(25) << "Attack Bonus: ";
 	for (int i{ 1 }; i <= Attacks_Per_Turn(); i++) {
-		std::cout << Attack_Bonus(i);
+		std::cout << wornItems->Ability_Score_Natural(AttackBonus, i);
 		if (i != Attacks_Per_Turn()) {
 			std::cout << ", ";
 		}
 	}
 	std::cout << std::endl;
-	std::cout << std::right << std::setw(25) << "Damage Bonus: " << Damage_Bonus() << std::endl;
+	std::cout << std::right << std::setw(25) << "Damage Bonus: " << wornItems->Ability_Score_Natural(DamageBonus, 0) << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(65) << "ABILITY SCORES" << std::endl;
 	std::cout << std::right << std::setw(35) << "Ability" << " | " << std::left << std::setw(35) << "Score"
 	<< " | " << std::left << std::setw(35) << "Modifier" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
-	std::cout << std::right << std::setw(35) << "Strength" <<" | "<< std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Strength)<<" | "<<std::right<<std::setw(2) << Modifier(Abilities_Stats::Strength) << std::endl;
-	std::cout << std::right << std::setw(35) << "Dexterity" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Dexterity) <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Dexterity) << std::endl;
-	std::cout << std::right << std::setw(35) << "Constitution" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Constitution) <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Constitution) << std::endl;
-	std::cout << std::right << std::setw(35) << "Intelligence" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Intelligence) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Intelligence) << std::endl;
-	std::cout << std::right << std::setw(35) << "Wisdom" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Wisdom) << std::left <<" | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Wisdom) << std::endl;
-	std::cout << std::right << std::setw(35) << "Charisma" << " | " << std::left << std::setw(35) << Ability_Score_Bonused(Abilities_Stats::Charisma) << " | " << std::right << std::setw(2) << Modifier(Abilities_Stats::Charisma) << std::endl;
+	std::cout << std::right << std::setw(35) << "Strength" <<" | "<< std::left << std::setw(35) << wornItems->Ability_Score_Natural(Strength, 0)<<" | "<<std::right<<std::setw(2) << wornItems->ModifierDecorator(Strength) << std::endl;
+	std::cout << std::right << std::setw(35) << "Dexterity" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Dexterity, 0) <<" | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Dexterity) << std::endl;
+	std::cout << std::right << std::setw(35) << "Constitution" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Constitution, 0) <<" | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Constitution) << std::endl;
+	std::cout << std::right << std::setw(35) << "Intelligence" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Intelligence, 0) << " | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Intelligence) << std::endl;
+	std::cout << std::right << std::setw(35) << "Wisdom" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Wisdom, 0) << std::left <<" | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Wisdom) << std::endl;
+	std::cout << std::right << std::setw(35) << "Charisma" << " | " << std::left << std::setw(35) << wornItems->Ability_Score_Natural(Charisma, 0) << " | " << std::right << std::setw(2) << wornItems->ModifierDecorator(Charisma) << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
 	std::cout << std::right << std::setw(65) << "EQUIPPED ITEMS" << std::endl;
 	std::cout << std::right << std::setw(35) << "Equipment slot"<<" | " << std::left<<std::setw(35) << " Name (ID)" 
 	<< " | "  << std::left << std::setw(35) << "Enchantment" << std::endl;
 	std::cout << std::string(100, '-') << std::endl;
-	for (auto i : equipment_slots) {
-		if (i.second != nullptr) {
-			std::cout << std::right << std::setw(35) << Get_Equipment_Slot_String(i.first) << " | ";
-			std::cout << std::left << std::setw(35) << i.second->GetItemName() <<" ("<<i.second->GetItemId()<<")";
+	for (int j{ 0 }; j < wornItems->GetDecoratorList().size(); j++) {
+		item::Item* i = dynamic_cast<item::Item*>(wornItems->GetDecoratorList().at(j));
+		if (i != nullptr) {
+			std::cout << std::right << std::setw(35) << item::itemTypeStrings[i->GetItemType()] << " | ";
+			std::cout << std::left << std::setw(35) << i->GetItemName() <<" ("<<i->GetItemId()<<")";
 			std::cout<< std::right << std::setw(3) << " | ";
-			if (i.second->GetEnchantmentBonus() > 0) {
+			if (i->GetEnchantmentBonus() > 0) {
 				std::cout << "+";
 			}
-			std::cout << i.second->GetEnchantmentBonus()<<" ";
-			std::cout << Get_Abilities_String(item_stat_TO_character_stat.at(i.second->GetEnchantmentType())) << std::endl;
+			std::cout << i->GetEnchantmentBonus()<<" ";
+			std::cout << Get_Abilities_String(item_stat_TO_character_stat.at(i->GetEnchantmentType())) << std::endl;
 		}
 	}
 	std::cout << std::string(100, '-') << std::endl;
@@ -407,35 +405,44 @@ bool Character::Character::Levelup(Character_Class t_class, bool t_average_hp)
 
 bool Character::Character::Equip_Item(item::Item* t_item) {
 	
+	item::Item* pointer_to_item = nullptr;
 	if (inventory.GetItem(t_item->GetItemName()) == nullptr) {
 		std::cout << "Could not equipe '" << t_item->GetItemName() << "'. Item could not be found in inventory" << std::endl;
 		return false;
 	}
+	else {
+		for (int i{ 0 }; i < inventory.GetAllItems().size(); i++) {
+			if (inventory.GetAllItems().at(i).GetItemId() == t_item->GetItemId()) {
+				pointer_to_item = &inventory.GetAllItems().at(i);
+			}
+		}
+	}
+
 	switch (t_item->GetItemType())
 	{
 	case Helmet:
-		equipment_slots[Equipment_Slots::Helmet] = t_item;
+		equipment_slots[Equipment_Slots::Helmet] = pointer_to_item;
 		break;
 	case Armor:
-		equipment_slots[Equipment_Slots::Armor] = t_item;
+		equipment_slots[Equipment_Slots::Armor] = pointer_to_item;
 		break;
 	case Shield:
-		equipment_slots[Equipment_Slots::Shield] = t_item;
+		equipment_slots[Equipment_Slots::Shield] = pointer_to_item;
 		break;
 	case Ring:
-		equipment_slots[Equipment_Slots::Ring] = t_item;
+		equipment_slots[Equipment_Slots::Ring] = pointer_to_item;
 		break;
 	case Belt:
-		equipment_slots[Equipment_Slots::Belt] = t_item;
+		equipment_slots[Equipment_Slots::Belt] = pointer_to_item;
 		break;
 	case Boots:
-		equipment_slots[Equipment_Slots::Boots] = t_item;
+		equipment_slots[Equipment_Slots::Boots] = pointer_to_item;
 		break;
 	case Weapon:
-		equipment_slots[Equipment_Slots::Weapon] = t_item;
+		equipment_slots[Equipment_Slots::Weapon] = pointer_to_item;
 		break;
 	case Backpack:
-		equipment_slots[Equipment_Slots::Bag] = t_item;
+		equipment_slots[Equipment_Slots::Bag] = pointer_to_item;
 		break;
 	default:
 		std::cerr << "Could not equipe '" << t_item->GetItemName() << "'. No corresponding equipment slot" << std::endl;
@@ -463,7 +470,7 @@ void Character::Character::Equip_Item_Decorator(item::Item* _itemToEquip) {
 		if (_itemToEquip->GetItemType() == equippedItem->GetItemType()) {
 			std::ostringstream excMessage;
 			excMessage << "[Character/Equip_Item_Decorator] -- Can't equip another " << itemTypeStrings[_itemToEquip->GetItemType() - 1];
-			throw std::invalid_argument(excMessage.str().c_str());
+ 			throw std::invalid_argument(excMessage.str().c_str());
 		}
 	}
 	
@@ -557,6 +564,28 @@ const int Character::Character::Modifier(Abilities_Stats t_ability)
 	return modifier;
 }
 
+int Character::Character::ModifierDecorator(int t_ability) {
+	if (t_ability == 6) {
+		int armorResult = Ability_Score_Natural(t_ability, 0) + ModifierDecorator(CharacterStats::Dexterity);
+
+		return armorResult;
+	}
+
+	int scoreResult = Ability_Score_Natural(t_ability, 0);
+
+	int modifier{ 0 };
+	try {
+		modifier = std::floor(((float)(scoreResult - 10) / 2));
+	}
+	catch (std::exception& e) {
+		std::cerr << &e << std::endl;
+
+		return 0;
+	}
+
+	return modifier;
+}
+
 int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_number)
 {
 	int score;
@@ -589,7 +618,7 @@ int Character::Character::Ability_Score_Natural(int t_ability, int t_attack_numb
 			}
 		}
 		else {
-			score = ability_scores[(int)t_ability];
+			score = ability_scores[t_ability];
 		}
 	}
 	catch (std::exception& e) {
@@ -610,9 +639,10 @@ const int Character::Character::Ability_Score_Bonused(Abilities_Stats t_ability)
 		return 0;
 	}
 	for (auto i : equipment_slots) {
+		item::Item* equipped_item = i.second;
 		try {
-			if (i.second != nullptr && item_stat_TO_character_stat.at(i.second->GetEnchantmentType()) == t_ability) {
-				score += i.second->GetEnchantmentBonus();
+			if (equipped_item != nullptr && item_stat_TO_character_stat.at(i.second->GetEnchantmentType()) == t_ability) {
+				score += equipped_item->GetEnchantmentBonus();
 			}
 		}
 		catch (std::exception& e) {
@@ -704,7 +734,9 @@ void Character::Character::TakeItems(itemcontainer::ItemContainer* _targetContai
 
 	_targetContainer->RemoveItems(_selectedItems);
 
-	CreateObserverMessage();
+	std::ostringstream observerMessage;
+	observerMessage << "[Character/TakeItems] -- " << name << " took some items from " << _targetContainer->GetItemName() << ". Inventory updated.";
+	CreateObserverMessage(observerMessage.str());
 }
 
 void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, const int& _targetContainerID) {
@@ -719,7 +751,9 @@ void Character::Character::DropItems(const std::vector<Item*>& _selectedItems, c
 
 	targetContainer->RemoveItems(_selectedItems);
 
-	CreateObserverMessage();
+	std::ostringstream observerMessage;
+	observerMessage << "[Character/DropItems] -- " << name << " dropped some items from " << targetContainer->GetItemName() << ". Inventory updated.";
+	CreateObserverMessage(observerMessage.str());
 }
 
 std::string Character::Character::Get_Abilities_String(Abilities_Stats t_abilities)

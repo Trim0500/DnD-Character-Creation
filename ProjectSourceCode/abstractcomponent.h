@@ -27,6 +27,8 @@ namespace abstractcomponent
             */
             virtual int Ability_Score_Natural(int, int) { return 0; };
 
+            virtual int ModifierDecorator(int) { return 0; }
+
             /*!
             * \fn GetDecoratorList
             * \brief Virtual function that is meant to be overriden to establish the decorators in play

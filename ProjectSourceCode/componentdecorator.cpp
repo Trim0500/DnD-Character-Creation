@@ -9,6 +9,10 @@ namespace componentdecorator {
         return wrappee->Ability_Score_Natural(_anilityScore, _attackTurnNumber);
     }
 
+    int ComponentDecorator::ModifierDecorator(int _anilityScore) {
+        return Ability_Score_Natural(_anilityScore, 0);
+    }
+
     std::vector<AbstractComponent*> ComponentDecorator::GetDecoratorList() {
         return wrappee->GetDecoratorList();
     }
