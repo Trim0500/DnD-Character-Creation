@@ -8,7 +8,7 @@
 #include "MapBuilder.h"
 #include "..\Character\Character.h"
 #include "..\Interactable\EmptyCell.h"
-#include "..\item.h"
+#include "..\Item\item.h"
 #include "MapBuilder.h"
 #include "..\Interactable\Wall.h"
 

@@ -17,7 +17,7 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Float_Input.H>
 
-#include "../ProjectSourceCode/item.h"
+#include "../ProjectSourceCode/Item/item.h"
 #include "../ProjectSourceCode/Character/Character.h"
 #include "../ProjectSourceCode/Serialize/serializeItem.h"
 

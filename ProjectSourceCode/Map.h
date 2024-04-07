@@ -14,7 +14,7 @@
 
 #include "Interactable/Interactable.h"
 #include "Character/Character.h"
-#include "item.h"
+#include "Item\item.h"
 #include "Observer\Observable.h"
 #include "Interactable/EmptyCell.h"
 

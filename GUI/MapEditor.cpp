@@ -10,7 +10,7 @@
 #include "../ProjectSourceCode/Interactable/Wall.h"
 #include "../ProjectSourceCode/Interactable/EmptyCell.h"
 #include "../ProjectSourceCode/Character/Character.h"
-#include "../ProjectSourceCode/item.h"
+#include "../ProjectSourceCode/Item/item.h"
 #include "../ProjectSourceCode/Builder/MapBuilder.h"
 
 using namespace CampaignEditor;

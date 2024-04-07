@@ -15,8 +15,8 @@
 #include <vector>
 
 #include "..\Dice\Dice.h"
-#include "..\item.h"
-#include "..\itemcontainer.h"
+#include "..\Item\item.h"
+#include "..\Item\itemcontainer.h"
 #include "..\Observer\Observable.h"
 #include "..\Serialize\serializeItem.h"
 #include "..\Decorator\abstractcomponent.h"

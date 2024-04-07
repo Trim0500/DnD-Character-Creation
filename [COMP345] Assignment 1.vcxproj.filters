@@ -18,10 +18,10 @@
     <ClCompile Include="ProjectSourceCode\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\item.cpp">
+    <ClCompile Include="ProjectSourceCode\Item\item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\itemcontainer.cpp">
+    <ClCompile Include="ProjectSourceCode\Item\itemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\Test\testitem.cpp">
@@ -131,10 +131,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ProjectSourceCode\item.h">
+    <ClInclude Include="ProjectSourceCode\Item\item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\itemcontainer.h">
+    <ClInclude Include="ProjectSourceCode\Item\itemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Test\testitem.h">

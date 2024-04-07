@@ -2,8 +2,8 @@
 #include <string>
 
 #include "demoitem.h"
-#include "..\item.h"
-#include "..\itemcontainer.h"
+#include "..\Item\item.h"
+#include "..\Item\itemcontainer.h"
 
 // using namespace std;
 using namespace item;

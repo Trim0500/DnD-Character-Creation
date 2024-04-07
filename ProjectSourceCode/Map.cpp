@@ -10,7 +10,7 @@
 #include "Character/Character.h"
 #include "Interactable/EmptyCell.h"
 #include "Interactable/Interactable.h"
-#include "item.h"
+#include "Item\item.h"
 #include "Map.h"
 #include "Interactable/Wall.h"
 
