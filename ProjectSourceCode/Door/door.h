@@ -7,11 +7,15 @@
 namespace door {
     struct DoorDestinationInfo
     {
-        int destinationX;
-
-        int destinationY;
-
         int mapID;
+
+        int mapLocationX; // 1-indexed
+
+        int mapLocationY; // 1-indexed
+
+        int destinationX; // 1-indexed
+
+        int destinationY; // 1-indexed
     };
     
 
@@ -19,11 +23,19 @@ namespace door {
         public:
             Door() { nextDoorID++; doorID = nextDoorID; };
 
-            Door(int _doorID, int _firstMapID, int _secondMapID, std::vector<int> _firstMapSpawnPoint, std::vector<int> _secondMapSpawnPoint)
+            Door(int _doorID,
+                    int _firstMapID,
+                    int _secondMapID,
+                    std::vector<int> _firstMapLocation,
+                    std::vector<int> _secondMapLocation,
+                    std::vector<int> _firstMapSpawnPoint,
+                    std::vector<int> _secondMapSpawnPoint)
             {
                 doorID = _doorID;
                 firstMapID = _firstMapID;
                 secondMapID = _secondMapID;
+                firstMapLocation = _firstMapLocation;
+                secondMapLocation = _secondMapLocation;
                 firstMapSpawnPoint = _firstMapSpawnPoint;
                 secondMapSpawnPoint = _secondMapSpawnPoint;
             };
@@ -32,6 +44,8 @@ namespace door {
                 doorID = _door.doorID;
                 firstMapID = _door.firstMapID;
                 secondMapID = _door.secondMapID;
+                firstMapLocation = _door.firstMapLocation;
+                secondMapLocation = _door.secondMapLocation;
                 firstMapSpawnPoint = _door.firstMapSpawnPoint;
                 secondMapSpawnPoint = _door.secondMapSpawnPoint;
             }
@@ -54,6 +68,14 @@ namespace door {
 
             void SetSecondMapID(int _secondMapID) { secondMapID = _secondMapID; };
             
+            std::vector<int> GetFirstMapLocation() { return firstMapLocation; };
+
+            void SetFirstMapLocation(std::vector<int> _firstMapLocation) { firstMapLocation = _firstMapLocation; };
+            
+            std::vector<int> GetSecondMapLocation() { return secondMapLocation; };
+
+            void SetSecondMapLocation(std::vector<int> _secondMapLocation) { secondMapLocation = _secondMapLocation; };
+
             std::vector<int> GetFirstMapSpawnPoint() { return firstMapSpawnPoint; };
 
             void SetFirstMapSpawnPoint(std::vector<int> _firstMapSpawnPoint) { firstMapSpawnPoint = _firstMapSpawnPoint; };
@@ -72,8 +94,12 @@ namespace door {
 
             int secondMapID;
 
-            std::vector<int> firstMapSpawnPoint;
+            std::vector<int> firstMapLocation; //Locations are 1-indexed
 
-            std::vector<int> secondMapSpawnPoint;
+            std::vector<int> secondMapLocation; //Locations are 1-indexed
+
+            std::vector<int> firstMapSpawnPoint; //Locations are 1-indexed
+
+            std::vector<int> secondMapSpawnPoint; //Locations are 1-indexed
     };
 }

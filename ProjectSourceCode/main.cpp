@@ -11,10 +11,12 @@
 #include "../GUI/MainMenu.h"
 #include "Interactable/Wall.h"
 #include "Game/gamelogger.h"
+#include "Door\door.h"
 
 using namespace CppUnit;
 using namespace CampaignEditor;
 using namespace gamelogger;
+using namespace door;
 
 int main()
 {
@@ -48,8 +50,29 @@ int main()
 	Character::Character* playerCharacter = new Character::Character();
 	Character::Character* enemyCharacter = new Character::Character("Testaniel Unitoph", Character::Character_Class::Fighter, false, new AggressorStrategy());
 	playerCharacter->Inventory().AddNewItem(new item::Item("testShield", 2, Shield, ArmorClass, 10));
+
 	//Create map
 	Map::Map* currentMap = new Map::Map(20,20);
+	std::vector<int> currentMapLocation;
+	currentMapLocation.push_back(1);
+	currentMapLocation.push_back(1);
+
+	std::vector<int> currentMapDoorSpawnPoint;
+	currentMapDoorSpawnPoint.push_back(12);
+	currentMapDoorSpawnPoint.push_back(9);
+
+	Map::Map* otherMap = new Map::Map(10, 10);
+	std::vector<int> otherMapLocation;
+	otherMapLocation.push_back(2);
+	otherMapLocation.push_back(1);
+
+	std::vector<int> otherMapDoorSpawnPoint;
+	otherMapDoorSpawnPoint.push_back(6);
+	otherMapDoorSpawnPoint.push_back(5);
+
+	Door* door = new Door(1, currentMap->GetMapID(), otherMap->GetMapID(), currentMapLocation, otherMapLocation, currentMapDoorSpawnPoint, otherMapDoorSpawnPoint);
+	currentMap->setCell(10, 8, door);
+	otherMap->setCell(4, 4, door);
 
 	GameLogger* gameLogger = new GameLogger(currentMap);
 	playerCharacter->Attach(gameLogger);
@@ -87,9 +110,10 @@ int main()
 	currentMap->setCell(8, 8, backpackObject);
 
 	//Create campaign
-	campaign::Campaign* currentCampaign = new campaign::Campaign(1,1);
+	campaign::Campaign* currentCampaign = new campaign::Campaign(2, 2);
 	//Add map to campaing
 	currentCampaign->AddMapToCampaign(1, 1, *currentMap);
+	currentCampaign->AddMapToCampaign(2, 1, *otherMap);
 	CampaignMap currentCampaignMap;
 	currentCampaignMap.coorX = 1;
 	currentCampaignMap.coorY = 1;
@@ -114,7 +138,10 @@ int main()
 		system("cls");
 
 		//Print map
-		currentMap->printMap();
+		//currentMap->printMap();
+		CampaignMap currentCampaignMap = currentGame->GetGameCampaign()->GetCurrentMap();
+		Map::Map* map = currentGame->GetGameCampaign()->GetMap(currentCampaignMap.coorX, currentCampaignMap.coorY);
+		map->printMap();
 
 		currentGame->PrintActionMenu(playerCharacter);
 

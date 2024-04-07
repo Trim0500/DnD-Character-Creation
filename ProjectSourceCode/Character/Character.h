@@ -145,6 +145,7 @@ namespace Character {
 	const std::string EMPTY_CELL_ACTION = "move";
 	const std::string ATTACK_CELL_ACTION = "attack";
 	const std::string PICKUP_CELL_ACTION = "pickup";
+	const std::string DOOR_CELL_ACTION = "door";
 
 
 	/*! \class Character

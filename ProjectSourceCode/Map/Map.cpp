@@ -7,12 +7,15 @@
 #include <string>
 #include <sstream>
 
+#include "Map.h"
 #include "..\Character\Character.h"
 #include "..\Interactable\EmptyCell.h"
 #include "..\Interactable\Interactable.h"
 #include "..\Item\item.h"
-#include "Map.h"
 #include "..\Interactable\Wall.h"
+#include "..\Door\door.h"
+
+using namespace door;
 
 void Map::Map::Notify() {
 	for (int i = 0; i < (int)observers.size(); i++)
@@ -260,9 +263,10 @@ void Map::Map::printMap()
 			Wall* wallCell = dynamic_cast<Wall*>(grid[i][j]);
 			item::Item* itemCell = dynamic_cast<item::Item*>(grid[i][j]);
 			itemcontainer::ItemContainer* itemContainerCell = dynamic_cast<itemcontainer::ItemContainer*>(grid[i][j]);
+			Door* doorCell = dynamic_cast<Door*>(grid[i][j]);
 
 			if (characterCell && characterCell->GetIsPlayerControlled()) {
-				std::cout << "C ";
+				std::cout << "P ";
 			}
 			else if (characterCell) {
 				std::cout << "N ";
@@ -274,10 +278,13 @@ void Map::Map::printMap()
 				std::cout <<char(178) << " ";
 			}
 			else if (itemContainerCell) {
-				std::cout << "Co ";
+				std::cout << "C ";
 			}
 			else if (itemCell) {
 				std::cout <<char(233) << " ";
+			}
+			else if (doorCell) {
+				std::cout << "D ";
 			}
 
 			int extraSpaces = j / 10;
