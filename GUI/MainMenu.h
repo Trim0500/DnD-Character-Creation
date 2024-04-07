@@ -91,7 +91,7 @@ namespace CampaignEditor
 						if (p.path().extension() == ext)
 						{
 							std::string s = p.path().string();
-							Map::Map *m = new Map::Map(MapBuilder::MapBuilder::LoadMap(s));
+							Map::Map *m = MapBuilder::MapBuilder::LoadMap(s);
 							maps->push_back(m);
 						}
 					}

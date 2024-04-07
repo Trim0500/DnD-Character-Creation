@@ -47,6 +47,10 @@ namespace itemcontainer {
 	*/
 	class ItemContainer : public Item {
 		public:
+			ItemContainer() {};
+
+			ItemContainer(const int& _itemID) { this->SetItemID(_itemID); };
+
 			/*!
 			* \fn ItemContainer
 			* \brief Overloaded constructior for ItemContainer

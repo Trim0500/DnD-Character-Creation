@@ -23,6 +23,8 @@ namespace door {
         public:
             Door() { nextDoorID++; doorID = nextDoorID; };
 
+            Door(const int& _doorID) { doorID = _doorID; };
+
             Door(int _doorID,
                     int _firstMapID,
                     int _secondMapID,

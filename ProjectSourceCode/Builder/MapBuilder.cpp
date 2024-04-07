@@ -9,8 +9,10 @@
 #include "..\Character\Character.h"
 #include "..\Interactable\EmptyCell.h"
 #include "..\Item\item.h"
-#include "MapBuilder.h"
 #include "..\Interactable\Wall.h"
+#include "..\Door\door.h"
+
+using namespace door;
 
 bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 	//create file
@@ -22,13 +24,45 @@ bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 			return false;
 		}
 		else{
-			file << map->getRows() << "," << map->getCols() << "," << map->getStartCell()[0] << "," << map->getStartCell()[1] << "," << map->getEndCell()[0] << "," << map->getEndCell()[1] << std::endl;
+			file << map->GetMapID()
+					<< ","
+					<< map->getRows()
+					<< ","
+					<< map->getCols()
+					<< ","
+					<< map->getStartCell()[0]
+					<< ","
+					<< map->getStartCell()[1]
+					<< ","
+					<< map->getEndCell()[0]
+					<< ","
+					<< map->getEndCell()[1]
+					<< std::endl;
 
 			//loop throug the map and save each non-empty cell
 
 			for (int i = 0; i < map->getGrid().size(); i++) {
 				for (int j = 0; j < map->getGrid()[i].size(); j++) {
-					file << i << "," << j << "," << (map->getGrid()[i][j])->serialize() << std::endl;
+					file << i << "," << j;
+					Interactable::Interactable* valueAtCell = map->getGrid()[i][j];
+					if (dynamic_cast<Wall*>(valueAtCell)) {
+						file << ",w" << std::endl;
+					}
+					else if (dynamic_cast<Character::Character*>(valueAtCell)) {
+						file << ",c," << static_cast<Character::Character*>(valueAtCell)->ID() << std::endl;
+					}
+					else if (dynamic_cast<Door*>(valueAtCell)) {
+						file << ",d," << static_cast<Door*>(valueAtCell)->GetDoorID() << std::endl;
+					}
+					else if (dynamic_cast<ItemContainer*>(valueAtCell)) {
+						file << ",ic," << static_cast<ItemContainer*>(valueAtCell)->GetItemId() << std::endl;
+					}
+					else if (dynamic_cast<Item*>(valueAtCell)) {
+						file << ",i," << static_cast<Item*>(valueAtCell)->GetItemId() << std::endl;
+					}
+					else {
+						file << std::endl;
+					}
 				}
 			}//end loop
 		}//end file writing
@@ -38,18 +72,18 @@ bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 	}
 
 	file.close();
+	
 	return true;
 }
 
-Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
+Map::Map* MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 
-	Map::Map mapload = Map::Map();
+	Map::Map* mapload = new Map::Map();
 
 	std::ifstream file(filename);
 
 	int lines = 0; //number of lines read
-	int row = 0;
-	int col = 0;
+	int cellRow, cellCol;
 	std::string type;
 
 	try {
@@ -75,14 +109,12 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 					}
 					//row,col,SCrow,SCcol,ECrow,ECcol
 					// 0 , 1 ,  2  ,  3  ,  4  , 5
-					row = std::stoi(split[0]);
-					col = std::stoi(split[1]);
-
-					mapload.setCols(col);
-					mapload.setRows(row);
-					mapload.setGrid();
-					mapload.setStartCell(std::stoi(split[2]), std::stoi(split[3]));
-					mapload.setEndCell(std::stoi(split[4]), std::stoi(split[5]));
+					mapload->setMapID(std::stoi(split[0]));
+					mapload->setRows(std::stoi(split[1]));
+					mapload->setCols(std::stoi(split[2]));
+					mapload->setGrid();
+					mapload->setStartCell(std::stoi(split[3]), std::stoi(split[4]));
+					mapload->setEndCell(std::stoi(split[5]), std::stoi(split[6]));
 				}
 
 				else {
@@ -95,35 +127,41 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 						split.push_back(sub);
 					}
 
-					row = std::stoi(split[0]);
-					col = std::stoi(split[1]);
+					cellRow = std::stoi(split[0]);
+					cellCol = std::stoi(split[1]);
 					type = split[2];
 
 					if (type == "w") {
-						mapload.setWall(row, col);
-					}
-					else if (type == "i") {
-						item::Item* i = new item::Item();
-						i->SetItemID(std::stoi(split[3]));
-						mapload.setItem(row, col, i);
+						mapload->setWall(cellRow, cellCol);
 					}
 					else if (type == "c") {
 						Character::Character* c = new Character::Character(std::stoi(split[3]));
-						mapload.setCharacter(row, col, c);
+						mapload->setCharacter(cellRow, cellCol, c);
+					}
+					else if (type == "d") {
+						Door* door = new Door(std::stoi(split[3]));
+						mapload->setCell(cellRow, cellCol, door);
+					}
+					else if (type == "ic") {
+						ItemContainer* container = new ItemContainer(std::stoi(split[3]));
+						mapload->setCell(cellRow, cellCol, container);
+					}
+					else if (type == "i") {
+						item::Item* i = new item::Item(std::stoi(split[3]));
+						mapload->setItem(cellRow, cellCol, i);
 					}
 					else {
-						mapload.setEmpty(row, col);
+						mapload->setEmpty(cellRow, cellCol);
 					}
-
 				}
-
 			}
 		}
-
 	}
 	catch (const std::ifstream::failure& e) {
 		std::cout << "Exception caught while opening file: " << filename << std::endl;
 	}
+
+	file.close();
 
 	return mapload;
 }

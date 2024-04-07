@@ -220,8 +220,8 @@ void MapEditor::populate_browser()
 void MapEditor::open(std::string s)
 {
 	//Map::Map m = MapSerializer::load_map(filepath);
-	Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
-	maps->push_back(&m);
+	Map::Map* m = MapBuilder::MapBuilder::LoadMap(filepath);
+	maps->push_back(m);
 	populate_browser();
 	browser->bottomline(browser->size());
 	browser->select(browser->size());
@@ -233,8 +233,8 @@ void MapEditor::open()
 	if (BaseEditor::open())
 	{
 		//Map::Map m = MapSerializer::load_map(filepath);
-		Map::Map m = MapBuilder::MapBuilder::LoadMap(filepath);
-		maps->push_back(&m);
+		Map::Map* m = MapBuilder::MapBuilder::LoadMap(filepath);
+		maps->push_back(m);
 		populate_browser();
 		browser->bottomline(browser->size());
 		browser->select(browser->size());

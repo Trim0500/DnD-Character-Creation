@@ -90,6 +90,7 @@ namespace Map {
 		/*!
 		* \brief Setters 
 		*/
+		void setMapID(int _id) { mapID = _id; };
 		void setRows(int rows);
 		void setCols(int cols);
 		void setGrid();
