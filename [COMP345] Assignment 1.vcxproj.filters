@@ -93,10 +93,10 @@
     <ClCompile Include="ProjectSourceCode\Wall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\game.cpp">
+    <ClCompile Include="ProjectSourceCode\Game\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\gamelogger.cpp">
+    <ClCompile Include="ProjectSourceCode\Game\gamelogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\testgamelogger.cpp">
@@ -251,10 +251,10 @@
     <ClInclude Include="ProjectSourceCode\Observer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\game.h">
+    <ClInclude Include="ProjectSourceCode\Game\game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\gamelogger.h">
+    <ClInclude Include="ProjectSourceCode\Game\gamelogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\testgamelogger.h">

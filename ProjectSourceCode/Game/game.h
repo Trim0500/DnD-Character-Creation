@@ -10,8 +10,8 @@
 #include <vector>
 #include <string>
 
-#include "Observable.h"
-#include "campaign.h"
+#include "..\Observable.h"
+#include "..\campaign.h"
 
 using namespace observable;
 using namespace campaign;
