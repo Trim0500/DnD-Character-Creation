@@ -39,13 +39,13 @@
     <ClCompile Include="ProjectSourceCode\Test\testDice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\demoitem.cpp">
+    <ClCompile Include="ProjectSourceCode\Demo\demoitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\DiceDemo.cpp">
+    <ClCompile Include="ProjectSourceCode\Demo\DiceDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\demoCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\Demo\demoCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\Map.cpp">
@@ -155,13 +155,13 @@
     <ClInclude Include="ProjectSourceCode\Test\testDice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\demoitem.h">
+    <ClInclude Include="ProjectSourceCode\Demo\demoitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\DiceDemo.h">
+    <ClInclude Include="ProjectSourceCode\Demo\DiceDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\demoCharacter.h">
+    <ClInclude Include="ProjectSourceCode\Demo\demoCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Map.h">
