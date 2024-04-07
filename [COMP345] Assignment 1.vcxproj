@@ -157,7 +157,6 @@
     <ClInclude Include="ProjectSourceCode\Character.h" />
     <ClInclude Include="ProjectSourceCode\Dice\Dice.h" />
     <ClInclude Include="ProjectSourceCode\Test\testitemcontainer.h" />
-    <ClInclude Include="ProjectSourceCode\testitemidcounter.h" />
     <ClInclude Include="ProjectSourceCode\Map.h" />
     <ClInclude Include="ProjectSourceCode\Serialize\serializeItem.h" />
     <ClInclude Include="ProjectSourceCode\Test\testSerializeCharacter.h" />

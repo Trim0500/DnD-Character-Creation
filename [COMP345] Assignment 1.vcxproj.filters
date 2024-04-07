@@ -152,9 +152,6 @@
     <ClInclude Include="ProjectSourceCode\Test\testCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitemidcounter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ProjectSourceCode\Test\testDice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
