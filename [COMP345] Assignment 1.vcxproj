@@ -104,6 +104,7 @@
     <ClCompile Include="ProjectSourceCode\Demo\demoitem.cpp" />
     <ClCompile Include="ProjectSourceCode\Demo\DiceDemo.cpp" />
     <ClCompile Include="ProjectSourceCode\Demo\demoCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\Door\door.cpp" />
     <ClCompile Include="ProjectSourceCode\Item\item.cpp" />
     <ClCompile Include="ProjectSourceCode\Item\itemcontainer.cpp" />
     <ClCompile Include="ProjectSourceCode\Character\Character.cpp" />
@@ -147,6 +148,7 @@
     <ClInclude Include="ProjectSourceCode\Demo\demoitem.h" />
     <ClInclude Include="ProjectSourceCode\Demo\DiceDemo.h" />
     <ClInclude Include="ProjectSourceCode\Demo\demoCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\Door\door.h" />
     <ClInclude Include="ProjectSourceCode\Item\item.h" />
     <ClInclude Include="ProjectSourceCode\Item\itemcontainer.h" />
     <ClInclude Include="ProjectSourceCode\Observer\Observable.h" />

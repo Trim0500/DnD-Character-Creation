@@ -303,7 +303,7 @@ namespace campaign {
 
         currentMap.mapID = result->GetMapID();
         currentMap.coorX = _coordX;
-        currentMap.coorX = _coordY;
+        currentMap.coorY = _coordY;
 
         return result;
     }

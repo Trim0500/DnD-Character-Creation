@@ -4,8 +4,11 @@
 #include <string>
 #include <cctype>
 
-#include "..\Interactable\EmptyCell.h"
 #include "game.h"
+#include "..\Interactable\EmptyCell.h"
+#include "..\Door\door.h"
+
+using namespace door;
 
 namespace {
     void ProcessContainerAction(Item* _target, Character::Character* _playerCharacter, const bool& dropItems = false) {
@@ -192,8 +195,8 @@ namespace game
 
     void Game::PrintActionMenu(Character::Character* _player)
     {
-        Map::Map* currnetMapGrid;
-        currnetMapGrid = gameCampaign->GetMapsInCampaign().at(0);
+        CampaignMap currentMapInCampaign = gameCampaign->GetCurrentMap();
+        Map::Map* currnetMapGrid = gameCampaign->GetMap(currentMapInCampaign.coorX, currentMapInCampaign.coorY);
 
         int playerX, playerY;
         currnetMapGrid->GetCharacterCoordinates(playerX, playerY, _player);
@@ -213,6 +216,13 @@ namespace game
                                             [](CellActionInfo playerAction) { return playerAction.actionName == Character::PICKUP_CELL_ACTION; });
         if (pickUpAction != playerActions.end()) {
             std::cout << "I. Inspect Item" << std::endl;
+        }
+
+        auto doorAction = std::find_if(playerActions.begin(),
+                                            playerActions.end(),
+                                            [](CellActionInfo playerAction) { return playerAction.actionName == Character::DOOR_CELL_ACTION; });
+        if (doorAction != playerActions.end()) {
+            std::cout << "W. Use door" << std::endl;
         }
         
         std::cout << "P. Equip item" << std::endl;
@@ -254,7 +264,8 @@ namespace game
         //this->SetActiveCharacter(t_playerCharacter);
         //get current map
         int x, y;
-        Map::Map* currentMap = GetGameCampaign()->GetMapsInCampaign()[0];
+        CampaignMap currentMapInCampaign = gameCampaign->GetCurrentMap();
+        Map::Map* currentMap = gameCampaign->GetMap(currentMapInCampaign.coorX, currentMapInCampaign.coorY);
         currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
         std::string direction;
 
@@ -279,6 +290,51 @@ namespace game
 
             CreateObserverMessage("[Game/ProcessUserAction] -- Player interacted with items!");
 
+            break;
+        }
+        case 'W':
+        {
+            std::vector<CellActionInfo> playerActions = activeCharacter->GetActionStrategy()->UseMovementStrategy(currentMap->getGrid(), x + 1, y + 1);
+            currentMap->setEmpty(x, y);
+
+            auto doorAction = std::find_if(playerActions.begin(),
+                                            playerActions.end(),
+                                            [](CellActionInfo playerAction) { return playerAction.actionName == Character::DOOR_CELL_ACTION; });
+            Door* doorToUse = static_cast<Door*>(currentMap->getGrid().at((*doorAction).row - 1).at((*doorAction).col - 1));
+            
+            int currentMapID = gameCampaign->GetCurrentMap().mapID;
+            DoorDestinationInfo destinationInfo = doorToUse->UseDoor(currentMapID);
+            Map::Map* mapToLoad = gameCampaign->GetMap(destinationInfo.mapLocationX, destinationInfo.mapLocationY);
+            mapToLoad->setCharacter(destinationInfo.destinationX - 1, destinationInfo.destinationY - 1, t_playerCharacter);
+
+            std::vector<std::vector<Interactable::Interactable*>> newMapGrid = mapToLoad->getGrid();
+
+            std::vector<Character::Character*> charactersInNewMap;
+            for (int i = 0; i < (int)newMapGrid.size(); i++)
+            {
+                auto valueAtCell = std::find_if(newMapGrid[i].begin(),
+                                                newMapGrid[i].end(),
+                                                [](Interactable::Interactable* cell) { return dynamic_cast<Character::Character*>(cell); });
+                if (valueAtCell != newMapGrid[i].end()) {
+                    charactersInNewMap.push_back(static_cast<Character::Character*>((*valueAtCell)));
+
+                    while (valueAtCell != newMapGrid[i].end())
+                    {
+                        valueAtCell = std::find_if(valueAtCell + 1,
+                                                    newMapGrid[i].end(),
+                                                    [](Interactable::Interactable* cell) { return dynamic_cast<Character::Character*>(cell); });
+
+                        if (valueAtCell != newMapGrid[i].end()) {
+                            charactersInNewMap.push_back(static_cast<Character::Character*>((*valueAtCell)));
+                        }
+                    }
+                }
+            }
+
+            charactersInMap = charactersInNewMap;
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- Player used a door!");
+            
             break;
         }
         case 'P': {
@@ -316,6 +372,9 @@ namespace game
             else{
                 std::cout << "Could not equip item!" << std::endl;
             }
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- Player equipped items!");
+
             break;
         }
         case 'K': {
@@ -356,6 +415,9 @@ namespace game
             else {
                 std::cout << "Could not unequip item!" << std::endl;
             }
+
+            CreateObserverMessage("[Game/ProcessUserAction] -- Player unequipped items!");
+
             break;
         }
         case 'R':

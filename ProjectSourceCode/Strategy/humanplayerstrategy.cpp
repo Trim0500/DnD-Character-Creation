@@ -8,9 +8,11 @@
 #include "..\Character\Character.h"
 #include "..\Interactable\Wall.h"
 #include "..\Interactable\EmptyCell.h"
+#include "..\Door\door.h"
 
 using namespace item;
 using namespace itemcontainer;
+using namespace door;
 
 namespace {
 
@@ -62,6 +64,12 @@ namespace humanplayerstrategy {
                 actionInfo.col = colToCheck;
                 actionInfo.cellColor = Character::PICKUP_CELL_COLOR;
                 actionInfo.actionName = Character::PICKUP_CELL_ACTION;
+            }
+            else if (dynamic_cast<Door*>(valueAtCell)) {
+                actionInfo.row = rowToCheck;
+                actionInfo.col = colToCheck;
+                actionInfo.cellColor = Character::PICKUP_CELL_COLOR;
+                actionInfo.actionName = Character::DOOR_CELL_ACTION;
             }
             else {
                 actionInfo.row = rowToCheck;
