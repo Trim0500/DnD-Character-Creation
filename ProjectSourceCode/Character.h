@@ -18,7 +18,7 @@
 #include "item.h"
 #include "itemcontainer.h"
 #include "Observer\Observable.h"
-#include "serializeItem.h"
+#include "Serialize\serializeItem.h"
 #include "Decorator\abstractcomponent.h"
 #include "Strategy\characteractionstrategy.h"
 #include "Strategy\humanplayerstrategy.h"

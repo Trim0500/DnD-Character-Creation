@@ -51,13 +51,13 @@
     <ClCompile Include="ProjectSourceCode\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\serializeItem.cpp">
+    <ClCompile Include="ProjectSourceCode\Serialize\serializeItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\testserializeitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\Serialize\SerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\campaign.cpp">
@@ -167,13 +167,13 @@
     <ClInclude Include="ProjectSourceCode\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\serializeItem.h">
+    <ClInclude Include="ProjectSourceCode\Serialize\serializeItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\testserializeitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\SerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\Serialize\SerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\campaign.h">

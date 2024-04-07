@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Character.h"
-#include "item.h"
-#include "itemcontainer.h"
+#include "..\Character.h"
+#include "..\item.h"
+#include "..\itemcontainer.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>

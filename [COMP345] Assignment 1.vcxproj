@@ -113,10 +113,10 @@
     <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp" />
     <ClCompile Include="ProjectSourceCode\Dice\Dice.cpp" />
     <ClCompile Include="ProjectSourceCode\Map.cpp" />
-    <ClCompile Include="ProjectSourceCode\serializeItem.cpp" />
+    <ClCompile Include="ProjectSourceCode\Serialize\serializeItem.cpp" />
     <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\testserializeitem.cpp" />
-    <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\Serialize\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
     <ClCompile Include="ProjectSourceCode\Decorator\componentdecorator.cpp" />
@@ -158,10 +158,10 @@
     <ClInclude Include="ProjectSourceCode\testitemcontainer.h" />
     <ClInclude Include="ProjectSourceCode\testitemidcounter.h" />
     <ClInclude Include="ProjectSourceCode\Map.h" />
-    <ClInclude Include="ProjectSourceCode\serializeItem.h" />
+    <ClInclude Include="ProjectSourceCode\Serialize\serializeItem.h" />
     <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\testserializeitem.h" />
-    <ClInclude Include="ProjectSourceCode\SerializeCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\Serialize\SerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\campaign.h" />
     <ClInclude Include="ProjectSourceCode\testcampaign.h" />
     <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->

@@ -10,8 +10,8 @@
 #include <string>
 #include <vector>
 
-#include "item.h"
-#include "itemcontainer.h"
+#include "..\item.h"
+#include "..\itemcontainer.h"
 
 using namespace item;
 using namespace itemcontainer;

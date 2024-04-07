@@ -19,7 +19,7 @@
 
 #include "../ProjectSourceCode/item.h"
 #include "../ProjectSourceCode/Character.h"
-#include "../ProjectSourceCode/serializeItem.h"
+#include "../ProjectSourceCode/Serialize/serializeItem.h"
 
 #include "BaseEditor.h"
 

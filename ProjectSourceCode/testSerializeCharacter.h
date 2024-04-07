@@ -14,7 +14,7 @@
 #include <cppunit/XmlOutputter.h>
 
 #include "Character.h"
-#include "SerializeCharacter.h"
+#include "Serialize\SerializeCharacter.h"
 
 class TestSerializeCharacter : public CppUnit::TestFixture
 {
