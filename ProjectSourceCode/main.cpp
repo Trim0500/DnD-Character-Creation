@@ -20,7 +20,7 @@ using namespace door;
 
 int main()
 {
-	/* // Get the top level suite from the registry
+	 // Get the top level suite from the registry
 	Test *suite = TestFactoryRegistry::getRegistry().makeTest();
 
 	// Adds the test to the list of test to run
@@ -37,14 +37,13 @@ int main()
 	if (!wasSucessful)
 	{
 		return 1;
-	} */
+	} 
 
 	MainMenu *m = new MainMenu();
 	m->show();
 
 	Fl::run();
 
-	return 0;
 	getchar();
 
 	// hardcode maps and campaing here
