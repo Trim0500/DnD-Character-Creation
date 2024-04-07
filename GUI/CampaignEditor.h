@@ -6,7 +6,7 @@
 #include <FL/Fl_Hold_Browser.H>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Input_Choice.H>
-#include "../ProjectSourceCode/campaign.h"
+#include "../ProjectSourceCode/Campaign/campaign.h"
 
 using namespace campaign;
 using std::vector;

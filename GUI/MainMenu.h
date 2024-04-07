@@ -13,8 +13,8 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
-#include "../ProjectSourceCode/Map.h"
-#include "../ProjectSourceCode/MapBuilder.h"
+#include "../ProjectSourceCode/Map/Map.h"
+#include "../ProjectSourceCode/Builder/MapBuilder.h"
 
 namespace fs = std::filesystem;
 
