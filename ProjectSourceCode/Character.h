@@ -24,7 +24,7 @@
 #include "Strategy\humanplayerstrategy.h"
 #include "Strategy\aggressorstrategy.h"
 #include "Strategy\friendlystrategy.h"
-#include "Interactable.h"
+#include "Interactable/Interactable.h"
 
 using namespace abstractcomponent;
 using namespace characteractionstrategy;

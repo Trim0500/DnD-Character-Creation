@@ -12,11 +12,11 @@
 #include <string>
 #include <typeinfo>
 
-#include "Interactable.h"
+#include "Interactable/Interactable.h"
 #include "Character.h"
 #include "item.h"
 #include "Observable.h"
-#include "EmptyCell.h"
+#include "Interactable/EmptyCell.h"
 
 using namespace observable;
 

@@ -1,9 +1,9 @@
 #include "MapBuilder.h"
 #include "Character.h"
-#include "EmptyCell.h"
+#include "Interactable\EmptyCell.h"
 #include "Item.h"
 #include "MapBuilder.h"
-#include "Wall.h"
+#include "Interactable\Wall.h"
 #include <fstream>
 #include <iostream>
 #include <string>

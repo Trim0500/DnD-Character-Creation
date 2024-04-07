@@ -8,11 +8,11 @@
 #include <sstream>
 
 #include "Character.h"
-#include "EmptyCell.h"
-#include "Interactable.h"
+#include "Interactable/EmptyCell.h"
+#include "Interactable/Interactable.h"
 #include "item.h"
 #include "Map.h"
-#include "Wall.h"
+#include "Interactable/Wall.h"
 
 void Map::Map::Notify() {
 	for (int i = 0; i < (int)observers.size(); i++)

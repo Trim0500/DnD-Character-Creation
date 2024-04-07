@@ -9,7 +9,7 @@
 
 #include "Game/game.h"
 #include "../GUI/MainMenu.h"
-#include "Wall.h"
+#include "Interactable/Wall.h"
 #include "Game/gamelogger.h"
 
 using namespace CppUnit;

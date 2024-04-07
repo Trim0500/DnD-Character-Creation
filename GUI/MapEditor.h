@@ -13,7 +13,7 @@
 #include <vector>
 #include "BaseEditor.h"
 #include "../ProjectSourceCode/Map.h"
-#include "../ProjectSourceCode/Interactable.h"
+#include "../ProjectSourceCode/Interactable/Interactable.h"
 
 namespace CampaignEditor
 {

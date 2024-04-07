@@ -28,7 +28,7 @@
 #include <string>
 
 #include "Decorator\componentdecorator.h"
-#include "Interactable.h"
+#include "Interactable/Interactable.h"
 
 using namespace componentdecorator;
 

@@ -6,8 +6,8 @@
 
 #include "humanplayerstrategy.h"
 #include "..\Character.h"
-#include "..\Wall.h"
-#include "..\EmptyCell.h"
+#include "..\Interactable\Wall.h"
+#include "..\Interactable\EmptyCell.h"
 
 using namespace item;
 using namespace itemcontainer;
