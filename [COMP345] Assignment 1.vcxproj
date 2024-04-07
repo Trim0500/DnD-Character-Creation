@@ -118,7 +118,7 @@
     <ClCompile Include="ProjectSourceCode\Test\testSerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\Test\testserializeitem.cpp" />
     <ClCompile Include="ProjectSourceCode\Serialize\SerializeCharacter.cpp" />
-    <ClCompile Include="ProjectSourceCode\campaign.cpp" />
+    <ClCompile Include="ProjectSourceCode\Campaign\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\Test\testcampaign.cpp" />
     <ClCompile Include="ProjectSourceCode\Decorator\componentdecorator.cpp" />
     <ClCompile Include="ProjectSourceCode\Strategy\humanplayerstrategy.cpp" />
@@ -162,7 +162,7 @@
     <ClInclude Include="ProjectSourceCode\Test\testSerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\Test\testserializeitem.h" />
     <ClInclude Include="ProjectSourceCode\Serialize\SerializeCharacter.h" />
-    <ClInclude Include="ProjectSourceCode\campaign.h" />
+    <ClInclude Include="ProjectSourceCode\Campaign\campaign.h" />
     <ClInclude Include="ProjectSourceCode\Test\testcampaign.h" />
     <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
     <ClInclude Include="ProjectSourceCode\Decorator\abstractcomponent.h" />

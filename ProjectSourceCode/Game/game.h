@@ -11,7 +11,7 @@
 #include <string>
 
 #include "..\Observer\Observable.h"
-#include "..\campaign.h"
+#include "..\Campaign\campaign.h"
 
 using namespace observable;
 using namespace campaign;
