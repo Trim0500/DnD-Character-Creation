@@ -13,7 +13,7 @@
 #include <typeinfo>
 
 #include "Interactable/Interactable.h"
-#include "Character.h"
+#include "Character/Character.h"
 #include "item.h"
 #include "Observer\Observable.h"
 #include "Interactable/EmptyCell.h"

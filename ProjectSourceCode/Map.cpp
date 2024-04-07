@@ -7,7 +7,7 @@
 #include <string>
 #include <sstream>
 
-#include "Character.h"
+#include "Character/Character.h"
 #include "Interactable/EmptyCell.h"
 #include "Interactable/Interactable.h"
 #include "item.h"

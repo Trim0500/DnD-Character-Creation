@@ -1,5 +1,5 @@
 #pragma once
 
-#include "..\Character.h"
+#include "..\Character\Character.h"
 
 void demo_character();

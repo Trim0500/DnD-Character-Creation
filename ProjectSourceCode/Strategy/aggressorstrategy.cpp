@@ -5,7 +5,7 @@
 */
 
 #include "aggressorstrategy.h"
-#include "..\Character.h"
+#include "..\Character\Character.h"
 #include "..\Interactable\Wall.h"
 #include "..\Interactable\EmptyCell.h"
 

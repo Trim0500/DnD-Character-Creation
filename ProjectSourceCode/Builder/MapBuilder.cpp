@@ -6,7 +6,7 @@
 #include<sstream>
 
 #include "MapBuilder.h"
-#include "..\Character.h"
+#include "..\Character\Character.h"
 #include "..\Interactable\EmptyCell.h"
 #include "..\item.h"
 #include "MapBuilder.h"

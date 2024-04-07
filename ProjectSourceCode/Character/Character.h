@@ -14,17 +14,17 @@
 #include <unordered_map>
 #include <vector>
 
-#include "Dice\Dice.h"
-#include "item.h"
-#include "itemcontainer.h"
-#include "Observer\Observable.h"
-#include "Serialize\serializeItem.h"
-#include "Decorator\abstractcomponent.h"
-#include "Strategy\characteractionstrategy.h"
-#include "Strategy\humanplayerstrategy.h"
-#include "Strategy\aggressorstrategy.h"
-#include "Strategy\friendlystrategy.h"
-#include "Interactable/Interactable.h"
+#include "..\Dice\Dice.h"
+#include "..\item.h"
+#include "..\itemcontainer.h"
+#include "..\Observer\Observable.h"
+#include "..\Serialize\serializeItem.h"
+#include "..\Decorator\abstractcomponent.h"
+#include "..\Strategy\characteractionstrategy.h"
+#include "..\Strategy\humanplayerstrategy.h"
+#include "..\Strategy\aggressorstrategy.h"
+#include "..\Strategy\friendlystrategy.h"
+#include "..\Interactable\Interactable.h"
 
 using namespace abstractcomponent;
 using namespace characteractionstrategy;

@@ -106,7 +106,7 @@
     <ClCompile Include="ProjectSourceCode\Demo\demoCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\item.cpp" />
     <ClCompile Include="ProjectSourceCode\itemcontainer.cpp" />
-    <ClCompile Include="ProjectSourceCode\Character.cpp" />
+    <ClCompile Include="ProjectSourceCode\Character\Character.cpp" />
     <ClCompile Include="ProjectSourceCode\main.cpp" />
     <ClCompile Include="ProjectSourceCode\Test\testCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\Test\testDice.cpp" />
@@ -154,7 +154,7 @@
     <ClInclude Include="ProjectSourceCode\Test\testCharacter.h" />
     <ClInclude Include="ProjectSourceCode\Test\testDice.h" />
     <ClInclude Include="ProjectSourceCode\Test\testitem.h" />
-    <ClInclude Include="ProjectSourceCode\Character.h" />
+    <ClInclude Include="ProjectSourceCode\Character\Character.h" />
     <ClInclude Include="ProjectSourceCode\Dice\Dice.h" />
     <ClInclude Include="ProjectSourceCode\Test\testitemcontainer.h" />
     <ClInclude Include="ProjectSourceCode\Map.h" />

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "..\Character.h"
+#include "..\Character\Character.h"
 #include "..\item.h"
 #include "..\itemcontainer.h"
 #include <iostream>

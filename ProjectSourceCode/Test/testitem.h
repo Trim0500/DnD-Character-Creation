@@ -19,7 +19,7 @@
 #include <cppunit/XmlOutputter.h>
 
 #include "..\item.h"
-#include "..\Character.h"
+#include "..\Character\Character.h"
 
 using namespace CppUnit;
 using namespace item;
