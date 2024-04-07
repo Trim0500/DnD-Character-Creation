@@ -3,7 +3,7 @@
 //* THIS IS A TEMPORARY CLASS SO I CAN TEST MY UI
 //
 //*/
-//#include "../ProjectSourceCode/Map.h"
+//#include "../ProjectSourceCode/Map/Map.h"
 //namespace CampaignEditor {
 //	class MapSerializer {
 //		

@@ -7,10 +7,10 @@
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
 
-#include "game.h"
+#include "Game/game.h"
 #include "../GUI/MainMenu.h"
-#include "Wall.h"
-#include "gamelogger.h"
+#include "Interactable/Wall.h"
+#include "Game/gamelogger.h"
 
 using namespace CppUnit;
 using namespace CampaignEditor;
