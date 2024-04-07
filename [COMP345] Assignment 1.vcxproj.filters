@@ -72,13 +72,13 @@
     <ClCompile Include="ProjectSourceCode\Decorator\componentdecorator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\humanplayerstrategy.cpp">
+    <ClCompile Include="ProjectSourceCode\Strategy\humanplayerstrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\aggressorstrategy.cpp">
+    <ClCompile Include="ProjectSourceCode\Strategy\aggressorstrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\friendlystrategy.cpp">
+    <ClCompile Include="ProjectSourceCode\Strategy\friendlystrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\EmptyCell.cpp">
@@ -191,16 +191,16 @@
     <ClInclude Include="ProjectSourceCode\Decorator\componentdecorator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\characteractionstrategy.h">
+    <ClInclude Include="ProjectSourceCode\Strategy\characteractionstrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\humanplayerstrategy.h">
+    <ClInclude Include="ProjectSourceCode\Strategy\humanplayerstrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\aggressorstrategy.h">
+    <ClInclude Include="ProjectSourceCode\Strategy\aggressorstrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\friendlystrategy.h">
+    <ClInclude Include="ProjectSourceCode\Strategy\friendlystrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\EmptyCell.h">

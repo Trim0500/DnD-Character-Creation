@@ -1,13 +1,13 @@
 /*!
-* \file aggressorstrategy.cpp
-* \brief File that contains the implementations for the movement strategy pattern for hostile NPC characters
+* \file humanplayerstrategy.cpp
+* \brief File that contains the implementations for the movement strategy pattern for player characters
 * \author Tristan Lafleur
 */
 
-#include "aggressorstrategy.h"
-#include "Character.h"
-#include "Wall.h"
-#include "EmptyCell.h"
+#include "humanplayerstrategy.h"
+#include "..\Character.h"
+#include "..\Wall.h"
+#include "..\EmptyCell.h"
 
 using namespace item;
 using namespace itemcontainer;
@@ -16,8 +16,8 @@ namespace {
 
 }
 
-namespace aggressorstrategy {
-    std::vector<CellActionInfo> AggressorStrategy::UseMovementStrategy(std::vector<std::vector<Interactable::Interactable*>> _currentMap, const int& _row, const int& _col) const {
+namespace humanplayerstrategy {
+    std::vector<CellActionInfo> HumanPlayerStrategy::UseMovementStrategy(std::vector<std::vector<Interactable::Interactable*>> _currentMap, const int& _row, const int& _col) const {
         std::vector<CellActionInfo> actions;
 
         for (int i = 0; i < 4; i++)
@@ -45,7 +45,7 @@ namespace aggressorstrategy {
             Interactable::Interactable* valueAtCell = _currentMap[rowToCheck - 1][colToCheck - 1];
             CellActionInfo actionInfo;
             
-            if (dynamic_cast<Wall*>(valueAtCell) || dynamic_cast<ItemContainer*>(valueAtCell)) {
+            if (dynamic_cast<Wall*>(valueAtCell)) {
                 actionInfo.row = rowToCheck;
                 actionInfo.col = colToCheck;
                 actionInfo.cellColor = Character::WALL_CELL_COLOR;
@@ -56,6 +56,12 @@ namespace aggressorstrategy {
                 actionInfo.col = colToCheck;
                 actionInfo.cellColor = Character::ATTACK_CELL_COLOR;
                 actionInfo.actionName = Character::ATTACK_CELL_ACTION;
+            }
+            else if (dynamic_cast<Item*>(valueAtCell)) {
+                actionInfo.row = rowToCheck;
+                actionInfo.col = colToCheck;
+                actionInfo.cellColor = Character::PICKUP_CELL_COLOR;
+                actionInfo.actionName = Character::PICKUP_CELL_ACTION;
             }
             else {
                 actionInfo.row = rowToCheck;

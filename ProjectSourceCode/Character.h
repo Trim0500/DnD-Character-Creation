@@ -20,10 +20,10 @@
 #include "Observable.h"
 #include "serializeItem.h"
 #include "Decorator\abstractcomponent.h"
-#include "characteractionstrategy.h"
-#include "humanplayerstrategy.h"
-#include "aggressorstrategy.h"
-#include "friendlystrategy.h"
+#include "Strategy\characteractionstrategy.h"
+#include "Strategy\humanplayerstrategy.h"
+#include "Strategy\aggressorstrategy.h"
+#include "Strategy\friendlystrategy.h"
 #include "Interactable.h"
 
 using namespace abstractcomponent;

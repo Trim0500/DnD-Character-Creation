@@ -5,9 +5,9 @@
 */
 
 #include "friendlystrategy.h"
-#include "Character.h"
-#include "Wall.h"
-#include "EmptyCell.h"
+#include "..\Character.h"
+#include "..\Wall.h"
+#include "..\EmptyCell.h"
 
 using namespace item;
 using namespace itemcontainer;
