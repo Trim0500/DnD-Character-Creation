@@ -158,6 +158,10 @@ namespace Character {
 		* hit points (By default will only give levels in the 'Fighter' class)
 		*/
 		Character();
+		/**!\fn Character()
+		* \brief a constructor used by loadmap to create a temporary empty charcater with the ID of an actual saved Character 
+		*/
+		Character(int id);
 		/*! \fn Character()
 		*  \brief copy character constructor
 		*/
@@ -441,6 +445,8 @@ namespace Character {
 
 		static inline unsigned int id_gen{ 0 };
 		const int id = id_gen++;
+
+		int tempID;//id to be used by mapload
 
 		std::string name{ "Cirian" };
 		std::bitset<12> character_class;

@@ -21,8 +21,8 @@ bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 			std::cout << "Could not open file: " << filename << std::endl;
 			return false;
 		}
-		else {
-			file << map->getRows() << "," << map->getCols() << std::endl;
+		else{
+			file << map->getRows() << "," << map->getCols() << "," << map->getStartCell()[0] << "," << map->getStartCell()[1] << "," << map->getEndCell()[0] << "," << map->getEndCell()[1] << std::endl;
 
 			//loop throug the map and save each non-empty cell
 
@@ -61,8 +61,6 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 			std::string line;
 			//while there is content in the file
 			while (getline(file, line)) {
-				std::cout << line << std::endl;
-
 				lines++;
 
 				//first line create the num of rows and cols
@@ -75,13 +73,16 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 						getline(ss, sub, ',');
 						split.push_back(sub);
 					}
-
+					//row,col,SCrow,SCcol,ECrow,ECcol
+					// 0 , 1 ,  2  ,  3  ,  4  , 5
 					row = std::stoi(split[0]);
 					col = std::stoi(split[1]);
 
 					mapload.setCols(col);
 					mapload.setRows(row);
 					mapload.setGrid();
+					mapload.setStartCell(std::stoi(split[2]), std::stoi(split[3]));
+					mapload.setEndCell(std::stoi(split[4]), std::stoi(split[5]));
 				}
 
 				else {
@@ -101,15 +102,23 @@ Map::Map MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 					if (type == "w") {
 						mapload.setWall(row, col);
 					}
-					/*else if (type == "c") {
-						//TODO? handled outside of here
-					}*/
+					else if (type == "i") {
+						item::Item* i = new item::Item();
+						i->SetItemID(std::stoi(split[3]));
+						mapload.setItem(row, col, i);
+					}
+					else if (type == "c") {
+						Character::Character* c = new Character::Character(std::stoi(split[3]));
+						mapload.setCharacter(row, col, c);
+					}
+					else {
+						mapload.setEmpty(row, col);
+					}
 
 				}
 
 			}
 		}
-
 
 	}
 	catch (const std::ifstream::failure& e) {

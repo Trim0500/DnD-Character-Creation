@@ -140,6 +140,10 @@ Character::Character::Character(){
 	actionStrategy = new HumanPlayerStrategy();
 }
 
+Character::Character::Character(int id) {
+	tempID = id;
+}
+
 Character::Character::Character(const Character& t_character) : id(t_character.id)
 {
 	name = t_character.name;
