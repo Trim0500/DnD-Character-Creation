@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include <vector>
 
-#include "Dice.h"
+#include "Dice\Dice.h"
 #include "item.h"
 #include "itemcontainer.h"
 #include "Observable.h"

@@ -111,7 +111,7 @@
     <ClCompile Include="ProjectSourceCode\testDice.cpp" />
     <ClCompile Include="ProjectSourceCode\testitem.cpp" />
     <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp" />
-    <ClCompile Include="ProjectSourceCode\Dice.cpp" />
+    <ClCompile Include="ProjectSourceCode\Dice\Dice.cpp" />
     <ClCompile Include="ProjectSourceCode\Map.cpp" />
     <ClCompile Include="ProjectSourceCode\serializeItem.cpp" />
     <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" />
@@ -154,7 +154,7 @@
     <ClInclude Include="ProjectSourceCode\testDice.h" />
     <ClInclude Include="ProjectSourceCode\testitem.h" />
     <ClInclude Include="ProjectSourceCode\Character.h" />
-    <ClInclude Include="ProjectSourceCode\Dice.h" />
+    <ClInclude Include="ProjectSourceCode\Dice\Dice.h" />
     <ClInclude Include="ProjectSourceCode\testitemcontainer.h" />
     <ClInclude Include="ProjectSourceCode\testitemidcounter.h" />
     <ClInclude Include="ProjectSourceCode\Map.h" />

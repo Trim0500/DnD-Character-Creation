@@ -30,7 +30,7 @@
     <ClCompile Include="ProjectSourceCode\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Dice.cpp">
+    <ClCompile Include="ProjectSourceCode\Dice\Dice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp">
@@ -137,7 +137,7 @@
     <ClInclude Include="ProjectSourceCode\testitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Dice.h">
+    <ClInclude Include="ProjectSourceCode\Dice\Dice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Character.h">

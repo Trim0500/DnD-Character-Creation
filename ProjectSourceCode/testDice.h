@@ -13,7 +13,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
-#include "Dice.h"
+#include "Dice\Dice.h"
 
 // using namespace std;
 using namespace CppUnit;

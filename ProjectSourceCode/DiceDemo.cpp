@@ -1,4 +1,4 @@
-#include "Dice.h"
+#include "Dice\Dice.h"
 
 #include "DiceDemo.h"
 
