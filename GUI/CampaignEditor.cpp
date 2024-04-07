@@ -175,7 +175,7 @@ namespace CampaignEditor
 			}
 		};
 	} 
-	void CampaignEditor::open() {
+	bool CampaignEditor::open() {
 		if (BaseEditor::File_Chooser("Open", Fl_Native_File_Chooser::BROWSE_DIRECTORY))
 		{
 			try {
@@ -193,10 +193,12 @@ namespace CampaignEditor
 					*maps
 				);
 				redraw_map();
+				return true;
 			} catch (const std::exception &e) {
-
+				return false;
 			}
 		}
+		return false;
 	}
 	void CampaignEditor::save_all(){
 		for (Map::Map *_m: *maps){

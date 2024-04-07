@@ -9,17 +9,18 @@
 #include "MapEditor.h"
 #include "CampaignEditor.h"
 #include "MapSerializer.h"
+#include "CharacterEditor.h"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
 #include "../ProjectSourceCode/Map/Map.h"
 #include "../ProjectSourceCode/Builder/MapBuilder.h"
 
-
 namespace fs = std::filesystem;
 
 namespace CampaignEditor
 {
+	bool hasEnding(std::string const &fullString, std::string const &ending);
 	class MainMenu : public Fl_Window
 	{
 	public:
@@ -42,129 +43,129 @@ namespace CampaignEditor
 		// };
 		void save()
 		{
-			// tabs->value()->save();
-			Fl_Group *current = tabs->value()->as_group();
-			std::cout << "Triggering Save function" << std::endl;
-			std::cout << current << std::endl;
-			std::cout << ie << std::endl;
-			if (current == ce->as_group())
-			{
-				std::cout << "Saving in Campaign Editor" << std::endl;
-				// ie->save_as();
-				ce->save();
-				std::string temp = me->filepath;
-				me->filepath = ce->filepath;
-				std::string fp;
-				for (Map::Map *_m: *me->maps){
-					fs::create_directories(me->filepath + "/Maps");
-					fp = me->filepath + "/Maps/Map" + std::to_string(_m->GetMapID()) + ".csv";
-					MapBuilder::MapBuilder::SaveMap(_m, fp);
-					//MapSerializer::save_map(fp, _m);
-				}
-				me->filepath = temp;
-				
-				temp = ie->filepath;
+			std::cout << "Saving in Campaign Editor" << std::endl;
+			// ie->save_as();
+			ce->save();
 
-				fs::create_directories(ce->filepath + "/Items");
-				ie->filepath = ce->filepath+"/Items/items.csv";
-				ie->save();
-				ie->filepath = temp;
-				return;
-			}
-			if (current == ig)
+			// for (Map::Map *_m: *me->maps)
+			fs::create_directories(map_directory);
+			for (int index = 0; index < maps->size(); index++)
 			{
-				std::cout << "Saving in Item Editor" << std::endl;
-				ie->save();
-				return;
+				Map::Map *_m = (*maps)[index];
+				fs::path fp = map_directory / ("Map" + std::to_string(_m->GetMapID()) + ".csv");
+				std::string s = fp.string();
+				MapBuilder::MapBuilder::SaveMap(_m, s);
+				// MapSerializer::save_map(fp, _m);
 			}
+			fs::create_directories(item_directory.parent_path());
+			ie->save();
 
-			if (current == mg)
-			{
-				std::cout << "Saving in Map Editor" << std::endl;
-				me->save();
-
-				return;
-			}
+			return;
 		};
 		void open()
 		{
 			// tabs->value()->save();
-			Fl_Group *current = tabs->value()->as_group();
-			std::cout << "Triggering Open function" << std::endl;
-			std::cout << current << std::endl;
-			std::cout << ie << std::endl;
-			if (current == ce->as_group())
+			std::cout << "Opening in Campaign Editor" << std::endl;
+			maps->clear();
+
+			// ie->save_as();
+			if (ce->open())
 			{
-				std::cout << "Opening in Campaign Editor" << std::endl;
-				// ie->save_as();
-				ce->open();
-				ie->open(ce->filepath + "/Items/items.csv");
-				std::string ext(".csv");
-				std::string path(ce->filepath + "/Maps");
-				for (auto &p : fs::directory_iterator(path)) {
-					if (p.path().extension() == ext){
-						me->open(p.path().string());
+				campaign_dir = fs::path(ce->filepath);
+				update_directories();
+				if (fs::exists(item_directory))
+				{
+					ie->open(item_directory.string());
+				}
+				else
+				{
+					fs::create_directories(item_directory.parent_path());
+				}
+
+				if (fs::exists(map_directory))
+				{
+					std::string ext(".csv");
+					std::string path(map_directory.string());
+					for (auto &p : fs::directory_iterator(path))
+					{
+						if (p.path().extension() == ext)
+						{
+							std::string s = p.path().string();
+							Map::Map *m = new Map::Map(MapBuilder::MapBuilder::LoadMap(s));
+							maps->push_back(m);
+						}
 					}
 				}
+				else
+				{
+					fs::create_directory(map_directory);
+				}
+
+				ce->maps = this->maps;
 				me->set_maps(ce->maps);
-				return;
-			}
-			if (current == ig)
-			{
-				std::cout << "Opening in Item Editor" << std::endl;
-				ie->open();
-				return;
 			}
 
-			if (current == mg)
-			{
-				std::cout << "Opening in Map Editor" << std::endl;
-				me->open();
-				return;
-			}
+			return;
 		};
 		void save_as()
 		{
 			// tabs->value()->save();
-			Fl_Group *current = tabs->value()->as_group();
-			std::cout << "Triggering Save function" << std::endl;
-			std::cout << current << std::endl;
-			// std::cout << ie << std::endl;
-			if (current == ce->as_group())
+			// Fl_Native_File_Chooser::Type t;
+			int o;
+			Fl_Native_File_Chooser fnfc;
+			fnfc.title("");
+			// fnfc.filter("*.csv");
+			fnfc.type(Fl_Native_File_Chooser::BROWSE_SAVE_DIRECTORY);
+			fnfc.options(0);
+			fnfc.directory("./");
+			switch (fnfc.show())
 			{
-				std::cout << "Saving campaign" << std::endl;
-				// ie->save_as();
-				ce->save_as();
-				return;
-			}
-			if (current == ig)
-			{
-				std::cout << "Saving in Item Editor" << std::endl;
-				ie->save_as();
-				return;
-			}
-
-			if (current == mg)
-			{
-				std::cout << "Saving as in Map Editor" << std::endl;
-				me->save_as();
-				return;
+			case -1:
+				printf("ERROR: %s\n", fnfc.errmsg());
+				// throw std::invalid_argument("");
+				break; // ERROR
+			case 1:
+				printf("CANCEL\n");
+				break; // CANCEL
+			default:
+				// printf("PICKED: %s\n", fnfc.filename());
+				campaign_dir = fs::path(fnfc.filename());
+				update_directories();
+				save();
+				break; // FILE CHOSEN
 			}
 		};
+
+		void update_directories()
+		{
+			// campaign_dir = fs::path(ce->filepath);
+			ce->filepath = campaign_dir.string();
+			item_directory = campaign_dir / "Items" / "items.csv";
+			map_directory = campaign_dir / "Maps";
+			ie->filepath = item_directory.string();
+			me->filepath = map_directory.string();
+		}
 
 	private:
 		Fl_Tabs *tabs;
 		Fl_Menu_Bar *menu;
 		ItemEditor *ie;
 		MapEditor *me;
+		CharacterEditor *chare;
 		CampaignEditor *ce;
 
 		Fl_Group *ig;
 		Fl_Group *mg;
 		Fl_Group *cg;
 
-		std::string campaign_dir;
+		fs::path map_directory;
+		fs::path item_directory;
+		fs::path item_container_directory;
+		fs::path character_directory;
+		fs::path campaign_dir;
 		// std::vector<Map::Map *> maps;
+		std::vector<Map::Map *> *maps;
+		// std::vector<Character::Character *> *characters;
 	};
 
 }

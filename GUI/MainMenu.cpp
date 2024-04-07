@@ -35,9 +35,12 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 	}
 	ig->end();
 
+	// chare = new CharacterEditor(EDITOR_SETTINGS);
+
 	tabs->end();
 	this->end();
 	this->resizable(tabs);
+	maps = new std::vector<Map::Map*>;
 }
 
 void MainMenu::start() {
