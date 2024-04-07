@@ -15,7 +15,7 @@
 #include "Interactable/Interactable.h"
 #include "Character.h"
 #include "item.h"
-#include "Observable.h"
+#include "Observer\Observable.h"
 #include "Interactable/EmptyCell.h"
 
 using namespace observable;

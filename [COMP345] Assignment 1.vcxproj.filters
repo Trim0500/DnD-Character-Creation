@@ -245,10 +245,10 @@
     <ClInclude Include="GUI\MapViewWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Observable.h">
+    <ClInclude Include="ProjectSourceCode\Observer\Observable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Observer.h">
+    <ClInclude Include="ProjectSourceCode\Observer\Observer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Game\game.h">

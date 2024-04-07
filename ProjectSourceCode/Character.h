@@ -17,7 +17,7 @@
 #include "Dice\Dice.h"
 #include "item.h"
 #include "itemcontainer.h"
-#include "Observable.h"
+#include "Observer\Observable.h"
 #include "serializeItem.h"
 #include "Decorator\abstractcomponent.h"
 #include "Strategy\characteractionstrategy.h"

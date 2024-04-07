@@ -9,8 +9,8 @@
 
 #include <string>
 
-#include "..\Observer.h"
-#include "..\Observable.h"
+#include "..\Observer\Observer.h"
+#include "..\Observer\Observable.h"
 
 using namespace observer;
 using namespace observable;
