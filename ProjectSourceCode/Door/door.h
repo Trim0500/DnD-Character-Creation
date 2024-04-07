@@ -104,4 +104,8 @@ namespace door {
 
             std::vector<int> secondMapSpawnPoint; //Locations are 1-indexed
     };
+
+    void SaveDoors(const std::string&, const std::vector<Door*>&);
+
+    std::vector<Door*> LoadDoors(const std::string&);
 }

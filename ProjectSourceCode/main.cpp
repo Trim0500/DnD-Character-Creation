@@ -71,7 +71,13 @@ int main()
 	otherMapDoorSpawnPoint.push_back(6);
 	otherMapDoorSpawnPoint.push_back(5);
 
-	Door* door = new Door(1, currentMap->GetMapID(), otherMap->GetMapID(), currentMapLocation, otherMapLocation, currentMapDoorSpawnPoint, otherMapDoorSpawnPoint);
+	Door* door = new Door(1,
+							currentMap->GetMapID(),
+							otherMap->GetMapID(),
+							currentMapLocation,
+							otherMapLocation,
+							currentMapDoorSpawnPoint,
+							otherMapDoorSpawnPoint);
 	currentMap->setCell(10, 8, door);
 	otherMap->setCell(4, 4, door);
 
