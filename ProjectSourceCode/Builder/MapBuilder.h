@@ -1,5 +1,5 @@
 #pragma once
-#include "..\Map.h"
+#include "..\Map\Map.h"
 #include <string>
 
 // using namespace std; // can't be used with GUI

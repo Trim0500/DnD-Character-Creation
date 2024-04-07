@@ -9,7 +9,7 @@
 
 #include <vector>
 
-#include "..\Map.h"
+#include "..\Map\Map.h"
 
 /*!
 * \namespace campaign

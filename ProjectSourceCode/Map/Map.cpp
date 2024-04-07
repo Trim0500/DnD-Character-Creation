@@ -7,12 +7,12 @@
 #include <string>
 #include <sstream>
 
-#include "Character/Character.h"
-#include "Interactable/EmptyCell.h"
-#include "Interactable/Interactable.h"
-#include "Item\item.h"
+#include "..\Character\Character.h"
+#include "..\Interactable\EmptyCell.h"
+#include "..\Interactable\Interactable.h"
+#include "..\Item\item.h"
 #include "Map.h"
-#include "Interactable/Wall.h"
+#include "..\Interactable\Wall.h"
 
 void Map::Map::Notify() {
 	for (int i = 0; i < (int)observers.size(); i++)

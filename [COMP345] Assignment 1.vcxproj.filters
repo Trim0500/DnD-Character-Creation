@@ -48,7 +48,7 @@
     <ClCompile Include="ProjectSourceCode\Demo\demoCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Map.cpp">
+    <ClCompile Include="ProjectSourceCode\Map\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\Serialize\serializeItem.cpp">
@@ -164,7 +164,7 @@
     <ClInclude Include="ProjectSourceCode\Demo\demoCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Map.h">
+    <ClInclude Include="ProjectSourceCode\Map\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Serialize\serializeItem.h">

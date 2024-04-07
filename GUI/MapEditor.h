@@ -12,7 +12,7 @@
 #include <FL/Fl_Return_Button.H>
 #include <vector>
 #include "BaseEditor.h"
-#include "../ProjectSourceCode/Map.h"
+#include "../ProjectSourceCode/Map/Map.h"
 #include "../ProjectSourceCode/Interactable/Interactable.h"
 
 namespace CampaignEditor
