@@ -19,7 +19,7 @@
 #include "itemcontainer.h"
 #include "Observable.h"
 #include "serializeItem.h"
-#include "abstractcomponent.h"
+#include "Decorator\abstractcomponent.h"
 #include "characteractionstrategy.h"
 #include "humanplayerstrategy.h"
 #include "aggressorstrategy.h"

@@ -119,7 +119,7 @@
     <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
     <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
-    <ClCompile Include="ProjectSourceCode\componentdecorator.cpp" />
+    <ClCompile Include="ProjectSourceCode\Decorator\componentdecorator.cpp" />
     <ClCompile Include="ProjectSourceCode\humanplayerstrategy.cpp" />
     <ClCompile Include="ProjectSourceCode\aggressorstrategy.cpp" />
     <ClCompile Include="ProjectSourceCode\friendlystrategy.cpp" />
@@ -165,8 +165,8 @@
     <ClInclude Include="ProjectSourceCode\campaign.h" />
     <ClInclude Include="ProjectSourceCode\testcampaign.h" />
     <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
-    <ClInclude Include="ProjectSourceCode\abstractcomponent.h" />
-    <ClInclude Include="ProjectSourceCode\componentdecorator.h" />
+    <ClInclude Include="ProjectSourceCode\Decorator\abstractcomponent.h" />
+    <ClInclude Include="ProjectSourceCode\Decorator\componentdecorator.h" />
     <ClInclude Include="ProjectSourceCode\characteractionstrategy.h" />
     <ClInclude Include="ProjectSourceCode\humanplayerstrategy.h" />
     <ClInclude Include="ProjectSourceCode\aggressorstrategy.h" />

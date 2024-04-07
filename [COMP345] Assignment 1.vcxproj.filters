@@ -69,7 +69,7 @@
     <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\componentdecorator.cpp">
+    <ClCompile Include="ProjectSourceCode\Decorator\componentdecorator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\humanplayerstrategy.cpp">
@@ -185,10 +185,10 @@
     <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\abstractcomponent.h">
+    <ClInclude Include="ProjectSourceCode\Decorator\abstractcomponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\componentdecorator.h">
+    <ClInclude Include="ProjectSourceCode\Decorator\componentdecorator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\characteractionstrategy.h">

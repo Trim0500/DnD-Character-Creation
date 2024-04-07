@@ -27,7 +27,7 @@
 #include <iostream>
 #include <string>
 
-#include "componentdecorator.h"
+#include "Decorator\componentdecorator.h"
 #include "Interactable.h"
 
 using namespace componentdecorator;
