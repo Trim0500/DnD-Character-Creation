@@ -18,88 +18,88 @@
     <ClCompile Include="ProjectSourceCode\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\item.cpp">
+    <ClCompile Include="ProjectSourceCode\Item\item.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\itemcontainer.cpp">
+    <ClCompile Include="ProjectSourceCode\Item\itemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testitem.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Character.cpp">
+    <ClCompile Include="ProjectSourceCode\Character\Character.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Dice.cpp">
+    <ClCompile Include="ProjectSourceCode\Dice\Dice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testitemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testDice.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testDice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\demoitem.cpp">
+    <ClCompile Include="ProjectSourceCode\Demo\demoitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\DiceDemo.cpp">
+    <ClCompile Include="ProjectSourceCode\Demo\DiceDemo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\demoCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\Demo\demoCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Map.cpp">
+    <ClCompile Include="ProjectSourceCode\Map\Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\serializeItem.cpp">
+    <ClCompile Include="ProjectSourceCode\Serialize\serializeItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testserializeitem.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testserializeitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\SerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\Serialize\SerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\campaign.cpp">
+    <ClCompile Include="ProjectSourceCode\Campaign\campaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testcampaign.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testcampaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testSerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\componentdecorator.cpp">
+    <ClCompile Include="ProjectSourceCode\Decorator\componentdecorator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\humanplayerstrategy.cpp">
+    <ClCompile Include="ProjectSourceCode\Strategy\humanplayerstrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\aggressorstrategy.cpp">
+    <ClCompile Include="ProjectSourceCode\Strategy\aggressorstrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\friendlystrategy.cpp">
+    <ClCompile Include="ProjectSourceCode\Strategy\friendlystrategy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\EmptyCell.cpp">
+    <ClCompile Include="ProjectSourceCode\Interactable\EmptyCell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Interactable.cpp">
+    <ClCompile Include="ProjectSourceCode\Interactable\Interactable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\MapBuilder.cpp">
+    <ClCompile Include="ProjectSourceCode\Builder\MapBuilder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\Wall.cpp">
+    <ClCompile Include="ProjectSourceCode\Interactable\Wall.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\game.cpp">
+    <ClCompile Include="ProjectSourceCode\Game\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\gamelogger.cpp">
+    <ClCompile Include="ProjectSourceCode\Game\gamelogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testgamelogger.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testgamelogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GUI\BaseEditor.cpp">
@@ -126,93 +126,96 @@
     <ClCompile Include="GUI\CampaignEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectSourceCode\Test\testCharacter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ProjectSourceCode\Door\door.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ProjectSourceCode\item.h">
+    <ClInclude Include="ProjectSourceCode\Item\item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\itemcontainer.h">
+    <ClInclude Include="ProjectSourceCode\Item\itemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitem.h">
+    <ClInclude Include="ProjectSourceCode\Test\testitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Dice.h">
+    <ClInclude Include="ProjectSourceCode\Dice\Dice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Character.h">
+    <ClInclude Include="ProjectSourceCode\Character\Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitemcontainer.h">
+    <ClInclude Include="ProjectSourceCode\Test\testitemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testCharacter.h">
+    <ClInclude Include="ProjectSourceCode\Test\testCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitemidcounter.h">
+    <ClInclude Include="ProjectSourceCode\Test\testDice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testDice.h">
+    <ClInclude Include="ProjectSourceCode\Demo\demoitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\demoitem.h">
+    <ClInclude Include="ProjectSourceCode\Demo\DiceDemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\DiceDemo.h">
+    <ClInclude Include="ProjectSourceCode\Demo\demoCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\demoCharacter.h">
+    <ClInclude Include="ProjectSourceCode\Map\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Map.h">
+    <ClInclude Include="ProjectSourceCode\Serialize\serializeItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\serializeItem.h">
+    <ClInclude Include="ProjectSourceCode\Test\testserializeitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testserializeitem.h">
+    <ClInclude Include="ProjectSourceCode\Serialize\SerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\SerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\Campaign\campaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\campaign.h">
+    <ClInclude Include="ProjectSourceCode\Test\testcampaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testcampaign.h">
+    <ClInclude Include="ProjectSourceCode\Test\testSerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\Decorator\abstractcomponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\abstractcomponent.h">
+    <ClInclude Include="ProjectSourceCode\Decorator\componentdecorator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\componentdecorator.h">
+    <ClInclude Include="ProjectSourceCode\Strategy\characteractionstrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\characteractionstrategy.h">
+    <ClInclude Include="ProjectSourceCode\Strategy\humanplayerstrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\humanplayerstrategy.h">
+    <ClInclude Include="ProjectSourceCode\Strategy\aggressorstrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\aggressorstrategy.h">
+    <ClInclude Include="ProjectSourceCode\Strategy\friendlystrategy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\friendlystrategy.h">
+    <ClInclude Include="ProjectSourceCode\Interactable\EmptyCell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\EmptyCell.h">
+    <ClInclude Include="ProjectSourceCode\Interactable\Interactable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Interactable.h">
+    <ClInclude Include="ProjectSourceCode\Builder\MapBuilder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\MapBuilder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Wall.h">
+    <ClInclude Include="ProjectSourceCode\Interactable\Wall.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GUI\BaseEditor.h">
@@ -245,19 +248,22 @@
     <ClInclude Include="GUI\MapViewWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Observable.h">
+    <ClInclude Include="ProjectSourceCode\Observer\Observable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\Observer.h">
+    <ClInclude Include="ProjectSourceCode\Observer\Observer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\game.h">
+    <ClInclude Include="ProjectSourceCode\Game\game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\gamelogger.h">
+    <ClInclude Include="ProjectSourceCode\Game\gamelogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testgamelogger.h">
+    <ClInclude Include="ProjectSourceCode\Test\testgamelogger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ProjectSourceCode\Door\door.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

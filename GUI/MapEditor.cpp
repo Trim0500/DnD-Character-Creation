@@ -6,12 +6,13 @@
 #include <FL/Fl_Return_Button.H>
 #include "MapEditor.h"
 #include "MapSerializer.h"
-#include "../ProjectSourceCode/Interactable.h"
-#include "../ProjectSourceCode/Wall.h"
-#include "../ProjectSourceCode/EmptyCell.h"
-#include "../ProjectSourceCode/Character.h"
-#include "../ProjectSourceCode/item.h"
-#include "../ProjectSourceCode/MapBuilder.h"
+#include "../ProjectSourceCode/Interactable/Interactable.h"
+#include "../ProjectSourceCode/Interactable/Wall.h"
+#include "../ProjectSourceCode/Interactable/EmptyCell.h"
+#include "../ProjectSourceCode/Character/Character.h"
+#include "../ProjectSourceCode/Item/item.h"
+#include "../ProjectSourceCode/Builder/MapBuilder.h"
+
 using namespace CampaignEditor;
 
 MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
