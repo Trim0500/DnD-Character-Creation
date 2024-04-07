@@ -1,0 +1,531 @@
+Package: vcpkg-cmake-config
+Version: 2022-02-06
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 0cce4c0aecb0b6cf4206cf172fc1755b6c02e8b659f85a137baf8846ba3f69be
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2023-05-04
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a34da6ccf3a0462876b0c5d02757dc92b26aae3b0f735101ebe52abc6ea4c595
+Status: install ok installed
+
+Package: cppunit
+Version: 1.15.1
+Port-Version: 4
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: cca2a91ba43e04cf8386b2842d87449aa04ba0d816773bb549e8ff22b003996c
+Description: Unit testing framework module for the C++ programming language
+Status: install ok installed
+
+Package: egl-registry
+Version: 2022-09-20
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 80e791fe02ded2a9d93aa686fc3adf56b7c93341c0d13d749f59e623fac5d55b
+Description: the EGL API and Extension Registry
+Status: install ok installed
+
+Package: opengl-registry
+Version: 2022-09-29
+Port-Version: 1
+Depends: egl-registry
+Architecture: x86-windows
+Multi-Arch: same
+Abi: e658ac38e687c919e976de749161ab83a63a09d985ff330227499f14c98fe012
+Description: the API and Extension registries for the OpenGL family APIs
+Status: install ok installed
+
+Package: opengl
+Version: 2022-12-04
+Port-Version: 3
+Depends: opengl-registry
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 791186c6d05d6e9887a71e8f3dbcbb6edc9c2fe163989b695edbebe26bcaee9b
+Description: Open Graphics Library (OpenGL)[3][4][5] is a cross-language, cross-platform application programming interface (API) for rendering 2D and 3D vector graphics.
+Status: install ok installed
+
+Package: zlib
+Version: 1.3
+Depends: vcpkg-cmake:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: ec752c64abafdc974e23401adcbe50bf82207463b5b3561c1c7dc98736f8f5f1
+Description: A compression library
+Status: install ok installed
+
+Package: libpng
+Version: 1.6.39
+Port-Version: 1
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows, zlib
+Architecture: x86-windows
+Multi-Arch: same
+Abi: f274b92079aaeea6df7d131fbc2a955e46fd4fb727094bccd987da9ddb39ad18
+Description: libpng is a library implementing an interface for reading and writing PNG (Portable Network Graphics) format files
+Status: install ok installed
+
+Package: libjpeg-turbo
+Version: 3.0.0
+Port-Version: 2
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: aa746e5681b2773b2d1ada14f793b40c00f711c2ee50b6c290ba0eada43d39fa
+Description: libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX, SSE2, NEON, AltiVec) to accelerate baseline JPEG compression and decompression on x86, x86-64, ARM, and PowerPC systems.
+Status: install ok installed
+
+Package: bzip2
+Version: 1.0.8
+Port-Version: 5
+Depends: vcpkg-cmake:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: b00163c8e9c75cce05dc8867878386b1d973925a12bf293f56b8a73f6faf64e2
+Description: bzip2 is a freely available, patent free, high-quality data compressor. It typically compresses files to within 10% to 15% of the best available techniques (the PPM family of statistical compressors), whilst being around twice as fast at compression and six times faster at decompression.
+Default-Features: tool
+Status: install ok installed
+
+Package: bzip2
+Feature: tool
+Architecture: x86-windows
+Multi-Arch: same
+Description: Builds bzip2 executable
+Status: install ok installed
+
+Package: brotli
+Version: 1.1.0
+Port-Version: 1
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: eda01be81830d1bfcbaf9de919915fa8fb7f7bd493b604f3d6d3f3ed4ff0f6cb
+Description: a generic-purpose lossless compression algorithm that compresses data using a combination of a modern variant of the LZ77 algorithm, Huffman coding and 2nd order context modeling.
+Status: install ok installed
+
+Package: freetype
+Version: 2.12.1
+Port-Version: 4
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: de4c8ee0974271e36b5723605cb7cf8e3c3c9f73b70bb2cae9e2c627bba03983
+Description: A library to render fonts.
+Default-Features: brotli, bzip2, png, zlib
+Status: install ok installed
+
+Package: freetype
+Feature: brotli
+Depends: brotli
+Architecture: x86-windows
+Multi-Arch: same
+Description: Support decompression of WOFF2 streams
+Status: install ok installed
+
+Package: freetype
+Feature: bzip2
+Depends: bzip2
+Architecture: x86-windows
+Multi-Arch: same
+Description: Support bzip2 compressed fonts.
+Status: install ok installed
+
+Package: freetype
+Feature: png
+Depends: libpng
+Architecture: x86-windows
+Multi-Arch: same
+Description: Support PNG compressed OpenType embedded bitmaps.
+Status: install ok installed
+
+Package: freetype
+Feature: zlib
+Depends: zlib
+Architecture: x86-windows
+Multi-Arch: same
+Description: Use zlib instead of internal library for DEFLATE
+Status: install ok installed
+
+Package: vcpkg-tool-meson
+Version: 0.63
+Architecture: x64-windows
+Multi-Arch: same
+Abi: eb907aed39dbff850add22178c4b593bff9b50643d0a5023f1a0b96ddeabc2cd
+Description: Meson build system
+Status: install ok installed
+
+Package: pthreads
+Version: 3.0.0
+Port-Version: 14
+Depends: vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: f0197b82d68d088ed0da841d038a310ec862ae82c0338d44c39f058f72a4f686
+Description: Meta-package that provides PThreads4W on Windows, or assumes presence of system pthreads on POSIX systems.
+Status: install ok installed
+
+Package: pthread
+Version: 3.0.0
+Port-Version: 2
+Depends: pthreads
+Architecture: x86-windows
+Multi-Arch: same
+Abi: efa80689ea9b60acb969354098c3b290425735ca0471297ec97cc12676084458
+Description: empty package, linking to other port
+Status: install ok installed
+
+Package: libiconv
+Version: 1.17
+Port-Version: 1
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 9d0030129f5211792cafbdbe09681d2f61e3fd5c72ee04d0ecead2b39df4fb60
+Description: GNU Unicode text conversion
+Status: install ok installed
+
+Package: gperf
+Version: 3.1
+Port-Version: 6
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 85977cd5b1bebbef1cd139a49525cd4b3e1da59b1fdd76b3d84cfcb3860c9830
+Description: GNU perfect hash function generator
+Status: install ok installed
+
+Package: gettext-libintl
+Version: 0.21.1
+Port-Version: 1
+Depends: libiconv
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 97f6f10bc9c44f288289c4cdcdd6490e03915448151bd73954cd2d37025c0ca1
+Description: The libintl C library from GNU gettext-runtime.
+Status: install ok installed
+
+Package: gettext
+Version: 0.21.1
+Port-Version: 3
+Depends: gettext-libintl
+Architecture: x86-windows
+Multi-Arch: same
+Abi: e3d07557a0c42788f21fb75893ee3a592c62f06e8a50a3e0918f0170434fe51c
+Description: A GNU framework to help produce multi-lingual messages.
+Status: install ok installed
+
+Package: getopt-win32
+Version: 1.1.0.20220925
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 91f04b3008a0ffaf38e7079ae9e4c47158ffaacb745c14e64eca12fede3710e2
+Description: An implementation of getopt.
+Status: install ok installed
+
+Package: getopt
+Version: 0
+Port-Version: 3
+Depends: getopt-win32
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 9fcb91854c60319182c6ebf990352dd441e4d9bf1f12dcb3c2738c6fbf5a7818
+Description: The getopt and getopt_long functions automate some of the chore involved in parsing typical unix command line options.
+Status: install ok installed
+
+Package: expat
+Version: 2.5.0
+Port-Version: 3
+Depends: vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 6dc37b77ea6dadd64d756901ac5b60ed3b8f547ce7fb5303f855140eabb76c82
+Description: XML parser library written in C
+Status: install ok installed
+
+Package: dirent
+Version: 1.23.2
+Port-Version: 3
+Architecture: x86-windows
+Multi-Arch: same
+Abi: 0ec715561c8e65e06690cfadd770f48d8ee935b02886193f06beddbb05a86072
+Description: Dirent is a C/C++ programming interface that allows programmers to retrieve information about files and directories under Linux/UNIX. This project provides Linux compatible Dirent interface for Microsoft Windows.
+Status: install ok installed
+
+Package: fontconfig
+Version: 2.14.2
+Port-Version: 1
+Depends: dirent, expat, freetype, getopt, gettext, gperf:x64-windows, libiconv, pthread, vcpkg-tool-meson:x64-windows
+Architecture: x86-windows
+Multi-Arch: same
+Abi: b904e49dcf7cf24b81b5544d0e46830bab17d9b0b55d19d3ff2131db5171d864
+Description: Library for configuring and customizing font access.
+Status: install ok installed
+
+Package: egl-registry
+Version: 2022-09-20
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 72f46a6133267ca0465b73e62d32b46b6f0e4a559a0fa6e36e499caec6131f61
+Description: the EGL API and Extension Registry
+Status: install ok installed
+
+Package: opengl-registry
+Version: 2022-09-29
+Port-Version: 1
+Depends: egl-registry
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 92ca1307358c5f77a588dbee6be618046c21a29704c9f452d20e067246e61655
+Description: the API and Extension registries for the OpenGL family APIs
+Status: install ok installed
+
+Package: opengl
+Version: 2022-12-04
+Port-Version: 3
+Depends: opengl-registry
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a8a8f9167ce120baa7b461d13ab6a07b94cf9040fbe72f9c065f0daec84eb4e4
+Description: Open Graphics Library (OpenGL)[3][4][5] is a cross-language, cross-platform application programming interface (API) for rendering 2D and 3D vector graphics.
+Status: install ok installed
+
+Package: zlib
+Version: 1.3
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: cb4eb5ae28d4f2e2f606202191cdb9de4d8cf42c329a2b610b9bc14b148a47a5
+Description: A compression library
+Status: install ok installed
+
+Package: libpng
+Version: 1.6.39
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 09123cef1de89622ef4ed9f54170e1034b264f0d6b925acebf145c8432ce4dc8
+Description: libpng is a library implementing an interface for reading and writing PNG (Portable Network Graphics) format files
+Status: install ok installed
+
+Package: libjpeg-turbo
+Version: 3.0.0
+Port-Version: 2
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: cae8d5df9973abb61bd09f50534c6b2a495f0a85710debe3a71248a5a8d66e50
+Description: libjpeg-turbo is a JPEG image codec that uses SIMD instructions (MMX, SSE2, NEON, AltiVec) to accelerate baseline JPEG compression and decompression on x86, x86-64, ARM, and PowerPC systems.
+Status: install ok installed
+
+Package: bzip2
+Version: 1.0.8
+Port-Version: 5
+Depends: vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 8c53a8c90e4c9250835f8ff6c62b81df361a2ee900cc39811953e6b71aa481f4
+Description: bzip2 is a freely available, patent free, high-quality data compressor. It typically compresses files to within 10% to 15% of the best available techniques (the PPM family of statistical compressors), whilst being around twice as fast at compression and six times faster at decompression.
+Default-Features: tool
+Status: install ok installed
+
+Package: bzip2
+Feature: tool
+Architecture: x64-windows
+Multi-Arch: same
+Description: Builds bzip2 executable
+Status: install ok installed
+
+Package: brotli
+Version: 1.1.0
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 336919eea2e69e4ba12d0ee29e4a2764cc1eadff90145051bc0a3786e48c0906
+Description: a generic-purpose lossless compression algorithm that compresses data using a combination of a modern variant of the LZ77 algorithm, Huffman coding and 2nd order context modeling.
+Status: install ok installed
+
+Package: freetype
+Version: 2.12.1
+Port-Version: 4
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6259e89fa7561e8afb4f9ee9a9720feff17502420ff2f22285e9d878a14b8c55
+Description: A library to render fonts.
+Default-Features: brotli, bzip2, png, zlib
+Status: install ok installed
+
+Package: freetype
+Feature: brotli
+Depends: brotli
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support decompression of WOFF2 streams
+Status: install ok installed
+
+Package: freetype
+Feature: bzip2
+Depends: bzip2
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support bzip2 compressed fonts.
+Status: install ok installed
+
+Package: freetype
+Feature: png
+Depends: libpng
+Architecture: x64-windows
+Multi-Arch: same
+Description: Support PNG compressed OpenType embedded bitmaps.
+Status: install ok installed
+
+Package: freetype
+Feature: zlib
+Depends: zlib
+Architecture: x64-windows
+Multi-Arch: same
+Description: Use zlib instead of internal library for DEFLATE
+Status: install ok installed
+
+Package: pthreads
+Version: 3.0.0
+Port-Version: 14
+Depends: vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 863dd0703ec76f8d1a03b05be5f6d431cb58d9cc6694369e4d10f0512c513d75
+Description: Meta-package that provides PThreads4W on Windows, or assumes presence of system pthreads on POSIX systems.
+Status: install ok installed
+
+Package: pthread
+Version: 3.0.0
+Port-Version: 2
+Depends: pthreads
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5b611642d9278bdef55fe479cd2d23dec25fc9fd81a711856b254ddabdc4b42d
+Description: empty package, linking to other port
+Status: install ok installed
+
+Package: libiconv
+Version: 1.17
+Port-Version: 1
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 91057660060d1f34c3f141846ce6de592627b84904d79e54fdcb261a6c2fc621
+Description: GNU Unicode text conversion
+Status: install ok installed
+
+Package: gettext-libintl
+Version: 0.21.1
+Port-Version: 1
+Depends: libiconv
+Architecture: x64-windows
+Multi-Arch: same
+Abi: c4ddabcac840d28c12a560bfd37cfbee8cdf4ee08a193bdae464d082e8f1fcc1
+Description: The libintl C library from GNU gettext-runtime.
+Status: install ok installed
+
+Package: gettext
+Version: 0.21.1
+Port-Version: 3
+Depends: gettext-libintl
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 047d03f8c41fec2784cb24d7b0e2e5e53c97b017fa6e1a4e3a1ae5a9639e42bb
+Description: A GNU framework to help produce multi-lingual messages.
+Status: install ok installed
+
+Package: getopt-win32
+Version: 1.1.0.20220925
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 2cf3752ef87c3622f01590e8f086b2b92ac50b0d88fe49b2f2facb12d2a1a349
+Description: An implementation of getopt.
+Status: install ok installed
+
+Package: getopt
+Version: 0
+Port-Version: 3
+Depends: getopt-win32
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 5d5e236afcb48ed674b9368409583feadd8653d8f3727a0a41631895875350bd
+Description: The getopt and getopt_long functions automate some of the chore involved in parsing typical unix command line options.
+Status: install ok installed
+
+Package: expat
+Version: 2.5.0
+Port-Version: 3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d2f95f67bd6d9ebff74093a67168a5b2e746e6b569f6c18b595f8f7b37459e20
+Description: XML parser library written in C
+Status: install ok installed
+
+Package: dirent
+Version: 1.23.2
+Port-Version: 3
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 4fa89187a2735166a25a90f6c3097a1eb4b8fd0e5e58cf3f71cf5146a476b7da
+Description: Dirent is a C/C++ programming interface that allows programmers to retrieve information about files and directories under Linux/UNIX. This project provides Linux compatible Dirent interface for Microsoft Windows.
+Status: install ok installed
+
+Package: fontconfig
+Version: 2.14.2
+Port-Version: 1
+Depends: dirent, expat, freetype, getopt, gettext, gperf, libiconv, pthread, vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 13cdfad9bbc95f177950ae9dd01a25e0dc4a2bba48602554acc312408b140d7d
+Description: Library for configuring and customizing font access.
+Status: install ok installed
+
+Package: fltk
+Version: 1.3.8
+Port-Version: 5
+Depends: fontconfig, freetype, libjpeg-turbo, libpng, vcpkg-cmake, vcpkg-cmake-config, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 25509ab737563a5efc75c5848206baca7ed34bdc8a7a66bff26a4991dd8c2440
+Description: FLTK (pronounced fulltick) is a cross-platform C++ GUI toolkit for UNIX/Linux (X11), Microsoft Windows, and MacOS X. FLTK provides modern GUI functionality without the bloat and supports 3D graphics via OpenGL and its built-in GLUT emulation.
+Default-Features: opengl
+Status: install ok installed
+
+Package: fltk
+Feature: opengl
+Depends: opengl
+Architecture: x64-windows
+Multi-Arch: same
+Description: OpenGL support
+Status: install ok installed
+
+Package: fltk
+Version: 1.3.8
+Port-Version: 5
+Depends: fltk:x64-windows, fontconfig, freetype, libjpeg-turbo, libpng, vcpkg-cmake:x64-windows, vcpkg-cmake-config:x64-windows, zlib
+Architecture: x86-windows
+Multi-Arch: same
+Abi: bdb35af1e8175781dbc43b3cb31c8ff7dbf6242dbc633a54be3a5833f09211ff
+Description: FLTK (pronounced fulltick) is a cross-platform C++ GUI toolkit for UNIX/Linux (X11), Microsoft Windows, and MacOS X. FLTK provides modern GUI functionality without the bloat and supports 3D graphics via OpenGL and its built-in GLUT emulation.
+Default-Features: opengl
+Status: install ok installed
+
+Package: fltk
+Feature: opengl
+Depends: opengl
+Architecture: x86-windows
+Multi-Arch: same
+Description: OpenGL support
+Status: install ok installed
+
