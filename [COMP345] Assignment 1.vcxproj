@@ -127,7 +127,7 @@
     <!-- <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" /> -->
     <ClCompile Include="ProjectSourceCode\Interactable\EmptyCell.cpp" />
     <ClCompile Include="ProjectSourceCode\Interactable\Interactable.cpp" />
-    <ClCompile Include="ProjectSourceCode\MapBuilder.cpp" />
+    <ClCompile Include="ProjectSourceCode\Builder\MapBuilder.cpp" />
     <ClCompile Include="ProjectSourceCode\Interactable\Wall.cpp" />
     <ClCompile Include="ProjectSourceCode\Game\game.cpp" />
     <ClCompile Include="ProjectSourceCode\Game\gamelogger.cpp" />
@@ -174,7 +174,7 @@
     <ClInclude Include="ProjectSourceCode\Strategy\friendlystrategy.h" />
     <ClInclude Include="ProjectSourceCode\Interactable\EmptyCell.h" />
     <ClInclude Include="ProjectSourceCode\Interactable\Interactable.h" />
-    <ClInclude Include="ProjectSourceCode\MapBuilder.h" />
+    <ClInclude Include="ProjectSourceCode\Builder\MapBuilder.h" />
     <ClInclude Include="ProjectSourceCode\Interactable\Wall.h" />
     <ClInclude Include="ProjectSourceCode\Game\game.h" />
     <ClInclude Include="ProjectSourceCode\Game\gamelogger.h" />

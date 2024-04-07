@@ -11,7 +11,8 @@
 #include "../ProjectSourceCode/Interactable/EmptyCell.h"
 #include "../ProjectSourceCode/Character.h"
 #include "../ProjectSourceCode/item.h"
-#include "../ProjectSourceCode/MapBuilder.h"
+#include "../ProjectSourceCode/Builder/MapBuilder.h"
+
 using namespace CampaignEditor;
 
 MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)

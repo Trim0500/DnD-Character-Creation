@@ -1,15 +1,16 @@
-#include "MapBuilder.h"
-#include "Character.h"
-#include "Interactable\EmptyCell.h"
-#include "Item.h"
-#include "MapBuilder.h"
-#include "Interactable\Wall.h"
 #include <fstream>
 #include <iostream>
 #include <string>
 #include<iostream>
 #include<vector>
 #include<sstream>
+
+#include "MapBuilder.h"
+#include "..\Character.h"
+#include "..\Interactable\EmptyCell.h"
+#include "..\item.h"
+#include "MapBuilder.h"
+#include "..\Interactable\Wall.h"
 
 bool MapBuilder::MapBuilder::SaveMap(Map::Map* map, std::string& filename) {
 	//create file
