@@ -4,7 +4,7 @@
 #include <string>
 #include <cctype>
 
-#include "..\EmptyCell.h"
+#include "..\Interactable\EmptyCell.h"
 #include "game.h"
 
 namespace {
