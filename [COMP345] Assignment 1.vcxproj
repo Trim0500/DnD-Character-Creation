@@ -108,17 +108,18 @@
     <ClCompile Include="ProjectSourceCode\itemcontainer.cpp" />
     <ClCompile Include="ProjectSourceCode\Character.cpp" />
     <ClCompile Include="ProjectSourceCode\main.cpp" />
-    <ClCompile Include="ProjectSourceCode\testDice.cpp" />
-    <ClCompile Include="ProjectSourceCode\testitem.cpp" />
-    <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp" />
+    <ClCompile Include="ProjectSourceCode\Test\testCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\Test\testDice.cpp" />
+    <ClCompile Include="ProjectSourceCode\Test\testitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\Test\testitemcontainer.cpp" />
     <ClCompile Include="ProjectSourceCode\Dice\Dice.cpp" />
     <ClCompile Include="ProjectSourceCode\Map.cpp" />
     <ClCompile Include="ProjectSourceCode\Serialize\serializeItem.cpp" />
-    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp" />
-    <ClCompile Include="ProjectSourceCode\testserializeitem.cpp" />
+    <ClCompile Include="ProjectSourceCode\Test\testSerializeCharacter.cpp" />
+    <ClCompile Include="ProjectSourceCode\Test\testserializeitem.cpp" />
     <ClCompile Include="ProjectSourceCode\Serialize\SerializeCharacter.cpp" />
     <ClCompile Include="ProjectSourceCode\campaign.cpp" />
-    <ClCompile Include="ProjectSourceCode\testcampaign.cpp" />
+    <ClCompile Include="ProjectSourceCode\Test\testcampaign.cpp" />
     <ClCompile Include="ProjectSourceCode\Decorator\componentdecorator.cpp" />
     <ClCompile Include="ProjectSourceCode\Strategy\humanplayerstrategy.cpp" />
     <ClCompile Include="ProjectSourceCode\Strategy\aggressorstrategy.cpp" />
@@ -130,7 +131,7 @@
     <ClCompile Include="ProjectSourceCode\Interactable\Wall.cpp" />
     <ClCompile Include="ProjectSourceCode\Game\game.cpp" />
     <ClCompile Include="ProjectSourceCode\Game\gamelogger.cpp" />
-    <ClCompile Include="ProjectSourceCode\testgamelogger.cpp" />
+    <ClCompile Include="ProjectSourceCode\Test\testgamelogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\BaseEditor.h" />
@@ -150,20 +151,20 @@
     <ClInclude Include="ProjectSourceCode\itemcontainer.h" />
     <ClInclude Include="ProjectSourceCode\Observer\Observable.h" />
     <ClInclude Include="ProjectSourceCode\Observer\Observer.h" />
-    <ClInclude Include="ProjectSourceCode\testCharacter.h" />
-    <ClInclude Include="ProjectSourceCode\testDice.h" />
-    <ClInclude Include="ProjectSourceCode\testitem.h" />
+    <ClInclude Include="ProjectSourceCode\Test\testCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\Test\testDice.h" />
+    <ClInclude Include="ProjectSourceCode\Test\testitem.h" />
     <ClInclude Include="ProjectSourceCode\Character.h" />
     <ClInclude Include="ProjectSourceCode\Dice\Dice.h" />
-    <ClInclude Include="ProjectSourceCode\testitemcontainer.h" />
+    <ClInclude Include="ProjectSourceCode\Test\testitemcontainer.h" />
     <ClInclude Include="ProjectSourceCode\testitemidcounter.h" />
     <ClInclude Include="ProjectSourceCode\Map.h" />
     <ClInclude Include="ProjectSourceCode\Serialize\serializeItem.h" />
-    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" />
-    <ClInclude Include="ProjectSourceCode\testserializeitem.h" />
+    <ClInclude Include="ProjectSourceCode\Test\testSerializeCharacter.h" />
+    <ClInclude Include="ProjectSourceCode\Test\testserializeitem.h" />
     <ClInclude Include="ProjectSourceCode\Serialize\SerializeCharacter.h" />
     <ClInclude Include="ProjectSourceCode\campaign.h" />
-    <ClInclude Include="ProjectSourceCode\testcampaign.h" />
+    <ClInclude Include="ProjectSourceCode\Test\testcampaign.h" />
     <!-- <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h" /> -->
     <ClInclude Include="ProjectSourceCode\Decorator\abstractcomponent.h" />
     <ClInclude Include="ProjectSourceCode\Decorator\componentdecorator.h" />
@@ -177,7 +178,7 @@
     <ClInclude Include="ProjectSourceCode\Interactable\Wall.h" />
     <ClInclude Include="ProjectSourceCode\Game\game.h" />
     <ClInclude Include="ProjectSourceCode\Game\gamelogger.h" />
-    <ClInclude Include="ProjectSourceCode\testgamelogger.h" />
+    <ClInclude Include="ProjectSourceCode\Test\testgamelogger.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

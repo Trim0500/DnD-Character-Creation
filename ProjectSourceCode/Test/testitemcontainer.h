@@ -18,13 +18,11 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
-#include "itemcontainer.h"
-//#include "testitemidcounter.h"
+#include "..\itemcontainer.h"
 
 // using namespace std;
 using namespace CppUnit;
 using namespace itemcontainer;
-//using namespace testitemidcounter;
 
 /*!
 * \class TestItemContainer

@@ -3,10 +3,10 @@
 #include <sstream>
 
 #include "testCharacter.h"
-#include "Interactable.h"
-#include "EmptyCell.h"
-#include "Wall.h"
-#include "characteractionstrategy.h"
+#include "..\Interactable\Interactable.h"
+#include "..\Interactable\EmptyCell.h"
+#include "..\Interactable\Wall.h"
+#include "..\Strategy\characteractionstrategy.h"
 
 #define CHEST_ITEM_SIZE 250
 

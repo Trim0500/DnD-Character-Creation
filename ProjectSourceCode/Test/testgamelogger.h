@@ -12,8 +12,8 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
-#include "Game/gamelogger.h"
-#include "Game/game.h"
+#include "../Game/gamelogger.h"
+#include "../Game/game.h"
 
 using namespace CppUnit;
 using namespace gamelogger;

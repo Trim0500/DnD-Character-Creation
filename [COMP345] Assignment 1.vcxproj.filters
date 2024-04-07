@@ -24,7 +24,7 @@
     <ClCompile Include="ProjectSourceCode\itemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testitem.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\Character.cpp">
@@ -33,10 +33,10 @@
     <ClCompile Include="ProjectSourceCode\Dice\Dice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testitemcontainer.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testitemcontainer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testDice.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testDice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\demoitem.cpp">
@@ -54,7 +54,7 @@
     <ClCompile Include="ProjectSourceCode\Serialize\serializeItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testserializeitem.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testserializeitem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\Serialize\SerializeCharacter.cpp">
@@ -63,10 +63,10 @@
     <ClCompile Include="ProjectSourceCode\campaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testcampaign.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testcampaign.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testSerializeCharacter.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testSerializeCharacter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ProjectSourceCode\Decorator\componentdecorator.cpp">
@@ -99,7 +99,7 @@
     <ClCompile Include="ProjectSourceCode\Game\gamelogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ProjectSourceCode\testgamelogger.cpp">
+    <ClCompile Include="ProjectSourceCode\Test\testgamelogger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GUI\BaseEditor.cpp">
@@ -126,6 +126,9 @@
     <ClCompile Include="GUI\CampaignEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ProjectSourceCode\Test\testCharacter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProjectSourceCode\item.h">
@@ -134,7 +137,7 @@
     <ClInclude Include="ProjectSourceCode\itemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitem.h">
+    <ClInclude Include="ProjectSourceCode\Test\testitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Dice\Dice.h">
@@ -143,16 +146,16 @@
     <ClInclude Include="ProjectSourceCode\Character.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testitemcontainer.h">
+    <ClInclude Include="ProjectSourceCode\Test\testitemcontainer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testCharacter.h">
+    <ClInclude Include="ProjectSourceCode\Test\testCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\testitemidcounter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testDice.h">
+    <ClInclude Include="ProjectSourceCode\Test\testDice.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\demoitem.h">
@@ -170,7 +173,7 @@
     <ClInclude Include="ProjectSourceCode\Serialize\serializeItem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testserializeitem.h">
+    <ClInclude Include="ProjectSourceCode\Test\testserializeitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Serialize\SerializeCharacter.h">
@@ -179,10 +182,10 @@
     <ClInclude Include="ProjectSourceCode\campaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testcampaign.h">
+    <ClInclude Include="ProjectSourceCode\Test\testcampaign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testSerializeCharacter.h">
+    <ClInclude Include="ProjectSourceCode\Test\testSerializeCharacter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Decorator\abstractcomponent.h">
@@ -257,7 +260,7 @@
     <ClInclude Include="ProjectSourceCode\Game\gamelogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ProjectSourceCode\testgamelogger.h">
+    <ClInclude Include="ProjectSourceCode\Test\testgamelogger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

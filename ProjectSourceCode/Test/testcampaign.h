@@ -19,7 +19,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
-#include "campaign.h"
+#include "..\campaign.h"
 
 using namespace CppUnit;
 using namespace campaign;

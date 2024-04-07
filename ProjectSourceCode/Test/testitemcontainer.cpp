@@ -7,7 +7,7 @@
 #include <vector>
 
 #include "testitemcontainer.h"
-#include "Character.h"
+#include "..\Character.h"
 
 #define BACKPACK_ITEM_SIZE 30
 #define WORN_ITEMS_SIZE 7

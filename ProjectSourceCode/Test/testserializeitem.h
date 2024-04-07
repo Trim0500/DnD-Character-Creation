@@ -20,7 +20,7 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
-#include "Serialize\serializeItem.h"
+#include "..\Serialize\serializeItem.h"
 
 using namespace std;
 using namespace CppUnit;

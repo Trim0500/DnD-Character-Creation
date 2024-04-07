@@ -18,8 +18,8 @@
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 
-#include "item.h"
-#include "Character.h"
+#include "..\item.h"
+#include "..\Character.h"
 
 using namespace CppUnit;
 using namespace item;
