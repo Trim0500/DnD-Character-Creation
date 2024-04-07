@@ -119,6 +119,8 @@ namespace item
 		 */
 		Item();
 
+		Item(const int& _itemID) { itemId = _itemID; };
+
 		/*!
 		 * \fn Item
 		 * \brief Overloaded constructor for Item
