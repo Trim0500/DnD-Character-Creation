@@ -29,6 +29,17 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 	map_grid->end();
 	g->resizable(map_grid);
 	g->end();
+
+	sidebar->begin();
+
+	cellSideBarTitle = new Fl_Box(0, 0, w * .2, 30);
+	std::string label;
+	label = "Cell: " + std::to_string(cellButtonX) + ", " + std::to_string(cellButtonY);
+	cellSideBarTitle->copy_label(label.c_str());
+	objectIDChoiceLlist = new Fl_Input_Choice(0, 0, w * .1, 30, "Object ID");
+
+	//map_list->callback(dropdown_cb, (void*)this);
+	sidebar->end();
 }
 
 //std::string cttos(Map::Cell_Type ct)

@@ -1,7 +1,7 @@
 #include <FL/Fl_Tabs.H>
 #include "ItemEditor.h"
 #define WINDOW_HEIGHT 640
-#define WINDOW_WIDTH 800
+#define WINDOW_WIDTH 1200
 #define GROUP_SETTINGS 20, 90, WINDOW_WIDTH, (WINDOW_HEIGHT - 30)*.8
 #define EDITOR_SETTINGS 30, 90, WINDOW_WIDTH*.8, (WINDOW_HEIGHT - 60)*.8
 #include "MainMenu.h"

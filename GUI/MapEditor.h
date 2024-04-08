@@ -8,6 +8,7 @@
 #include <FL/Fl_Scroll.H>
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Int_Input.H>
+#include <FL/Fl_Input_Choice.H>
 
 #include <FL/Fl_Return_Button.H>
 #include <vector>
@@ -74,6 +75,9 @@ namespace CampaignEditor
 		int _grid_x, _grid_y;
 		std::vector<std::vector<MapCellButton *>> mcbs;
 		int _new_x, _new_y; // internal only, used during dialog to create map;
+		Fl_Box* cellSideBarTitle;
+		int cellButtonX, cellButtonY; // Current x and y values. set by buttons
+		Fl_Input_Choice* objectIDChoiceLlist;
 	};
 
 	class NewMapModal : public Fl_Window
