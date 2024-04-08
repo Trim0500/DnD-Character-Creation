@@ -18,7 +18,7 @@
 
 namespace CampaignEditor
 {
-	const std::string Cell_Labels[4] = {" ", "w", "i", "c"};
+	const std::string Cell_Labels[6] = {" ", "w", "d", "c", "co", "i"};
 	class MapCellButton : public Fl_Button
 	{
 	public:
@@ -30,6 +30,8 @@ namespace CampaignEditor
 		//Map::Cell_Type cell_type() { return ct; }
 		Interactable::Interactable * cell_type() { return ct; }
 
+		void ID(int id) { this->id = id; }
+		int ID() { return id; }
 		int X() { return x; }
 		int Y() { return y; }
 		int handle(int e);
@@ -38,6 +40,7 @@ namespace CampaignEditor
 		//Map::Cell_Type ct;
 		Interactable::Interactable * ct;
 
+		int id;
 		int x, y;
 		int current_l = 0;
 	};
@@ -60,6 +63,11 @@ namespace CampaignEditor
 		void update_data();
 		void delete_entry();
 		void save_data();
+
+		std::vector<Interactable::Interactable*> GetMapInteractables() { return mapInteractables; };
+
+		void SetMapInteractables(std::vector<Interactable::Interactable*> _mapInteractables) { mapInteractables = _mapInteractables; };
+
 		//void update_cell(int x, int y, Map::Cell_Type ct);
 		void update_cell(int x, int y, Interactable::Interactable* ct);
 		void update_cell(int x, int y, std::string ct);
@@ -68,6 +76,23 @@ namespace CampaignEditor
 		static void confirm(Fl_Widget *widget, void *f);
 		static void hide(Fl_Widget *widget, void *f);
 
+		static void CellButtonCallback(Fl_Widget* w, void* f) {
+			int x = ((MapCellButton*)w)->X();
+			int y = ((MapCellButton*)w)->Y();
+			std::cout << "Button triggered" << std::endl;
+			((MapEditor*)f)->HandleCellButton(x, y);
+		}
+
+		void HandleCellButton(int x, int y) {
+			// set_current_map(x,y);
+			cellButtonX = x; cellButtonY = y;
+
+			UpdateCellObjectIDDropDownLabel();
+		}
+
+		void UpdateCellObjectIDDropDownLabel();
+
+		void UpdateDropDown();
 	private:
 		Fl_Scroll *map_grid;
 		std::vector<Map::Map *> *maps;
@@ -75,9 +100,14 @@ namespace CampaignEditor
 		int _grid_x, _grid_y;
 		std::vector<std::vector<MapCellButton *>> mcbs;
 		int _new_x, _new_y; // internal only, used during dialog to create map;
+
 		Fl_Box* cellSideBarTitle;
+
 		int cellButtonX, cellButtonY; // Current x and y values. set by buttons
-		Fl_Input_Choice* objectIDChoiceLlist;
+
+		Fl_Input_Choice* objectIDChoiceList;
+
+		std::vector<Interactable::Interactable*> mapInteractables;
 	};
 
 	class NewMapModal : public Fl_Window

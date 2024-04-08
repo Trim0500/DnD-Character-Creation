@@ -4,6 +4,7 @@
 #include <FL/Fl_Scroll.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Return_Button.H>
+
 #include "MapEditor.h"
 #include "MapSerializer.h"
 #include "../ProjectSourceCode/Interactable/Interactable.h"
@@ -12,8 +13,10 @@
 #include "../ProjectSourceCode/Character/Character.h"
 #include "../ProjectSourceCode/Item/item.h"
 #include "../ProjectSourceCode/Builder/MapBuilder.h"
+#include "../ProjectSourceCode/Door/door.h"
 
 using namespace CampaignEditor;
+using namespace door;
 
 MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 {
@@ -26,6 +29,7 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 	// Fl_Box *box = new Fl_Box(20, 40, 50, 50, "Map");
 	map_grid = new Fl_Scroll(0, 0, w, h - 40, "Map");
 	map_grid->type(Fl_Scroll::BOTH_ALWAYS);
+	//redraw_map();
 	map_grid->end();
 	g->resizable(map_grid);
 	g->end();
@@ -36,7 +40,7 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 	std::string label;
 	label = "Cell: " + std::to_string(cellButtonX) + ", " + std::to_string(cellButtonY);
 	cellSideBarTitle->copy_label(label.c_str());
-	objectIDChoiceLlist = new Fl_Input_Choice(0, 0, w * .1, 30, "Object ID");
+	objectIDChoiceList = new Fl_Input_Choice(0, 0, w * .1, 30, "Interactable ID");
 
 	//map_list->callback(dropdown_cb, (void*)this);
 	sidebar->end();
@@ -82,6 +86,9 @@ int MapCellButton::handle(int e)
 		current_l = (current_l + 1) % 3;
 		copy_label(Cell_Labels[current_l].c_str());
 		this->value(current_l != 0);
+
+		UpdateCellObjectIDDropDownLabel();
+
 		return 1;
 	}
 	if (e == FL_PUSH)
@@ -111,6 +118,7 @@ void MapEditor::redraw_map()
 		for (int i = 0; i < _grid_x; i++)
 		{
 			MapCellButton *m = new MapCellButton(30 + 30 * i, 30 + 30 * j, 30, 30, i, j);
+			//m->callback(CellButtonCallback, (void*)this);
 			//m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());//TODO. error here.
 			mcbs[j].push_back(m);
 		}
@@ -267,6 +275,49 @@ void MapEditor::delete_entry()
 	maps->erase(maps->begin() + (i - 1));
 	browser->value(0);
 	populate_browser();
+}
+
+void MapEditor::UpdateCellObjectIDDropDownLabel()
+{
+	std::string label = "Cell: " + std::to_string(cellButtonX) + ", " + std::to_string(cellButtonY);
+	cellSideBarTitle->copy_label(label.c_str());
+
+	UpdateDropDown();
+}
+
+
+void MapEditor::UpdateDropDown() {
+	/*objectIDChoiceList->clear();
+
+	std::string interactableID;
+
+	objectIDChoiceList->add("");
+
+	if (get_cell(cellButtonX, cellButtonY)->ID() != 0) {
+		objectIDChoiceList->value(std::to_string(get_cell(cellButtonX, cellButtonY)->ID()).c_str());
+	}
+	else {
+		objectIDChoiceList->value("");
+	}
+
+	if (dynamic_cast<Wall*>(get_cell(cellButtonX, cellButtonY)->cell_type()) || dynamic_cast<EmptyCell*>(get_cell(cellButtonX, cellButtonY)->cell_type())) {
+		return;
+	}
+
+	for (int i = 0; i  < (int)mapInteractables.size(); i++)
+	{
+		if (dynamic_cast<Door*>(get_cell(cellButtonX, cellButtonY)->cell_type())) {
+			interactableID = std::to_string(static_cast<Door*>(mapInteractables[i])->GetDoorID());
+		}
+		else if (dynamic_cast<Character::Character*>(get_cell(cellButtonX, cellButtonY)->cell_type())) {
+			interactableID = std::to_string(static_cast<Character::Character*>(mapInteractables[i])->ID());
+		}
+		else if (dynamic_cast<Item*>(get_cell(cellButtonX, cellButtonY)->cell_type())) {
+			interactableID = std::to_string(static_cast<Item*>(mapInteractables[i])->GetItemId());
+		}
+
+		objectIDChoiceList->add(interactableID.c_str());
+	}*/
 }
 
 //void MapEditor::update_cell(int x, int y, Map::Cell_Type ct) { current_map->ChangeCell(x, y, ct); }
