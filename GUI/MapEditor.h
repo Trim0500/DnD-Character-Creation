@@ -62,7 +62,7 @@ namespace CampaignEditor
 
 		public:
 			MapEditor(int x, int y, int w, int h);
-			MapCellButton *get_cell(int x, int y) { return mcbs[y][x]; }
+			static MapCellButton *get_cell(int x, int y) { return mcbs[y][x]; }
 
 			void redraw_map();
 			void populate_browser();
@@ -105,23 +105,28 @@ namespace CampaignEditor
 			static void UpdateDropDown(const int&, const int&);
 		private:
 			Fl_Scroll *map_grid;
+
 			std::vector<Map::Map *> *maps;
+
 			Map::Map *current_map;
+
 			int _grid_x, _grid_y;
-			std::vector<std::vector<MapCellButton *>> mcbs;
+
+			static inline std::vector<std::vector<MapCellButton *>> mcbs;
+
 			int _new_x, _new_y; // internal only, used during dialog to create map;
 
 			static inline Fl_Box* cellSideBarTitle;
 
-			Fl_Input_Choice* objectIDChoiceList;
+			static inline Fl_Input_Choice* objectIDChoiceList;
 
-			std::vector<Interactable::Interactable*> mapInteractables;
+			static inline std::vector<Interactable::Interactable*> mapInteractables;
 
-			ItemEditor* itemEditor;
+			static inline ItemEditor* itemEditor;
 
-			CharacterEditor* characterEditor;
+			static inline CharacterEditor* characterEditor;
 
-			ItemContainerEditor* containerEditor;
+			static inline ItemContainerEditor* containerEditor;
 	};
 
 	class NewMapModal : public Fl_Window

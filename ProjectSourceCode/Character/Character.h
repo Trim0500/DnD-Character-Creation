@@ -6,6 +6,7 @@
 * 'Feats', 'Race', 'Class Features', 'Backgrounds', 'spells', 'skills', 'Armour, Weapon & tool proficiencies', 'Death saves', 'initiative' and 'saving throws'
 */
 #pragma once
+
 #include <bitset>
 #include <chrono>
 #include <iomanip>
@@ -218,7 +219,10 @@ namespace Character {
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/
-		const int ID() { return id; };
+		int ID() { return id; };
+
+		void SetID(int _id) { id = _id; };
+
 		/*! \fn Name()
 		*  \brief Character name
 		*/
@@ -444,7 +448,7 @@ namespace Character {
 		std::string observerMessage;
 
 		static inline unsigned int id_gen{ 0 };
-		const int id = id_gen++;
+		int id = id_gen++;
 
 		int tempID;//id to be used by mapload
 

@@ -87,6 +87,41 @@ int MapCellButton::handle(int e)
 		copy_label(Cell_Labels[current_l].c_str());
 		this->value(current_l != 0);
 
+		switch (current_l)
+		{
+			case 0:
+				ct = new EmptyCell();
+
+				break;
+			case 1:
+				ct = new Wall();
+
+				break;
+			case 2:
+				ct = new Door();
+				static_cast<Door*>(ct)->SetDoorID(0);
+
+				break;
+			case 3:
+				ct = new Character::Character();
+				static_cast<Character::Character*>(ct)->SetID(0);
+
+				break;
+			case 4:
+				ct = new ItemContainer();
+				static_cast<ItemContainer*>(ct)->SetItemID(0);
+
+				break;
+			case 5:
+				ct = new Item();
+				static_cast<Item*>(ct)->SetItemID(0);
+
+				break;
+			default:
+
+				break;
+		}
+
 		//mapEditor->UpdateCellObjectIDDropDownLabel(x, y);
 		MapEditor::UpdateCellObjectIDDropDownLabel(x, y);
 
@@ -287,37 +322,42 @@ void MapEditor::UpdateCellObjectIDDropDownLabel(const int& _cellButtonX, const i
 
 
 void MapEditor::UpdateDropDown(const int& _cellButtonX, const int& _cellButtonY) {
-	/*objectIDChoiceList->clear();
-
-	std::string interactableID;
+	objectIDChoiceList->clear();
 
 	objectIDChoiceList->add("");
 
-	if (get_cell(cellButtonX, cellButtonY)->ID() != 0) {
-		objectIDChoiceList->value(std::to_string(get_cell(cellButtonX, cellButtonY)->ID()).c_str());
+	if (get_cell(_cellButtonX, _cellButtonY)->ID() != 0) {
+		objectIDChoiceList->value(std::to_string(get_cell(_cellButtonX, _cellButtonY)->ID()).c_str());
 	}
 	else {
 		objectIDChoiceList->value("");
 	}
 
-	if (dynamic_cast<Wall*>(get_cell(cellButtonX, cellButtonY)->cell_type()) || dynamic_cast<EmptyCell*>(get_cell(cellButtonX, cellButtonY)->cell_type())) {
+	Interactable::Interactable* interactableAtCell = get_cell(_cellButtonX, _cellButtonY)->cell_type();
+	if (dynamic_cast<Wall*>(interactableAtCell) || dynamic_cast<EmptyCell*>(interactableAtCell)) {
 		return;
 	}
 
-	for (int i = 0; i  < (int)mapInteractables.size(); i++)
-	{
-		if (dynamic_cast<Door*>(get_cell(cellButtonX, cellButtonY)->cell_type())) {
-			interactableID = std::to_string(static_cast<Door*>(mapInteractables[i])->GetDoorID());
-		}
-		else if (dynamic_cast<Character::Character*>(get_cell(cellButtonX, cellButtonY)->cell_type())) {
-			interactableID = std::to_string(static_cast<Character::Character*>(mapInteractables[i])->ID());
-		}
-		else if (dynamic_cast<Item*>(get_cell(cellButtonX, cellButtonY)->cell_type())) {
-			interactableID = std::to_string(static_cast<Item*>(mapInteractables[i])->GetItemId());
-		}
+	mapInteractables.clear();
 
-		objectIDChoiceList->add(interactableID.c_str());
-	}*/
+	if (dynamic_cast<Door*>(interactableAtCell)) {
+		// mapInteractables = result of get operation on door editor
+	}
+	else if (dynamic_cast<Character::Character*>(interactableAtCell)) {
+		// mapInteractables = result of get operation on character editor
+	}
+	else if (dynamic_cast<ItemContainer*>(interactableAtCell)) {
+		// mapInteractables = result of get operation on container editor
+	}
+	else if (dynamic_cast<Item*>(interactableAtCell)) {
+		std::vector<Item*> editorItems = itemEditor->GetEditorItems();
+		for (int i = 0; i < (int)editorItems.size(); i++)
+		{
+			mapInteractables.push_back(static_cast<Interactable::Interactable*>(editorItems[i]));
+
+			objectIDChoiceList->add(std::to_string(editorItems[i]->GetItemId()).c_str());
+		}
+	}
 }
 
 //void MapEditor::update_cell(int x, int y, Map::Cell_Type ct) { current_map->ChangeCell(x, y, ct); }
