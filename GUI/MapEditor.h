@@ -39,21 +39,13 @@ namespace CampaignEditor
 		int X() { return x; }
 		int Y() { return y; }
 
-		/*MapEditor* GetMapEditor() { return mapEditor; };
-
-		void SetMapEditor(MapEditor* _mapEditor) { mapEditor = _mapEditor; };*/
-
 		int handle(int e);
-
 	private:
-		//Map::Cell_Type ct;
 		Interactable::Interactable* ct;
 
 		int id;
 		int x, y;
 		int current_l = 0;
-
-		//MapEditor* mapEditor;
 	};
 	
 	class MapEditor : public BaseEditor
@@ -100,6 +92,10 @@ namespace CampaignEditor
 			static void confirm(Fl_Widget *widget, void *f);
 			static void hide(Fl_Widget *widget, void *f);
 
+			static int GetEndCellBbuttonX() { return endCellX; };
+
+			static int GetEndCellBbuttonY() { return endCellY; };
+
 			int GetMapCellBbuttonX() { return mapCellButtonX; };
 
 			void SetMapCellBbuttonX(const int& _mapCellButtonX) { mapCellButtonX = _mapCellButtonX; };
@@ -131,6 +127,8 @@ namespace CampaignEditor
 			static inline Fl_Box* cellSideBarTitle;
 
 			static inline Fl_Input_Choice* objectIDChoiceList;
+
+			static inline int endCellX, endCellY;
 
 			static inline int mapCellButtonX, mapCellButtonY;
 

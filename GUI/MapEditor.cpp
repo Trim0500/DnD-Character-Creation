@@ -4,6 +4,7 @@
 #include <FL/Fl_Scroll.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Return_Button.H>
+#include <algorithm>
 
 #include "MapEditor.h"
 #include "MapSerializer.h"
@@ -83,6 +84,10 @@ std::string cttos(Interactable::Interactable* ct)
 
 int MapCellButton::handle(int e)
 {
+	if ((x == 0 && y == 0) || (x == MapEditor::GetEndCellBbuttonX() && y == MapEditor::GetEndCellBbuttonY())) {
+		return 0;
+	}
+
 	if (e == FL_RELEASE)
 	{
 		current_l = (current_l + 1) % 6;
@@ -207,6 +212,10 @@ void MapEditor::create()
 	{
 		_new_x = w->x();
 		_new_y = w->y();
+
+		endCellX = _new_x - 1;
+		endCellY = _new_y - 1;
+
 		std::cout << _new_x << "," << _new_y << std::endl;
 		try
 		{
@@ -401,6 +410,8 @@ void MapEditor::HandleDropdownEvent() {
 			found = true;
 
 			get_cell(mapCellButtonX, mapCellButtonY)->cell_type(mapInteractables[i]);
+
+			current_map->setCell(mapCellButtonX, mapCellButtonY, mapInteractables[i]);
 			
 			break;
 		}
