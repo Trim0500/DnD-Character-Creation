@@ -18,7 +18,7 @@ namespace CampaignEditor {
 			// spacing(30);
 			int c_y = 10;
 			this->type(Fl_Pack::HORIZONTAL);
-			this->spacing(100);
+			this->spacing(75);
 			_g = new Fl_Pack(10, 45, w * .2, (h) * .9);
 
 			browser = new Fl_Hold_Browser(0, 20, w / 2, (h) * .5);

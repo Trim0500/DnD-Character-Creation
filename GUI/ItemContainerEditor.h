@@ -1,5 +1,7 @@
+#pragma once
+
 #include "BaseEditor.h"
-#include "../ProjectSourceCode/itemcontainer.h"
+#include "../ProjectSourceCode/Item/itemcontainer.h"
 
 namespace CampaignEditor
 {

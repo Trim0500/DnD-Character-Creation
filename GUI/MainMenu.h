@@ -5,14 +5,16 @@
 #include <FL/Fl_Group.H>
 #include <FL/Fl_Tabs.H>
 #include <vector>
-#include "ItemEditor.h"
-#include "MapEditor.h"
-#include "CampaignEditor.h"
-#include "MapSerializer.h"
-#include "CharacterEditor.h"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+
+#include "ItemEditor.h"
+#include "MapEditor.h"
+#include "CampaignEditor.h"
+#include "ItemContainerEditor.h"
+#include "MapSerializer.h"
+#include "CharacterEditor.h"
 #include "../ProjectSourceCode/Map/Map.h"
 #include "../ProjectSourceCode/Builder/MapBuilder.h"
 
@@ -49,12 +51,13 @@ namespace CampaignEditor
 
 			// for (Map::Map *_m: *me->maps)
 			fs::create_directories(map_directory);
-			for (int index = 0; index < maps->size(); index++)
+			std::vector<Map::Map*> mapsToSave = *me->maps;
+			for (int index = 0; index < (int)mapsToSave.size(); index++)
 			{
-				Map::Map *_m = (*maps)[index];
-				fs::path fp = map_directory / ("Map" + std::to_string(_m->GetMapID()) + ".csv");
+				Map::Map* mapToSave = mapsToSave[index];
+				fs::path fp = map_directory / ("Map" + std::to_string(mapToSave->GetMapID()) + ".csv");
 				std::string s = fp.string();
-				MapBuilder::MapBuilder::SaveMap(_m, s);
+				MapBuilder::MapBuilder::SaveMap(mapToSave, s);
 				// MapSerializer::save_map(fp, _m);
 			}
 			fs::create_directories(item_directory.parent_path());
@@ -150,6 +153,7 @@ namespace CampaignEditor
 		Fl_Tabs *tabs;
 		Fl_Menu_Bar *menu;
 		ItemEditor *ie;
+		ItemContainerEditor* containerEditor;
 		MapEditor *me;
 		CharacterEditor *chare;
 		CampaignEditor *ce;

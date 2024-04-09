@@ -132,6 +132,12 @@
     <ClCompile Include="ProjectSourceCode\Door\door.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GUI\CharacterEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\ItemContainerEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProjectSourceCode\Item\item.h">
@@ -239,9 +245,6 @@
     <ClInclude Include="GUI\CharacterViewWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GUI\CharacterEditor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GUI\BaseViewer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -264,6 +267,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ProjectSourceCode\Door\door.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\CharacterEditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\ItemContainerEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

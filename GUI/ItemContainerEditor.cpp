@@ -1,5 +1,5 @@
 #include "ItemContainerEditor.h"
-#include "../ProjectSourceCode/serializeItem.h"
+#include "../ProjectSourceCode/Serialize/serializeItem.h"
 
 using namespace serializeItem;
 namespace CampaignEditor
