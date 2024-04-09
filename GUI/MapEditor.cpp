@@ -42,6 +42,8 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 	cellSideBarTitle->copy_label(label.c_str());
 	objectIDChoiceList = new Fl_Input_Choice(0, 0, w * .1, 30, "Interactable ID");
 
+	objectIDChoiceList->callback(InteractableIDDropdownCallBack, (void*)this);
+
 	//map_list->callback(dropdown_cb, (void*)this);
 	sidebar->end();
 }
@@ -153,7 +155,7 @@ void MapEditor::redraw_map()
 		mcbs.push_back(std::vector<MapCellButton *>());
 		for (int i = 0; i < _grid_x; i++)
 		{
-			MapCellButton *m = new MapCellButton(30 + 30 * i, 30 + 30 * j, 30, 30, i, j);
+			MapCellButton *m = new MapCellButton(60 + 60 * i, 60 + 60 * j, 60, 60, i, j);
 			//m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());//TODO. error here.
 			mcbs[j].push_back(m);
 		}
@@ -317,6 +319,10 @@ void MapEditor::UpdateCellObjectIDDropDownLabel(const int& _cellButtonX, const i
 	std::string label = "Cell: " + std::to_string(_cellButtonX) + ", " + std::to_string(_cellButtonY);
 	cellSideBarTitle->copy_label(label.c_str());
 
+	mapCellButtonX = _cellButtonX;
+
+	mapCellButtonY = _cellButtonY;
+
 	UpdateDropDown(_cellButtonX, _cellButtonY);
 }
 
@@ -358,6 +364,53 @@ void MapEditor::UpdateDropDown(const int& _cellButtonX, const int& _cellButtonY)
 			objectIDChoiceList->add(std::to_string(editorItems[i]->GetItemId()).c_str());
 		}
 	}
+}
+
+void MapEditor::HandleDropdownEvent() {
+	MapCellButton* b = get_cell(mapCellButtonX, mapCellButtonY);
+	b->ID(std::stoi(objectIDChoiceList->value()));
+	
+	bool found = false;
+	
+	for (int i = 0; i < (int)mapInteractables.size(); i++) {
+		int interactableID = 0;
+		char interactableCharacter = ' ';
+
+		if (dynamic_cast<Door*>(mapInteractables[i])) {
+			interactableID = static_cast<Door*>(mapInteractables[i])->GetDoorID();
+
+			interactableCharacter = 'd';
+		}
+		else if (dynamic_cast<Character::Character*>(mapInteractables[i])) {
+			interactableID = static_cast<Character::Character*>(mapInteractables[i])->ID();
+
+			interactableCharacter = 'c';
+		}
+		else if (dynamic_cast<ItemContainer*>(mapInteractables[i])) {
+			interactableID = static_cast<ItemContainer*>(mapInteractables[i])->GetItemId();
+
+			interactableCharacter = 'co';
+		}
+		else if (dynamic_cast<Item*>(mapInteractables[i])) {
+			interactableID = static_cast<Item*>(mapInteractables[i])->GetItemId();
+
+			interactableCharacter = 'i';
+		}
+
+		if (interactableID == std::stoi(objectIDChoiceList->value())) {
+			found = true;
+
+			get_cell(mapCellButtonX, mapCellButtonY)->cell_type(mapInteractables[i]);
+			
+			break;
+		}
+	}
+	if (!found) {
+		// TODO:  Map not found error
+		return;
+	}
+	
+	std::cout << "Map cell modified" << std::endl;
 }
 
 //void MapEditor::update_cell(int x, int y, Map::Cell_Type ct) { current_map->ChangeCell(x, y, ct); }

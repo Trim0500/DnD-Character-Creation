@@ -100,9 +100,21 @@ namespace CampaignEditor
 			static void confirm(Fl_Widget *widget, void *f);
 			static void hide(Fl_Widget *widget, void *f);
 
+			int GetMapCellBbuttonX() { return mapCellButtonX; };
+
+			void SetMapCellBbuttonX(const int& _mapCellButtonX) { mapCellButtonX = _mapCellButtonX; };
+
+			int GetMapCellBbuttonY() { return mapCellButtonY; };
+
+			void SetMapCellBbuttonY(const int& _mapCellButtonY) { mapCellButtonX = _mapCellButtonY; };
+
 			static void UpdateCellObjectIDDropDownLabel(const int&, const int&);
 
 			static void UpdateDropDown(const int&, const int&);
+
+			static void InteractableIDDropdownCallBack(Fl_Widget* _widget, void* _mapEditor) { ((MapEditor*)_mapEditor)->HandleDropdownEvent(); };
+
+			void HandleDropdownEvent();
 		private:
 			Fl_Scroll *map_grid;
 
@@ -119,6 +131,8 @@ namespace CampaignEditor
 			static inline Fl_Box* cellSideBarTitle;
 
 			static inline Fl_Input_Choice* objectIDChoiceList;
+
+			static inline int mapCellButtonX, mapCellButtonY;
 
 			static inline std::vector<Interactable::Interactable*> mapInteractables;
 
