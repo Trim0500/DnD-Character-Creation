@@ -38,7 +38,7 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 
 	cellSideBarTitle = new Fl_Box(0, 0, w * .2, 30);
 	std::string label;
-	label = "Cell: " + std::to_string(cellButtonX) + ", " + std::to_string(cellButtonY);
+	label = "Cell: " + std::to_string(0) + ", " + std::to_string(0);
 	cellSideBarTitle->copy_label(label.c_str());
 	objectIDChoiceList = new Fl_Input_Choice(0, 0, w * .1, 30, "Interactable ID");
 
@@ -83,11 +83,12 @@ int MapCellButton::handle(int e)
 {
 	if (e == FL_RELEASE)
 	{
-		current_l = (current_l + 1) % 3;
+		current_l = (current_l + 1) % 6;
 		copy_label(Cell_Labels[current_l].c_str());
 		this->value(current_l != 0);
 
-		UpdateCellObjectIDDropDownLabel();
+		//mapEditor->UpdateCellObjectIDDropDownLabel(x, y);
+		MapEditor::UpdateCellObjectIDDropDownLabel(x, y);
 
 		return 1;
 	}
@@ -118,7 +119,6 @@ void MapEditor::redraw_map()
 		for (int i = 0; i < _grid_x; i++)
 		{
 			MapCellButton *m = new MapCellButton(30 + 30 * i, 30 + 30 * j, 30, 30, i, j);
-			//m->callback(CellButtonCallback, (void*)this);
 			//m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());//TODO. error here.
 			mcbs[j].push_back(m);
 		}
@@ -277,16 +277,16 @@ void MapEditor::delete_entry()
 	populate_browser();
 }
 
-void MapEditor::UpdateCellObjectIDDropDownLabel()
+void MapEditor::UpdateCellObjectIDDropDownLabel(const int& _cellButtonX, const int& _cellButtonY)
 {
-	std::string label = "Cell: " + std::to_string(cellButtonX) + ", " + std::to_string(cellButtonY);
+	std::string label = "Cell: " + std::to_string(_cellButtonX) + ", " + std::to_string(_cellButtonY);
 	cellSideBarTitle->copy_label(label.c_str());
 
-	UpdateDropDown();
+	UpdateDropDown(_cellButtonX, _cellButtonY);
 }
 
 
-void MapEditor::UpdateDropDown() {
+void MapEditor::UpdateDropDown(const int& _cellButtonX, const int& _cellButtonY) {
 	/*objectIDChoiceList->clear();
 
 	std::string interactableID;

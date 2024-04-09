@@ -1,3 +1,5 @@
+#pragma once
+
 #include "BaseEditor.h"
 
 namespace CampaignEditor
@@ -18,6 +20,6 @@ namespace CampaignEditor
 		void update_data();
 		void populate_browser();
 		private:
-			vector<Character::Character *> * characters;
+			std::vector<Character::Character *> * characters;
 	};
 }

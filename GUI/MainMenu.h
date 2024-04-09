@@ -5,14 +5,16 @@
 #include <FL/Fl_Group.H>
 #include <FL/Fl_Tabs.H>
 #include <vector>
-#include "ItemEditor.h"
-#include "MapEditor.h"
-#include "CampaignEditor.h"
-#include "MapSerializer.h"
-#include "CharacterEditor.h"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+
+#include "ItemEditor.h"
+#include "MapEditor.h"
+#include "CampaignEditor.h"
+#include "ItemContainerEditor.h"
+#include "MapSerializer.h"
+#include "CharacterEditor.h"
 #include "../ProjectSourceCode/Map/Map.h"
 #include "../ProjectSourceCode/Builder/MapBuilder.h"
 
@@ -150,6 +152,7 @@ namespace CampaignEditor
 		Fl_Tabs *tabs;
 		Fl_Menu_Bar *menu;
 		ItemEditor *ie;
+		ItemContainerEditor* containerEditor;
 		MapEditor *me;
 		CharacterEditor *chare;
 		CampaignEditor *ce;

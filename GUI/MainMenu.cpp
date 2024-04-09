@@ -23,17 +23,19 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 		ce->end();
 	// }
 	// cg->end();
+	ig = new Fl_Group(GROUP_SETTINGS, "Items");
+	{
+		ie = new ItemEditor(EDITOR_SETTINGS);
+	}
+	ig->end();
 	mg = new Fl_Group(GROUP_SETTINGS, "Map");
 	{
 		me = new MapEditor(EDITOR_SETTINGS);
 		me->set_maps(ce->get_maps());
 	}
 	mg->end();
-	ig = new Fl_Group(GROUP_SETTINGS, "Items");
-	{
-		ie = new ItemEditor(EDITOR_SETTINGS);
-	}
-	ig->end();
+
+	me->SetItemEditor(ie);
 
 	// chare = new CharacterEditor(EDITOR_SETTINGS);
 

@@ -1,4 +1,3 @@
-#pragma once
 #include <iostream>
 #include <vector>
 #include <FL/Fl.H>
@@ -19,11 +18,11 @@
 
 namespace CampaignEditor
 {
-	CharacterEditor::CharacterEditor(int x, int y, int w, int h) {
+	/*CharacterEditor::CharacterEditor(int x, int y, int w, int h) {
 		g->begin();
 		idInput = new Fl_Int_Input(0, 0, w, height, "Id");
 		idInput->readonly(true);
-	}
+	}*/
 
 
 }
