@@ -96,6 +96,7 @@
     <ClCompile Include="GUI\BaseEditor.cpp" />
     <ClCompile Include="GUI\CampaignEditor.cpp" />
     <ClCompile Include="GUI\CharacterEditor.cpp" />
+    <ClCompile Include="GUI\dooreditor.cpp" />
     <ClCompile Include="GUI\ItemContainerEditor.cpp" />
     <ClCompile Include="GUI\ItemEditor.cpp" />
     <ClCompile Include="GUI\MainMenu.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="GUI\CampaignEditor.h" />
     <ClInclude Include="GUI\CharacterEditor.h" />
     <ClInclude Include="GUI\CharacterViewWindow.h" />
+    <ClInclude Include="GUI\dooreditor.h" />
     <ClInclude Include="GUI\ItemContainerEditor.h" />
     <ClInclude Include="GUI\ItemEditor.h" />
     <ClInclude Include="GUI\MainMenu.h" />
