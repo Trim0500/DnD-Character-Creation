@@ -9,6 +9,10 @@
 
 namespace {
 	std::string BuildVectorInputString(const std::vector<int>& _locationVector) {
+		if (_locationVector.size() == 0) {
+			return "";
+		}
+
 		std::ostringstream inputString;
 		inputString << _locationVector[0] << "," << _locationVector[1];
 
