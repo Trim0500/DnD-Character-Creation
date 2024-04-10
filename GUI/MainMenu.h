@@ -1,4 +1,5 @@
 #pragma once
+
 #include <FL/Fl_Window.H>
 #include <FL/Fl_Menu_Bar.H>
 #include <FL/Fl_Menu_Item.H>
@@ -15,10 +16,12 @@
 #include "ItemContainerEditor.h"
 #include "MapSerializer.h"
 #include "CharacterEditor.h"
+#include "dooreditor.h"
 #include "../ProjectSourceCode/Map/Map.h"
 #include "../ProjectSourceCode/Builder/MapBuilder.h"
 
 namespace fs = std::filesystem;
+using namespace dooreditor;
 
 namespace CampaignEditor
 {
@@ -63,6 +66,9 @@ namespace CampaignEditor
 			fs::create_directories(item_directory.parent_path());
 			ie->save();
 
+			fs::create_directories(doorDirectory.parent_path());
+			doorEditor->save();
+
 			return;
 		};
 		void open()
@@ -102,6 +108,15 @@ namespace CampaignEditor
 				else
 				{
 					fs::create_directory(map_directory);
+				}
+
+				if (fs::exists(doorDirectory))
+				{
+					doorEditor->open(doorDirectory.string());
+				}
+				else
+				{
+					fs::create_directories(doorDirectory.parent_path());
 				}
 
 				ce->maps = this->maps;
@@ -145,27 +160,46 @@ namespace CampaignEditor
 			ce->filepath = campaign_dir.string();
 			item_directory = campaign_dir / "Items" / "items.csv";
 			map_directory = campaign_dir / "Maps";
+			doorDirectory = campaign_dir / "Doors" / "doors.csv";
 			ie->filepath = item_directory.string();
 			me->filepath = map_directory.string();
 		}
 
 	private:
 		Fl_Tabs *tabs;
+
 		Fl_Menu_Bar *menu;
+
 		ItemEditor *ie;
+
 		ItemContainerEditor* containerEditor;
+
 		MapEditor *me;
+
 		CharacterEditor *chare;
+
 		CampaignEditor *ce;
 
+		DoorEditor* doorEditor;
+
 		Fl_Group *ig;
+
 		Fl_Group *mg;
+
 		Fl_Group *cg;
 
+		Fl_Group* doorGroup;
+
 		fs::path map_directory;
+
 		fs::path item_directory;
+
 		fs::path item_container_directory;
+
+		fs::path doorDirectory;
+
 		fs::path character_directory;
+
 		fs::path campaign_dir;
 		// std::vector<Map::Map *> maps;
 		std::vector<Map::Map *> *maps;

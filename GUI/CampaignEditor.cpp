@@ -40,6 +40,12 @@ namespace CampaignEditor
 		// TODO: load map from file */
 	}
 	void CampaignEditor::save_data() {}
+	void CampaignEditor::Notify() {
+		for (int i = 0; i < (int)observers.size(); i++)
+		{
+			observers[i]->update(_c_x + 1, _c_y + 1, get_cell(_c_x, _c_y)->ID());
+		}
+	}
 	void CampaignEditor::populate_browser()
 	{
 		browser->clear();
@@ -131,6 +137,9 @@ namespace CampaignEditor
 			return;
 		}
 		campaign->AddMapToCampaign(_c_x+1, _c_y+1, *m);
+
+		Notify();
+
 		std::cout<<"campaign modified" <<std::endl;
 
 		// redraw_map();

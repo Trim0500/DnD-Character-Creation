@@ -35,7 +35,19 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 	}
 	mg->end();
 
+	doorGroup = new Fl_Group(GROUP_SETTINGS, "Doors");
+	{
+		doorEditor = new DoorEditor(EDITOR_SETTINGS);
+	}
+	doorGroup->end();
+
 	me->SetItemEditor(ie);
+
+	me->SetDoorEditor(doorEditor);
+
+	me->Attach(doorEditor);
+
+	ce->Attach(doorEditor);
 
 	// chare = new CharacterEditor(EDITOR_SETTINGS);
 

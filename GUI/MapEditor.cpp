@@ -52,34 +52,24 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 //std::string cttos(Map::Cell_Type ct)
 std::string cttos(Interactable::Interactable* ct)
 {
-	//switch (typeid(ct))
-	//{
-	////case Map::Cell_Type::special:
-	//case Map::Cell_Type::special:
-	//	return "s";
-	//	break;
-	////case Map::Cell_Type::wall:
-	//case typeid(Wall) == typeid(ct):
-	//	return "w";
-	//default:
-	//	return " ";
-
-	//	break;
-	//}
-
 	if (typeid(*ct) == typeid(Wall)) {
 		return "w";
+	}
+	else if (typeid(*ct) == typeid(Door)) {
+		return "d";
+	}
+	else if(typeid(*ct) == typeid(Character::Character)) {
+		return "c";
+	}
+	else if(typeid(*ct) == typeid(ItemContainer)) {
+		return "co";
 	}
 	else if(typeid(*ct) == typeid(item::Item)) {
 		return "i";
 	}	
-	else if(typeid(*ct) == typeid(Character::Character)) {
-		return "c";
-	}
 	else {
-		return " ";
+		return "";
 	}
-
 }
 
 int MapCellButton::handle(int e)
@@ -129,6 +119,8 @@ int MapCellButton::handle(int e)
 				break;
 		}
 
+		MapEditor::update_cell(x, y, ct);
+
 		//mapEditor->UpdateCellObjectIDDropDownLabel(x, y);
 		MapEditor::UpdateCellObjectIDDropDownLabel(x, y);
 
@@ -142,6 +134,13 @@ int MapCellButton::handle(int e)
 	return 0;
 }
 
+void MapEditor::Notify() {
+	for (int i = 0; i < (int)observers.size(); i++)
+	{
+		observers[i]->update((void*)this);
+	}
+}
+
 void MapEditor::redraw_map()
 {
 	std::cout << "Redrawing the map" << std::endl;
@@ -153,6 +152,7 @@ void MapEditor::redraw_map()
 	// map_grid->clear();
 	// Fl_Pack * c = new Fl_Pack(0,0,300, 50*_grid_y);
 	// MapCellButton * mc;
+	mcbs.clear();
 	for (int j = 0; j < _grid_y; j++)
 	{
 		// Fl_Pack * r = new Fl_Pack(0,0,50*_grid_x, 50);
@@ -161,7 +161,9 @@ void MapEditor::redraw_map()
 		for (int i = 0; i < _grid_x; i++)
 		{
 			MapCellButton *m = new MapCellButton(60 + 60 * i, 60 + 60 * j, 60, 60, i, j);
-			//m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());//TODO. error here.
+
+			m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());
+			
 			mcbs[j].push_back(m);
 		}
 		// r->end();
@@ -221,6 +223,9 @@ void MapEditor::create()
 		{
 			Map::Map *m = new Map::Map(_new_x, _new_y);
 			maps->push_back(m);
+
+			Notify();
+
 			populate_browser();
 			browser->bottomline(browser->size());
 			browser->select(browser->size());
@@ -287,6 +292,9 @@ void MapEditor::open(std::string s)
 	//Map::Map m = MapSerializer::load_map(filepath);
 	Map::Map* m = MapBuilder::MapBuilder::LoadMap(filepath);
 	maps->push_back(m);
+
+	Notify();
+
 	populate_browser();
 	browser->bottomline(browser->size());
 	browser->select(browser->size());
@@ -300,6 +308,9 @@ void MapEditor::open()
 		//Map::Map m = MapSerializer::load_map(filepath);
 		Map::Map* m = MapBuilder::MapBuilder::LoadMap(filepath);
 		maps->push_back(m);
+
+		Notify();
+
 		populate_browser();
 		browser->bottomline(browser->size());
 		browser->select(browser->size());
@@ -319,6 +330,9 @@ void MapEditor::delete_entry()
 		return;
 	};
 	maps->erase(maps->begin() + (i - 1));
+
+	Notify();
+
 	browser->value(0);
 	populate_browser();
 }
@@ -356,7 +370,13 @@ void MapEditor::UpdateDropDown(const int& _cellButtonX, const int& _cellButtonY)
 	mapInteractables.clear();
 
 	if (dynamic_cast<Door*>(interactableAtCell)) {
-		// mapInteractables = result of get operation on door editor
+		std::vector<Door*> editorDoors = doorEditor->GetEditorDoors();
+		for (int i = 0; i < (int)editorDoors.size(); i++)
+		{
+			mapInteractables.push_back(static_cast<Interactable::Interactable*>(editorDoors[i]));
+
+			objectIDChoiceList->add(std::to_string(editorDoors[i]->GetDoorID()).c_str());
+		}
 	}
 	else if (dynamic_cast<Character::Character*>(interactableAtCell)) {
 		// mapInteractables = result of get operation on character editor
