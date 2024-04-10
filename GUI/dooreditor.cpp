@@ -1,7 +1,33 @@
+#include <sstream>
+#include <string>
+#include <FL/fl_ask.H>
+#include <regex>
+
 #include "dooreditor.h"
 
 namespace {
+	std::string BuildVectorInputString(const std::vector<int>& _locationVector) {
+		std::ostringstream inputString;
+		inputString << _locationVector[0] << "," << _locationVector[1];
 
+		return inputString.str();
+	}
+
+	std::vector<int> BuildVectorFromInput(std::string _locationInput) {
+		std::vector<int> result;
+
+		std::smatch match;
+
+		std::regex numberRgx("[0-9]+");
+
+		while (regex_search(_locationInput, match, numberRgx)) {
+			result.push_back(std::stoi(match.str()));
+
+			_locationInput = match.suffix().str();
+		}
+
+		return result;
+	}
 }
 
 namespace dooreditor {
@@ -51,46 +77,194 @@ namespace dooreditor {
 	}
 
 	void DoorEditor::load_data() {
+		std::cout << "[DoorEditor/load_data] -- Updating Doors" << std::endl;
 
+		int i = browser->value();
+		if (i <= editorDoors.size() && i > 0)
+		{
+			std::cout << "[DoorEditor/load_data] -- Selected: " << i << std::endl;
+			currentDoor = (Door*)browser->data(i);
+
+			update_data();
+		}
 	}
 	
 	void DoorEditor::create() {
+		Door* newDoor = new Door();
+		editorDoors.push_back(newDoor);
 
+		populate_browser();
+
+		browser->bottomline(browser->size());
+		browser->select(browser->size());
+
+		load_data();
 	}
 
 	void DoorEditor::save() {
+		if (filepath.empty())
+		{
+			save_as();
+		}
+		else
+		{
+			try
+			{
+				SaveDoors(filepath, editorDoors);
+			}
+			catch (const std::exception& e)
+			{
+				fl_alert("[DoorEditor/save] -- There was an error saving the file. Try using 'save as'");
+			}
 
+			try
+			{
+				editorDoors = LoadDoors(filepath);
+
+				populate_browser();
+			}
+			catch (const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+			}
+		}
 	}
 
 	void DoorEditor::open(std::string _filePath) {
+		filepath = _filePath;
 
+		try
+		{
+			editorDoors = LoadDoors(filepath);
+		}
+		catch (const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
+
+		try
+		{
+			populate_browser();
+		}
+		catch (const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
 
 	void DoorEditor::open() {
+		if (BaseEditor::open())
+		{
+			try
+			{
+				editorDoors = LoadDoors(filepath);
+			}
+			catch (const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+			}
 
+			try
+			{
+				populate_browser();
+			}
+			catch (const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+			}
+		}
 	}
 
 	void DoorEditor::save_as() {
-
+		if (BaseEditor::save_as())
+		{
+			try
+			{
+				save();
+			}
+			catch (const std::exception& e)
+			{
+				std::cerr << e.what() << '\n';
+			}
+		}
 	}
 
 	void DoorEditor::save_as(std::string _filePath) {
-
+		try
+		{
+			SaveDoors(_filePath, editorDoors);
+		}
+		catch (const std::exception& e)
+		{
+			fl_alert("[DoorEditor/save] -- There was an error saving the file. Try using 'save as'");
+		}
 	}
 
 	void DoorEditor::save_data() {
+		currentDoor->SetDoorID(std::stoi(doorIDInput->value()));
+		currentDoor->SetFirstMapID(std::stoi(firstMapIDChoice->value()));
+		currentDoor->SetSecondMapID(std::stoi(secondMapIDChoice->value()));
+		currentDoor->SetFirstMapLocation(BuildVectorFromInput(firstMapLocationInput->value()));
+		currentDoor->SetSecondMapLocation(BuildVectorFromInput(secondMapLocationInput->value()));
+		currentDoor->SetFirstMapSpawnPoint(BuildVectorFromInput(firstMapSpawnPointInput->value()));
+		currentDoor->SetSecondMapSpawnPoint(BuildVectorFromInput(secondMapSpawnPointInput->value()));
 
+		populate_browser();
 	}
 
 	void DoorEditor::delete_entry() {
+		if (editorDoors.size() < 0)
+		{
+			return;
+		}
 
+		int i = browser->value();
+		if (i < 1 || i > editorDoors.size())
+		{
+			return;
+		}
+
+		editorDoors.erase(editorDoors.begin() + (i - 1));
+
+		browser->value(0);
+
+		populate_browser();
 	}
 
 	void DoorEditor::update_data() {
+		loadedDoorId = currentDoor->GetDoorID();
+		loadedFirstMapId = currentDoor->GetFirstMapID();
+		loadedSecondMapId = currentDoor->GetSecondMapID();
+		loadedFirstMapLocation = currentDoor->GetFirstMapLocation();
+		loadedSecondMapLocation = currentDoor->GetSecondMapLocation();
+		loadedFirstMapSpawnPoint = currentDoor->GetFirstMapSpawnPoint();
+		loadedSecondMapSpawnPoint = currentDoor->GetSecondMapSpawnPoint();
 
+		currentDoorId = std::to_string(loadedDoorId);
+		currentFirstMapID = std::to_string(loadedFirstMapId);
+		currentSecondMapID = std::to_string(loadedSecondMapId);
+		currentFirstMapLocation = BuildVectorInputString(loadedFirstMapLocation);
+		currentSecondMapLocation = BuildVectorInputString(loadedSecondMapLocation);
+		currentFirstMapSpawnPoint = BuildVectorInputString(loadedFirstMapSpawnPoint);
+		currentSecondMapSpawnPoint = BuildVectorInputString(loadedSecondMapSpawnPoint);
+
+		doorIDInput->value(currentDoorId.c_str());
+		firstMapIDChoice->value(currentFirstMapID.c_str());
+		secondMapIDChoice->value(currentSecondMapID.c_str());
+		firstMapLocationInput->value(currentFirstMapLocation.c_str());
+		secondMapLocationInput->value(currentSecondMapLocation.c_str());
+		firstMapSpawnPointInput->value(currentFirstMapSpawnPoint.c_str());
+		secondMapSpawnPointInput->value(currentSecondMapSpawnPoint.c_str());
 	}
 
 	void DoorEditor::populate_browser() {
+		browser->clear();
 
+		std::string label;
+		for (Door* door : editorDoors)
+		{
+			label = std::to_string(door->GetDoorID());
+			browser->add(label.c_str(), door);
+		}
 	}
 }
