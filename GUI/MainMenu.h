@@ -67,6 +67,9 @@ namespace CampaignEditor
 			fs::create_directories(item_directory.parent_path());
 			ie->save();
 
+			fs::create_directories(item_container_directory.parent_path());
+			containerEditor->save();
+
 			fs::create_directories(doorDirectory.parent_path());
 			doorEditor->save();
 
@@ -90,6 +93,15 @@ namespace CampaignEditor
 				else
 				{
 					fs::create_directories(item_directory.parent_path());
+				}
+				
+				if (fs::exists(item_container_directory))
+				{
+					containerEditor->open(item_container_directory.string());
+				}
+				else
+				{
+					fs::create_directories(item_container_directory.parent_path());
 				}
 
 				if (fs::exists(map_directory))
@@ -160,6 +172,7 @@ namespace CampaignEditor
 			// campaign_dir = fs::path(ce->filepath);
 			ce->filepath = campaign_dir.string();
 			item_directory = campaign_dir / "Items" / "items.csv";
+			item_container_directory = campaign_dir / "Item Containers" / "item_containers.csv";
 			map_directory = campaign_dir / "Maps";
 			doorDirectory = campaign_dir / "Doors" / "doors.csv";
 			ie->filepath = item_directory.string();

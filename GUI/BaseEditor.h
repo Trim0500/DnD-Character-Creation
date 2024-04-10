@@ -51,6 +51,8 @@ namespace CampaignEditor {
 		static void static_delete(Fl_Widget* w, void* f) {
 			((BaseEditor*)f)->delete_entry();
 		}
+
+		virtual ~BaseEditor() {};
 	protected:
 		Fl_Hold_Browser* browser;
 		Fl_Pack* g;

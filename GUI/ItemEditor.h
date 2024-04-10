@@ -18,20 +18,24 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Float_Input.H>
 
+#include "BaseEditor.h"
 #include "../ProjectSourceCode/Item/item.h"
 #include "../ProjectSourceCode/Character/Character.h"
 #include "../ProjectSourceCode/Serialize/serializeItem.h"
+#include "../ProjectSourceCode/Observer/Observable.h"
 
-#include "BaseEditor.h"
+using namespace observable;
 
 namespace CampaignEditor
 {
-	class ItemEditor : public BaseEditor
+	class ItemEditor : public BaseEditor, public Observable
 	{
 		friend class MainMenu; 
 
 	public:
 		ItemEditor(int x, int y, int w, int h);
+
+		virtual ~ItemEditor() {};
 
 		void load_data();
 
@@ -54,6 +58,12 @@ namespace CampaignEditor
 		void update_data();
 
 		void populate_browser();
+
+		void Attach(Observer* _observer) override { observers.push_back(_observer); };
+
+		void Detach(Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+
+		void Notify() override;
 
 		std::vector<Item*> GetEditorItems() { return items; };
 
@@ -110,5 +120,7 @@ namespace CampaignEditor
 		std::string currentWeight;
 
 		std::vector<Item *> items;
+	private:
+		std::vector<Observer*> observers;
 	};
 }

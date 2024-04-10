@@ -1,44 +1,21 @@
 #pragma once
 
 #include "ItemEditor.h"
+#include "../ProjectSourceCode/Serialize/serializeItem.h"
+#include "../ProjectSourceCode/Observer/Observer.h"
 
 using namespace CampaignEditor;
-
-//#include "BaseEditor.h"
-//#include "../ProjectSourceCode/Item/itemcontainer.h"
-
-//namespace CampaignEditor
-//{
-//	class ItemContainerEditor : public BaseEditor
-//	{
-//	public:
-//		ItemContainerEditor(int x, int y, int w, int h);
-//		void load_data();
-//		void create();
-//		void save();
-//		void open(std::string);
-//		void open();
-//		void save_as();
-//		void save_as(std::string s);
-//		void save_data();
-//		void delete_entry();
-//		void update_data();
-//		void populate_browser();
-//		void set_items(std::vector<item::Item *> * i) {
-//			items = i;
-//		} 
-//	private:
-//		std::vector<itemcontainer::ItemContainer *> *itemcontainers;
-//		std::vector<item::Item *> *items;
-//	};
-//}
+using namespace serializeItem;
+using namespace observer;
 
 namespace itemcontainereditor {
-	class ItemContainerEditor : public ItemEditor {
+	class ItemContainerEditor : public ItemEditor, public Observer {
 		public:
 			ItemContainerEditor(int x, int y, int w, int h);
 
-			/*void load_data();
+			virtual ~ItemContainerEditor() {};
+
+			void load_data();
 
 			void create();
 
@@ -50,7 +27,7 @@ namespace itemcontainereditor {
 
 			void save_as();
 
-			void save_as(std::string s);
+			void save_as(std::string);
 
 			void save_data();
 
@@ -58,7 +35,13 @@ namespace itemcontainereditor {
 
 			void update_data();
 
-			void populate_browser();*/
+			void populate_browser();
+
+			void update(std::string) override {};
+
+			void update(void*) override;
+
+			void update(const int&, const int&, const int&) override {};
 
 			std::vector<ItemContainer*> GetEditorContainers() { return containers; };
 
@@ -70,6 +53,8 @@ namespace itemcontainereditor {
 
 			double loadedContainerCapacity;
 
+			std::vector<Item> loadedContainerItems;
+
 			std::vector<Item> containerItems;
 
 			ItemContainer* currentContainer;
@@ -79,5 +64,7 @@ namespace itemcontainereditor {
 			std::string currentContainerItemIDs;
 
 			std::vector<ItemContainer*> containers;
+
+			std::vector<ItemContainerRecord*> containerRecords;
 	};
 }

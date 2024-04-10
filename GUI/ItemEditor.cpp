@@ -115,6 +115,9 @@ namespace CampaignEditor
 	{
 		Item *i = new Item();
 		items.push_back(i);
+
+		Notify();
+
 		populate_browser();
 		browser->bottomline(browser->size());
 		browser->select(browser->size());
@@ -133,6 +136,9 @@ namespace CampaignEditor
 			return;
 		};
 		items.erase(items.begin() + (i - 1));
+
+		Notify();
+
 		browser->value(0);
 		populate_browser();
 	}
@@ -197,6 +203,9 @@ namespace CampaignEditor
 			try
 			{
 				items = serializeItem::LoadItems(filepath);
+
+				Notify();
+
 				populate_browser();
 				/* code */
 			}
@@ -212,6 +221,8 @@ namespace CampaignEditor
 		try
 		{
 			items = serializeItem::LoadItems(filepath);
+
+			Notify();
 			/* code */
 		}
 		catch (const std::exception &e)
@@ -235,6 +246,8 @@ namespace CampaignEditor
 			try
 			{
 				items = serializeItem::LoadItems(filepath);
+
+				Notify();
 				/* code */
 			}
 			catch (const std::exception &e)
@@ -274,6 +287,13 @@ namespace CampaignEditor
 		catch (const std::exception &e)
 		{
 			fl_alert("There was an error saving the file. Try using 'save as'");
+		}
+	}
+
+	void ItemEditor::Notify() {
+		for (int i = 0; i < (int)observers.size(); i++)
+		{
+			observers[i]->update((void*)this);
 		}
 	}
 }
