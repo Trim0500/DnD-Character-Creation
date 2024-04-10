@@ -22,6 +22,7 @@
 
 namespace fs = std::filesystem;
 using namespace dooreditor;
+using namespace itemcontainereditor;
 
 namespace CampaignEditor
 {
@@ -184,6 +185,8 @@ namespace CampaignEditor
 
 		Fl_Group *ig;
 
+		Fl_Group *containerGroup;
+		
 		Fl_Group *mg;
 
 		Fl_Group *cg;

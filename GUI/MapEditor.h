@@ -24,6 +24,8 @@
 using namespace observable;
 using namespace dooreditor;
 
+using namespace itemcontainereditor;
+
 namespace CampaignEditor
 {
 	const std::string Cell_Labels[6] = {" ", "w", "d", "c", "co", "i"};

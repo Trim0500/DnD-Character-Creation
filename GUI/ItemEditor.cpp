@@ -38,6 +38,7 @@ namespace CampaignEditor
 		const int height = 50;
 		const int padding = 50;
 		g->begin();
+		itemFieldPack = new Fl_Pack(0, 0, w, 200);
 		/*
 			base item information
 		*/
@@ -72,6 +73,8 @@ namespace CampaignEditor
 		enchantmentBonusInput = new Fl_Int_Input(0, 0, w, height, "Ench Bonus");
 
 		ench->end();
+
+		itemFieldPack->end();
 
 		Fl_Pack *b = new Fl_Pack(0, 0, w, height / 2);
 		b->type(Fl_Pack::HORIZONTAL);

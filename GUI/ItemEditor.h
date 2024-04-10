@@ -59,11 +59,12 @@ namespace CampaignEditor
 
 		void SetEditorItems(std::vector<Item*> _items) { items = _items; };
 	protected:
-	private:
 		int get_item();
 
 		std::vector<std::string> item_database;
 		// UI Components
+
+		Fl_Pack* itemFieldPack;
 
 		Fl_Int_Input *idInput; // constant
 
