@@ -102,7 +102,7 @@ namespace CampaignEditor
 			void SetDoorEditor(DoorEditor* _doorEditor) { doorEditor = _doorEditor; };
 
 			//void update_cell(int x, int y, Map::Cell_Type ct);
-			void update_cell(int x, int y, Interactable::Interactable* ct);
+			static void update_cell(int x, int y, Interactable::Interactable* ct);
 			void update_cell(int x, int y, std::string ct);
 			void update_cell(int x, int y, char ct);
 			std::vector<Map::Map*>* GetEditorMaps() { return maps; };
@@ -134,7 +134,7 @@ namespace CampaignEditor
 
 			std::vector<Map::Map *> *maps;
 
-			Map::Map *current_map;
+			static inline Map::Map *current_map;
 
 			int _grid_x, _grid_y;
 

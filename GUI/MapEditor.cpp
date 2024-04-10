@@ -52,34 +52,24 @@ MapEditor::MapEditor(int x, int y, int w, int h) : BaseEditor(x, y, w, h)
 //std::string cttos(Map::Cell_Type ct)
 std::string cttos(Interactable::Interactable* ct)
 {
-	//switch (typeid(ct))
-	//{
-	////case Map::Cell_Type::special:
-	//case Map::Cell_Type::special:
-	//	return "s";
-	//	break;
-	////case Map::Cell_Type::wall:
-	//case typeid(Wall) == typeid(ct):
-	//	return "w";
-	//default:
-	//	return " ";
-
-	//	break;
-	//}
-
 	if (typeid(*ct) == typeid(Wall)) {
 		return "w";
+	}
+	else if (typeid(*ct) == typeid(Door)) {
+		return "d";
+	}
+	else if(typeid(*ct) == typeid(Character::Character)) {
+		return "c";
+	}
+	else if(typeid(*ct) == typeid(ItemContainer)) {
+		return "co";
 	}
 	else if(typeid(*ct) == typeid(item::Item)) {
 		return "i";
 	}	
-	else if(typeid(*ct) == typeid(Character::Character)) {
-		return "c";
-	}
 	else {
-		return " ";
+		return "";
 	}
-
 }
 
 int MapCellButton::handle(int e)
@@ -129,6 +119,8 @@ int MapCellButton::handle(int e)
 				break;
 		}
 
+		MapEditor::update_cell(x, y, ct);
+
 		//mapEditor->UpdateCellObjectIDDropDownLabel(x, y);
 		MapEditor::UpdateCellObjectIDDropDownLabel(x, y);
 
@@ -169,7 +161,9 @@ void MapEditor::redraw_map()
 		for (int i = 0; i < _grid_x; i++)
 		{
 			MapCellButton *m = new MapCellButton(60 + 60 * i, 60 + 60 * j, 60, 60, i, j);
-			//m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());//TODO. error here.
+
+			m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());
+			
 			mcbs[j].push_back(m);
 		}
 		// r->end();
