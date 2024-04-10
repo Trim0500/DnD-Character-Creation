@@ -43,6 +43,8 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 
 	me->SetItemEditor(ie);
 
+	me->SetDoorEditor(doorEditor);
+
 	me->Attach(doorEditor);
 
 	ce->Attach(doorEditor);

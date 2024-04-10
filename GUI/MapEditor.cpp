@@ -160,6 +160,7 @@ void MapEditor::redraw_map()
 	// map_grid->clear();
 	// Fl_Pack * c = new Fl_Pack(0,0,300, 50*_grid_y);
 	// MapCellButton * mc;
+	mcbs.clear();
 	for (int j = 0; j < _grid_y; j++)
 	{
 		// Fl_Pack * r = new Fl_Pack(0,0,50*_grid_x, 50);

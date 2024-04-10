@@ -96,6 +96,10 @@ namespace CampaignEditor
 			ItemContainerEditor* GetContainerEditor() { return containerEditor; };
 
 			void SetContainerEditor(ItemContainerEditor* _containerEditor) { containerEditor = _containerEditor; };
+			
+			DoorEditor* GetDoorEditor() { return doorEditor; };
+
+			void SetDoorEditor(DoorEditor* _doorEditor) { doorEditor = _doorEditor; };
 
 			//void update_cell(int x, int y, Map::Cell_Type ct);
 			void update_cell(int x, int y, Interactable::Interactable* ct);
