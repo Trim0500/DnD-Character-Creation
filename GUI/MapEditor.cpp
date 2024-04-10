@@ -375,7 +375,13 @@ void MapEditor::UpdateDropDown(const int& _cellButtonX, const int& _cellButtonY)
 	mapInteractables.clear();
 
 	if (dynamic_cast<Door*>(interactableAtCell)) {
-		// mapInteractables = result of get operation on door editor
+		std::vector<Door*> editorDoors = doorEditor->GetEditorDoors();
+		for (int i = 0; i < (int)editorDoors.size(); i++)
+		{
+			mapInteractables.push_back(static_cast<Interactable::Interactable*>(editorDoors[i]));
+
+			objectIDChoiceList->add(std::to_string(editorDoors[i]->GetDoorID()).c_str());
+		}
 	}
 	else if (dynamic_cast<Character::Character*>(interactableAtCell)) {
 		// mapInteractables = result of get operation on character editor

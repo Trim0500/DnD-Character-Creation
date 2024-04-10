@@ -16,11 +16,13 @@
 #include "ItemEditor.h"
 #include "CharacterEditor.h"
 #include "ItemContainerEditor.h"
+#include "dooreditor.h"
 #include "../ProjectSourceCode/Map/Map.h"
 #include "../ProjectSourceCode/Interactable/Interactable.h"
 #include "../ProjectSourceCode/Observer/Observable.h"
 
 using namespace observable;
+using namespace dooreditor;
 
 namespace CampaignEditor
 {
@@ -151,6 +153,8 @@ namespace CampaignEditor
 			static inline CharacterEditor* characterEditor;
 
 			static inline ItemContainerEditor* containerEditor;
+
+			static inline DoorEditor* doorEditor;
 
 			std::vector<Observer*> observers;
 	};

@@ -112,29 +112,26 @@ namespace dooreditor {
 		location.push_back(_mapLocationX);
 		location.push_back(_mapLocationY);
 
-		std::ostringstream locationInputText;
-		locationInputText << _mapLocationX << "," << _mapLocationY;
-
 		auto doorMatchByFirstMapID = std::find_if(editorDoors.begin(),
-										editorDoors.end(),
-										[_mapID](Door* door) { return door->GetFirstMapID() == _mapID; });
-		if (doorMatchByFirstMapID != editorDoors.end()) {
+													editorDoors.end(),
+													[_mapID](Door* door) { return door->GetFirstMapID() == _mapID; });
+		while (doorMatchByFirstMapID != editorDoors.end()) {
 			(*doorMatchByFirstMapID)->SetFirstMapLocation(location);
 
-			//firstMapLocationInput->value(locationInputText.str().c_str());
-
-			return;
+			doorMatchByFirstMapID = std::find_if(doorMatchByFirstMapID + 1,
+													editorDoors.end(),
+													[_mapID](Door* door) { return door->GetFirstMapID() == _mapID; });
 		}
 
 		auto doorMatchBySecondMapID = std::find_if(editorDoors.begin(),
 													editorDoors.end(),
 													[_mapID](Door* door) { return door->GetSecondMapID() == _mapID; });
-		if (doorMatchBySecondMapID != editorDoors.end()) {
+		while (doorMatchBySecondMapID != editorDoors.end()) {
 			(*doorMatchBySecondMapID)->SetSecondMapLocation(location);
 
-			//secondMapLocationInput->value(locationInputText.str().c_str());
-
-			return;
+			doorMatchBySecondMapID = std::find_if(doorMatchBySecondMapID + 1,
+													editorDoors.end(),
+													[_mapID](Door* door) { return door->GetSecondMapID() == _mapID; });
 		}
 	}
 
