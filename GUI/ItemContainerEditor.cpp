@@ -281,5 +281,12 @@ namespace itemcontainereditor {
 			Item item = *updatedItemList[i];
 			containerItems.push_back(item);
 		}
+
+		Fl_Input* _temp = itemsIDChoice->input();
+		_temp->readonly(true);
+		for (int i = 0; i < (int)containerItems.size(); i++)
+		{
+			itemsIDChoice->add(std::to_string(containerItems[i].GetItemId()).c_str());
+		}
 	}
 }

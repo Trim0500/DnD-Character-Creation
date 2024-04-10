@@ -46,6 +46,8 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 	}
 	doorGroup->end();
 
+	ie->Attach(containerEditor);
+
 	me->SetItemEditor(ie);
 
 	me->SetDoorEditor(doorEditor);
