@@ -89,7 +89,7 @@ namespace itemcontainereditor {
 		std::cout << "[ItemContainerEditor/load_data] -- Updating containers" << std::endl;
 
 		int i = browser->value();
-		if (i <= items.size() && i > 0)
+		if (i <= containers.size() && i > 0)
 		{
 			std::cout << "[ItemContainerEditor/load_data] -- Selected: " << i << std::endl;
 
@@ -100,8 +100,10 @@ namespace itemcontainereditor {
 	}
 
 	void ItemContainerEditor::create() {
-		ItemContainer* container = new ItemContainer();
+		ItemContainer* container = new ItemContainer("New Container", item::ItemType::Inventory, 30.0);
 		containers.push_back(container);
+
+		items.push_back(static_cast<Item*>(container));
 
 		populate_browser();
 

@@ -86,7 +86,7 @@ namespace item
 	 * \var itemTypeStrings
 	 * \brief String array for formatting item name item type
 	 */
-	const std::string itemTypeStrings[7] = { "Helmet", "Armor", "Shield", "Ring", "Belt", "Boots", "Weapon" };
+	const std::string itemTypeStrings[11] = { "Helmet", "Armor", "Shield", "Ring", "Belt", "Boots", "Weapon", "Backpack", "WornItems", "Treasure Chest", "Inventory"};
 	/*!
 	 * \var itemTypeStrings
 	 * \brief String array for formatting item name character stat
