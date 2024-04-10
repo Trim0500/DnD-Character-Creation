@@ -19,15 +19,23 @@
 
 #include "BaseEditor.h"
 #include "../ProjectSourceCode/Door/door.h"
+#include "../ProjectSourceCode/Observer/Observer.h"
 
 using namespace CampaignEditor;
 using namespace door;
+using namespace observer;
 
 namespace dooreditor {
-	class DoorEditor : public BaseEditor {
+	class DoorEditor : public BaseEditor, public Observer {
 		friend class MainMenu;
 	public:
 		DoorEditor(int, int, int, int);
+
+		virtual ~DoorEditor() {};
+
+		void update(std::string) override {};
+
+		void update(void*) override;
 
 		void load_data();
 
@@ -54,6 +62,8 @@ namespace dooreditor {
 		std::vector<Door*> GetEditorDoors() { return editorDoors; };
 
 		void SetEditorItems(std::vector<Door*> _editorDoors) { editorDoors = _editorDoors; };
+
+		void UpdateMapIDDropDowns(const std::vector<int>&);
 	private:
 		int get_item();
 

@@ -4,6 +4,7 @@
 #include <regex>
 
 #include "dooreditor.h"
+#include "MapEditor.h"
 
 namespace {
 	std::string BuildVectorInputString(const std::vector<int>& _locationVector) {
@@ -27,6 +28,18 @@ namespace {
 		}
 
 		return result;
+	}
+
+	void UpdateMapIDDropdownSelection(Fl_Input_Choice* _inputChoice, const std::vector<int>& _idVector) {
+		_inputChoice->clear();
+
+		Fl_Input* _temp = _inputChoice->input();
+		_temp->readonly(true);
+
+		for (int i = 0; i < (int)_idVector.size(); i++)
+		{
+			_inputChoice->add(std::to_string(_idVector[i]).c_str());
+		}
 	}
 }
 
@@ -74,6 +87,19 @@ namespace dooreditor {
 		apply->callback(static_save_data, (void*)this);
 
 		g->end();
+	}
+
+	void DoorEditor::update(void* _observable) {
+		std::vector<Map::Map*>* mapsInEditor = ((MapEditor*)_observable)->GetEditorMaps();
+
+		std::vector<int> mapIDs;
+
+		for (int i = 0; i < (int)mapsInEditor->size(); i++)
+		{
+			mapIDs.push_back(mapsInEditor->at(i)->GetMapID());
+		}
+
+		UpdateMapIDDropDowns(mapIDs);
 	}
 
 	void DoorEditor::load_data() {
@@ -266,5 +292,11 @@ namespace dooreditor {
 			label = std::to_string(door->GetDoorID());
 			browser->add(label.c_str(), door);
 		}
+	}
+
+	void DoorEditor::UpdateMapIDDropDowns(const std::vector<int>& _mapIDs) {
+		UpdateMapIDDropdownSelection(firstMapIDChoice, _mapIDs);
+
+		UpdateMapIDDropdownSelection(secondMapIDChoice, _mapIDs);
 	}
 }

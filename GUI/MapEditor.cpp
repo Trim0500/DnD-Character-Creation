@@ -142,6 +142,13 @@ int MapCellButton::handle(int e)
 	return 0;
 }
 
+void MapEditor::Notify() {
+	for (int i = 0; i < (int)observers.size(); i++)
+	{
+		observers[i]->update((void*)this);
+	}
+}
+
 void MapEditor::redraw_map()
 {
 	std::cout << "Redrawing the map" << std::endl;
@@ -221,6 +228,9 @@ void MapEditor::create()
 		{
 			Map::Map *m = new Map::Map(_new_x, _new_y);
 			maps->push_back(m);
+
+			Notify();
+
 			populate_browser();
 			browser->bottomline(browser->size());
 			browser->select(browser->size());
@@ -287,6 +297,9 @@ void MapEditor::open(std::string s)
 	//Map::Map m = MapSerializer::load_map(filepath);
 	Map::Map* m = MapBuilder::MapBuilder::LoadMap(filepath);
 	maps->push_back(m);
+
+	Notify();
+
 	populate_browser();
 	browser->bottomline(browser->size());
 	browser->select(browser->size());
@@ -300,6 +313,9 @@ void MapEditor::open()
 		//Map::Map m = MapSerializer::load_map(filepath);
 		Map::Map* m = MapBuilder::MapBuilder::LoadMap(filepath);
 		maps->push_back(m);
+
+		Notify();
+
 		populate_browser();
 		browser->bottomline(browser->size());
 		browser->select(browser->size());
@@ -319,6 +335,9 @@ void MapEditor::delete_entry()
 		return;
 	};
 	maps->erase(maps->begin() + (i - 1));
+
+	Notify();
+
 	browser->value(0);
 	populate_browser();
 }

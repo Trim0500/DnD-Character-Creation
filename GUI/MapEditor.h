@@ -18,6 +18,9 @@
 #include "ItemContainerEditor.h"
 #include "../ProjectSourceCode/Map/Map.h"
 #include "../ProjectSourceCode/Interactable/Interactable.h"
+#include "../ProjectSourceCode/Observer/Observable.h"
+
+using namespace observable;
 
 namespace CampaignEditor
 {
@@ -48,13 +51,15 @@ namespace CampaignEditor
 		int current_l = 0;
 	};
 	
-	class MapEditor : public BaseEditor
+	class MapEditor : public BaseEditor, public Observable
 	{
 		friend class MainMenu;
 
 		public:
 			MapEditor(int x, int y, int w, int h);
 			static MapCellButton *get_cell(int x, int y) { return mcbs[y][x]; }
+
+			virtual ~MapEditor() {};
 
 			void redraw_map();
 			void populate_browser();
@@ -67,6 +72,12 @@ namespace CampaignEditor
 			void update_data();
 			void delete_entry();
 			void save_data();
+
+			void Attach(Observer* _observer) override { observers.push_back(_observer); };
+
+			void Detach(Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+
+			void Notify() override;
 
 			std::vector<Interactable::Interactable*> GetMapInteractables() { return mapInteractables; };
 
@@ -88,6 +99,7 @@ namespace CampaignEditor
 			void update_cell(int x, int y, Interactable::Interactable* ct);
 			void update_cell(int x, int y, std::string ct);
 			void update_cell(int x, int y, char ct);
+			std::vector<Map::Map*>* GetEditorMaps() { return maps; };
 			void set_maps(std::vector<Map::Map *> *m) { maps = m; }
 			static void confirm(Fl_Widget *widget, void *f);
 			static void hide(Fl_Widget *widget, void *f);
@@ -139,6 +151,8 @@ namespace CampaignEditor
 			static inline CharacterEditor* characterEditor;
 
 			static inline ItemContainerEditor* containerEditor;
+
+			std::vector<Observer*> observers;
 	};
 
 	class NewMapModal : public Fl_Window
