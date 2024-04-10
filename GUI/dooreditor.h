@@ -37,6 +37,8 @@ namespace dooreditor {
 
 		void update(void*) override;
 
+		void update(const int&, const int&, const int&) override;
+
 		void load_data();
 
 		void create();

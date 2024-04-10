@@ -45,6 +45,8 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 
 	me->Attach(doorEditor);
 
+	ce->Attach(doorEditor);
+
 	// chare = new CharacterEditor(EDITOR_SETTINGS);
 
 	tabs->end();

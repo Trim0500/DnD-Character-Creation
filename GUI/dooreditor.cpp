@@ -2,6 +2,7 @@
 #include <string>
 #include <FL/fl_ask.H>
 #include <regex>
+#include <algorithm>
 
 #include "dooreditor.h"
 #include "MapEditor.h"
@@ -100,6 +101,37 @@ namespace dooreditor {
 		}
 
 		UpdateMapIDDropDowns(mapIDs);
+	}
+
+	void DoorEditor::update(const int& _mapLocationX, const int& _mapLocationY, const int& _mapID) {
+		std::vector<int> location;
+		location.push_back(_mapLocationX);
+		location.push_back(_mapLocationY);
+
+		std::ostringstream locationInputText;
+		locationInputText << _mapLocationX << "," << _mapLocationY;
+
+		auto doorMatchByFirstMapID = std::find_if(editorDoors.begin(),
+										editorDoors.end(),
+										[_mapID](Door* door) { return door->GetFirstMapID() == _mapID; });
+		if (doorMatchByFirstMapID != editorDoors.end()) {
+			(*doorMatchByFirstMapID)->SetFirstMapLocation(location);
+
+			//firstMapLocationInput->value(locationInputText.str().c_str());
+
+			return;
+		}
+
+		auto doorMatchBySecondMapID = std::find_if(editorDoors.begin(),
+													editorDoors.end(),
+													[_mapID](Door* door) { return door->GetSecondMapID() == _mapID; });
+		if (doorMatchBySecondMapID != editorDoors.end()) {
+			(*doorMatchBySecondMapID)->SetSecondMapLocation(location);
+
+			//secondMapLocationInput->value(locationInputText.str().c_str());
+
+			return;
+		}
 	}
 
 	void DoorEditor::load_data() {
