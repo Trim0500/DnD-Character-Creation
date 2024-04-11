@@ -374,6 +374,8 @@ namespace Character {
 		*/
 		itemcontainer::ItemContainer& Inventory() { return inventory; };
 
+		void SetInventory(itemcontainer::ItemContainer _inventory) { inventory = _inventory; };
+
 		/*!
 		* \fn TakeItems
 		* \brief Method meant to implement a character action of taking a selection of items from an item container

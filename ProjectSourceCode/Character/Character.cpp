@@ -236,7 +236,7 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 	}
 	this->hit_points = t_record.hit_points;
 	this->max_hit_points = t_record.max_hit_points;
-	std::vector<item::Item*> item_container_record = serializeItem::LoadItems(t_record.inventory_container_path);
+	/*std::vector<item::Item*> item_container_record = serializeItem::LoadItems(t_record.inventory_container_path);
 	for (auto t_items : item_container_record) {
 		this->Inventory().AddNewItem(t_items);
 	}
@@ -248,7 +248,7 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 				found = true;
 			}
 		}
-	}
+	}*/
 
 	isPlayerControlled = t_record.isPlayerControlled;
 	

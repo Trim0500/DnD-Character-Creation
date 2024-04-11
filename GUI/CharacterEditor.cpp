@@ -1,6 +1,11 @@
 #include <iostream>
 #include <FL/fl_ask.H>
+#include <algorithm>
+
 #include "CharacterEditor.h"
+#include "ItemContainerEditor.h"
+
+using namespace itemcontainereditor;
 
 namespace CampaignEditor
 {
@@ -8,7 +13,7 @@ namespace CampaignEditor
 
 		const int margin = 100;
 		const int width = 100;
-		const int height = 40;
+		const int height = 30;
 		const int padding = 50;
 
 		g->begin();
@@ -32,6 +37,8 @@ namespace CampaignEditor
 		intInput = new Fl_Int_Input(0, 0, w, height, "Intelligence");
 		wisInput = new Fl_Int_Input(0, 0, w, height, "Wisdom");
 		charInput = new Fl_Int_Input(0, 0, w, height, "Charisma");
+		inventoryIDChoice = new Fl_Input_Choice(0, 0, w, height, "Inventory ID");
+		inventoryIDChoice->input()->readonly(true);
 
 
 		Fl_Pack* b = new Fl_Pack(0, 0, w, height / 2);
@@ -53,7 +60,7 @@ namespace CampaignEditor
 		{
 			std::cout << "selected: " << i << std::endl;
 			current_character = (Character::Character*)browser->data(i);
-			update_data();
+			update_data(true);
 		}
 	}
 
@@ -88,6 +95,8 @@ namespace CampaignEditor
 			}
 			try
 			{
+				characters.clear();
+
 				std::vector<serializecharacter::CharacterRecord> records = serializecharacter::LoadAllCharacters(this->filepath);
 				for (serializecharacter::CharacterRecord t : records) {
 					characters.push_back(new Character::Character(t));
@@ -138,6 +147,13 @@ namespace CampaignEditor
 		current_character->set_Level(stocs(characterClassInput->value()), std::stoi(levelInput->value()));
 		current_character->setMaxHitPoints(std::stoi(hpInput->value()));
 
+		int currentInventoryID = std::stoi(inventoryIDChoice->value());
+		
+		auto foundInventory = std::find_if(editorContainers.begin(),
+											editorContainers.end(),
+											[currentInventoryID](ItemContainer* container) { return container->GetItemId() == currentInventoryID; });
+		current_character->SetInventory(*(*foundInventory));
+
 		populate_browser();
 	}
 
@@ -157,7 +173,7 @@ namespace CampaignEditor
 		populate_browser();
 	}
 
-	void CharacterEditor::update_data()
+	void CharacterEditor::update_data(const bool& newCharacter)
 	{
 		_loadCharacterID = current_character->ID();
 		_loadCharacterName = current_character->Name();
@@ -170,6 +186,9 @@ namespace CampaignEditor
 		_loadCharacterClass = current_character->GetClass();
 		_loadCharacterLevel = current_character->Levels((Character::Character_Class)current_character->GetClass());
 		_loadCharacterHP = current_character->Max_Hit_Points();
+		if (!newCharacter) {
+			loadedInventoryID = current_character->Inventory().GetItemId();
+		}
 
 		currentCharacterID = std::to_string(_loadCharacterID);
 		currentCharacterName = _loadCharacterName;
@@ -182,6 +201,9 @@ namespace CampaignEditor
 		currentCharacterClass = current_character->Get_Class_String(_loadCharacterClass);
 		currentCharacterLevel = std::to_string(_loadCharacterLevel);
 		currentCharacterHP = std::to_string(_loadCharacterHP);
+		if (!newCharacter) {
+			currentInventoryID = std::to_string(loadedInventoryID);
+		}
 
 		idInput->value(currentCharacterID.c_str());
 		nameInput->value(currentCharacterName.c_str());
@@ -194,6 +216,9 @@ namespace CampaignEditor
 		characterClassInput->value(currentCharacterClass.c_str());
 		levelInput->value(currentCharacterLevel.c_str());
 		hpInput->value(currentCharacterHP.c_str());
+		if (!newCharacter) {
+			inventoryIDChoice->value(currentInventoryID.c_str());
+		}
 	}
 
 	void CharacterEditor::populate_browser()
@@ -204,6 +229,25 @@ namespace CampaignEditor
 		{
 			label = std::to_string(i->ID()) + ": " + i->Name();
 			browser->add(label.c_str(), i);
+		}
+	}
+
+	void CharacterEditor::update(void* _observable) {
+		std::vector<ItemContainer*> updatedItemList = ((ItemContainerEditor*)_observable)->GetEditorContainers();
+
+		editorContainers.clear();
+
+		for (int i = 0; i < (int)updatedItemList.size(); i++)
+		{
+			ItemContainer* item = updatedItemList[i];
+			editorContainers.push_back(item);
+		}
+
+		Fl_Input* _temp = inventoryIDChoice->input();
+		_temp->readonly(true);
+		for (int i = 0; i < (int)editorContainers.size(); i++)
+		{
+			inventoryIDChoice->add(std::to_string(editorContainers[i]->GetItemId()).c_str());
 		}
 	}
 

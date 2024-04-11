@@ -122,6 +122,8 @@ namespace itemcontainereditor {
 
 		items.push_back(static_cast<Item*>(container));
 
+		Notify();
+
 		populate_browser();
 
 		browser->bottomline(browser->size());
@@ -169,6 +171,8 @@ namespace itemcontainereditor {
 					items.push_back(static_cast<Item*>(savedContainer));
 				}
 
+				Notify();
+
 				populate_browser();
 			}
 			catch (const std::exception& e)
@@ -201,6 +205,8 @@ namespace itemcontainereditor {
 
 				items.push_back(static_cast<Item*>(savedContainer));
 			}
+
+			Notify();
 		}
 		catch (const std::exception& e)
 		{
@@ -242,6 +248,8 @@ namespace itemcontainereditor {
 
 					items.push_back(static_cast<Item*>(savedContainer));
 				}
+
+				Notify();
 			}
 			catch (const std::exception& e)
 			{
@@ -309,6 +317,8 @@ namespace itemcontainereditor {
 
 		items.erase(items.begin() + (i - 1));
 
+		Notify();
+
 		browser->value(0);
 
 		populate_browser();
@@ -345,6 +355,13 @@ namespace itemcontainereditor {
 		for (int i = 0; i < (int)itemEditorItems.size(); i++)
 		{
 			itemsIDChoice->add(std::to_string(itemEditorItems[i].GetItemId()).c_str());
+		}
+	}
+
+	void ItemContainerEditor::Notify() {
+		for (int i = 0; i < (int)observers.size(); i++)
+		{
+			observers[i]->update((void*)this);
 		}
 	}
 

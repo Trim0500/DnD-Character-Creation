@@ -113,8 +113,8 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
         outfile << record.equipped_item_ids[i] << ",";
     }
     outfile << std::endl;
-    outfile << "Inventory_Container_Path," << record.inventory_container_path;*/
-    outfile << std::endl;
+    outfile << "Inventory_Container_Path," << record.inventory_container_path;
+    outfile << std::endl;*/
     outfile << "Inventory_Container_ID," << record.inventory_container_id;
     outfile << std::endl;
 
@@ -255,7 +255,7 @@ std::vector<serializecharacter::CharacterRecord> serializecharacter::LoadAllChar
     }
     for (const auto& entry : std::filesystem::directory_iterator(currentDir)) {
         temp = entry.path().filename().string();
-        if (temp.find("Character_") != std::string::npos && !(temp.find("InventoryItemsCharacter_") != std::string::npos)) {
+        if (temp.find("Character_") != std::string::npos /*&& !(temp.find("InventoryItemsCharacter_") != std::string::npos)*/) {
             filenames.push_back(currentDir.string() + "\\" + temp);
         }
     }
