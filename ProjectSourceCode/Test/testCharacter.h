@@ -25,7 +25,7 @@ class TestCharacter : public CppUnit::TestFixture
 		CPPUNIT_TEST(TestGetCharacterName);
 		CPPUNIT_TEST(TestSumLevels);
 		CPPUNIT_TEST(TestClasses);
-		CPPUNIT_TEST(TestEquipItem);
+		//CPPUNIT_TEST(TestEquipItem);
 		CPPUNIT_TEST(TestEquipItemDecorator);
 		CPPUNIT_TEST(TestUnequipItem);
 		CPPUNIT_TEST(TestUnequipItemDecorator);

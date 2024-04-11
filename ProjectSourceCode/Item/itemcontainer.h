@@ -59,6 +59,8 @@ namespace itemcontainer {
 
 			float GetCapacity() { return capacity; };
 
+			void SetCapacity(double _capacity) { capacity = _capacity; };
+
 			void SetWeightLimit(const float& _capacity) { capacity = _capacity; };
 
 			int AddNewItem(Item*);

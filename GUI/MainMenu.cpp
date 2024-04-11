@@ -28,6 +28,11 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 		ie = new ItemEditor(EDITOR_SETTINGS);
 	}
 	ig->end();
+	containerGroup = new Fl_Group(GROUP_SETTINGS, "Item Containers");
+	{
+		containerEditor = new ItemContainerEditor(EDITOR_SETTINGS);
+	}
+	containerGroup->end();
 	mg = new Fl_Group(GROUP_SETTINGS, "Map");
 	{
 		me = new MapEditor(EDITOR_SETTINGS);
@@ -40,6 +45,8 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 		doorEditor = new DoorEditor(EDITOR_SETTINGS);
 	}
 	doorGroup->end();
+
+	ie->Attach(containerEditor);
 
 	charg = new Fl_Group(GROUP_SETTINGS, "Character");
 	{

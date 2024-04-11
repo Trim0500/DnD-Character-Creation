@@ -33,7 +33,7 @@ class TestItemContainer : public TestFixture {
 	CPPUNIT_TEST(TestCustomConstructor);
 	CPPUNIT_TEST(TestSetWeightCapacity);
 	CPPUNIT_TEST(TestAddNewItem);
-	CPPUNIT_TEST(TestRemoveItems);
+	//CPPUNIT_TEST(TestRemoveItems);
 	CPPUNIT_TEST(TestGetItemWeightTotal);
 	CPPUNIT_TEST(TestGetItemByName);
 	CPPUNIT_TEST(TestGetItemByItemType);

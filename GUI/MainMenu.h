@@ -22,6 +22,7 @@
 
 namespace fs = std::filesystem;
 using namespace dooreditor;
+using namespace itemcontainereditor;
 
 namespace CampaignEditor
 {
@@ -102,6 +103,9 @@ namespace CampaignEditor
 			ie->save();
 			chare->save();
 
+			fs::create_directories(item_container_directory.parent_path());
+			containerEditor->save();
+
 			fs::create_directories(doorDirectory.parent_path());
 			doorEditor->save();
 
@@ -125,6 +129,15 @@ namespace CampaignEditor
 				else
 				{
 					fs::create_directories(item_directory.parent_path());
+				}
+				
+				if (fs::exists(item_container_directory))
+				{
+					containerEditor->open(item_container_directory.string());
+				}
+				else
+				{
+					fs::create_directories(item_container_directory.parent_path());
 				}
 
 				if (fs::exists(map_directory))
@@ -200,13 +213,21 @@ namespace CampaignEditor
 		{
 			// campaign_dir = fs::path(ce->filepath);
 			ce->filepath = campaign_dir.string();
+
 			item_directory = campaign_dir / "Items" / "items.csv";
-			map_directory = campaign_dir / "Maps";
-			doorDirectory = campaign_dir / "Doors" / "doors.csv";
-			character_directory = campaign_dir / "Characters";
 			ie->filepath = item_directory.string();
-			me->filepath = map_directory.string();
+
+			item_container_directory = campaign_dir / "Item Containers" / "item_containers.csv";
+			containerEditor->filepath = item_container_directory.string();
+
+			doorDirectory = campaign_dir / "Doors" / "doors.csv";
+			doorEditor->filepath = doorDirectory.string();
+
+			character_directory = campaign_dir / "Characters";
 			chare->filepath = character_directory.string();
+
+			map_directory = campaign_dir / "Maps";
+			me->filepath = map_directory.string();
 		}
 
 	private:
@@ -228,6 +249,8 @@ namespace CampaignEditor
 
 		Fl_Group *ig;
 
+		Fl_Group *containerGroup;
+		
 		Fl_Group *mg;
 
 		Fl_Group *cg;
