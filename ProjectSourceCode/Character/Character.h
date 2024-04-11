@@ -42,9 +42,9 @@ namespace serializecharacter {
 		std::vector<int> level = std::vector<int>(12, 0);
 		int max_hit_points{ 0 };
 		int hit_points{ 0 };
-		std::vector<int> inventory_item_ids;
-		std::vector<int> equipped_item_ids;
-		std::string inventory_container_path;
+		//std::vector<int> inventory_item_ids;
+		//std::vector<int> equipped_item_ids;
+		//std::string inventory_container_path;
 		int inventory_container_id;
 		bool isPlayerControlled;
 		std::string actionStrategy;
