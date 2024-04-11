@@ -237,6 +237,9 @@ namespace Character {
 		*  \return Returns const sum of elements in 'level' vector array
 		*/
 		const int Sum_Levels();
+		const int set_Level(Character_Class t_class, int t_level);
+		const int Set_Ability_Score(Abilities_Stats score, int value) { return ability_scores[(int)score] = value; };
+		const int Get_Ability_Score(Abilities_Stats score) { return ability_scores[(int)score]; };
 		/*! \fn Levels()
 		*  \brief Returns the number of levels a chracter has taken in a corresponding class
 		*  \param t_class: Any value from the Character::Character_Class enum
@@ -248,6 +251,8 @@ namespace Character {
 		*  \return Returns const bitset<11> of 'character_class' field
 		*/
 		const std::bitset<12> Classes() { return character_class; };
+		void SetClass(Character_Class t_class);
+		int GetClass();
 		/*! \fn Levelup()
 		*  \brief Levels up the the character by one level in a given class. Note that ability score bonuses given
 		*  by items are not considered when checking if a character is able to mult-class
@@ -434,6 +439,11 @@ namespace Character {
 		std::string Get_Item_Type_String(item::ItemType t_type);
 		std::string Get_Equipment_Slot_String(Equipment_Slots t_slot);
 
+		/*! \fn setMaxHitPoints(int t_val)
+		* \ function that allows max HP to be set without leveling up
+		*/
+		int setMaxHitPoints(int t_val);
+
 	private:
 		/*!
 		* \var observers
@@ -475,10 +485,7 @@ namespace Character {
 		* \private function that allows attribute values to be set without leveling up 
 		*/
 		int setAttribute(Abilities_Stats t_ability, int t_val);
-		/*! \fn setMaxHitPoints(int t_val)
-		* \private function that allows max HP to be set without leveling up
-		*/
-		int setMaxHitPoints(int t_val);
+
 		/*! \fn setHitPoints(int t_val)
 		* \private function that allows HP to be set without leveling up
 		*/
