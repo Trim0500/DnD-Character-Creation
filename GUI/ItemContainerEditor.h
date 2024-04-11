@@ -46,22 +46,26 @@ namespace itemcontainereditor {
 			std::vector<ItemContainer*> GetEditorContainers() { return containers; };
 
 			void SetEditorContainers(std::vector<ItemContainer*> _containers) { containers = _containers; };
+
+			static void OnItemIDChoice(Fl_Widget* _widget, void* _handler) { ((ItemContainerEditor*)_handler)->HandleItemIDDropdown(); };
+
+			static void HandleItemIDDropdown();
 		private:
 			Fl_Float_Input* capacityInput;
 
-			Fl_Input_Choice* itemsIDChoice;
+			static inline Fl_Input_Choice* itemsIDChoice;
 
 			double loadedContainerCapacity;
 
 			std::vector<Item> loadedContainerItems;
 
-			std::vector<Item> containerItems;
+			static inline std::vector<Item> itemEditorItems;
 
-			ItemContainer* currentContainer;
+			static inline ItemContainer* currentContainer;
 
 			std::string currentCapacity;
 
-			std::string currentContainerItemIDs;
+			static inline std::string currentContainerItemIDs;
 
 			std::vector<ItemContainer*> containers;
 

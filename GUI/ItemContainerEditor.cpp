@@ -95,6 +95,7 @@ namespace itemcontainereditor {
 
 		itemsIDChoice = new Fl_Input_Choice(0, 0, w, height, "Items");
 		itemsIDChoice->input()->readonly(true);
+		itemsIDChoice->callback(OnItemIDChoice, (void*)this);
 
 		itemFieldPack->end();
 	}
@@ -155,7 +156,7 @@ namespace itemcontainereditor {
 				for (int i = 0; i < (int)containerRecords.size(); i++)
 				{
 					ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
-					savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, containerItems));
+					savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems));
 					containers.push_back(savedContainer);
 
 					items.push_back(static_cast<Item*>(savedContainer));
@@ -181,7 +182,7 @@ namespace itemcontainereditor {
 			for (int i = 0; i < (int)containerRecords.size(); i++)
 			{
 				ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
-				savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, containerItems));
+				savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems));
 				containers.push_back(savedContainer);
 
 				items.push_back(static_cast<Item*>(savedContainer));
@@ -215,7 +216,7 @@ namespace itemcontainereditor {
 				for (int i = 0; i < (int)containerRecords.size(); i++)
 				{
 					ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
-					savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, containerItems));
+					savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems));
 					containers.push_back(savedContainer);
 
 					items.push_back(static_cast<Item*>(savedContainer));
@@ -266,7 +267,7 @@ namespace itemcontainereditor {
 		ItemEditor::save_data();
 
 		currentContainer->SetCapacity(std::stof(capacityInput->value()));
-		currentContainer->SetItems(FindItemsByIDInput(currentContainerItemIDs, containerItems));
+		currentContainer->SetItems(FindItemsByIDInput(currentContainerItemIDs, itemEditorItems));
 
 		populate_browser();
 	}
@@ -310,19 +311,34 @@ namespace itemcontainereditor {
 	void ItemContainerEditor::update(void* _observable) {
 		std::vector<Item*> updatedItemList = ((ItemEditor*)_observable)->GetEditorItems();
 
-		containerItems.clear();
+		itemEditorItems.clear();
 
 		for (int i = 0; i < (int)updatedItemList.size(); i++)
 		{
 			Item item = *updatedItemList[i];
-			containerItems.push_back(item);
+			itemEditorItems.push_back(item);
 		}
 
 		Fl_Input* _temp = itemsIDChoice->input();
 		_temp->readonly(true);
-		for (int i = 0; i < (int)containerItems.size(); i++)
+		for (int i = 0; i < (int)itemEditorItems.size(); i++)
 		{
-			itemsIDChoice->add(std::to_string(containerItems[i].GetItemId()).c_str());
+			itemsIDChoice->add(std::to_string(itemEditorItems[i].GetItemId()).c_str());
 		}
+	}
+
+	void ItemContainerEditor::HandleItemIDDropdown() {
+		std::ostringstream updatedItemIDText;
+		if (currentContainerItemIDs.empty()) {
+			updatedItemIDText << itemsIDChoice->value();
+		}
+		else {
+			updatedItemIDText << currentContainerItemIDs << "," << itemsIDChoice->value();
+		}
+
+		currentContainerItemIDs = updatedItemIDText.str();
+		itemsIDChoice->value(currentContainerItemIDs.c_str());
+
+		currentContainer->SetItems(FindItemsByIDInput(currentContainerItemIDs, itemEditorItems));
 	}
 }
