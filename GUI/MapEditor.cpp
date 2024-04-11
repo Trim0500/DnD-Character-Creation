@@ -379,10 +379,22 @@ void MapEditor::UpdateDropDown(const int& _cellButtonX, const int& _cellButtonY)
 		}
 	}
 	else if (dynamic_cast<Character::Character*>(interactableAtCell)) {
-		// mapInteractables = result of get operation on character editor
+		std::vector<Character::Character*> editorCharacters = characterEditor->GetEditorCharacters();
+		for (int i = 0; i < (int)editorCharacters.size(); i++)
+		{
+			mapInteractables.push_back(static_cast<Interactable::Interactable*>(editorCharacters[i]));
+
+			objectIDChoiceList->add(std::to_string(editorCharacters[i]->ID()).c_str());
+		}
 	}
 	else if (dynamic_cast<ItemContainer*>(interactableAtCell)) {
-		// mapInteractables = result of get operation on container editor
+		std::vector<ItemContainer*> editorContainers = containerEditor->GetEditorContainers();
+		for (int i = 0; i < (int)editorContainers.size(); i++)
+		{
+			mapInteractables.push_back(static_cast<Interactable::Interactable*>(editorContainers[i]));
+
+			objectIDChoiceList->add(std::to_string(editorContainers[i]->GetItemId()).c_str());
+		}
 	}
 	else if (dynamic_cast<Item*>(interactableAtCell)) {
 		std::vector<Item*> editorItems = itemEditor->GetEditorItems();

@@ -188,7 +188,7 @@ namespace CampaignEditor
 		if (BaseEditor::File_Chooser("Open", Fl_Native_File_Chooser::BROWSE_DIRECTORY))
 		{
 			try {
-				CampaignRecord *cr = campaign::LoadCampaign(6, filepath);
+				CampaignRecord *cr = campaign::LoadCampaign(1, filepath);
 				CampaignMap cp;
 				cp.mapID = cr->currentMapID;
 				cp.coorX = cr->currentMapXCoor;

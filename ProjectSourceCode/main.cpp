@@ -39,6 +39,16 @@ int main()
 		return 1;
 	} 
 
+	Item::SetItemIDCounter(0);
+
+	Character::Character::SetIDGen(0);
+
+	Door::SetNextDoorID(0);
+
+	Campaign::SetCurrentCampaignID(0);
+
+	Map::Map::SetNextMapID(0);
+
 	MainMenu *m = new MainMenu();
 	m->show();
 

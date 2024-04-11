@@ -155,8 +155,15 @@ namespace itemcontainereditor {
 				containerRecords = serializeItem::LoadItemContainerRecords(filepath);
 				for (int i = 0; i < (int)containerRecords.size(); i++)
 				{
-					ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
-					savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems));
+					std::vector<Item> containerItems = FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems);
+					ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->containerId,
+																		containerRecords[i]->itemName,
+																		0, 
+																		containerRecords[i]->itemtype,
+																		item::CharacterStats::NA,
+																		containerRecords[i]->weight,
+																		containerRecords[i]->capacity,
+																		containerItems);
 					containers.push_back(savedContainer);
 
 					items.push_back(static_cast<Item*>(savedContainer));
@@ -181,8 +188,15 @@ namespace itemcontainereditor {
 			containerRecords = serializeItem::LoadItemContainerRecords(filepath);
 			for (int i = 0; i < (int)containerRecords.size(); i++)
 			{
-				ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
-				savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems));
+				std::vector<Item> containerItems = FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems);
+				ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->containerId,
+																	containerRecords[i]->itemName,
+																	0,
+																	containerRecords[i]->itemtype,
+																	item::CharacterStats::NA,
+																	containerRecords[i]->weight,
+																	containerRecords[i]->capacity,
+																	containerItems);
 				containers.push_back(savedContainer);
 
 				items.push_back(static_cast<Item*>(savedContainer));
@@ -215,8 +229,15 @@ namespace itemcontainereditor {
 				containerRecords = serializeItem::LoadItemContainerRecords(filepath);
 				for (int i = 0; i < (int)containerRecords.size(); i++)
 				{
-					ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
-					savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems));
+					std::vector<Item> containerItems = FindItemsByIDInput(containerRecords[i]->itemIDs, itemEditorItems);
+					ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->containerId,
+																		containerRecords[i]->itemName,
+																		0,
+																		containerRecords[i]->itemtype,
+																		item::CharacterStats::NA,
+																		containerRecords[i]->weight,
+																		containerRecords[i]->capacity,
+																		containerItems);
 					containers.push_back(savedContainer);
 
 					items.push_back(static_cast<Item*>(savedContainer));

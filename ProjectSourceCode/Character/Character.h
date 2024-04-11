@@ -216,6 +216,10 @@ namespace Character {
 
 		void SetObserverMessage(const std::string& _observerMessage) { observerMessage = _observerMessage; };
 
+		static int GetIDGen() { return id_gen; };
+
+		static void SetIDGen(int _idGen) { id_gen = _idGen; };
+
 		/* \fn ID()
 		*  \brief Unique Character ID
 		*/

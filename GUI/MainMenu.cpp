@@ -53,9 +53,14 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 		chare = new CharacterEditor(EDITOR_SETTINGS);
 	}
 	charg->end();
+
 	me->SetItemEditor(ie);
 
 	me->SetDoorEditor(doorEditor);
+
+	me->SetCharacterEditor(chare);
+
+	me->SetContainerEditor(containerEditor);
 
 	me->Attach(doorEditor);
 

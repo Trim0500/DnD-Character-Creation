@@ -45,6 +45,10 @@ namespace CampaignEditor
 		void populate_browser();
 		Character::Character_Class stocs(const std::string s);
 
+		std::vector<Character::Character*> GetEditorCharacters() { return characters; };
+
+		void SetEditorCharacters(std::vector<Character::Character*> _characters) { characters = _characters; };
+
 		private:
 
 			int get_character();
