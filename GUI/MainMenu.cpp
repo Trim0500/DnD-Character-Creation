@@ -34,12 +34,25 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 		me->set_maps(ce->get_maps());
 	}
 	mg->end();
+
+	doorGroup = new Fl_Group(GROUP_SETTINGS, "Doors");
+	{
+		doorEditor = new DoorEditor(EDITOR_SETTINGS);
+	}
+	doorGroup->end();
+
 	charg = new Fl_Group(GROUP_SETTINGS, "Character");
 	{
 		chare = new CharacterEditor(EDITOR_SETTINGS);
 	}
 	charg->end();
 	me->SetItemEditor(ie);
+
+	me->SetDoorEditor(doorEditor);
+
+	me->Attach(doorEditor);
+
+	ce->Attach(doorEditor);
 
 	// chare = new CharacterEditor(EDITOR_SETTINGS);
 
