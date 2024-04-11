@@ -73,6 +73,22 @@ namespace itemcontainereditor {
 	ItemContainerEditor::ItemContainerEditor(int x, int y, int w, int h) : ItemEditor(x, y, w, h) {
 		const int height = 50;
 
+		enchantmentBonusInput->value(std::to_string(0).c_str());
+		enchantmentBonusInput->readonly(true);
+
+		enchantmentTypeInput->clear();
+		enchantmentTypeInput->value(item::statStrings[9].c_str());
+
+		itemTypeInput->clear();
+		for (int i = 7; i < 11; i++)
+		{
+			if (i == 8) {
+				continue;
+			}
+
+			itemTypeInput->add(item::itemTypeStrings[i].c_str());
+		}
+
 		itemFieldPack->begin();
 
 		capacityInput = new Fl_Float_Input(0, 0, w, height, "Capacity");
@@ -131,12 +147,18 @@ namespace itemcontainereditor {
 
 			try
 			{
+				containers.clear();
+
+				items.clear();
+
 				containerRecords = serializeItem::LoadItemContainerRecords(filepath);
 				for (int i = 0; i < (int)containerRecords.size(); i++)
 				{
 					ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
 					savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, containerItems));
 					containers.push_back(savedContainer);
+
+					items.push_back(static_cast<Item*>(savedContainer));
 				}
 
 				populate_browser();
@@ -151,12 +173,18 @@ namespace itemcontainereditor {
 	void ItemContainerEditor::open(std::string _filePath) {
 		try
 		{
+			containers.clear();
+
+			items.clear();
+
 			containerRecords = serializeItem::LoadItemContainerRecords(filepath);
 			for (int i = 0; i < (int)containerRecords.size(); i++)
 			{
 				ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
 				savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, containerItems));
 				containers.push_back(savedContainer);
+
+				items.push_back(static_cast<Item*>(savedContainer));
 			}
 		}
 		catch (const std::exception& e)
@@ -179,12 +207,18 @@ namespace itemcontainereditor {
 		{
 			try
 			{
+				containers.clear();
+
+				items.clear();
+
 				containerRecords = serializeItem::LoadItemContainerRecords(filepath);
 				for (int i = 0; i < (int)containerRecords.size(); i++)
 				{
 					ItemContainer* savedContainer = new ItemContainer(containerRecords[i]->itemName, containerRecords[i]->itemtype, containerRecords[i]->capacity);
 					savedContainer->SetItems(FindItemsByIDInput(containerRecords[i]->itemIDs, containerItems));
 					containers.push_back(savedContainer);
+
+					items.push_back(static_cast<Item*>(savedContainer));
 				}
 			}
 			catch (const std::exception& e)
@@ -250,6 +284,8 @@ namespace itemcontainereditor {
 		};
 
 		containers.erase(containers.begin() + (i - 1));
+
+		items.erase(items.begin() + (i - 1));
 
 		browser->value(0);
 

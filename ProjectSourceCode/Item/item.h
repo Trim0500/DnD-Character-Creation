@@ -91,7 +91,7 @@ namespace item
 	 * \var itemTypeStrings
 	 * \brief String array for formatting item name character stat
 	 */
-	const std::string statStrings[9] = { "Strength",
+	const std::string statStrings[10] = { "Strength",
 										"Dexterity",
 										"Constitution",
 										"Intelligence",
@@ -99,7 +99,8 @@ namespace item
 										"Charisma",
 										"Armor Class",
 										"Attack Bonus",
-										"Damage Bonus" };
+										"Damage Bonus",
+										"N/A" };
 
 	/*!
 	 * \class Item

@@ -188,10 +188,11 @@ namespace CampaignEditor
 		if (BaseEditor::File_Chooser("Open", Fl_Native_File_Chooser::BROWSE_DIRECTORY))
 		{
 			try {
-				CampaignRecord *cr = campaign::LoadCampaign(1, filepath);
+				CampaignRecord *cr = campaign::LoadCampaign(6, filepath);
 				CampaignMap cp;
-				cp.mapID = 0;
-				cp.coorX = cp.coorY = 0;
+				cp.mapID = cr->currentMapID;
+				cp.coorX = cr->currentMapXCoor;
+				cp.coorY = cr->currentMapYCoor;
 				maps = new std::vector<Map::Map*>();
 				campaign = new Campaign(
 					cr->campaignID,

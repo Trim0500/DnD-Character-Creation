@@ -11,8 +11,7 @@ namespace CampaignEditor
 {
 	item::ItemType stoit(const std::string s)
 	{
-		int j = 7;
-		for (int i = 0; i < j; i++)
+		for (int i = 0; i < 11; i++)
 		{
 			if (s == itemTypeStrings[i])
 			{
@@ -22,8 +21,7 @@ namespace CampaignEditor
 	}
 	item::CharacterStats stocs(const std::string s)
 	{
-		int j = 9;
-		for (int i = 0; i < j; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			if (s == statStrings[i])
 			{

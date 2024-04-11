@@ -171,12 +171,18 @@ namespace CampaignEditor
 		{
 			// campaign_dir = fs::path(ce->filepath);
 			ce->filepath = campaign_dir.string();
+
 			item_directory = campaign_dir / "Items" / "items.csv";
-			item_container_directory = campaign_dir / "Item Containers" / "item_containers.csv";
-			map_directory = campaign_dir / "Maps";
-			doorDirectory = campaign_dir / "Doors" / "doors.csv";
 			ie->filepath = item_directory.string();
+
+			item_container_directory = campaign_dir / "Item Containers" / "item_containers.csv";
+			containerEditor->filepath = item_container_directory.string();
+
+			map_directory = campaign_dir / "Maps";
 			me->filepath = map_directory.string();
+
+			doorDirectory = campaign_dir / "Doors" / "doors.csv";
+			doorEditor->filepath = doorDirectory.string();
 		}
 
 	private:
