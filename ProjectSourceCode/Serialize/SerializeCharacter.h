@@ -31,4 +31,6 @@ namespace serializecharacter {
 	*  \param t_path: path to the sub-directory that you would like to query into (leave blank to query within the same directory as the executable)
 	*/
 	std::string FindCharacterFile(int character_id, std::filesystem::path t_path);
+	std::vector<CharacterRecord> LoadAllCharacters(std::filesystem::path t_path);
+
 }

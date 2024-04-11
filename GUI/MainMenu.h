@@ -50,7 +50,41 @@ namespace CampaignEditor
 			ce->save();
 
 			// for (Map::Map *_m: *me->maps)
-			fs::create_directories(map_directory);
+			campaign_dir = fs::path(ce->filepath);
+			update_directories();
+			if (fs::exists(item_directory))
+			{
+				ie->open(item_directory.string());
+			}
+			else
+			{
+				fs::create_directories(item_directory.parent_path());
+			}
+			if (fs::exists(map_directory))
+			{
+				std::string ext(".csv");
+				std::string path(map_directory.string());
+				for (auto& p : fs::directory_iterator(path))
+				{
+					if (p.path().extension() == ext)
+					{
+						std::string s = p.path().string();
+						Map::Map* m = MapBuilder::MapBuilder::LoadMap(s);
+						maps->push_back(m);
+					}
+				}
+			}
+			else
+			{
+				fs::create_directory(map_directory);
+			}
+			if (fs::exists(character_directory)) {
+				chare->open(character_directory.string());
+			}
+			else {
+				fs::create_directories(character_directory);
+			}
+			//fs::create_directories(map_directory);
 			std::vector<Map::Map*> mapsToSave = *me->maps;
 			for (int index = 0; index < (int)mapsToSave.size(); index++)
 			{
@@ -60,9 +94,10 @@ namespace CampaignEditor
 				MapBuilder::MapBuilder::SaveMap(mapToSave, s);
 				// MapSerializer::save_map(fp, _m);
 			}
-			fs::create_directories(item_directory.parent_path());
+			//fs::create_directories(item_directory.parent_path());
+			//fs::create_directories(character_directory.parent_path());
 			ie->save();
-
+			chare->save();
 			return;
 		};
 		void open()
@@ -102,6 +137,12 @@ namespace CampaignEditor
 				else
 				{
 					fs::create_directory(map_directory);
+				}
+				if (fs::exists(character_directory)) {
+					chare->open(character_directory.string());
+				}
+				else {
+					fs::create_directories(character_directory);
 				}
 
 				ce->maps = this->maps;
@@ -145,8 +186,10 @@ namespace CampaignEditor
 			ce->filepath = campaign_dir.string();
 			item_directory = campaign_dir / "Items" / "items.csv";
 			map_directory = campaign_dir / "Maps";
+			character_directory = campaign_dir / "Characters";
 			ie->filepath = item_directory.string();
 			me->filepath = map_directory.string();
+			chare->filepath = character_directory.string();
 		}
 
 	private:
@@ -161,6 +204,7 @@ namespace CampaignEditor
 		Fl_Group *ig;
 		Fl_Group *mg;
 		Fl_Group *cg;
+		Fl_Group *charg;
 
 		fs::path map_directory;
 		fs::path item_directory;

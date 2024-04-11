@@ -366,6 +366,30 @@ const int Character::Character::Sum_Levels()
 	return sum;
 }
 
+const int Character::Character::set_Level(Character_Class t_class, int t_level)
+{
+	for (int i = 0; i < character_class.size(); i++) {
+		level.at(i) = 0;
+	}
+	level.at((int)t_class) = t_level;
+	return level.at((int)t_class);
+}
+
+void Character::Character::SetClass(Character_Class t_class)
+{
+	character_class.reset();
+	character_class.set((int)t_class);
+}
+
+int Character::Character::GetClass()
+{
+	for (int i = 0; i < 12; i++) {
+		if (level.at(i) > 0) {
+			return i;
+		}
+	}
+}
+
 bool Character::Character::Levelup(Character_Class t_class, bool t_average_hp)
 {
 	if (Sum_Levels() < 20) {
@@ -994,6 +1018,7 @@ int Character::Character::setAttribute(Abilities_Stats t_ability, int t_val)
 int Character::Character::setMaxHitPoints(int t_val)
 {
 	this->max_hit_points = t_val;
+	this->hit_points = t_val;
 	CreateObserverMessage();
 	return t_val;
 }

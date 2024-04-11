@@ -34,7 +34,11 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 		me->set_maps(ce->get_maps());
 	}
 	mg->end();
-
+	charg = new Fl_Group(GROUP_SETTINGS, "Character");
+	{
+		chare = new CharacterEditor(EDITOR_SETTINGS);
+	}
+	charg->end();
 	me->SetItemEditor(ie);
 
 	// chare = new CharacterEditor(EDITOR_SETTINGS);
