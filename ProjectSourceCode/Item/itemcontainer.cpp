@@ -21,7 +21,7 @@ namespace {
 
 namespace itemcontainer {
 	ItemContainer::ItemContainer(const std::string& _containerName, const int& _containerType, const float& _capacity) :
-					Item(_containerName, 0, _containerType, 10, _containerType == 8 ? 5 : _containerType == 10 ? 25 : 0) {
+					Item(_containerName, 0, _containerType, CharacterStats::NA, _containerType == ItemType::Backpack ? 5.0 : _containerType == ItemType::TreasureChest ? 25.0 : 0.0) {
 		std::vector<Item> _items;
 		items = _items;
 		capacity = _capacity;

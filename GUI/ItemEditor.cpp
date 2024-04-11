@@ -11,8 +11,7 @@ namespace CampaignEditor
 {
 	item::ItemType stoit(const std::string s)
 	{
-		int j = 7;
-		for (int i = 0; i < j; i++)
+		for (int i = 0; i < 11; i++)
 		{
 			if (s == itemTypeStrings[i])
 			{
@@ -22,8 +21,7 @@ namespace CampaignEditor
 	}
 	item::CharacterStats stocs(const std::string s)
 	{
-		int j = 9;
-		for (int i = 0; i < j; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			if (s == statStrings[i])
 			{
@@ -38,6 +36,7 @@ namespace CampaignEditor
 		const int height = 50;
 		const int padding = 50;
 		g->begin();
+		itemFieldPack = new Fl_Pack(0, 0, w, 200);
 		/*
 			base item information
 		*/
@@ -72,6 +71,8 @@ namespace CampaignEditor
 		enchantmentBonusInput = new Fl_Int_Input(0, 0, w, height, "Ench Bonus");
 
 		ench->end();
+
+		itemFieldPack->end();
 
 		Fl_Pack *b = new Fl_Pack(0, 0, w, height / 2);
 		b->type(Fl_Pack::HORIZONTAL);
@@ -112,6 +113,9 @@ namespace CampaignEditor
 	{
 		Item *i = new Item();
 		items.push_back(i);
+
+		Notify();
+
 		populate_browser();
 		browser->bottomline(browser->size());
 		browser->select(browser->size());
@@ -130,6 +134,9 @@ namespace CampaignEditor
 			return;
 		};
 		items.erase(items.begin() + (i - 1));
+
+		Notify();
+
 		browser->value(0);
 		populate_browser();
 	}
@@ -194,6 +201,9 @@ namespace CampaignEditor
 			try
 			{
 				items = serializeItem::LoadItems(filepath);
+
+				Notify();
+
 				populate_browser();
 				/* code */
 			}
@@ -209,6 +219,8 @@ namespace CampaignEditor
 		try
 		{
 			items = serializeItem::LoadItems(filepath);
+
+			Notify();
 			/* code */
 		}
 		catch (const std::exception &e)
@@ -232,6 +244,8 @@ namespace CampaignEditor
 			try
 			{
 				items = serializeItem::LoadItems(filepath);
+
+				Notify();
 				/* code */
 			}
 			catch (const std::exception &e)
@@ -271,6 +285,13 @@ namespace CampaignEditor
 		catch (const std::exception &e)
 		{
 			fl_alert("There was an error saving the file. Try using 'save as'");
+		}
+	}
+
+	void ItemEditor::Notify() {
+		for (int i = 0; i < (int)observers.size(); i++)
+		{
+			observers[i]->update((void*)this);
 		}
 	}
 }
