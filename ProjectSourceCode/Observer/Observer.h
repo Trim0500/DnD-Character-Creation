@@ -36,6 +36,8 @@ namespace observer {
             * \fn update
             * \brief Abstract function to provide concrete implementations a way to override using void pointers
             */
-			virtual void update(void*) const = 0;
+			virtual void update(void*) = 0;
+
+            virtual void update(const int&, const int&, const int&) = 0;
 	};
 }

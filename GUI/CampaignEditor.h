@@ -2,14 +2,18 @@
 
 #include <FL/Fl_Pack.H>
 #include <FL/Fl_Scroll.H>
-#include "BaseEditor.h"
 #include <FL/Fl_Hold_Browser.H>
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Input_Choice.H>
+
+#include "BaseEditor.h"
 #include "../ProjectSourceCode/Campaign/campaign.h"
+#include "../ProjectSourceCode/Observer/Observable.h"
 
 using namespace campaign;
 using std::vector;
+using namespace observable;
+
 namespace CampaignEditor
 {
 	class MapButton : public Fl_Button
@@ -25,7 +29,7 @@ namespace CampaignEditor
 		int id;
 		int x, y;
 	};
-	class CampaignEditor : BaseEditor
+	class CampaignEditor : BaseEditor, public Observable
 	{
 		friend class MainMenu; 
 		friend class MapEditor;
@@ -73,6 +77,13 @@ namespace CampaignEditor
 		void update_data();
 		void delete_entry();
 		void save_data();
+
+		void Attach(Observer* _observer) override { observers.push_back(_observer); };
+
+		void Detach(Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+
+		void Notify() override;
+
 		void save_all();
 		// void update_map_browser();
 		void update_cell(int x, int y, int id);
@@ -113,5 +124,6 @@ namespace CampaignEditor
 		int _c_x, _c_y; // Current x and y values. set by buttons
 		Campaign *campaign;
 		Fl_Input_Choice * map_list;
+		std::vector<Observer*> observers;
 	};
 }
