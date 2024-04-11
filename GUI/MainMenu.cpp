@@ -4,6 +4,7 @@
 #define WINDOW_WIDTH 1200
 #define GROUP_SETTINGS 20, 90, WINDOW_WIDTH, (WINDOW_HEIGHT - 30)*.8
 #define EDITOR_SETTINGS 30, 90, WINDOW_WIDTH*.8, (WINDOW_HEIGHT - 60)*.8
+#define PLAY_SETTINGS 30, 90, WINDOW_WIDTH*.8, (WINDOW_HEIGHT - 60)*.8
 #include "MainMenu.h"
 
 using namespace CampaignEditor;
@@ -46,6 +47,14 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 		chare = new CharacterEditor(EDITOR_SETTINGS);
 	}
 	charg->end();
+	
+	//playGroup for main gameplay loop
+	playGroup = new Fl_Group(GROUP_SETTINGS, "Play");
+	{
+		playEditor = new PlayEditor(PLAY_SETTINGS, "Play");
+	}
+	playGroup->end();
+
 	me->SetItemEditor(ie);
 
 	me->SetDoorEditor(doorEditor);
