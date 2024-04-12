@@ -118,8 +118,9 @@ int MapCellButton::handle(int e)
 
 				break;
 		}
-
-		MapEditor::update_cell(x, y, ct);
+		
+		// The map grids function by having x be the rows whereby a character moves up and down and y be columns whereby a character moves from side to side
+		MapEditor::update_cell(y, x, ct);
 
 		//mapEditor->UpdateCellObjectIDDropDownLabel(x, y);
 		MapEditor::UpdateCellObjectIDDropDownLabel(x, y);
