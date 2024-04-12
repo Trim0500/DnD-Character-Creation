@@ -20,51 +20,51 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     record.max_hit_points = t_character->Max_Hit_Points();
     record.hit_points = t_character->Hit_Points();
     //copy inventory item IDs
-    for (auto i : t_character->Inventory().GetAllItems()) {
+    /*for (auto i : t_character->Inventory().GetAllItems()) {
         record.inventory_item_ids.push_back(i.GetItemId());
-    }
+    }*/
     //copy equipped item IDs
-    for (int i{ 0 }; i < 8; i++) {
-        try {
-            AbstractComponent* currentWornItems = t_character->GetWornItems();
-            std::vector<AbstractComponent*> itemDecoratorList = currentWornItems->GetDecoratorList();
+    //for (int i{ 0 }; i < 8; i++) {
+    //    try {
+    //        AbstractComponent* currentWornItems = t_character->GetWornItems();
+    //        std::vector<AbstractComponent*> itemDecoratorList = currentWornItems->GetDecoratorList();
 
-            for (int i = 0; i < (int)itemDecoratorList.size(); ++i)
-            {
-                Item* decoratorItem = dynamic_cast<Item*>(itemDecoratorList.at(i));
-                auto item_id = decoratorItem->GetItemId();
-                record.equipped_item_ids.push_back(item_id);
-            }
+    //        for (int i = 0; i < (int)itemDecoratorList.size(); ++i)
+    //        {
+    //            Item* decoratorItem = dynamic_cast<Item*>(itemDecoratorList.at(i));
+    //            auto item_id = decoratorItem->GetItemId();
+    //            record.equipped_item_ids.push_back(item_id);
+    //        }
 
 
-            // const item::Item* item_ptr = t_character->Equipped_Items((Character::Equipment_Slots)i);
-            // if (item_ptr != nullptr) {
-            //     auto item_id = const_cast<item::Item*>(item_ptr)->GetItemId();
-            //     record.equipped_item_ids.push_back(item_id);
-            // }
-        }
-        catch (std::exception e) {
+    //        // const item::Item* item_ptr = t_character->Equipped_Items((Character::Equipment_Slots)i);
+    //        // if (item_ptr != nullptr) {
+    //        //     auto item_id = const_cast<item::Item*>(item_ptr)->GetItemId();
+    //        //     record.equipped_item_ids.push_back(item_id);
+    //        // }
+    //    }
+    //    catch (std::exception e) {
 
-        }
-    }
+    //    }
+    //}
     //Save inventory
-    std::string currentPath = std::filesystem::current_path().string();
+    //std::string currentPath = std::filesystem::current_path().string();
 
-    std::ostringstream fullURI;
-    fullURI << currentPath << t_path << "\\InventoryItemsCharacter_" << std::to_string(record.id) << ".csv";
-    std::vector<Item*> inventoryVector;
+    /*std::ostringstream fullURI;
+    fullURI << currentPath << t_path << "\\InventoryItemsCharacter_" << std::to_string(record.id) << ".csv";*/
+    //std::vector<Item*> inventoryVector;
 
     /*for (auto i : t_character->Inventory().GetAllItems()) {
         item::Item* saved_item = &i;
         inventoryVector.push_back(saved_item);
     }*/
-    for (int i{ 0 }; i < t_character->Inventory().GetAllItems().size(); i++) {
+    /*for (int i{ 0 }; i < t_character->Inventory().GetAllItems().size(); i++) {
         inventoryVector.push_back(&t_character->Inventory().GetAllItems().at(i));
     }
     record.inventory_container_path = fullURI.str();
 
     if (t_character->Inventory().GetCapacity() > 0)
-        serializeItem::SaveItems(fullURI.str(), inventoryVector);
+        serializeItem::SaveItems(fullURI.str(), inventoryVector);*/
     record.inventory_container_id = t_character->Inventory().GetItemId();
 
     record.isPlayerControlled = t_character->GetIsPlayerControlled();
@@ -103,7 +103,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     outfile << std::endl;
     outfile << "Max_HP," << record.max_hit_points << std::endl;
     outfile << "Current_HP," << record.hit_points << std::endl;
-    outfile << "Inventroy_Item_IDs,";
+    /*outfile << "Inventroy_Item_IDs,";
     for (int i{ 0 }; i < record.inventory_item_ids.size(); i++) {
         outfile << record.inventory_item_ids[i] << ",";
     }
@@ -114,7 +114,7 @@ bool serializecharacter::SaveCharacter(Character::Character* t_character, const 
     }
     outfile << std::endl;
     outfile << "Inventory_Container_Path," << record.inventory_container_path;
-    outfile << std::endl;
+    outfile << std::endl;*/
     outfile << "Inventory_Container_ID," << record.inventory_container_id;
     outfile << std::endl;
 
@@ -182,7 +182,7 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
             }
 
         }
-        else if (field_key == "Inventroy_Item_IDs") {
+        /*else if (field_key == "Inventroy_Item_IDs") {
             int inventory_index = 0;
             while (std::getline(spliter, data, ',')) {
                 record.inventory_item_ids.push_back(std::stoi(data));
@@ -200,7 +200,7 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
             while (std::getline(spliter, data, ',')) {
                 record.inventory_container_path = data;
             }
-        }
+        }*/
         else if (field_key == "Inventory_Container_ID") {
             while (std::getline(spliter, data, ',')) {
                 record.inventory_container_id = std::stoi(data);
@@ -208,7 +208,7 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
         }
         else if (field_key == "isPlayerControlled") {
             while (std::getline(spliter, data, ',')) {
-                record.isPlayerControlled = data == "true" ? true : false;
+                record.isPlayerControlled = data == "1" ? true : false;
             }
         }
         else if (field_key == "actionStrategy") {
@@ -255,7 +255,7 @@ std::vector<serializecharacter::CharacterRecord> serializecharacter::LoadAllChar
     }
     for (const auto& entry : std::filesystem::directory_iterator(currentDir)) {
         temp = entry.path().filename().string();
-        if (temp.find("Character_") != std::string::npos && !(temp.find("InventoryItemsCharacter_") != std::string::npos)) {
+        if (temp.find("Character_") != std::string::npos /*&& !(temp.find("InventoryItemsCharacter_") != std::string::npos)*/) {
             filenames.push_back(currentDir.string() + "\\" + temp);
         }
     }

@@ -77,6 +77,10 @@ namespace Map {
 
 		void SetObserverMessage(const std::string& _observerMessage) { observerMessage = _observerMessage; };
 
+		static int GetNextMapID() { return nextMapID; };
+
+		static void SetNextMapID(int _nextMapID) { nextMapID = _nextMapID; };
+
 		/*!
 		* \brief Getters
 		*/
@@ -94,6 +98,7 @@ namespace Map {
 		void setRows(int rows);
 		void setCols(int cols);
 		void setGrid();
+		void setGrid(std::vector<std::vector<Interactable::Interactable*>> _grid) { grid = _grid;};
 		void setEndCell(int row, int col);
 		void setStartCell(int row, int col);
 

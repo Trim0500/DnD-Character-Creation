@@ -340,4 +340,17 @@ namespace campaign {
 
         return resultRecord;
     }
+    
+    CampaignRecord* LoadCampaign(const std::string& _fileDir) {
+        std::ifstream campaignFileInputStream(_fileDir);
+        if (!campaignFileInputStream.is_open()) {
+			throw std::invalid_argument("Failed to open the file at: " + _fileDir);
+		}
+
+        CampaignRecord* resultRecord = LoadCampaignRecord(&campaignFileInputStream);
+
+        campaignFileInputStream.close();
+
+        return resultRecord;
+    }
 }

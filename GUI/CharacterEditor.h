@@ -22,12 +22,15 @@
 #include "../ProjectSourceCode/Character/Character.h"
 #include "../ProjectSourceCode/Serialize/serializeItem.h"
 #include "../ProjectSourceCode/Serialize/SerializeCharacter.h"
+#include "../ProjectSourceCode/Observer/Observer.h"
+
+using namespace observer;
 
 #include "BaseEditor.h"
 
 namespace CampaignEditor
 {
-	class CharacterEditor : public BaseEditor
+	class CharacterEditor : public BaseEditor, public Observer
 	{
 		friend class MainMenu;
 		public:
@@ -41,9 +44,24 @@ namespace CampaignEditor
 		//void save_as(std::string s);
 		void save_data();
 		void delete_entry();
-		void update_data();
+		void update_data(const bool& newCharacter = false);
 		void populate_browser();
+
+		void update(std::string) override {};
+
+		void update(void*) override;
+
+		void update(const int&, const int&, const int&) override {};
+
 		Character::Character_Class stocs(const std::string s);
+
+		std::vector<Character::Character*> GetEditorCharacters() { return characters; };
+
+		void SetEditorCharacters(std::vector<Character::Character*> _characters) { characters = _characters; };
+
+		std::vector<ItemContainer*> GetEditorContainers() { return editorContainers; };
+
+		void SetEditorContainers(std::vector<ItemContainer*> _editorContainers) { editorContainers = _editorContainers; };
 
 		private:
 
@@ -95,5 +113,7 @@ namespace CampaignEditor
 			Character::Character* current_character;
 			Fl_Scroll* character_scroll;
 			std::vector<Character::Character *> characters;
+
+			std::vector<ItemContainer*> editorContainers;
 	};
 }

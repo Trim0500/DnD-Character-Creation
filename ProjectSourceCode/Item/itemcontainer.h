@@ -57,6 +57,8 @@ namespace itemcontainer {
 			*/
 			ItemContainer(const std::string&, const int&, const float&);
 
+			ItemContainer(const int&, const std::string&, const int&, const int&, const int&, const float&, const float&, const std::vector<Item>&);
+
 			float GetCapacity() { return capacity; };
 
 			void SetCapacity(double _capacity) { capacity = _capacity; };

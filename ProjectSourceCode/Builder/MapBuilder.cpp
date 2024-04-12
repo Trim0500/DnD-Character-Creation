@@ -129,7 +129,12 @@ Map::Map* MapBuilder::MapBuilder::LoadMap(std::string& filename) {
 
 					cellRow = std::stoi(split[0]);
 					cellCol = std::stoi(split[1]);
-					type = split[2];
+					if (split.size() >= 3) {
+						type = split[2];
+					}
+					else {
+						type = "";
+					}
 
 					if (type == "w") {
 						mapload->setWall(cellRow, cellCol);

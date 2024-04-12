@@ -9,6 +9,9 @@
 
 #include <vector>
 #include <string>
+#include <filesystem>
+#include <locale>
+#include <codecvt>
 
 #include "..\Observer\Observable.h"
 #include "..\Campaign\campaign.h"
@@ -78,7 +81,7 @@ namespace game {
             void SetCharactersInMap(std::vector<Character::Character*> _charactersInMap) { charactersInMap = _charactersInMap; };
 
             // Load in a save file likely and update campaign member(?)
-            void GameSetup(const std::string&);
+            void GameSetup(std::filesystem::path*, Observer*);
 
             // Good candidate to incorporate doors (pass a reference to the object just an ID to know what map to load from campaign member)
             Map::Map* LoadMap(/* Door or ID */);

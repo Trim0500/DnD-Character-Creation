@@ -1,6 +1,11 @@
 #include <iostream>
 #include <FL/fl_ask.H>
+#include <algorithm>
+
 #include "CharacterEditor.h"
+#include "ItemContainerEditor.h"
+
+using namespace itemcontainereditor;
 
 namespace CampaignEditor
 {
@@ -8,7 +13,7 @@ namespace CampaignEditor
 
 		const int margin = 100;
 		const int width = 100;
-		const int height = 40;
+		const int height = 30;
 		const int padding = 50;
 
 		g->begin();
@@ -58,7 +63,7 @@ namespace CampaignEditor
 		{
 			std::cout << "selected: " << i << std::endl;
 			current_character = (Character::Character*)browser->data(i);
-			update_data();
+			update_data(true);
 		}
 	}
 
@@ -93,6 +98,8 @@ namespace CampaignEditor
 			}
 			try
 			{
+				characters.clear();
+
 				std::vector<serializecharacter::CharacterRecord> records = serializecharacter::LoadAllCharacters(this->filepath);
 				for (serializecharacter::CharacterRecord t : records) {
 					characters.push_back(new Character::Character(t));
@@ -170,7 +177,7 @@ namespace CampaignEditor
 		populate_browser();
 	}
 
-	void CharacterEditor::update_data()
+	void CharacterEditor::update_data(const bool& newCharacter)
 	{
 		_loadCharacterID = current_character->ID();
 		_loadCharacterName = current_character->Name();
@@ -229,6 +236,25 @@ namespace CampaignEditor
 		{
 			label = std::to_string(i->ID()) + ": " + i->Name();
 			browser->add(label.c_str(), i);
+		}
+	}
+
+	void CharacterEditor::update(void* _observable) {
+		std::vector<ItemContainer*> updatedItemList = ((ItemContainerEditor*)_observable)->GetEditorContainers();
+
+		editorContainers.clear();
+
+		for (int i = 0; i < (int)updatedItemList.size(); i++)
+		{
+			ItemContainer* item = updatedItemList[i];
+			editorContainers.push_back(item);
+		}
+
+		Fl_Input* _temp = inventoryIDChoice->input();
+		_temp->readonly(true);
+		for (int i = 0; i < (int)editorContainers.size(); i++)
+		{
+			inventoryIDChoice->add(std::to_string(editorContainers[i]->GetItemId()).c_str());
 		}
 	}
 

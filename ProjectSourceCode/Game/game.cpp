@@ -3,14 +3,48 @@
 #include <iterator>
 #include <string>
 #include <cctype>
+#include <sys/stat.h>
+#include <regex>
 
 #include "game.h"
 #include "..\Interactable\EmptyCell.h"
 #include "..\Door\door.h"
+#include "../Serialize/SerializeCharacter.h"
+#include "../Builder/MapBuilder.h"
 
 using namespace door;
+using namespace serializeItem;
+using namespace campaign;
 
 namespace {
+    std::vector<Item> FindItemsByIDInput(std::vector<int> _idInput, std::vector<Item> itemsToSearch) {
+		std::vector<Item> result;
+
+		for (int id : _idInput)
+		{
+			auto foundItem = std::find_if(itemsToSearch.begin(),
+											itemsToSearch.end(),
+											[id](Item item) { return item.GetItemId() == id; });
+			if (foundItem != itemsToSearch.end()) {
+				result.push_back((*foundItem));
+			}
+		}
+
+		return result;
+	}
+
+    ItemContainer* FindCharacterInventory(const int& inventoryID, const std::vector<ItemContainer*>& containersToSearch) {
+        auto foundInventory = std::find_if(containersToSearch.begin(),
+                                            containersToSearch.end(),
+                                            [inventoryID](ItemContainer* container) { return container->GetItemId() == inventoryID; });
+        if (foundInventory != containersToSearch.end()) {
+            return (*foundInventory);
+        }
+        else {
+            return nullptr;
+        }
+    }
+
     void ProcessContainerAction(Item* _target, Character::Character* _playerCharacter, const bool& dropItems = false) {
         ItemContainer* containerTarget = static_cast<ItemContainer*>(_target);
         containerTarget->PrintItemVector();
@@ -121,20 +155,189 @@ namespace game
         Notify();
     }
 
-    void Game::GameSetup(const std::string& _saveFileDir) {
-        CreateObserverMessage("[Game/GameSetup] -- Fetching Campaign save data...");
+    void Game::GameSetup(std::filesystem::path* _campaignDir, Observer* _gameLogger) {
+        CampaignRecord* campaignRecord = LoadCampaign(_campaignDir->string());
+        
+        _campaignDir->remove_filename();
 
-        // Find campaign...
+        CreateObserverMessage("[Game/GameSetup] -- Loading items...");
 
-        CreateObserverMessage("[Game/GameSetup] -- Loading map data...");
+        std::filesystem::path itemsPath = *_campaignDir / "Items" / "items.csv";
+        std::vector<Item*> itemsInCampaign = LoadItems(itemsPath.string());
 
-        // Find generate maps...
+        std::filesystem::path itemContainersPath = *_campaignDir / "Item Containers" / "item_containers.csv";
+        std::vector<ItemContainerRecord*> containersRecords = LoadItemContainerRecords(itemContainersPath.string());
+
+        std::vector<Item> copyItems;
+        for (int i = 0; i < (int)itemsInCampaign.size(); i++)
+        {
+            copyItems.push_back(*itemsInCampaign[i]);
+        }
+
+        std::vector<ItemContainer*> containersInCampaign;
+        for (int i = 0; i < (int)containersRecords.size(); i++)
+        {
+            std::vector<Item> containerItems = FindItemsByIDInput(containersRecords[i]->itemIDs, copyItems);
+            ItemContainer* savedContainer = new ItemContainer(containersRecords[i]->containerId,
+                                                                containersRecords[i]->itemName,
+                                                                0,
+                                                                containersRecords[i]->itemtype,
+                                                                item::CharacterStats::NA,
+                                                                containersRecords[i]->weight,
+                                                                containersRecords[i]->capacity,
+                                                                containerItems);
+            containersInCampaign.push_back(savedContainer);
+        }
 
         CreateObserverMessage("[Game/GameSetup] -- Loading characters...");
 
-        // Find generate characters...
+        std::filesystem::path charactersPath = *_campaignDir / "Characters";
+        std::vector<serializecharacter::CharacterRecord> characterRecords = serializecharacter::LoadAllCharacters(charactersPath.string());
+        
+        std::vector<Character::Character*> charactersInCampaign;
+        for (int i = 0; i < (int)characterRecords.size(); i++)
+        {
+            Character::Character* character;
+            ItemContainer* characterInventory = FindCharacterInventory(characterRecords[i].inventory_container_id, containersInCampaign);
+            if (characterInventory != nullptr) {
+                character = new Character::Character(characterRecords[i], *characterInventory);
+            }
+            else {
+                character = new Character::Character(characterRecords[i], ItemContainer("Inventory", item::ItemType::Inventory, 30.0));
+            }
 
-        // Set campaign memeber variables...
+            character->Attach(_gameLogger);
+
+            charactersInCampaign.push_back(character);
+        }
+
+        CreateObserverMessage("[Game/GameSetup] -- Loading map data...");
+        
+        std::filesystem::path doorsPath = *_campaignDir / "Doors" / "doors.csv";
+        std::vector<Door*> doorsInCampaign = LoadDoors(doorsPath.string());
+
+        std::filesystem::path mapsPath = *_campaignDir / "Maps";
+        std::string path(mapsPath.string());
+
+        std::string ext(".csv");
+
+        std::vector<Map::Map*> mapsInCampaign;
+
+        CampaignMap currentMap;
+
+        for (auto &file : std::filesystem::directory_iterator(path))
+        {
+            if (file.path().extension() == ext)
+            {
+                std::string filePath = file.path().string();
+                Map::Map *loadedMap = MapBuilder::MapBuilder::LoadMap(filePath);
+
+                std::vector<std::vector<Interactable::Interactable*>> grid = loadedMap->getGrid();
+
+                for (int i = 0; i < (int)grid.size(); i++)
+                {
+                    for (int j = 0; j < (int)grid[i].size(); j++)
+                    {
+                        if (dynamic_cast<Door*>(grid[i][j])) {
+                            int doorID = static_cast<Door*>(grid[i][j])->GetDoorID();
+                            auto foundDoor = std::find_if(doorsInCampaign.begin(),
+                                                            doorsInCampaign.end(),
+                                                            [doorID](Door* door) { return door->GetDoorID() == doorID;});
+                            if (foundDoor != doorsInCampaign.end()) {
+                                grid[i][j] = (*foundDoor);
+                            }
+                        }
+                        else if (dynamic_cast<Character::Character*>(grid[i][j])) {
+                            int characterID = static_cast<Character::Character*>(grid[i][j])->ID();
+                            auto foundCharacter = std::find_if(charactersInCampaign.begin(),
+                                                                charactersInCampaign.end(),
+                                                                [characterID](Character::Character* character) { return character->ID() == characterID;});
+                            if (foundCharacter != charactersInCampaign.end()) {
+                                grid[i][j] = (*foundCharacter);
+                                if (static_cast<Character::Character*>(grid[i][j])->GetIsPlayerControlled()) {
+                                    currentMap.mapID = loadedMap->GetMapID();
+
+                                    activeCharacter = (*foundCharacter);
+
+                                    charactersInMap.push_back((*foundCharacter));
+                                }
+                            }
+                        }
+                        else if (dynamic_cast<ItemContainer*>(grid[i][j])) {
+                            int containerID = static_cast<ItemContainer*>(grid[i][j])->GetItemId();
+                            auto foundContainer = std::find_if(containersInCampaign.begin(),
+                                                                containersInCampaign.end(),
+                                                                [containerID](ItemContainer* container) { return container->GetItemId() == containerID;});
+                            if (foundContainer != containersInCampaign.end()) {
+                                grid[i][j] = (*foundContainer);
+                            }
+                        }
+                        else if (dynamic_cast<Item*>(grid[i][j])) {
+                            int itemID = static_cast<Item*>(grid[i][j])->GetItemId();
+                            auto foundItem = std::find_if(itemsInCampaign.begin(),
+                                                            itemsInCampaign.end(),
+                                                            [itemID](Item* item) { return item->GetItemId() == itemID;});
+                            if (foundItem != itemsInCampaign.end()) {
+                                grid[i][j] = (*foundItem);
+                            }
+                        }
+                    }
+                }
+
+                loadedMap->setGrid(grid);
+
+                mapsInCampaign.push_back(loadedMap);
+            }
+        }
+
+        CreateObserverMessage("[Game/GameSetup] -- Fetching Campaign save data...");
+
+        std::vector<Map::Map*> campaignMaps;
+        
+        for (int i = 0; i < (int)campaignRecord->mapsInCampaign.size(); i++)
+        {
+            int mapID = campaignRecord->mapsInCampaign[i];
+            auto foundMap = std::find_if(mapsInCampaign.begin(),
+                                            mapsInCampaign.end(),
+                                            [mapID](Map::Map* map) { return map->GetMapID() == mapID;});
+            if (foundMap != mapsInCampaign.end()) {
+                campaignMaps.push_back((*foundMap));
+                if (currentMap.mapID == (*foundMap)->GetMapID()) {
+                    int mapIDToFind = currentMap.mapID;
+                    for (int i = 0; i < (int)campaignRecord->numRows; i++)
+                    {
+                        
+                        auto foundMapID = std::find_if(campaignRecord->mapIDs[i].begin(),
+                                                        campaignRecord->mapIDs[i].end(),
+                                                        [mapIDToFind](int mapID) { return mapID == mapIDToFind;});
+                        if (foundMapID != campaignRecord->mapIDs[i].end()) {
+                            currentMap.coorX = i + 1;
+                            currentMap.coorY = (foundMapID - campaignRecord->mapIDs[i].begin()) + 1;
+
+                            break;
+                        }
+                    }
+
+                    std::vector<std::vector<Interactable::Interactable*>> grid = (*foundMap)->getGrid();
+
+                    for (int i = 0; i < (int)grid.size(); i++)
+                    {
+                        for (int j = 0; j < (int)grid[i].size(); j++)
+                        {
+                            if (dynamic_cast<Character::Character*>(grid[i][j])) {
+                                if (static_cast<Character::Character*>(grid[i][j])->GetIsPlayerControlled()) {
+                                    continue;
+                                }
+                                
+                                charactersInMap.push_back(static_cast<Character::Character*>(grid[i][j]));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        gameCampaign = new Campaign(campaignRecord->campaignID, campaignRecord->numRows, campaignRecord->numCols, campaignRecord->mapIDs, currentMap, campaignMaps);
 
         CreateObserverMessage("[Game/GameSetup] -- Game setup complete! Ready to Play!");
     }

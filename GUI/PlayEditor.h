@@ -27,7 +27,11 @@
 #include "../ProjectSourceCode/Campaign/campaign.h"
 #include "../ProjectSourceCode/Observer/Observable.h"
 #include "../ProjectSourceCode/Game/game.h"
+#include "../ProjectSourceCode/Game/gamelogger.h"
 #include "BaseEditor.h"
+
+using namespace game;
+using namespace gamelogger;
 
 namespace CampaignEditor {
     class PlayEditor : public BaseEditor, public Observable {
@@ -58,6 +62,10 @@ namespace CampaignEditor {
 		void Detach(Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
 
 		game::Game* GetCurrentGame() { return currentGame; };
+
+		GameLogger* GetGameLogger() { return gameLogger; };
+
+		void SetGameLogger(GameLogger* _gameLogger) { gameLogger = _gameLogger; };
     private:
 		
 
@@ -68,12 +76,16 @@ namespace CampaignEditor {
 
 		static inline std::filesystem::path* currentCampaignPath = nullptr;
 
-		Fl_Input* campaignChoiceInput;
+		static inline Fl_Input* campaignChoiceInput;
 		//Variable to load the campaign into when the game starts
-		game::Game* currentGame;
+		static inline game::Game* currentGame;
+
+		static inline GameLogger* gameLogger;
         //campaign::Campaign* currentCampaignChoice;
 
 		std::vector<Observer*> observers;
 
     };
+
+	void PlayGame(Game* , Character::Character*, Map::Map*);
 }
