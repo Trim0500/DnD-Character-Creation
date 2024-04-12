@@ -58,7 +58,7 @@ MainMenu::MainMenu() : Fl_Window(WINDOW_WIDTH, WINDOW_HEIGHT, "Campaign Editor")
 	//playGroup for main gameplay loop
 	playGroup = new Fl_Group(GROUP_SETTINGS, "Play");
 	{
-		playEditor = new PlayEditor(PLAY_SETTINGS, "Play");
+		playEditor = new PlayEditor(PLAY_SETTINGS);
 	}
 	playGroup->end();
 

@@ -223,7 +223,7 @@ namespace CampaignEditor
 			containerEditor->filepath = item_container_directory.string();
 
 			doorDirectory = campaign_dir / "Doors" / "doors.csv";
-=========
+
 			character_directory = campaign_dir / "Characters";
 			chare->filepath = character_directory.string();
 

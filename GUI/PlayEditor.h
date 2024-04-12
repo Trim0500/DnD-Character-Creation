@@ -17,19 +17,63 @@
 #include <FL/Fl_Int_Input.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Float_Input.H>
+#include <filesystem>
+#include <locale>
+#include <codecvt>
 
 #include "../ProjectSourceCode/Item/item.h"
 #include "../ProjectSourceCode/Character/Character.h"
 #include "../ProjectSourceCode/Serialize/serializeItem.h"
-
+#include "../ProjectSourceCode/Campaign/campaign.h"
+#include "../ProjectSourceCode/Observer/Observable.h"
+#include "../ProjectSourceCode/Game/game.h"
 #include "BaseEditor.h"
 
 namespace CampaignEditor {
-    class PlayEditor : public Fl_Group {
+    class PlayEditor : public BaseEditor, public Observable {
+        friend class MainMenu;
     public:
-        PlayEditor(int x, int y, int w, int h, const char* label = 0);
-        virtual ~PlayEditor();
+        PlayEditor(int x, int y, int w, int h);
 
-        void initUI();
+		static void browse_cb(Fl_Widget* w, void* data);
+
+		static void startGame_cb(Fl_Widget* w, void* data);
+
+		void load_data();
+		void create();
+		void save();
+		void open(std::string);
+		void open();
+		void save_as();
+		//void save_as(std::string s);
+		void save_data();
+		void delete_entry();
+		void update_data();
+		void populate_browser();
+
+		void Notify() override;
+
+		void Attach(Observer* _observer) override { observers.push_back(_observer); };
+
+		void Detach(Observer* _observer) override { observers.erase(std::remove(observers.begin(), observers.end(), _observer), observers.end()); };
+
+		game::Game* GetCurrentGame() { return currentGame; };
+    private:
+		
+
+		std::string _loadCampaignPathName;
+
+		// Values currently in GUI
+		std::string currentCharacterID;
+
+		static inline std::filesystem::path* currentCampaignPath = nullptr;
+
+		Fl_Input* campaignChoiceInput;
+		//Variable to load the campaign into when the game starts
+		game::Game* currentGame;
+        //campaign::Campaign* currentCampaignChoice;
+
+		std::vector<Observer*> observers;
+
     };
 }
