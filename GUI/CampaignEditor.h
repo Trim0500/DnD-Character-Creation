@@ -96,8 +96,8 @@ namespace CampaignEditor
 		void update_dropdown();
 
 		static void button_cb (Fl_Widget * w, void * f){
-			int x = ((MapButton*)w)->X();
-			int y = ((MapButton*)w)->Y();
+			int x = ((MapButton*)w)->Y();
+			int y = ((MapButton*)w)->X();
 			std::cout << "Button triggered" << std::endl;
 			((CampaignEditor*) f)->handle_button(x,y);
 		}
@@ -121,7 +121,7 @@ namespace CampaignEditor
 		Map::Map *current_map;
 		int _grid_x, _grid_y;
 		std::vector<std::vector<MapButton *>> mbs;
-		int _c_x, _c_y; // Current x and y values. set by buttons
+		int _c_x, _c_y; // Current x and y values. set by buttons, 1-indexed
 		Campaign *campaign;
 		Fl_Input_Choice * map_list;
 		std::vector<Observer*> observers;

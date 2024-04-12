@@ -72,7 +72,7 @@ namespace CampaignEditor
 			fs::create_directories(item_container_directory.parent_path());
 			containerEditor->save();
 
-			fs::create_directories(character_directory.parent_path());
+			fs::create_directories(character_directory);
 			chare->save();
 
 			fs::create_directories(doorDirectory.parent_path());
