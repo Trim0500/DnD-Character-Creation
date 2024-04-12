@@ -42,19 +42,21 @@ namespace CampaignEditor {
 			// Now you can use selectedFile as needed
 			// For example, storing it in the PlayEditor class
 			currentCampaignPath = new std::filesystem::path(selectedFile);
-		
+			campaignChoiceInput->value(currentCampaignPath->string().c_str());
 		}
 	}
 
 	void PlayEditor::startGame_cb(Fl_Widget* w, void* data)
 	{
-		/*
-			TO-DO
-			code here to load the game state using
-			'currentCampaignPath' 
-			into
-			'currentGame'
-		*/
+		std::string gameDirToLoad = campaignChoiceInput->value();
+
+		currentGame = new Game();
+		gameLogger = new GameLogger(currentGame);
+		currentGame->GameSetup(currentCampaignPath, gameLogger);
+
+		CampaignMap currentMap = currentGame->GetGameCampaign()->GetCurrentMap();
+
+		PlayGame(currentGame, currentGame->GetActiveCharacter(), currentGame->GetGameCampaign()->GetMap(currentMap.coorX, currentMap.coorY));
 	}
 
 
@@ -154,5 +156,34 @@ namespace CampaignEditor {
 		}
 	}
 
+	void PlayGame(Game* currentGame, Character::Character* playerCharacter, Map::Map* currentMap) {
+		char userInput = ' ';
+		while (userInput != 'E')
+		{
+			system("cls");
 
+			CampaignMap currentCampaignMap = currentGame->GetGameCampaign()->GetCurrentMap();
+			Map::Map* map = currentGame->GetGameCampaign()->GetMap(currentCampaignMap.coorX, currentCampaignMap.coorY);
+			map->printMap();
+
+			currentGame->PrintActionMenu(playerCharacter);
+
+			currentGame->GetUserSelection(userInput);
+
+			currentGame->ProcessUserAction(userInput, playerCharacter);
+
+			if (currentGame->GetActiveCharacter() != playerCharacter)
+			{
+				int x, y;
+				currentMap->GetCharacterCoordinates(x, y, currentGame->GetActiveCharacter());
+
+				CellActionInfo npcCellAction = currentGame->GetActiveCharacter()->DecideNPCAction(currentMap->getGrid(), x + 1, y + 1);
+				currentGame->EndTurn(npcCellAction.actionName, npcCellAction.row, npcCellAction.col);
+			}
+
+			getchar();
+		}
+
+		exit(0);
+	}
 }

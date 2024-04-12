@@ -54,9 +54,9 @@ namespace door {
 
             ~Door() { firstMapSpawnPoint.clear(); secondMapSpawnPoint.clear(); };
 
-            int GetNextDoorID() { return nextDoorID; };
+            static int GetNextDoorID() { return nextDoorID; };
 
-            void SetNextDoorID(int _nextDoorID) { nextDoorID = _nextDoorID; };
+            static void SetNextDoorID(int _nextDoorID) { nextDoorID = _nextDoorID; };
             
             int GetDoorID() { return doorID; };
 

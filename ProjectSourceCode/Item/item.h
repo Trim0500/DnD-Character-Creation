@@ -181,9 +181,9 @@ namespace item
 
 		void SetWrappee(AbstractComponent* _wrappee) { wrappee = _wrappee; };
 
-		int GetNextItemID() { return nextItemId; };
+		static int GetNextItemID() { return nextItemId; };
 
-		void SetItemIDCounter(int _nextID) { nextItemId = _nextID; };
+		static void SetItemIDCounter(int _nextID) { nextItemId = _nextID; };
 
 		int GetItemId() { return itemId; };
 

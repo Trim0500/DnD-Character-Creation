@@ -42,9 +42,9 @@ namespace serializecharacter {
 		std::vector<int> level = std::vector<int>(12, 0);
 		int max_hit_points{ 0 };
 		int hit_points{ 0 };
-		std::vector<int> inventory_item_ids;
-		std::vector<int> equipped_item_ids;
-		std::string inventory_container_path;
+		//std::vector<int> inventory_item_ids;
+		//std::vector<int> equipped_item_ids;
+		//std::string inventory_container_path;
 		int inventory_container_id;
 		bool isPlayerControlled;
 		std::string actionStrategy;
@@ -162,7 +162,7 @@ namespace Character {
 		/**!\fn Character()
 		* \brief a constructor used by loadmap to create a temporary empty charcater with the ID of an actual saved Character 
 		*/
-		Character(int id);
+		Character(int _id);
 		/*! \fn Character()
 		*  \brief copy character constructor
 		*/
@@ -187,6 +187,8 @@ namespace Character {
 		*/
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
+		
+		Character(const serializecharacter::CharacterRecord& t_record, const ItemContainer& _inventory);
 
 		virtual ~Character() {};
 
@@ -215,6 +217,10 @@ namespace Character {
 		std::string GetObserverMessage() { return observerMessage; };
 
 		void SetObserverMessage(const std::string& _observerMessage) { observerMessage = _observerMessage; };
+
+		static int GetIDGen() { return id_gen; };
+
+		static void SetIDGen(int _idGen) { id_gen = _idGen; };
 
 		/* \fn ID()
 		*  \brief Unique Character ID
@@ -369,6 +375,8 @@ namespace Character {
 		*  \return Returns refrence to ItemContainer type object corresponding to the character's inventory
 		*/
 		itemcontainer::ItemContainer& Inventory() { return inventory; };
+
+		void SetInventory(itemcontainer::ItemContainer _inventory) { inventory = _inventory; };
 
 		/*!
 		* \fn TakeItems

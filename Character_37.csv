@@ -1,0 +1,9 @@
+ID,37
+Name,Cirian
+Ability_scores(Str_Dex_Con_Int_Wis_Cha),13,8,10,11,15,8,
+Levels(Barb_Bard_Cler_Drui_Figh_Monk_Pala_Rang_Rogu_Sorc_Warl_Wizr),0,0,0,0,2,0,0,0,0,0,0,0,
+Max_HP,10
+Current_HP,10
+Inventory_Container_ID,344
+isPlayerControlled,1
+actionStrategy,human

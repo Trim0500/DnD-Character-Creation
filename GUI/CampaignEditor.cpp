@@ -136,7 +136,9 @@ namespace CampaignEditor
 			// TODO:  Map not found error
 			return;
 		}
-		campaign->AddMapToCampaign(_c_x+1, _c_y+1, *m);
+
+		// The map grids function by having x be the rows whereby a character moves up and down and y be columns whereby a character moves from side to side
+		campaign->AddMapToCampaign(_c_y+1, _c_x+1, *m);
 
 		Notify();
 
@@ -188,7 +190,7 @@ namespace CampaignEditor
 		if (BaseEditor::File_Chooser("Open", Fl_Native_File_Chooser::BROWSE_DIRECTORY))
 		{
 			try {
-				CampaignRecord *cr = campaign::LoadCampaign(6, filepath);
+				CampaignRecord *cr = campaign::LoadCampaign(1, filepath);
 				CampaignMap cp;
 				cp.mapID = cr->currentMapID;
 				cp.coorX = cr->currentMapXCoor;

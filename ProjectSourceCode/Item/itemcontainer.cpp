@@ -27,6 +27,19 @@ namespace itemcontainer {
 		capacity = _capacity;
 	}
 
+	ItemContainer::ItemContainer(const int& _itemId,
+									const std::string& _itemName,
+									const int& _enchantmentBonus,
+									const int& _itemType,
+									const int& _enchantmentType,
+									const float& _weight,
+									const float& _capacity,
+									const std::vector<Item>& _items) :
+									Item (_itemId, _itemName, _enchantmentBonus, _itemType, _enchantmentType, _weight) {
+		capacity = _capacity;
+		items = _items;
+	}
+
 	int ItemContainer::AddNewItem(Item* newItem) {
 		if (GetItemType() == WornItems) {
 			Item* foundItem = GetItem(newItem->GetItemType());
