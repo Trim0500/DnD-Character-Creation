@@ -51,11 +51,12 @@ namespace CampaignEditor {
 		std::string gameDirToLoad = campaignChoiceInput->value();
 
 		currentGame = new Game();
-		currentGame->GameSetup(currentCampaignPath);
+		gameLogger = new GameLogger(currentGame);
+		currentGame->GameSetup(currentCampaignPath, gameLogger);
 
-		// if (fl_ask("Do you really want to save and exit?")) {
+		CampaignMap currentMap = currentGame->GetGameCampaign()->GetCurrentMap();
 
-		// }
+		PlayGame(currentGame, currentGame->GetActiveCharacter(), currentGame->GetGameCampaign()->GetMap(currentMap.coorX, currentMap.coorY));
 	}
 
 
@@ -155,5 +156,34 @@ namespace CampaignEditor {
 		}
 	}
 
+	void PlayGame(Game* currentGame, Character::Character* playerCharacter, Map::Map* currentMap) {
+		char userInput = ' ';
+		while (userInput != 'E')
+		{
+			system("cls");
 
+			CampaignMap currentCampaignMap = currentGame->GetGameCampaign()->GetCurrentMap();
+			Map::Map* map = currentGame->GetGameCampaign()->GetMap(currentCampaignMap.coorX, currentCampaignMap.coorY);
+			map->printMap();
+
+			currentGame->PrintActionMenu(playerCharacter);
+
+			currentGame->GetUserSelection(userInput);
+
+			currentGame->ProcessUserAction(userInput, playerCharacter);
+
+			if (currentGame->GetActiveCharacter() != playerCharacter)
+			{
+				int x, y;
+				currentMap->GetCharacterCoordinates(x, y, currentGame->GetActiveCharacter());
+
+				CellActionInfo npcCellAction = currentGame->GetActiveCharacter()->DecideNPCAction(currentMap->getGrid(), x + 1, y + 1);
+				currentGame->EndTurn(npcCellAction.actionName, npcCellAction.row, npcCellAction.col);
+			}
+
+			getchar();
+		}
+
+		exit(0);
+	}
 }

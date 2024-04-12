@@ -155,10 +155,12 @@ namespace game
         Notify();
     }
 
-    void Game::GameSetup(std::filesystem::path* _campaignDir) {
+    void Game::GameSetup(std::filesystem::path* _campaignDir, Observer* _gameLogger) {
         CampaignRecord* campaignRecord = LoadCampaign(_campaignDir->string());
         
         _campaignDir->remove_filename();
+
+        CreateObserverMessage("[Game/GameSetup] -- Loading items...");
 
         std::filesystem::path itemsPath = *_campaignDir / "Items" / "items.csv";
         std::vector<Item*> itemsInCampaign = LoadItems(itemsPath.string());
@@ -187,6 +189,8 @@ namespace game
             containersInCampaign.push_back(savedContainer);
         }
 
+        CreateObserverMessage("[Game/GameSetup] -- Loading characters...");
+
         std::filesystem::path charactersPath = *_campaignDir / "Characters";
         std::vector<serializecharacter::CharacterRecord> characterRecords = serializecharacter::LoadAllCharacters(charactersPath.string());
         
@@ -202,8 +206,12 @@ namespace game
                 character = new Character::Character(characterRecords[i], ItemContainer("Inventory", item::ItemType::Inventory, 30.0));
             }
 
+            character->Attach(_gameLogger);
+
             charactersInCampaign.push_back(character);
         }
+
+        CreateObserverMessage("[Game/GameSetup] -- Loading map data...");
         
         std::filesystem::path doorsPath = *_campaignDir / "Doors" / "doors.csv";
         std::vector<Door*> doorsInCampaign = LoadDoors(doorsPath.string());
@@ -248,6 +256,10 @@ namespace game
                                 grid[i][j] = (*foundCharacter);
                                 if (static_cast<Character::Character*>(grid[i][j])->GetIsPlayerControlled()) {
                                     currentMap.mapID = loadedMap->GetMapID();
+
+                                    activeCharacter = (*foundCharacter);
+
+                                    charactersInMap.push_back((*foundCharacter));
                                 }
                             }
                         }
@@ -278,6 +290,8 @@ namespace game
             }
         }
 
+        CreateObserverMessage("[Game/GameSetup] -- Fetching Campaign save data...");
+
         std::vector<Map::Map*> campaignMaps;
         
         for (int i = 0; i < (int)campaignRecord->mapsInCampaign.size(); i++)
@@ -303,23 +317,27 @@ namespace game
                             break;
                         }
                     }
+
+                    std::vector<std::vector<Interactable::Interactable*>> grid = (*foundMap)->getGrid();
+
+                    for (int i = 0; i < (int)grid.size(); i++)
+                    {
+                        for (int j = 0; j < (int)grid[i].size(); j++)
+                        {
+                            if (dynamic_cast<Character::Character*>(grid[i][j])) {
+                                if (static_cast<Character::Character*>(grid[i][j])->GetIsPlayerControlled()) {
+                                    continue;
+                                }
+                                
+                                charactersInMap.push_back(static_cast<Character::Character*>(grid[i][j]));
+                            }
+                        }
+                    }
                 }
             }
         }
 
         gameCampaign = new Campaign(campaignRecord->campaignID, campaignRecord->numRows, campaignRecord->numCols, campaignRecord->mapIDs, currentMap, campaignMaps);
-
-        CreateObserverMessage("[Game/GameSetup] -- Fetching Campaign save data...");
-
-        CreateObserverMessage("[Game/GameSetup] -- Loading map data...");
-
-        // Find generate maps...
-
-        CreateObserverMessage("[Game/GameSetup] -- Loading characters...");
-
-        // Find generate characters...
-
-        // Set campaign memeber variables...
 
         CreateObserverMessage("[Game/GameSetup] -- Game setup complete! Ready to Play!");
     }
