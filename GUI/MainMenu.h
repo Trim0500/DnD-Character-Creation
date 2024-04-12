@@ -51,46 +51,12 @@ namespace CampaignEditor
 		// };
 		void save()
 		{
+			update_directories();
+
 			std::cout << "Saving in Campaign Editor" << std::endl;
-			// ie->save_as();
 			ce->save();
 
-			// for (Map::Map *_m: *me->maps)
-			campaign_dir = fs::path(ce->filepath);
-			update_directories();
-			if (fs::exists(item_directory))
-			{
-				ie->open(item_directory.string());
-			}
-			else
-			{
-				fs::create_directories(item_directory.parent_path());
-			}
-			if (fs::exists(map_directory))
-			{
-				std::string ext(".csv");
-				std::string path(map_directory.string());
-				for (auto& p : fs::directory_iterator(path))
-				{
-					if (p.path().extension() == ext)
-					{
-						std::string s = p.path().string();
-						Map::Map* m = MapBuilder::MapBuilder::LoadMap(s);
-						maps->push_back(m);
-					}
-				}
-			}
-			else
-			{
-				fs::create_directory(map_directory);
-			}
-			if (fs::exists(character_directory)) {
-				chare->open(character_directory.string());
-			}
-			else {
-				fs::create_directories(character_directory);
-			}
-			//fs::create_directories(map_directory);
+			fs::create_directories(map_directory);
 			std::vector<Map::Map*> mapsToSave = *me->maps;
 			for (int index = 0; index < (int)mapsToSave.size(); index++)
 			{
@@ -98,15 +64,16 @@ namespace CampaignEditor
 				fs::path fp = map_directory / ("Map" + std::to_string(mapToSave->GetMapID()) + ".csv");
 				std::string s = fp.string();
 				MapBuilder::MapBuilder::SaveMap(mapToSave, s);
-				// MapSerializer::save_map(fp, _m);
 			}
-			//fs::create_directories(item_directory.parent_path());
-			//fs::create_directories(character_directory.parent_path());
+
+			fs::create_directories(item_directory.parent_path());
 			ie->save();
-			chare->save();
 
 			fs::create_directories(item_container_directory.parent_path());
 			containerEditor->save();
+
+			fs::create_directories(character_directory.parent_path());
+			chare->save();
 
 			fs::create_directories(doorDirectory.parent_path());
 			doorEditor->save();
@@ -223,12 +190,12 @@ namespace CampaignEditor
 			containerEditor->filepath = item_container_directory.string();
 
 			doorDirectory = campaign_dir / "Doors" / "doors.csv";
+			doorEditor->filepath = doorDirectory.string();
 
 			character_directory = campaign_dir / "Characters";
 			chare->filepath = character_directory.string();
 
 			map_directory = campaign_dir / "Maps";
-			ie->filepath = item_directory.string();
 			me->filepath = map_directory.string();
 		}
 
