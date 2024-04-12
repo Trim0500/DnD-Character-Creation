@@ -32,6 +32,11 @@ namespace CampaignEditor
 		intInput = new Fl_Int_Input(0, 0, w, height, "Intelligence");
 		wisInput = new Fl_Int_Input(0, 0, w, height, "Wisdom");
 		charInput = new Fl_Int_Input(0, 0, w, height, "Charisma");
+		inventoryIDChoice = new Fl_Input_Choice(0, 0, w, height, "Inventory ID");
+		inventoryIDChoice->input()->readonly(true);
+		isPlayableChoice = new Fl_Input_Choice(0, 0, w, height, "Is Playable");
+		isPlayableChoice->add(std::to_string(true).c_str());
+		isPlayableChoice->add(std::to_string(false).c_str());
 
 
 		Fl_Pack* b = new Fl_Pack(0, 0, w, height / 2);
@@ -137,6 +142,14 @@ namespace CampaignEditor
 		current_character->SetClass(stocs(characterClassInput->value()));
 		current_character->set_Level(stocs(characterClassInput->value()), std::stoi(levelInput->value()));
 		current_character->setMaxHitPoints(std::stoi(hpInput->value()));
+		
+		int currentInventoryID = std::stoi(inventoryIDChoice->value());
+		
+		auto foundInventory = std::find_if(editorContainers.begin(),
+											editorContainers.end(),
+											[currentInventoryID](ItemContainer* container) { return container->GetItemId() == currentInventoryID; });
+		current_character->SetInventory(*(*foundInventory));
+		current_character->SetIsPlayerControlled(isPlayableChoice);
 
 		populate_browser();
 	}
@@ -170,6 +183,10 @@ namespace CampaignEditor
 		_loadCharacterClass = current_character->GetClass();
 		_loadCharacterLevel = current_character->Levels((Character::Character_Class)current_character->GetClass());
 		_loadCharacterHP = current_character->Max_Hit_Points();
+		if (!newCharacter) {
+			loadedInventoryID = current_character->Inventory().GetItemId();
+		}
+		_loadCharacterIsPlayable = current_character->GetIsPlayerControlled();
 
 		currentCharacterID = std::to_string(_loadCharacterID);
 		currentCharacterName = _loadCharacterName;
@@ -182,6 +199,10 @@ namespace CampaignEditor
 		currentCharacterClass = current_character->Get_Class_String(_loadCharacterClass);
 		currentCharacterLevel = std::to_string(_loadCharacterLevel);
 		currentCharacterHP = std::to_string(_loadCharacterHP);
+		if (!newCharacter) {
+			currentInventoryID = std::to_string(loadedInventoryID);
+		}
+		currentCharacterIsPlayable = std::to_string(_loadCharacterIsPlayable);
 
 		idInput->value(currentCharacterID.c_str());
 		nameInput->value(currentCharacterName.c_str());
@@ -194,6 +215,10 @@ namespace CampaignEditor
 		characterClassInput->value(currentCharacterClass.c_str());
 		levelInput->value(currentCharacterLevel.c_str());
 		hpInput->value(currentCharacterHP.c_str());
+		if (!newCharacter) {
+			inventoryIDChoice->value(currentInventoryID.c_str());
+		}
+		isPlayableChoice->value(currentCharacterIsPlayable.c_str());
 	}
 
 	void CharacterEditor::populate_browser()

@@ -59,6 +59,8 @@ namespace CampaignEditor
 			Fl_Int_Input* charInput;
 			Fl_Input_Choice *characterClassInput;
 			Fl_Int_Input* hpInput;
+			Fl_Input_Choice* inventoryIDChoice;
+			Fl_Input_Choice* isPlayableChoice;
 
 			int _loadCharacterID;
 			std::string _loadCharacterName;
@@ -71,6 +73,8 @@ namespace CampaignEditor
 			int _loadCharacterClass;
 			int _loadCharacterLevel;
 			int _loadCharacterHP;
+			int loadedInventoryID;
+			bool _loadCharacterIsPlayable;
 
 			// Values currently in GUI
 			std::string currentCharacterID;
@@ -84,6 +88,9 @@ namespace CampaignEditor
 			std::string currentCharacterClass;
 			std::string currentCharacterLevel;
 			std::string currentCharacterHP;
+			std::string currentInventoryID;
+			std::string currentCharacterIsPlayable;
+
 
 			Character::Character* current_character;
 			Fl_Scroll* character_scroll;

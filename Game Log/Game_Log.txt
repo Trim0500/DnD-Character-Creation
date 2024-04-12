@@ -1,1 +1,3 @@
-[Wed Apr 10 20:51:52 2024] [Game/ProcessUserAction] -- User exited the game session!
+[Fri Apr 12 17:49:25 2024] [TestGameLogger/TestUpdate] -- This is random ass text
+[Fri Apr 12 17:49:25 2024] [TestGameLogger/TestUpdate] -- This is another random ass text
+[Fri Apr 12 17:49:25 2024] [TestGameLogger/TestUpdate] -- This is the last random ass text
