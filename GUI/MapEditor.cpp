@@ -74,7 +74,7 @@ std::string cttos(Interactable::Interactable* ct)
 
 int MapCellButton::handle(int e)
 {
-	if ((x == 0 && y == 0) || (x == MapEditor::GetEndCellBbuttonX() && y == MapEditor::GetEndCellBbuttonY())) {
+	if ((x == 1 && y == 1) || (x == MapEditor::GetEndCellBbuttonX() && y == MapEditor::GetEndCellBbuttonY())) {
 		return 0;
 	}
 
@@ -120,10 +120,10 @@ int MapCellButton::handle(int e)
 		}
 		
 		// The map grids function by having x be the rows whereby a character moves up and down and y be columns whereby a character moves from side to side
-		MapEditor::update_cell(y, x, ct);
+		MapEditor::update_cell(y - 1, x - 1, ct);
 
 		//mapEditor->UpdateCellObjectIDDropDownLabel(x, y);
-		MapEditor::UpdateCellObjectIDDropDownLabel(x, y);
+		MapEditor::UpdateCellObjectIDDropDownLabel(y, x);
 
 		return 1;
 	}
@@ -161,7 +161,7 @@ void MapEditor::redraw_map()
 		mcbs.push_back(std::vector<MapCellButton *>());
 		for (int i = 0; i < _grid_x; i++)
 		{
-			MapCellButton *m = new MapCellButton(60 + 60 * i, 60 + 60 * j, 60, 60, i, j);
+			MapCellButton *m = new MapCellButton(60 + 60 * j, 60 + 60 * i, 60, 60, j + 1, i + 1);
 
 			m->copy_label(cttos(current_map->getGrid()[j][i]).c_str());
 			
@@ -216,8 +216,8 @@ void MapEditor::create()
 		_new_x = w->x();
 		_new_y = w->y();
 
-		endCellX = _new_x - 1;
-		endCellY = _new_y - 1;
+		endCellX = _new_x;
+		endCellY = _new_y;
 
 		std::cout << _new_x << "," << _new_y << std::endl;
 		try
@@ -347,7 +347,7 @@ void MapEditor::UpdateCellObjectIDDropDownLabel(const int& _cellButtonX, const i
 
 	mapCellButtonY = _cellButtonY;
 
-	UpdateDropDown(_cellButtonX, _cellButtonY);
+	UpdateDropDown(_cellButtonX - 1, _cellButtonY - 1);
 }
 
 
