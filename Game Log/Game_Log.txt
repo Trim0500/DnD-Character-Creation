@@ -1,1 +1,25 @@
-[Wed Apr 10 20:51:52 2024] [Game/ProcessUserAction] -- User exited the game session!
+[Fri Apr 12 12:06:09 2024] [Game/GameSetup] -- Loading items...
+[Fri Apr 12 12:06:09 2024] [Game/GameSetup] -- Loading characters...
+[Fri Apr 12 12:06:09 2024] [Game/GameSetup] -- Loading map data...
+[Fri Apr 12 12:06:09 2024] [Game/GameSetup] -- Fetching Campaign save data...
+[Fri Apr 12 12:06:09 2024] [Game/GameSetup] -- Game setup complete! Ready to Play!
+[Fri Apr 12 12:09:25 2024] [Game/ProcessUserAction] -- Player used a door!
+[Fri Apr 12 12:09:36 2024] [Game/ProcessUserAction] -- Player used a door!
+[Fri Apr 12 12:09:41 2024] [Game/ProcessUserAction] -- Player moved!
+[Fri Apr 12 12:09:41 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 12:09:45 2024] [Game/ProcessUserAction] -- Player moved!
+[Fri Apr 12 12:09:45 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 12:10:24 2024] Empty
+[Fri Apr 12 12:10:24 2024] [Game/ProcessUserAction] -- Player equipped items!
+[Fri Apr 12 12:10:57 2024] [Game/ProcessUserAction] -- Player interacted with items!
+[Fri Apr 12 12:11:01 2024] [Game/ProcessUserAction] -- Player moved!
+[Fri Apr 12 12:11:01 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 12:11:05 2024] [Game/ProcessUserAction] -- Player moved!
+[Fri Apr 12 12:11:05 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 12:11:08 2024] [Game/ProcessUserAction] -- Player moved!
+[Fri Apr 12 12:11:08 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 12:11:10 2024] [Game/ProcessUserAction] -- Player moved!
+[Fri Apr 12 12:11:10 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 12:11:19 2024] [Game/ProcessUserAction] -- Player interacted with items!
+[Fri Apr 12 12:12:27 2024] [Game/ProcessUserAction] -- Player interacted with items!
+[Fri Apr 12 12:12:29 2024] [Game/ProcessUserAction] -- User exited the game session!

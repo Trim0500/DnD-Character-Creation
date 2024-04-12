@@ -249,9 +249,8 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 			}
 		}
 	}*/
-
 	isPlayerControlled = t_record.isPlayerControlled;
-	
+	wornItems = this;
 	actionStrategy = isPlayerControlled ?
 						static_cast<CharacterActionStrategy*>(new HumanPlayerStrategy()) :
 						t_record.actionStrategy == FRIENDLY_STRATEGY_NAME ?
@@ -281,6 +280,7 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 							static_cast<CharacterActionStrategy*>(new FriendlyStrategy()) :
 							static_cast<CharacterActionStrategy*>(new AggressorStrategy());
 	inventory = _inventory;
+	wornItems = this;
 }
 
 std::string Character::Character::serialize() {
