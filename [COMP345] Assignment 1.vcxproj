@@ -104,6 +104,7 @@
     <ClCompile Include="GUI\MapEditor.cpp" />
     <ClCompile Include="GUI\MapSerializer.cpp" />
     <ClCompile Include="GUI\MapViewWindow.cpp" />
+    <ClCompile Include="GUI\PlayEditor.cpp" />
     <ClCompile Include="ProjectSourceCode\Demo\demoitem.cpp" />
     <ClCompile Include="ProjectSourceCode\Demo\DiceDemo.cpp" />
     <ClCompile Include="ProjectSourceCode\Demo\demoCharacter.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="GUI\MapEditor.h" />
     <ClInclude Include="GUI\MapSerializer.h" />
     <ClInclude Include="GUI\MapViewWindow.h" />
+    <ClInclude Include="GUI\PlayEditor.h" />
     <ClInclude Include="ProjectSourceCode\Demo\demoitem.h" />
     <ClInclude Include="ProjectSourceCode\Demo\DiceDemo.h" />
     <ClInclude Include="ProjectSourceCode\Demo\demoCharacter.h" />

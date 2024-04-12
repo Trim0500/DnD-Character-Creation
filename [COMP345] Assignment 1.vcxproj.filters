@@ -141,6 +141,9 @@
     <ClCompile Include="GUI\dooreditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GUI\PlayEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ProjectSourceCode\Item\item.h">
@@ -279,6 +282,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GUI\dooreditor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI\PlayEditor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

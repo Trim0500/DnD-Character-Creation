@@ -14,11 +14,13 @@
 #include "MapEditor.h"
 #include "CampaignEditor.h"
 #include "ItemContainerEditor.h"
+#include "PlayEditor.h"
 #include "MapSerializer.h"
 #include "CharacterEditor.h"
 #include "dooreditor.h"
 #include "../ProjectSourceCode/Map/Map.h"
 #include "../ProjectSourceCode/Builder/MapBuilder.h"
+#include "../ProjectSourceCode/Game/game.h"
 
 namespace fs = std::filesystem;
 using namespace dooreditor;
@@ -221,15 +223,16 @@ namespace CampaignEditor
 			containerEditor->filepath = item_container_directory.string();
 
 			doorDirectory = campaign_dir / "Doors" / "doors.csv";
-			doorEditor->filepath = doorDirectory.string();
 
 			character_directory = campaign_dir / "Characters";
 			chare->filepath = character_directory.string();
 
 			map_directory = campaign_dir / "Maps";
+			ie->filepath = item_directory.string();
 			me->filepath = map_directory.string();
 		}
 
+		
 	private:
 		Fl_Tabs *tabs;
 
@@ -247,6 +250,8 @@ namespace CampaignEditor
 
 		DoorEditor* doorEditor;
 
+		PlayEditor* playEditor;
+
 		Fl_Group *ig;
 
 		Fl_Group *containerGroup;
@@ -257,6 +262,8 @@ namespace CampaignEditor
 		Fl_Group *charg;
 
 		Fl_Group* doorGroup;
+
+		Fl_Group* playGroup;
 
 		fs::path map_directory;
 
