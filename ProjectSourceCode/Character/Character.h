@@ -162,7 +162,7 @@ namespace Character {
 		/**!\fn Character()
 		* \brief a constructor used by loadmap to create a temporary empty charcater with the ID of an actual saved Character 
 		*/
-		Character(int id);
+		Character(int _id);
 		/*! \fn Character()
 		*  \brief copy character constructor
 		*/
@@ -187,6 +187,8 @@ namespace Character {
 		*/
 		Character(std::string t_name, Character_Class t_class, const std::vector<int> &t_ability_scores, bool t_average_hp, bool _isPlayerControlled = true, CharacterActionStrategy* _actionStrategy = new HumanPlayerStrategy());
 		Character(const serializecharacter::CharacterRecord& t_record);
+		
+		Character(const serializecharacter::CharacterRecord& t_record, const ItemContainer& _inventory);
 
 		virtual ~Character() {};
 

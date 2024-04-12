@@ -208,7 +208,7 @@ serializecharacter::CharacterRecord serializecharacter::LoadCharacter(const std:
         }
         else if (field_key == "isPlayerControlled") {
             while (std::getline(spliter, data, ',')) {
-                record.isPlayerControlled = data == "true" ? true : false;
+                record.isPlayerControlled = data == "1" ? true : false;
             }
         }
         else if (field_key == "actionStrategy") {

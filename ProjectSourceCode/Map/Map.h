@@ -98,6 +98,7 @@ namespace Map {
 		void setRows(int rows);
 		void setCols(int cols);
 		void setGrid();
+		void setGrid(std::vector<std::vector<Interactable::Interactable*>> _grid) { grid = _grid;};
 		void setEndCell(int row, int col);
 		void setStartCell(int row, int col);
 

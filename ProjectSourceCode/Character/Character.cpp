@@ -140,8 +140,8 @@ Character::Character::Character(){
 	actionStrategy = new HumanPlayerStrategy();
 }
 
-Character::Character::Character(int id) {
-	tempID = id;
+Character::Character::Character(int _id) {
+	id = _id;
 }
 
 Character::Character::Character(const Character& t_character) : id(t_character.id)
@@ -257,6 +257,30 @@ Character::Character::Character(const serializecharacter::CharacterRecord& t_rec
 						t_record.actionStrategy == FRIENDLY_STRATEGY_NAME ?
 							static_cast<CharacterActionStrategy*>(new FriendlyStrategy()) :
 							static_cast<CharacterActionStrategy*>(new AggressorStrategy());
+}
+
+Character::Character::Character(const serializecharacter::CharacterRecord& t_record, const ItemContainer& _inventory) {
+	this->name = t_record.name;
+
+	for (int i{ 0 }; i < ability_scores.size(); i++) {
+		this->ability_scores[i] = t_record.ability_scores[i];
+	}
+
+	for (int i{ 0 }; i < t_record.level.size(); i++) {
+		for (int j{ 0 }; j < t_record.level.at(i); j++) {
+			Levelup((Character_Class)i,true);
+		}
+	}
+
+	this->hit_points = t_record.hit_points;
+	this->max_hit_points = t_record.max_hit_points;
+	isPlayerControlled = t_record.isPlayerControlled;
+	actionStrategy = isPlayerControlled ?
+						static_cast<CharacterActionStrategy*>(new HumanPlayerStrategy()) :
+						t_record.actionStrategy == FRIENDLY_STRATEGY_NAME ?
+							static_cast<CharacterActionStrategy*>(new FriendlyStrategy()) :
+							static_cast<CharacterActionStrategy*>(new AggressorStrategy());
+	inventory = _inventory;
 }
 
 std::string Character::Character::serialize() {
