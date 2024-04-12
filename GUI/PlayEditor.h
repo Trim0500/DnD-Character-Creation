@@ -29,6 +29,8 @@
 #include "../ProjectSourceCode/Game/game.h"
 #include "BaseEditor.h"
 
+using namespace game;
+
 namespace CampaignEditor {
     class PlayEditor : public BaseEditor, public Observable {
         friend class MainMenu;
@@ -68,9 +70,9 @@ namespace CampaignEditor {
 
 		static inline std::filesystem::path* currentCampaignPath = nullptr;
 
-		Fl_Input* campaignChoiceInput;
+		static inline Fl_Input* campaignChoiceInput;
 		//Variable to load the campaign into when the game starts
-		game::Game* currentGame;
+		static inline game::Game* currentGame;
         //campaign::Campaign* currentCampaignChoice;
 
 		std::vector<Observer*> observers;

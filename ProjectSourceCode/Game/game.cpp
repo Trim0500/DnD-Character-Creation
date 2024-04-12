@@ -3,6 +3,8 @@
 #include <iterator>
 #include <string>
 #include <cctype>
+#include <sys/stat.h>
+#include <regex>
 
 #include "game.h"
 #include "..\Interactable\EmptyCell.h"
@@ -121,10 +123,10 @@ namespace game
         Notify();
     }
 
-    void Game::GameSetup(const std::string& _saveFileDir) {
+    void Game::GameSetup(std::filesystem::path* _campaignDoir) {
         CreateObserverMessage("[Game/GameSetup] -- Fetching Campaign save data...");
 
-        // Find campaign...
+        CampaignRecord* campaignRecord = campaign::LoadCampaign(_campaignDoir->string());
 
         CreateObserverMessage("[Game/GameSetup] -- Loading map data...");
 

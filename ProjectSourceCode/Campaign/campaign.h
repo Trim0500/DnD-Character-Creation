@@ -185,4 +185,6 @@ namespace campaign {
     * \throw invalid_argument
     */
     CampaignRecord* LoadCampaign(const int&, const std::string&);
+
+    CampaignRecord* LoadCampaign(const std::string&);
 }

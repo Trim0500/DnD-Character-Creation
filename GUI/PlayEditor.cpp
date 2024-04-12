@@ -42,19 +42,20 @@ namespace CampaignEditor {
 			// Now you can use selectedFile as needed
 			// For example, storing it in the PlayEditor class
 			currentCampaignPath = new std::filesystem::path(selectedFile);
-		
+			campaignChoiceInput->value(currentCampaignPath->string().c_str());
 		}
 	}
 
 	void PlayEditor::startGame_cb(Fl_Widget* w, void* data)
 	{
-		/*
-			TO-DO
-			code here to load the game state using
-			'currentCampaignPath' 
-			into
-			'currentGame'
-		*/
+		std::string gameDirToLoad = campaignChoiceInput->value();
+
+		currentGame = new Game();
+		currentGame->GameSetup(currentCampaignPath);
+
+		// if (fl_ask("Do you really want to save and exit?")) {
+
+		// }
 	}
 
 
