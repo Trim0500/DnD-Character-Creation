@@ -17,6 +17,7 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Float_Input.H>
 #include <FL/Fl_Scroll.H>
+#include <FL/Fl_Check_Button.H>
 
 #include "../ProjectSourceCode/Item/item.h"
 #include "../ProjectSourceCode/Character/Character.h"
@@ -78,7 +79,7 @@ namespace CampaignEditor
 			Fl_Input_Choice *characterClassInput;
 			Fl_Int_Input* hpInput;
 			Fl_Input_Choice* inventoryIDChoice;
-			Fl_Input_Choice* isPlayableChoice;
+			Fl_Check_Button* isPlayableChoice;
 
 			int _loadCharacterID;
 			std::string _loadCharacterName;

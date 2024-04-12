@@ -39,9 +39,9 @@ namespace CampaignEditor
 		charInput = new Fl_Int_Input(0, 0, w, height, "Charisma");
 		inventoryIDChoice = new Fl_Input_Choice(0, 0, w, height, "Inventory ID");
 		inventoryIDChoice->input()->readonly(true);
-		isPlayableChoice = new Fl_Input_Choice(0, 0, w, height, "Is Playable");
-		isPlayableChoice->add(std::to_string(true).c_str());
-		isPlayableChoice->add(std::to_string(false).c_str());
+		isPlayableChoice = new Fl_Check_Button(0, 0, w, height, "Is Playable");
+		isPlayableChoice->value(0);
+
 
 
 		Fl_Pack* b = new Fl_Pack(0, 0, w, height / 2);
@@ -156,7 +156,7 @@ namespace CampaignEditor
 											editorContainers.end(),
 											[currentInventoryID](ItemContainer* container) { return container->GetItemId() == currentInventoryID; });
 		current_character->SetInventory(*(*foundInventory));
-		current_character->SetIsPlayerControlled(isPlayableChoice);
+		current_character->SetIsPlayerControlled(isPlayableChoice->value() != 0);
 
 		populate_browser();
 	}
@@ -225,7 +225,7 @@ namespace CampaignEditor
 		if (!newCharacter) {
 			inventoryIDChoice->value(currentInventoryID.c_str());
 		}
-		isPlayableChoice->value(currentCharacterIsPlayable.c_str());
+		isPlayableChoice->value(_loadCharacterIsPlayable ? 1 : 0);
 	}
 
 	void CharacterEditor::populate_browser()
