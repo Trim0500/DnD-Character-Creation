@@ -660,7 +660,7 @@ namespace game
                 x++;
                 y++;
                 //Move
-                std::cout << "Select Direction: up, down, left, right";
+                std::cout << "Select Direction: up, down, left, right" << std::endl;
                 std::getline(std::cin, direction);
 
 
