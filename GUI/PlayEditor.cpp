@@ -172,17 +172,28 @@ namespace CampaignEditor {
 
 			currentGame->ProcessUserAction(userInput, playerCharacter);
 
-			if (currentGame->GetActiveCharacter() != playerCharacter)
-			{
-				int x, y;
-				currentMap->GetCharacterCoordinates(x, y, currentGame->GetActiveCharacter());
+			try {
+				if (currentGame->GetActiveCharacter() != playerCharacter)
+				{
+					int x, y;
+					currentMap->GetCharacterCoordinates(x, y, currentGame->GetActiveCharacter());
 
-				CellActionInfo npcCellAction = currentGame->GetActiveCharacter()->DecideNPCAction(currentMap->getGrid(), x + 1, y + 1);
-				currentGame->EndTurn(npcCellAction.actionName, npcCellAction.row, npcCellAction.col);
+					CellActionInfo npcCellAction = currentGame->GetActiveCharacter()->DecideNPCAction(currentMap->getGrid(), x + 1, y + 1);
+					currentGame->EndTurn(npcCellAction.actionName, npcCellAction.row, npcCellAction.col);
+				}
 			}
-			
+			catch (std::invalid_argument exc) {
+				std::cout << exc.what() << std::endl;
+			}
+			catch (std::logic_error exc) {
+				std::cout << exc.what() << std::endl;
+			}
+			catch (int exc) {
+				std::cout << "[Map/setCell] -- Failed to set the inventory of a killed player character." << std::endl;
+			}
 
 			getchar();
+
 			if (playerCharacter->Hit_Points() <= 0) {
 				std::cout << "You Died" << std::endl;
 				userInput = 'E';

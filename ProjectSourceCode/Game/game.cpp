@@ -372,10 +372,14 @@ namespace game
         else if (_actionTaken == Character::ATTACK_CELL_ACTION) {
             std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentLoadedMap->getGrid();
             Character::Character* target = static_cast<Character::Character*>(mapGrid[_targetX - 1][_targetY - 1]);
+            if (target == nullptr) {
+                throw new std::logic_error("[Game/EndTurn] -- Failed to find the player for an NPC to attack.");
+            }
+
             bool targetDied = activeCharacter->AttemptAttack(target);
 
             std::ostringstream attackUpdateMessage;
-            attackUpdateMessage << "Attack results: " << target->Name() << " now at " << target->Hit_Points() << std::endl;
+            attackUpdateMessage << "Attack results: " << target->Name() << " now at " << target->Hit_Points() << "/" << target->Max_Hit_Points() << std::endl;
             std::cout << attackUpdateMessage.str();
 
             if (targetDied) {
@@ -396,13 +400,15 @@ namespace game
         std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
                                                                                             charactersInMap.end(),
                                                                                             [activeCharacterPointer](Character::Character* character){ return character == activeCharacterPointer; });
+        if (currentActiveCharacter == charactersInMap.end()) {
+            throw new std::logic_error("[Game/EndTurn] -- Failed to at least find NPC characters in map.");
+        }
         currentActiveCharacter = std::next(currentActiveCharacter, 1);
         if (currentActiveCharacter == charactersInMap.end()) {
             currentActiveCharacter = charactersInMap.begin();
         }
 
         activeCharacter = (*currentActiveCharacter);
-        
     }
 
     void Game::PrintActionMenu(Character::Character* _player)
@@ -736,8 +742,12 @@ namespace game
             if (t_selection == 'M' || t_selection == 'A' || t_selection == 'D') {
                 Character::Character* activeCharacterPointer = activeCharacter;
                 std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
-                    charactersInMap.end(),
-                    [activeCharacterPointer](Character::Character* character) { return character == activeCharacterPointer; });
+                                                                                                    charactersInMap.end(),
+                                                                                                    [activeCharacterPointer](Character::Character* character) { return character == activeCharacterPointer; });
+                if (currentActiveCharacter == charactersInMap.end()) {
+                    throw new std::logic_error("[Game/EndTurn] -- Failed to at least find player characters in map.");
+                }
+
                 currentActiveCharacter = std::next(currentActiveCharacter, 1);
                 if (currentActiveCharacter == charactersInMap.end()) {
                     currentActiveCharacter = charactersInMap.begin();

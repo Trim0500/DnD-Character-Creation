@@ -47,6 +47,10 @@ namespace {
 		// Decide what to do based on that info
 		if (_playerLocation.size() == 0) {
 			int actionIndex = rand() % _npcActionInfo.size() - 1;
+			while (actionIndex <= -1 || actionIndex >= _npcActionInfo.size() - 1) {
+				actionIndex = rand() % _npcActionInfo.size() - 1;
+			}
+
 			return _npcActionInfo[actionIndex];
 		}
 		else {
