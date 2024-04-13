@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: Character::Character Class Reference</title>
+<title>[COMP345] Project: Character::Character Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -78,6 +78,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_character_1_1_character-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Character::Character Class Reference</div></div>
 </div><!--header-->
@@ -101,6 +102,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeca5c2ffbe476a75c800c02bbf08e303" id="r_aeca5c2ffbe476a75c800c02bbf08e303"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeca5c2ffbe476a75c800c02bbf08e303">Character</a> ()</td></tr>
 <tr class="memdesc:aeca5c2ffbe476a75c800c02bbf08e303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default character constructor that generates a character with random values for level, ability scores and maximum hit points (By default will only give levels in the 'Fighter' class)  <br /></td></tr>
 <tr class="separator:aeca5c2ffbe476a75c800c02bbf08e303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56359a0ba53e66b870c589b49ddfa96f" id="r_a56359a0ba53e66b870c589b49ddfa96f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56359a0ba53e66b870c589b49ddfa96f">Character</a> (int _id)</td></tr>
+<tr class="separator:a56359a0ba53e66b870c589b49ddfa96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae44cbb0cffa98b04a4e5953dc03b0395" id="r_ae44cbb0cffa98b04a4e5953dc03b0395"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae44cbb0cffa98b04a4e5953dc03b0395">Character</a> (const <a class="el" href="class_character_1_1_character.html">Character</a> &amp;t_character)</td></tr>
 <tr class="separator:ae44cbb0cffa98b04a4e5953dc03b0395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a7919b337a568dfe554b83b3ac05e43" id="r_a4a7919b337a568dfe554b83b3ac05e43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a7919b337a568dfe554b83b3ac05e43">Character</a> (std::string t_name, Character_Class t_class, bool _isPlayerControlled=true, <a class="el" href="classcharacteractionstrategy_1_1_character_action_strategy.html">CharacterActionStrategy</a> *_actionStrategy=new <a class="el" href="classhumanplayerstrategy_1_1_human_player_strategy.html">HumanPlayerStrategy</a>())</td></tr>
@@ -111,6 +114,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a50b21c797bdba73a7356263ddb73a7bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5eee59bf62b78c1fe3c6748fb26bbb9a" id="r_a5eee59bf62b78c1fe3c6748fb26bbb9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5eee59bf62b78c1fe3c6748fb26bbb9a">Character</a> (const <a class="el" href="structserializecharacter_1_1_character_record.html">serializecharacter::CharacterRecord</a> &amp;t_record)</td></tr>
 <tr class="separator:a5eee59bf62b78c1fe3c6748fb26bbb9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae200942ee54fe73fbbc4cf6b01cbf67e" id="r_ae200942ee54fe73fbbc4cf6b01cbf67e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae200942ee54fe73fbbc4cf6b01cbf67e">Character</a> (const <a class="el" href="structserializecharacter_1_1_character_record.html">serializecharacter::CharacterRecord</a> &amp;t_record, const <a class="el" href="classitemcontainer_1_1_item_container.html">ItemContainer</a> &amp;_inventory)</td></tr>
+<tr class="separator:ae200942ee54fe73fbbc4cf6b01cbf67e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcef91168feaa0e53098b9a9b2061b3d" id="r_abcef91168feaa0e53098b9a9b2061b3d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcef91168feaa0e53098b9a9b2061b3d">~Character</a> ()</td></tr>
 <tr class="separator:abcef91168feaa0e53098b9a9b2061b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae285eb20b676e43c1e5e715700f21fa4" id="r_ae285eb20b676e43c1e5e715700f21fa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae285eb20b676e43c1e5e715700f21fa4">Attach</a> (<a class="el" href="classobserver_1_1_observer.html">Observer</a> *_observer) override</td></tr>
@@ -133,8 +138,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae6c64fd9208dd307e0dd941b8b1d7102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab705dc4ad4adc92fa9ef6957029cc409" id="r_ab705dc4ad4adc92fa9ef6957029cc409"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab705dc4ad4adc92fa9ef6957029cc409">SetObserverMessage</a> (const std::string &amp;_observerMessage)</td></tr>
 <tr class="separator:ab705dc4ad4adc92fa9ef6957029cc409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6787ac4d6fa28285fa3f7df1e502f26" id="r_ac6787ac4d6fa28285fa3f7df1e502f26"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6787ac4d6fa28285fa3f7df1e502f26">ID</a> ()</td></tr>
-<tr class="separator:ac6787ac4d6fa28285fa3f7df1e502f26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18dee749b542d1e15c291f3473a67297" id="r_a18dee749b542d1e15c291f3473a67297"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18dee749b542d1e15c291f3473a67297">ID</a> ()</td></tr>
+<tr class="separator:a18dee749b542d1e15c291f3473a67297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f469c74957f591d71457bddde8c8d0" id="r_a73f469c74957f591d71457bddde8c8d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73f469c74957f591d71457bddde8c8d0">SetID</a> (int _id)</td></tr>
+<tr class="separator:a73f469c74957f591d71457bddde8c8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afd2974653e0fb67eb2694331718eb1fc" id="r_afd2974653e0fb67eb2694331718eb1fc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2974653e0fb67eb2694331718eb1fc">Name</a> () const</td></tr>
 <tr class="separator:afd2974653e0fb67eb2694331718eb1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8908a77d38fe0249cd2b08d9faca94b1" id="r_a8908a77d38fe0249cd2b08d9faca94b1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8908a77d38fe0249cd2b08d9faca94b1">Name</a> (const std::string &amp;t_name)</td></tr>
@@ -144,12 +151,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c3d98f7ada1f1ce18971267f38d2c63" id="r_a7c3d98f7ada1f1ce18971267f38d2c63"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c3d98f7ada1f1ce18971267f38d2c63">Sum_Levels</a> ()</td></tr>
 <tr class="memdesc:a7c3d98f7ada1f1ce18971267f38d2c63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns sum total of all levels for this character.  <br /></td></tr>
 <tr class="separator:a7c3d98f7ada1f1ce18971267f38d2c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32eba3cffa689d34fb69b88cb73129cd" id="r_a32eba3cffa689d34fb69b88cb73129cd"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32eba3cffa689d34fb69b88cb73129cd">set_Level</a> (Character_Class t_class, int t_level)</td></tr>
+<tr class="separator:a32eba3cffa689d34fb69b88cb73129cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafcc1db4d428171259a50fd5c9316b18" id="r_aafcc1db4d428171259a50fd5c9316b18"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafcc1db4d428171259a50fd5c9316b18">Set_Ability_Score</a> (Abilities_Stats score, int value)</td></tr>
+<tr class="separator:aafcc1db4d428171259a50fd5c9316b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9f136dd024653361813bffc48f5ea1" id="r_a7e9f136dd024653361813bffc48f5ea1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e9f136dd024653361813bffc48f5ea1">Get_Ability_Score</a> (Abilities_Stats score)</td></tr>
+<tr class="separator:a7e9f136dd024653361813bffc48f5ea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a249907bfc3e812dc8b2cf7796bc21765" id="r_a249907bfc3e812dc8b2cf7796bc21765"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a249907bfc3e812dc8b2cf7796bc21765">Levels</a> (Character_Class t_class)</td></tr>
 <tr class="memdesc:a249907bfc3e812dc8b2cf7796bc21765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of levels a chracter has taken in a corresponding class.  <br /></td></tr>
 <tr class="separator:a249907bfc3e812dc8b2cf7796bc21765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3ef6cdc8f864af7f7fe50ee486d819c" id="r_ad3ef6cdc8f864af7f7fe50ee486d819c"><td class="memItemLeft" align="right" valign="top">const std::bitset&lt; 12 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3ef6cdc8f864af7f7fe50ee486d819c">Classes</a> ()</td></tr>
 <tr class="memdesc:ad3ef6cdc8f864af7f7fe50ee486d819c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to perform bitwise comparision with 'isBarbarian', 'isBard', 'isCleric', 'isDruid', 'isFighter', 'isMonk', 'isPaladin', 'isRanger', 'isRogue', 'isSorcerer' and 'isWizard' constexpr bitsets.  <br /></td></tr>
 <tr class="separator:ad3ef6cdc8f864af7f7fe50ee486d819c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f694655e6772a3e1086f9f6e439db87" id="r_a7f694655e6772a3e1086f9f6e439db87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f694655e6772a3e1086f9f6e439db87">SetClass</a> (Character_Class t_class)</td></tr>
+<tr class="separator:a7f694655e6772a3e1086f9f6e439db87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c1841e44ed6c07ab5922b923c9ff2f7" id="r_a3c1841e44ed6c07ab5922b923c9ff2f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c1841e44ed6c07ab5922b923c9ff2f7">GetClass</a> ()</td></tr>
+<tr class="separator:a3c1841e44ed6c07ab5922b923c9ff2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4780283906a3493e740bf3e2c7340c5e" id="r_a4780283906a3493e740bf3e2c7340c5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4780283906a3493e740bf3e2c7340c5e">Levelup</a> (Character_Class t_class, bool t_average_hp)</td></tr>
 <tr class="memdesc:a4780283906a3493e740bf3e2c7340c5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Levels up the the character by one level in a given class. Note that ability score bonuses given by items are not considered when checking if a character is able to mult-class.  <br /></td></tr>
 <tr class="separator:a4780283906a3493e740bf3e2c7340c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,6 +195,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a408d26f83e7e9c76ae95e795a2407df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab88e0b933e20ec92ee06610e8f6d83fa" id="r_ab88e0b933e20ec92ee06610e8f6d83fa"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab88e0b933e20ec92ee06610e8f6d83fa">Modifier</a> (Abilities_Stats t_ability)</td></tr>
 <tr class="separator:ab88e0b933e20ec92ee06610e8f6d83fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e46820b22c11ce4e95e1f62e89f3a02" id="r_a2e46820b22c11ce4e95e1f62e89f3a02"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e46820b22c11ce4e95e1f62e89f3a02">ModifierDecorator</a> (int) override</td></tr>
+<tr class="separator:a2e46820b22c11ce4e95e1f62e89f3a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d10934c27e536b892caf685d7bb7ab" id="r_a88d10934c27e536b892caf685d7bb7ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88d10934c27e536b892caf685d7bb7ab">Ability_Score_Natural</a> (int t_ability, int t_attack_number) override</td></tr>
 <tr class="memdesc:a88d10934c27e536b892caf685d7bb7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to get the raw ability score of a character based on the parameter specified.  <br /></td></tr>
 <tr class="separator:a88d10934c27e536b892caf685d7bb7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,6 +216,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa8cdab53aa782606f9b175b3ee2ee518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13f07e7b65f813101bc2a0b844eab657" id="r_a13f07e7b65f813101bc2a0b844eab657"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitemcontainer_1_1_item_container.html">itemcontainer::ItemContainer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13f07e7b65f813101bc2a0b844eab657">Inventory</a> ()</td></tr>
 <tr class="separator:a13f07e7b65f813101bc2a0b844eab657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4893440a737bc1f36e5ffd79409a13f3" id="r_a4893440a737bc1f36e5ffd79409a13f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4893440a737bc1f36e5ffd79409a13f3">SetInventory</a> (<a class="el" href="classitemcontainer_1_1_item_container.html">itemcontainer::ItemContainer</a> _inventory)</td></tr>
+<tr class="separator:a4893440a737bc1f36e5ffd79409a13f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7871d5bf50682bba5bd6c5c9fbccab5c" id="r_a7871d5bf50682bba5bd6c5c9fbccab5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7871d5bf50682bba5bd6c5c9fbccab5c">TakeItems</a> (<a class="el" href="classitemcontainer_1_1_item_container.html">itemcontainer::ItemContainer</a> *, const std::vector&lt; <a class="el" href="classitem_1_1_item.html">Item</a> * &gt; &amp;, const int &amp;)</td></tr>
 <tr class="memdesc:a7871d5bf50682bba5bd6c5c9fbccab5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method meant to implement a character action of taking a selection of items from an item container.  <br /></td></tr>
 <tr class="separator:a7871d5bf50682bba5bd6c5c9fbccab5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -218,8 +239,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab5f6bde2164b04fc383361629a1bf65b" id="r_ab5f6bde2164b04fc383361629a1bf65b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5f6bde2164b04fc383361629a1bf65b">GetDecoratorList</a> () override</td></tr>
 <tr class="memdesc:ab5f6bde2164b04fc383361629a1bf65b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to simply create the vector of worn itens for decorators to push their pointers to.  <br /></td></tr>
 <tr class="separator:ab5f6bde2164b04fc383361629a1bf65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a158b452f59de5d19d5b5d52c8852f273" id="r_a158b452f59de5d19d5b5d52c8852f273"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a158b452f59de5d19d5b5d52c8852f273">passable</a> () const override</td></tr>
-<tr class="separator:a158b452f59de5d19d5b5d52c8852f273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab986a79bff91df12756712ba030a2831" id="r_ab986a79bff91df12756712ba030a2831"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab986a79bff91df12756712ba030a2831">passable</a> () const</td></tr>
+<tr class="separator:ab986a79bff91df12756712ba030a2831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e05653a531a32f17211fd662a4be46" id="r_a02e05653a531a32f17211fd662a4be46"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02e05653a531a32f17211fd662a4be46">serialize</a> ()</td></tr>
+<tr class="separator:a02e05653a531a32f17211fd662a4be46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a814b1a2f0d847111554f2977390f5fb2" id="r_a814b1a2f0d847111554f2977390f5fb2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a814b1a2f0d847111554f2977390f5fb2">GetIsPlayerControlled</a> ()</td></tr>
 <tr class="separator:a814b1a2f0d847111554f2977390f5fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a240cda23171eca268eb87fa80819d2ce" id="r_a240cda23171eca268eb87fa80819d2ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a240cda23171eca268eb87fa80819d2ce">SetIsPlayerControlled</a> (bool _isPlayerControlled)</td></tr>
@@ -230,17 +253,41 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a51c8e5fd87fd285ee04c13d879236cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e82158b51ab6708a9c282e08f9abcc0" id="r_a7e82158b51ab6708a9c282e08f9abcc0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e82158b51ab6708a9c282e08f9abcc0">AttemptAttack</a> (<a class="el" href="class_character_1_1_character.html">Character</a> *)</td></tr>
 <tr class="separator:a7e82158b51ab6708a9c282e08f9abcc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa31b022a01e88e98f00212044bc3a13a" id="r_aa31b022a01e88e98f00212044bc3a13a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcharacteractionstrategy_1_1_cell_action_info.html">CellActionInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa31b022a01e88e98f00212044bc3a13a">DecideNPCAction</a> (const std::vector&lt; std::vector&lt; Interactable * &gt; &gt; &amp;, const int &amp;, const int &amp;)</td></tr>
+<tr class="separator:aa31b022a01e88e98f00212044bc3a13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b322c1809d0d25be13097e7c7c4a534" id="r_a5b322c1809d0d25be13097e7c7c4a534"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b322c1809d0d25be13097e7c7c4a534">Get_Class_String</a> (Character_Class t_class)</td></tr>
+<tr class="separator:a5b322c1809d0d25be13097e7c7c4a534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64698ec91e84d243f00a0e75eb1a7f4d" id="r_a64698ec91e84d243f00a0e75eb1a7f4d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64698ec91e84d243f00a0e75eb1a7f4d">Get_Class_String</a> (int t_class)</td></tr>
+<tr class="separator:a64698ec91e84d243f00a0e75eb1a7f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6542569a427d505f55e1dcb59b45458" id="r_ae6542569a427d505f55e1dcb59b45458"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6542569a427d505f55e1dcb59b45458">Get_Abilities_String</a> (Abilities_Stats t_abilities)</td></tr>
+<tr class="separator:ae6542569a427d505f55e1dcb59b45458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf91590ba16e112cf785f3e6b4e81357" id="r_abf91590ba16e112cf785f3e6b4e81357"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf91590ba16e112cf785f3e6b4e81357">Get_Item_Type_String</a> (<a class="el" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">item::ItemType</a> t_type)</td></tr>
+<tr class="separator:abf91590ba16e112cf785f3e6b4e81357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad50abae4ac0103c888e524e29f91a59f" id="r_ad50abae4ac0103c888e524e29f91a59f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad50abae4ac0103c888e524e29f91a59f">Get_Equipment_Slot_String</a> (Equipment_Slots t_slot)</td></tr>
+<tr class="separator:ad50abae4ac0103c888e524e29f91a59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2ccbc5b6382c6da68bbe60d050bc36" id="r_aea2ccbc5b6382c6da68bbe60d050bc36"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea2ccbc5b6382c6da68bbe60d050bc36">setMaxHitPoints</a> (int t_val)</td></tr>
+<tr class="separator:aea2ccbc5b6382c6da68bbe60d050bc36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classobservable_1_1_observable"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classobservable_1_1_observable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classobservable_1_1_observable.html">observable::Observable</a></td></tr>
 <tr class="memitem:ae66f3001b8162f0cfdf10dd204384099 inherit pub_methods_classobservable_1_1_observable" id="r_ae66f3001b8162f0cfdf10dd204384099"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobservable_1_1_observable.html#ae66f3001b8162f0cfdf10dd204384099">~Observable</a> ()</td></tr>
 <tr class="memdesc:ae66f3001b8162f0cfdf10dd204384099 inherit pub_methods_classobservable_1_1_observable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classobservable_1_1_observable.html" title="Class to abstract the observable functionality.">Observable</a>.  <br /></td></tr>
 <tr class="separator:ae66f3001b8162f0cfdf10dd204384099 inherit pub_methods_classobservable_1_1_observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_interactable_1_1_interactable"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_interactable_1_1_interactable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a></td></tr>
+<tr class="memitem:a8235d52ec4930d6d9e31b46262fe8625 inherit pub_methods_class_interactable_1_1_interactable" id="r_a8235d52ec4930d6d9e31b46262fe8625"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interactable_1_1_interactable.html#a8235d52ec4930d6d9e31b46262fe8625">passable</a> ()</td></tr>
+<tr class="separator:a8235d52ec4930d6d9e31b46262fe8625 inherit pub_methods_class_interactable_1_1_interactable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad5976cd7105ffc5947462ea4c078bc38" id="r_ad5976cd7105ffc5947462ea4c078bc38"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5976cd7105ffc5947462ea4c078bc38">GetIDGen</a> ()</td></tr>
+<tr class="separator:ad5976cd7105ffc5947462ea4c078bc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6000b3bfe3d4b50ff1e3921612bf0c89" id="r_a6000b3bfe3d4b50ff1e3921612bf0c89"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6000b3bfe3d4b50ff1e3921612bf0c89">SetIDGen</a> (int _idGen)</td></tr>
+<tr class="separator:a6000b3bfe3d4b50ff1e3921612bf0c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00153">153</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00155">155</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aeca5c2ffbe476a75c800c02bbf08e303" name="aeca5c2ffbe476a75c800c02bbf08e303"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeca5c2ffbe476a75c800c02bbf08e303">&#9670;&#160;</a></span>Character() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca5c2ffbe476a75c800c02bbf08e303">&#9670;&#160;</a></span>Character() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,6 +305,8 @@ Public Member Functions</h2></td></tr>
 <p><a class="el" href="class_character_1_1_character.html">Character</a> Constructor. Initializes the character with one level in a given character class. Sets ability scores randomly.</p>
 <p><a class="el" href="class_character_1_1_character.html">Character</a> Constructor. Initializes the character with one level in a given character class.</p>
 <p>copy character constructor</p>
+<p>a constructor used by loadmap to create a temporary empty charcater with the ID of an actual saved <a class="el" href="class_character_1_1_character.html">Character</a></p>
+<p>!</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">t_name</td><td>Name for the character </td></tr>
@@ -269,12 +318,31 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00006">6</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00116">116</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a56359a0ba53e66b870c589b49ddfa96f" name="a56359a0ba53e66b870c589b49ddfa96f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56359a0ba53e66b870c589b49ddfa96f">&#9670;&#160;</a></span>Character() <span class="overload">[2/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Character::Character::Character </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00147">147</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
 <a id="ae44cbb0cffa98b04a4e5953dc03b0395" name="ae44cbb0cffa98b04a4e5953dc03b0395"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae44cbb0cffa98b04a4e5953dc03b0395">&#9670;&#160;</a></span>Character() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae44cbb0cffa98b04a4e5953dc03b0395">&#9670;&#160;</a></span>Character() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,12 +356,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00037">37</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00151">151</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a4a7919b337a568dfe554b83b3ac05e43" name="a4a7919b337a568dfe554b83b3ac05e43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a7919b337a568dfe554b83b3ac05e43">&#9670;&#160;</a></span>Character() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7919b337a568dfe554b83b3ac05e43">&#9670;&#160;</a></span>Character() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,12 +389,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00056">56</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00170">170</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a1c0ba8a00f8b91ee226c6f2c9ae310c0" name="a1c0ba8a00f8b91ee226c6f2c9ae310c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c0ba8a00f8b91ee226c6f2c9ae310c0">&#9670;&#160;</a></span>Character() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c0ba8a00f8b91ee226c6f2c9ae310c0">&#9670;&#160;</a></span>Character() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -349,12 +417,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00077">77</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00191">191</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a50b21c797bdba73a7356263ddb73a7bf" name="a50b21c797bdba73a7356263ddb73a7bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50b21c797bdba73a7356263ddb73a7bf">&#9670;&#160;</a></span>Character() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b21c797bdba73a7356263ddb73a7bf">&#9670;&#160;</a></span>Character() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -392,12 +460,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00097">97</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00211">211</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a5eee59bf62b78c1fe3c6748fb26bbb9a" name="a5eee59bf62b78c1fe3c6748fb26bbb9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5eee59bf62b78c1fe3c6748fb26bbb9a">&#9670;&#160;</a></span>Character() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eee59bf62b78c1fe3c6748fb26bbb9a">&#9670;&#160;</a></span>Character() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +479,30 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00116">116</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00230">230</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ae200942ee54fe73fbbc4cf6b01cbf67e" name="ae200942ee54fe73fbbc4cf6b01cbf67e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae200942ee54fe73fbbc4cf6b01cbf67e">&#9670;&#160;</a></span>Character() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Character::Character::Character </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structserializecharacter_1_1_character_record.html">serializecharacter::CharacterRecord</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>t_record</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classitemcontainer_1_1_item_container.html">ItemContainer</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>_inventory</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00265">265</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -438,7 +529,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00185">185</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00193">193</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -465,7 +556,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns const int to desired ability score. Returned value does not take into account any item bonuses </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00483">483</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00683">683</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -507,7 +598,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classabstractcomponent_1_1_abstract_component.html#ae1acfe71e56c091537098ef02f249deb">abstractcomponent::AbstractComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00441">441</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00641">641</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -529,7 +620,7 @@ Public Member Functions</h2></td></tr>
 <p>Calculates and returns AC(armour class) based off a character's ability scores &amp; equipped items. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns const int AC </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00506">506</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00707">707</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -560,7 +651,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classobservable_1_1_observable.html#aa7d5a047ae56adf7c50395c4a81e9ec1">observable::Observable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00187">187</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00195">195</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -588,7 +679,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns const int to attack bonus </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00518">518</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00719">719</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -609,7 +700,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Return the number of attacks per turn based off level. </p>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00678">678</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00883">883</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -628,7 +719,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00688">688</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00893">893</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -658,7 +749,7 @@ Public Member Functions</h2></td></tr>
 <p>Used to perform bitwise comparision with 'isBarbarian', 'isBard', 'isCleric', 'isDruid', 'isFighter', 'isMonk', 'isPaladin', 'isRanger', 'isRogue', 'isSorcerer' and 'isWizard' constexpr bitsets. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns const bitset&lt;11&gt; of 'character_class' field </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00241">241</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00259">259</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -685,7 +776,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00159">159</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00303">303</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -707,7 +798,35 @@ Public Member Functions</h2></td></tr>
 <p>Calculates and returns damage bonus based off a character's strength and equipped items. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns const int to damage bonus </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00545">545</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00746">746</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa31b022a01e88e98f00212044bc3a13a" name="aa31b022a01e88e98f00212044bc3a13a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31b022a01e88e98f00212044bc3a13a">&#9670;&#160;</a></span>DecideNPCAction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcharacteractionstrategy_1_1_cell_action_info.html">CellActionInfo</a> Character::Character::DecideNPCAction </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; Interactable * &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>_mapGrid</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_posX</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"><em>_posY</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00932">932</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -738,7 +857,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classobservable_1_1_observable.html#a08934a0b93c48c10e340f2d02e65e406">observable::Observable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00189">189</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00197">197</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -777,7 +896,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00591">591</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00794">794</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -805,7 +924,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if equipping was performed succesfully, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00289">289</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00458">458</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -839,7 +958,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00329">329</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00507">507</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -866,7 +985,129 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00380">380</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00405">405</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="ae6542569a427d505f55e1dcb59b45458" name="ae6542569a427d505f55e1dcb59b45458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6542569a427d505f55e1dcb59b45458">&#9670;&#160;</a></span>Get_Abilities_String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Character::Character::Get_Abilities_String </td>
+          <td>(</td>
+          <td class="paramtype">Abilities_Stats</td>          <td class="paramname"><span class="paramname"><em>t_abilities</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00811">811</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7e9f136dd024653361813bffc48f5ea1" name="a7e9f136dd024653361813bffc48f5ea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9f136dd024653361813bffc48f5ea1">&#9670;&#160;</a></span>Get_Ability_Score()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Character::Character::Get_Ability_Score </td>
+          <td>(</td>
+          <td class="paramtype">Abilities_Stats</td>          <td class="paramname"><span class="paramname"><em>score</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00248">248</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="a5b322c1809d0d25be13097e7c7c4a534" name="a5b322c1809d0d25be13097e7c7c4a534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b322c1809d0d25be13097e7c7c4a534">&#9670;&#160;</a></span>Get_Class_String() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Character::Character::Get_Class_String </td>
+          <td>(</td>
+          <td class="paramtype">Character_Class</td>          <td class="paramname"><span class="paramname"><em>t_class</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00945">945</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a64698ec91e84d243f00a0e75eb1a7f4d" name="a64698ec91e84d243f00a0e75eb1a7f4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64698ec91e84d243f00a0e75eb1a7f4d">&#9670;&#160;</a></span>Get_Class_String() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Character::Character::Get_Class_String </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t_class</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00979">979</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad50abae4ac0103c888e524e29f91a59f" name="ad50abae4ac0103c888e524e29f91a59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad50abae4ac0103c888e524e29f91a59f">&#9670;&#160;</a></span>Get_Equipment_Slot_String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Character::Character::Get_Equipment_Slot_String </td>
+          <td>(</td>
+          <td class="paramtype">Equipment_Slots</td>          <td class="paramname"><span class="paramname"><em>t_slot</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l01013">1013</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abf91590ba16e112cf785f3e6b4e81357" name="abf91590ba16e112cf785f3e6b4e81357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf91590ba16e112cf785f3e6b4e81357">&#9670;&#160;</a></span>Get_Item_Type_String()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Character::Character::Get_Item_Type_String </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceitem.html#ada202f1c932727de8eef0227d4b35e03">item::ItemType</a></td>          <td class="paramname"><span class="paramname"><em>t_type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00840">840</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -893,7 +1134,26 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00409">409</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00436">436</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="a3c1841e44ed6c07ab5922b923c9ff2f7" name="a3c1841e44ed6c07ab5922b923c9ff2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c1841e44ed6c07ab5922b923c9ff2f7">&#9670;&#160;</a></span>GetClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Character::Character::GetClass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00412">412</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -925,7 +1185,34 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">abstractcomponent::AbstractComponent</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00401">401</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00426">426</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="ad5976cd7105ffc5947462ea4c078bc38" name="ad5976cd7105ffc5947462ea4c078bc38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5976cd7105ffc5947462ea4c078bc38">&#9670;&#160;</a></span>GetIDGen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int Character::Character::GetIDGen </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00221">221</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -952,7 +1239,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00405">405</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00432">432</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -979,7 +1266,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00209">209</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00217">217</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1006,7 +1293,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00205">205</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00213">213</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1033,7 +1320,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00382">382</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00407">407</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1061,12 +1348,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Returns const int to the current number of hitpoints for this character </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00295">295</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00315">315</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
-<a id="ac6787ac4d6fa28285fa3f7df1e502f26" name="ac6787ac4d6fa28285fa3f7df1e502f26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6787ac4d6fa28285fa3f7df1e502f26">&#9670;&#160;</a></span>ID()</h2>
+<a id="a18dee749b542d1e15c291f3473a67297" name="a18dee749b542d1e15c291f3473a67297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18dee749b542d1e15c291f3473a67297">&#9670;&#160;</a></span>ID()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1075,7 +1362,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int Character::Character::ID </td>
+          <td class="memname">int Character::Character::ID </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -1088,7 +1375,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00216">216</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00228">228</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1116,7 +1403,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Returns refrence to ItemContainer type object corresponding to the character's inventory </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00354">354</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00377">377</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1135,7 +1422,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00410">410</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00588">588</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1156,7 +1443,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Checks if the character is multi-classed with a particular character class. </p>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00664">664</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00869">869</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1191,7 +1478,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00235">235</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00253">253</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1223,7 +1510,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if levelup was performed succesfully, false otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00252">252</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00421">421</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1251,7 +1538,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>Returns const int to the maxium number of hitpoints for this character </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00291">291</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00311">311</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1277,7 +1564,36 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns const int to desired modifier. Modifier is detremined using ability scores and item bonuses </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00428">428</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00606">606</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a2e46820b22c11ce4e95e1f62e89f3a02" name="a2e46820b22c11ce4e95e1f62e89f3a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e46820b22c11ce4e95e1f62e89f3a02">&#9670;&#160;</a></span>ModifierDecorator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Character::Character::ModifierDecorator </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t_ability</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classabstractcomponent_1_1_abstract_component.html#afbc8413352a275acd12197f8276ea810">abstractcomponent::AbstractComponent</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00619">619</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1304,7 +1620,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00220">220</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00235">235</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1323,7 +1639,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00166">166</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00310">310</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1354,12 +1670,12 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classobservable_1_1_observable.html#abb62ad46189f0d309c039a5c4b0c6f0a">observable::Observable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00152">152</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00296">296</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a158b452f59de5d19d5b5d52c8852f273" name="a158b452f59de5d19d5b5d52c8852f273"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a158b452f59de5d19d5b5d52c8852f273">&#9670;&#160;</a></span>passable()</h2>
+<a id="ab986a79bff91df12756712ba030a2831" name="ab986a79bff91df12756712ba030a2831"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab986a79bff91df12756712ba030a2831">&#9670;&#160;</a></span>passable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1376,14 +1692,12 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="class_interactable_1_1_interactable.html#ab35ba80b5c0ef1d749cd64deabd2ec3d">Interactable::Interactable</a>.</p>
-
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00403">403</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00428">428</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1402,7 +1716,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00173">173</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00317">317</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1424,7 +1738,7 @@ Public Member Functions</h2></td></tr>
 <p>Calculates and returns proficiency bonus based off a character's cumulative levels. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns const int to proficiency bonus </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00540">540</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00741">741</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1453,7 +1767,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00385">385</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00563">563</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1472,7 +1786,90 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00399">399</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00577">577</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a02e05653a531a32f17211fd662a4be46" name="a02e05653a531a32f17211fd662a4be46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02e05653a531a32f17211fd662a4be46">&#9670;&#160;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Character::Character::serialize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="class_interactable_1_1_interactable.html#a882c61c0b95d96c21b05a0e46f460b59">Interactable::Interactable</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00290">290</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aafcc1db4d428171259a50fd5c9316b18" name="aafcc1db4d428171259a50fd5c9316b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafcc1db4d428171259a50fd5c9316b18">&#9670;&#160;</a></span>Set_Ability_Score()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Character::Character::Set_Ability_Score </td>
+          <td>(</td>
+          <td class="paramtype">Abilities_Stats</td>          <td class="paramname"><span class="paramname"><em>score</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00247">247</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="a32eba3cffa689d34fb69b88cb73129cd" name="a32eba3cffa689d34fb69b88cb73129cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32eba3cffa689d34fb69b88cb73129cd">&#9670;&#160;</a></span>set_Level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Character::Character::set_Level </td>
+          <td>(</td>
+          <td class="paramtype">Character_Class</td>          <td class="paramname"><span class="paramname"><em>t_class</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t_level</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00397">397</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1499,7 +1896,107 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00411">411</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00438">438</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="a7f694655e6772a3e1086f9f6e439db87" name="a7f694655e6772a3e1086f9f6e439db87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f694655e6772a3e1086f9f6e439db87">&#9670;&#160;</a></span>SetClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Character::Character::SetClass </td>
+          <td>(</td>
+          <td class="paramtype">Character_Class</td>          <td class="paramname"><span class="paramname"><em>t_class</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00406">406</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a73f469c74957f591d71457bddde8c8d0" name="a73f469c74957f591d71457bddde8c8d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f469c74957f591d71457bddde8c8d0">&#9670;&#160;</a></span>SetID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Character::Character::SetID </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00230">230</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="a6000b3bfe3d4b50ff1e3921612bf0c89" name="a6000b3bfe3d4b50ff1e3921612bf0c89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6000b3bfe3d4b50ff1e3921612bf0c89">&#9670;&#160;</a></span>SetIDGen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Character::Character::SetIDGen </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_idGen</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00223">223</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="a4893440a737bc1f36e5ffd79409a13f3" name="a4893440a737bc1f36e5ffd79409a13f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4893440a737bc1f36e5ffd79409a13f3">&#9670;&#160;</a></span>SetInventory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Character::Character::SetInventory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classitemcontainer_1_1_item_container.html">itemcontainer::ItemContainer</a></td>          <td class="paramname"><span class="paramname"><em>_inventory</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00379">379</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1526,7 +2023,27 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00407">407</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00434">434</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+
+</div>
+</div>
+<a id="aea2ccbc5b6382c6da68bbe60d050bc36" name="aea2ccbc5b6382c6da68bbe60d050bc36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2ccbc5b6382c6da68bbe60d050bc36">&#9670;&#160;</a></span>setMaxHitPoints()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Character::Character::setMaxHitPoints </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>t_val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>\ function that allows max HP to be set without leveling up </p>
+
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l01046">1046</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1553,7 +2070,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00211">211</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00219">219</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1580,7 +2097,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00207">207</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00215">215</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1607,7 +2124,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00384">384</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8h_source.html#l00409">409</a> of file <a class="el" href="_character_8h_source.html">Character.h</a>.</p>
 
 </div>
 </div>
@@ -1629,7 +2146,7 @@ Public Member Functions</h2></td></tr>
 <p>Returns sum total of all levels for this character. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns const sum of elements in 'level' vector array </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00243">243</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00388">388</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1674,7 +2191,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00557">557</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00758">758</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1702,7 +2219,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns 'true' if equipping was performed succesfully, 'false' otherwise </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00358">358</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00536">536</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
@@ -1736,13 +2253,13 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00364">364</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_character_8cpp_source.html#l00542">542</a> of file <a class="el" href="_character_8cpp_source.html">Character.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="_character_8h_source.html">Character.h</a></li>
-<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="_character_8cpp_source.html">Character.cpp</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Character/<a class="el" href="_character_8h_source.html">Character.h</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Character/<a class="el" href="_character_8cpp_source.html">Character.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

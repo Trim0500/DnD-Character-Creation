@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: observer::Observer Class Reference</title>
+<title>[COMP345] Project: observer::Observer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -104,8 +104,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0eb4f0a1f57787f8f90bdee0944ce343"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae11bbd40c528d2184572ef9187fcfa8a" id="r_ae11bbd40c528d2184572ef9187fcfa8a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae11bbd40c528d2184572ef9187fcfa8a">update</a> (std::string)=0</td></tr>
 <tr class="separator:ae11bbd40c528d2184572ef9187fcfa8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4826ab910d778bf73d540f102336ba4a" id="r_a4826ab910d778bf73d540f102336ba4a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4826ab910d778bf73d540f102336ba4a">update</a> (void *) const =0</td></tr>
-<tr class="separator:a4826ab910d778bf73d540f102336ba4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ce73298d5cef8b1b40f8e221396f9b2" id="r_a8ce73298d5cef8b1b40f8e221396f9b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ce73298d5cef8b1b40f8e221396f9b2">update</a> (void *)=0</td></tr>
+<tr class="separator:a8ce73298d5cef8b1b40f8e221396f9b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a1103e06b60cc39038c3f41bce66ae0" id="r_a9a1103e06b60cc39038c3f41bce66ae0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a1103e06b60cc39038c3f41bce66ae0">update</a> (const int &amp;, const int &amp;, const int &amp;)=0</td></tr>
+<tr class="separator:a9a1103e06b60cc39038c3f41bce66ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class to abstract the observer functionality. </p>
@@ -142,8 +144,44 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9a1103e06b60cc39038c3f41bce66ae0" name="a9a1103e06b60cc39038c3f41bce66ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a1103e06b60cc39038c3f41bce66ae0">&#9670;&#160;</a></span>update() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void observer::Observer::update </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implemented in <a class="el" href="classgamelogger_1_1_game_logger.html#a8c9934a7103df83a6cb39fe7ef01f267">gamelogger::GameLogger</a>.</p>
+
+</div>
+</div>
 <a id="ae11bbd40c528d2184572ef9187fcfa8a" name="ae11bbd40c528d2184572ef9187fcfa8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae11bbd40c528d2184572ef9187fcfa8a">&#9670;&#160;</a></span>update() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae11bbd40c528d2184572ef9187fcfa8a">&#9670;&#160;</a></span>update() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,8 +207,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4826ab910d778bf73d540f102336ba4a" name="a4826ab910d778bf73d540f102336ba4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4826ab910d778bf73d540f102336ba4a">&#9670;&#160;</a></span>update() <span class="overload">[2/2]</span></h2>
+<a id="a8ce73298d5cef8b1b40f8e221396f9b2" name="a8ce73298d5cef8b1b40f8e221396f9b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ce73298d5cef8b1b40f8e221396f9b2">&#9670;&#160;</a></span>update() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -182,7 +220,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">virtual void observer::Observer::update </td>
           <td>(</td>
           <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -192,12 +230,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classgamelogger_1_1_game_logger.html#afbcff661e55db7d6a5ae347ddb77b8a6">gamelogger::GameLogger</a>.</p>
+<p>Implemented in <a class="el" href="classgamelogger_1_1_game_logger.html#a9bbddd86103054c570a6adaab9a74ea2">gamelogger::GameLogger</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="_observer_8h_source.html">Observer.h</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Observer/<a class="el" href="_observer_8h_source.html">Observer.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

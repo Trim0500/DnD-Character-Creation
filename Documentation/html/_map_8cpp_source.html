@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Map.cpp Source File</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Map/Map.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -77,7 +77,7 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_7e638fac5c8c9f48874907e72073cb23.html">Map</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,428 +93,443 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_character_8h.html">Character.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_empty_cell_8h.html">EmptyCell.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_interactable_8h.html">Interactable.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="item_8h.html">item.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">Map.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_wall_8h.html">Wall.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#ae0b199d07fc33735ddac16907e585f27">   17</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#ae0b199d07fc33735ddac16907e585f27">Map::Map::Notify</a>() {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)observers.size(); i++)</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        observers[i]-&gt;update(observerMessage);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_map_8h.html">Map.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_character_8h.html">..\Character\Character.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_empty_cell_8h.html">..\Interactable\EmptyCell.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_interactable_8h.html">..\Interactable\Interactable.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="item_8h.html">..\Item\item.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_wall_8h.html">..\Interactable\Wall.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="door_8h.html">..\Door\door.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacedoor.html">door</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#ae0b199d07fc33735ddac16907e585f27">   20</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#ae0b199d07fc33735ddac16907e585f27">Map::Map::Notify</a>() {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)observers.size(); i++)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        observers[i]-&gt;update(observerMessage);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
 </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a0c6e51c4e7b296c24014a02633dea247">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a0c6e51c4e7b296c24014a02633dea247">Map::Map::CreateObserverMessage</a>(std::string _message = <span class="stringliteral">&quot;Empty&quot;</span>) {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    observerMessage = _message;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    Notify();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a0c6e51c4e7b296c24014a02633dea247">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a0c6e51c4e7b296c24014a02633dea247">Map::Map::CreateObserverMessage</a>(std::string _message = <span class="stringliteral">&quot;Empty&quot;</span>) {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    observerMessage = _message;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Notify();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">//default constructor</span></div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce">   31</a></span><a class="code hl_function" href="class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce">Map::Map::Map</a>() {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    nextMapID += 1;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    this-&gt;mapID = nextMapID;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">//default constructor</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce">   34</a></span><a class="code hl_function" href="class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce">Map::Map::Map</a>() {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    nextMapID += 1;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    this-&gt;mapID = nextMapID;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">//creates an empty map</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">//will need to initilize all variables explicitly: setRows, setCols, setGrid, setEndCell, setStartCell</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="foldopen" id="foldopen00036" data-start="{" data-end="}">
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a2d6bd8ea0c22c0524a9c13e86e3387ec">   36</a></span><a class="code hl_function" href="class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce">Map::Map::Map</a>(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> c) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    nextMapID += 1;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    this-&gt;mapID = nextMapID;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    this-&gt;rows = r;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    this-&gt;cols = c;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    this-&gt;endCell[0] = r - 1;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    this-&gt;endCell[1] = c - 1;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; i++) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        this-&gt;grid.push_back(std::vector&lt;Interactable::Interactable*&gt;(this-&gt;cols, <span class="keyword">new</span> <a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>()));</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a2d6bd8ea0c22c0524a9c13e86e3387ec">   41</a></span><a class="code hl_function" href="class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce">Map::Map::Map</a>(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> c) {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    nextMapID += 1;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    this-&gt;mapID = nextMapID;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    this-&gt;rows = r;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    this-&gt;cols = c;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">//set end cell by default to bottom-right</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    this-&gt;endCell[0] = r - 1;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    this-&gt;endCell[1] = c - 1;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">//set start cell by default to top-left</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    this-&gt;startCell[0] = 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    this-&gt;startCell[1] = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; i++) {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        this-&gt;grid.push_back(std::vector&lt;Interactable::Interactable*&gt;(this-&gt;cols, <span class="keyword">new</span> <a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>()));</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a665cee9ac491962f048721c4fe7c2178">   49</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a665cee9ac491962f048721c4fe7c2178">Map::Map::setEndCell</a>() {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    this-&gt;endCell[0] = this-&gt;rows - 1;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    this-&gt;endCell[1] = this-&gt;cols - 1;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
-</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a47297609547499e83abeb5d607e8568d">   54</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a47297609547499e83abeb5d607e8568d">Map::Map::setGrid</a>() {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; this-&gt;rows; i++) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        this-&gt;grid.push_back(std::vector&lt;Interactable::Interactable*&gt;(this-&gt;cols, <span class="keyword">new</span> <a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>()));</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
-</div>
-<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a9e381c126b47f285ef3b5f4ac697fd09">   59</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a9e381c126b47f285ef3b5f4ac697fd09">Map::Map::setCell</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <a class="code hl_class" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a>* cell) {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    this-&gt;grid[row][col] = cell;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a1a59e8019c3c2a1fd0203ce320b6d5af">   58</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a1a59e8019c3c2a1fd0203ce320b6d5af">Map::Map::setRows</a>(<span class="keywordtype">int</span> rows)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    this-&gt;rows = rows;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
 </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="foldopen" id="foldopen00063" data-start="{" data-end="}">
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a5f1cd403927600211b2d86fd34862396">   63</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a5f1cd403927600211b2d86fd34862396">Map::Map::setEmpty</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    this-&gt;grid[row][col] = <span class="keyword">new</span> <a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>();</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a7fe23f7479b8d1fe21635532ab81d417">   63</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a7fe23f7479b8d1fe21635532ab81d417">Map::Map::setCols</a>(<span class="keywordtype">int</span> cols)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    this-&gt;cols = cols;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}</div>
 </div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#ac3b201f1245557ad0bb86c4408b1cd61">   66</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#ac3b201f1245557ad0bb86c4408b1cd61">Map::Map::setWall</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col) {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    this-&gt;grid[row][col] = <span class="keyword">new</span> <a class="code hl_class" href="class_wall.html">Wall</a>();</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
-</div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a5e2be3723bbf905e13d789cc3407fc94">   69</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a5e2be3723bbf905e13d789cc3407fc94">Map::Map::setCharacter</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>* cha) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    this-&gt;grid[row][col] = cha;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
-</div>
-<div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a2e962033b641a409745ece3785c712e6">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a2e962033b641a409745ece3785c712e6">Map::Map::setItem</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <a class="code hl_class" href="classitem_1_1_item.html">item::Item</a>* <a class="code hl_namespace" href="namespaceitem.html">item</a>) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    this-&gt;grid[row][col] = <a class="code hl_namespace" href="namespaceitem.html">item</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00068" data-start="{" data-end="}">
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#ab2bf4aa7be6658b088a923a94307b131">   68</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#ab2bf4aa7be6658b088a923a94307b131">Map::Map::setEndCell</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col) </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    this-&gt;setEmpty(row, col);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    this-&gt;endCell[0] = row;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    this-&gt;endCell[1] = col;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">//if its the end cell, it has to be empty</span></div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
 </div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">//Map::Map* Map::Map::Create() {</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">//  int rows, cols;</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">//</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">//  string rowInput, colInput;</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">//</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">//  regex numRgx(&quot;^[1-9][0-9]*$&quot;);</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">//  regex answerRgx(&quot;[y|n]&quot;);</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">//  smatch rowNumMatch, colNumMatch, answerMatch;</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">//</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">//  try {</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">//      cout &lt;&lt; &quot;Enter the number of rows in your map: &quot;;</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">//      cin &gt;&gt; rowInput;</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//      if (!regex_match(rowInput, rowNumMatch, numRgx)) {</span></div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">//          throw exception(&quot;Invalid input!&quot;);</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">//</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">//      rows = stoi(rowInput);</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">//</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">//      //validate rows input</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">//      while (true) {</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">//          if (cin.fail() || rows &lt; 1) {</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">//              cin.clear();</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">//              cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#39;\n&#39;);</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">//              cout &lt;&lt; &quot;Invalid input. Please enter a positive number: &quot;;</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">//              cin &gt;&gt; rows;</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment">//          else {</span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">//              break;</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment">//</span></div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">//      cout &lt;&lt; &quot;Enter the number of columns in your map: &quot;;</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">//      cin &gt;&gt; colInput;</span></div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">//</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">//      if (!regex_match(colInput, colNumMatch, numRgx)) {</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">//          throw exception(&quot;Invalid input!&quot;);</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">//</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">//      cols = stoi(rowInput);</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">//</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">//      //validate columns input</span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">//      while (true) {</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">//          if (cin.fail() || cols &lt; 1) {</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">//              cin.clear();</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">//              cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#39;\n&#39;);</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">//              cout &lt;&lt; &quot;Invalid input. Please enter a positive number: &quot;;</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">//              cin &gt;&gt; cols;</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">//          else {</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment">//              break;</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">//</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">//      Map* map = new Map();</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">//      map-&gt;setRows(rows);</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">//      map-&gt;setCols(cols);</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">//      map-&gt;setGrid();</span></div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">//      map-&gt;setEndCell();</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">//      map-&gt;Print();</span></div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">//</span></div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="comment">//      string answer;</span></div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">//      cout &lt;&lt; &quot;Leave as is? (y/n): &quot;;</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">//      cin &gt;&gt; answer;</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">//</span></div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">//      if (!regex_match(answer, answerMatch, answerRgx)) {</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="comment">//          throw exception(&quot;Invalid Input!&quot;);</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">//</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">//      char custm = answer[0];</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="comment">//</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment">//      while (true) {</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">//          if (cin.fail()) {</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="comment">//              cin.clear();</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="comment">//              cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#39;\n&#39;);</span></div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="comment">//              cout &lt;&lt; &quot;Not a valid answer. Leave the map as is? (y/n): &quot;;</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment">//              cin &gt;&gt; custm;</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="comment">//          if (custm == &#39;y&#39; || custm == &#39;n&#39;) {</span></div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="comment">//              break;</span></div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">//          else {</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">//              cin.clear();</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">//              cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#39;\n&#39;);</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">//              cout &lt;&lt; &quot;Not a valid answer. Leave the map as is? (y/n): &quot;;</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="comment">//              cin &gt;&gt; custm;</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">//</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">//      if (custm == &#39;n&#39;) {</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">//          bool path = false;</span></div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="comment">//          while (!path) {</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="comment">//              // Let the user customize the map how they want</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="comment">//              map-&gt;Customize();</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="comment">//              map-&gt;Print();</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span><span class="comment">//              // Check that there is at least one path from start to end</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="comment">//              cout &lt;&lt; &quot;Checking if there is a possible path ... &quot; &lt;&lt; endl;</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment">//              path = map-&gt;IsTherePath();</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="comment">//</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="comment">//      return map;</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="comment">//  }</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">//  catch (exception exc) {</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="comment">//      cout &lt;&lt; &quot;Invalid input!&quot; &lt;&lt; endl;</span></div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="comment">//  }</span></div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="comment">//</span></div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="comment">//}</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="comment">//void Map::Map::Customize() {</span></div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="comment">//  bool stop = false;</span></div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">//  int row;</span></div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="comment">//  int col;</span></div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="comment">//  char celltype;</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="comment">//  //Cell_Type type;</span></div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="comment">//</span></div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="comment">//  while (!stop) {</span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">//</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment">//      // get row and column input</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment">//      while (true) {</span></div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment">//          //Get row input</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment">//          cout &lt;&lt; &quot;Enter the the cell row you want to change: &quot;;</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment">//          cin &gt;&gt; row;</span></div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="comment">//          //validate row input</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">//          while (true) {</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">//              if (cin.fail() || row &lt; 0 || row &gt;= rows) {</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">//                  cin.clear();</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="comment">//                  cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#39;\n&#39;);</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment">//                  cout &lt;&lt; &quot;Invalid input. Please enter a positive number: &quot;;</span></div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="comment">//                  cin &gt;&gt; row;</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="comment">//              }</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="comment">//              else {</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="comment">//                  break;</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">//              }</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="comment">//</span></div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">//          //Get column input</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="comment">//          cout &lt;&lt; &quot;Enter the cell column you want to change: &quot;;</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">//          cin &gt;&gt; col;</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">//          //validate column input</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="comment">//          while (true) {</span></div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="comment">//              if (cin.fail() || col &lt; 0 || col &gt;= cols) {</span></div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">//                  cin.clear();</span></div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="comment">//                  cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#39;\n&#39;);</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">//                  cout &lt;&lt; &quot;Invalid input. Please enter a positive number: &quot;;</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">//                  cin &gt;&gt; col;</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">//              }</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="comment">//              else {</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="comment">//                  break;</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="comment">//              }</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="comment">//</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">//          //if the cell selected is the start or end</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">//          if ((row == 0 &amp;&amp; col == 0) || (row == endCell[0] &amp;&amp; col == endCell[1])) {</span></div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">//              cout &lt;&lt; &quot;You cannot change the type of the start or end cell.&quot; &lt;&lt; endl;</span></div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="comment">//          //valid cell input</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="comment">//          else {</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="comment">//              break;</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">//      }//end row and column input loop</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">//</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="comment">//      cout &lt;&lt; &quot;Enter the cell type you want to change it to ([e]mpty, [w]all, [s]pecial): &quot;;</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="comment">//      cin &gt;&gt; celltype;</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="comment">//      //validate input</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="comment">//      while (true) {</span></div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="comment">//          if (cin.fail()) {</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="comment">//              cin.clear();</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="comment">//              cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#39;\n&#39;);</span></div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="comment">//              cout &lt;&lt; &quot;Invalid input. Enter only 1 letter please: &quot;;</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">//              cin &gt;&gt; row;</span></div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment">//          else {</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment">//              break;</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="comment">//      //convert input to celltype</span></div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="comment">//      type = ConvertToCellType(celltype);</span></div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="comment">//      //assign cell to its new type</span></div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="comment">//      grid[row][col] = type;</span></div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment">//      //print results</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">//      cout &lt;&lt; &quot;Your map looks like this: &quot; &lt;&lt; endl;</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="comment">//      Print();</span></div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="comment">//</span></div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="comment">//      stop = KeepCustomizing();</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment">//  }</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="comment">//</span></div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="comment">//}</span></div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="comment">//bool Map::Map::KeepCustomizing() {</span></div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="comment">//  char ans = &#39;a&#39;; //answer</span></div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="comment">//  while (true) {</span></div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="comment">//      cout &lt;&lt; &quot;Do you want to keep customizing? (y/n): &quot;; //yes/no</span></div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="comment">//      cin &gt;&gt; ans;</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="comment">//      if (!cin.fail()) {</span></div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="comment">//          if (ans == &#39;y&#39; || ans == &#39;n&#39;) {</span></div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="comment">//              break;</span></div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="comment">//          }</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="comment">//      }</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="comment">//      cin.clear();</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="comment">//      cin.ignore(numeric_limits&lt;streamsize&gt;::max(), &#39;\n&#39;);</span></div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="comment">//      cout &lt;&lt; &quot;Not a valid answer.&quot;;</span></div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="comment">//  }</span></div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="comment">//</span></div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="comment">//  //doesn&#39;t want to stop</span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="comment">//  if (ans == &#39;y&#39;) {</span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="comment">//      return false;</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="comment">//  }</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="comment">//  //wants to stop</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="comment">//  return true;</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="comment">//}</span></div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="comment">//convert a given letter to it&#39;s corresponding cell type</span></div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="comment">//Map::Cell_Type Map::ConvertToCellType(char letter) {</span></div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="comment">//</span></div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="comment">//  switch (letter) {</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment">//  case &#39;e&#39;:</span></div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="comment">//      return Cell_Type::empty;</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="comment">//  case &#39;w&#39;:</span></div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="comment">//      return Cell_Type::wall;</span></div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="comment">//  case &#39;s&#39;:</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="comment">//      return Cell_Type::special;</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="comment">//  default:</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="comment">//      std::cout &lt;&lt; &quot;Not a cell type. Defaults to &#39;empty&#39;.&quot;;</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="comment">//      return Cell_Type::empty;</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="comment">//  }</span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="comment">//Map::Cell_Type Map::ConvertToCellType(char letter) {</span></div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="comment">//</span></div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="comment">//  switch (letter) {</span></div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span><span class="comment">//  case &#39;e&#39;:</span></div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="comment">//      return Cell_Type::empty;</span></div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="comment">//  case &#39;w&#39;:</span></div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="comment">//      return Cell_Type::wall;</span></div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="comment">//  case &#39;s&#39;:</span></div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="comment">//      return Cell_Type::special;</span></div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span><span class="comment">//  default:</span></div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="comment">//      cout &lt;&lt; &quot;Not a cell type. Defaults to &#39;empty&#39;.&quot;;</span></div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="comment">//      return Cell_Type::empty;</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="comment">//  }</span></div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="comment">//</span></div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="comment">//}</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
-<div class="foldopen" id="foldopen00319" data-start="{" data-end="}">
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a620c5f75d452ff1af6fa45747d714798">  319</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_map_1_1_map.html#a620c5f75d452ff1af6fa45747d714798">Map::Map::IsTherePath</a>() {</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="comment">// start = 0,0</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="comment">// end_cell = {r-1, c-1}</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    <span class="comment">//initial list of visited cells (none to begin with)</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    std::vector&lt;std::vector&lt;bool&gt;&gt; visited(rows, std::vector&lt;bool&gt;(cols, <span class="keyword">false</span>));</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="comment">//BFS queue</span></div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>    std::queue&lt;std::pair&lt;int, int&gt;&gt; q;</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="comment">//start cell is visited (0,0)</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    q.push({ 0,0 });</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    visited[0][0] = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <span class="keywordflow">while</span> (!q.empty()) {</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        <span class="keyword">auto</span> curr = q.front(); <span class="comment">// current checking cell</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        q.pop();</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="comment">//check if reach end cell</span></div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        <span class="keywordflow">if</span> (curr.first == endCell[0] &amp;&amp; curr.second == endCell[1]) {</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>            <span class="comment">//if made it this far, there is a path.</span></div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;There is a path.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        }</div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#aa4dd93163babb17bdea9b30ac2f9e65c">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#aa4dd93163babb17bdea9b30ac2f9e65c">Map::Map::setStartCell</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    this-&gt;setEmpty(row, col);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    this-&gt;startCell[0] = row;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    this-&gt;startCell[1] = col;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">//if its the starting cell, it has to be empty</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="foldopen" id="foldopen00084" data-start="{" data-end="}">
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a47297609547499e83abeb5d607e8568d">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a47297609547499e83abeb5d607e8568d">Map::Map::setGrid</a>() {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; this-&gt;rows; i++) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        this-&gt;grid.push_back(std::vector&lt;Interactable::Interactable*&gt;(this-&gt;cols, <span class="keyword">new</span> <a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>()));</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+</div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a9e381c126b47f285ef3b5f4ac697fd09">   89</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a9e381c126b47f285ef3b5f4ac697fd09">Map::Map::setCell</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <a class="code hl_class" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a>* cell) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordflow">try</span> {<span class="comment">//if you are trying to put an empty cell on the start/end cell</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">if</span> ((row == this-&gt;startCell[0] &amp;&amp; col == this-&gt;startCell[1]) || (row == this-&gt;endCell[0] &amp;&amp; col == this-&gt;endCell[1])) {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">throw</span>(1);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        this-&gt;grid[row][col] = cell;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Can&#39;t change the cell on the starting/ending point.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="foldopen" id="foldopen00102" data-start="{" data-end="}">
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a5f1cd403927600211b2d86fd34862396">  102</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a5f1cd403927600211b2d86fd34862396">Map::Map::setEmpty</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col) {</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">try</span> {<span class="comment">//if you are trying to put an empty cell on the start/end cell</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">if</span> ((row == this-&gt;startCell[0] &amp;&amp; col == this-&gt;startCell[1]) || (row == this-&gt;endCell[0] &amp;&amp; col == this-&gt;endCell[1])) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <span class="keywordflow">throw</span>(1);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        this-&gt;grid[row][col] = <span class="keyword">new</span> <a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Can&#39;t put an empty cell on the starting/ending point.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
+</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="}">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#ac3b201f1245557ad0bb86c4408b1cd61">  115</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#ac3b201f1245557ad0bb86c4408b1cd61">Map::Map::setWall</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">try</span> {<span class="comment">//if you are trying to put a wall on the start/end cell</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">if</span> ((row == this-&gt;startCell[0] &amp;&amp; col == this-&gt;startCell[1]) || (row == this-&gt;endCell[0] &amp;&amp; col == this-&gt;endCell[1])){</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">throw</span>(1);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        this-&gt;grid[row][col] = <span class="keyword">new</span> <a class="code hl_class" href="class_wall.html">Wall</a>();</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Can&#39;t put a wall on the starting/ending point.&quot;</span> &lt;&lt;std::endl;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a5e2be3723bbf905e13d789cc3407fc94">  128</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a5e2be3723bbf905e13d789cc3407fc94">Map::Map::setCharacter</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>* cha) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">try</span> {<span class="comment">//if you are trying to put an empty cell on the start/end cell</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">if</span> ((row == this-&gt;startCell[0] &amp;&amp; col == this-&gt;startCell[1]) || (row == this-&gt;endCell[0] &amp;&amp; col == this-&gt;endCell[1])) {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>            <span class="keywordflow">throw</span>(1);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        this-&gt;grid[row][col] = cha;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Can&#39;t put a character on the starting/ending point.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a2e962033b641a409745ece3785c712e6">  141</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#a2e962033b641a409745ece3785c712e6">Map::Map::setItem</a>(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> col, <a class="code hl_class" href="classitem_1_1_item.html">item::Item</a>* <a class="code hl_namespace" href="namespaceitem.html">item</a>) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">try</span> {<span class="comment">//if you are trying to put an empty cell on the start/end cell</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">if</span> ((row == this-&gt;startCell[0] &amp;&amp; col == this-&gt;startCell[1]) || (row == this-&gt;endCell[0] &amp;&amp; col == this-&gt;endCell[1])) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <span class="keywordflow">throw</span>(1);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        this-&gt;grid[row][col] = <a class="code hl_namespace" href="namespaceitem.html">item</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Can&#39;t put an item on the starting/ending point.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="foldopen" id="foldopen00154" data-start="{" data-end="}">
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#a620c5f75d452ff1af6fa45747d714798">  154</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_map_1_1_map.html#a620c5f75d452ff1af6fa45747d714798">Map::Map::IsTherePath</a>() {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="comment">// start = 0,0</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="comment">// end_cell = {r-1, c-1}</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">bool</span> found = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="comment">//initial list of visited cells (none to begin with)</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    std::vector&lt;std::vector&lt;bool&gt;&gt; visited(rows, std::vector&lt;bool&gt;(cols, <span class="keyword">false</span>));</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="comment">//BFS queue</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    std::queue&lt;std::pair&lt;int, int&gt;&gt; q;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="comment">//start cell is visited (0,0)</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">//q.push({ 0,0 });</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    q.push({ this-&gt;startCell[0], this-&gt;startCell[1] });</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">while</span> (!q.empty()) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keyword">auto</span> curr = q.front(); <span class="comment">// current checking cell</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        q.pop();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        <span class="comment">//std::cout &lt;&lt; curr.first &lt;&lt; &quot;, &quot; &lt;&lt; curr.second &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="comment">//check if reach end cell</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">if</span> (curr.first == this-&gt;endCell[0] &amp;&amp; curr.second == this-&gt;endCell[1]) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            <span class="comment">//if made it this far, there is a path.</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;There is a path.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="comment">//keep searching</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dir : dirs) {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordtype">int</span> nextRow = curr.first + dir.first;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="keywordtype">int</span> nextCol = curr.second + dir.second;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="comment">//std::cout &lt;&lt; &quot;nextrow: &quot; &lt;&lt; nextRow &lt;&lt; &quot; nextcol: &quot; &lt;&lt; nextCol &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            <span class="comment">//check if next cell is not a wall or outside the map or been visited</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            <span class="keywordflow">if</span> (ValidCell(nextRow, nextCol, visited)) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                q.push({ nextRow, nextCol });</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>                visited[nextRow][nextCol] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>            }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;There is no path. Change your map.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}</div>
+</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="comment">//validate the next cell</span></div>
+<div class="foldopen" id="foldopen00200" data-start="{" data-end="}">
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#aac6b461ff88fed2116c341231e05f4b2">  200</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_map_1_1_map.html#aac6b461ff88fed2116c341231e05f4b2">Map::Map::ValidCell</a>(<span class="keywordtype">int</span> nextRow, <span class="keywordtype">int</span> nextCol, std::vector&lt;std::vector&lt;bool&gt;&gt; visited) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="comment">//std::cout &lt;&lt; nextRow &lt;&lt; &quot;, &quot; &lt;&lt; nextCol &lt;&lt; std::endl;</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">return</span> (nextRow &gt;= 0 &amp;&amp; nextRow &lt; rows &amp;&amp; nextCol &gt;= 0 &amp;&amp; nextCol &lt; cols &amp;&amp;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        this-&gt;grid[nextRow][nextCol]-&gt;serialize()[0] != <span class="charliteral">&#39;w&#39;</span> &amp;&amp;  !visited[nextRow][nextCol]);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>}</div>
+</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="}">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#aad196277637f8a3d7e87e958d250477f">  206</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#aad196277637f8a3d7e87e958d250477f">Map::Map::MoveCharacter</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _targetX, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _targetY, <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>* _targetCharacter) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="comment">// Some logic here to swap character positions based on coordiantes, x and y coor should be 1-indexed</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">if</span> (_targetX &lt; 1 || _targetX &gt; grid.size() || _targetY &lt; 1 || _targetY &gt; grid[0].size()) {</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;[Map/MoveCharacter] -- Invalid coordiantes&quot;</span>);</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <a class="code hl_class" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a>* valueAtCell = grid[_targetX - 1][_targetY - 1];</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordflow">if</span> (!<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>*<span class="keyword">&gt;</span>(valueAtCell)) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;[Map/MoveCharacter] -- Can&#39;t move to this cell&quot;</span>);</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    }</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordtype">int</span> sourceLocationX = 0;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="keywordtype">int</span> sourceLocationY = 0;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)grid.size(); i++)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; (int)grid[i].size(); j++)</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <a class="code hl_class" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a>* currentCellValue = grid[i][j];</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keywordflow">if</span> (_targetCharacter == currentCellValue) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                sourceLocationX = i;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>                sourceLocationY = j;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    }</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <a class="code hl_class" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a>* temp = grid[_targetX - 1][_targetY - 1];</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    setCell(_targetX - 1, _targetY - 1, _targetCharacter);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    setCell(sourceLocationX, sourceLocationY, temp);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    std::ostringstream logMessage;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    logMessage &lt;&lt; <span class="stringliteral">&quot;[Map/MoveCharacter] -- &quot;</span> &lt;&lt; _targetCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#afd2974653e0fb67eb2694331718eb1fc">Name</a>() &lt;&lt; <span class="stringliteral">&quot; is moving to location (&quot;</span> &lt;&lt; _targetX - 1 &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; _targetY - 1 &lt;&lt; <span class="stringliteral">&quot;) on map &quot;</span> &lt;&lt; mapID;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    CreateObserverMessage(logMessage.str());</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>}</div>
+</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="foldopen" id="foldopen00243" data-start="{" data-end="}">
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#abf1e1f16e4fec8cec115d7b3a64d3ba9">  243</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#abf1e1f16e4fec8cec115d7b3a64d3ba9">Map::Map::printMap</a>()</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>{</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="comment">//print grid col cumbers</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cols; i++) {</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        std::cout&lt;&lt;<span class="stringliteral">&quot; &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="comment">//Print top col </span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cols; i++) {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;___&quot;</span>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        <span class="keywordtype">int</span> extraSpaces = i / 10;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; extraSpaces; j++) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;_&quot;</span>;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; i++) {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cols; j++) {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            <span class="comment">//std::cout &lt;&lt; &quot;|&quot;;</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>* characterCell = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>*<span class="keyword">&gt;</span>(grid[i][j]);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>            <a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>* emptyCell = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_empty_cell.html">EmptyCell</a>*<span class="keyword">&gt;</span>(grid[i][j]);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>            <a class="code hl_class" href="class_wall.html">Wall</a>* wallCell = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_wall.html">Wall</a>*<span class="keyword">&gt;</span>(grid[i][j]);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            <a class="code hl_class" href="classitem_1_1_item.html">item::Item</a>* itemCell = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classitem_1_1_item.html">item::Item</a>*<span class="keyword">&gt;</span>(grid[i][j]);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <a class="code hl_class" href="classitemcontainer_1_1_item_container.html">itemcontainer::ItemContainer</a>* itemContainerCell = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classitemcontainer_1_1_item_container.html">itemcontainer::ItemContainer</a>*<span class="keyword">&gt;</span>(grid[i][j]);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            <a class="code hl_class" href="classdoor_1_1_door.html">Door</a>* doorCell = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classdoor_1_1_door.html">Door</a>*<span class="keyword">&gt;</span>(grid[i][j]);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>            <span class="keywordflow">if</span> (characterCell &amp;&amp; characterCell-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a814b1a2f0d847111554f2977390f5fb2">GetIsPlayerControlled</a>()) {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;P &quot;</span>;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (characterCell) {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;N &quot;</span>;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(emptyCell){</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;  &quot;</span>;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            }</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (wallCell) {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                std::cout &lt;&lt;char(178) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>            }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (itemContainerCell) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;C &quot;</span>;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (itemCell) {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                std::cout &lt;&lt;char(233) &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            }</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (doorCell) {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;D &quot;</span>;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>            <span class="keywordtype">int</span> extraSpaces = j / 10;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; extraSpaces; j++) {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>            }</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;|&quot;</span>;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        std::cout &lt;&lt; i;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    }</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; cols; i++) {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;---&quot;</span>;</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keywordtype">int</span> extraSpaces = i / 10;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; extraSpaces; j++) {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>            std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    }</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>}</div>
+</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="foldopen" id="foldopen00311" data-start="{" data-end="}">
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#acf3f18f4013b4d9c8251c07fb28169e6">  311</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#acf3f18f4013b4d9c8251c07fb28169e6">Map::Map::GetCharacterCoordinates</a>(<span class="keywordtype">int</span>&amp; x, <span class="keywordtype">int</span>&amp; y, <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>* t_character)</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>{</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordtype">int</span> <span class="keywordtype">id</span> = t_character-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a18dee749b542d1e15c291f3473a67297">ID</a>();</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; i++) {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cols; j++) {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>            <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>* characterCell = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>*<span class="keyword">&gt;</span>(grid[i][j]);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>            <span class="keywordflow">if</span> (characterCell != <span class="keyword">nullptr</span> &amp;&amp; characterCell-&gt;<a class="code hl_function" href="class_character_1_1_character.html#a18dee749b542d1e15c291f3473a67297">ID</a>() == id) {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                x = i;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>                y = j;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        }</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    <span class="keywordflow">throw</span> <span class="keyword">new</span> std::invalid_argument(<span class="stringliteral">&quot;[Map/GetCharacterCoordinates] -- Failed to find the character in the map.&quot;</span>);</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>}</div>
+</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
+<div class="foldopen" id="foldopen00328" data-start="{" data-end="}">
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#ac57d499470de2f0a04e458113f875687">  328</a></span>std::vector&lt;Character::Character*&gt; <a class="code hl_function" href="class_map_1_1_map.html#ac57d499470de2f0a04e458113f875687">Map::Map::GetCharactersInMap</a>() {</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    std::vector&lt;Character::Character*&gt; result;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (int)grid.size(); i++)</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    {</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; (int)grid[i].size(); j++)</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        {</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>            <a class="code hl_class" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a>* currentCellValue = grid[i][j];</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>            <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>*<span class="keyword">&gt;</span>(currentCellValue)) {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                result.push_back(<span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>*<span class="keyword">&gt;</span>(currentCellValue));</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            }</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        }</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    }</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>}</div>
+</div>
 <div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <span class="comment">//keep searching</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dir : dirs) {</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>            <span class="keywordtype">int</span> nextRow = curr.first + dir.first;</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>            <span class="keywordtype">int</span> nextCol = curr.second + dir.second;</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>            <span class="comment">//DEBUG: std::cout &lt;&lt; &quot;nextrow: &quot; &lt;&lt; nextRow &lt;&lt; &quot; nextcol: &quot; &lt;&lt; nextCol &lt;&lt; std::endl;</span></div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>            <span class="comment">//check if next cell is not a wall or outside the map or been visited</span></div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>            <span class="keywordflow">if</span> (ValidCell(nextRow, nextCol, visited)) {</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                q.push({ nextRow, nextCol });</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>                visited[nextRow][nextCol] = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>            }</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        }</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    }</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;There is no path. Change your map.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>}</div>
+<div class="foldopen" id="foldopen00345" data-start="{" data-end="}">
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#aae6b025288e8c6def550878f9e61c3da">  345</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#aae6b025288e8c6def550878f9e61c3da">Map::Map::Print</a>() {</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; rows; i++) {</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; cols; j++) {</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>            <span class="keywordtype">char</span> cell = grid[i][j]-&gt;<a class="code hl_function" href="class_interactable_1_1_interactable.html#a882c61c0b95d96c21b05a0e46f460b59">serialize</a>()[0];</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>            <span class="keywordflow">if</span> (i == this-&gt;startCell[0] &amp;&amp; j == this-&gt;startCell[1]) {</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;S&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (i == this-&gt;endCell[0] &amp;&amp; j == this-&gt;endCell[1]) {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;X&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>            }</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (cell == <span class="charliteral">&#39;e&#39;</span>) {</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                std::cout &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>            }</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>            <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                std::cout &lt;&lt; cell  &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>            }</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>            std::cout &lt;&lt; <span class="stringliteral">&quot;| &quot;</span>;</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>        }</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    }</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>}</div>
 </div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="comment">//validate the next cell</span></div>
-<div class="foldopen" id="foldopen00364" data-start="{" data-end="}">
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#aac6b461ff88fed2116c341231e05f4b2">  364</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_map_1_1_map.html#aac6b461ff88fed2116c341231e05f4b2">Map::Map::ValidCell</a>(<span class="keywordtype">int</span> nextRow, <span class="keywordtype">int</span> nextCol, std::vector&lt;std::vector&lt;bool&gt;&gt; visited) {</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordflow">return</span> (nextRow &gt;= 0 &amp;&amp; nextRow &lt; rows &amp;&amp;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>        nextCol &gt;= 0 &amp;&amp; nextCol &lt; cols &amp;&amp;</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        <span class="keyword">typeid</span>(grid[nextRow][nextCol]) != <span class="keyword">typeid</span>(<a class="code hl_class" href="class_wall.html">Wall</a>) &amp;&amp;</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        !visited[nextRow][nextCol]);</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>}</div>
-</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
-<div class="foldopen" id="foldopen00371" data-start="{" data-end="}">
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno"><a class="line" href="class_map_1_1_map.html#aad196277637f8a3d7e87e958d250477f">  371</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_1_1_map.html#aad196277637f8a3d7e87e958d250477f">Map::Map::MoveCharacter</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _targetX, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; _targetY, <a class="code hl_class" href="class_character_1_1_character.html">Character::Character</a>* _targetCharacter) {</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    <span class="comment">// Some logic here to swap character positions based on coordiantes</span></div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    std::ostringstream logMessage;</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    logMessage &lt;&lt; <span class="stringliteral">&quot;[Map/MoveCharacter] -- &quot;</span> &lt;&lt; _targetCharacter-&gt;<a class="code hl_function" href="class_character_1_1_character.html#afd2974653e0fb67eb2694331718eb1fc">Name</a>() &lt;&lt; <span class="stringliteral">&quot; is moving to location (&quot;</span> &lt;&lt; _targetX &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; _targetY &lt;&lt; <span class="stringliteral">&quot;) on map &quot;</span> &lt;&lt; mapID;</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    CreateObserverMessage(logMessage.str());</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>}</div>
-</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
 <div class="ttc" id="a_character_8h_html"><div class="ttname"><a href="_character_8h.html">Character.h</a></div><div class="ttdoc">Header file containing Character functionality definitions The character creation is based off of the...</div></div>
 <div class="ttc" id="a_empty_cell_8h_html"><div class="ttname"><a href="_empty_cell_8h.html">EmptyCell.h</a></div></div>
 <div class="ttc" id="a_interactable_8h_html"><div class="ttname"><a href="_interactable_8h.html">Interactable.h</a></div></div>
 <div class="ttc" id="a_map_8h_html"><div class="ttname"><a href="_map_8h.html">Map.h</a></div><div class="ttdoc">Header file for the Map class.</div></div>
 <div class="ttc" id="a_wall_8h_html"><div class="ttname"><a href="_wall_8h.html">Wall.h</a></div></div>
-<div class="ttc" id="aclass_character_1_1_character_html"><div class="ttname"><a href="class_character_1_1_character.html">Character::Character</a></div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00153">Character.h:153</a></div></div>
-<div class="ttc" id="aclass_character_1_1_character_html_afd2974653e0fb67eb2694331718eb1fc"><div class="ttname"><a href="class_character_1_1_character.html#afd2974653e0fb67eb2694331718eb1fc">Character::Character::Name</a></div><div class="ttdeci">std::string Name() const</div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00220">Character.h:220</a></div></div>
+<div class="ttc" id="aclass_character_1_1_character_html"><div class="ttname"><a href="class_character_1_1_character.html">Character::Character</a></div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00155">Character.h:155</a></div></div>
+<div class="ttc" id="aclass_character_1_1_character_html_a18dee749b542d1e15c291f3473a67297"><div class="ttname"><a href="class_character_1_1_character.html#a18dee749b542d1e15c291f3473a67297">Character::Character::ID</a></div><div class="ttdeci">int ID()</div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00228">Character.h:228</a></div></div>
+<div class="ttc" id="aclass_character_1_1_character_html_a814b1a2f0d847111554f2977390f5fb2"><div class="ttname"><a href="class_character_1_1_character.html#a814b1a2f0d847111554f2977390f5fb2">Character::Character::GetIsPlayerControlled</a></div><div class="ttdeci">bool GetIsPlayerControlled()</div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00432">Character.h:432</a></div></div>
+<div class="ttc" id="aclass_character_1_1_character_html_afd2974653e0fb67eb2694331718eb1fc"><div class="ttname"><a href="class_character_1_1_character.html#afd2974653e0fb67eb2694331718eb1fc">Character::Character::Name</a></div><div class="ttdeci">std::string Name() const</div><div class="ttdef"><b>Definition</b> <a href="_character_8h_source.html#l00235">Character.h:235</a></div></div>
 <div class="ttc" id="aclass_empty_cell_html"><div class="ttname"><a href="class_empty_cell.html">EmptyCell</a></div><div class="ttdef"><b>Definition</b> <a href="_empty_cell_8h_source.html#l00005">EmptyCell.h:6</a></div></div>
-<div class="ttc" id="aclass_interactable_1_1_interactable_html"><div class="ttname"><a href="class_interactable_1_1_interactable.html">Interactable::Interactable</a></div><div class="ttdef"><b>Definition</b> <a href="_interactable_8h_source.html#l00005">Interactable.h:5</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a0c6e51c4e7b296c24014a02633dea247"><div class="ttname"><a href="class_map_1_1_map.html#a0c6e51c4e7b296c24014a02633dea247">Map::Map::CreateObserverMessage</a></div><div class="ttdeci">void CreateObserverMessage(std::string)</div><div class="ttdoc">Function that will take in a message from a calling object and use it to notify the observers with th...</div><div class="ttdef"><b>Definition</b> <a href="#l00024">Map.cpp:24</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a2e962033b641a409745ece3785c712e6"><div class="ttname"><a href="class_map_1_1_map.html#a2e962033b641a409745ece3785c712e6">Map::Map::setItem</a></div><div class="ttdeci">void setItem(int row, int col, item::Item *cha)</div><div class="ttdef"><b>Definition</b> <a href="#l00072">Map.cpp:72</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a47297609547499e83abeb5d607e8568d"><div class="ttname"><a href="class_map_1_1_map.html#a47297609547499e83abeb5d607e8568d">Map::Map::setGrid</a></div><div class="ttdeci">void setGrid()</div><div class="ttdef"><b>Definition</b> <a href="#l00054">Map.cpp:54</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a5e2be3723bbf905e13d789cc3407fc94"><div class="ttname"><a href="class_map_1_1_map.html#a5e2be3723bbf905e13d789cc3407fc94">Map::Map::setCharacter</a></div><div class="ttdeci">void setCharacter(int row, int col, Character::Character *cha)</div><div class="ttdef"><b>Definition</b> <a href="#l00069">Map.cpp:69</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a5f1cd403927600211b2d86fd34862396"><div class="ttname"><a href="class_map_1_1_map.html#a5f1cd403927600211b2d86fd34862396">Map::Map::setEmpty</a></div><div class="ttdeci">void setEmpty(int row, int col)</div><div class="ttdef"><b>Definition</b> <a href="#l00063">Map.cpp:63</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a620c5f75d452ff1af6fa45747d714798"><div class="ttname"><a href="class_map_1_1_map.html#a620c5f75d452ff1af6fa45747d714798">Map::Map::IsTherePath</a></div><div class="ttdeci">bool IsTherePath()</div><div class="ttdoc">Check if there is a possible passage through the map.</div><div class="ttdef"><b>Definition</b> <a href="#l00319">Map.cpp:319</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a665cee9ac491962f048721c4fe7c2178"><div class="ttname"><a href="class_map_1_1_map.html#a665cee9ac491962f048721c4fe7c2178">Map::Map::setEndCell</a></div><div class="ttdeci">void setEndCell()</div><div class="ttdef"><b>Definition</b> <a href="#l00049">Map.cpp:49</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a6cde022f6d2c065f195eaae7fc1162ce"><div class="ttname"><a href="class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce">Map::Map::Map</a></div><div class="ttdeci">Map()</div><div class="ttdoc">Constructor to build a basic map provided by user.</div><div class="ttdef"><b>Definition</b> <a href="#l00031">Map.cpp:31</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_a9e381c126b47f285ef3b5f4ac697fd09"><div class="ttname"><a href="class_map_1_1_map.html#a9e381c126b47f285ef3b5f4ac697fd09">Map::Map::setCell</a></div><div class="ttdeci">void setCell(int row, int col, Interactable::Interactable *cell)</div><div class="ttdef"><b>Definition</b> <a href="#l00059">Map.cpp:59</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_aac6b461ff88fed2116c341231e05f4b2"><div class="ttname"><a href="class_map_1_1_map.html#aac6b461ff88fed2116c341231e05f4b2">Map::Map::ValidCell</a></div><div class="ttdeci">bool ValidCell(int row, int col, std::vector&lt; std::vector&lt; bool &gt; &gt; visitde)</div><div class="ttdoc">Check if the given x,y coordinates are a valid cell to step on.</div><div class="ttdef"><b>Definition</b> <a href="#l00364">Map.cpp:364</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_aad196277637f8a3d7e87e958d250477f"><div class="ttname"><a href="class_map_1_1_map.html#aad196277637f8a3d7e87e958d250477f">Map::Map::MoveCharacter</a></div><div class="ttdeci">void MoveCharacter(const int &amp;, const int &amp;, Character::Character *)</div><div class="ttdef"><b>Definition</b> <a href="#l00371">Map.cpp:371</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_ac3b201f1245557ad0bb86c4408b1cd61"><div class="ttname"><a href="class_map_1_1_map.html#ac3b201f1245557ad0bb86c4408b1cd61">Map::Map::setWall</a></div><div class="ttdeci">void setWall(int row, int col)</div><div class="ttdef"><b>Definition</b> <a href="#l00066">Map.cpp:66</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_ae0b199d07fc33735ddac16907e585f27"><div class="ttname"><a href="class_map_1_1_map.html#ae0b199d07fc33735ddac16907e585f27">Map::Map::Notify</a></div><div class="ttdeci">void Notify() override</div><div class="ttdoc">Implemented function that will use the list of this observers and call their update functions using t...</div><div class="ttdef"><b>Definition</b> <a href="#l00017">Map.cpp:17</a></div></div>
+<div class="ttc" id="aclass_interactable_1_1_interactable_html"><div class="ttname"><a href="class_interactable_1_1_interactable.html">Interactable::Interactable</a></div><div class="ttdef"><b>Definition</b> <a href="_interactable_8h_source.html#l00006">Interactable.h:6</a></div></div>
+<div class="ttc" id="aclass_interactable_1_1_interactable_html_a882c61c0b95d96c21b05a0e46f460b59"><div class="ttname"><a href="class_interactable_1_1_interactable.html#a882c61c0b95d96c21b05a0e46f460b59">Interactable::Interactable::serialize</a></div><div class="ttdeci">virtual std::string serialize()</div><div class="ttdef"><b>Definition</b> <a href="_interactable_8h_source.html#l00012">Interactable.h:12</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a0c6e51c4e7b296c24014a02633dea247"><div class="ttname"><a href="class_map_1_1_map.html#a0c6e51c4e7b296c24014a02633dea247">Map::Map::CreateObserverMessage</a></div><div class="ttdeci">void CreateObserverMessage(std::string)</div><div class="ttdoc">Function that will take in a message from a calling object and use it to notify the observers with th...</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Map.cpp:27</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a1a59e8019c3c2a1fd0203ce320b6d5af"><div class="ttname"><a href="class_map_1_1_map.html#a1a59e8019c3c2a1fd0203ce320b6d5af">Map::Map::setRows</a></div><div class="ttdeci">void setRows(int rows)</div><div class="ttdef"><b>Definition</b> <a href="#l00058">Map.cpp:58</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a2e962033b641a409745ece3785c712e6"><div class="ttname"><a href="class_map_1_1_map.html#a2e962033b641a409745ece3785c712e6">Map::Map::setItem</a></div><div class="ttdeci">void setItem(int row, int col, item::Item *cha)</div><div class="ttdef"><b>Definition</b> <a href="#l00141">Map.cpp:141</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a47297609547499e83abeb5d607e8568d"><div class="ttname"><a href="class_map_1_1_map.html#a47297609547499e83abeb5d607e8568d">Map::Map::setGrid</a></div><div class="ttdeci">void setGrid()</div><div class="ttdef"><b>Definition</b> <a href="#l00084">Map.cpp:84</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a5e2be3723bbf905e13d789cc3407fc94"><div class="ttname"><a href="class_map_1_1_map.html#a5e2be3723bbf905e13d789cc3407fc94">Map::Map::setCharacter</a></div><div class="ttdeci">void setCharacter(int row, int col, Character::Character *cha)</div><div class="ttdef"><b>Definition</b> <a href="#l00128">Map.cpp:128</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a5f1cd403927600211b2d86fd34862396"><div class="ttname"><a href="class_map_1_1_map.html#a5f1cd403927600211b2d86fd34862396">Map::Map::setEmpty</a></div><div class="ttdeci">void setEmpty(int row, int col)</div><div class="ttdef"><b>Definition</b> <a href="#l00102">Map.cpp:102</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a620c5f75d452ff1af6fa45747d714798"><div class="ttname"><a href="class_map_1_1_map.html#a620c5f75d452ff1af6fa45747d714798">Map::Map::IsTherePath</a></div><div class="ttdeci">bool IsTherePath()</div><div class="ttdoc">Check if there is a possible passage through the map.</div><div class="ttdef"><b>Definition</b> <a href="#l00154">Map.cpp:154</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a6cde022f6d2c065f195eaae7fc1162ce"><div class="ttname"><a href="class_map_1_1_map.html#a6cde022f6d2c065f195eaae7fc1162ce">Map::Map::Map</a></div><div class="ttdeci">Map()</div><div class="ttdoc">Constructor to build a basic map provided by user.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">Map.cpp:34</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a7fe23f7479b8d1fe21635532ab81d417"><div class="ttname"><a href="class_map_1_1_map.html#a7fe23f7479b8d1fe21635532ab81d417">Map::Map::setCols</a></div><div class="ttdeci">void setCols(int cols)</div><div class="ttdef"><b>Definition</b> <a href="#l00063">Map.cpp:63</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_a9e381c126b47f285ef3b5f4ac697fd09"><div class="ttname"><a href="class_map_1_1_map.html#a9e381c126b47f285ef3b5f4ac697fd09">Map::Map::setCell</a></div><div class="ttdeci">void setCell(int row, int col, Interactable::Interactable *cell)</div><div class="ttdef"><b>Definition</b> <a href="#l00089">Map.cpp:89</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_aa4dd93163babb17bdea9b30ac2f9e65c"><div class="ttname"><a href="class_map_1_1_map.html#aa4dd93163babb17bdea9b30ac2f9e65c">Map::Map::setStartCell</a></div><div class="ttdeci">void setStartCell(int row, int col)</div><div class="ttdef"><b>Definition</b> <a href="#l00076">Map.cpp:76</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_aac6b461ff88fed2116c341231e05f4b2"><div class="ttname"><a href="class_map_1_1_map.html#aac6b461ff88fed2116c341231e05f4b2">Map::Map::ValidCell</a></div><div class="ttdeci">bool ValidCell(int row, int col, std::vector&lt; std::vector&lt; bool &gt; &gt; visitde)</div><div class="ttdoc">Check if the given x,y coordinates are a valid cell to step on.</div><div class="ttdef"><b>Definition</b> <a href="#l00200">Map.cpp:200</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_aad196277637f8a3d7e87e958d250477f"><div class="ttname"><a href="class_map_1_1_map.html#aad196277637f8a3d7e87e958d250477f">Map::Map::MoveCharacter</a></div><div class="ttdeci">void MoveCharacter(const int &amp;, const int &amp;, Character::Character *)</div><div class="ttdef"><b>Definition</b> <a href="#l00206">Map.cpp:206</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_aae6b025288e8c6def550878f9e61c3da"><div class="ttname"><a href="class_map_1_1_map.html#aae6b025288e8c6def550878f9e61c3da">Map::Map::Print</a></div><div class="ttdeci">void Print()</div><div class="ttdef"><b>Definition</b> <a href="#l00345">Map.cpp:345</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_ab2bf4aa7be6658b088a923a94307b131"><div class="ttname"><a href="class_map_1_1_map.html#ab2bf4aa7be6658b088a923a94307b131">Map::Map::setEndCell</a></div><div class="ttdeci">void setEndCell(int row, int col)</div><div class="ttdef"><b>Definition</b> <a href="#l00068">Map.cpp:68</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_abf1e1f16e4fec8cec115d7b3a64d3ba9"><div class="ttname"><a href="class_map_1_1_map.html#abf1e1f16e4fec8cec115d7b3a64d3ba9">Map::Map::printMap</a></div><div class="ttdeci">void printMap()</div><div class="ttdef"><b>Definition</b> <a href="#l00243">Map.cpp:243</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_ac3b201f1245557ad0bb86c4408b1cd61"><div class="ttname"><a href="class_map_1_1_map.html#ac3b201f1245557ad0bb86c4408b1cd61">Map::Map::setWall</a></div><div class="ttdeci">void setWall(int row, int col)</div><div class="ttdef"><b>Definition</b> <a href="#l00115">Map.cpp:115</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_ac57d499470de2f0a04e458113f875687"><div class="ttname"><a href="class_map_1_1_map.html#ac57d499470de2f0a04e458113f875687">Map::Map::GetCharactersInMap</a></div><div class="ttdeci">std::vector&lt; Character::Character * &gt; GetCharactersInMap()</div><div class="ttdef"><b>Definition</b> <a href="#l00328">Map.cpp:328</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_acf3f18f4013b4d9c8251c07fb28169e6"><div class="ttname"><a href="class_map_1_1_map.html#acf3f18f4013b4d9c8251c07fb28169e6">Map::Map::GetCharacterCoordinates</a></div><div class="ttdeci">void GetCharacterCoordinates(int &amp;x, int &amp;y, Character::Character *t_character)</div><div class="ttdef"><b>Definition</b> <a href="#l00311">Map.cpp:311</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_ae0b199d07fc33735ddac16907e585f27"><div class="ttname"><a href="class_map_1_1_map.html#ae0b199d07fc33735ddac16907e585f27">Map::Map::Notify</a></div><div class="ttdeci">void Notify() override</div><div class="ttdoc">Implemented function that will use the list of this observers and call their update functions using t...</div><div class="ttdef"><b>Definition</b> <a href="#l00020">Map.cpp:20</a></div></div>
 <div class="ttc" id="aclass_wall_html"><div class="ttname"><a href="class_wall.html">Wall</a></div><div class="ttdef"><b>Definition</b> <a href="_wall_8h_source.html#l00005">Wall.h:6</a></div></div>
-<div class="ttc" id="aclassitem_1_1_item_html"><div class="ttname"><a href="classitem_1_1_item.html">item::Item</a></div><div class="ttdoc">Class for the character items.</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00110">item.h:111</a></div></div>
+<div class="ttc" id="aclassdoor_1_1_door_html"><div class="ttname"><a href="classdoor_1_1_door.html">door::Door</a></div><div class="ttdef"><b>Definition</b> <a href="door_8h_source.html#l00022">door.h:22</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html"><div class="ttname"><a href="classitem_1_1_item.html">item::Item</a></div><div class="ttdoc">Class for the character items.</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00111">item.h:112</a></div></div>
+<div class="ttc" id="aclassitemcontainer_1_1_item_container_html"><div class="ttname"><a href="classitemcontainer_1_1_item_container.html">itemcontainer::ItemContainer</a></div><div class="ttdoc">Class to abstract the different item containers.</div><div class="ttdef"><b>Definition</b> <a href="itemcontainer_8h_source.html#l00048">itemcontainer.h:48</a></div></div>
+<div class="ttc" id="adoor_8h_html"><div class="ttname"><a href="door_8h.html">door.h</a></div></div>
 <div class="ttc" id="aitem_8h_html"><div class="ttname"><a href="item_8h.html">item.h</a></div><div class="ttdoc">Header file for the Item class.</div></div>
+<div class="ttc" id="anamespacedoor_html"><div class="ttname"><a href="namespacedoor.html">door</a></div><div class="ttdef"><b>Definition</b> <a href="door_8cpp_source.html#l00105">door.cpp:105</a></div></div>
 <div class="ttc" id="anamespaceitem_html"><div class="ttname"><a href="namespaceitem.html">item</a></div><div class="ttdoc">namespace to encapsulate character items</div><div class="ttdef"><b>Definition</b> <a href="item_8cpp_source.html#l00059">item.cpp:59</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

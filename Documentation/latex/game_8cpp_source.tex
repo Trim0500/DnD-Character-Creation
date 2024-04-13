@@ -1,69 +1,780 @@
 \doxysection{game.\+cpp}
-\hypertarget{game_8cpp_source}{}\label{game_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/game.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/game.cpp}}
+\hypertarget{game_8cpp_source}{}\label{game_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Game/game.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Game/game.cpp}}
 \mbox{\hyperlink{game_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game_8h}{game.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00003}00003\ \textcolor{keyword}{namespace\ }\{}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00004}00004\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00005}00005\ \}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00007}\mbox{\hyperlink{namespacegame}{00007}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegame}{game}}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00008}00008\ \{}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00009}\mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{00009}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{Game::Notify}}()\ \{}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)observers.size();\ i++)}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ \ \ \ \ observers[i]-\/>update(observerMessage);}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00014}00014\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00015}00015\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00016}\mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{00016}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{Game::CreateObserverMessage}}(std::string\ \_message\ =\ \textcolor{stringliteral}{"{}Empty"{}})\ \{}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ observerMessage\ =\ \_message;}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{Notify}}();}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00020}00020\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00022}\mbox{\hyperlink{classgame_1_1_game_a3e7dd20d65b6aa7c01d2d579487e59ca}{00022}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a3e7dd20d65b6aa7c01d2d579487e59ca}{Game::GameSetup}}(\textcolor{keyword}{const}\ std::string\&\ \_saveFileDir)\ \{}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Fetching\ Campaign\ save\ data...\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00024}00024\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ campaign...}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Loading\ map\ data...\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00028}00028\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ generate\ maps...}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00030}00030\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Loading\ characters...\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cctype>}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <sys/stat.h>}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{game_8h}{game.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_empty_cell_8h}{..\(\backslash\)Interactable\(\backslash\)EmptyCell.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{door_8h}{..\(\backslash\)Door\(\backslash\)door.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_serialize_character_8h}{../Serialize/SerializeCharacter.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_map_builder_8h}{../Builder/MapBuilder.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00015}00015\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacedoor}{door}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00016}00016\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespaceserialize_item}{serializeItem}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00017}00017\ \textcolor{keyword}{using\ namespace\ }\mbox{\hyperlink{namespacecampaign}{campaign}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00019}00019\ \textcolor{keyword}{namespace\ }\{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00020}00020\ \ \ \ \ std::vector<Item>\ FindItemsByIDInput(std::vector<int>\ \_idInput,\ std::vector<Item>\ itemsToSearch)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ std::vector<Item>\ result;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ :\ \_idInput)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundItem\ =\ std::find\_if(itemsToSearch.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemsToSearch.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\textcolor{keywordtype}{id}](\mbox{\hyperlink{classitem_1_1_item}{Item}}\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item.GetItemId()\ ==\ id;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundItem\ !=\ itemsToSearch.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back((*foundItem));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{game_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Find\ generate\ characters...}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00034}00034\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Set\ campaign\ memeber\ variables...}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Game\ setup\ complete!\ Ready\ to\ Play!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00038}00038\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00040}\mbox{\hyperlink{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}{00040}}\ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \mbox{\hyperlink{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}{Game::LoadMap}}(\textcolor{comment}{/*\ Door\ or\ ID\ */})\ \{}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/LoadMap]\ -\/-\/\ Door\ used,\ finding\ which\ map\ to\ bring\ up...\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00042}00042\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ door\ or\ ID\ to\ find\ map\ to\ load\ through\ the\ campaign\ member\ variable...}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00044}00044\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/LoadMap]\ -\/-\/\ Found\ the\ map\ the\ player\ is\ in!\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00046}00046\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}();}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00048}00048\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00049}00049\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00050}\mbox{\hyperlink{classgame_1_1_game_a2cb3ae613451081fdfedf53e5d8e4d1d}{00050}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a2cb3ae613451081fdfedf53e5d8e4d1d}{Game::EndTurn}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}\&)\ \{}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ A\ character\ ended\ their\ turn,\ need\ to\ update\ game\ data...\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Look\ through\ each\ cell\ to\ update\ the\ game's\ campaign\ member\ variable...}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00054}00054\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ Map\ updates\ complete!\ moving\ on\ to\ characters...\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00056}00056\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ the\ map's\ cells\ to\ identify\ characters\ and\ update\ to\ game's\ campaign\ member\ variable}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00058}00058\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ Character\ updates\ complete!\ Updating\ turn...\(\backslash\)n"{}});}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Update\ turn\ info...}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00062}00062\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ FindCharacterInventory(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ inventoryID,\ \textcolor{keyword}{const}\ std::vector<ItemContainer*>\&\ containersToSearch)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundInventory\ =\ std::find\_if(containersToSearch.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containersToSearch.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [inventoryID](\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ container)\ \{\ return\ container-\/>GetItemId()\ ==\ inventoryID;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundInventory\ !=\ containersToSearch.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (*foundInventory);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordtype}{void}\ ProcessContainerAction(\mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \_target,\ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ \_playerCharacter,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ dropItems\ =\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ containerTarget\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\textcolor{keyword}{>}(\_target);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ containerTarget-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a18b253936a64879265f52fc08106eb5e}{PrintItemVector}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Enter\ a\ comma\ seperated\ list\ wo/spaces\ (ex.\ 1,2,3)\ or\ enter\ \(\backslash\)'Back\(\backslash\)'\ to\ exit."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ std::string\ containerSelection;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ std::cin\ >>\ containerSelection;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ std::remove\_if(containerSelection.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containerSelection.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ x)\ \{\ return\ std::isspace(x);\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ std::transform(containerSelection.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containerSelection.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containerSelection.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ c)\ \{\ return\ std::tolower(c);\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (containerSelection\ !=\ \textcolor{stringliteral}{"{}back"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item>\ containerItems\ =\ containerTarget-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(containerSelection);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item*>\ segmentList;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ segment\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ segment,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indexForItem\ =\ std::stoi(segment)\ -\/\ 1;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ segmentList.push\_back(\&containerItems[indexForItem]);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (segmentList.size()\ >\ containerItems.size())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::out\_of\_range(\textcolor{stringliteral}{"{}[ProcessContainerAction]\ -\/-\/\ User\ entered\ a\ larger\ selection\ than\ allowed"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!dropItems)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a7871d5bf50682bba5bd6c5c9fbccab5c}{TakeItems}}(containerTarget,\ segmentList,\ \_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}{Name}}()\ <<\ \textcolor{stringliteral}{"{}\ added\ items\ to\ their\ inventory!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ exc.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::overflow\_error\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Can't\ add\ the\ items\ to\ the\ inventory!\ Try\ changing\ your\ selection!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_ad25cd976ef0521683420255afd21dff9}{DropItems}}(segmentList,\ \_target-\/>\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}{Name}}()\ <<\ \textcolor{stringliteral}{"{}\ dropped\ items\ from\ their\ inventory!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ exc.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00107}00107\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{void}\ ProcessUserItemAction(\mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \_currentMap,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ \_playerCharacter,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_playerX,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_playerY,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ dropItems\ =\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ std::vector<std::vector<Interactable::Interactable*>>\ mapGrid\ =\ \_currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ std::vector<CellActionInfo>\ playerActions\ =\ \_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_aa327083e76843f88529c195eaa1d9390}{GetActionStrategy}}()-\/>\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31}{UseMovementStrategy}}(mapGrid,\ \_playerX\ +\ 1,\ \_playerY\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pickUpAction\ =\ std::find\_if(playerActions.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerActions.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ playerAction)\ \{\ return\ playerAction.actionName\ ==\ Character::PICKUP\_CELL\_ACTION;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pickUpAction\ ==\ playerActions.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}[ProcessUserItemAction]\ -\/-\/\ Failed\ to\ find\ the\ item\ to\ pickup."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ target\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classitem_1_1_item}{Item}}*\textcolor{keyword}{>}(mapGrid[(*pickUpAction).row\ -\/\ 1][(*pickUpAction).col\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\textcolor{keyword}{>}(target))\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ ProcessContainerAction(target,\ \_playerCharacter,\ dropItems);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Item\ details:\ "{}}\ <<\ target-\/>\mbox{\hyperlink{classitem_1_1_item_a5c0d5bc614f92b0f003e06477efbbd44}{GetItemName}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Pickup\ item?\ (y/Y\ or\ n/N)"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ pickUpSelection\ =\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.get(pickUpSelection);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((\textcolor{keywordtype}{char})tolower(pickUpSelection)\ ==\ \textcolor{charliteral}{'y'})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ playerInventory\ =\ \&\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ addResult\ =\ playerInventory-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(target);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (addResult\ ==\ -\/1)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Can't\ add\ the\ item\ to\ the\ inventory!\ Try\ dropping\ an\ item\ to\ free\ up\ space!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}{Name}}()\ <<\ \textcolor{stringliteral}{"{}\ added\ "{}}\ <<\ target-\/>\mbox{\hyperlink{classitem_1_1_item_a5c0d5bc614f92b0f003e06477efbbd44}{GetItemName}}()\ <<\ \textcolor{stringliteral}{"{}\ to\ their\ inventory!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_a5f1cd403927600211b2d86fd34862396}{setEmpty}}((*pickUpAction).row\ -\/\ 1,\ (*pickUpAction).col\ -\/\ 1);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00149}00149\ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00151}\mbox{\hyperlink{namespacegame}{00151}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacegame}{game}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00152}00152\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00153}\mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{00153}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{Game::Notify}}()\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)observers.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ observers[i]-\/>update(observerMessage);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00157}00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00158}00158\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00160}\mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{00160}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{Game::CreateObserverMessage}}(std::string\ \_message\ =\ \textcolor{stringliteral}{"{}Empty"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ observerMessage\ =\ \_message;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_a194b57944f6149b1df53dfbc5658a0b8}{Notify}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00164}00164\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00166}\mbox{\hyperlink{classgame_1_1_game_a4065edd299b9c8250a6ddffa2bc35de3}{00166}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a4065edd299b9c8250a6ddffa2bc35de3}{Game::GameSetup}}(std::filesystem::path*\ \_campaignDir,\ \mbox{\hyperlink{classobserver_1_1_observer}{Observer}}*\ \_gameLogger)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}*\ campaignRecord\ =\ \mbox{\hyperlink{namespacecampaign_a5ceea3a63ff06811eea8f560c701bbcb}{LoadCampaign}}(\_campaignDir-\/>string());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \_campaignDir-\/>remove\_filename();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Loading\ items..."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ std::filesystem::path\ itemsPath\ =\ *\_campaignDir\ /\ \textcolor{stringliteral}{"{}Items"{}}\ /\ \textcolor{stringliteral}{"{}items.csv"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ std::vector<Item*>\ itemsInCampaign\ =\ \mbox{\hyperlink{namespaceserialize_item_a3eb7f4d80f0a3a3f1b64a469586ea526}{LoadItems}}(itemsPath.string());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ std::filesystem::path\ itemContainersPath\ =\ *\_campaignDir\ /\ \textcolor{stringliteral}{"{}Item\ Containers"{}}\ /\ \textcolor{stringliteral}{"{}item\_containers.csv"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ std::vector<ItemContainerRecord*>\ containersRecords\ =\ \mbox{\hyperlink{namespaceserialize_item_a2a870bf6413d2c41aa6f290e782ea25d}{LoadItemContainerRecords}}(itemContainersPath.string());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ std::vector<Item>\ copyItems;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)itemsInCampaign.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ copyItems.push\_back(*itemsInCampaign[i]);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00183}00183\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ std::vector<ItemContainer*>\ containersInCampaign;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)containersRecords.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Item>\ containerItems\ =\ FindItemsByIDInput(containersRecords[i]-\/>itemIDs,\ copyItems);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ savedContainer\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}(containersRecords[i]-\/>containerId,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containersRecords[i]-\/>itemName,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containersRecords[i]-\/>itemtype,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca44125f26a1f7fbb82e6756ddd5e5bfce}{item::CharacterStats::NA}},}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containersRecords[i]-\/>weight,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containersRecords[i]-\/>capacity,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containerItems);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ containersInCampaign.push\_back(savedContainer);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Loading\ characters..."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ std::filesystem::path\ charactersPath\ =\ *\_campaignDir\ /\ \textcolor{stringliteral}{"{}Characters"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00203}00203\ \ \ \ \ \ \ \ \ std::vector<serializecharacter::CharacterRecord>\ characterRecords\ =\ \mbox{\hyperlink{namespaceserializecharacter_aed267fc9d906729e54d32286eec3462f}{serializecharacter::LoadAllCharacters}}(charactersPath.string());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ std::vector<Character::Character*>\ charactersInCampaign;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)characterRecords.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00207}00207\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ character;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ characterInventory\ =\ FindCharacterInventory(characterRecords[i].inventory\_container\_id,\ containersInCampaign);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (characterInventory\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ character\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}(characterRecords[i],\ *characterInventory);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ character\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}(characterRecords[i],\ \mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}(\textcolor{stringliteral}{"{}Inventory"{}},\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03aeb519248e09e72ba6dc854a29229d6c1}{item::ItemType::Inventory}},\ 30.0));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ character-\/>\mbox{\hyperlink{class_character_1_1_character_ae285eb20b676e43c1e5e715700f21fa4}{Attach}}(\_gameLogger);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ charactersInCampaign.push\_back(character);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00220}00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00222}00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Loading\ map\ data..."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00223}00223\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ std::filesystem::path\ doorsPath\ =\ *\_campaignDir\ /\ \textcolor{stringliteral}{"{}Doors"{}}\ /\ \textcolor{stringliteral}{"{}doors.csv"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ std::vector<Door*>\ doorsInCampaign\ =\ \mbox{\hyperlink{namespacedoor_a8bc951a7893b1124321cbc5d5fdd10e8}{LoadDoors}}(doorsPath.string());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ std::filesystem::path\ mapsPath\ =\ *\_campaignDir\ /\ \textcolor{stringliteral}{"{}Maps"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00228}00228\ \ \ \ \ \ \ \ \ std::string\ path(mapsPath.string());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00230}00230\ \ \ \ \ \ \ \ \ std::string\ ext(\textcolor{stringliteral}{"{}.csv"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00231}00231\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00232}00232\ \ \ \ \ \ \ \ \ std::vector<Map::Map*>\ mapsInCampaign;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00233}00233\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00234}00234\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_map}{CampaignMap}}\ currentMap;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00236}00236\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&file\ :\ std::filesystem::directory\_iterator(path))}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00237}00237\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (file.path().extension()\ ==\ ext)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ filePath\ =\ file.path().string();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}\ *loadedMap\ =\ \mbox{\hyperlink{class_map_builder_1_1_map_builder_a30ac69d0bce7cd5ef4ec0962ae76b5dd}{MapBuilder::MapBuilder::LoadMap}}(filePath);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00242}00242\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<Interactable::Interactable*>>\ grid\ =\ loadedMap-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)grid.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)grid[i].size();\ j++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classdoor_1_1_door}{Door}}*\textcolor{keyword}{>}(grid[i][j]))\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ doorID\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classdoor_1_1_door}{Door}}*\textcolor{keyword}{>}(grid[i][j])-\/>GetDoorID();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundDoor\ =\ std::find\_if(doorsInCampaign.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doorsInCampaign.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [doorID](\mbox{\hyperlink{classdoor_1_1_door}{Door}}*\ \mbox{\hyperlink{namespacedoor}{door}})\ \{\ return\ door-\/>GetDoorID()\ ==\ doorID;\});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundDoor\ !=\ doorsInCampaign.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grid[i][j]\ =\ (*foundDoor);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(grid[i][j]))\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ characterID\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(grid[i][j])-\/>ID();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundCharacter\ =\ std::find\_if(charactersInCampaign.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInCampaign.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [characterID](\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ character)\ \{\ return\ character-\/>ID()\ ==\ characterID;\});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundCharacter\ !=\ charactersInCampaign.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grid[i][j]\ =\ (*foundCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(grid[i][j])-\/>GetIsPlayerControlled())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}}\ =\ loadedMap-\/>\mbox{\hyperlink{class_map_1_1_map_abdc27dfaf8a3904dc45ffeb396e60e6e}{GetMapID}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activeCharacter\ =\ (*foundCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00269}00269\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInMap.push\_back((*foundCharacter));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\textcolor{keyword}{>}(grid[i][j]))\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ containerID\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\textcolor{keyword}{>}(grid[i][j])-\/>GetItemId();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundContainer\ =\ std::find\_if(containersInCampaign.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ containersInCampaign.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [containerID](\mbox{\hyperlink{classitemcontainer_1_1_item_container}{ItemContainer}}*\ container)\ \{\ return\ container-\/>GetItemId()\ ==\ containerID;\});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundContainer\ !=\ containersInCampaign.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grid[i][j]\ =\ (*foundContainer);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitem_1_1_item}{Item}}*\textcolor{keyword}{>}(grid[i][j]))\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ itemID\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitem_1_1_item}{Item}}*\textcolor{keyword}{>}(grid[i][j])-\/>GetItemId();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundItem\ =\ std::find\_if(itemsInCampaign.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ itemsInCampaign.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [itemID](\mbox{\hyperlink{classitem_1_1_item}{Item}}*\ \mbox{\hyperlink{namespaceitem}{item}})\ \{\ return\ item-\/>GetItemId()\ ==\ itemID;\});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundItem\ !=\ itemsInCampaign.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ grid[i][j]\ =\ (*foundItem);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ loadedMap-\/>\mbox{\hyperlink{class_map_1_1_map_a47297609547499e83abeb5d607e8568d}{setGrid}}(grid);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00296}00296\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapsInCampaign.push\_back(loadedMap);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00299}00299\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00301}00301\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Fetching\ Campaign\ save\ data..."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00303}00303\ \ \ \ \ \ \ \ \ std::vector<Map::Map*>\ campaignMaps;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_af4bbd4ea1c2a33063a9c64879a193429}{mapsInCampaign}}.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mapID\ =\ campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_af4bbd4ea1c2a33063a9c64879a193429}{mapsInCampaign}}[i];}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundMap\ =\ std::find\_if(mapsInCampaign.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapsInCampaign.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [mapID](\mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ map)\ \{\ return\ map-\/>GetMapID()\ ==\ mapID;\});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundMap\ !=\ mapsInCampaign.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ campaignMaps.push\_back((*foundMap));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}}\ ==\ (*foundMap)-\/>GetMapID())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mapIDToFind\ =\ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_aef49d993812d9b721179efd6af5b19e2}{numRows}};\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ foundMapID\ =\ std::find\_if(campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a23fa59a8b27dc3a96901bbd67f682151}{mapIDs}}[i].begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a23fa59a8b27dc3a96901bbd67f682151}{mapIDs}}[i].end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [mapIDToFind](\textcolor{keywordtype}{int}\ mapID)\ \{\ return\ mapID\ ==\ mapIDToFind;\});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (foundMapID\ !=\ campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a23fa59a8b27dc3a96901bbd67f682151}{mapIDs}}[i].end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}}\ =\ i\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}}\ =\ (foundMapID\ -\/\ campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a23fa59a8b27dc3a96901bbd67f682151}{mapIDs}}[i].begin())\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00324}00324\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<Interactable::Interactable*>>\ grid\ =\ (*foundMap)-\/>getGrid();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)grid.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ (int)grid[i].size();\ j++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(grid[i][j]))\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(grid[i][j])-\/>\mbox{\hyperlink{class_character_1_1_character_a814b1a2f0d847111554f2977390f5fb2}{GetIsPlayerControlled}}())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInMap.push\_back(\textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(grid[i][j]));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ gameCampaign\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classcampaign_1_1_campaign}{Campaign}}(campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a8ced47d618594bdf7cb44b97c342fa34}{campaignID}},\ campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_aef49d993812d9b721179efd6af5b19e2}{numRows}},\ campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a26d80d71ebfaedfa784858b2c0c1b5d6}{numCols}},\ campaignRecord-\/>\mbox{\hyperlink{structcampaign_1_1_campaign_record_a23fa59a8b27dc3a96901bbd67f682151}{mapIDs}},\ currentMap,\ campaignMaps);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/GameSetup]\ -\/-\/\ Game\ setup\ complete!\ Ready\ to\ Play!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00351}00351\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00352}00352\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00353}\mbox{\hyperlink{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}{00353}}\ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ \mbox{\hyperlink{classgame_1_1_game_a780ca24f589559cc5d786778c220e45a}{Game::LoadMap}}(\textcolor{comment}{/*\ Door\ or\ ID\ */})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/LoadMap]\ -\/-\/\ Door\ used,\ finding\ which\ map\ to\ bring\ up..."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00356}00356\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Use\ door\ or\ ID\ to\ find\ map\ to\ load\ through\ the\ campaign\ member\ variable...}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00358}00358\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/LoadMap]\ -\/-\/\ Found\ the\ map\ the\ player\ is\ in!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00359}00359\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00360}00360\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00361}00361\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00362}00362\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00363}\mbox{\hyperlink{classgame_1_1_game_afd5ceab405ba96be10947d7f4fc9e1fa}{00363}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_afd5ceab405ba96be10947d7f4fc9e1fa}{Game::EndTurn}}(\textcolor{keyword}{const}\ std::string\&\ \_actionTaken,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_targetX,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_targetY)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00364}00364\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ A\ character\ ended\ their\ turn,\ need\ to\ update\ game\ data..."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00365}00365\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00366}00366\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_map}{CampaignMap}}\ currentMapInCampaign\ =\ gameCampaign-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a7497223a9fcb92c738c999973ac5a2db}{GetCurrentMap}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00367}00367\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ currentLoadedMap\ =\ gameCampaign-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{GetMap}}(currentMapInCampaign.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}},\ currentMapInCampaign.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00369}00369\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_actionTaken\ ==\ Character::EMPTY\_CELL\_ACTION)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ currentLoadedMap-\/>\mbox{\hyperlink{class_map_1_1_map_aad196277637f8a3d7e87e958d250477f}{MoveCharacter}}(\_targetX,\ \_targetY,\ activeCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00371}00371\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00372}00372\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\_actionTaken\ ==\ Character::ATTACK\_CELL\_ACTION)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<Interactable::Interactable*>>\ mapGrid\ =\ currentLoadedMap-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ target\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(mapGrid[\_targetX\ -\/\ 1][\_targetY\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (target\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ std::logic\_error(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ Failed\ to\ find\ the\ player\ for\ an\ NPC\ to\ attack."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00378}00378\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ targetDied\ =\ activeCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a7e82158b51ab6708a9c282e08f9abcc0}{AttemptAttack}}(target);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ attackUpdateMessage;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ attackUpdateMessage\ <<\ \textcolor{stringliteral}{"{}Attack\ results:\ "{}}\ <<\ target-\/>\mbox{\hyperlink{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}{Name}}()\ <<\ \textcolor{stringliteral}{"{}\ now\ at\ "{}}\ <<\ target-\/>\mbox{\hyperlink{class_character_1_1_character_ad1857f9f184b1eac2145cabfa14b5283}{Hit\_Points}}()\ <<\ \textcolor{stringliteral}{"{}/"{}}\ <<\ target-\/>\mbox{\hyperlink{class_character_1_1_character_ac9b33e76e10d4583d9270e616f81b74c}{Max\_Hit\_Points}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ attackUpdateMessage.str();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00384}00384\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (targetDied)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInMap.erase(std::remove(charactersInMap.begin(),\ charactersInMap.end(),\ target),\ charactersInMap.end());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable::Interactable}}*\ targetsItems\ =\ \&target-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentLoadedMap-\/>\mbox{\hyperlink{class_map_1_1_map_a9e381c126b47f285ef3b5f4ac697fd09}{setCell}}(\_targetX\ -\/\ 1,\ \_targetY\ -\/\ 1,\ targetsItems);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00390}00390\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ killUpdateMessage;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ killUpdateMessage\ <<\ target-\/>\mbox{\hyperlink{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}{Name}}()\ <<\ \textcolor{stringliteral}{"{}\ killed!\ Inventory\ dropped.\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ killUpdateMessage.str();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00395}00395\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00396}00396\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00397}00397\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ Game\ campaign\ updates\ complete!\ Updating\ turn..."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00399}00399\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ activeCharacterPointer\ =\ activeCharacter;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00400}00400\ \ \ \ \ \ \ \ \ std::vector<Character::Character*>::iterator\ currentActiveCharacter\ =\ std::find\_if(charactersInMap.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInMap.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [activeCharacterPointer](\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ character)\{\ return\ character\ ==\ activeCharacterPointer;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00403}00403\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentActiveCharacter\ ==\ charactersInMap.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ std::logic\_error(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ Failed\ to\ at\ least\ find\ NPC\ characters\ in\ map."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00405}00405\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00406}00406\ \ \ \ \ \ \ \ \ currentActiveCharacter\ =\ std::next(currentActiveCharacter,\ 1);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00407}00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentActiveCharacter\ ==\ charactersInMap.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00408}00408\ \ \ \ \ \ \ \ \ \ \ \ \ currentActiveCharacter\ =\ charactersInMap.begin();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00409}00409\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00410}00410\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00411}00411\ \ \ \ \ \ \ \ \ activeCharacter\ =\ (*currentActiveCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00412}00412\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00414}\mbox{\hyperlink{classgame_1_1_game_aae4f4543f1316d6635974beee8c4d688}{00414}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_aae4f4543f1316d6635974beee8c4d688}{Game::PrintActionMenu}}(\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ \_player)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00415}00415\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00416}00416\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_player-\/>\mbox{\hyperlink{class_character_1_1_character_ad1857f9f184b1eac2145cabfa14b5283}{Hit\_Points}}()\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}You\ Died"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00419}00419\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00420}00420\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_map}{CampaignMap}}\ currentMapInCampaign\ =\ gameCampaign-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a7497223a9fcb92c738c999973ac5a2db}{GetCurrentMap}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00421}00421\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ currnetMapGrid\ =\ gameCampaign-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{GetMap}}(currentMapInCampaign.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}},\ currentMapInCampaign.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00423}00423\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ playerX,\ playerY;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00424}00424\ \ \ \ \ \ \ \ \ currnetMapGrid-\/>\mbox{\hyperlink{class_map_1_1_map_acf3f18f4013b4d9c8251c07fb28169e6}{GetCharacterCoordinates}}(playerX,\ playerY,\ \_player);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00426}00426\ \ \ \ \ \ \ \ \ std::vector<CellActionInfo>\ playerActions\ =\ \_player-\/>\mbox{\hyperlink{class_character_1_1_character_aa327083e76843f88529c195eaa1d9390}{GetActionStrategy}}()-\/>\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31}{UseMovementStrategy}}(currnetMapGrid-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}(),\ playerX\ +\ 1,\ playerY\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00427}00427\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00428}00428\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00429}00429\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Action\ Menu\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00430}00430\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}(Select\ number\ and\ press\ 'Enter')"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00431}00431\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Print\ map"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00432}00432\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Print\ Player\ character\ sheet"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00433}00433\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Print\ List\ of\ Characters"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00434}00434\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}4.\ Print\ Player\ Coordinates"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00436}00436\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ pickUpAction\ =\ std::find\_if(playerActions.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerActions.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ playerAction)\ \{\ return\ playerAction.actionName\ ==\ Character::PICKUP\_CELL\_ACTION;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00439}00439\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pickUpAction\ !=\ playerActions.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}I.\ Inspect\ Item"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00441}00441\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00443}00443\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ doorAction\ =\ std::find\_if(playerActions.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerActions.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ playerAction)\ \{\ return\ playerAction.actionName\ ==\ Character::DOOR\_CELL\_ACTION;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00446}00446\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (doorAction\ !=\ playerActions.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}W.\ Use\ door"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00448}00448\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00449}00449\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00450}00450\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}P.\ Equip\ item"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00451}00451\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}K.\ Unequip\ item"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00453}00453\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_player-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size()\ !=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}R.\ Drop\ Items"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00455}00455\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00456}00456\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00457}00457\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Turn\ Ending\ Actions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00458}00458\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}M.\ Move"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00459}00459\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00460}00460\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ attackAction\ =\ std::find\_if(playerActions.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerActions.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ playerAction)\ \{\ return\ playerAction.actionName\ ==\ Character::ATTACK\_CELL\_ACTION;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00463}00463\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (attackAction\ !=\ playerActions.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}A.\ Attack\ Character"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00465}00465\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00467}00467\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}D.\ Do\ Nothing"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00468}00468\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00469}00469\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Systems\ Actions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00470}00470\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Press\ 'E'\ and\ 'Enter'\ to\ exit"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00471}00471\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00472}00472\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00473}00473\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00474}\mbox{\hyperlink{classgame_1_1_game_a99aba9d69bda7de085afcbb8b69d23dc}{00474}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_a99aba9d69bda7de085afcbb8b69d23dc}{Game::GetUserSelection}}(\textcolor{keywordtype}{char}\&\ t\_selection)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00475}00475\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00476}00476\ \ \ \ \ \ \ \ \ std::cin.get(t\_selection);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00477}00477\ \ \ \ \ \ \ \ \ std::cin.ignore(std::numeric\_limits<std::streamsize>::max(),\ \textcolor{charliteral}{'\(\backslash\)n'});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00479}00479\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00480}00480\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00481}\mbox{\hyperlink{classgame_1_1_game_aaffb358ea976a49f5d73a00148d6b6d1}{00481}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classgame_1_1_game_aaffb358ea976a49f5d73a00148d6b6d1}{Game::ProcessUserAction}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\&\ t\_selection,\ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ t\_playerCharacter)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00482}00482\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00483}00483\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x,\ y;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_map}{CampaignMap}}\ currentMapInCampaign\ =\ gameCampaign-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a7497223a9fcb92c738c999973ac5a2db}{GetCurrentMap}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ currentMap\ =\ gameCampaign-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{GetMap}}(currentMapInCampaign.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}},\ currentMapInCampaign.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_acf3f18f4013b4d9c8251c07fb28169e6}{GetCharacterCoordinates}}(x,\ y,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00488}00488\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ direction;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00489}00489\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (t\_selection)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'1'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00493}00493\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Print\ first\ map\ in\ campaign}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classgame_1_1_game_a7b9d57d02cd131b5fd3fdc551010062f}{GetGameCampaign}}()-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a6e88e304a025488c77d69d33038d509d}{GetMapsInCampaign}}()[0]-\/>printMap();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'2'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Print\ player\ Character\ sheet}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00498}00498\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_ac038bc962c9e6051555b994ebbf56a98}{Print\_Character\_Sheet}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'4'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Print\ player\ character\ location}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Player\ Location:\ "{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ x\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00503}00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00504}00504\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'I'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ProcessUserItemAction(currentMap,\ t\_playerCharacter,\ x,\ y);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00508}00508\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Player\ interacted\ with\ items!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00510}00510\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00513}00513\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'W'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<CellActionInfo>\ playerActions\ =\ activeCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_aa327083e76843f88529c195eaa1d9390}{GetActionStrategy}}()-\/>\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31}{UseMovementStrategy}}(currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}(),\ x\ +\ 1,\ y\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_a5f1cd403927600211b2d86fd34862396}{setEmpty}}(x,\ y);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00517}00517\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00518}00518\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ doorAction\ =\ std::find\_if(playerActions.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerActions.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ playerAction)\ \{\ return\ playerAction.actionName\ ==\ Character::DOOR\_CELL\_ACTION;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (doorAction\ ==\ playerActions.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Failed\ to\ find\ the\ door\ to\ use."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00523}00523\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00524}00524\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdoor_1_1_door}{Door}}*\ doorToUse\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classdoor_1_1_door}{Door}}*\textcolor{keyword}{>}(currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}().at((*doorAction).row\ -\/\ 1).at((*doorAction).col\ -\/\ 1));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00526}00526\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ currentMapID\ =\ gameCampaign-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a7497223a9fcb92c738c999973ac5a2db}{GetCurrentMap}}().\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00528}00528\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structdoor_1_1_door_destination_info}{DoorDestinationInfo}}\ destinationInfo\ =\ doorToUse-\/>\mbox{\hyperlink{classdoor_1_1_door_a2423a1cc765281a4bc235e4917c3fbbd}{UseDoor}}(currentMapID);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00529}00529\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_map_1_1_map}{Map::Map}}*\ mapToLoad\ =\ gameCampaign-\/>\mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{GetMap}}(destinationInfo.\mbox{\hyperlink{structdoor_1_1_door_destination_info_a9c3b330f2013cc1a56c83f2900ab665f}{mapLocationX}},\ destinationInfo.\mbox{\hyperlink{structdoor_1_1_door_destination_info_ac2a2cb308874084377c261d2ca5c4d03}{mapLocationY}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mapToLoad-\/>\mbox{\hyperlink{class_map_1_1_map_a5e2be3723bbf905e13d789cc3407fc94}{setCharacter}}(destinationInfo.\mbox{\hyperlink{structdoor_1_1_door_destination_info_ad93954738cb8007dd9f38f2b3772ae17}{destinationX}}\ -\/\ 1,\ destinationInfo.\mbox{\hyperlink{structdoor_1_1_door_destination_info_a0288612172d420061726a99510c039a6}{destinationY}}\ -\/\ 1,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00531}00531\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00532}00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<Interactable::Interactable*>>\ newMapGrid\ =\ mapToLoad-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00533}00533\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Character::Character*>\ charactersInNewMap;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)newMapGrid.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ valueAtCell\ =\ std::find\_if(newMapGrid[i].begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newMapGrid[i].end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable::Interactable}}*\ cell)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(cell);\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valueAtCell\ !=\ newMapGrid[i].end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInNewMap.push\_back(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}((*valueAtCell)));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00542}00542\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00543}00543\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (valueAtCell\ !=\ newMapGrid[i].end())}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ valueAtCell\ =\ std::find\_if(valueAtCell\ +\ 1,}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00546}00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ newMapGrid[i].end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00547}00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable::Interactable}}*\ cell)\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(cell);\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00548}00548\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (valueAtCell\ !=\ newMapGrid[i].end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00550}00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInNewMap.push\_back(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}((*valueAtCell)));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00552}00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00553}00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00555}00555\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (charactersInMap.size()\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ std::logic\_error(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Failed\ to\ at\ least\ find\ the\ player\ character\ in\ the\ map\ to\ load."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00558}00558\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00559}00559\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInMap\ =\ charactersInNewMap;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00561}00561\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Player\ used\ a\ door!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00563}00563\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00564}00564\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'P'}:\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Equip\ item}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00568}00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size()\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ items\ in\ inventory\ to\ equip!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<item::Item*>\ inventory;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00573}00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(63)\ <<\ \textcolor{stringliteral}{"{}INVENTORY"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(35)\ <<\ \textcolor{stringliteral}{"{}Name"{}}\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ std::left\ <<\ std::setw(35)\ <<\ \textcolor{stringliteral}{"{}Type"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00575}00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ std::left\ <<\ std::setw(35)\ <<\ \textcolor{stringliteral}{"{}Enchantment"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::string(100,\ \textcolor{charliteral}{'-\/'})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00577}00577\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00578}00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().GetAllItems().size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00579}00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ count\ <<\ \textcolor{stringliteral}{"{}.\ "{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00580}00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(35)\ <<\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().at(i).GetItemName()\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::left\ <<\ std::setw(35)\ <<\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_abf91590ba16e112cf785f3e6b4e81357}{Get\_Item\_Type\_String}}(t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().at(i).GetItemType())\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00582}00582\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().at(i).GetEnchantmentBonus()\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00583}00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}+"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00584}00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00585}00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().at(i).GetEnchantmentBonus()\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00586}00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_ae6542569a427d505f55e1dcb59b45458}{Get\_Abilities\_String}}(Character::item\_stat\_TO\_character\_stat.at(t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().at(i).GetEnchantmentType()))\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00587}00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00588}00588\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00589}00589\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Equip\ item\ number\ :"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00590}00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ item\_number\_s;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00591}00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ item\_number\_i;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00592}00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(std::cin,\ item\_number\_s);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00593}00593\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ item\_number\_i\ =\ std::stoi(item\_number\_s);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00594}00594\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (item\_number\_i\ >=\ 0\ \&\&\ item\_number\_i\ <\ count)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00595}00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a5ffb5fc9d2437fdeb01de1c74c7e63a4}{Equip\_Item\_Decorator}}(\&t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}().\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().at(item\_number\_i));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00596}00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Item\ equppied!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00597}00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00598}00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00599}00599\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Could\ not\ equip\ item!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00600}00600\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00601}00601\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00602}00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Player\ equipped\ items!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00603}00603\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00604}00604\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00605}00605\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00606}00606\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'K'}:\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00607}00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//unequip\ item}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00608}00608\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c}{GetWornItems}}()-\/>\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_ad76ada9fbc3f620ce6707dc578110734}{GetDecoratorList}}().size()\ <=\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00609}00609\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ items\ in\ inventory\ to\ equip!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00610}00610\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00611}00611\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00612}00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<item::Item*>\ equipped\_items;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00613}00613\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{item::Item}}*\ \mbox{\hyperlink{namespaceitem}{item}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00614}00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(65)\ <<\ \textcolor{stringliteral}{"{}EQUIPPED\ ITEMS"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00615}00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(35)\ <<\ \textcolor{stringliteral}{"{}Equipment\ slot"{}}\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ std::left\ <<\ std::setw(35)\ <<\ \textcolor{stringliteral}{"{}\ Name\ (ID)"{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00616}00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}\ <<\ std::left\ <<\ std::setw(35)\ <<\ \textcolor{stringliteral}{"{}Enchantment"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00617}00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::string(100,\ \textcolor{charliteral}{'-\/'})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00618}00618\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00619}00619\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\{\ 0\ \};\ i\ <\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c}{GetWornItems}}()-\/>GetDecoratorList().size();\ i++)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00620}00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceitem}{item}}\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classitem_1_1_item}{item::Item}}*\textcolor{keyword}{>}(t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a08cdbd6174cdd3871b154f1995931c7c}{GetWornItems}}()-\/>\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_ad76ada9fbc3f620ce6707dc578110734}{GetDecoratorList}}().at(i));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00621}00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ equipped\_items.push\_back(\mbox{\hyperlink{namespaceitem}{item}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00622}00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ count\ <<\ \textcolor{stringliteral}{"{}.\ "{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00623}00623\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::right\ <<\ std::setw(35)\ <<\ \mbox{\hyperlink{namespaceitem}{item}}-\/>GetItemName()\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::left\ <<\ std::setw(35)\ <<\ \mbox{\hyperlink{namespaceitem}{item}}-\/>GetItemType()\ <<\ \textcolor{stringliteral}{"{}\ |\ "{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespaceitem}{item}}-\/>GetEnchantmentBonus()\ >\ 0)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00626}00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}+"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00628}00628\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{namespaceitem}{item}}-\/>GetEnchantmentBonus()\ <<\ \textcolor{stringliteral}{"{}\ "{}}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_ae6542569a427d505f55e1dcb59b45458}{Get\_Abilities\_String}}(Character::item\_stat\_TO\_character\_stat.at(\mbox{\hyperlink{namespaceitem}{item}}-\/>GetEnchantmentType()))\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00630}00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ count++;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00631}00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00632}00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}unequip\ item\ number\ :"{}};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00633}00633\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ item\_number\_s;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00634}00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ item\_number\_i;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00635}00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(std::cin,\ item\_number\_s);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00636}00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ item\_number\_i\ =\ std::stoi(item\_number\_s);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00637}00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (item\_number\_i\ >=\ 0\ \&\&\ item\_number\_i\ <\ count)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00638}00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_af7a9f23a74e326d6d3d86de418dbe16c}{Unequip\_Item\_Decorator}}(equipped\_items.at(item\_number\_i));}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00639}00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Item\ unequipped!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00640}00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00641}00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00642}00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Could\ not\ unequip\ item!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00643}00643\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00644}00644\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00645}00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Player\ unequipped\ items!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00646}00646\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00647}00647\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00648}00648\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00649}00649\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'R'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ProcessContainerAction(\&t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}(),\ t\_playerCharacter,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00651}00651\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Player\ dropped\ items!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00653}00653\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00654}00654\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00655}00655\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'M'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00656}00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ xOld,\ yOld;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00657}00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ xOld\ =\ x;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00658}00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ yOld\ =\ y;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00659}00659\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00660}00660\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00661}00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ y++;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00662}00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Move}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00663}00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Select\ Direction:\ up,\ down,\ left,\ right"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00664}00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(std::cin,\ direction);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00665}00665\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00666}00666\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00667}00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}up"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00668}00668\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_aad196277637f8a3d7e87e958d250477f}{MoveCharacter}}(x\ -\/\ 1,\ y,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_acf3f18f4013b4d9c8251c07fb28169e6}{GetCharacterCoordinates}}(x,\ y,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Moved\ from:\ ("{}}\ <<\ xOld\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ yOld\ <<\ \textcolor{stringliteral}{"{})\ -\/>\ ("{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}down"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00673}00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_aad196277637f8a3d7e87e958d250477f}{MoveCharacter}}(x\ +\ 1,\ y,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00674}00674\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_acf3f18f4013b4d9c8251c07fb28169e6}{GetCharacterCoordinates}}(x,\ y,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Moved\ from:\ ("{}}\ <<\ xOld\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ yOld\ <<\ \textcolor{stringliteral}{"{})\ -\/>\ ("{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00676}00676\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00677}00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00678}00678\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}left"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00679}00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_aad196277637f8a3d7e87e958d250477f}{MoveCharacter}}(x,\ y\ -\/\ 1,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00680}00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_acf3f18f4013b4d9c8251c07fb28169e6}{GetCharacterCoordinates}}(x,\ y,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00681}00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Moved\ from:\ ("{}}\ <<\ xOld\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ yOld\ <<\ \textcolor{stringliteral}{"{})\ -\/>\ ("{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00682}00682\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00683}00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00684}00684\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (direction\ ==\ \textcolor{stringliteral}{"{}right"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_aad196277637f8a3d7e87e958d250477f}{MoveCharacter}}(x,\ y\ +\ 1,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00686}00686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_acf3f18f4013b4d9c8251c07fb28169e6}{GetCharacterCoordinates}}(x,\ y,\ t\_playerCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00687}00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Moved\ from:\ ("{}}\ <<\ xOld\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ yOld\ <<\ \textcolor{stringliteral}{"{})\ -\/>\ ("{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{},"{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{})"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00688}00688\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00690}00690\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Invalid\ direction!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00692}00692\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00693}00693\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Player\ moved!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00694}00694\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00695}00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00696}00696\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'A'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00697}00697\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00698}00698\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::vector<Interactable::Interactable*>>\ mapGrid\ =\ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_a26e2cfceaea46cb4401fd3a47935deaf}{getGrid}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00699}00699\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00700}00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<CellActionInfo>\ playerActions\ =\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_aa327083e76843f88529c195eaa1d9390}{GetActionStrategy}}()-\/>\mbox{\hyperlink{classcharacteractionstrategy_1_1_character_action_strategy_a9fa78d654df941fa406092dd62150a31}{UseMovementStrategy}}(mapGrid,\ x\ +\ 1,\ y\ +\ 1);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00701}00701\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00702}00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ attackAction\ =\ std::find\_if(playerActions.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00703}00703\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ playerActions.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00704}00704\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [](\mbox{\hyperlink{structcharacteractionstrategy_1_1_cell_action_info}{CellActionInfo}}\ playerAction)\ \{\ return\ playerAction.actionName\ ==\ Character::ATTACK\_CELL\_ACTION;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00705}00705\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (attackAction\ ==\ playerActions.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00706}00706\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::logic\_error(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Failed\ to\ find\ the\ enemy\ to\ attack."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00707}00707\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00708}00708\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00709}00709\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ target\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\textcolor{keyword}{>}(mapGrid[(*attackAction).row\ -\/\ 1][(*attackAction).col\ -\/\ 1]);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00710}00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ targetDied\ =\ t\_playerCharacter-\/>\mbox{\hyperlink{class_character_1_1_character_a7e82158b51ab6708a9c282e08f9abcc0}{AttemptAttack}}(target);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00711}00711\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00712}00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ attackUpdateMessage;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00713}00713\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attackUpdateMessage\ <<\ \textcolor{stringliteral}{"{}Attack\ results:\ "{}}\ <<\ target-\/>\mbox{\hyperlink{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}{Name}}()\ <<\ \textcolor{stringliteral}{"{}\ now\ at\ "{}}\ <<\ target-\/>\mbox{\hyperlink{class_character_1_1_character_ad1857f9f184b1eac2145cabfa14b5283}{Hit\_Points}}()\ <<\ \textcolor{stringliteral}{"{}/"{}}\ <<\ target-\/>\mbox{\hyperlink{class_character_1_1_character_ac9b33e76e10d4583d9270e616f81b74c}{Max\_Hit\_Points}}()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00714}00714\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ attackUpdateMessage.str();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00715}00715\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00716}00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (targetDied)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00717}00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInMap.erase(std::remove(charactersInMap.begin(),\ charactersInMap.end(),\ target),\ charactersInMap.end());}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00718}00718\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00719}00719\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable::Interactable}}*\ targetsItems\ =\ \&target-\/>\mbox{\hyperlink{class_character_1_1_character_a13f07e7b65f813101bc2a0b844eab657}{Inventory}}();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00720}00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentMap-\/>\mbox{\hyperlink{class_map_1_1_map_a9e381c126b47f285ef3b5f4ac697fd09}{setCell}}((*attackAction).row\ -\/\ 1,\ (*attackAction).col\ -\/\ 1,\ targetsItems);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00721}00721\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00722}00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::ostringstream\ killUpdateMessage;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00723}00723\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ killUpdateMessage\ <<\ target-\/>\mbox{\hyperlink{class_character_1_1_character_afd2974653e0fb67eb2694331718eb1fc}{Name}}()\ <<\ \textcolor{stringliteral}{"{}\ killed!\ Inventory\ dropped.\ "{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00724}00724\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ killUpdateMessage.str();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00725}00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00726}00726\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00727}00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Player\ attacked\ an\ enemy!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00728}00728\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00729}00729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00730}00730\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00731}00731\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{charliteral}{'E'}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00732}00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Goodbye!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00733}00733\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00734}00734\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ User\ exited\ the\ game\ session!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00735}00735\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00736}00736\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00737}00737\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00738}00738\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Unkown\ Action!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00739}00739\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00740}00740\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00741}00741\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00742}00742\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (t\_selection\ ==\ \textcolor{charliteral}{'M'}\ ||\ t\_selection\ ==\ \textcolor{charliteral}{'A'}\ ||\ t\_selection\ ==\ \textcolor{charliteral}{'D'})\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00743}00743\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ activeCharacterPointer\ =\ activeCharacter;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00744}00744\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<Character::Character*>::iterator\ currentActiveCharacter\ =\ std::find\_if(charactersInMap.begin(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00745}00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charactersInMap.end(),}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00746}00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [activeCharacterPointer](\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ character)\ \{\ return\ character\ ==\ activeCharacterPointer;\ \});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00747}00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentActiveCharacter\ ==\ charactersInMap.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00748}00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ std::logic\_error(\textcolor{stringliteral}{"{}[Game/EndTurn]\ -\/-\/\ Failed\ to\ at\ least\ find\ player\ characters\ in\ map."{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00749}00749\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00750}00750\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00751}00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentActiveCharacter\ =\ std::next(currentActiveCharacter,\ 1);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00752}00752\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (currentActiveCharacter\ ==\ charactersInMap.end())\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00753}00753\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentActiveCharacter\ =\ charactersInMap.begin();}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00754}00754\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00755}00755\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00756}00756\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ activeCharacter\ =\ (*currentActiveCharacter);}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00757}00757\ }
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00758}00758\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classgame_1_1_game_ae63141f7a23ce905d00d064ba0315ba8}{CreateObserverMessage}}(\textcolor{stringliteral}{"{}[Game/ProcessUserAction]\ -\/-\/\ Player\ choose\ a\ turn\ ending\ action!\ NPC\ will\ move\ next!"{}});}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00759}00759\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00760}00760\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00761}00761\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::invalid\_argument\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00762}00762\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ exc.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00763}00763\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00764}00764\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::logic\_error\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00765}00765\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ exc.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00766}00766\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00767}00767\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::out\_of\_range\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00768}00768\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ exc.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00769}00769\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00770}00770\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keywordtype}{int}\ exc)\ \{}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00771}00771\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}[Map/setCell]\ -\/-\/\ Failed\ to\ set\ a\ character\ to\ a\ cell."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00772}00772\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00773}00773\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{game_8cpp_source_l00774}00774\ \}}
 
 \end{DoxyCode}

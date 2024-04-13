@@ -1,8 +1,8 @@
-\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\+Serialize\+Character.h File Reference}
-\hypertarget{_serialize_character_8h}{}\label{_serialize_character_8h}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/SerializeCharacter.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/SerializeCharacter.h}}
-{\ttfamily \#include "{}Character.\+h"{}}\newline
-{\ttfamily \#include "{}item.\+h"{}}\newline
-{\ttfamily \#include "{}itemcontainer.\+h"{}}\newline
+\doxysection{C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\+Serialize/\+Serialize\+Character.h File Reference}
+\hypertarget{_serialize_character_8h}{}\label{_serialize_character_8h}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Serialize/SerializeCharacter.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Serialize/SerializeCharacter.h}}
+{\ttfamily \#include "{}..\textbackslash{}\+Character\textbackslash{}\+Character.\+h"{}}\newline
+{\ttfamily \#include "{}..\textbackslash{}\+Item\textbackslash{}item.\+h"{}}\newline
+{\ttfamily \#include "{}..\textbackslash{}\+Item\textbackslash{}itemcontainer.\+h"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
 {\ttfamily \#include $<$sstream$>$}\newline
@@ -22,4 +22,6 @@ bool \mbox{\hyperlink{namespaceserializecharacter_acd2e66e8066c296fe86627b2e5791
 \mbox{\hyperlink{structserializecharacter_1_1_character_record}{Character\+Record}} \mbox{\hyperlink{namespaceserializecharacter_a6b3126a56f8d097443c95a268e6ce223}{serializecharacter\+::\+Load\+Character}} (const std\+::string \&filename)
 \begin{DoxyCompactList}\small\item\em Loads a character entity from a CSV file into a \doxylink{structserializecharacter_1_1_character_record}{Character\+Record} type struct. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{namespaceserializecharacter_afe9a9107cd9df5aa14eef5605768e51b}{serializecharacter\+::\+Find\+Character\+File}} (int character\+\_\+id, std\+::filesystem\+::path t\+\_\+path)
-\begin{DoxyCompactList}\small\item\em Finds a character .csv file given an id and path to a directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Finds a character .csv file given an id and path to a directory. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structserializecharacter_1_1_character_record}{Character\+Record}} $>$ \mbox{\hyperlink{namespaceserializecharacter_aed267fc9d906729e54d32286eec3462f}{serializecharacter\+::\+Load\+All\+Characters}} (std\+::filesystem\+::path t\+\_\+path)
+\end{DoxyCompactItemize}

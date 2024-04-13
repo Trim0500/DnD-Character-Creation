@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/componentdecorator.cpp Source File</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Decorator/componentdecorator.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -77,7 +77,7 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_7f246d5691c390043d06c2ddabc96872.html">Decorator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -99,17 +99,24 @@ $(function() { codefold.init(0); });
 </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">   12</a></span>    std::vector&lt;AbstractComponent*&gt; <a class="code hl_function" href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">ComponentDecorator::GetDecoratorList</a>() {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">wrappee</a>-&gt;<a class="code hl_function" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">GetDecoratorList</a>();</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classcomponentdecorator_1_1_component_decorator.html#a46a0a0ac628778d795aeb0d95f8c2017">   12</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classcomponentdecorator_1_1_component_decorator.html#a46a0a0ac628778d795aeb0d95f8c2017">ComponentDecorator::ModifierDecorator</a>(<span class="keywordtype">int</span> _anilityScore) {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classcomponentdecorator_1_1_component_decorator.html#a7dab287f9820a894d217e609052be9c9">Ability_Score_Natural</a>(_anilityScore, 0);</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    }</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>}</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">   16</a></span>    std::vector&lt;AbstractComponent*&gt; <a class="code hl_function" href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">ComponentDecorator::GetDecoratorList</a>() {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">wrappee</a>-&gt;<a class="code hl_function" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">GetDecoratorList</a>();</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
 </div>
-<div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ad76ada9fbc3f620ce6707dc578110734"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">abstractcomponent::AbstractComponent::GetDecoratorList</a></div><div class="ttdeci">virtual std::vector&lt; AbstractComponent * &gt; GetDecoratorList()</div><div class="ttdoc">Virtual function that is meant to be overriden to establish the decorators in play.</div><div class="ttdef"><b>Definition</b> <a href="abstractcomponent_8h_source.html#l00034">abstractcomponent.h:34</a></div></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+</div>
+<div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ad76ada9fbc3f620ce6707dc578110734"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">abstractcomponent::AbstractComponent::GetDecoratorList</a></div><div class="ttdeci">virtual std::vector&lt; AbstractComponent * &gt; GetDecoratorList()</div><div class="ttdoc">Virtual function that is meant to be overriden to establish the decorators in play.</div><div class="ttdef"><b>Definition</b> <a href="abstractcomponent_8h_source.html#l00036">abstractcomponent.h:36</a></div></div>
 <div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ae1acfe71e56c091537098ef02f249deb"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ae1acfe71e56c091537098ef02f249deb">abstractcomponent::AbstractComponent::Ability_Score_Natural</a></div><div class="ttdeci">virtual int Ability_Score_Natural(int, int)</div><div class="ttdoc">Virtual function that is meant to be overriden to get the particular ability score of a character.</div><div class="ttdef"><b>Definition</b> <a href="abstractcomponent_8h_source.html#l00028">abstractcomponent.h:28</a></div></div>
-<div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html_a72e4f92bcba76d839385bb4d3fdedeb9"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">componentdecorator::ComponentDecorator::GetDecoratorList</a></div><div class="ttdeci">std::vector&lt; AbstractComponent * &gt; GetDecoratorList() override</div><div class="ttdoc">Overriden function that is meant to use the wrappee's function of the same name as a baseline for con...</div><div class="ttdef"><b>Definition</b> <a href="#l00012">componentdecorator.cpp:12</a></div></div>
+<div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html_a46a0a0ac628778d795aeb0d95f8c2017"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html#a46a0a0ac628778d795aeb0d95f8c2017">componentdecorator::ComponentDecorator::ModifierDecorator</a></div><div class="ttdeci">virtual int ModifierDecorator(int) override</div><div class="ttdef"><b>Definition</b> <a href="#l00012">componentdecorator.cpp:12</a></div></div>
+<div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html_a72e4f92bcba76d839385bb4d3fdedeb9"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">componentdecorator::ComponentDecorator::GetDecoratorList</a></div><div class="ttdeci">std::vector&lt; AbstractComponent * &gt; GetDecoratorList() override</div><div class="ttdoc">Overriden function that is meant to use the wrappee's function of the same name as a baseline for con...</div><div class="ttdef"><b>Definition</b> <a href="#l00016">componentdecorator.cpp:16</a></div></div>
 <div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html_a7dab287f9820a894d217e609052be9c9"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html#a7dab287f9820a894d217e609052be9c9">componentdecorator::ComponentDecorator::Ability_Score_Natural</a></div><div class="ttdeci">int Ability_Score_Natural(int, int) override</div><div class="ttdoc">Overriden function that is meant to use the wrappee's function of the same name as a baseline for der...</div><div class="ttdef"><b>Definition</b> <a href="#l00008">componentdecorator.cpp:8</a></div></div>
-<div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html_ad12ee7309bd6a59949eb9c7e396e7958"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">componentdecorator::ComponentDecorator::wrappee</a></div><div class="ttdeci">AbstractComponent * wrappee</div><div class="ttdef"><b>Definition</b> <a href="componentdecorator_8h_source.html#l00052">componentdecorator.h:52</a></div></div>
+<div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html_ad12ee7309bd6a59949eb9c7e396e7958"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">componentdecorator::ComponentDecorator::wrappee</a></div><div class="ttdeci">AbstractComponent * wrappee</div><div class="ttdef"><b>Definition</b> <a href="componentdecorator_8h_source.html#l00054">componentdecorator.h:54</a></div></div>
 <div class="ttc" id="acomponentdecorator_8h_html"><div class="ttname"><a href="componentdecorator_8h.html">componentdecorator.h</a></div><div class="ttdoc">File that provides the interface for the Decorator of the Decorator pattern.</div></div>
 <div class="ttc" id="anamespacecomponentdecorator_html"><div class="ttname"><a href="namespacecomponentdecorator.html">componentdecorator</a></div><div class="ttdoc">Namespace that encasulates the functionality for the ComponentDecorator class.</div><div class="ttdef"><b>Definition</b> <a href="#l00007">componentdecorator.cpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

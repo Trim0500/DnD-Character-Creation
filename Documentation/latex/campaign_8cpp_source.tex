@@ -1,5 +1,5 @@
 \doxysection{campaign.\+cpp}
-\hypertarget{campaign_8cpp_source}{}\label{campaign_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/campaign.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/campaign.cpp}}
+\hypertarget{campaign_8cpp_source}{}\label{campaign_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Campaign/campaign.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Campaign/campaign.cpp}}
 \mbox{\hyperlink{campaign_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00001}00001\ }
@@ -266,7 +266,7 @@
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00303}00303\ }
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00304}00304\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_ab8b61de70b140436e4a0a0aa73812046}{mapID}}\ =\ result-\/>\mbox{\hyperlink{class_map_1_1_map_abdc27dfaf8a3904dc45ffeb396e60e6e}{GetMapID}}();}
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00305}00305\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}}\ =\ \_coordX;}
-\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a8d89972ab2b36c1b9116aaf0627f26fb}{coorX}}\ =\ \_coordY;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00306}00306\ \ \ \ \ \ \ \ \ currentMap.\mbox{\hyperlink{structcampaign_1_1_campaign_map_a58ef157f3701f169602897c953b22743}{coorY}}\ =\ \_coordY;}
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00307}00307\ }
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00308}00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00309}00309\ \ \ \ \ \}}
@@ -303,6 +303,19 @@
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00340}00340\ }
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00341}00341\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultRecord;}
 \DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00342}00342\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00343}00343\ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00343}00343\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00344}\mbox{\hyperlink{namespacecampaign_a9769db6e400379f66496466179f3eb08}{00344}}\ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}*\ \mbox{\hyperlink{namespacecampaign_a5ceea3a63ff06811eea8f560c701bbcb}{LoadCampaign}}(\textcolor{keyword}{const}\ std::string\&\ \_fileDir)\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00345}00345\ \ \ \ \ \ \ \ \ std::ifstream\ campaignFileInputStream(\_fileDir);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00346}00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!campaignFileInputStream.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file\ at:\ "{}}\ +\ \_fileDir);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00348}00348\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00350}00350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structcampaign_1_1_campaign_record}{CampaignRecord}}*\ resultRecord\ =\ LoadCampaignRecord(\&campaignFileInputStream);}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00352}00352\ \ \ \ \ \ \ \ \ campaignFileInputStream.close();}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00354}00354\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultRecord;}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00355}00355\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{campaign_8cpp_source_l00356}00356\ \}}
 
 \end{DoxyCode}

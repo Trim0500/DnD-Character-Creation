@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Observer.h Source File</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Observer/Observer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -77,7 +77,7 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_35e81c85524a3b62550a8972f1f91155.html">Observer</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -97,13 +97,16 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classobserver_1_1_observer.html#ae11bbd40c528d2184572ef9187fcfa8a">   33</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classobserver_1_1_observer.html#ae11bbd40c528d2184572ef9187fcfa8a">update</a>(std::string) = 0;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>            </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classobserver_1_1_observer.html#a4826ab910d778bf73d540f102336ba4a">   39</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classobserver_1_1_observer.html#a4826ab910d778bf73d540f102336ba4a">update</a>(<span class="keywordtype">void</span>*) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    };</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classobserver_1_1_observer.html#a8ce73298d5cef8b1b40f8e221396f9b2">   39</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classobserver_1_1_observer.html#a8ce73298d5cef8b1b40f8e221396f9b2">update</a>(<span class="keywordtype">void</span>*) = 0;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classobserver_1_1_observer.html#a9a1103e06b60cc39038c3f41bce66ae0">   41</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classobserver_1_1_observer.html#a9a1103e06b60cc39038c3f41bce66ae0">update</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp;, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp;, <span class="keyword">const</span> <span class="keywordtype">int</span>&amp;) = 0;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    };</div>
 </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 <div class="ttc" id="aclassobserver_1_1_observer_html"><div class="ttname"><a href="classobserver_1_1_observer.html">observer::Observer</a></div><div class="ttdoc">Class to abstract the observer functionality.</div><div class="ttdef"><b>Definition</b> <a href="#l00021">Observer.h:21</a></div></div>
 <div class="ttc" id="aclassobserver_1_1_observer_html_a0eb4f0a1f57787f8f90bdee0944ce343"><div class="ttname"><a href="classobserver_1_1_observer.html#a0eb4f0a1f57787f8f90bdee0944ce343">observer::Observer::~Observer</a></div><div class="ttdeci">virtual ~Observer()</div><div class="ttdoc">Destructor for Observer.</div><div class="ttdef"><b>Definition</b> <a href="#l00027">Observer.h:27</a></div></div>
-<div class="ttc" id="aclassobserver_1_1_observer_html_a4826ab910d778bf73d540f102336ba4a"><div class="ttname"><a href="classobserver_1_1_observer.html#a4826ab910d778bf73d540f102336ba4a">observer::Observer::update</a></div><div class="ttdeci">virtual void update(void *) const =0</div></div>
+<div class="ttc" id="aclassobserver_1_1_observer_html_a8ce73298d5cef8b1b40f8e221396f9b2"><div class="ttname"><a href="classobserver_1_1_observer.html#a8ce73298d5cef8b1b40f8e221396f9b2">observer::Observer::update</a></div><div class="ttdeci">virtual void update(void *)=0</div></div>
+<div class="ttc" id="aclassobserver_1_1_observer_html_a9a1103e06b60cc39038c3f41bce66ae0"><div class="ttname"><a href="classobserver_1_1_observer.html#a9a1103e06b60cc39038c3f41bce66ae0">observer::Observer::update</a></div><div class="ttdeci">virtual void update(const int &amp;, const int &amp;, const int &amp;)=0</div></div>
 <div class="ttc" id="aclassobserver_1_1_observer_html_ae11bbd40c528d2184572ef9187fcfa8a"><div class="ttname"><a href="classobserver_1_1_observer.html#ae11bbd40c528d2184572ef9187fcfa8a">observer::Observer::update</a></div><div class="ttdeci">virtual void update(std::string)=0</div></div>
 <div class="ttc" id="anamespaceobserver_html"><div class="ttname"><a href="namespaceobserver.html">observer</a></div><div class="ttdoc">Namespace to partition the Observer functionality.</div></div>
 </div><!-- fragment --></div><!-- contents -->

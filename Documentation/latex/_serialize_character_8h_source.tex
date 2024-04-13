@@ -1,12 +1,12 @@
 \doxysection{Serialize\+Character.\+h}
-\hypertarget{_serialize_character_8h_source}{}\label{_serialize_character_8h_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/SerializeCharacter.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/SerializeCharacter.h}}
+\hypertarget{_serialize_character_8h_source}{}\label{_serialize_character_8h_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Serialize/SerializeCharacter.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Serialize/SerializeCharacter.h}}
 \mbox{\hyperlink{_serialize_character_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00002}00002\ }
-\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{Character.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{item.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{itemcontainer_8h}{itemcontainer.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{..\(\backslash\)Character\(\backslash\)Character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{item_8h}{..\(\backslash\)Item\(\backslash\)item.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{itemcontainer_8h}{..\(\backslash\)Item\(\backslash\)itemcontainer.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <iostream>}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <fstream>}}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00008}00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
@@ -18,6 +18,8 @@
 \DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceserializecharacter_acd2e66e8066c296fe86627b2e57913d8}{SaveCharacter}}(\mbox{\hyperlink{class_character_1_1_character}{Character::Character}}*\ t\_character,\textcolor{keyword}{const}\ std::string\&\ t\_path);}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00027}00027\ \ \ \ \ CharacterRecord\ \mbox{\hyperlink{namespaceserializecharacter_a6b3126a56f8d097443c95a268e6ce223}{LoadCharacter}}(\textcolor{keyword}{const}\ std::string\&\ filename);}
 \DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00033}00033\ \ \ \ \ std::string\ \mbox{\hyperlink{namespaceserializecharacter_afe9a9107cd9df5aa14eef5605768e51b}{FindCharacterFile}}(\textcolor{keywordtype}{int}\ character\_id,\ std::filesystem::path\ t\_path);}
-\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00034}00034\ \}}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00034}00034\ \ \ \ \ std::vector<CharacterRecord>\ \mbox{\hyperlink{namespaceserializecharacter_aed267fc9d906729e54d32286eec3462f}{LoadAllCharacters}}(std::filesystem::path\ t\_path);}
+\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_serialize_character_8h_source_l00036}00036\ \}}
 
 \end{DoxyCode}

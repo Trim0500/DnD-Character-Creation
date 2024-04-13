@@ -1,0 +1,117 @@
+\doxysection{door.\+h}
+\hypertarget{door_8h_source}{}\label{door_8h_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Door/door.h@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Door/door.h}}
+\mbox{\hyperlink{door_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_interactable_8h}{..\(\backslash\)Interactable\(\backslash\)Interactable.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedoor}{door}}\ \{}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00008}\mbox{\hyperlink{structdoor_1_1_door_destination_info}{00008}}\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structdoor_1_1_door_destination_info}{DoorDestinationInfo}}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00010}\mbox{\hyperlink{structdoor_1_1_door_destination_info_a7f3b16a061740669f31dac76a3d6f7f8}{00010}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdoor_1_1_door_destination_info_a7f3b16a061740669f31dac76a3d6f7f8}{mapID}};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00012}\mbox{\hyperlink{structdoor_1_1_door_destination_info_a9c3b330f2013cc1a56c83f2900ab665f}{00012}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdoor_1_1_door_destination_info_a9c3b330f2013cc1a56c83f2900ab665f}{mapLocationX}};\ \textcolor{comment}{//\ 1-\/indexed}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00014}\mbox{\hyperlink{structdoor_1_1_door_destination_info_ac2a2cb308874084377c261d2ca5c4d03}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdoor_1_1_door_destination_info_ac2a2cb308874084377c261d2ca5c4d03}{mapLocationY}};\ \textcolor{comment}{//\ 1-\/indexed}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00016}\mbox{\hyperlink{structdoor_1_1_door_destination_info_ad93954738cb8007dd9f38f2b3772ae17}{00016}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdoor_1_1_door_destination_info_ad93954738cb8007dd9f38f2b3772ae17}{destinationX}};\ \textcolor{comment}{//\ 1-\/indexed}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00018}\mbox{\hyperlink{structdoor_1_1_door_destination_info_a0288612172d420061726a99510c039a6}{00018}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structdoor_1_1_door_destination_info_a0288612172d420061726a99510c039a6}{destinationY}};\ \textcolor{comment}{//\ 1-\/indexed}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00019}00019\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00022}\mbox{\hyperlink{classdoor_1_1_door}{00022}}\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdoor_1_1_door}{Door}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable::Interactable}}\ \{}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00024}\mbox{\hyperlink{classdoor_1_1_door_a87b1aa27731114d57781c1951e2e3c3c}{00024}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdoor_1_1_door_a87b1aa27731114d57781c1951e2e3c3c}{Door}}()\ \{\ nextDoorID++;\ doorID\ =\ nextDoorID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00026}\mbox{\hyperlink{classdoor_1_1_door_a76d04f91a9d8f6a5b818954d023a9ed6}{00026}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdoor_1_1_door_a76d04f91a9d8f6a5b818954d023a9ed6}{Door}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_doorID)\ \{\ doorID\ =\ \_doorID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00028}\mbox{\hyperlink{classdoor_1_1_door_a7ac2a4d6d4cf24f05e9a9984d7eaa410}{00028}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdoor_1_1_door_a7ac2a4d6d4cf24f05e9a9984d7eaa410}{Door}}(\textcolor{keywordtype}{int}\ \_doorID,}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_firstMapID,}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \_secondMapID,}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \_firstMapLocation,}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \_secondMapLocation,}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \_firstMapSpawnPoint,}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \_secondMapSpawnPoint)}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doorID\ =\ \_doorID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstMapID\ =\ \_firstMapID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ secondMapID\ =\ \_secondMapID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstMapLocation\ =\ \_firstMapLocation;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ secondMapLocation\ =\ \_secondMapLocation;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstMapSpawnPoint\ =\ \_firstMapSpawnPoint;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ secondMapSpawnPoint\ =\ \_secondMapSpawnPoint;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00045}\mbox{\hyperlink{classdoor_1_1_door_aac97a797868067324535805c8bf1f354}{00045}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdoor_1_1_door_aac97a797868067324535805c8bf1f354}{Door}}(\mbox{\hyperlink{classdoor_1_1_door}{Door}}\&\ \_door)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ doorID\ =\ \_door.doorID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstMapID\ =\ \_door.firstMapID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ secondMapID\ =\ \_door.secondMapID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstMapLocation\ =\ \_door.firstMapLocation;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ secondMapLocation\ =\ \_door.secondMapLocation;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ firstMapSpawnPoint\ =\ \_door.firstMapSpawnPoint;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ secondMapSpawnPoint\ =\ \_door.secondMapSpawnPoint;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00055}\mbox{\hyperlink{classdoor_1_1_door_a2233106b23d93facad09dfbfa1991dc3}{00055}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdoor_1_1_door_a2233106b23d93facad09dfbfa1991dc3}{\string~Door}}()\ \{\ firstMapSpawnPoint.clear();\ secondMapSpawnPoint.clear();\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00057}\mbox{\hyperlink{classdoor_1_1_door_a5db10101d4f8184e166af24257aa01a0}{00057}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdoor_1_1_door_a5db10101d4f8184e166af24257aa01a0}{GetNextDoorID}}()\ \{\ \textcolor{keywordflow}{return}\ nextDoorID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00059}\mbox{\hyperlink{classdoor_1_1_door_adacac9c4f540b03153913c1e8ed2cb54}{00059}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoor_1_1_door_adacac9c4f540b03153913c1e8ed2cb54}{SetNextDoorID}}(\textcolor{keywordtype}{int}\ \_nextDoorID)\ \{\ nextDoorID\ =\ \_nextDoorID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00061}\mbox{\hyperlink{classdoor_1_1_door_af3dbe0ee378bad1717e06d3d3f7baee8}{00061}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdoor_1_1_door_af3dbe0ee378bad1717e06d3d3f7baee8}{GetDoorID}}()\ \{\ \textcolor{keywordflow}{return}\ doorID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00063}\mbox{\hyperlink{classdoor_1_1_door_a5cf26a7606829c4d8f1ca27cc99de89a}{00063}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoor_1_1_door_a5cf26a7606829c4d8f1ca27cc99de89a}{SetDoorID}}(\textcolor{keywordtype}{int}\ \_doorID)\ \{\ doorID\ =\ \_doorID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00065}\mbox{\hyperlink{classdoor_1_1_door_a12fa692cfbeda46efe8935261020fc12}{00065}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdoor_1_1_door_a12fa692cfbeda46efe8935261020fc12}{GetFirstMapID}}()\ \{\ \textcolor{keywordflow}{return}\ firstMapID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00067}\mbox{\hyperlink{classdoor_1_1_door_a14289bb33d2914fffa431f490ef3e481}{00067}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoor_1_1_door_a14289bb33d2914fffa431f490ef3e481}{SetFirstMapID}}(\textcolor{keywordtype}{int}\ \_firstMapID)\ \{\ firstMapID\ =\ \_firstMapID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00069}\mbox{\hyperlink{classdoor_1_1_door_ad5ecacbd59d7a9f6586f156f79e86c48}{00069}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdoor_1_1_door_ad5ecacbd59d7a9f6586f156f79e86c48}{GetSecondMapID}}()\ \{\ \textcolor{keywordflow}{return}\ secondMapID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00071}\mbox{\hyperlink{classdoor_1_1_door_a3ea5d2a8b0ecd8e52ce0442045ef67b1}{00071}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoor_1_1_door_a3ea5d2a8b0ecd8e52ce0442045ef67b1}{SetSecondMapID}}(\textcolor{keywordtype}{int}\ \_secondMapID)\ \{\ secondMapID\ =\ \_secondMapID;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00073}\mbox{\hyperlink{classdoor_1_1_door_ac8ea00f8dc1f36cf6d94d3f6afa14cbe}{00073}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classdoor_1_1_door_ac8ea00f8dc1f36cf6d94d3f6afa14cbe}{GetFirstMapLocation}}()\ \{\ \textcolor{keywordflow}{return}\ firstMapLocation;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00075}\mbox{\hyperlink{classdoor_1_1_door_a125a693fb0ae7cf79494fb345c3e1e25}{00075}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoor_1_1_door_a125a693fb0ae7cf79494fb345c3e1e25}{SetFirstMapLocation}}(std::vector<int>\ \_firstMapLocation)\ \{\ firstMapLocation\ =\ \_firstMapLocation;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00077}\mbox{\hyperlink{classdoor_1_1_door_ad5b525a4cd6304fe26ef9ae7061a483b}{00077}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classdoor_1_1_door_ad5b525a4cd6304fe26ef9ae7061a483b}{GetSecondMapLocation}}()\ \{\ \textcolor{keywordflow}{return}\ secondMapLocation;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00079}\mbox{\hyperlink{classdoor_1_1_door_a5530809ce8b768b5a16ac87dc0d14ea3}{00079}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoor_1_1_door_a5530809ce8b768b5a16ac87dc0d14ea3}{SetSecondMapLocation}}(std::vector<int>\ \_secondMapLocation)\ \{\ secondMapLocation\ =\ \_secondMapLocation;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00081}\mbox{\hyperlink{classdoor_1_1_door_a68e7da91c25eaeabb8f8c38b5904d38d}{00081}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classdoor_1_1_door_a68e7da91c25eaeabb8f8c38b5904d38d}{GetFirstMapSpawnPoint}}()\ \{\ \textcolor{keywordflow}{return}\ firstMapSpawnPoint;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00083}\mbox{\hyperlink{classdoor_1_1_door_a96eb7cc413d9934ea57d72a4eec84188}{00083}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoor_1_1_door_a96eb7cc413d9934ea57d72a4eec84188}{SetFirstMapSpawnPoint}}(std::vector<int>\ \_firstMapSpawnPoint)\ \{\ firstMapSpawnPoint\ =\ \_firstMapSpawnPoint;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00085}\mbox{\hyperlink{classdoor_1_1_door_adf64479c80b16caef565c0faef8e6041}{00085}}\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ \mbox{\hyperlink{classdoor_1_1_door_adf64479c80b16caef565c0faef8e6041}{GetSecondMapSpawnPoint}}()\ \{\ \textcolor{keywordflow}{return}\ secondMapSpawnPoint;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00087}\mbox{\hyperlink{classdoor_1_1_door_a8ec48bd39158dbdc43a612b13ddfae65}{00087}}\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdoor_1_1_door_a8ec48bd39158dbdc43a612b13ddfae65}{SetSecondMapSpawnPoint}}(std::vector<int>\ \_secondMapSpawnPoint)\ \{\ secondMapSpawnPoint\ =\ \_secondMapSpawnPoint;\ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structdoor_1_1_door_destination_info}{DoorDestinationInfo}}\ \mbox{\hyperlink{classdoor_1_1_door_a2423a1cc765281a4bc235e4917c3fbbd}{UseDoor}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&);}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ nextDoorID\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ doorID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ firstMapID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ secondMapID;}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ firstMapLocation;\ \textcolor{comment}{//Locations\ are\ 1-\/indexed}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ secondMapLocation;\ \textcolor{comment}{//Locations\ are\ 1-\/indexed}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ firstMapSpawnPoint;\ \textcolor{comment}{//Locations\ are\ 1-\/indexed}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<int>\ secondMapSpawnPoint;\ \textcolor{comment}{//Locations\ are\ 1-\/indexed}}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00106}00106\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00108}00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacedoor_a03468f648e1b9606703310a6250eda72}{SaveDoors}}(\textcolor{keyword}{const}\ std::string\&,\ \textcolor{keyword}{const}\ std::vector<Door*>\&);}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00110}00110\ \ \ \ \ std::vector<Door*>\ \mbox{\hyperlink{namespacedoor_a8bc951a7893b1124321cbc5d5fdd10e8}{LoadDoors}}(\textcolor{keyword}{const}\ std::string\&);}
+\DoxyCodeLine{\Hypertarget{door_8h_source_l00111}00111\ \}}
+
+\end{DoxyCode}

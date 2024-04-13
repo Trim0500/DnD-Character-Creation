@@ -18,10 +18,6 @@ Class to abstract the campaign functionality.
 \item 
 \mbox{\hyperlink{classcampaign_1_1_campaign_a720ed2030a10f68553f122612225e735}{Campaign}} (int, const int \&, const int \&, std\+::vector$<$ std\+::vector$<$ int $>$ $>$, \mbox{\hyperlink{structcampaign_1_1_campaign_map}{Campaign\+Map}}, std\+::vector$<$ \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} $>$)
 \item 
-int \mbox{\hyperlink{classcampaign_1_1_campaign_a28599caaa0f2f08c880a9ecd17aab9b2}{Get\+Current\+Campaign\+ID}} ()
-\item 
-void \mbox{\hyperlink{classcampaign_1_1_campaign_a95d26c5c64d2e1e42bd233942e72fd57}{Set\+Current\+Campaign\+ID}} (int \+\_\+next\+Campaign\+ID)
-\item 
 int \mbox{\hyperlink{classcampaign_1_1_campaign_afb9e465401e5a1672382073a82df591c}{Get\+Campaign\+ID}} ()
 \item 
 void \mbox{\hyperlink{classcampaign_1_1_campaign_a7ca64b2b24d44ceb8ae0263263d9c5d0}{Set\+Campaign\+ID}} (int \+\_\+campaign\+ID)
@@ -38,12 +34,21 @@ std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{classcampaign_1_1
 \item 
 \mbox{\hyperlink{structcampaign_1_1_campaign_map}{Campaign\+Map}} \mbox{\hyperlink{classcampaign_1_1_campaign_a7497223a9fcb92c738c999973ac5a2db}{Get\+Current\+Map}} ()
 \item 
+void \mbox{\hyperlink{classcampaign_1_1_campaign_aae61e49e9e6cb93dd6dcc57bf9b91561}{Set\+Current\+Map}} (\mbox{\hyperlink{structcampaign_1_1_campaign_map}{Campaign\+Map}} \+\_\+current\+Map)
+\item 
 void \mbox{\hyperlink{classcampaign_1_1_campaign_ae9f04d113a7961c08dcb4df38dfb8798}{Add\+Map\+To\+Campaign}} (const int \&, const int \&, \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \&)
 \begin{DoxyCompactList}\small\item\em Function to add a new \doxylink{class_map}{Map} instance to the campaign and set the ID at the cell. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classcampaign_1_1_campaign_a6e88e304a025488c77d69d33038d509d}{Get\+Maps\+In\+Campaign}} ()
 \item 
 \mbox{\hyperlink{class_map_1_1_map}{Map\+::\+Map}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classcampaign_1_1_campaign_a70e76d6130f9690579ead3f4f4bd2137}{Get\+Map}} (const int \&, const int \&)
 \begin{DoxyCompactList}\small\item\em Function to find the map data at the specified coordinates (Coordiantes should be 1-\/indexed) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classcampaign_1_1_campaign_a0f761060c4f56b49a525967ffc2d74b4}{Get\+Current\+Campaign\+ID}} ()
+\item 
+static void \mbox{\hyperlink{classcampaign_1_1_campaign_a7b4dbf0bae443a7960f2235bd63bec86}{Set\+Current\+Campaign\+ID}} (int \+\_\+next\+Campaign\+ID)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -150,11 +155,11 @@ Definition at line \mbox{\hyperlink{campaign_8cpp_source_l00267}{267}} of file \
 
 Definition at line \mbox{\hyperlink{campaign_8h_source_l00081}{81}} of file \mbox{\hyperlink{campaign_8h_source}{campaign.\+h}}.
 
-\Hypertarget{classcampaign_1_1_campaign_a28599caaa0f2f08c880a9ecd17aab9b2}\label{classcampaign_1_1_campaign_a28599caaa0f2f08c880a9ecd17aab9b2} 
+\Hypertarget{classcampaign_1_1_campaign_a0f761060c4f56b49a525967ffc2d74b4}\label{classcampaign_1_1_campaign_a0f761060c4f56b49a525967ffc2d74b4} 
 \index{campaign::Campaign@{campaign::Campaign}!GetCurrentCampaignID@{GetCurrentCampaignID}}
 \index{GetCurrentCampaignID@{GetCurrentCampaignID}!campaign::Campaign@{campaign::Campaign}}
 \doxysubsubsection{\texorpdfstring{GetCurrentCampaignID()}{GetCurrentCampaignID()}}
-{\footnotesize\ttfamily int campaign\+::\+Campaign\+::\+Get\+Current\+Campaign\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily static int campaign\+::\+Campaign\+::\+Get\+Current\+Campaign\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -239,7 +244,7 @@ Definition at line \mbox{\hyperlink{campaign_8h_source_l00093}{93}} of file \mbo
 
 
 
-Definition at line \mbox{\hyperlink{campaign_8h_source_l00110}{110}} of file \mbox{\hyperlink{campaign_8h_source}{campaign.\+h}}.
+Definition at line \mbox{\hyperlink{campaign_8h_source_l00112}{112}} of file \mbox{\hyperlink{campaign_8h_source}{campaign.\+h}}.
 
 \Hypertarget{classcampaign_1_1_campaign_a7ca64b2b24d44ceb8ae0263263d9c5d0}\label{classcampaign_1_1_campaign_a7ca64b2b24d44ceb8ae0263263d9c5d0} 
 \index{campaign::Campaign@{campaign::Campaign}!SetCampaignID@{SetCampaignID}}
@@ -251,15 +256,25 @@ Definition at line \mbox{\hyperlink{campaign_8h_source_l00110}{110}} of file \mb
 
 Definition at line \mbox{\hyperlink{campaign_8h_source_l00083}{83}} of file \mbox{\hyperlink{campaign_8h_source}{campaign.\+h}}.
 
-\Hypertarget{classcampaign_1_1_campaign_a95d26c5c64d2e1e42bd233942e72fd57}\label{classcampaign_1_1_campaign_a95d26c5c64d2e1e42bd233942e72fd57} 
+\Hypertarget{classcampaign_1_1_campaign_a7b4dbf0bae443a7960f2235bd63bec86}\label{classcampaign_1_1_campaign_a7b4dbf0bae443a7960f2235bd63bec86} 
 \index{campaign::Campaign@{campaign::Campaign}!SetCurrentCampaignID@{SetCurrentCampaignID}}
 \index{SetCurrentCampaignID@{SetCurrentCampaignID}!campaign::Campaign@{campaign::Campaign}}
 \doxysubsubsection{\texorpdfstring{SetCurrentCampaignID()}{SetCurrentCampaignID()}}
-{\footnotesize\ttfamily void campaign\+::\+Campaign\+::\+Set\+Current\+Campaign\+ID (\begin{DoxyParamCaption}\item[{int}]{\+\_\+next\+Campaign\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily static void campaign\+::\+Campaign\+::\+Set\+Current\+Campaign\+ID (\begin{DoxyParamCaption}\item[{int}]{\+\_\+next\+Campaign\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
 Definition at line \mbox{\hyperlink{campaign_8h_source_l00079}{79}} of file \mbox{\hyperlink{campaign_8h_source}{campaign.\+h}}.
+
+\Hypertarget{classcampaign_1_1_campaign_aae61e49e9e6cb93dd6dcc57bf9b91561}\label{classcampaign_1_1_campaign_aae61e49e9e6cb93dd6dcc57bf9b91561} 
+\index{campaign::Campaign@{campaign::Campaign}!SetCurrentMap@{SetCurrentMap}}
+\index{SetCurrentMap@{SetCurrentMap}!campaign::Campaign@{campaign::Campaign}}
+\doxysubsubsection{\texorpdfstring{SetCurrentMap()}{SetCurrentMap()}}
+{\footnotesize\ttfamily void campaign\+::\+Campaign\+::\+Set\+Current\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcampaign_1_1_campaign_map}{Campaign\+Map}}}]{\+\_\+current\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{campaign_8h_source_l00097}{97}} of file \mbox{\hyperlink{campaign_8h_source}{campaign.\+h}}.
 
 \Hypertarget{classcampaign_1_1_campaign_a7387c14973c13bbd5c3354722b765570}\label{classcampaign_1_1_campaign_a7387c14973c13bbd5c3354722b765570} 
 \index{campaign::Campaign@{campaign::Campaign}!SetGridCols@{SetGridCols}}
@@ -285,5 +300,5 @@ Definition at line \mbox{\hyperlink{campaign_8h_source_l00087}{87}} of file \mbo
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{campaign_8h}{campaign.\+h}}\item 
-C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\mbox{\hyperlink{campaign_8cpp}{campaign.\+cpp}}\end{DoxyCompactItemize}
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\+Campaign/\mbox{\hyperlink{campaign_8h}{campaign.\+h}}\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\+Campaign/\mbox{\hyperlink{campaign_8cpp}{campaign.\+cpp}}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/campaign.cpp Source File</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Campaign/campaign.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -77,7 +77,7 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_bb371e20af76616da8a34f8417a0fd88.html">Campaign</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -356,7 +356,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        currentMap.<a class="code hl_variable" href="structcampaign_1_1_campaign_map.html#ab8b61de70b140436e4a0a0aa73812046">mapID</a> = result-&gt;<a class="code hl_function" href="class_map_1_1_map.html#abdc27dfaf8a3904dc45ffeb396e60e6e">GetMapID</a>();</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        currentMap.<a class="code hl_variable" href="structcampaign_1_1_campaign_map.html#a8d89972ab2b36c1b9116aaf0627f26fb">coorX</a> = _coordX;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        currentMap.<a class="code hl_variable" href="structcampaign_1_1_campaign_map.html#a8d89972ab2b36c1b9116aaf0627f26fb">coorX</a> = _coordY;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        currentMap.<a class="code hl_variable" href="structcampaign_1_1_campaign_map.html#a58ef157f3701f169602897c953b22743">coorY</a> = _coordY;</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
@@ -398,14 +398,29 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        <span class="keywordflow">return</span> resultRecord;</div>
 <div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    }</div>
 </div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>}</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>    </div>
+<div class="foldopen" id="foldopen00344" data-start="{" data-end="}">
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="namespacecampaign.html#a9769db6e400379f66496466179f3eb08">  344</a></span>    <a class="code hl_struct" href="structcampaign_1_1_campaign_record.html">CampaignRecord</a>* <a class="code hl_function" href="namespacecampaign.html#a5ceea3a63ff06811eea8f560c701bbcb">LoadCampaign</a>(<span class="keyword">const</span> std::string&amp; _fileDir) {</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        std::ifstream campaignFileInputStream(_fileDir);</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        <span class="keywordflow">if</span> (!campaignFileInputStream.is_open()) {</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Failed to open the file at: &quot;</span> + _fileDir);</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>        }</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        <a class="code hl_struct" href="structcampaign_1_1_campaign_record.html">CampaignRecord</a>* resultRecord = LoadCampaignRecord(&amp;campaignFileInputStream);</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        campaignFileInputStream.close();</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        <span class="keywordflow">return</span> resultRecord;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    }</div>
+</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>}</div>
 </div>
 <div class="ttc" id="acampaign_8h_html"><div class="ttname"><a href="campaign_8h.html">campaign.h</a></div><div class="ttdoc">Class that abstracts the functionality for the main editable campaigns.</div></div>
-<div class="ttc" id="aclass_map_1_1_map_html"><div class="ttname"><a href="class_map_1_1_map.html">Map::Map</a></div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00055">Map.h:55</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html_abdc27dfaf8a3904dc45ffeb396e60e6e"><div class="ttname"><a href="class_map_1_1_map.html#abdc27dfaf8a3904dc45ffeb396e60e6e">Map::Map::GetMapID</a></div><div class="ttdeci">int GetMapID()</div><div class="ttdoc">Getters.</div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00098">Map.h:98</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html"><div class="ttname"><a href="class_map_1_1_map.html">Map::Map</a></div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00040">Map.h:40</a></div></div>
+<div class="ttc" id="aclass_map_1_1_map_html_abdc27dfaf8a3904dc45ffeb396e60e6e"><div class="ttname"><a href="class_map_1_1_map.html#abdc27dfaf8a3904dc45ffeb396e60e6e">Map::Map::GetMapID</a></div><div class="ttdeci">int GetMapID()</div><div class="ttdoc">Getters.</div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00087">Map.h:87</a></div></div>
 <div class="ttc" id="aclasscampaign_1_1_campaign_html"><div class="ttname"><a href="classcampaign_1_1_campaign.html">campaign::Campaign</a></div><div class="ttdoc">Class to abstract the campaign functionality.</div><div class="ttdef"><b>Definition</b> <a href="campaign_8h_source.html#l00049">campaign.h:49</a></div></div>
 <div class="ttc" id="aclasscampaign_1_1_campaign_html_a13d4328492b88ccfc913e593bdabe4e8"><div class="ttname"><a href="classcampaign_1_1_campaign.html#a13d4328492b88ccfc913e593bdabe4e8">campaign::Campaign::GetMapIDs</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; GetMapIDs()</div><div class="ttdef"><b>Definition</b> <a href="campaign_8h_source.html#l00093">campaign.h:93</a></div></div>
-<div class="ttc" id="aclasscampaign_1_1_campaign_html_a6e88e304a025488c77d69d33038d509d"><div class="ttname"><a href="classcampaign_1_1_campaign.html#a6e88e304a025488c77d69d33038d509d">campaign::Campaign::GetMapsInCampaign</a></div><div class="ttdeci">std::vector&lt; Map::Map * &gt; GetMapsInCampaign()</div><div class="ttdef"><b>Definition</b> <a href="campaign_8h_source.html#l00110">campaign.h:110</a></div></div>
+<div class="ttc" id="aclasscampaign_1_1_campaign_html_a6e88e304a025488c77d69d33038d509d"><div class="ttname"><a href="classcampaign_1_1_campaign.html#a6e88e304a025488c77d69d33038d509d">campaign::Campaign::GetMapsInCampaign</a></div><div class="ttdeci">std::vector&lt; Map::Map * &gt; GetMapsInCampaign()</div><div class="ttdef"><b>Definition</b> <a href="campaign_8h_source.html#l00112">campaign.h:112</a></div></div>
 <div class="ttc" id="aclasscampaign_1_1_campaign_html_a70e76d6130f9690579ead3f4f4bd2137"><div class="ttname"><a href="classcampaign_1_1_campaign.html#a70e76d6130f9690579ead3f4f4bd2137">campaign::Campaign::GetMap</a></div><div class="ttdeci">Map::Map * GetMap(const int &amp;, const int &amp;)</div><div class="ttdoc">Function to find the map data at the specified coordinates (Coordiantes should be 1-indexed)</div><div class="ttdef"><b>Definition</b> <a href="#l00294">campaign.cpp:294</a></div></div>
 <div class="ttc" id="aclasscampaign_1_1_campaign_html_a7497223a9fcb92c738c999973ac5a2db"><div class="ttname"><a href="classcampaign_1_1_campaign.html#a7497223a9fcb92c738c999973ac5a2db">campaign::Campaign::GetCurrentMap</a></div><div class="ttdeci">CampaignMap GetCurrentMap()</div><div class="ttdef"><b>Definition</b> <a href="campaign_8h_source.html#l00095">campaign.h:95</a></div></div>
 <div class="ttc" id="aclasscampaign_1_1_campaign_html_a7d08206f784aaa67e5e8b791bec0d4cd"><div class="ttname"><a href="classcampaign_1_1_campaign.html#a7d08206f784aaa67e5e8b791bec0d4cd">campaign::Campaign::Campaign</a></div><div class="ttdeci">Campaign()</div><div class="ttdoc">No-args constructor for Campaign.</div><div class="ttdef"><b>Definition</b> <a href="#l00226">campaign.cpp:226</a></div></div>

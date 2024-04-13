@@ -1,0 +1,146 @@
+\doxysection{door.\+cpp}
+\hypertarget{door_8cpp_source}{}\label{door_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Door/door.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Door/door.cpp}}
+\mbox{\hyperlink{door_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <regex>}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{door_8h}{door.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00008}00008\ \textcolor{keyword}{namespace\ }}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00010}00010\ \ \ \ \ std::string\ BuildVectorCSVOutput(\textcolor{keyword}{const}\ std::vector<int>\&\ \_IDs)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ std::ostringstream\ result;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}["{}};}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ idsSize\ =\ \_IDs.size();}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ idsSize;\ i++)}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ +\ 1\ ==\ idsSize)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ std::to\_string(\_IDs[i]);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ result\ <<\ std::to\_string(\_IDs[i])\ <<\ \textcolor{stringliteral}{"{}:"{}};}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ result\ <<\ \textcolor{stringliteral}{"{}]"{}};}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result.str();}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00031}00031\ \ \ \ \ std::string\ BuildDoorsOutput(\textcolor{keyword}{const}\ std::vector<door::Door*>\&\ \_doorsToSave)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ std::string\ outputResult;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ std::ostringstream\ csvOutput;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ (int)\_doorsToSave.size();\ i++)}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput\ <<\ \_doorsToSave[i]-\/>GetDoorID()\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},"{}}\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_doorsToSave[i]-\/>GetFirstMapID()\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},"{}}\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_doorsToSave[i]-\/>GetSecondMapID()\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},"{}}\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BuildVectorCSVOutput(\_doorsToSave[i]-\/>GetFirstMapLocation())\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},"{}}\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BuildVectorCSVOutput(\_doorsToSave[i]-\/>GetSecondMapLocation())\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},"{}}\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BuildVectorCSVOutput(\_doorsToSave[i]-\/>GetFirstMapSpawnPoint())\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{},"{}}\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BuildVectorCSVOutput(\_doorsToSave[i]-\/>GetSecondMapSpawnPoint())\ <<}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::endl;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ csvOutput.str();}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00056}00056\ \ \ \ \ std::vector<int>\ BuildIDVector(std::string\ \_vectorString)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ std::vector<int>\ result;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ std::smatch\ match;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ std::regex\ numberRgx(\textcolor{stringliteral}{"{}[0-\/9]+"{}});}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (regex\_search(\_vectorString,\ match,\ numberRgx))\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ result.push\_back(std::stoi(match.str()));}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \_vectorString\ =\ match.suffix().str();}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00072}00072\ \ \ \ \ std::vector<door::Door*>\ GetDoors(std::ifstream*\ \_fileStream)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ std::vector<door::Door*>\ resultVector;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (!\_fileStream-\/>eof())\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ nextLine\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(*\_fileStream,\ nextLine);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nextLine.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ lineStream(nextLine);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<std::string>\ segmentList;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ segment\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(lineStream,\ segment,\ \textcolor{charliteral}{','}))\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ segmentList.push\_back(segment);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdoor_1_1_door}{door::Door}}*\ foundDoor\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classdoor_1_1_door}{door::Door}}(std::stoi(segmentList[0]),}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stoi(segmentList[1]),}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::stoi(segmentList[2]),}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BuildIDVector(segmentList[3]),}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BuildIDVector(segmentList[4]),}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BuildIDVector(segmentList[5]),}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BuildIDVector(segmentList[6]));}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ resultVector.push\_back(foundDoor);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ resultVector;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00105}\mbox{\hyperlink{namespacedoor}{00105}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacedoor}{door}}\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00106}\mbox{\hyperlink{classdoor_1_1_door_a2423a1cc765281a4bc235e4917c3fbbd}{00106}}\ \ \ \ \ \mbox{\hyperlink{structdoor_1_1_door_destination_info}{DoorDestinationInfo}}\ \mbox{\hyperlink{classdoor_1_1_door_a2423a1cc765281a4bc235e4917c3fbbd}{Door::UseDoor}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \_mapID)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structdoor_1_1_door_destination_info}{DoorDestinationInfo}}\ result;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00109}00109\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structdoor_1_1_door_destination_info_a7f3b16a061740669f31dac76a3d6f7f8}{mapID}}\ =\ \_mapID\ ==\ firstMapID\ ?\ secondMapID\ :\ firstMapID;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structdoor_1_1_door_destination_info_a9c3b330f2013cc1a56c83f2900ab665f}{mapLocationX}}\ =\ \_mapID\ ==\ firstMapID\ ?\ secondMapLocation[0]\ :\ firstMapLocation[0];}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structdoor_1_1_door_destination_info_ac2a2cb308874084377c261d2ca5c4d03}{mapLocationY}}\ =\ \_mapID\ ==\ firstMapID\ ?\ secondMapLocation[1]\ :\ firstMapLocation[1];}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structdoor_1_1_door_destination_info_ad93954738cb8007dd9f38f2b3772ae17}{destinationX}}\ =\ \_mapID\ ==\ firstMapID\ ?\ secondMapSpawnPoint[0]\ :\ firstMapSpawnPoint[0];}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00113}00113\ \ \ \ \ \ \ \ \ result.\mbox{\hyperlink{structdoor_1_1_door_destination_info_a0288612172d420061726a99510c039a6}{destinationY}}\ =\ \_mapID\ ==\ firstMapID\ ?\ secondMapSpawnPoint[1]\ :\ firstMapSpawnPoint[1];}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00116}00116\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00118}\mbox{\hyperlink{namespacedoor_a03468f648e1b9606703310a6250eda72}{00118}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacedoor_a03468f648e1b9606703310a6250eda72}{SaveDoors}}(\textcolor{keyword}{const}\ std::string\&\ \_fileURI,\ \textcolor{keyword}{const}\ std::vector<Door*>\&\ \_doorsToSave)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ std::string\ csvOutput\ =\ BuildDoorsOutput(\_doorsToSave);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ std::ofstream\ doorOutputStream(\_fileURI);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ doorOutputStream\ <<\ csvOutput;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ doorOutputStream.close();}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00127}\mbox{\hyperlink{namespacedoor_a8bc951a7893b1124321cbc5d5fdd10e8}{00127}}\ \ \ \ \ std::vector<Door*>\ \mbox{\hyperlink{namespacedoor_a8bc951a7893b1124321cbc5d5fdd10e8}{LoadDoors}}(\textcolor{keyword}{const}\ std::string\&\ \_fileURI)\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ std::ifstream\ doorInputStream(\_fileURI);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!doorInputStream.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file\ at:\ "{}}\ +\ \_fileURI);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ std::vector<Door*>\ doorRecords\ =\ GetDoors(\&doorInputStream);}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00135}00135\ \ \ \ \ \ \ \ \ doorInputStream.close();}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ doorRecords;}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00139}00139\ \}}
+\DoxyCodeLine{\Hypertarget{door_8cpp_source_l00140}00140\ }
+
+\end{DoxyCode}

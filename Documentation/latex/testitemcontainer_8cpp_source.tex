@@ -1,5 +1,5 @@
 \doxysection{testitemcontainer.\+cpp}
-\hypertarget{testitemcontainer_8cpp_source}{}\label{testitemcontainer_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testitemcontainer.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/testitemcontainer.cpp}}
+\hypertarget{testitemcontainer_8cpp_source}{}\label{testitemcontainer_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Test/testitemcontainer.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Test/testitemcontainer.cpp}}
 \mbox{\hyperlink{testitemcontainer_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00001}00001\ }
@@ -7,7 +7,7 @@
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00008}00008\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{testitemcontainer_8h}{testitemcontainer.h}}"{}}}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{Character.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_character_8h}{..\(\backslash\)Character\(\backslash\)Character.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00011}00011\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00012}\mbox{\hyperlink{testitemcontainer_8cpp_aa064d93d451355a0e86e4973db0401a8}{00012}}\ \textcolor{preprocessor}{\#define\ BACKPACK\_ITEM\_SIZE\ 30}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00013}\mbox{\hyperlink{testitemcontainer_8cpp_a2b3a4f43587451e4e99eaf94a4ab81a2}{00013}}\ \textcolor{preprocessor}{\#define\ WORN\_ITEMS\_SIZE\ 7}}
@@ -68,15 +68,15 @@
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00068}00068\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00069}\mbox{\hyperlink{class_test_item_container_add54692e170f3ba98ae3c882a73e1eba}{00069}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_container_add54692e170f3ba98ae3c882a73e1eba}{TestItemContainer::tearDown}}(\textcolor{keywordtype}{void})}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00070}00070\ \{}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00071}00071\ \ \ \ \ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().clear();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00071}00071\ \ \ \ \ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().clear();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00072}00072\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keyword}{delete}\ backpackObject;}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00075}00075\ \ \ \ \ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().clear();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00075}00075\ \ \ \ \ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().clear();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00076}00076\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{delete}\ wornItemsObject;}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00079}00079\ \ \ \ \ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().clear();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00079}00079\ \ \ \ \ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().clear();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00080}00080\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{delete}\ chestObject;}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00082}00082\ }
@@ -105,12 +105,12 @@
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00105}00105\ \}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00106}00106\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00107}\mbox{\hyperlink{class_test_item_container_aca65346e923682365a41eceeed3f2085}{00107}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_container_aca65346e923682365a41eceeed3f2085}{TestItemContainer::TestAddNewItem}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordtype}{int}\ backpackItemSize\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().size();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordtype}{int}\ backpackItemSize\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{float}\ backpackTotalItemWeight\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{GetTotalItemWeight}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00110}00110\ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{int}\ wornItemsSize\ =\ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().size();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{int}\ wornItemsSize\ =\ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00112}00112\ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{int}\ chestItemSize\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().size();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordtype}{int}\ chestItemSize\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordtype}{float}\ chestTotalItemWeight\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{GetTotalItemWeight}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00115}00115\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{classitem_1_1_item}{Item}}*\ newItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classitem_1_1_item}{Item}}(\textcolor{stringliteral}{"{}newItem"{}},\ 4,\ \mbox{\hyperlink{namespaceitem_ada202f1c932727de8eef0227d4b35e03accbeb800ab9169831734326a5b38cb4d}{Armor}},\ \mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0}{ArmorClass}},\ 50);}
@@ -118,33 +118,33 @@
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00118}00118\ \ \ \ \ \textcolor{comment}{//testItemCurrentId\ +=\ 1;}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00119}00119\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordtype}{int}\ addResult\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(newItem);}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{int}\ currentBackpackItemSize\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().size();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{int}\ currentBackpackItemSize\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00122}00122\ \ \ \ \ \textcolor{keywordtype}{float}\ currentBackpackItemWeightTotal\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{GetTotalItemWeight}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00123}00123\ \ \ \ \ CPPUNIT\_ASSERT(addResult\ ==\ -\/1\ \&\&}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentBackpackItemSize\ ==\ backpackItemSize\ \&\&}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currentBackpackItemWeightTotal\ ==\ backpackTotalItemWeight\ \&\&}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().back().GetItemId()\ !=\ newItem-\/>\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}());}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().back().GetItemId()\ !=\ newItem-\/>\mbox{\hyperlink{classitem_1_1_item_a1bc21c27d852361df5ae709eaac7720d}{GetItemId}}());}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00127}00127\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{int}\ equipResult\ =\ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(newItem);}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{int}\ currentWornItemSize\ =\ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().size();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{keywordtype}{int}\ currentWornItemSize\ =\ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00130}00130\ \ \ \ \ CPPUNIT\_ASSERT(equipResult\ ==\ -\/1\ \&\&\ currentWornItemSize\ ==\ wornItemsSize);}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00131}00131\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00132}00132\ \ \ \ \ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a80be76423cae293d2f74f5a7b8756582}{AddNewItem}}(newItem);}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{int}\ currentChestItemSize\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().size();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{int}\ currentChestItemSize\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{keywordtype}{float}\ currentChestItemWeightTotal\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_adaa78ba43583a872779f99282b882401}{GetTotalItemWeight}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00135}00135\ \ \ \ \ CPPUNIT\_ASSERT(currentChestItemSize\ ==\ chestItemSize\ +\ 1\ \&\&\ currentChestItemWeightTotal\ <=\ \mbox{\hyperlink{test_character_8cpp_aeaeeba65f210fb5be748506b96d01a2d}{CHEST\_ITEM\_SIZE}});}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00136}00136\ \ \ \ \ CPPUNIT\_ASSERT(chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().back()\ ==\ *newItem);}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00136}00136\ \ \ \ \ CPPUNIT\_ASSERT(chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().back()\ ==\ *newItem);}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00137}00137\ \}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00138}00138\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00139}\mbox{\hyperlink{class_test_item_container_a1be32682a208a3b148e2cde63d4f9798}{00139}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_container_a1be32682a208a3b148e2cde63d4f9798}{TestItemContainer::TestRemoveItems}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00140}00140\ \ \ \ \ std::vector<Item>\ backpackItems\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00140}00140\ \ \ \ \ std::vector<Item>\ backpackItems\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00141}00141\ \ \ \ \ std::vector<Item*>\ backpackItemsToRemove;}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00142}00142\ \ \ \ \ backpackItemsToRemove.push\_back(\&backpackItems[0]);}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00143}00143\ \ \ \ \ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a788a4cadcf8dd469aa6547f3a79da197}{RemoveItems}}(backpackItemsToRemove);}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00144}00144\ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00145}00145\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(1,\ (\textcolor{keywordtype}{int})backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().size());}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00145}00145\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(1,\ (\textcolor{keywordtype}{int})backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size());}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00146}00146\ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00147}00147\ \ \ \ \ std::vector<Item>\ chestItems\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00147}00147\ \ \ \ \ std::vector<Item>\ chestItems\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00148}00148\ \ \ \ \ \textcolor{keywordtype}{int}\ chestItemsCount\ =\ chestItems.size();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00149}00149\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00150}00150\ \ \ \ \ std::vector<Item*>\ chestItemsToRemove;}
@@ -153,7 +153,7 @@
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00153}00153\ \ \ \ \ chestItemsToRemove.push\_back(\&chestItems[2]);}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00154}00154\ \ \ \ \ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a788a4cadcf8dd469aa6547f3a79da197}{RemoveItems}}(chestItemsToRemove);}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00155}00155\ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00156}00156\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(chestItemsCount\ -\/\ 3,\ (\textcolor{keywordtype}{int})chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}().size());}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00156}00156\ \ \ \ \ CPPUNIT\_ASSERT\_EQUAL(chestItemsCount\ -\/\ 3,\ (\textcolor{keywordtype}{int})chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}().size());}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00157}00157\ \}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00158}00158\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00159}\mbox{\hyperlink{class_test_item_container_a5ab6a2e7bc8391c8f2f844f6ac8ee845}{00159}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_container_a5ab6a2e7bc8391c8f2f844f6ac8ee845}{TestItemContainer::TestGetItemByName}}(\textcolor{keywordtype}{void})\ \{}
@@ -181,13 +181,13 @@
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00181}00181\ \}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00182}00182\ }
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00183}\mbox{\hyperlink{class_test_item_container_a702398dfdfcf0c4cb65e8b2b97c882be}{00183}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_test_item_container_a702398dfdfcf0c4cb65e8b2b97c882be}{TestItemContainer::TestGetAllItems}}(\textcolor{keywordtype}{void})\ \{}
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00184}00184\ \ \ \ \ std::vector<Item>\ backpackItems\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00184}00184\ \ \ \ \ std::vector<Item>\ backpackItems\ =\ backpackObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00185}00185\ \ \ \ \ CPPUNIT\_ASSERT(backpackItems.size()\ ==\ 2);}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00186}00186\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00187}00187\ \ \ \ \ std::vector<Item>\ wornItems\ =\ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00187}00187\ \ \ \ \ std::vector<Item>\ wornItems\ =\ wornItemsObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00188}00188\ \ \ \ \ CPPUNIT\_ASSERT(wornItems.size()\ ==\ \mbox{\hyperlink{testitemcontainer_8cpp_a2b3a4f43587451e4e99eaf94a4ab81a2}{WORN\_ITEMS\_SIZE}});}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00189}00189\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00190}00190\ \ \ \ \ std::vector<Item>\ chestItems\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a3a0427089028008c76ebf1696e77937a}{GetAllItems}}();}
+\DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00190}00190\ \ \ \ \ std::vector<Item>\ chestItems\ =\ chestObject-\/>\mbox{\hyperlink{classitemcontainer_1_1_item_container_a24b6bc330a7079fce9f1cb11475dadcc}{GetAllItems}}();}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00191}00191\ \ \ \ \ CPPUNIT\_ASSERT(chestItems.size()\ >=\ 0);}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00192}00192\ \}}
 \DoxyCodeLine{\Hypertarget{testitemcontainer_8cpp_source_l00193}00193\ }

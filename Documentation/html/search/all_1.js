@@ -10,9 +10,5 @@ var searchData=
   ['boots_5fmax_5fweight_7',['BOOTS_MAX_WEIGHT',['../testitem_8cpp.html#a58b3d0e24110339040cf727496ce9872',1,'testitem.cpp']]],
   ['boots_5fmin_5fweight_8',['BOOTS_MIN_WEIGHT',['../testitem_8cpp.html#a540acde2449837f18b49248751e24e51',1,'testitem.cpp']]],
   ['build_5ffighter_9',['Build_Fighter',['../namespacecharacter_builder.html#a6ac75cad238ce4bfb23333e2d3263f5d',1,'characterBuilder']]],
-  ['buildcols_10',['buildCols',['../class_map_builder_1_1_map_builder.html#a5d1aafcf8fc74a3bb18cf4219fb9db8e',1,'MapBuilder::MapBuilder']]],
-  ['buildendcell_11',['buildEndCell',['../class_map_builder_1_1_map_builder.html#aadedc56fcaa5bae00ce4b546cef0756f',1,'MapBuilder::MapBuilder']]],
-  ['buildgrid_12',['buildGrid',['../class_map_builder_1_1_map_builder.html#ac978bd0a64b1eff4c700a69fe516448e',1,'MapBuilder::MapBuilder']]],
-  ['buildrows_13',['buildRows',['../class_map_builder_1_1_map_builder.html#a5eedd0794726d83c135be655ee92a3ab',1,'MapBuilder::MapBuilder']]],
-  ['bully_14',['Bully',['../namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7a275370ef329a53d78342d8b3d2992e3e',1,'characterBuilder']]]
+  ['bully_10',['Bully',['../namespacecharacter_builder.html#af3d7d65962e68b41688360d8d264abe7a275370ef329a53d78342d8b3d2992e3e',1,'characterBuilder']]]
 ];

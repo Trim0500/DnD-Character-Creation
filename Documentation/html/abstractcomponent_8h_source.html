@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/abstractcomponent.h Source File</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Decorator/abstractcomponent.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -77,7 +77,7 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_7f246d5691c390043d06c2ddabc96872.html">Decorator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -97,14 +97,17 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classabstractcomponent_1_1_abstract_component.html#ae1acfe71e56c091537098ef02f249deb">   28</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classabstractcomponent_1_1_abstract_component.html#ae1acfe71e56c091537098ef02f249deb">Ability_Score_Natural</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>) { <span class="keywordflow">return</span> 0; };</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">   34</a></span>            <span class="keyword">virtual</span> std::vector&lt;AbstractComponent*&gt; <a class="code hl_function" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">GetDecoratorList</a>() { std::vector&lt;AbstractComponent*&gt; initDecorators; <span class="keywordflow">return</span> initDecorators; };</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classabstractcomponent_1_1_abstract_component.html#afbc8413352a275acd12197f8276ea810">   30</a></span>            <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classabstractcomponent_1_1_abstract_component.html#afbc8413352a275acd12197f8276ea810">ModifierDecorator</a>(<span class="keywordtype">int</span>) { <span class="keywordflow">return</span> 0; }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">   36</a></span>            <span class="keyword">virtual</span> std::vector&lt;AbstractComponent*&gt; <a class="code hl_function" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">GetDecoratorList</a>() { std::vector&lt;AbstractComponent*&gt; initDecorators; <span class="keywordflow">return</span> initDecorators; };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    };</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html">abstractcomponent::AbstractComponent</a></div><div class="ttdoc">Class that provides the virtual methods to override for the concrete implementations of the decorator...</div><div class="ttdef"><b>Definition</b> <a href="#l00021">abstractcomponent.h:22</a></div></div>
-<div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ad76ada9fbc3f620ce6707dc578110734"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">abstractcomponent::AbstractComponent::GetDecoratorList</a></div><div class="ttdeci">virtual std::vector&lt; AbstractComponent * &gt; GetDecoratorList()</div><div class="ttdoc">Virtual function that is meant to be overriden to establish the decorators in play.</div><div class="ttdef"><b>Definition</b> <a href="#l00034">abstractcomponent.h:34</a></div></div>
+<div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ad76ada9fbc3f620ce6707dc578110734"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">abstractcomponent::AbstractComponent::GetDecoratorList</a></div><div class="ttdeci">virtual std::vector&lt; AbstractComponent * &gt; GetDecoratorList()</div><div class="ttdoc">Virtual function that is meant to be overriden to establish the decorators in play.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">abstractcomponent.h:36</a></div></div>
 <div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ae1acfe71e56c091537098ef02f249deb"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ae1acfe71e56c091537098ef02f249deb">abstractcomponent::AbstractComponent::Ability_Score_Natural</a></div><div class="ttdeci">virtual int Ability_Score_Natural(int, int)</div><div class="ttdoc">Virtual function that is meant to be overriden to get the particular ability score of a character.</div><div class="ttdef"><b>Definition</b> <a href="#l00028">abstractcomponent.h:28</a></div></div>
+<div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_afbc8413352a275acd12197f8276ea810"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#afbc8413352a275acd12197f8276ea810">abstractcomponent::AbstractComponent::ModifierDecorator</a></div><div class="ttdeci">virtual int ModifierDecorator(int)</div><div class="ttdef"><b>Definition</b> <a href="#l00030">abstractcomponent.h:30</a></div></div>
 <div class="ttc" id="anamespaceabstractcomponent_html"><div class="ttname"><a href="namespaceabstractcomponent.html">abstractcomponent</a></div><div class="ttdoc">Namespace that encasulates the functionality for the AbstractComponenet class.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

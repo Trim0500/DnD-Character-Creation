@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/item.cpp Source File</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Item/item.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -77,7 +77,7 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_7831fc1790f83c0859b7a88fa991c84a.html">Item</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -174,7 +174,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        }</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        std::ostringstream name;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        name &lt;&lt; <a class="code hl_variable" href="namespaceitem.html#a2253f9eb5765081cd2a4130418e1c79e">itemTypeStrings</a>[itemType - 1] &lt;&lt; <span class="stringliteral">&quot; +&quot;</span> &lt;&lt; std::to_string(enchantmentBonus) &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceitem.html#a322c65f5a2c476554a678038e084b235">statStrings</a>[enchantmentType] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        name &lt;&lt; <a class="code hl_variable" href="namespaceitem.html#a9501dab7c182587ac14d64fcd246c687">itemTypeStrings</a>[itemType - 1] &lt;&lt; <span class="stringliteral">&quot; +&quot;</span> &lt;&lt; std::to_string(enchantmentBonus) &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_variable" href="namespaceitem.html#a2a155b18c890173893672ee3c5140519">statStrings</a>[enchantmentType] &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        itemName = name.str();</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_variable" href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">wrappee</a> = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
@@ -225,26 +225,61 @@ $(function() { codefold.init(0); });
 </div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
 <div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classitem_1_1_item.html#aab6e419cfea26bdea0389095c0f336c6">  162</a></span>    std::vector&lt;AbstractComponent*&gt; <a class="code hl_function" href="classitem_1_1_item.html#aab6e419cfea26bdea0389095c0f336c6">Item::GetDecoratorList</a>() {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        std::vector&lt;AbstractComponent*&gt; decoratorList = <a class="code hl_variable" href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">wrappee</a>-&gt;<a class="code hl_function" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">GetDecoratorList</a>();</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        decoratorList.push_back(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classitem_1_1_item.html#ad5276017551894cdf1d250ed07abb773">  162</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classitem_1_1_item.html#ad5276017551894cdf1d250ed07abb773">Item::ModifierDecorator</a>(<span class="keywordtype">int</span> _abilityScore) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        <span class="keywordflow">if</span> (_abilityScore == 6) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>            <span class="keywordtype">int</span> armorResult = <a class="code hl_function" href="classitem_1_1_item.html#afb9f81913b75fd4b93ac1e49dbfa5fa6">Ability_Score_Natural</a>(_abilityScore, 0) + <a class="code hl_function" href="classitem_1_1_item.html#ad5276017551894cdf1d250ed07abb773">ModifierDecorator</a>(<a class="code hl_enumvalue" href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69">CharacterStats::Dexterity</a>);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span> decoratorList;</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">return</span> armorResult;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordtype">int</span> scoreResult = <a class="code hl_function" href="classitem_1_1_item.html#afb9f81913b75fd4b93ac1e49dbfa5fa6">Ability_Score_Natural</a>(_abilityScore, 0);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordtype">int</span> modifier{ 0 };</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            modifier = std::floor(((<span class="keywordtype">float</span>)(scoreResult - 10) / 2));</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">catch</span> (std::exception&amp; e) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            std::cerr &lt;&lt; &amp;e &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keywordflow">return</span> modifier;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
 </div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>}</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="foldopen" id="foldopen00184" data-start="{" data-end="}">
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classitem_1_1_item.html#aab6e419cfea26bdea0389095c0f336c6">  184</a></span>    std::vector&lt;AbstractComponent*&gt; <a class="code hl_function" href="classitem_1_1_item.html#aab6e419cfea26bdea0389095c0f336c6">Item::GetDecoratorList</a>() {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        std::vector&lt;AbstractComponent*&gt; decoratorList = <a class="code hl_variable" href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">wrappee</a>-&gt;<a class="code hl_function" href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">GetDecoratorList</a>();</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        decoratorList.push_back(<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">return</span> decoratorList;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
 </div>
-<div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ad76ada9fbc3f620ce6707dc578110734"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">abstractcomponent::AbstractComponent::GetDecoratorList</a></div><div class="ttdeci">virtual std::vector&lt; AbstractComponent * &gt; GetDecoratorList()</div><div class="ttdoc">Virtual function that is meant to be overriden to establish the decorators in play.</div><div class="ttdef"><b>Definition</b> <a href="abstractcomponent_8h_source.html#l00034">abstractcomponent.h:34</a></div></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="}">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classitem_1_1_item.html#a3d3c87e088ed64ecf35e378731ed59e8">  191</a></span>    std::string <a class="code hl_function" href="classitem_1_1_item.html#a3d3c87e088ed64ecf35e378731ed59e8">item::Item::serialize</a>() {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        std::string str = <span class="stringliteral">&quot;i,&quot;</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        str += std::to_string(this-&gt;itemId);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keywordflow">return</span> str;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="comment">//i,id</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    }</div>
+</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}</div>
+</div>
+<div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ad76ada9fbc3f620ce6707dc578110734"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ad76ada9fbc3f620ce6707dc578110734">abstractcomponent::AbstractComponent::GetDecoratorList</a></div><div class="ttdeci">virtual std::vector&lt; AbstractComponent * &gt; GetDecoratorList()</div><div class="ttdoc">Virtual function that is meant to be overriden to establish the decorators in play.</div><div class="ttdef"><b>Definition</b> <a href="abstractcomponent_8h_source.html#l00036">abstractcomponent.h:36</a></div></div>
 <div class="ttc" id="aclassabstractcomponent_1_1_abstract_component_html_ae1acfe71e56c091537098ef02f249deb"><div class="ttname"><a href="classabstractcomponent_1_1_abstract_component.html#ae1acfe71e56c091537098ef02f249deb">abstractcomponent::AbstractComponent::Ability_Score_Natural</a></div><div class="ttdeci">virtual int Ability_Score_Natural(int, int)</div><div class="ttdoc">Virtual function that is meant to be overriden to get the particular ability score of a character.</div><div class="ttdef"><b>Definition</b> <a href="abstractcomponent_8h_source.html#l00028">abstractcomponent.h:28</a></div></div>
 <div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html">componentdecorator::ComponentDecorator</a></div><div class="ttdoc">Class that implements the AbstractComponent interface.</div><div class="ttdef"><b>Definition</b> <a href="componentdecorator_8h_source.html#l00022">componentdecorator.h:23</a></div></div>
-<div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html_ad12ee7309bd6a59949eb9c7e396e7958"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">componentdecorator::ComponentDecorator::wrappee</a></div><div class="ttdeci">AbstractComponent * wrappee</div><div class="ttdef"><b>Definition</b> <a href="componentdecorator_8h_source.html#l00052">componentdecorator.h:52</a></div></div>
+<div class="ttc" id="aclasscomponentdecorator_1_1_component_decorator_html_ad12ee7309bd6a59949eb9c7e396e7958"><div class="ttname"><a href="classcomponentdecorator_1_1_component_decorator.html#ad12ee7309bd6a59949eb9c7e396e7958">componentdecorator::ComponentDecorator::wrappee</a></div><div class="ttdeci">AbstractComponent * wrappee</div><div class="ttdef"><b>Definition</b> <a href="componentdecorator_8h_source.html#l00054">componentdecorator.h:54</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html_a3d3c87e088ed64ecf35e378731ed59e8"><div class="ttname"><a href="classitem_1_1_item.html#a3d3c87e088ed64ecf35e378731ed59e8">item::Item::serialize</a></div><div class="ttdeci">std::string serialize()</div><div class="ttdef"><b>Definition</b> <a href="#l00191">item.cpp:191</a></div></div>
 <div class="ttc" id="aclassitem_1_1_item_html_a7e7998679cac37adb8124f012d5dd39e"><div class="ttname"><a href="classitem_1_1_item.html#a7e7998679cac37adb8124f012d5dd39e">item::Item::Item</a></div><div class="ttdeci">Item()</div><div class="ttdoc">No-args constructor for Item.</div><div class="ttdef"><b>Definition</b> <a href="#l00060">item.cpp:60</a></div></div>
-<div class="ttc" id="aclassitem_1_1_item_html_aab6e419cfea26bdea0389095c0f336c6"><div class="ttname"><a href="classitem_1_1_item.html#aab6e419cfea26bdea0389095c0f336c6">item::Item::GetDecoratorList</a></div><div class="ttdeci">std::vector&lt; AbstractComponent * &gt; GetDecoratorList() override</div><div class="ttdoc">Overriden function that is meant to use the wrappee's function of the same name and then push the dec...</div><div class="ttdef"><b>Definition</b> <a href="#l00162">item.cpp:162</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html_aab6e419cfea26bdea0389095c0f336c6"><div class="ttname"><a href="classitem_1_1_item.html#aab6e419cfea26bdea0389095c0f336c6">item::Item::GetDecoratorList</a></div><div class="ttdeci">std::vector&lt; AbstractComponent * &gt; GetDecoratorList() override</div><div class="ttdoc">Overriden function that is meant to use the wrappee's function of the same name and then push the dec...</div><div class="ttdef"><b>Definition</b> <a href="#l00184">item.cpp:184</a></div></div>
+<div class="ttc" id="aclassitem_1_1_item_html_ad5276017551894cdf1d250ed07abb773"><div class="ttname"><a href="classitem_1_1_item.html#ad5276017551894cdf1d250ed07abb773">item::Item::ModifierDecorator</a></div><div class="ttdeci">int ModifierDecorator(int) override</div><div class="ttdef"><b>Definition</b> <a href="#l00162">item.cpp:162</a></div></div>
 <div class="ttc" id="aclassitem_1_1_item_html_afb9f81913b75fd4b93ac1e49dbfa5fa6"><div class="ttname"><a href="classitem_1_1_item.html#afb9f81913b75fd4b93ac1e49dbfa5fa6">item::Item::Ability_Score_Natural</a></div><div class="ttdeci">int Ability_Score_Natural(int, int) override</div><div class="ttdoc">Overriden function that is meant to use the wrappee's function of the same name to then add on the en...</div><div class="ttdef"><b>Definition</b> <a href="#l00152">item.cpp:152</a></div></div>
 <div class="ttc" id="aitem_8h_html"><div class="ttname"><a href="item_8h.html">item.h</a></div><div class="ttdoc">Header file for the Item class.</div></div>
 <div class="ttc" id="anamespaceitem_html"><div class="ttname"><a href="namespaceitem.html">item</a></div><div class="ttdoc">namespace to encapsulate character items</div><div class="ttdef"><b>Definition</b> <a href="#l00059">item.cpp:59</a></div></div>
-<div class="ttc" id="anamespaceitem_html_a2253f9eb5765081cd2a4130418e1c79e"><div class="ttname"><a href="namespaceitem.html#a2253f9eb5765081cd2a4130418e1c79e">item::itemTypeStrings</a></div><div class="ttdeci">const std::string itemTypeStrings[7]</div><div class="ttdoc">String array for formatting item name item type.</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00089">item.h:89</a></div></div>
-<div class="ttc" id="anamespaceitem_html_a322c65f5a2c476554a678038e084b235"><div class="ttname"><a href="namespaceitem.html#a322c65f5a2c476554a678038e084b235">item::statStrings</a></div><div class="ttdeci">const std::string statStrings[9]</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00094">item.h:94</a></div></div>
+<div class="ttc" id="anamespaceitem_html_a2a155b18c890173893672ee3c5140519"><div class="ttname"><a href="namespaceitem.html#a2a155b18c890173893672ee3c5140519">item::statStrings</a></div><div class="ttdeci">const std::string statStrings[10]</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00094">item.h:94</a></div></div>
+<div class="ttc" id="anamespaceitem_html_a9501dab7c182587ac14d64fcd246c687"><div class="ttname"><a href="namespaceitem.html#a9501dab7c182587ac14d64fcd246c687">item::itemTypeStrings</a></div><div class="ttdeci">const std::string itemTypeStrings[11]</div><div class="ttdoc">String array for formatting item name item type.</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00089">item.h:89</a></div></div>
 <div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51c"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51c">item::CharacterStats</a></div><div class="ttdeci">CharacterStats</div><div class="ttdoc">Enum for the character stats.</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00071">item.h:72</a></div></div>
 <div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca65c3de7780fb80d6590f5662fc4ef383">item::Wisdom</a></div><div class="ttdeci">@ Wisdom</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00077">item.h:77</a></div></div>
 <div class="ttc" id="anamespaceitem_html_aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0"><div class="ttname"><a href="namespaceitem.html#aca40f9fb092a0a6546baedf39953d51ca6e45ea25aabdbd5c8d37c7782ba00ee0">item::ArmorClass</a></div><div class="ttdeci">@ ArmorClass</div><div class="ttdef"><b>Definition</b> <a href="item_8h_source.html#l00079">item.h:79</a></div></div>

@@ -18,7 +18,9 @@ bool \mbox{\hyperlink{namespaceserializecharacter_acd2e66e8066c296fe86627b2e5791
 \mbox{\hyperlink{structserializecharacter_1_1_character_record}{Character\+Record}} \mbox{\hyperlink{namespaceserializecharacter_a6b3126a56f8d097443c95a268e6ce223}{Load\+Character}} (const std\+::string \&filename)
 \begin{DoxyCompactList}\small\item\em Loads a character entity from a CSV file into a \doxylink{structserializecharacter_1_1_character_record}{Character\+Record} type struct. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{namespaceserializecharacter_afe9a9107cd9df5aa14eef5605768e51b}{Find\+Character\+File}} (int character\+\_\+id, std\+::filesystem\+::path t\+\_\+path)
-\begin{DoxyCompactList}\small\item\em Finds a character .csv file given an id and path to a directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Finds a character .csv file given an id and path to a directory. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structserializecharacter_1_1_character_record}{Character\+Record}} $>$ \mbox{\hyperlink{namespaceserializecharacter_aed267fc9d906729e54d32286eec3462f}{Load\+All\+Characters}} (std\+::filesystem\+::path t\+\_\+path)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -45,6 +47,16 @@ Finds a character .csv file given an id and path to a directory.
 
 
 Definition at line \mbox{\hyperlink{_serialize_character_8cpp_source_l00225}{225}} of file \mbox{\hyperlink{_serialize_character_8cpp_source}{Serialize\+Character.\+cpp}}.
+
+\Hypertarget{namespaceserializecharacter_aed267fc9d906729e54d32286eec3462f}\label{namespaceserializecharacter_aed267fc9d906729e54d32286eec3462f} 
+\index{serializecharacter@{serializecharacter}!LoadAllCharacters@{LoadAllCharacters}}
+\index{LoadAllCharacters@{LoadAllCharacters}!serializecharacter@{serializecharacter}}
+\doxysubsubsection{\texorpdfstring{LoadAllCharacters()}{LoadAllCharacters()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{structserializecharacter_1_1_character_record}{serializecharacter\+::\+Character\+Record}} $>$ serializecharacter\+::\+Load\+All\+Characters (\begin{DoxyParamCaption}\item[{std\+::filesystem\+::path}]{t\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_serialize_character_8cpp_source_l00244}{244}} of file \mbox{\hyperlink{_serialize_character_8cpp_source}{Serialize\+Character.\+cpp}}.
 
 \Hypertarget{namespaceserializecharacter_a6b3126a56f8d097443c95a268e6ce223}\label{namespaceserializecharacter_a6b3126a56f8d097443c95a268e6ce223} 
 \index{serializecharacter@{serializecharacter}!LoadCharacter@{LoadCharacter}}

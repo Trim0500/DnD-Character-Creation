@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/MapDirector.cpp Source File</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Builder/MapDirector.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -77,43 +77,30 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_9da6dffd901c5069116eb6008923f377.html">Builder</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">MapDirector.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_map_director_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_map_builder_8h.html">MapBuilder.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_map_director_8h.html">MapDirector.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="_map_director_8cpp.html#a16b820eb8f1b1b582d0eba6c285f2468">    4</a></span><span class="keyword">using </span><a class="code hl_class" href="class_map_builder_1_1_map_builder.html">MB</a> = <a class="code hl_class" href="class_map_builder_1_1_map_builder.html">MapBuilder::MapBuilder</a>;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="class_map_director_1_1_map_director.html#ad22d82d1feb2e1da43d2ddfedbae31ac">    6</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_director_1_1_map_director.html#ad22d82d1feb2e1da43d2ddfedbae31ac">MapDirector::MapDirector::setMapBuilder</a>(<a class="code hl_class" href="class_map_builder_1_1_map_builder.html">MB</a>* mb) {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    m_mapBuilder = mb;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
-</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_map_director_1_1_map_director.html#a163b17f3b2aa64cce012b0e8ce650551">   10</a></span><a class="code hl_class" href="class_map_1_1_map.html">Map::Map</a>* <a class="code hl_function" href="class_map_director_1_1_map_director.html#a163b17f3b2aa64cce012b0e8ce650551">MapDirector::MapDirector::getMap</a>() {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordflow">return</span> m_mapBuilder-&gt;getMap();</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
-</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_map_director_1_1_map_director.html#aa5ab197b177e57941b623b8868b01428">   14</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_map_director_1_1_map_director.html#aa5ab197b177e57941b623b8868b01428">MapDirector::MapDirector::constructMap</a>() {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    m_mapBuilder-&gt;createnewMap();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">//more to come?</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
-</div>
-<div class="ttc" id="a_map_builder_8h_html"><div class="ttname"><a href="_map_builder_8h.html">MapBuilder.h</a></div></div>
-<div class="ttc" id="a_map_director_8h_html"><div class="ttname"><a href="_map_director_8h.html">MapDirector.h</a></div></div>
-<div class="ttc" id="aclass_map_1_1_map_html"><div class="ttname"><a href="class_map_1_1_map.html">Map::Map</a></div><div class="ttdef"><b>Definition</b> <a href="_map_8h_source.html#l00055">Map.h:55</a></div></div>
-<div class="ttc" id="aclass_map_builder_1_1_map_builder_html"><div class="ttname"><a href="class_map_builder_1_1_map_builder.html">MapBuilder::MapBuilder</a></div><div class="ttdef"><b>Definition</b> <a href="_map_builder_8h_source.html#l00010">MapBuilder.h:10</a></div></div>
-<div class="ttc" id="aclass_map_director_1_1_map_director_html_a163b17f3b2aa64cce012b0e8ce650551"><div class="ttname"><a href="class_map_director_1_1_map_director.html#a163b17f3b2aa64cce012b0e8ce650551">MapDirector::MapDirector::getMap</a></div><div class="ttdeci">Map::Map * getMap()</div><div class="ttdef"><b>Definition</b> <a href="#l00010">MapDirector.cpp:10</a></div></div>
-<div class="ttc" id="aclass_map_director_1_1_map_director_html_aa5ab197b177e57941b623b8868b01428"><div class="ttname"><a href="class_map_director_1_1_map_director.html#aa5ab197b177e57941b623b8868b01428">MapDirector::MapDirector::constructMap</a></div><div class="ttdeci">void constructMap()</div><div class="ttdef"><b>Definition</b> <a href="#l00014">MapDirector.cpp:14</a></div></div>
-<div class="ttc" id="aclass_map_director_1_1_map_director_html_ad22d82d1feb2e1da43d2ddfedbae31ac"><div class="ttname"><a href="class_map_director_1_1_map_director.html#ad22d82d1feb2e1da43d2ddfedbae31ac">MapDirector::MapDirector::setMapBuilder</a></div><div class="ttdeci">void setMapBuilder(MapBuilder::MapBuilder *mb)</div><div class="ttdef"><b>Definition</b> <a href="#l00006">MapDirector.cpp:6</a></div></div>
+<a href="_map_director_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//#include &quot;MapBuilder.h&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//#include &quot;MapDirector.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//using MB = MapBuilder::MapBuilder;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//void MapDirector::MapDirector::setMapBuilder(MB* mb) {</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  m_mapBuilder = mb;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//}</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//Map::Map* MapDirector::MapDirector::getMap() {</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  return m_mapBuilder-&gt;getMap();</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//}</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//void MapDirector::MapDirector::constructMap() {</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//  m_mapBuilder-&gt;createnewMap();</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//  //more to come?</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//}</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

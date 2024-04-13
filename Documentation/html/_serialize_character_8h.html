@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/SerializeCharacter.h File Reference</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Serialize/SerializeCharacter.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -72,7 +72,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_b153107e183d91003be63b45465c1daa.html">Serialize</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -82,9 +82,9 @@ $(function() {
   <div class="headertitle"><div class="title">SerializeCharacter.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="_character_8h_source.html">Character.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="item_8h_source.html">item.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="itemcontainer_8h_source.html">itemcontainer.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="_character_8h_source.html">..\Character\Character.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="item_8h_source.html">..\Item\item.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="itemcontainer_8h_source.html">..\Item\itemcontainer.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
@@ -111,6 +111,8 @@ Functions</h2></td></tr>
 <tr class="memitem:afe9a9107cd9df5aa14eef5605768e51b" id="r_afe9a9107cd9df5aa14eef5605768e51b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceserializecharacter.html#afe9a9107cd9df5aa14eef5605768e51b">serializecharacter::FindCharacterFile</a> (int character_id, std::filesystem::path t_path)</td></tr>
 <tr class="memdesc:afe9a9107cd9df5aa14eef5605768e51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a character .csv file given an id and path to a directory.  <br /></td></tr>
 <tr class="separator:afe9a9107cd9df5aa14eef5605768e51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed267fc9d906729e54d32286eec3462f" id="r_aed267fc9d906729e54d32286eec3462f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structserializecharacter_1_1_character_record.html">CharacterRecord</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceserializecharacter.html#aed267fc9d906729e54d32286eec3462f">serializecharacter::LoadAllCharacters</a> (std::filesystem::path t_path)</td></tr>
+<tr class="separator:aed267fc9d906729e54d32286eec3462f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

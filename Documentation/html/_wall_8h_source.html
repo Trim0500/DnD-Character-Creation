@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Wall.h Source File</title>
+<title>[COMP345] Project: C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Interactable/Wall.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -77,7 +77,7 @@ $(function() { codefold.init(0); });
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6425417fc3ed63ec2f10d85f1182f2d.html">ProjectSourceCode</a></li><li class="navelem"><a class="el" href="dir_bc6324a0be12dead4d63383ee8ba8e56.html">Interactable</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -93,13 +93,16 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_wall.html#a616ad99e8dca619dc4e8b055d5f6f6a8">    9</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_wall.html#a616ad99e8dca619dc4e8b055d5f6f6a8">passable</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_wall.html#ae22801776411990266d30be524e2f9ef">    9</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_wall.html#ae22801776411990266d30be524e2f9ef">passable</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="class_wall.html#a7672fef6418a3bd26ee330e3a0312109">   10</a></span>    std::string <a class="code hl_function" href="class_wall.html#a7672fef6418a3bd26ee330e3a0312109">serialize</a>() { <span class="keywordflow">return</span> <span class="stringliteral">&quot;w&quot;</span>; };</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>};</div>
 </div>
 <div class="ttc" id="a_interactable_8h_html"><div class="ttname"><a href="_interactable_8h.html">Interactable.h</a></div></div>
-<div class="ttc" id="aclass_interactable_1_1_interactable_html"><div class="ttname"><a href="class_interactable_1_1_interactable.html">Interactable::Interactable</a></div><div class="ttdef"><b>Definition</b> <a href="_interactable_8h_source.html#l00005">Interactable.h:5</a></div></div>
+<div class="ttc" id="aclass_interactable_1_1_interactable_html"><div class="ttname"><a href="class_interactable_1_1_interactable.html">Interactable::Interactable</a></div><div class="ttdef"><b>Definition</b> <a href="_interactable_8h_source.html#l00006">Interactable.h:6</a></div></div>
 <div class="ttc" id="aclass_wall_html"><div class="ttname"><a href="class_wall.html">Wall</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">Wall.h:6</a></div></div>
-<div class="ttc" id="aclass_wall_html_a616ad99e8dca619dc4e8b055d5f6f6a8"><div class="ttname"><a href="class_wall.html#a616ad99e8dca619dc4e8b055d5f6f6a8">Wall::passable</a></div><div class="ttdeci">bool passable() const override</div><div class="ttdef"><b>Definition</b> <a href="#l00009">Wall.h:9</a></div></div>
+<div class="ttc" id="aclass_wall_html_a7672fef6418a3bd26ee330e3a0312109"><div class="ttname"><a href="class_wall.html#a7672fef6418a3bd26ee330e3a0312109">Wall::serialize</a></div><div class="ttdeci">std::string serialize()</div><div class="ttdef"><b>Definition</b> <a href="#l00010">Wall.h:10</a></div></div>
+<div class="ttc" id="aclass_wall_html_ae22801776411990266d30be524e2f9ef"><div class="ttname"><a href="class_wall.html#ae22801776411990266d30be524e2f9ef">Wall::passable</a></div><div class="ttdeci">bool passable() const</div><div class="ttdef"><b>Definition</b> <a href="#l00009">Wall.h:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: componentdecorator::ComponentDecorator Class Reference</title>
+<title>[COMP345] Project: componentdecorator::ComponentDecorator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -110,6 +110,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7dab287f9820a894d217e609052be9c9" id="r_a7dab287f9820a894d217e609052be9c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dab287f9820a894d217e609052be9c9">Ability_Score_Natural</a> (int, int) override</td></tr>
 <tr class="memdesc:a7dab287f9820a894d217e609052be9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to use the wrappee's function of the same name as a baseline for derived classes.  <br /></td></tr>
 <tr class="separator:a7dab287f9820a894d217e609052be9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a0a0ac628778d795aeb0d95f8c2017" id="r_a46a0a0ac628778d795aeb0d95f8c2017"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46a0a0ac628778d795aeb0d95f8c2017">ModifierDecorator</a> (int) override</td></tr>
+<tr class="separator:a46a0a0ac628778d795aeb0d95f8c2017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72e4f92bcba76d839385bb4d3fdedeb9" id="r_a72e4f92bcba76d839385bb4d3fdedeb9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72e4f92bcba76d839385bb4d3fdedeb9">GetDecoratorList</a> () override</td></tr>
 <tr class="memdesc:a72e4f92bcba76d839385bb4d3fdedeb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overriden function that is meant to use the wrappee's function of the same name as a baseline for concete implementations.  <br /></td></tr>
 <tr class="separator:a72e4f92bcba76d839385bb4d3fdedeb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,6 +250,37 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classitem_1_1_item.html#aab6e419cfea26bdea0389095c0f336c6">item::Item</a>.</p>
 
+<p class="definition">Definition at line <a class="el" href="componentdecorator_8cpp_source.html#l00016">16</a> of file <a class="el" href="componentdecorator_8cpp_source.html">componentdecorator.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a46a0a0ac628778d795aeb0d95f8c2017" name="a46a0a0ac628778d795aeb0d95f8c2017"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a0a0ac628778d795aeb0d95f8c2017">&#9670;&#160;</a></span>ModifierDecorator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int componentdecorator::ComponentDecorator::ModifierDecorator </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_anilityScore</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classabstractcomponent_1_1_abstract_component.html#afbc8413352a275acd12197f8276ea810">abstractcomponent::AbstractComponent</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classitem_1_1_item.html#ad5276017551894cdf1d250ed07abb773">item::Item</a>.</p>
+
 <p class="definition">Definition at line <a class="el" href="componentdecorator_8cpp_source.html#l00012">12</a> of file <a class="el" href="componentdecorator_8cpp_source.html">componentdecorator.cpp</a>.</p>
 
 </div>
@@ -273,13 +306,13 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="componentdecorator_8h_source.html#l00052">52</a> of file <a class="el" href="componentdecorator_8h_source.html">componentdecorator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="componentdecorator_8h_source.html#l00054">54</a> of file <a class="el" href="componentdecorator_8h_source.html">componentdecorator.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="componentdecorator_8h_source.html">componentdecorator.h</a></li>
-<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="componentdecorator_8cpp_source.html">componentdecorator.cpp</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Decorator/<a class="el" href="componentdecorator_8h_source.html">componentdecorator.h</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Decorator/<a class="el" href="componentdecorator_8cpp_source.html">componentdecorator.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,0 +1,308 @@
+\doxysection{door\+::Door Class Reference}
+\hypertarget{classdoor_1_1_door}{}\label{classdoor_1_1_door}\index{door::Door@{door::Door}}
+
+
+{\ttfamily \#include $<$door.\+h$>$}
+
+Inheritance diagram for door\+::Door\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdoor_1_1_door}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdoor_1_1_door_a87b1aa27731114d57781c1951e2e3c3c}{Door}} ()
+\item 
+\mbox{\hyperlink{classdoor_1_1_door_a76d04f91a9d8f6a5b818954d023a9ed6}{Door}} (const int \&\+\_\+door\+ID)
+\item 
+\mbox{\hyperlink{classdoor_1_1_door_a7ac2a4d6d4cf24f05e9a9984d7eaa410}{Door}} (int \+\_\+door\+ID, int \+\_\+first\+Map\+ID, int \+\_\+second\+Map\+ID, std\+::vector$<$ int $>$ \+\_\+first\+Map\+Location, std\+::vector$<$ int $>$ \+\_\+second\+Map\+Location, std\+::vector$<$ int $>$ \+\_\+first\+Map\+Spawn\+Point, std\+::vector$<$ int $>$ \+\_\+second\+Map\+Spawn\+Point)
+\item 
+\mbox{\hyperlink{classdoor_1_1_door_aac97a797868067324535805c8bf1f354}{Door}} (\mbox{\hyperlink{classdoor_1_1_door}{Door}} \&\+\_\+door)
+\item 
+\mbox{\hyperlink{classdoor_1_1_door_a2233106b23d93facad09dfbfa1991dc3}{\texorpdfstring{$\sim$}{\string~}\+Door}} ()
+\item 
+int \mbox{\hyperlink{classdoor_1_1_door_af3dbe0ee378bad1717e06d3d3f7baee8}{Get\+Door\+ID}} ()
+\item 
+void \mbox{\hyperlink{classdoor_1_1_door_a5cf26a7606829c4d8f1ca27cc99de89a}{Set\+Door\+ID}} (int \+\_\+door\+ID)
+\item 
+int \mbox{\hyperlink{classdoor_1_1_door_a12fa692cfbeda46efe8935261020fc12}{Get\+First\+Map\+ID}} ()
+\item 
+void \mbox{\hyperlink{classdoor_1_1_door_a14289bb33d2914fffa431f490ef3e481}{Set\+First\+Map\+ID}} (int \+\_\+first\+Map\+ID)
+\item 
+int \mbox{\hyperlink{classdoor_1_1_door_ad5ecacbd59d7a9f6586f156f79e86c48}{Get\+Second\+Map\+ID}} ()
+\item 
+void \mbox{\hyperlink{classdoor_1_1_door_a3ea5d2a8b0ecd8e52ce0442045ef67b1}{Set\+Second\+Map\+ID}} (int \+\_\+second\+Map\+ID)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classdoor_1_1_door_ac8ea00f8dc1f36cf6d94d3f6afa14cbe}{Get\+First\+Map\+Location}} ()
+\item 
+void \mbox{\hyperlink{classdoor_1_1_door_a125a693fb0ae7cf79494fb345c3e1e25}{Set\+First\+Map\+Location}} (std\+::vector$<$ int $>$ \+\_\+first\+Map\+Location)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classdoor_1_1_door_ad5b525a4cd6304fe26ef9ae7061a483b}{Get\+Second\+Map\+Location}} ()
+\item 
+void \mbox{\hyperlink{classdoor_1_1_door_a5530809ce8b768b5a16ac87dc0d14ea3}{Set\+Second\+Map\+Location}} (std\+::vector$<$ int $>$ \+\_\+second\+Map\+Location)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classdoor_1_1_door_a68e7da91c25eaeabb8f8c38b5904d38d}{Get\+First\+Map\+Spawn\+Point}} ()
+\item 
+void \mbox{\hyperlink{classdoor_1_1_door_a96eb7cc413d9934ea57d72a4eec84188}{Set\+First\+Map\+Spawn\+Point}} (std\+::vector$<$ int $>$ \+\_\+first\+Map\+Spawn\+Point)
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classdoor_1_1_door_adf64479c80b16caef565c0faef8e6041}{Get\+Second\+Map\+Spawn\+Point}} ()
+\item 
+void \mbox{\hyperlink{classdoor_1_1_door_a8ec48bd39158dbdc43a612b13ddfae65}{Set\+Second\+Map\+Spawn\+Point}} (std\+::vector$<$ int $>$ \+\_\+second\+Map\+Spawn\+Point)
+\item 
+\mbox{\hyperlink{structdoor_1_1_door_destination_info}{Door\+Destination\+Info}} \mbox{\hyperlink{classdoor_1_1_door_a2423a1cc765281a4bc235e4917c3fbbd}{Use\+Door}} (const int \&)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_interactable_1_1_interactable}{Interactable\+::\+Interactable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_interactable_1_1_interactable_a8235d52ec4930d6d9e31b46262fe8625}{passable}} ()
+\item 
+virtual std\+::string \mbox{\hyperlink{class_interactable_1_1_interactable_a882c61c0b95d96c21b05a0e46f460b59}{serialize}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classdoor_1_1_door_a5db10101d4f8184e166af24257aa01a0}{Get\+Next\+Door\+ID}} ()
+\item 
+static void \mbox{\hyperlink{classdoor_1_1_door_adacac9c4f540b03153913c1e8ed2cb54}{Set\+Next\+Door\+ID}} (int \+\_\+next\+Door\+ID)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00022}{22}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classdoor_1_1_door_a87b1aa27731114d57781c1951e2e3c3c}\label{classdoor_1_1_door_a87b1aa27731114d57781c1951e2e3c3c} 
+\index{door::Door@{door::Door}!Door@{Door}}
+\index{Door@{Door}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{Door()}{Door()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily door\+::\+Door\+::\+Door (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00024}{24}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a76d04f91a9d8f6a5b818954d023a9ed6}\label{classdoor_1_1_door_a76d04f91a9d8f6a5b818954d023a9ed6} 
+\index{door::Door@{door::Door}!Door@{Door}}
+\index{Door@{Door}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{Door()}{Door()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily door\+::\+Door\+::\+Door (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+door\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00026}{26}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a7ac2a4d6d4cf24f05e9a9984d7eaa410}\label{classdoor_1_1_door_a7ac2a4d6d4cf24f05e9a9984d7eaa410} 
+\index{door::Door@{door::Door}!Door@{Door}}
+\index{Door@{Door}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{Door()}{Door()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily door\+::\+Door\+::\+Door (\begin{DoxyParamCaption}\item[{int}]{\+\_\+door\+ID,  }\item[{int}]{\+\_\+first\+Map\+ID,  }\item[{int}]{\+\_\+second\+Map\+ID,  }\item[{std\+::vector$<$ int $>$}]{\+\_\+first\+Map\+Location,  }\item[{std\+::vector$<$ int $>$}]{\+\_\+second\+Map\+Location,  }\item[{std\+::vector$<$ int $>$}]{\+\_\+first\+Map\+Spawn\+Point,  }\item[{std\+::vector$<$ int $>$}]{\+\_\+second\+Map\+Spawn\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00028}{28}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_aac97a797868067324535805c8bf1f354}\label{classdoor_1_1_door_aac97a797868067324535805c8bf1f354} 
+\index{door::Door@{door::Door}!Door@{Door}}
+\index{Door@{Door}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{Door()}{Door()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily door\+::\+Door\+::\+Door (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdoor_1_1_door}{Door}} \&}]{\+\_\+door }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00045}{45}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a2233106b23d93facad09dfbfa1991dc3}\label{classdoor_1_1_door_a2233106b23d93facad09dfbfa1991dc3} 
+\index{door::Door@{door::Door}!````~Door@{\texorpdfstring{$\sim$}{\string~}Door}}
+\index{````~Door@{\texorpdfstring{$\sim$}{\string~}Door}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Door()}{\string~Door()}}
+{\footnotesize\ttfamily door\+::\+Door\+::\texorpdfstring{$\sim$}{\string~}\+Door (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00055}{55}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classdoor_1_1_door_af3dbe0ee378bad1717e06d3d3f7baee8}\label{classdoor_1_1_door_af3dbe0ee378bad1717e06d3d3f7baee8} 
+\index{door::Door@{door::Door}!GetDoorID@{GetDoorID}}
+\index{GetDoorID@{GetDoorID}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{GetDoorID()}{GetDoorID()}}
+{\footnotesize\ttfamily int door\+::\+Door\+::\+Get\+Door\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00061}{61}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a12fa692cfbeda46efe8935261020fc12}\label{classdoor_1_1_door_a12fa692cfbeda46efe8935261020fc12} 
+\index{door::Door@{door::Door}!GetFirstMapID@{GetFirstMapID}}
+\index{GetFirstMapID@{GetFirstMapID}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{GetFirstMapID()}{GetFirstMapID()}}
+{\footnotesize\ttfamily int door\+::\+Door\+::\+Get\+First\+Map\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00065}{65}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_ac8ea00f8dc1f36cf6d94d3f6afa14cbe}\label{classdoor_1_1_door_ac8ea00f8dc1f36cf6d94d3f6afa14cbe} 
+\index{door::Door@{door::Door}!GetFirstMapLocation@{GetFirstMapLocation}}
+\index{GetFirstMapLocation@{GetFirstMapLocation}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{GetFirstMapLocation()}{GetFirstMapLocation()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ door\+::\+Door\+::\+Get\+First\+Map\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00073}{73}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a68e7da91c25eaeabb8f8c38b5904d38d}\label{classdoor_1_1_door_a68e7da91c25eaeabb8f8c38b5904d38d} 
+\index{door::Door@{door::Door}!GetFirstMapSpawnPoint@{GetFirstMapSpawnPoint}}
+\index{GetFirstMapSpawnPoint@{GetFirstMapSpawnPoint}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{GetFirstMapSpawnPoint()}{GetFirstMapSpawnPoint()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ door\+::\+Door\+::\+Get\+First\+Map\+Spawn\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00081}{81}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a5db10101d4f8184e166af24257aa01a0}\label{classdoor_1_1_door_a5db10101d4f8184e166af24257aa01a0} 
+\index{door::Door@{door::Door}!GetNextDoorID@{GetNextDoorID}}
+\index{GetNextDoorID@{GetNextDoorID}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{GetNextDoorID()}{GetNextDoorID()}}
+{\footnotesize\ttfamily static int door\+::\+Door\+::\+Get\+Next\+Door\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00057}{57}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_ad5ecacbd59d7a9f6586f156f79e86c48}\label{classdoor_1_1_door_ad5ecacbd59d7a9f6586f156f79e86c48} 
+\index{door::Door@{door::Door}!GetSecondMapID@{GetSecondMapID}}
+\index{GetSecondMapID@{GetSecondMapID}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{GetSecondMapID()}{GetSecondMapID()}}
+{\footnotesize\ttfamily int door\+::\+Door\+::\+Get\+Second\+Map\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00069}{69}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_ad5b525a4cd6304fe26ef9ae7061a483b}\label{classdoor_1_1_door_ad5b525a4cd6304fe26ef9ae7061a483b} 
+\index{door::Door@{door::Door}!GetSecondMapLocation@{GetSecondMapLocation}}
+\index{GetSecondMapLocation@{GetSecondMapLocation}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{GetSecondMapLocation()}{GetSecondMapLocation()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ door\+::\+Door\+::\+Get\+Second\+Map\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00077}{77}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_adf64479c80b16caef565c0faef8e6041}\label{classdoor_1_1_door_adf64479c80b16caef565c0faef8e6041} 
+\index{door::Door@{door::Door}!GetSecondMapSpawnPoint@{GetSecondMapSpawnPoint}}
+\index{GetSecondMapSpawnPoint@{GetSecondMapSpawnPoint}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{GetSecondMapSpawnPoint()}{GetSecondMapSpawnPoint()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ door\+::\+Door\+::\+Get\+Second\+Map\+Spawn\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00085}{85}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a5cf26a7606829c4d8f1ca27cc99de89a}\label{classdoor_1_1_door_a5cf26a7606829c4d8f1ca27cc99de89a} 
+\index{door::Door@{door::Door}!SetDoorID@{SetDoorID}}
+\index{SetDoorID@{SetDoorID}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{SetDoorID()}{SetDoorID()}}
+{\footnotesize\ttfamily void door\+::\+Door\+::\+Set\+Door\+ID (\begin{DoxyParamCaption}\item[{int}]{\+\_\+door\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00063}{63}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a14289bb33d2914fffa431f490ef3e481}\label{classdoor_1_1_door_a14289bb33d2914fffa431f490ef3e481} 
+\index{door::Door@{door::Door}!SetFirstMapID@{SetFirstMapID}}
+\index{SetFirstMapID@{SetFirstMapID}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{SetFirstMapID()}{SetFirstMapID()}}
+{\footnotesize\ttfamily void door\+::\+Door\+::\+Set\+First\+Map\+ID (\begin{DoxyParamCaption}\item[{int}]{\+\_\+first\+Map\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00067}{67}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a125a693fb0ae7cf79494fb345c3e1e25}\label{classdoor_1_1_door_a125a693fb0ae7cf79494fb345c3e1e25} 
+\index{door::Door@{door::Door}!SetFirstMapLocation@{SetFirstMapLocation}}
+\index{SetFirstMapLocation@{SetFirstMapLocation}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{SetFirstMapLocation()}{SetFirstMapLocation()}}
+{\footnotesize\ttfamily void door\+::\+Door\+::\+Set\+First\+Map\+Location (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{\+\_\+first\+Map\+Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00075}{75}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a96eb7cc413d9934ea57d72a4eec84188}\label{classdoor_1_1_door_a96eb7cc413d9934ea57d72a4eec84188} 
+\index{door::Door@{door::Door}!SetFirstMapSpawnPoint@{SetFirstMapSpawnPoint}}
+\index{SetFirstMapSpawnPoint@{SetFirstMapSpawnPoint}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{SetFirstMapSpawnPoint()}{SetFirstMapSpawnPoint()}}
+{\footnotesize\ttfamily void door\+::\+Door\+::\+Set\+First\+Map\+Spawn\+Point (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{\+\_\+first\+Map\+Spawn\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00083}{83}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_adacac9c4f540b03153913c1e8ed2cb54}\label{classdoor_1_1_door_adacac9c4f540b03153913c1e8ed2cb54} 
+\index{door::Door@{door::Door}!SetNextDoorID@{SetNextDoorID}}
+\index{SetNextDoorID@{SetNextDoorID}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{SetNextDoorID()}{SetNextDoorID()}}
+{\footnotesize\ttfamily static void door\+::\+Door\+::\+Set\+Next\+Door\+ID (\begin{DoxyParamCaption}\item[{int}]{\+\_\+next\+Door\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00059}{59}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a3ea5d2a8b0ecd8e52ce0442045ef67b1}\label{classdoor_1_1_door_a3ea5d2a8b0ecd8e52ce0442045ef67b1} 
+\index{door::Door@{door::Door}!SetSecondMapID@{SetSecondMapID}}
+\index{SetSecondMapID@{SetSecondMapID}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{SetSecondMapID()}{SetSecondMapID()}}
+{\footnotesize\ttfamily void door\+::\+Door\+::\+Set\+Second\+Map\+ID (\begin{DoxyParamCaption}\item[{int}]{\+\_\+second\+Map\+ID }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00071}{71}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a5530809ce8b768b5a16ac87dc0d14ea3}\label{classdoor_1_1_door_a5530809ce8b768b5a16ac87dc0d14ea3} 
+\index{door::Door@{door::Door}!SetSecondMapLocation@{SetSecondMapLocation}}
+\index{SetSecondMapLocation@{SetSecondMapLocation}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{SetSecondMapLocation()}{SetSecondMapLocation()}}
+{\footnotesize\ttfamily void door\+::\+Door\+::\+Set\+Second\+Map\+Location (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{\+\_\+second\+Map\+Location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00079}{79}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a8ec48bd39158dbdc43a612b13ddfae65}\label{classdoor_1_1_door_a8ec48bd39158dbdc43a612b13ddfae65} 
+\index{door::Door@{door::Door}!SetSecondMapSpawnPoint@{SetSecondMapSpawnPoint}}
+\index{SetSecondMapSpawnPoint@{SetSecondMapSpawnPoint}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{SetSecondMapSpawnPoint()}{SetSecondMapSpawnPoint()}}
+{\footnotesize\ttfamily void door\+::\+Door\+::\+Set\+Second\+Map\+Spawn\+Point (\begin{DoxyParamCaption}\item[{std\+::vector$<$ int $>$}]{\+\_\+second\+Map\+Spawn\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{door_8h_source_l00087}{87}} of file \mbox{\hyperlink{door_8h_source}{door.\+h}}.
+
+\Hypertarget{classdoor_1_1_door_a2423a1cc765281a4bc235e4917c3fbbd}\label{classdoor_1_1_door_a2423a1cc765281a4bc235e4917c3fbbd} 
+\index{door::Door@{door::Door}!UseDoor@{UseDoor}}
+\index{UseDoor@{UseDoor}!door::Door@{door::Door}}
+\doxysubsubsection{\texorpdfstring{UseDoor()}{UseDoor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdoor_1_1_door_destination_info}{Door\+Destination\+Info}} door\+::\+Door\+::\+Use\+Door (\begin{DoxyParamCaption}\item[{const int \&}]{\+\_\+map\+ID }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{door_8cpp_source_l00106}{106}} of file \mbox{\hyperlink{door_8cpp_source}{door.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\+Door/\mbox{\hyperlink{door_8h}{door.\+h}}\item 
+C\+:/\+Users/trist/\+Documents/\+COMP345\+\_\+\+C++\+\_\+\+Code/\+COMP345\+\_\+\+Project/\+Project\+Source\+Code/\+Door/\mbox{\hyperlink{door_8cpp}{door.\+cpp}}\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 \doxysection{item.\+cpp}
-\hypertarget{item_8cpp_source}{}\label{item_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/item.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/item.cpp}}
+\hypertarget{item_8cpp_source}{}\label{item_8cpp_source}\index{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Item/item.cpp@{C:/Users/trist/Documents/COMP345\_C++\_Code/COMP345\_Project/ProjectSourceCode/Item/item.cpp}}
 \mbox{\hyperlink{item_8cpp}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00001}00001\ }
@@ -90,7 +90,7 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00115}00115\ }
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ std::ostringstream\ name;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ name\ <<\ \mbox{\hyperlink{namespaceitem_a2253f9eb5765081cd2a4130418e1c79e}{itemTypeStrings}}[itemType\ -\/\ 1]\ <<\ \textcolor{stringliteral}{"{}\ +"{}}\ <<\ std::to\_string(enchantmentBonus)\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ \mbox{\hyperlink{namespaceitem_a322c65f5a2c476554a678038e084b235}{statStrings}}[enchantmentType]\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ name\ <<\ \mbox{\hyperlink{namespaceitem_a9501dab7c182587ac14d64fcd246c687}{itemTypeStrings}}[itemType\ -\/\ 1]\ <<\ \textcolor{stringliteral}{"{}\ +"{}}\ <<\ std::to\_string(enchantmentBonus)\ <<\ \textcolor{stringliteral}{"{}\ ("{}}\ <<\ \mbox{\hyperlink{namespaceitem_a2a155b18c890173893672ee3c5140519}{statStrings}}[enchantmentType]\ <<\ \textcolor{stringliteral}{"{})"{}};}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ itemName\ =\ name.str();}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_ad12ee7309bd6a59949eb9c7e396e7958}{wrappee}}\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00120}00120\ \ \ \ \ \}}
@@ -135,12 +135,41 @@
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00160}00160\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00161}00161\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00162}\mbox{\hyperlink{classitem_1_1_item_aab6e419cfea26bdea0389095c0f336c6}{00162}}\ \ \ \ \ std::vector<AbstractComponent*>\ \mbox{\hyperlink{classitem_1_1_item_aab6e419cfea26bdea0389095c0f336c6}{Item::GetDecoratorList}}()\ \{}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ std::vector<AbstractComponent*>\ decoratorList\ =\ \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_ad12ee7309bd6a59949eb9c7e396e7958}{wrappee}}-\/>\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_ad76ada9fbc3f620ce6707dc578110734}{GetDecoratorList}}();}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ decoratorList.push\_back(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00162}\mbox{\hyperlink{classitem_1_1_item_ad5276017551894cdf1d250ed07abb773}{00162}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classitem_1_1_item_ad5276017551894cdf1d250ed07abb773}{Item::ModifierDecorator}}(\textcolor{keywordtype}{int}\ \_abilityScore)\ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_abilityScore\ ==\ 6)\ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ armorResult\ =\ \mbox{\hyperlink{classitem_1_1_item_afb9f81913b75fd4b93ac1e49dbfa5fa6}{Ability\_Score\_Natural}}(\_abilityScore,\ 0)\ +\ \mbox{\hyperlink{classitem_1_1_item_ad5276017551894cdf1d250ed07abb773}{ModifierDecorator}}(\mbox{\hyperlink{namespaceitem_aca40f9fb092a0a6546baedf39953d51ca7484c66dbcb44bf100fa640185685b69}{CharacterStats::Dexterity}});}
 \DoxyCodeLine{\Hypertarget{item_8cpp_source_l00165}00165\ }
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ decoratorList;}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00167}00167\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00168}00168\ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ armorResult;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ scoreResult\ =\ \mbox{\hyperlink{classitem_1_1_item_afb9f81913b75fd4b93ac1e49dbfa5fa6}{Ability\_Score\_Natural}}(\_abilityScore,\ 0);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ modifier\{\ 0\ \};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ modifier\ =\ std::floor(((\textcolor{keywordtype}{float})(scoreResult\ -\/\ 10)\ /\ 2));}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00174}00174\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \&e\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00179}00179\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00181}00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ modifier;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00182}00182\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00184}\mbox{\hyperlink{classitem_1_1_item_aab6e419cfea26bdea0389095c0f336c6}{00184}}\ \ \ \ \ std::vector<AbstractComponent*>\ \mbox{\hyperlink{classitem_1_1_item_aab6e419cfea26bdea0389095c0f336c6}{Item::GetDecoratorList}}()\ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ std::vector<AbstractComponent*>\ decoratorList\ =\ \mbox{\hyperlink{classcomponentdecorator_1_1_component_decorator_ad12ee7309bd6a59949eb9c7e396e7958}{wrappee}}-\/>\mbox{\hyperlink{classabstractcomponent_1_1_abstract_component_ad76ada9fbc3f620ce6707dc578110734}{GetDecoratorList}}();}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ decoratorList.push\_back(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ decoratorList;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00189}00189\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00191}\mbox{\hyperlink{classitem_1_1_item_a3d3c87e088ed64ecf35e378731ed59e8}{00191}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classitem_1_1_item_a3d3c87e088ed64ecf35e378731ed59e8}{item::Item::serialize}}()\ \{}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00192}00192\ \ \ \ \ \ \ \ \ std::string\ str\ =\ \textcolor{stringliteral}{"{}i,"{}};}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ str\ +=\ std::to\_string(this-\/>itemId);}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00194}00194\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ str;}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00195}00195\ \ \ \ \ \ \ \ \ \textcolor{comment}{//i,id}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00196}00196\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{item_8cpp_source_l00197}00197\ \}}
 
 \end{DoxyCode}

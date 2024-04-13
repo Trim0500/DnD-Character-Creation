@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: Map::Map Class Reference</title>
+<title>[COMP345] Project: Map::Map Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -78,6 +78,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_map_1_1_map-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Map::Map Class Reference</div></div>
 </div><!--header-->
@@ -128,19 +129,27 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5de97b7d5aecec9621d8cb559201b1d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa168b7728d21400c359179866d49f444" id="r_aa168b7728d21400c359179866d49f444"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa168b7728d21400c359179866d49f444">getCols</a> ()</td></tr>
 <tr class="separator:aa168b7728d21400c359179866d49f444"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf3085d86ca4fae1f85a3bf021333a9f" id="r_aaf3085d86ca4fae1f85a3bf021333a9f"><td class="memItemLeft" align="right" valign="top">const int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf3085d86ca4fae1f85a3bf021333a9f">getEnd_Cell</a> ()</td></tr>
-<tr class="separator:aaf3085d86ca4fae1f85a3bf021333a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf57ead054201e3f5ba999cb2444a0c4" id="r_abf57ead054201e3f5ba999cb2444a0c4"><td class="memItemLeft" align="right" valign="top">const int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf57ead054201e3f5ba999cb2444a0c4">getStartCell</a> ()</td></tr>
+<tr class="separator:abf57ead054201e3f5ba999cb2444a0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0baf417ab67e77ebd9acecf5d2324a9" id="r_ad0baf417ab67e77ebd9acecf5d2324a9"><td class="memItemLeft" align="right" valign="top">const int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0baf417ab67e77ebd9acecf5d2324a9">getEndCell</a> ()</td></tr>
+<tr class="separator:ad0baf417ab67e77ebd9acecf5d2324a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26e2cfceaea46cb4401fd3a47935deaf" id="r_a26e2cfceaea46cb4401fd3a47935deaf"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::vector&lt; <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a> * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26e2cfceaea46cb4401fd3a47935deaf">getGrid</a> ()</td></tr>
 <tr class="separator:a26e2cfceaea46cb4401fd3a47935deaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51764675c033367ae06ce99b57dd65a0" id="r_a51764675c033367ae06ce99b57dd65a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51764675c033367ae06ce99b57dd65a0">setRows</a> (int _rows)</td></tr>
-<tr class="memdesc:a51764675c033367ae06ce99b57dd65a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setters.  <br /></td></tr>
-<tr class="separator:a51764675c033367ae06ce99b57dd65a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00bef516ba427276e4efd7e1cdc61d82" id="r_a00bef516ba427276e4efd7e1cdc61d82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00bef516ba427276e4efd7e1cdc61d82">setCols</a> (int _cols)</td></tr>
-<tr class="separator:a00bef516ba427276e4efd7e1cdc61d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa368a87301246793a432cc93155f50b9" id="r_aa368a87301246793a432cc93155f50b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa368a87301246793a432cc93155f50b9">setMapID</a> (int _id)</td></tr>
+<tr class="memdesc:aa368a87301246793a432cc93155f50b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setters.  <br /></td></tr>
+<tr class="separator:aa368a87301246793a432cc93155f50b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a59e8019c3c2a1fd0203ce320b6d5af" id="r_a1a59e8019c3c2a1fd0203ce320b6d5af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a59e8019c3c2a1fd0203ce320b6d5af">setRows</a> (int rows)</td></tr>
+<tr class="separator:a1a59e8019c3c2a1fd0203ce320b6d5af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fe23f7479b8d1fe21635532ab81d417" id="r_a7fe23f7479b8d1fe21635532ab81d417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fe23f7479b8d1fe21635532ab81d417">setCols</a> (int cols)</td></tr>
+<tr class="separator:a7fe23f7479b8d1fe21635532ab81d417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47297609547499e83abeb5d607e8568d" id="r_a47297609547499e83abeb5d607e8568d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47297609547499e83abeb5d607e8568d">setGrid</a> ()</td></tr>
 <tr class="separator:a47297609547499e83abeb5d607e8568d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a665cee9ac491962f048721c4fe7c2178" id="r_a665cee9ac491962f048721c4fe7c2178"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a665cee9ac491962f048721c4fe7c2178">setEndCell</a> ()</td></tr>
-<tr class="separator:a665cee9ac491962f048721c4fe7c2178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a899c4a811e0e5e957a5efe0befa12904" id="r_a899c4a811e0e5e957a5efe0befa12904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a899c4a811e0e5e957a5efe0befa12904">setGrid</a> (std::vector&lt; std::vector&lt; <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a> * &gt; &gt; _grid)</td></tr>
+<tr class="separator:a899c4a811e0e5e957a5efe0befa12904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2bf4aa7be6658b088a923a94307b131" id="r_ab2bf4aa7be6658b088a923a94307b131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2bf4aa7be6658b088a923a94307b131">setEndCell</a> (int row, int col)</td></tr>
+<tr class="separator:ab2bf4aa7be6658b088a923a94307b131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4dd93163babb17bdea9b30ac2f9e65c" id="r_aa4dd93163babb17bdea9b30ac2f9e65c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4dd93163babb17bdea9b30ac2f9e65c">setStartCell</a> (int row, int col)</td></tr>
+<tr class="separator:aa4dd93163babb17bdea9b30ac2f9e65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e381c126b47f285ef3b5f4ac697fd09" id="r_a9e381c126b47f285ef3b5f4ac697fd09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e381c126b47f285ef3b5f4ac697fd09">setCell</a> (int row, int col, <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a> *cell)</td></tr>
 <tr class="separator:a9e381c126b47f285ef3b5f4ac697fd09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f1cd403927600211b2d86fd34862396" id="r_a5f1cd403927600211b2d86fd34862396"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f1cd403927600211b2d86fd34862396">setEmpty</a> (int row, int col)</td></tr>
@@ -157,18 +166,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aac6b461ff88fed2116c341231e05f4b2" id="r_aac6b461ff88fed2116c341231e05f4b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac6b461ff88fed2116c341231e05f4b2">ValidCell</a> (int row, int col, std::vector&lt; std::vector&lt; bool &gt; &gt; visitde)</td></tr>
 <tr class="memdesc:aac6b461ff88fed2116c341231e05f4b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the given x,y coordinates are a valid cell to step on.  <br /></td></tr>
 <tr class="separator:aac6b461ff88fed2116c341231e05f4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ef461deedb913a65430eafd6dee3c40" id="r_a8ef461deedb913a65430eafd6dee3c40"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ef461deedb913a65430eafd6dee3c40">ValidCellInteractable</a> (int nextRow, int nextCol, std::vector&lt; std::vector&lt; bool &gt; &gt; visited)</td></tr>
-<tr class="separator:a8ef461deedb913a65430eafd6dee3c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad196277637f8a3d7e87e958d250477f" id="r_aad196277637f8a3d7e87e958d250477f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad196277637f8a3d7e87e958d250477f">MoveCharacter</a> (const int &amp;, const int &amp;, <a class="el" href="class_character_1_1_character.html">Character::Character</a> *)</td></tr>
 <tr class="separator:aad196277637f8a3d7e87e958d250477f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf1e1f16e4fec8cec115d7b3a64d3ba9" id="r_abf1e1f16e4fec8cec115d7b3a64d3ba9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf1e1f16e4fec8cec115d7b3a64d3ba9">printMap</a> ()</td></tr>
+<tr class="separator:abf1e1f16e4fec8cec115d7b3a64d3ba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf3f18f4013b4d9c8251c07fb28169e6" id="r_acf3f18f4013b4d9c8251c07fb28169e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf3f18f4013b4d9c8251c07fb28169e6">GetCharacterCoordinates</a> (int &amp;x, int &amp;y, <a class="el" href="class_character_1_1_character.html">Character::Character</a> *t_character)</td></tr>
+<tr class="separator:acf3f18f4013b4d9c8251c07fb28169e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac57d499470de2f0a04e458113f875687" id="r_ac57d499470de2f0a04e458113f875687"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_character_1_1_character.html">Character::Character</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac57d499470de2f0a04e458113f875687">GetCharactersInMap</a> ()</td></tr>
+<tr class="separator:ac57d499470de2f0a04e458113f875687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae6b025288e8c6def550878f9e61c3da" id="r_aae6b025288e8c6def550878f9e61c3da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae6b025288e8c6def550878f9e61c3da">Print</a> ()</td></tr>
+<tr class="separator:aae6b025288e8c6def550878f9e61c3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classobservable_1_1_observable"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classobservable_1_1_observable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classobservable_1_1_observable.html">observable::Observable</a></td></tr>
 <tr class="memitem:ae66f3001b8162f0cfdf10dd204384099 inherit pub_methods_classobservable_1_1_observable" id="r_ae66f3001b8162f0cfdf10dd204384099"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobservable_1_1_observable.html#ae66f3001b8162f0cfdf10dd204384099">~Observable</a> ()</td></tr>
 <tr class="memdesc:ae66f3001b8162f0cfdf10dd204384099 inherit pub_methods_classobservable_1_1_observable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classobservable_1_1_observable.html" title="Class to abstract the observable functionality.">Observable</a>.  <br /></td></tr>
 <tr class="separator:ae66f3001b8162f0cfdf10dd204384099 inherit pub_methods_classobservable_1_1_observable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a09e6bad15dac0ee888953ad2116a17f0" id="r_a09e6bad15dac0ee888953ad2116a17f0"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09e6bad15dac0ee888953ad2116a17f0">GetNextMapID</a> ()</td></tr>
+<tr class="separator:a09e6bad15dac0ee888953ad2116a17f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2f3ba87ee5469250eed6bf56ab97ed1" id="r_ae2f3ba87ee5469250eed6bf56ab97ed1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2f3ba87ee5469250eed6bf56ab97ed1">SetNextMapID</a> (int _nextMapID)</td></tr>
+<tr class="separator:ae2f3ba87ee5469250eed6bf56ab97ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00055">55</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00040">40</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6cde022f6d2c065f195eaae7fc1162ce" name="a6cde022f6d2c065f195eaae7fc1162ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6cde022f6d2c065f195eaae7fc1162ce">&#9670;&#160;</a></span>Map() <span class="overload">[1/2]</span></h2>
@@ -187,7 +209,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Constructor to build a basic map provided by user. </p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00031">31</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00034">34</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -210,7 +232,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00036">36</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00041">41</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -242,7 +264,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classobservable_1_1_observable.html#aa7d5a047ae56adf7c50395c4a81e9ec1">observable::Observable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00069">69</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00054">54</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -269,7 +291,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00024">24</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00027">27</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -300,7 +322,54 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classobservable_1_1_observable.html#a08934a0b93c48c10e340f2d02e65e406">observable::Observable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00071">71</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00056">56</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+
+</div>
+</div>
+<a id="acf3f18f4013b4d9c8251c07fb28169e6" name="acf3f18f4013b4d9c8251c07fb28169e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3f18f4013b4d9c8251c07fb28169e6">&#9670;&#160;</a></span>GetCharacterCoordinates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::Map::GetCharacterCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_character_1_1_character.html">Character::Character</a> *</td>          <td class="paramname"><span class="paramname"><em>t_character</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00311">311</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac57d499470de2f0a04e458113f875687" name="ac57d499470de2f0a04e458113f875687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57d499470de2f0a04e458113f875687">&#9670;&#160;</a></span>GetCharactersInMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="class_character_1_1_character.html">Character::Character</a> * &gt; Map::Map::GetCharactersInMap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00328">328</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -327,12 +396,12 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00100">100</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00089">89</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
-<a id="aaf3085d86ca4fae1f85a3bf021333a9f" name="aaf3085d86ca4fae1f85a3bf021333a9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf3085d86ca4fae1f85a3bf021333a9f">&#9670;&#160;</a></span>getEnd_Cell()</h2>
+<a id="ad0baf417ab67e77ebd9acecf5d2324a9" name="ad0baf417ab67e77ebd9acecf5d2324a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0baf417ab67e77ebd9acecf5d2324a9">&#9670;&#160;</a></span>getEndCell()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,7 +410,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int * Map::Map::getEnd_Cell </td>
+          <td class="memname">const int * Map::Map::getEndCell </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
@@ -354,7 +423,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00101">101</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00091">91</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -381,7 +450,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00102">102</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00092">92</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -410,7 +479,34 @@ Public Member Functions</h2></td></tr>
 
 <p>Getters. </p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00098">98</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00087">87</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+
+</div>
+</div>
+<a id="a09e6bad15dac0ee888953ad2116a17f0" name="a09e6bad15dac0ee888953ad2116a17f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e6bad15dac0ee888953ad2116a17f0">&#9670;&#160;</a></span>GetNextMapID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int Map::Map::GetNextMapID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00080">80</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -437,7 +533,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00091">91</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00076">76</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -464,7 +560,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00087">87</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00072">72</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -491,7 +587,34 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00099">99</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00088">88</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+
+</div>
+</div>
+<a id="abf57ead054201e3f5ba999cb2444a0c4" name="abf57ead054201e3f5ba999cb2444a0c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf57ead054201e3f5ba999cb2444a0c4">&#9670;&#160;</a></span>getStartCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int * Map::Map::getStartCell </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00090">90</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -512,7 +635,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Check if there is a possible passage through the map. </p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00319">319</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00154">154</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -540,7 +663,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00371">371</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00206">206</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -571,7 +694,45 @@ Public Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classobservable_1_1_observable.html#abb62ad46189f0d309c039a5c4b0c6f0a">observable::Observable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00017">17</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00020">20</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aae6b025288e8c6def550878f9e61c3da" name="aae6b025288e8c6def550878f9e61c3da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae6b025288e8c6def550878f9e61c3da">&#9670;&#160;</a></span>Print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::Map::Print </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00345">345</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abf1e1f16e4fec8cec115d7b3a64d3ba9" name="abf1e1f16e4fec8cec115d7b3a64d3ba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf1e1f16e4fec8cec115d7b3a64d3ba9">&#9670;&#160;</a></span>printMap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::Map::printMap </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00243">243</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -599,7 +760,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00059">59</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00089">89</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -627,34 +788,26 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00069">69</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00128">128</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a00bef516ba427276e4efd7e1cdc61d82" name="a00bef516ba427276e4efd7e1cdc61d82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00bef516ba427276e4efd7e1cdc61d82">&#9670;&#160;</a></span>setCols()</h2>
+<a id="a7fe23f7479b8d1fe21635532ab81d417" name="a7fe23f7479b8d1fe21635532ab81d417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fe23f7479b8d1fe21635532ab81d417">&#9670;&#160;</a></span>setCols()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Map::Map::setCols </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_cols</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cols</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00108">108</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00063">63</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -677,12 +830,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00063">63</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00102">102</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
-<a id="a665cee9ac491962f048721c4fe7c2178" name="a665cee9ac491962f048721c4fe7c2178"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a665cee9ac491962f048721c4fe7c2178">&#9670;&#160;</a></span>setEndCell()</h2>
+<a id="ab2bf4aa7be6658b088a923a94307b131" name="ab2bf4aa7be6658b088a923a94307b131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2bf4aa7be6658b088a923a94307b131">&#9670;&#160;</a></span>setEndCell()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -690,18 +843,22 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Map::Map::setEndCell </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>row</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>col</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00049">49</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00068">68</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
 <a id="a47297609547499e83abeb5d607e8568d" name="a47297609547499e83abeb5d607e8568d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47297609547499e83abeb5d607e8568d">&#9670;&#160;</a></span>setGrid()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a47297609547499e83abeb5d607e8568d">&#9670;&#160;</a></span>setGrid() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -715,7 +872,34 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00054">54</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00084">84</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a899c4a811e0e5e957a5efe0befa12904" name="a899c4a811e0e5e957a5efe0befa12904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a899c4a811e0e5e957a5efe0befa12904">&#9670;&#160;</a></span>setGrid() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::Map::setGrid </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; <a class="el" href="class_interactable_1_1_interactable.html">Interactable::Interactable</a> * &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>_grid</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00101">101</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -743,7 +927,63 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00072">72</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00141">141</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+
+</div>
+</div>
+<a id="aa368a87301246793a432cc93155f50b9" name="aa368a87301246793a432cc93155f50b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa368a87301246793a432cc93155f50b9">&#9670;&#160;</a></span>setMapID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::Map::setMapID </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setters. </p>
+
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00097">97</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+
+</div>
+</div>
+<a id="ae2f3ba87ee5469250eed6bf56ab97ed1" name="ae2f3ba87ee5469250eed6bf56ab97ed1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2f3ba87ee5469250eed6bf56ab97ed1">&#9670;&#160;</a></span>SetNextMapID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void Map::Map::SetNextMapID </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_nextMapID</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00082">82</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -770,7 +1010,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00093">93</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00078">78</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
@@ -797,36 +1037,49 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00089">89</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00074">74</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
 
 </div>
 </div>
-<a id="a51764675c033367ae06ce99b57dd65a0" name="a51764675c033367ae06ce99b57dd65a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51764675c033367ae06ce99b57dd65a0">&#9670;&#160;</a></span>setRows()</h2>
+<a id="a1a59e8019c3c2a1fd0203ce320b6d5af" name="a1a59e8019c3c2a1fd0203ce320b6d5af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a59e8019c3c2a1fd0203ce320b6d5af">&#9670;&#160;</a></span>setRows()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Map::Map::setRows </td>
           <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>_rows</em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>rows</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Setters. </p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00058">58</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8h_source.html#l00107">107</a> of file <a class="el" href="_map_8h_source.html">Map.h</a>.</p>
+</div>
+</div>
+<a id="aa4dd93163babb17bdea9b30ac2f9e65c" name="aa4dd93163babb17bdea9b30ac2f9e65c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4dd93163babb17bdea9b30ac2f9e65c">&#9670;&#160;</a></span>setStartCell()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Map::Map::setStartCell </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>row</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>col</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00076">76</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -849,7 +1102,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00066">66</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00115">115</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
@@ -879,39 +1132,13 @@ Public Member Functions</h2></td></tr>
 
 <p>Check if the given x,y coordinates are a valid cell to step on. </p>
 
-<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00364">364</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a8ef461deedb913a65430eafd6dee3c40" name="a8ef461deedb913a65430eafd6dee3c40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ef461deedb913a65430eafd6dee3c40">&#9670;&#160;</a></span>ValidCellInteractable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Map::Map::ValidCellInteractable </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nextRow</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nextCol</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; std::vector&lt; bool &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>visited</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="_map_8cpp_source.html#l00200">200</a> of file <a class="el" href="_map_8cpp_source.html">Map.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="_map_8h_source.html">Map.h</a></li>
-<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="_map_8cpp_source.html">Map.cpp</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Map/<a class="el" href="_map_8h_source.html">Map.h</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Map/<a class="el" href="_map_8cpp_source.html">Map.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

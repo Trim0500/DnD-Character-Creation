@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: Member List</title>
+<title>[COMP345] Project: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -85,19 +85,26 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#ac2ee5ba3da3e8033ebd8b2cad47be423">Attach</a>(Observer *_observer) override</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#ae63141f7a23ce905d00d064ba0315ba8">CreateObserverMessage</a>(std::string)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a31bb627bd7bb45ff8446f92e6a89b59a">Detach</a>(Observer *_observer) override</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a2cb3ae613451081fdfedf53e5d8e4d1d">EndTurn</a>(const Map::Map &amp;)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#afd5ceab405ba96be10947d7f4fc9e1fa">EndTurn</a>(const std::string &amp;, const int &amp;, const int &amp;)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a74cd9697144c5bb5ccf1d2cb71d56e41">Game</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a3e7dd20d65b6aa7c01d2d579487e59ca">GameSetup</a>(const std::string &amp;)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a4065edd299b9c8250a6ddffa2bc35de3">GameSetup</a>(std::filesystem::path *, Observer *)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a1f56f3ab5517862c7bc0b242cc0b4252">GetActiveCharacter</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#ac93854ef51ae89d7a2e25221a88ecd9c">GetCharactersInMap</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a7b9d57d02cd131b5fd3fdc551010062f">GetGameCampaign</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#ab33abe67c38bf621c8b9952bbdcf2716">GetObserverMessage</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#aaf2be49dd20a067539d87de8ce599814">GetObservers</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a780ca24f589559cc5d786778c220e45a">LoadMap</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a194b57944f6149b1df53dfbc5658a0b8">Notify</a>() override</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a52075ca9bbb9b49588904f24cd488722">SetGameCampaign</a>(Campaign *_gameCampaign)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#abaf5a979be2bca391c6a45ea191fda59">SetObserverMessage</a>(const std::string &amp;_observerMessage)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a143e89f37c6c995bbb618396ede2618c">SetObservers</a>(const std::vector&lt; Observer * &gt; &amp;_observers)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a9fd96a37b55d908071105879d015df8c">~Game</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classobservable_1_1_observable.html#ae66f3001b8162f0cfdf10dd204384099">~Observable</a>()</td><td class="entry"><a class="el" href="classobservable_1_1_observable.html">observable::Observable</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a99aba9d69bda7de085afcbb8b69d23dc">GetUserSelection</a>(char &amp;t_selection)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a780ca24f589559cc5d786778c220e45a">LoadMap</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a194b57944f6149b1df53dfbc5658a0b8">Notify</a>() override</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#aae4f4543f1316d6635974beee8c4d688">PrintActionMenu</a>(Character::Character *)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#aaffb358ea976a49f5d73a00148d6b6d1">ProcessUserAction</a>(const char &amp;t_selection, Character::Character *t_playerCharacter)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a874c7c63385ed045a6bed9f83cbbbeea">SetActiveCharacter</a>(Character::Character *_activeCharacter)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a73b7c98501fe4f368629e5b2792c9700">SetCharactersInMap</a>(std::vector&lt; Character::Character * &gt; _charactersInMap)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a52075ca9bbb9b49588904f24cd488722">SetGameCampaign</a>(Campaign *_gameCampaign)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#abaf5a979be2bca391c6a45ea191fda59">SetObserverMessage</a>(const std::string &amp;_observerMessage)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classgame_1_1_game.html#a143e89f37c6c995bbb618396ede2618c">SetObservers</a>(const std::vector&lt; Observer * &gt; &amp;_observers)</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classgame_1_1_game.html#a9fd96a37b55d908071105879d015df8c">~Game</a>()</td><td class="entry"><a class="el" href="classgame_1_1_game.html">game::Game</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classobservable_1_1_observable.html#ae66f3001b8162f0cfdf10dd204384099">~Observable</a>()</td><td class="entry"><a class="el" href="classobservable_1_1_observable.html">observable::Observable</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

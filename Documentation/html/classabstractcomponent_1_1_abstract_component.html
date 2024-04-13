@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>[COMP345] Assignment 1: abstractcomponent::AbstractComponent Class Reference</title>
+<title>[COMP345] Project: abstractcomponent::AbstractComponent Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">[COMP345] Assignment 1<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">[COMP345] Project<span id="projectnumber">&#160;1.0</span>
    </div>
-   <div id="projectbrief">DnD character creation tool</div>
+   <div id="projectbrief">DnD Game Simulation w/C++</div>
   </td>
  </tr>
  </tbody>
@@ -105,6 +105,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae1acfe71e56c091537098ef02f249deb" id="r_ae1acfe71e56c091537098ef02f249deb"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1acfe71e56c091537098ef02f249deb">Ability_Score_Natural</a> (int, int)</td></tr>
 <tr class="memdesc:ae1acfe71e56c091537098ef02f249deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function that is meant to be overriden to get the particular ability score of a character.  <br /></td></tr>
 <tr class="separator:ae1acfe71e56c091537098ef02f249deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc8413352a275acd12197f8276ea810" id="r_afbc8413352a275acd12197f8276ea810"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbc8413352a275acd12197f8276ea810">ModifierDecorator</a> (int)</td></tr>
+<tr class="separator:afbc8413352a275acd12197f8276ea810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad76ada9fbc3f620ce6707dc578110734" id="r_ad76ada9fbc3f620ce6707dc578110734"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classabstractcomponent_1_1_abstract_component.html">AbstractComponent</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad76ada9fbc3f620ce6707dc578110734">GetDecoratorList</a> ()</td></tr>
 <tr class="memdesc:ad76ada9fbc3f620ce6707dc578110734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual function that is meant to be overriden to establish the decorators in play.  <br /></td></tr>
 <tr class="separator:ad76ada9fbc3f620ce6707dc578110734"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -176,12 +178,41 @@ Public Member Functions</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_character_1_1_character.html#ab5f6bde2164b04fc383361629a1bf65b">Character::Character</a>, <a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a72e4f92bcba76d839385bb4d3fdedeb9">componentdecorator::ComponentDecorator</a>, and <a class="el" href="classitem_1_1_item.html#aab6e419cfea26bdea0389095c0f336c6">item::Item</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="abstractcomponent_8h_source.html#l00034">34</a> of file <a class="el" href="abstractcomponent_8h_source.html">abstractcomponent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="abstractcomponent_8h_source.html#l00036">36</a> of file <a class="el" href="abstractcomponent_8h_source.html">abstractcomponent.h</a>.</p>
+
+</div>
+</div>
+<a id="afbc8413352a275acd12197f8276ea810" name="afbc8413352a275acd12197f8276ea810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc8413352a275acd12197f8276ea810">&#9670;&#160;</a></span>ModifierDecorator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int abstractcomponent::AbstractComponent::ModifierDecorator </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_character_1_1_character.html#a2e46820b22c11ce4e95e1f62e89f3a02">Character::Character</a>, <a class="el" href="classcomponentdecorator_1_1_component_decorator.html#a46a0a0ac628778d795aeb0d95f8c2017">componentdecorator::ComponentDecorator</a>, and <a class="el" href="classitem_1_1_item.html#ad5276017551894cdf1d250ed07abb773">item::Item</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="abstractcomponent_8h_source.html#l00030">30</a> of file <a class="el" href="abstractcomponent_8h_source.html">abstractcomponent.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/<a class="el" href="abstractcomponent_8h_source.html">abstractcomponent.h</a></li>
+<li>C:/Users/trist/Documents/COMP345_C++_Code/COMP345_Project/ProjectSourceCode/Decorator/<a class="el" href="abstractcomponent_8h_source.html">abstractcomponent.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
