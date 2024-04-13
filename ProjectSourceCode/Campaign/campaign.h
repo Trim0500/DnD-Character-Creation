@@ -22,9 +22,9 @@ namespace campaign {
     */
     struct CampaignMap
     {
-        int mapID;
-        int coorX;
-        int coorY;
+        int mapID = 1;
+        int coorX = 0;
+        int coorY = 0;
     };
 
     /*!

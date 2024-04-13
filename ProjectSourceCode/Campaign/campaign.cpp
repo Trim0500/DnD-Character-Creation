@@ -66,7 +66,7 @@ namespace {
         }
         
         result.mapsInCampaign = includedMapIDs;
-
+        
         return result;
     }
 

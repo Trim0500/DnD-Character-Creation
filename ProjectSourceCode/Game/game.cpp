@@ -224,6 +224,16 @@ namespace game
         std::vector<Map::Map*> mapsInCampaign;
 
         CampaignMap currentMap;
+        for (int i = 0; i < this->GetGameCampaign()->GetMapsInCampaign().size(); i++) {
+            if (this->GetGameCampaign()->GetMapsInCampaign().at(i)->GetCharactersInMap().size() > 0) {
+                for (int j = 0; this->GetGameCampaign()->GetMapsInCampaign().at(i)->GetCharactersInMap().size(); j++) {
+                    if (this->GetGameCampaign()->GetMapsInCampaign().at(i)->GetCharactersInMap().at(j)->GetIsPlayerControlled()) {
+                        //GetGameCampaign()->SetCurrentMap(this->GetGameCampaign()->GetMapsInCampaign().at(i).)
+                    }
+                }
+
+            }
+        }
 
         for (auto &file : std::filesystem::directory_iterator(path))
         {
@@ -231,7 +241,7 @@ namespace game
             {
                 std::string filePath = file.path().string();
                 Map::Map *loadedMap = MapBuilder::MapBuilder::LoadMap(filePath);
-
+                currentMap = this->GetGameCampaign()->GetCurrentMap();
                 std::vector<std::vector<Interactable::Interactable*>> grid = loadedMap->getGrid();
 
                 for (int i = 0; i < (int)grid.size(); i++)
@@ -293,7 +303,8 @@ namespace game
         CreateObserverMessage("[Game/GameSetup] -- Fetching Campaign save data...");
 
         std::vector<Map::Map*> campaignMaps;
-        
+
+
         for (int i = 0; i < (int)campaignRecord->mapsInCampaign.size(); i++)
         {
             int mapID = campaignRecord->mapsInCampaign[i];

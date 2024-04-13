@@ -53,7 +53,7 @@ namespace CampaignEditor {
 		currentGame = new Game();
 		gameLogger = new GameLogger(currentGame);
 		currentGame->GameSetup(currentCampaignPath, gameLogger);
-
+		currentGame->GetGameCampaign()->SetCurrentMap(currentGame->GetGameCampaign()->GetCurrentMap());
 		CampaignMap currentMap = currentGame->GetGameCampaign()->GetCurrentMap();
 
 		PlayGame(currentGame, currentGame->GetActiveCharacter(), currentGame->GetGameCampaign()->GetMap(currentMap.coorX, currentMap.coorY));
