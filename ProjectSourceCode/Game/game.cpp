@@ -394,10 +394,15 @@ namespace game
         }
 
         activeCharacter = (*currentActiveCharacter);
+        
     }
 
     void Game::PrintActionMenu(Character::Character* _player)
     {
+        if (_player->Hit_Points() <= 0) {
+            std::cout << "You Died" << std::endl;
+
+        }
         CampaignMap currentMapInCampaign = gameCampaign->GetCurrentMap();
         Map::Map* currnetMapGrid = gameCampaign->GetMap(currentMapInCampaign.coorX, currentMapInCampaign.coorY);
 

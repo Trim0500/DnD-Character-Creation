@@ -180,8 +180,13 @@ namespace CampaignEditor {
 				CellActionInfo npcCellAction = currentGame->GetActiveCharacter()->DecideNPCAction(currentMap->getGrid(), x + 1, y + 1);
 				currentGame->EndTurn(npcCellAction.actionName, npcCellAction.row, npcCellAction.col);
 			}
+			
 
 			getchar();
+			if (playerCharacter->Hit_Points() <= 0) {
+				std::cout << "You Died" << std::endl;
+				userInput = 'E';
+			}
 		}
 
 		exit(0);
