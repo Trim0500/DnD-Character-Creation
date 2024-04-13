@@ -43,7 +43,7 @@ namespace CampaignEditor
 	void CampaignEditor::Notify() {
 		for (int i = 0; i < (int)observers.size(); i++)
 		{
-			observers[i]->update(_c_x + 1, _c_y + 1, get_cell(_c_x, _c_y)->ID());
+			observers[i]->update(_c_x, _c_y, get_cell(_c_x - 1, _c_y - 1)->ID());
 		}
 	}
 	void CampaignEditor::populate_browser()
