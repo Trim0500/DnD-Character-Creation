@@ -1,6 +1,65 @@
-[Fri Apr 12 20:31:49 2024] [Game/GameSetup] -- Loading items...
-[Fri Apr 12 20:31:49 2024] [Game/GameSetup] -- Loading characters...
-[Fri Apr 12 20:31:49 2024] [Game/GameSetup] -- Loading map data...
-[Fri Apr 12 20:31:49 2024] [Game/GameSetup] -- Fetching Campaign save data...
-[Fri Apr 12 20:31:49 2024] [Game/GameSetup] -- Game setup complete! Ready to Play!
-[Fri Apr 12 20:31:52 2024] [Game/ProcessUserAction] -- User exited the game session!
+[Fri Apr 12 21:44:32 2024] [Game/GameSetup] -- Loading items...
+[Fri Apr 12 21:44:32 2024] [Game/GameSetup] -- Loading characters...
+[Fri Apr 12 21:44:32 2024] [Game/GameSetup] -- Loading map data...
+[Fri Apr 12 21:44:32 2024] [Game/GameSetup] -- Fetching Campaign save data...
+[Fri Apr 12 21:44:32 2024] [Game/GameSetup] -- Game setup complete! Ready to Play!
+[Fri Apr 12 21:44:38 2024] [Game/ProcessUserAction] -- Player moved!
+[Fri Apr 12 21:44:38 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 21:44:38 2024] [Game/EndTurn] -- A character ended their turn, need to update game data...
+[Fri Apr 12 21:44:38 2024] [Game/EndTurn] -- Game campaign updates complete! Updating turn...
+[Fri Apr 12 21:44:42 2024] [Game/ProcessUserAction] -- Player moved!
+[Fri Apr 12 21:44:42 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 21:44:42 2024] [Game/EndTurn] -- A character ended their turn, need to update game data...
+[Fri Apr 12 21:44:42 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.
+[Fri Apr 12 21:44:42 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.[Character/AttemptAttack] -- Enemy attacked successfully!
+[Fri Apr 12 21:44:42 2024] [Character/Receive_Damage] -- Cirian took 2 damage! Current HP: 7/9
+[Fri Apr 12 21:44:42 2024] [Character/Receive_Damage] -- Cirian lives on!
+[Fri Apr 12 21:44:42 2024] [Game/EndTurn] -- Game campaign updates complete! Updating turn...
+[Fri Apr 12 21:44:48 2024] [Character/AttemptAttack] -- Cirian is attacking Enemy 1 times.
+[Fri Apr 12 21:44:48 2024] [Character/AttemptAttack] -- Cirian is attacking Enemy 1 times.[Character/AttemptAttack] -- Cirian attacked successfully!
+[Fri Apr 12 21:44:48 2024] [Character/Receive_Damage] -- Enemy took 2 damage! Current HP: 7/9
+[Fri Apr 12 21:44:48 2024] [Character/Receive_Damage] -- Enemy lives on!
+[Fri Apr 12 21:44:48 2024] [Game/ProcessUserAction] -- Player attacked an enemy!
+[Fri Apr 12 21:44:48 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 21:44:48 2024] [Game/EndTurn] -- A character ended their turn, need to update game data...
+[Fri Apr 12 21:44:48 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.
+[Fri Apr 12 21:44:48 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.[Character/AttemptAttack] -- Enemy attacked successfully!
+[Fri Apr 12 21:44:48 2024] [Character/Receive_Damage] -- Cirian took 2 damage! Current HP: 5/9
+[Fri Apr 12 21:44:48 2024] [Character/Receive_Damage] -- Cirian lives on!
+[Fri Apr 12 21:44:48 2024] [Game/EndTurn] -- Game campaign updates complete! Updating turn...
+[Fri Apr 12 21:44:50 2024] [Character/AttemptAttack] -- Cirian is attacking Enemy 1 times.
+[Fri Apr 12 21:44:50 2024] [Character/AttemptAttack] -- Cirian is attacking Enemy 1 times.[Character/AttemptAttack] -- Cirian attacked successfully!
+[Fri Apr 12 21:44:50 2024] [Character/Receive_Damage] -- Enemy took 2 damage! Current HP: 5/9
+[Fri Apr 12 21:44:50 2024] [Character/Receive_Damage] -- Enemy lives on!
+[Fri Apr 12 21:44:50 2024] [Game/ProcessUserAction] -- Player attacked an enemy!
+[Fri Apr 12 21:44:50 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 21:44:50 2024] [Game/EndTurn] -- A character ended their turn, need to update game data...
+[Fri Apr 12 21:44:50 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.
+[Fri Apr 12 21:44:50 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.[Character/AttemptAttack] -- Enemy attacked successfully!
+[Fri Apr 12 21:44:50 2024] [Character/Receive_Damage] -- Cirian took 2 damage! Current HP: 3/9
+[Fri Apr 12 21:44:50 2024] [Character/Receive_Damage] -- Cirian lives on!
+[Fri Apr 12 21:44:50 2024] [Game/EndTurn] -- Game campaign updates complete! Updating turn...
+[Fri Apr 12 21:44:51 2024] [Character/AttemptAttack] -- Cirian is attacking Enemy 1 times.
+[Fri Apr 12 21:44:51 2024] [Character/AttemptAttack] -- Cirian is attacking Enemy 1 times.[Character/AttemptAttack] -- Cirian attacked successfully!
+[Fri Apr 12 21:44:51 2024] [Character/Receive_Damage] -- Enemy took 2 damage! Current HP: 3/9
+[Fri Apr 12 21:44:51 2024] [Character/Receive_Damage] -- Enemy lives on!
+[Fri Apr 12 21:44:51 2024] [Game/ProcessUserAction] -- Player attacked an enemy!
+[Fri Apr 12 21:44:51 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 21:44:51 2024] [Game/EndTurn] -- A character ended their turn, need to update game data...
+[Fri Apr 12 21:44:51 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.
+[Fri Apr 12 21:44:51 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.[Character/AttemptAttack] -- Enemy attacked successfully!
+[Fri Apr 12 21:44:51 2024] [Character/Receive_Damage] -- Cirian took 2 damage! Current HP: 1/9
+[Fri Apr 12 21:44:51 2024] [Character/Receive_Damage] -- Cirian lives on!
+[Fri Apr 12 21:44:51 2024] [Game/EndTurn] -- Game campaign updates complete! Updating turn...
+[Fri Apr 12 21:44:52 2024] [Character/AttemptAttack] -- Cirian is attacking Enemy 1 times.
+[Fri Apr 12 21:44:52 2024] [Character/AttemptAttack] -- Cirian is attacking Enemy 1 times.[Character/AttemptAttack] -- Cirian attacked successfully!
+[Fri Apr 12 21:44:52 2024] [Character/Receive_Damage] -- Enemy took 2 damage! Current HP: 1/9
+[Fri Apr 12 21:44:52 2024] [Character/Receive_Damage] -- Enemy lives on!
+[Fri Apr 12 21:44:52 2024] [Game/ProcessUserAction] -- Player attacked an enemy!
+[Fri Apr 12 21:44:52 2024] [Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!
+[Fri Apr 12 21:44:52 2024] [Game/EndTurn] -- A character ended their turn, need to update game data...
+[Fri Apr 12 21:44:52 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.
+[Fri Apr 12 21:44:52 2024] [Character/AttemptAttack] -- Enemy is attacking Cirian 1 times.[Character/AttemptAttack] -- Enemy attacked successfully!
+[Fri Apr 12 21:44:52 2024] [Character/Receive_Damage] -- Cirian took 2 damage! Current HP: 0/9
+[Fri Apr 12 21:44:52 2024] [Character/Receive_Damage] -- Cirian died!
+[Fri Apr 12 21:44:52 2024] [Game/EndTurn] -- Game campaign updates complete! Updating turn...
