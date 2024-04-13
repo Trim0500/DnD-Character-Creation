@@ -43,7 +43,7 @@ namespace CampaignEditor
 	void CampaignEditor::Notify() {
 		for (int i = 0; i < (int)observers.size(); i++)
 		{
-			observers[i]->update(_c_x + 1, _c_y + 1, get_cell(_c_x, _c_y)->ID());
+			observers[i]->update(_c_x, _c_y, get_cell(_c_x - 1, _c_y - 1)->ID());
 		}
 	}
 	void CampaignEditor::populate_browser()
@@ -63,23 +63,23 @@ namespace CampaignEditor
 		map_grid->clear();
 		map_grid->begin();
 		mbs.clear();
-		for (int j = 0; j < _grid_y; j++)
+		for (int i = 0; i < _grid_x; i++)
 		{
 			// Fl_Pack * r = new Fl_Pack(0,0,50*_grid_x, 50);
 			// r->type(Fl_Pack::HORIZONTAL);
 			mbs.push_back(std::vector<MapButton *>());
-			for (int i = 0; i < _grid_x; i++)
+			for (int j = 0; j < _grid_y; j++)
 			{
-				MapButton *m = new MapButton(30 + 30 * i, 30 + 30 * j, 30, 30, i, j);
+				MapButton *m = new MapButton(30 + 30 * i, 30 + 30 * j, 30, 30, i + 1, j + 1);
 				m->callback(button_cb, (void * )this);
 				try {
-					int id = campaign->GetMap(i, j)->GetMapID();
+					int id = campaign->GetMap(i + 1, j + 1)->GetMapID();
 					m->copy_label(std::to_string(id).c_str());		
 				} catch (std::exception &e) {
 					m->copy_label("");
 				}
 				// m->copy_label(std::to_string(id).c_str());
-				mbs[j].push_back(m);
+				mbs[i].push_back(m);
 			}
 			// r->end();
 		}
@@ -101,8 +101,8 @@ namespace CampaignEditor
 		map_list->clear();
 		std::string label;
 		map_list->add("");
-		if (get_cell(_c_x,_c_y)->ID() != 0){
-			map_list->value(std::to_string(get_cell(_c_x,_c_y)->ID()).c_str());
+		if (get_cell(_c_x - 1,_c_y - 1)->ID() != 0){
+			map_list->value(std::to_string(get_cell(_c_x - 1,_c_y - 1)->ID()).c_str());
 		} else {
 			map_list->value("");
 		}
@@ -120,7 +120,7 @@ namespace CampaignEditor
 		std::cout << "attempting to update the browser" << std::endl;
 	}
 	void CampaignEditor::handle_dropdown() {
-		MapButton * b = get_cell(_c_x, _c_y);
+		MapButton * b = get_cell(_c_x - 1, _c_y - 1);
 		b->ID(std::stoi(map_list->value()));
 		b->label(map_list->value());
 		bool found = false;
@@ -138,7 +138,7 @@ namespace CampaignEditor
 		}
 
 		// The map grids function by having x be the rows whereby a character moves up and down and y be columns whereby a character moves from side to side
-		campaign->AddMapToCampaign(_c_y+1, _c_x+1, *m);
+		campaign->AddMapToCampaign(_c_x, _c_y, *m);
 
 		Notify();
 

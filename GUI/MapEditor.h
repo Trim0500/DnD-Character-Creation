@@ -51,7 +51,7 @@ namespace CampaignEditor
 		Interactable::Interactable* ct;
 
 		int id;
-		int x, y;
+		int x, y; // 1-indexed
 		int current_l = 0;
 	};
 	
@@ -122,7 +122,7 @@ namespace CampaignEditor
 
 			int GetMapCellBbuttonY() { return mapCellButtonY; };
 
-			void SetMapCellBbuttonY(const int& _mapCellButtonY) { mapCellButtonX = _mapCellButtonY; };
+			void SetMapCellBbuttonY(const int& _mapCellButtonY) { mapCellButtonY = _mapCellButtonY; };
 
 			static void UpdateCellObjectIDDropDownLabel(const int&, const int&);
 
@@ -150,7 +150,7 @@ namespace CampaignEditor
 
 			static inline int endCellX, endCellY;
 
-			static inline int mapCellButtonX, mapCellButtonY;
+			static inline int mapCellButtonX, mapCellButtonY; // 1-indexed
 
 			static inline std::vector<Interactable::Interactable*> mapInteractables;
 
