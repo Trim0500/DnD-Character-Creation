@@ -4,8 +4,6 @@
 
 - Charles Partous 40175854
 - Tristan Lafleur 40245238
-- Andrae Lewis 40226881
-- Michelle Polonsky 40252015
 
 ### Description
 
