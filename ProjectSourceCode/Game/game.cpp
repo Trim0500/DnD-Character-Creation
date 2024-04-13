@@ -239,7 +239,7 @@ namespace game
                     for (int j = 0; j < (int)grid[i].size(); j++)
                     {
                         if (dynamic_cast<Door*>(grid[i][j])) {
-                            int doorID = static_cast<Door*>(grid[i][j])->GetDoorID();
+                            int doorID = dynamic_cast<Door*>(grid[i][j])->GetDoorID();
                             auto foundDoor = std::find_if(doorsInCampaign.begin(),
                                                             doorsInCampaign.end(),
                                                             [doorID](Door* door) { return door->GetDoorID() == doorID;});
@@ -248,13 +248,13 @@ namespace game
                             }
                         }
                         else if (dynamic_cast<Character::Character*>(grid[i][j])) {
-                            int characterID = static_cast<Character::Character*>(grid[i][j])->ID();
+                            int characterID = dynamic_cast<Character::Character*>(grid[i][j])->ID();
                             auto foundCharacter = std::find_if(charactersInCampaign.begin(),
                                                                 charactersInCampaign.end(),
                                                                 [characterID](Character::Character* character) { return character->ID() == characterID;});
                             if (foundCharacter != charactersInCampaign.end()) {
                                 grid[i][j] = (*foundCharacter);
-                                if (static_cast<Character::Character*>(grid[i][j])->GetIsPlayerControlled()) {
+                                if (dynamic_cast<Character::Character*>(grid[i][j])->GetIsPlayerControlled()) {
                                     currentMap.mapID = loadedMap->GetMapID();
 
                                     activeCharacter = (*foundCharacter);
@@ -264,7 +264,7 @@ namespace game
                             }
                         }
                         else if (dynamic_cast<ItemContainer*>(grid[i][j])) {
-                            int containerID = static_cast<ItemContainer*>(grid[i][j])->GetItemId();
+                            int containerID = dynamic_cast<ItemContainer*>(grid[i][j])->GetItemId();
                             auto foundContainer = std::find_if(containersInCampaign.begin(),
                                                                 containersInCampaign.end(),
                                                                 [containerID](ItemContainer* container) { return container->GetItemId() == containerID;});
@@ -273,7 +273,7 @@ namespace game
                             }
                         }
                         else if (dynamic_cast<Item*>(grid[i][j])) {
-                            int itemID = static_cast<Item*>(grid[i][j])->GetItemId();
+                            int itemID = dynamic_cast<Item*>(grid[i][j])->GetItemId();
                             auto foundItem = std::find_if(itemsInCampaign.begin(),
                                                             itemsInCampaign.end(),
                                                             [itemID](Item* item) { return item->GetItemId() == itemID;});
@@ -325,11 +325,11 @@ namespace game
                         for (int j = 0; j < (int)grid[i].size(); j++)
                         {
                             if (dynamic_cast<Character::Character*>(grid[i][j])) {
-                                if (static_cast<Character::Character*>(grid[i][j])->GetIsPlayerControlled()) {
+                                if (dynamic_cast<Character::Character*>(grid[i][j])->GetIsPlayerControlled()) {
                                     continue;
                                 }
                                 
-                                charactersInMap.push_back(static_cast<Character::Character*>(grid[i][j]));
+                                charactersInMap.push_back(dynamic_cast<Character::Character*>(grid[i][j]));
                             }
                         }
                     }
