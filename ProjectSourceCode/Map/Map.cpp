@@ -321,6 +321,8 @@ void Map::Map::GetCharacterCoordinates(int& x, int& y, Character::Character* t_c
 			}
 		}
 	}
+
+	throw new std::invalid_argument("[Map/GetCharacterCoordinates] -- Failed to find the character in the map.");
 }
 
 std::vector<Character::Character*> Map::Map::GetCharactersInMap() {

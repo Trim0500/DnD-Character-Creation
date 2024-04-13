@@ -75,6 +75,10 @@ namespace {
                 int indexForItem = std::stoi(segment) - 1;
                 segmentList.push_back(&containerItems[indexForItem]);
             }
+
+            if (segmentList.size() > containerItems.size()) {
+                throw std::out_of_range("[ProcessContainerAction] -- User entered a larger selection than allowed");
+            }
             
             if (!dropItems) {
                 try {
@@ -114,6 +118,10 @@ namespace {
         auto pickUpAction = std::find_if(playerActions.begin(),
                                             playerActions.end(),
                                             [](CellActionInfo playerAction) { return playerAction.actionName == Character::PICKUP_CELL_ACTION; });
+        if (pickUpAction == playerActions.end()) {
+            throw std::logic_error("[ProcessUserItemAction] -- Failed to find the item to pickup.");
+        }
+
         Item* target = static_cast<Item*>(mapGrid[(*pickUpAction).row - 1][(*pickUpAction).col - 1]);
         if (dynamic_cast<ItemContainer*>(target)) {
             ProcessContainerAction(target, _playerCharacter, dropItems);
@@ -466,272 +474,291 @@ namespace game
 
     void Game::ProcessUserAction(const char& t_selection, Character::Character* t_playerCharacter)
     {
-        //hold current character
-        //Character::Character* current_character_buffer = this->GetActiveCharacter();
-        //set active character to player character
-        //this->SetActiveCharacter(t_playerCharacter);
-        //get current map
-        int x, y;
-        CampaignMap currentMapInCampaign = gameCampaign->GetCurrentMap();
-        Map::Map* currentMap = gameCampaign->GetMap(currentMapInCampaign.coorX, currentMapInCampaign.coorY);
-        currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-        std::string direction;
+        try {
+            int x, y;
+            CampaignMap currentMapInCampaign = gameCampaign->GetCurrentMap();
+            Map::Map* currentMap = gameCampaign->GetMap(currentMapInCampaign.coorX, currentMapInCampaign.coorY);
+            currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
+            std::string direction;
 
-        switch(t_selection)
-        {
-        case '1':
-            //Print first map in campaign
-            this->GetGameCampaign()->GetMapsInCampaign()[0]->printMap();
-            break;
-        case '2':
-            //Print player Character sheet
-            t_playerCharacter->Print_Character_Sheet();
-            break;
-        case '4':
-            //Print player character location
-            std::cout << "Player Location: " << y << "," << x << std::endl;
-            break;
-
-        case 'I':
-        {
-            ProcessUserItemAction(currentMap, t_playerCharacter, x, y);
-
-            CreateObserverMessage("[Game/ProcessUserAction] -- Player interacted with items!");
-
-            break;
-        }
-        case 'W':
-        {
-            std::vector<CellActionInfo> playerActions = activeCharacter->GetActionStrategy()->UseMovementStrategy(currentMap->getGrid(), x + 1, y + 1);
-            currentMap->setEmpty(x, y);
-
-            auto doorAction = std::find_if(playerActions.begin(),
-                                            playerActions.end(),
-                                            [](CellActionInfo playerAction) { return playerAction.actionName == Character::DOOR_CELL_ACTION; });
-            Door* doorToUse = static_cast<Door*>(currentMap->getGrid().at((*doorAction).row - 1).at((*doorAction).col - 1));
-            
-            int currentMapID = gameCampaign->GetCurrentMap().mapID;
-            DoorDestinationInfo destinationInfo = doorToUse->UseDoor(currentMapID);
-            Map::Map* mapToLoad = gameCampaign->GetMap(destinationInfo.mapLocationX, destinationInfo.mapLocationY);
-            mapToLoad->setCharacter(destinationInfo.destinationX - 1, destinationInfo.destinationY - 1, t_playerCharacter);
-
-            std::vector<std::vector<Interactable::Interactable*>> newMapGrid = mapToLoad->getGrid();
-
-            std::vector<Character::Character*> charactersInNewMap;
-            for (int i = 0; i < (int)newMapGrid.size(); i++)
+            switch (t_selection)
             {
-                auto valueAtCell = std::find_if(newMapGrid[i].begin(),
-                                                newMapGrid[i].end(),
-                                                [](Interactable::Interactable* cell) { return dynamic_cast<Character::Character*>(cell); });
-                if (valueAtCell != newMapGrid[i].end()) {
-                    charactersInNewMap.push_back(static_cast<Character::Character*>((*valueAtCell)));
+            case '1':
+                //Print first map in campaign
+                this->GetGameCampaign()->GetMapsInCampaign()[0]->printMap();
+                break;
+            case '2':
+                //Print player Character sheet
+                t_playerCharacter->Print_Character_Sheet();
+                break;
+            case '4':
+                //Print player character location
+                std::cout << "Player Location: " << y << "," << x << std::endl;
+                break;
 
-                    while (valueAtCell != newMapGrid[i].end())
-                    {
-                        valueAtCell = std::find_if(valueAtCell + 1,
+            case 'I':
+            {
+                ProcessUserItemAction(currentMap, t_playerCharacter, x, y);
+
+                CreateObserverMessage("[Game/ProcessUserAction] -- Player interacted with items!");
+
+                break;
+            }
+            case 'W':
+            {
+                std::vector<CellActionInfo> playerActions = activeCharacter->GetActionStrategy()->UseMovementStrategy(currentMap->getGrid(), x + 1, y + 1);
+                currentMap->setEmpty(x, y);
+
+                auto doorAction = std::find_if(playerActions.begin(),
+                                                playerActions.end(),
+                                                [](CellActionInfo playerAction) { return playerAction.actionName == Character::DOOR_CELL_ACTION; });
+                if (doorAction == playerActions.end()) {
+                    throw std::logic_error("[Game/ProcessUserAction] -- Failed to find the door to use.");
+                }
+
+                Door* doorToUse = static_cast<Door*>(currentMap->getGrid().at((*doorAction).row - 1).at((*doorAction).col - 1));
+
+                int currentMapID = gameCampaign->GetCurrentMap().mapID;
+                DoorDestinationInfo destinationInfo = doorToUse->UseDoor(currentMapID);
+                Map::Map* mapToLoad = gameCampaign->GetMap(destinationInfo.mapLocationX, destinationInfo.mapLocationY);
+                mapToLoad->setCharacter(destinationInfo.destinationX - 1, destinationInfo.destinationY - 1, t_playerCharacter);
+
+                std::vector<std::vector<Interactable::Interactable*>> newMapGrid = mapToLoad->getGrid();
+
+                std::vector<Character::Character*> charactersInNewMap;
+                for (int i = 0; i < (int)newMapGrid.size(); i++)
+                {
+                    auto valueAtCell = std::find_if(newMapGrid[i].begin(),
                                                     newMapGrid[i].end(),
                                                     [](Interactable::Interactable* cell) { return dynamic_cast<Character::Character*>(cell); });
+                    if (valueAtCell != newMapGrid[i].end()) {
+                        charactersInNewMap.push_back(static_cast<Character::Character*>((*valueAtCell)));
 
-                        if (valueAtCell != newMapGrid[i].end()) {
-                            charactersInNewMap.push_back(static_cast<Character::Character*>((*valueAtCell)));
+                        while (valueAtCell != newMapGrid[i].end())
+                        {
+                            valueAtCell = std::find_if(valueAtCell + 1,
+                                newMapGrid[i].end(),
+                                [](Interactable::Interactable* cell) { return dynamic_cast<Character::Character*>(cell); });
+
+                            if (valueAtCell != newMapGrid[i].end()) {
+                                charactersInNewMap.push_back(static_cast<Character::Character*>((*valueAtCell)));
+                            }
                         }
                     }
                 }
-            }
 
-            charactersInMap = charactersInNewMap;
-
-            CreateObserverMessage("[Game/ProcessUserAction] -- Player used a door!");
-            
-            break;
-        }
-        case 'P': {
-            //Equip item
-            if (t_playerCharacter->Inventory().GetAllItems().size() <= 0) {
-                std::cout << "No items in inventory to equip!" << std::endl;
-                return;
-            }
-            std::vector<item::Item*> inventory;
-            std::cout << std::right << std::setw(63) << "INVENTORY" << std::endl;
-            std::cout << std::right << std::setw(35) << "Name" << " | " << std::left << std::setw(35) << "Type"
-                << " | " << std::left << std::setw(35) << "Enchantment" << std::endl;
-            std::cout << std::string(100, '-') << std::endl;
-            int count = 0;
-            for (int i{ 0 }; i<t_playerCharacter->Inventory().GetAllItems().size(); i++) {
-                std::cout << count << ". ";
-                std::cout << std::right << std::setw(35) << t_playerCharacter->Inventory().GetAllItems().at(i).GetItemName() << " | "
-                    << std::left << std::setw(35) << t_playerCharacter->Get_Item_Type_String(t_playerCharacter->Inventory().GetAllItems().at(i).GetItemType()) << " | ";
-                if (t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentBonus() > 0) {
-                    std::cout << "+";
+                if (charactersInMap.size() <= 0) {
+                    throw new std::logic_error("[Game/ProcessUserAction] -- Failed to at least find the player character in the map to load.");
                 }
-                std::cout << t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentBonus() << " "
-                    << t_playerCharacter->Get_Abilities_String(Character::item_stat_TO_character_stat.at(t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentType())) << std::endl;
-                count++;
-            }
-            std::cout << "Equip item number :";
-            std::string item_number_s;
-            int item_number_i;
-            std::getline(std::cin, item_number_s);
-            item_number_i = std::stoi(item_number_s);
-            if (item_number_i >= 0 && item_number_i < count) {
-                t_playerCharacter->Equip_Item_Decorator(&t_playerCharacter->Inventory().GetAllItems().at(item_number_i));
-                std::cout << "Item equppied!" << std::endl;
-            }
-            else{
-                std::cout << "Could not equip item!" << std::endl;
-            }
 
-            CreateObserverMessage("[Game/ProcessUserAction] -- Player equipped items!");
+                charactersInMap = charactersInNewMap;
 
-            break;
-        }
-        case 'K': {
-            //unequip item
-            if (t_playerCharacter->GetWornItems()->GetDecoratorList().size() <= 0) {
-                std::cout << "No items in inventory to equip!" << std::endl;
-                return;
+                CreateObserverMessage("[Game/ProcessUserAction] -- Player used a door!");
+
+                break;
             }
-            std::vector<item::Item*> equipped_items;
-            item::Item* item;
-            std::cout << std::right << std::setw(65) << "EQUIPPED ITEMS" << std::endl;
-            std::cout << std::right << std::setw(35) << "Equipment slot" << " | " << std::left << std::setw(35) << " Name (ID)"
-                << " | " << std::left << std::setw(35) << "Enchantment" << std::endl;
-            std::cout << std::string(100, '-') << std::endl;
-            int count = 0;
-            for (int i{ 0 }; i < t_playerCharacter->GetWornItems()->GetDecoratorList().size(); i++) {
-                item = dynamic_cast<item::Item*>(t_playerCharacter->GetWornItems()->GetDecoratorList().at(i));
-                equipped_items.push_back(item);
-                std::cout << count << ". ";
-                std::cout << std::right << std::setw(35) << item->GetItemName() << " | "
-                    << std::left << std::setw(35) << item->GetItemType() << " | ";
-                if (item->GetEnchantmentBonus() > 0) {
-                    std::cout << "+";
+            case 'P': {
+                //Equip item
+                if (t_playerCharacter->Inventory().GetAllItems().size() <= 0) {
+                    std::cout << "No items in inventory to equip!" << std::endl;
+                    return;
                 }
-                std::cout << item->GetEnchantmentBonus() << " "
-                    << t_playerCharacter->Get_Abilities_String(Character::item_stat_TO_character_stat.at(item->GetEnchantmentType())) << std::endl;
-                count++;
+                std::vector<item::Item*> inventory;
+                std::cout << std::right << std::setw(63) << "INVENTORY" << std::endl;
+                std::cout << std::right << std::setw(35) << "Name" << " | " << std::left << std::setw(35) << "Type"
+                    << " | " << std::left << std::setw(35) << "Enchantment" << std::endl;
+                std::cout << std::string(100, '-') << std::endl;
+                int count = 0;
+                for (int i{ 0 }; i < t_playerCharacter->Inventory().GetAllItems().size(); i++) {
+                    std::cout << count << ". ";
+                    std::cout << std::right << std::setw(35) << t_playerCharacter->Inventory().GetAllItems().at(i).GetItemName() << " | "
+                        << std::left << std::setw(35) << t_playerCharacter->Get_Item_Type_String(t_playerCharacter->Inventory().GetAllItems().at(i).GetItemType()) << " | ";
+                    if (t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentBonus() > 0) {
+                        std::cout << "+";
+                    }
+                    std::cout << t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentBonus() << " "
+                        << t_playerCharacter->Get_Abilities_String(Character::item_stat_TO_character_stat.at(t_playerCharacter->Inventory().GetAllItems().at(i).GetEnchantmentType())) << std::endl;
+                    count++;
+                }
+                std::cout << "Equip item number :";
+                std::string item_number_s;
+                int item_number_i;
+                std::getline(std::cin, item_number_s);
+                item_number_i = std::stoi(item_number_s);
+                if (item_number_i >= 0 && item_number_i < count) {
+                    t_playerCharacter->Equip_Item_Decorator(&t_playerCharacter->Inventory().GetAllItems().at(item_number_i));
+                    std::cout << "Item equppied!" << std::endl;
+                }
+                else {
+                    std::cout << "Could not equip item!" << std::endl;
+                }
+
+                CreateObserverMessage("[Game/ProcessUserAction] -- Player equipped items!");
+
+                break;
             }
-            std::cout << "unequip item number :";
-            std::string item_number_s;
-            int item_number_i;
-            std::getline(std::cin, item_number_s);
-            item_number_i = std::stoi(item_number_s);
-            if (item_number_i >= 0 && item_number_i < count) {
-                t_playerCharacter->Unequip_Item_Decorator(equipped_items.at(item_number_i));
-                std::cout << "Item unequipped!" << std::endl;
+            case 'K': {
+                //unequip item
+                if (t_playerCharacter->GetWornItems()->GetDecoratorList().size() <= 0) {
+                    std::cout << "No items in inventory to equip!" << std::endl;
+                    return;
+                }
+                std::vector<item::Item*> equipped_items;
+                item::Item* item;
+                std::cout << std::right << std::setw(65) << "EQUIPPED ITEMS" << std::endl;
+                std::cout << std::right << std::setw(35) << "Equipment slot" << " | " << std::left << std::setw(35) << " Name (ID)"
+                    << " | " << std::left << std::setw(35) << "Enchantment" << std::endl;
+                std::cout << std::string(100, '-') << std::endl;
+                int count = 0;
+                for (int i{ 0 }; i < t_playerCharacter->GetWornItems()->GetDecoratorList().size(); i++) {
+                    item = dynamic_cast<item::Item*>(t_playerCharacter->GetWornItems()->GetDecoratorList().at(i));
+                    equipped_items.push_back(item);
+                    std::cout << count << ". ";
+                    std::cout << std::right << std::setw(35) << item->GetItemName() << " | "
+                        << std::left << std::setw(35) << item->GetItemType() << " | ";
+                    if (item->GetEnchantmentBonus() > 0) {
+                        std::cout << "+";
+                    }
+                    std::cout << item->GetEnchantmentBonus() << " "
+                        << t_playerCharacter->Get_Abilities_String(Character::item_stat_TO_character_stat.at(item->GetEnchantmentType())) << std::endl;
+                    count++;
+                }
+                std::cout << "unequip item number :";
+                std::string item_number_s;
+                int item_number_i;
+                std::getline(std::cin, item_number_s);
+                item_number_i = std::stoi(item_number_s);
+                if (item_number_i >= 0 && item_number_i < count) {
+                    t_playerCharacter->Unequip_Item_Decorator(equipped_items.at(item_number_i));
+                    std::cout << "Item unequipped!" << std::endl;
+                }
+                else {
+                    std::cout << "Could not unequip item!" << std::endl;
+                }
+
+                CreateObserverMessage("[Game/ProcessUserAction] -- Player unequipped items!");
+
+                break;
             }
-            else {
-                std::cout << "Could not unequip item!" << std::endl;
+            case 'R':
+                ProcessContainerAction(&t_playerCharacter->Inventory(), t_playerCharacter, true);
+
+                CreateObserverMessage("[Game/ProcessUserAction] -- Player dropped items!");
+
+                break;
+            case 'M':
+                int xOld, yOld;
+                xOld = x;
+                yOld = y;
+
+                x++;
+                y++;
+                //Move
+                std::cout << "Select Direction: up, down, left, right";
+                std::getline(std::cin, direction);
+
+
+                if (direction == "up") {
+                    currentMap->MoveCharacter(x - 1, y, t_playerCharacter);
+                    currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
+                    std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
+                }
+                else if (direction == "down") {
+                    currentMap->MoveCharacter(x + 1, y, t_playerCharacter);
+                    currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
+                    std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
+
+                }
+                else if (direction == "left") {
+                    currentMap->MoveCharacter(x, y - 1, t_playerCharacter);
+                    currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
+                    std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
+
+                }
+                else if (direction == "right") {
+                    currentMap->MoveCharacter(x, y + 1, t_playerCharacter);
+                    currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
+                    std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
+                }
+                else {
+                    std::cout << "Invalid direction!" << std::endl;
+                }
+
+                CreateObserverMessage("[Game/ProcessUserAction] -- Player moved!");
+
+                break;
+            case 'A':
+            {
+                std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentMap->getGrid();
+
+                std::vector<CellActionInfo> playerActions = t_playerCharacter->GetActionStrategy()->UseMovementStrategy(mapGrid, x + 1, y + 1);
+
+                auto attackAction = std::find_if(playerActions.begin(),
+                                                    playerActions.end(),
+                                                    [](CellActionInfo playerAction) { return playerAction.actionName == Character::ATTACK_CELL_ACTION; });
+                if (attackAction == playerActions.end()) {
+                    throw std::logic_error("[Game/ProcessUserAction] -- Failed to find the enemy to attack.");
+                }
+
+                Character::Character* target = static_cast<Character::Character*>(mapGrid[(*attackAction).row - 1][(*attackAction).col - 1]);
+                bool targetDied = t_playerCharacter->AttemptAttack(target);
+
+                std::ostringstream attackUpdateMessage;
+                attackUpdateMessage << "Attack results: " << target->Name() << " now at " << target->Hit_Points() << "/" << target->Max_Hit_Points() << std::endl;
+                std::cout << attackUpdateMessage.str();
+
+                if (targetDied) {
+                    charactersInMap.erase(std::remove(charactersInMap.begin(), charactersInMap.end(), target), charactersInMap.end());
+
+                    Interactable::Interactable* targetsItems = &target->Inventory();
+                    currentMap->setCell((*attackAction).row - 1, (*attackAction).col - 1, targetsItems);
+
+                    std::ostringstream killUpdateMessage;
+                    killUpdateMessage << target->Name() << " killed! Inventory dropped. " << std::endl;
+                    std::cout << killUpdateMessage.str();
+                }
+
+                CreateObserverMessage("[Game/ProcessUserAction] -- Player attacked an enemy!");
+
+                break;
+            }
+            case 'E':
+                std::cout << "Goodbye!" << std::endl;
+
+                CreateObserverMessage("[Game/ProcessUserAction] -- User exited the game session!");
+
+                break;
+            default:
+                std::cout << "Unkown Action!" << std::endl;
+                break;
             }
 
-            CreateObserverMessage("[Game/ProcessUserAction] -- Player unequipped items!");
+            if (t_selection == 'M' || t_selection == 'A' || t_selection == 'D') {
+                Character::Character* activeCharacterPointer = activeCharacter;
+                std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
+                    charactersInMap.end(),
+                    [activeCharacterPointer](Character::Character* character) { return character == activeCharacterPointer; });
+                currentActiveCharacter = std::next(currentActiveCharacter, 1);
+                if (currentActiveCharacter == charactersInMap.end()) {
+                    currentActiveCharacter = charactersInMap.begin();
+                }
 
-            break;
+                activeCharacter = (*currentActiveCharacter);
+
+                CreateObserverMessage("[Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!");
+            }
         }
-        case 'R':
-            ProcessContainerAction(&t_playerCharacter->Inventory(),
-                                    t_playerCharacter, true);
-
-            CreateObserverMessage("[Game/ProcessUserAction] -- Player dropped items!");
-
-            break;
-        case 'M':
-            int xOld, yOld;
-            xOld = x;
-            yOld = y;
-
-            x++;
-            y++;
-            //Move
-            std::cout << "Select Direction: up, down, left, right";
-            std::getline(std::cin, direction);
-            
-            if (direction == "up") {
-                currentMap->MoveCharacter(x-1, y, t_playerCharacter);
-                currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
-            }
-            else if (direction == "down") {
-                currentMap->MoveCharacter(x+1, y, t_playerCharacter);
-                currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
-
-            }
-            else if (direction == "left") {
-                currentMap->MoveCharacter(x, y-1, t_playerCharacter);
-                currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
-
-            }
-            else if (direction == "right") {
-                currentMap->MoveCharacter(x, y+1, t_playerCharacter);
-                currentMap->GetCharacterCoordinates(x, y, t_playerCharacter);
-                std::cout << "Moved from: (" << xOld << "," << yOld << ") -> (" << x << "," << y << ")" << std::endl;
-            }else{
-                std::cout << "Invalid direction!" << std::endl;
-            }
-
-            CreateObserverMessage("[Game/ProcessUserAction] -- Player moved!");
-            
-            break;
-        case 'A':
-        {
-            std::vector<std::vector<Interactable::Interactable*>> mapGrid = currentMap->getGrid();
-
-            std::vector<CellActionInfo> playerActions = t_playerCharacter->GetActionStrategy()->UseMovementStrategy(mapGrid, x + 1, y + 1);
-
-            auto attackAction = std::find_if(playerActions.begin(),
-                                                playerActions.end(),
-                                                [](CellActionInfo playerAction) { return playerAction.actionName == Character::ATTACK_CELL_ACTION; });
-
-            Character::Character* target = static_cast<Character::Character*>(mapGrid[(*attackAction).row - 1][(*attackAction).col - 1]);
-            bool targetDied = t_playerCharacter->AttemptAttack(target);
-
-            std::ostringstream attackUpdateMessage;
-            attackUpdateMessage << "Attack results: " << target->Name() << " now at " << target->Hit_Points() << std::endl;
-            std::cout << attackUpdateMessage.str();
-
-            if (targetDied) {
-                charactersInMap.erase(std::remove(charactersInMap.begin(), charactersInMap.end(), target), charactersInMap.end());
-
-                Interactable::Interactable* targetsItems = &target->Inventory();
-                currentMap->setCell((*attackAction).row - 1, (*attackAction).col - 1, targetsItems);
-
-                std::ostringstream killUpdateMessage;
-                killUpdateMessage << target->Name() << " killed! Inventory dropped. " << std::endl;
-                std::cout << killUpdateMessage.str();
-            }
-
-            CreateObserverMessage("[Game/ProcessUserAction] -- Player attacked an enemy!");
-
-            break;
+        catch (std::invalid_argument exc) {
+            std::cout << exc.what() << std::endl;
         }
-        case 'E':
-            std::cout << "Goodbye!" << std::endl;
-
-            CreateObserverMessage("[Game/ProcessUserAction] -- User exited the game session!");
-
-            break;
-        default:
-            std::cout << "Unkown Action!" << std::endl;
-            break;
+        catch (std::logic_error exc) {
+            std::cout << exc.what() << std::endl;
         }
-
-        if (t_selection == 'M' || t_selection == 'A' || t_selection == 'D') {
-            Character::Character* activeCharacterPointer = activeCharacter;
-            std::vector<Character::Character*>::iterator currentActiveCharacter = std::find_if(charactersInMap.begin(),
-                                                                                                charactersInMap.end(),
-                                                                                                [activeCharacterPointer](Character::Character* character){ return character == activeCharacterPointer; });
-            currentActiveCharacter = std::next(currentActiveCharacter, 1);
-            if (currentActiveCharacter == charactersInMap.end()) {
-                currentActiveCharacter = charactersInMap.begin();
-            }
-
-            activeCharacter = (*currentActiveCharacter);
-
-            CreateObserverMessage("[Game/ProcessUserAction] -- Player choose a turn ending action! NPC will move next!");
+        catch (std::out_of_range exc) {
+            std::cout << exc.what() << std::endl;
         }
-
-        //this->SetActiveCharacter(current_character_buffer);
+        catch (int exc) {
+            std::cout << "[Map/setCell] -- Failed to set a character to a cell." << std::endl;
+        }
     }
 }

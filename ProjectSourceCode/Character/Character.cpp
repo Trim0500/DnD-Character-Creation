@@ -888,7 +888,7 @@ const int Character::Character::Attacks_Per_Turn()
 
 bool Character::Character::AttemptAttack(Character* _target) {
 	std::ostringstream logMessage;
-	logMessage << "[Character/AttemptAttack] -- " << name << " is attacking " << _target->name << Attacks_Per_Turn() << " times.";
+	logMessage << "[Character/AttemptAttack] -- " << name << " is attacking " << _target->name << " " << Attacks_Per_Turn() << " times.";
 	CreateObserverMessage(logMessage.str());
 
 	AbstractComponent* opponentWornItems = _target->GetWornItems();
