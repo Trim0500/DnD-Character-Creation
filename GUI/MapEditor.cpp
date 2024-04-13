@@ -409,7 +409,7 @@ void MapEditor::UpdateDropDown(const int& _cellButtonX, const int& _cellButtonY)
 }
 
 void MapEditor::HandleDropdownEvent() {
-	MapCellButton* b = get_cell(mapCellButtonX, mapCellButtonY);
+	MapCellButton* b = get_cell(mapCellButtonX - 1, mapCellButtonY - 1);
 	b->ID(std::stoi(objectIDChoiceList->value()));
 	
 	bool found = false;
@@ -442,9 +442,9 @@ void MapEditor::HandleDropdownEvent() {
 		if (interactableID == std::stoi(objectIDChoiceList->value())) {
 			found = true;
 
-			get_cell(mapCellButtonX, mapCellButtonY)->cell_type(mapInteractables[i]);
+			get_cell(mapCellButtonX - 1, mapCellButtonY - 1)->cell_type(mapInteractables[i]);
 
-			current_map->setCell(mapCellButtonX, mapCellButtonY, mapInteractables[i]);
+			current_map->setCell(mapCellButtonX - 1, mapCellButtonY - 1, mapInteractables[i]);
 			
 			break;
 		}
